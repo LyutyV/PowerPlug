@@ -1,0 +1,9 @@
+﻿body {
+}
+
+.tab{
+    color:gray;
+    &.tab-active{
+        color: blue;
+    }
+}

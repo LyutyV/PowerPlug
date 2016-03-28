@@ -1,0 +1,28 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">
+        Computer Groups
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Description</td>
+                    <td>GUID</td>
+                    <td>Name</td>
+                    <td>Owner</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="computerGroup in vm.computerGroups">
+                    <td>{{ computerGroup.compGroupId}}</td>
+                    <td>{{ computerGroup.groupDesc}}</td>
+                    <td>{{ computerGroup.groupGUID}}</td>
+                    <td>{{ computerGroup.groupName}}</td>
+                    <td>{{ computerGroup.owner}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

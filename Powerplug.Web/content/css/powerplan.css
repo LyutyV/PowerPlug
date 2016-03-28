@@ -1,0 +1,5 @@
+﻿.tab {
+  color: gray; }
+  .tab.tab-active {
+    color: blue; }
+

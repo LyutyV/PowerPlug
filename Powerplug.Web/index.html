@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <!--<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />-->
+    <link href="content/css/vendor/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/css/powerplan.min.css" rel="stylesheet" />
+</head>
+<body ng-app="powerPlug">
+    <div>
+        <div ng-if="!innerTemplate()">
+            <h1>Power Plug</h1>
+            <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+            <div class="well" ui-view></div>
+        </div>
+        <div ng-if="innerTemplate()">
+            <div style="position:fixed;left:0px;top:0px;bottom:0px;width:220px;background-color:#000;">
+                <ul>
+                    <li><a ui-sref-active="tab-active" ui-sref="dashboard" class="tab">Dashboard</a></li>                    
+                    <li><a ui-sref-active="tab-active" ui-sref="savingPlans" class="tab">Saving Plans</a></li>
+                    <li><a ui-sref-active="tab-active" ui-sref="computerGroups" class="tab">Computer Groups</a></li>
+                    <li><a ui-sref-active="tab-active" ui-sref="login" class="tab">logout</a></li>
+                </ul>
+            </div>
+            <div class="well" ui-view style="padding-left:240px;"></div>
+            
+        </div>   
+    </div>
+    <!--<div ng-include="'views/powerplan/computerGroupsView.html'"></div>-->
+    <!-- Library Scripts -->    
+    <script src="content/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="content/js/vendor/angular.js"></script>
+    <script src="content/js/vendor/angular-resource.min.js"></script>
+    <script src="content/js/vendor/angular-ui-router.min.js"></script>
+    <script src="content/js/vendor/angular-cookies.js"></script>
+
+    <!-- Application Script -->
+    <script src="app/app.js"></script>
+
+    <!-- Services -->
+    <script src="app/services/common/common.services.js"></script>
+    <script src="app/services/authentication/user.service.js"></script>
+    <script src="app/services/authentication/authentication.service.js"></script>
+    <script src="app/services/authentication/flash.service.js"></script>   
+    <script src="app/services/powerplan/computerGroupsResource.js"></script>
+    <script src="app/services/powerplan/savingPlansResource.js"></script>
+
+    <!-- PowerPlan Controllers -->
+    <script src="app/controllers/login/loginCtrl.js"></script>
+    <script src="app/controllers/powerplan/computerGroupsCtrl.js"></script>
+    <script src="app/controllers/powerplan/savingPlansCtrl.js"></script>
+    <script src="app/controllers/dashboard/dashboardCtrl.js"></script>
+    <script src="app/controllers/dashboard/dashboardView1Ctrl.js"></script>
+    <script src="app/controllers/dashboard/dashboardView2Ctrl.js"></script>
+</body>
+
+
+</html>

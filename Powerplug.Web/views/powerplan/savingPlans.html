@@ -1,0 +1,28 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">
+        Saving Plans
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Plan Name</td>
+                    <td>Projected Efficiency</td>
+                    <td>Actual Replrted Efficiency</td>
+                    <td>Assigned Computers</td>
+                    <td>Actual Reported</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="savingPlan in vm.savingPlans">
+                    <td>{{ savingPlan.policyName}}<br/>{{ savingPlan.type}}</td>
+                    <td>{{ savingPlan.plannedEfficiency}}</td>
+                    <td>{{ savingPlan.acutalEfficiency}}</td>
+                    <td>{{ savingPlan.plannedComputers}}</td>
+                    <td>{{ savingPlan.actualComputers}}</td>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
