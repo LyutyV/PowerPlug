@@ -2,10 +2,18 @@
     'use strict';
 
     angular
-        .module('powerPlug', ['ngCookies', 'ui.router', 'common.services'])
+        .module('powerPlug', ['ngCookies', 'ngMaterial', 'ui.router', 'common.services'])
         .config(configRoute)
         .config(configExceptionHandler)
+        .config(configDatePicker)
         .run(run);
+
+    configDatePicker.$inject = ['$mdDateLocaleProvider'];
+    function configDatePicker($mdDateLocaleProvider) {
+        $mdDateLocaleProvider.formatDate = function (date) {
+            return moment(date).format('YYYY-MM-DD');
+        };
+    }
 
     configExceptionHandler.$inject = ['$provide'];
     function configExceptionHandler($provide) {
@@ -56,6 +64,12 @@
                 url: "/savingPlans",
                 controller: 'SavingPlansCtrl',
                 templateUrl: 'views/powerplan/savingPlans.html',
+                controllerAs: 'vm'
+            })
+            .state('savingPlanEditor', {
+                url: "/savingPlanEditor/:policyId",
+                controller: 'SavingPlanEditorCtrl',
+                templateUrl: 'views/powerplan/savingPlanEditor.html',
                 controllerAs: 'vm'
             })
             .state('computerGroups', {

@@ -13,8 +13,7 @@
         
         SavingPlansResource.query(function (data) {
             vm.savingPlans = data;
-        }, function (error) {
-            console.log(error);
+        }, function (error) {            
             if (error.status === 401 && error.status === -1)
             {
                 $state.go('login');

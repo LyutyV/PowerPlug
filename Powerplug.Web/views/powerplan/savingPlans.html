@@ -4,6 +4,7 @@
         Saving Plans
     </div>
     <div class="panel-body">
+        <div class="pull-right"><button class="btn btn-primary">Add Plan</button></div>        
         <table class="table">
             <thead>
                 <tr>
@@ -16,7 +17,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="savingPlan in vm.savingPlans">
-                    <td>{{ savingPlan.policyName}}<br/>{{ savingPlan.type}}</td>
+                    <td><a ui-sref="savingPlanEditor({ policyId : savingPlan.policyId})">{{ savingPlan.policyName}}</a><br/>{{ savingPlan.owner}}</td>
                     <td>{{ savingPlan.plannedEfficiency}}</td>
                     <td>{{ savingPlan.acutalEfficiency}}</td>
                     <td>{{ savingPlan.plannedComputers}}</td>
