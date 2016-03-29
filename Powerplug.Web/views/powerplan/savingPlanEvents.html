@@ -1,0 +1,35 @@
+﻿<h3>Events</h3>
+<div class="clearfix">
+    <div class="pull-left">
+        <ul>
+            <li ng-click="vm.showEventScripts(1)">
+                Before Standby(Sleep/Hibernate)
+            </li>
+            <li ng-click="vm.showEventScripts(6)">
+                Before System Restart
+            </li>
+            <li ng-click="vm.showEventScripts(2)">
+                Before Shutdown
+            </li>
+            <li ng-click="vm.showEventScripts(4)">
+                After System Startup(Boot)
+            </li>
+            <li ng-click="vm.showEventScripts(3)">
+                After System Resume
+            </li>
+            <li ng-click="vm.showEventScripts(5)">
+                After UserLogin
+            </li>            
+        </ul>
+    </div>
+    <div class="pull-right">
+        <h4>Scripts</h4>
+        <table class="table" style="width:400px;">
+            <tbody>
+                <tr ng-repeat="script in vm.currentEventScripts">
+                    <td>{{ script.scriptName}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
