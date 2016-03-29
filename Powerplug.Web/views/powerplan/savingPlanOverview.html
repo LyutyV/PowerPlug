@@ -1,0 +1,55 @@
+﻿<div class="clearfix">
+    <div class="pull-left">
+        <ul ng-repeat="savingPlanDetail in vm.savingPlan.details">
+            <li>
+                {{savingPlanDetail.item}} : {{savingPlanDetail.description}}
+            </li>
+        </ul>
+    </div>
+    <div class="pull-right">
+        <div>
+            Valid From: <md-datepicker ng-model="vm.savingPlan.validFrom" md-placeholder="Enter date"></md-datepicker>
+        </div>
+        <div>
+            Valid To: <md-datepicker ng-model="vm.savingPlan.validTo" md-placeholder="Enter date"></md-datepicker>
+        </div>
+    </div>
+</div>
+<div class="clearfix" style="margin-top:30px;">
+    <div class="pull-left">
+        <div class="clearfix">
+            <div class="pull-left">
+                <div fusioncharts
+                     width="500"
+                     height="400"
+                     type="msline"
+                     chart="{{vm.graphWorkDays.attrs}}"
+                     categories="{{vm.graphWorkDays.categories}}"
+                     dataset="{{vm.graphWorkDays.dataset}}"></div>
+            </div>
+            <div class="pull-left">
+                <div fusioncharts
+                     width="500"
+                     height="400"
+                     type="msline"
+                     chart="{{vm.graphNonWorkDays.attrs}}"
+                     categories="{{vm.graphNonWorkDays.categories}}"
+                     dataset="{{vm.graphNonWorkDays.dataset}}">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pull-right" style="width:400px;padding-top:50px;">
+        <div class="clearfix">
+            <div class="pull-left">
+                <div style="width:200px;">{{vm.savingPlan.plannedComputers}}<br />Assigned Computers</div>
+                <div style="width:200px;">{{vm.savingPlan.actualComputers}}<br />Actual Reporting</div>
+            </div>
+            <div class="pull-right">
+                <div style="width:200px;">{{vm.savingPlan.plannedEfficiency}}<br />Projected Efficiency</div>
+                <div style="width:200px;">{{vm.savingPlan.acutalEfficiency}}<br />Actual Reported Efficiency</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('powerPlug', ['ngCookies', 'ngMaterial', 'ui.router', 'common.services'])
+        .module('powerPlug', ['ngCookies', 'ngMaterial', 'ng-fusioncharts', 'ui.router', 'ui.bootstrap', 'common.services'])
         .config(configRoute)
         .config(configExceptionHandler)
         .config(configDatePicker)
@@ -62,15 +62,33 @@
             })
             .state('savingPlans', {
                 url: "/savingPlans",
-                controller: 'SavingPlansCtrl',
-                templateUrl: 'views/powerplan/savingPlans.html',
-                controllerAs: 'vm'
+                views: {
+                    '': {
+                        controller: 'SavingPlansCtrl',
+                        templateUrl: 'views/powerplan/savingPlans.html',
+                        controllerAs: 'vm'
+                    }                   
+                }
+                
             })
             .state('savingPlanEditor', {
                 url: "/savingPlanEditor/:policyId",
-                controller: 'SavingPlanEditorCtrl',
-                templateUrl: 'views/powerplan/savingPlanEditor.html',
-                controllerAs: 'vm'
+                views: {
+                    '': {
+                        templateUrl: 'views/powerplan/savingPlanEditor.html',
+                        controller: 'SavingPlanEditorCtrl',
+                        controllerAs: 'vm'
+                    },
+                    'overview@savingPlanEditor': {
+                        templateUrl: 'views/powerplan/savingPlanOverview.html'
+                    },
+                    'events@savingPlanEditor': {
+                        templateUrl: 'views/powerplan/savingPlanEvents.html'
+                    },
+                    'computers@savingPlanEditor': {
+                        templateUrl: 'views/powerplan/savingPlanComputers.html'
+                    },
+                }
             })
             .state('computerGroups', {
                 url: "/",
