@@ -289,6 +289,10 @@
             }
         ];
 
+        vm.saveChanges = function () {
+            vm.savingPlan.$update();
+        }
+
         vm.showEventScripts = function (eventType) {            
             vm.currentEventScripts = [];            
             if (vm.savingPlan.events) {                
