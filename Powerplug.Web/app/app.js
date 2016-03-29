@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('powerPlug', ['ngCookies', 'ngMaterial', 'ng-fusioncharts', 'ui.router', 'ui.bootstrap', 'common.services'])
+        .module('powerPlug', ['ngCookies', 'ngMaterial', 'ng-fusioncharts', 'ui.router', 'ui.bootstrap', 'textAngular', 'common.services'])
         .config(configRoute)
         .config(configExceptionHandler)
         .config(configDatePicker)
@@ -88,6 +88,15 @@
                     'computers@savingPlanEditor': {
                         templateUrl: 'views/powerplan/savingPlanComputers.html'
                     },
+                    'settings@savingPlanEditor': {
+                        templateUrl: 'views/powerplan/savingPlanSettings.html'
+                    },
+                    'permissions@savingPlanEditor': {
+                        templateUrl: 'views/powerplan/savingPlanPermissions.html'
+                    },
+                    'description@savingPlanEditor': {
+                        templateUrl: 'views/powerplan/savingPlanDescription.html'
+                    }
                 }
             })
             .state('computerGroups', {

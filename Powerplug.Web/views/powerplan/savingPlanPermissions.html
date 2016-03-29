@@ -1,0 +1,19 @@
+﻿<h3>Permissions</h3>
+<div class="panel-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Group / User Name</td>
+                <td>View</td>
+                <td>Edit</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="permission in vm.savingPlan.permissions">
+                <td>{{ permission.permObjDesc}}</td>
+                <td>{{ permission.viewPerm}}</td>
+                <td>{{ permission.editPerm}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
