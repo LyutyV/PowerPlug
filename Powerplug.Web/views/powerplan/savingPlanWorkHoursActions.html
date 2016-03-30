@@ -5,52 +5,52 @@
             <div class="clearfix">
                 <div class="pull-left">
                     Turn off the display 
-                    <select>
-                        <option value="1">1 minute</option>
-                        <option value="2">2 minutes</option>
-                        <option value="3">3 minutes</option>
-                        <option value="5">5 minutes</option>
-                        <option value="10">10 minutes</option>
-                        <option value="15">15 minutes</option>
-                        <option value="20">20 minutes</option>
-                        <option value="25">25 minutes</option>
-                        <option value="30">30 minutes</option>
-                        <option value="45">45 minutes</option>
-                        <option value="60">1 hour</option>
-                        <option value="120">2 hours</option>
-                        <option value="180">3 hours</option>
-                        <option value="240">4 hours</option>
-                        <option value="300">5 hours</option>
-                        <option value="0">Never</option>
+                    <select ng-model="vm.savingPlan.savings.work.displalyMinutes">
+                        <option value="1" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 1">1 minute</option>
+                        <option value="2" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 2">2 minutes</option>
+                        <option value="3" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 3">3 minutes</option>
+                        <option value="5" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 5">5 minutes</option>
+                        <option value="10" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 10">10 minutes</option>
+                        <option value="15" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 15">15 minutes</option>
+                        <option value="20" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 20">20 minutes</option>
+                        <option value="25" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 25">25 minutes</option>
+                        <option value="30" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 30">30 minutes</option>
+                        <option value="45" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 45">45 minutes</option>
+                        <option value="60" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 60">1 hour</option>
+                        <option value="120" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 120">2 hours</option>
+                        <option value="180" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 180">3 hours</option>
+                        <option value="240" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 240">4 hours</option>
+                        <option value="300" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 300">5 hours</option>
+                        <option value="0" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 0">Never</option>
                     </select>
                 </div>
                 <div class="pull-left" style="padding-left:50px;">
                     Perform
-                    <select>
-                        <option value="1">1 minute</option>
-                        <option value="2">2 minutes</option>
-                        <option value="3">3 minutes</option>
-                        <option value="5">5 minutes</option>
-                        <option value="10">10 minutes</option>
-                        <option value="15">15 minutes</option>
-                        <option value="20">20 minutes</option>
-                        <option value="25">25 minutes</option>
-                        <option value="30">30 minutes</option>
-                        <option value="45">45 minutes</option>
-                        <option value="60">1 hour</option>
-                        <option value="120">2 hours</option>
-                        <option value="180">3 hours</option>
-                        <option value="240">4 hours</option>
-                        <option value="300">5 hours</option>
-                        <option value="0">Never</option>
+                    <select ng-model="vm.savingPlan.savings.work.computerMinutes">
+                        <option value="1" ng-selected="vm.savingPlan.savings.work.computerMinutes == 1">1 minute</option>
+                        <option value="2" ng-selected="vm.savingPlan.savings.work.computerMinutes == 2">2 minutes</option>
+                        <option value="3" ng-selected="vm.savingPlan.savings.work.computerMinutes == 3">3 minutes</option>
+                        <option value="5" ng-selected="vm.savingPlan.savings.work.computerMinutes == 5">5 minutes</option>
+                        <option value="10" ng-selected="vm.savingPlan.savings.work.computerMinutes == 10">10 minutes</option>
+                        <option value="15" ng-selected="vm.savingPlan.savings.work.computerMinutes == 15">15 minutes</option>
+                        <option value="20" ng-selected="vm.savingPlan.savings.work.computerMinutes == 20">20 minutes</option>
+                        <option value="25" ng-selected="vm.savingPlan.savings.work.computerMinutes == 25">25 minutes</option>
+                        <option value="30" ng-selected="vm.savingPlan.savings.work.computerMinutes == 30">30 minutes</option>
+                        <option value="45" ng-selected="vm.savingPlan.savings.work.computerMinutes == 45">45 minutes</option>
+                        <option value="60" ng-selected="vm.savingPlan.savings.work.computerMinutes == 60">1 hour</option>
+                        <option value="120" ng-selected="vm.savingPlan.savings.work.computerMinutes == 120">2 hours</option>
+                        <option value="180" ng-selected="vm.savingPlan.savings.work.computerMinutes == 180">3 hours</option>
+                        <option value="240" ng-selected="vm.savingPlan.savings.work.computerMinutes == 240">4 hours</option>
+                        <option value="300" ng-selected="vm.savingPlan.savings.work.computerMinutes == 300">5 hours</option>
+                        <option value="0" ng-selected="vm.savingPlan.savings.work.computerMinutes == 0">Never</option>
                     </select>
                 </div>
                 <div class="pull-left" style="padding-left:50px;">
                     Computer power saving
-                    <select>
-                        <option value="Sleep">Sleep</option>
-                        <option value="Hibernate">Hibernate</option>
-                        <option value="Shutdown">Shut down</option>
+                    <select ng-model="vm.savingPlan.savings.work.perform">
+                        <option value="Sleep" ng-selected="vm.savingPlan.savings.work.perform == 'Sleep'">Sleep</option>
+                        <option value="Hibernate" ng-selected="vm.savingPlan.savings.work.perform == 'Hibernate'">Hibernate</option>
+                        <option value="Shutdown" ng-selected="vm.savingPlan.savings.work.perform == 'Shutdown'">Shut down</option>
                     </select>
                 </div>
             </div> 
@@ -120,52 +120,52 @@
             <div class="clearfix">
                 <div class="pull-left">
                     Turn off the display
-                    <select>
-                        <option value="1">1 minute</option>
-                        <option value="2">2 minutes</option>
-                        <option value="3">3 minutes</option>
-                        <option value="5">5 minutes</option>
-                        <option value="10">10 minutes</option>
-                        <option value="15">15 minutes</option>
-                        <option value="20">20 minutes</option>
-                        <option value="25">25 minutes</option>
-                        <option value="30">30 minutes</option>
-                        <option value="45">45 minutes</option>
-                        <option value="60">1 hour</option>
-                        <option value="120">2 hours</option>
-                        <option value="180">3 hours</option>
-                        <option value="240">4 hours</option>
-                        <option value="300">5 hours</option>
-                        <option value="0">Never</option>
+                    <select ng-model="vm.savingPlan.savings.nonWork.displalyMinutes">
+                        <option value="1" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 1">1 minute</option>
+                        <option value="2" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 2">2 minutes</option>
+                        <option value="3" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 3">3 minutes</option>
+                        <option value="5" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 5">5 minutes</option>
+                        <option value="10" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 10">10 minutes</option>
+                        <option value="15" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 15">15 minutes</option>
+                        <option value="20" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 20">20 minutes</option>
+                        <option value="25" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 25">25 minutes</option>
+                        <option value="30" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 30">30 minutes</option>
+                        <option value="45" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 45">45 minutes</option>
+                        <option value="60" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 60">1 hour</option>
+                        <option value="120" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 120">2 hours</option>
+                        <option value="180" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 180">3 hours</option>
+                        <option value="240" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 240">4 hours</option>
+                        <option value="300" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 300">5 hours</option>
+                        <option value="0" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 0">Never</option>
                     </select>
                 </div>
                 <div class="pull-left" style="padding-left:50px;">
                     Perform
-                    <select>
-                        <option value="1">1 minute</option>
-                        <option value="2">2 minutes</option>
-                        <option value="3">3 minutes</option>
-                        <option value="5">5 minutes</option>
-                        <option value="10">10 minutes</option>
-                        <option value="15">15 minutes</option>
-                        <option value="20">20 minutes</option>
-                        <option value="25">25 minutes</option>
-                        <option value="30">30 minutes</option>
-                        <option value="45">45 minutes</option>
-                        <option value="60">1 hour</option>
-                        <option value="120">2 hours</option>
-                        <option value="180">3 hours</option>
-                        <option value="240">4 hours</option>
-                        <option value="300">5 hours</option>
-                        <option value="0">Never</option>
+                    <select ng-model="vm.savingPlan.savings.nonWork.computerMinutes">
+                        <option value="1" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 1">1 minute</option>
+                        <option value="2" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 2">2 minutes</option>
+                        <option value="3" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 3">3 minutes</option>
+                        <option value="5" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 5">5 minutes</option>
+                        <option value="10" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 10">10 minutes</option>
+                        <option value="15" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 15">15 minutes</option>
+                        <option value="20" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 20">20 minutes</option>
+                        <option value="25" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 25">25 minutes</option>
+                        <option value="30" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 30">30 minutes</option>
+                        <option value="45" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 45">45 minutes</option>
+                        <option value="60" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 60">1 hour</option>
+                        <option value="120" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 120">2 hours</option>
+                        <option value="180" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 180">3 hours</option>
+                        <option value="240" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 240">4 hours</option>
+                        <option value="300" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 300">5 hours</option>
+                        <option value="0" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 0">Never</option>
                     </select>
                 </div>
                 <div class="pull-left" style="padding-left:50px;">
                     Computer power saving
-                    <select>
-                        <option value="Sleep">Sleep</option>
-                        <option value="Hibernate">Hibernate</option>
-                        <option value="Shutdown">Shut down</option>
+                    <select ng-model="vm.savingPlan.savings.nonWork.perform">
+                        <option value="Sleep" ng-selected="vm.savingPlan.savings.nonWork.perform == 'Sleep'">Sleep</option>
+                        <option value="Hibernate" ng-selected="vm.savingPlan.savings.nonWork.perform == 'Hibernate'">Hibernate</option>
+                        <option value="Shutdown" ng-selected="vm.savingPlan.savings.nonWork.perform == 'Shutdown'">Shut down</option>
                     </select>
                 </div>
             </div>

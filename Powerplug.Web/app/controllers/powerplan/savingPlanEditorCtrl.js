@@ -18,8 +18,9 @@
 
             vm.currentEventScripts = [];
             console.log(data);
-        }, function (error) {            
-            if (error.status === 401 && error.status === -1)
+        }, function (error) {
+            console.log(error)
+            if (error.status === 401 || error.status === -1)
             {
                 $state.go('login');
             }
