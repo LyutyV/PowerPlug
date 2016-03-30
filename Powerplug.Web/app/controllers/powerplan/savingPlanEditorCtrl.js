@@ -298,7 +298,7 @@
             if (vm.savingPlan.events) {                
                 angular.forEach(vm.savingPlan.events, function (value, key) {
                     if (value.eventType === eventType) {
-                        vm.currentEventScripts.push(value);
+                        vm.currentEventScripts = value.scripts;
                     }                    
                 });
             }

@@ -3,3 +3,10 @@
   .tab.tab-active {
     color: blue; }
 
+.uibTabSet ul {
+  float: left;
+  padding-right: 50px; }
+
+.uibTabSet .tab-content {
+  float: left; }
+

@@ -82,6 +82,9 @@
                     'overview@savingPlanEditor': {
                         templateUrl: 'views/powerplan/savingPlanOverview.html'
                     },
+                    'workhoursaction@savingPlanEditor': {
+                        templateUrl: 'views/powerplan/savingPlanWorkHoursActions.html'
+                    },
                     'events@savingPlanEditor': {
                         templateUrl: 'views/powerplan/savingPlanEvents.html'
                     },
