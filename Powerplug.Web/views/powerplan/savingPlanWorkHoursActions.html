@@ -57,9 +57,9 @@
             <div style="padding-top:20px;">
                 <uib-tabset active="activePill" vertical="true" type="pills" class="clearfix uibTabSet">
                     <uib-tab index="6" heading="Options" class="xxx">
-                        <div><input type="checkbox" /> Force operation</div>
-                        <div><input type="checkbox" /> Logoff before power saving operation</div>
-                        <div><input type="checkbox" /> Display a message to the user</div>
+                        <div><input type="checkbox" ng-model="vm.savingPlan.savings.work.options.force"/> Force operation</div>
+                        <div><input type="checkbox" ng-model="vm.savingPlan.savings.work.options.logoff"/> Logoff before power saving operation</div>
+                        <div><input type="checkbox" ng-checked="vm.savingPlan.savings.work.options.message"/> Display a message to the user</div>
                     </uib-tab>
                     <uib-tab index="7" heading="Applications">
                         <div class="panel-body">
@@ -71,8 +71,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
+                                    <tr ng-repeat="application in vm.savingPlan.savings.work.options.appMetrics">
+                                        <td>{{application.appName}}</td>
+                                        <td>{{application.counter.toLowerCase() === "cpu" ? "CPU usage > " + application.threshold + " percent" : application.counter.toLowerCase() === "io" ? "IO > " + (application.threshold / 1024) + " KB/Sec" : application.counter}}</td>
                                         <td></td>
                                     </tr>
                                 </tbody>
@@ -85,13 +86,11 @@
                                 <thead>
                                     <tr>
                                         <td>Computer Name</td>
-                                        <td>Type</td>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
+                                    <tr ng-repeat="computer in vm.savingPlan.savings.work.options.computersNotRun">
+                                        <td>{{computer.name}}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -99,16 +98,16 @@
                     </uib-tab>
                     <uib-tab index="9" heading="Performance Metrics">
                         <div>
-                            <input type="checkbox" /> CPU utilization is above 
-                            <input type="text" /> Percent
+                            <input type="checkbox" ng-checked="vm.savingPlan.savings.work.options.computerMetricsConverted.Cpu" /> CPU utilization is above
+                            <input type="text" value="{{vm.savingPlan.savings.work.options.computerMetricsConverted.Cpu.threshold}}" /> Percent
                         </div>
                         <div>
-                            <input type="checkbox" /> Disk I/O operations are above
-                            <input type="text" /> KB/Second
+                            <input type="checkbox" ng-checked="vm.savingPlan.savings.work.options.computerMetricsConverted.Io" /> Disk I/O operations are above
+                            <input type="text" value="{{vm.savingPlan.savings.work.options.computerMetricsConverted.Io ? vm.savingPlan.savings.work.options.computerMetricsConverted.Io.threshold / 1024 : ''}}" /> KB/Second
                         </div>
                         <div>
-                            <input type="checkbox" /> Network I/O operations are above
-                            <input type="text" /> KB/Second
+                            <input type="checkbox" ng-checked="vm.savingPlan.savings.work.options.computerMetricsConverted.Network" /> Network I/O operations are above
+                            <input type="text" value="{{vm.savingPlan.savings.work.options.computerMetricsConverted.Network ? vm.savingPlan.savings.work.options.computerMetricsConverted.Network.threshold / 1024 : ''}}" /> KB/Second
                         </div>
                     </uib-tab>
                 </uib-tabset>
@@ -172,9 +171,9 @@
             <div style="padding-top:20px;">
                 <uib-tabset active="activePill2" vertical="true" type="pills" class="clearfix uibTabSet">
                     <uib-tab index="2" heading="Options" class="xxx">
-                        <div><input type="checkbox" /> Force operation</div>
-                        <div><input type="checkbox" /> Logoff before power saving operation</div>
-                        <div><input type="checkbox" /> Display a message to the user</div>
+                        <div><input type="checkbox" ng-model="vm.savingPlan.savings.nonWork.options.force" /> Force operation</div>
+                        <div><input type="checkbox" ng-model="vm.savingPlan.savings.nonWork.options.logoff" /> Logoff before power saving operation</div>
+                        <div><input type="checkbox" ng-checked="vm.savingPlan.savings.nonWork.options.message" /> Display a message to the user</div>
                     </uib-tab>
                     <uib-tab index="3" heading="Applications">
                         <div class="panel-body">
@@ -186,8 +185,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
+                                    <tr ng-repeat="application in vm.savingPlan.savings.nonWork.options.appMetrics">
+                                        <td>{{application.appName}}</td>
+                                        <td>{{application.counter.toLowerCase() === "cpu" ? "CPU usage > " + application.threshold + " percent" : application.counter.toLowerCase() === "io" ? "IO > " + (application.threshold / 1024) + " KB/Sec" : application.counter}}</td>
                                         <td></td>
                                     </tr>
                                 </tbody>
@@ -200,13 +200,11 @@
                                 <thead>
                                     <tr>
                                         <td>Computer Name</td>
-                                        <td>Type</td>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
+                                    <tr ng-repeat="computer in vm.savingPlan.savings.nonWork.options.computersNotRun">
+                                        <td>{{computer.name}}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -214,20 +212,20 @@
                     </uib-tab>
                     <uib-tab index="5" heading="Performance Metrics">
                         <div>
-                            <input type="checkbox" /> CPU utilization is above
-                            <input type="text" /> Percent
+                            <input type="checkbox" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Cpu" /> CPU utilization is above
+                            <input type="text" value="{{vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Cpu.threshold}}" /> Percent
                         </div>
                         <div>
-                            <input type="checkbox" /> Disk I/O operations are above
-                            <input type="text" /> KB/Second
+                            <input type="checkbox" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Io" /> Disk I/O operations are above
+                            <input type="text" value="{{vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Io ? vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Io.threshold / 1024 : ''}}" /> KB/Second
                         </div>
                         <div>
-                            <input type="checkbox" /> Network I/O operations are above
-                            <input type="text" /> KB/Second
+                            <input type="checkbox" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Network" /> Network I/O operations are above
+                            <input type="text" value="{{vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Network ? vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Network.threshold / 1024 : ''}}" /> KB/Second
                         </div>
                     </uib-tab>
                 </uib-tabset>
-            </div>
+            </div> 
         </div>
     </uib-tab>
 </uib-tabset>

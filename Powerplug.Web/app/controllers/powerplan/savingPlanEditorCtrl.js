@@ -16,8 +16,18 @@
             vm.savingPlan.validFrom = new Date(vm.savingPlan.validFrom);
             vm.savingPlan.validTo = new Date(vm.savingPlan.validTo);
 
+            vm.savingPlan.savings.work.options.computerMetricsConverted = {};
+            vm.savingPlan.savings.nonWork.options.computerMetricsConverted = {};
+            angular.forEach(vm.savingPlan.savings.work.options.computerMetrics, function (value, key) {
+                vm.savingPlan.savings.work.options.computerMetricsConverted[value.counter] = value;
+            });
+
+            angular.forEach(vm.savingPlan.savings.nonWork.options.computerMetrics, function (value, key) {
+                vm.savingPlan.savings.nonWork.options.computerMetricsConverted[value.counter] = value;
+            });
+
             vm.currentEventScripts = [];
-            console.log(data);
+            console.log(vm.savingPlan);
         }, function (error) {
             console.log(error)
             if (error.status === 401 || error.status === -1)
