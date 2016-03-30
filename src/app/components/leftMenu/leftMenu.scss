@@ -1,0 +1,21 @@
+nav {
+  width: 300px;
+  background: #4b4a48;
+  .logo {
+    background: url('../assets/images/logo.png') no-repeat center;
+    height: 50px;
+  }
+  ul {
+    li {
+      list-style: none;
+      color: grey;
+      cursor: pointer;
+      &:hover {
+        color: #ffffff;
+      }
+      &:before {
+        content: '\f015';
+      }
+    }
+  }
+}
