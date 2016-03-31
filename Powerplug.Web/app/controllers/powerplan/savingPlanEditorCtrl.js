@@ -11,21 +11,81 @@
     function SavingPlanEditorCtrl($state, $stateParams, SavingPlansResource) {
         var vm = this;
         var policyId = $stateParams.policyId
-        SavingPlansResource.get({ policyId: policyId }, function (data) {
+        SavingPlansResource.get({ policyId: policyId }, function (data) {            
             vm.savingPlan = data;
+
+            //Overview
             vm.savingPlan.validFrom = new Date(vm.savingPlan.validFrom);
             vm.savingPlan.validTo = new Date(vm.savingPlan.validTo);
 
-            vm.savingPlan.savings.work.options.computerMetricsConverted = {};
-            vm.savingPlan.savings.nonWork.options.computerMetricsConverted = {};
-            angular.forEach(vm.savingPlan.savings.work.options.computerMetrics, function (value, key) {
-                vm.savingPlan.savings.work.options.computerMetricsConverted[value.counter] = value;
+            //Actions
+            
+            var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];            
+            angular.forEach(vm.savingPlan.actions, function (value, key) {
+                if (value.scheduleType === 'DayOfWeek' || value.scheduleType === 'DayOfMonth') {
+                    var days;
+                    if (value.scheduleType === 'DayOfWeek') {
+                        days = value.daysOfWeek.toString(2);
+                    }
+                    else {
+                        days = value.daysOfMonth.toString(2);
+                    }
+                    var numbers = [];
+                    days = days.split("").reverse().join("");
+                    for (var i = 0; i < days.length; i++) {
+                        if (days[i] === '1') {
+                            numbers.push(i);
+                        }
+                    }
+                    value.daysConverted = numbers;
+                }
+                
+                if (value.scheduleType === 'DayOfWeek') {
+                    if (numbers.length < 7) {
+                        value.scheduleText = 'Every ';
+                        var daysList = [];
+                        angular.forEach(numbers, function (valueDays, keyDays) {
+                            daysList.push(weekDays[valueDays]);
+                        });
+                        value.scheduleText += daysList.join(', ');
+                    }
+                    else {
+                        value.scheduleText = 'Every day';
+                    }
+                }
+                else if (value.scheduleType === 'DayOfMonth') {
+                    value.scheduleText = 'On ' + (Number(numbers[0]) + 1) + 'th of each month'
+                }
+                else if (value.scheduleType === 'SpecificDate') {
+                    value.dateConverted = moment(value.specificDate).format('L');
+                    value.scheduleText = 'On ' + value.dateConverted;
+                }
+                if (value.perform === 'Wake') {
+                    value.timeConverted = moment(value.fromTime).format('LT');
+                    value.scheduleText += ' at ' + value.timeConverted;
+                }
+                else if (value.perform === 'Restart') {
+                    value.formTimeConverted = moment(value.fromTime).format('LT');
+                    value.toTimeConverted = moment(value.toTime).format('LT');
+                    value.scheduleText += ' between ' + value.formTimeConverted + ' and ' + value.toTimeConverted;
+                }
             });
 
-            angular.forEach(vm.savingPlan.savings.nonWork.options.computerMetrics, function (value, key) {
-                vm.savingPlan.savings.nonWork.options.computerMetricsConverted[value.counter] = value;
-            });
+            //Saving
+            if (vm.savingPlan.savings.work.options) {
+                vm.savingPlan.savings.work.options.computerMetricsConverted = {};
+                angular.forEach(vm.savingPlan.savings.work.options.computerMetrics, function (value, key) {
+                    vm.savingPlan.savings.work.options.computerMetricsConverted[value.counter] = value;
+                });
+            }
+            if (vm.savingPlan.savings.nonWork.options) {
+                vm.savingPlan.savings.nonWork.options.computerMetricsConverted = {};
+                angular.forEach(vm.savingPlan.savings.nonWork.options.computerMetrics, function (value, key) {
+                    vm.savingPlan.savings.nonWork.options.computerMetricsConverted[value.counter] = value;
+                });
+            }
 
+            //Events
             vm.currentEventScripts = [];
             console.log(vm.savingPlan);
         }, function (error) {
@@ -58,7 +118,6 @@
             "palettecolors": "#f8bd19,#008ee4,#33bdda,#e44a00,#6baa01,#583e78",
             "showborder": "0"
         };
-
         vm.graphWorkDays.categories = [
             {
                 "category": [
@@ -86,7 +145,6 @@
                 ]
             }
         ];
-
         vm.graphWorkDays.dataset = [
             {
                 "seriesname": "Down Time",
@@ -190,7 +248,6 @@
             "palettecolors": "#f8bd19,#008ee4,#33bdda,#e44a00,#6baa01,#583e78",
             "showborder": "0"
         };
-
         vm.graphNonWorkDays.categories = [
             {
                 "category": [
@@ -218,7 +275,6 @@
                 ]
             }
         ];
-
         vm.graphNonWorkDays.dataset = [
             {
                 "seriesname": "Down Time",
@@ -300,6 +356,7 @@
             }
         ];
 
+        //Html Elemnts Events
         vm.saveChanges = function () {
             vm.savingPlan.$update();
         }
