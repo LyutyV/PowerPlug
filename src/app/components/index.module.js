@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('powerPlug', ['ui.router', 'ui.bootstrap']);
+    .module('powerPlug', ['ui.router']);
 
 })();

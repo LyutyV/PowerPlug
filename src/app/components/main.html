@@ -1,5 +1,5 @@
-<nav ng-include="'app/components/leftMenu/leftMenu.html'"></nav>
+<nav ng-include="'app/components/leftMenu/leftMenu.html'" ng-controller="LeftMenuController as vm"></nav>
 <div class="content-wrapper">
-  <header ng-include="'app/components/header/header.html'"></header>
+  <header ng-include="'app/components/header/header.html'" ng-controller="HeaderController as vm"></header>
   <div class="content" ui-view></div>
 </div>

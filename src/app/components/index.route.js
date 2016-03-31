@@ -9,7 +9,7 @@
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('app', {
-        url: '/',
+        url: '/app',
         templateUrl: 'app/components/main.html'
       });
 

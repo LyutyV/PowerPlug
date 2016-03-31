@@ -2,4 +2,11 @@ header {
   height: 100px;
   background: #ffffff;
   border-bottom: 1px solid gray;
+  line-height: 100px;
+  div:first-child {
+    float: left;
+  }
+  div:last-child {
+    float: right;
+  }
 }
