@@ -1,12 +1,12 @@
 header {
   height: 100px;
   background: #ffffff;
-  border-bottom: 1px solid gray;
+  border-bottom: 3px solid #e7e7e7;
   line-height: 100px;
-  div:first-child {
+  > div:first-child {
     float: left;
   }
-  div:last-child {
+  > div:last-child {
     float: right;
   }
 }

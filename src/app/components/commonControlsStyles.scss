@@ -1,7 +1,9 @@
-.addButton {
-  // & :before {
-  //   font-family: "FontAwesome";
-  //   content: "\f055";
-  // }
-  color: red;
+$greenBorderTop : 3px solid #8bc83d;
+
+.buttonTypeOne {
+  &:before {
+    font-family: 'FontAwesome';
+    content: '\f055';
+    color: #8ecc38;
+  }
 }

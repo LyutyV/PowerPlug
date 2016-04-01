@@ -1,9 +1,36 @@
 .savingPlans {
-  width: 100%;
-  table {
-    width: 100%;
+  > span.buttonTypeOne {
+    float: right;
   }
-  .addButton {
-    color: red;
+  > div#organizationName {
+    > .customTable {
+      width: 100%;
+      border-top: $greenBorderTop;
+      display: flex;
+      flex-direction: column;
+      > .customTableHead {
+        display: flex;
+        flex-direction: row;
+        height: 70px;
+        background-color: #f8f8f8;
+        border-top: 5px solid #ffffff;
+        border-bottom: 5px solid grey;
+      }
+      > .customTableBody {
+        display: flex;
+        flex-direction: column;
+        > .customTableRow {
+          display: flex;
+          flex-direction: row;
+          > div {
+            text-align: left;
+            flex-grow: 1;
+            &:last-child {
+              color: #8ec939;
+            }
+          }
+        }
+      }
+    }
   }
 }

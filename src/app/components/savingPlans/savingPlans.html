@@ -1,28 +1,72 @@
 <div class="savingPlans">
   <i class="fa fa-chevron-down" data-toggle="collapse" data-target="#organizationName" aria-expanded="true"></i>
   <span>1. Organization Name ({{vm.menuTableItems.length}} Plans)</span>
-  <span class="addButton">Add Plan</span>
+  <span class="buttonTypeOne">Add Plan</span>
   <div class="collapse in" id="organizationName">
-    <table>
-      <thead>
-        <tr>
-          <th>Plan Details</th>
-          <th>Projected Efficiency</th>
-          <th>Actual Reported Efficiency</th>
-          <th>Assigned Computers</th>
-          <th>Actual Reporting</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="row in vm.menuTableItems">
-          <!-- |orderBy:xxx"> -->
-          <th>1.{{$index + 1}} {{row.PlainDetails.Saving}} Saving Owner {{row.PlainDetails.Owner}}</th>
-          <td color-letter="{{row.ProgectedEfficiency}}"></td>
-          <td color-letter="{{row.ActualReportedEfficiency}}"></td>
-          <td>{{row.AssignedComputers}}</td>
-          <td>{{row.ActualReporting}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="customTable">
+      <div class="customTableHead">
+        <div> <img src="assets/tableIcon1.png" alt=""> Plan
+          <br>Details</div>
+        <div>Projected
+          <br>Efficiency</div>
+        <div>Actual&nbsp;Reported
+          <br>Efficiency</div>
+        <div>Assigned
+          <br>Computers</div>
+        <div>Actual
+          <br>Reporting</div>
+      </div>
+      <div class="customTableBody">
+        <div class="customTableRow" ng-repeat="row in vm.menuTableItems">
+          <div>
+            <span>1.{{$index + 1}}</span>
+            <span>{{row.PlainDetails.Saving}} Saving</span>
+            <br>
+            <i class="fa fa-user"></i>
+            <span>Owner</span>
+            <span>{{row.PlainDetails.Owner}}</span>
+          </div>
+          <div color-letter="{{row.ProgectedEfficiency}}"></div>
+          <div color-letter="{{row.ActualReportedEfficiency}}"></div>
+          <div>{{row.AssignedComputers}}</div>
+          <div>{{row.ActualReporting}}</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Plan
+        <br>Details</th>
+      <th>Projected
+        <br>Efficiency</th>
+      <th>Actual&nbsp;Reported
+        <br>Efficiency</th>
+      <th>Assigned
+        <br>Computers</th>
+      <th>Actual
+        <br>Reporting</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="row in vm.menuTableItems">
+      <!-- |orderBy:xxx"> -->
+<!--  <td>
+        <span>1.{{$index + 1}}</span>
+        <span>{{row.PlainDetails.Saving}} Saving</span>
+        <br>
+        <i class="fa fa-user"></i>
+        <span>Owner</span>
+        <span>{{row.PlainDetails.Owner}}</span>
+      </td>
+      <td color-letter="{{row.ProgectedEfficiency}}"></td>
+      <td color-letter="{{row.ActualReportedEfficiency}}"></td>
+      <td>{{row.AssignedComputers}}</td>
+      <td>{{row.ActualReporting}}</td>
+    </tr>
+  </tbody>
+</table> -->

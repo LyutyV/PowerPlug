@@ -1,18 +1,15 @@
 $fa-font-path: "../../bower_components/font-awesome/fonts";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
-
-
 nav {
-  width: 100px;
+  min-width: 300px;
   background: #4b4a48;
-
-  .logo {
+  > .logo {
     background: url('../assets/images/logo.png') no-repeat center;
     height: 50px;
   }
-  ul {
+  > ul {
     padding-left: 40px;
-    li {
+    > li {
       list-style: none;
       color: #b4b3b1;
       cursor: pointer;
@@ -20,7 +17,7 @@ nav {
       &:hover {
         color: #ffffff;
       }
-      i {
+      > i {
         width: 30px;
         color: #90c63d;
       }
