@@ -9,11 +9,11 @@
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('app', {
-        url: '/app',
+        abstract: true,
         templateUrl: 'app/components/main.html'
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('saving_plans');
   }
 
 })();

@@ -1,0 +1,28 @@
+[{
+  "PlainDetails": {
+    "Saving": "Normal",
+    "Owner": "Omer Hagay"
+  },
+  "ProgectedEfficiency": "B",
+  "ActualReportedEfficiency": "C",
+  "AssignedComputers": 154,
+  "ActualReporting": 150
+}, {
+  "PlainDetails": {
+    "Saving": "Normal",
+    "Owner": "Omer Hagay"
+  },
+  "ProgectedEfficiency": "A",
+  "ActualReportedEfficiency": "D",
+  "AssignedComputers": 12,
+  "ActualReporting": 11
+}, {
+  "PlainDetails": {
+    "Saving": "Normal",
+    "Owner": "Omer Hagay"
+  },
+  "ProgectedEfficiency": "E",
+  "ActualReportedEfficiency": "F",
+  "AssignedComputers": 297,
+  "ActualReporting": 290
+}]

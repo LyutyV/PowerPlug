@@ -1,1 +1,28 @@
-123-987
+<div class="savingPlans">
+  <i class="fa fa-chevron-down" data-toggle="collapse" data-target="#organizationName" aria-expanded="true"></i>
+  <span>1. Organization Name ({{vm.menuTableItems.length}} Plans)</span>
+  <span class="addButton">Add Plan</span>
+  <div class="collapse in" id="organizationName">
+    <table>
+      <thead>
+        <tr>
+          <th>Plan Details</th>
+          <th>Projected Efficiency</th>
+          <th>Actual Reported Efficiency</th>
+          <th>Assigned Computers</th>
+          <th>Actual Reporting</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in vm.menuTableItems">
+          <!-- |orderBy:xxx"> -->
+          <th>1.{{$index + 1}} {{row.PlainDetails.Saving}} Saving Owner {{row.PlainDetails.Owner}}</th>
+          <td color-letter="{{row.ProgectedEfficiency}}"></td>
+          <td color-letter="{{row.ActualReportedEfficiency}}"></td>
+          <td>{{row.AssignedComputers}}</td>
+          <td>{{row.ActualReporting}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
