@@ -2,8 +2,8 @@
 <div class="clearfix" style="padding-bottom:30px;">
     <div id="calendar" style="max-width: 1050px;margin: 0 auto;float:left;">
     </div>
-    <div style="float:left;padding-left:40px;height:500px;overflow-y:scroll;">
-        <h4>Scheduled Actions</h4>
+    <div style="float:left;padding-left:40px;height:500px;overflow-y:scroll;margin-top:37px;">
+        <h4 style="margin-top:0px;">Scheduled Actions</h4>
         <div ng-repeat="action in vm.savingPlan.actions" style="padding-bottom:20px;">
             <div>{{action.perform === 'Wake' ? 'Scheduled Wake Up' : 'System Restart'}}</div>
             <div>{{action.scheduleText}}</div>
@@ -245,60 +245,3 @@
         </div>
     </uib-tab>
 </uib-tabset>
-<script>
-        $(document).ready(function () {
-            $('#calendar').fullCalendar({
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'                    
-                },
-                height: 500,
-                defaultDate: '2014-06-12',
-                defaultView: 'agendaWeek',
-                editable: true,
-                events: [
-                    {
-                        title: 'All Day Event',
-                        start: '2014-06-01'
-                    },
-                    {
-                        title: 'Long Event',
-                        start: '2014-06-07',
-                        end: '2014-06-10'
-                    },
-                    {
-                        id: 999,
-                        title: 'Repeating Event',
-                        start: '2014-06-09T16:00:00'
-                    },
-                    {
-                        id: 999,
-                        title: 'Repeating Event',
-                        start: '2014-06-16T16:00:00'
-                    },
-                    {
-                        title: 'Meeting',
-                        start: '2014-06-12T10:30:00',
-                        end: '2014-06-12T12:30:00'
-                    },
-                    {
-                        title: 'Lunch',
-                        start: '2014-06-12T12:00:00'
-                    },
-                    {
-                        title: 'Birthday Party',
-                        start: '2014-06-13T07:00:00'
-                    },
-                    {
-                        title: 'Click for Google',
-                        url: 'http://google.com/',
-                        start: '2014-06-28'
-                    }
-                ]
-            });
-
-        });
-
-
-</script>

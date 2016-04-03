@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('SavingPlanEditorCtrl',
-                     ['$state', '$stateParams', 'SavingPlansResource', SavingPlanEditorCtrl]);
+                     ['$state', '$stateParams', '$scope', 'SavingPlansResource', SavingPlanEditorCtrl]);
 
 
-    function SavingPlanEditorCtrl($state, $stateParams, SavingPlansResource) {
+    function SavingPlanEditorCtrl($state, $stateParams, $scope, SavingPlansResource) {
         var vm = this;
         var policyId = $stateParams.policyId
         SavingPlansResource.get({ policyId: policyId }, function (data) {            
@@ -18,8 +18,7 @@
             vm.savingPlan.validFrom = new Date(vm.savingPlan.validFrom);
             vm.savingPlan.validTo = new Date(vm.savingPlan.validTo);
 
-            //Actions
-            
+            //Actions            
             var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];            
             angular.forEach(vm.savingPlan.actions, function (value, key) {
                 if (value.scheduleType === 'DayOfWeek' || value.scheduleType === 'DayOfMonth') {
@@ -84,6 +83,57 @@
                     vm.savingPlan.savings.nonWork.options.computerMetricsConverted[value.counter] = value;
                 });
             }
+
+            ///testCalendar();
+            //Work Hours
+            var workHours = [];
+            var time = 0;
+            var active = false;
+            var startTime;
+            var endTime;
+            var currentTime = moment('2012-01-01');
+            angular.forEach(vm.savingPlan.workHours.workTimeMask.split(''), function (value, key) {
+                if (value === '1') {
+                    if (!active) {
+                        active = true;
+                        startTime = currentTime;
+                    }
+                }
+                else {
+                    if (active) {
+                        active = false;
+                        endTime = currentTime;
+                        workHours.push({
+                            start: startTime,
+                            end: endTime
+                        })
+                    }
+                }
+                currentTime = moment(currentTime).add(30, 'minutes');
+            });
+            if (active) {
+                endTime = currentTime;
+                workHours.push({
+                    start: startTime,
+                    end: endTime
+                })
+            }
+
+            var myEl = angular.element(document.querySelector('#calendar'));
+            myEl.fullCalendar({
+                height: 500,
+                defaultDate: '2012-01-01',
+                defaultView: 'agendaWeek',
+                editable: true,
+                events: workHours,
+                allDaySlot: false,                
+                header: {
+                    center: '',
+                    left: '',
+                    right: ''
+                }
+            });
+
 
             //Events
             vm.currentEventScripts = [];
@@ -370,6 +420,6 @@
                     }                    
                 });
             }
-        };
+        };        
     }
 }());
