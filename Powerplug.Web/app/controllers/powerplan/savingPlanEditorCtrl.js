@@ -21,6 +21,7 @@
             //Actions            
             var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];            
             angular.forEach(vm.savingPlan.actions, function (value, key) {
+                value.actionKey = key;
                 if (value.scheduleType === 'DayOfWeek' || value.scheduleType === 'DayOfMonth') {
                     var days;
                     if (value.scheduleType === 'DayOfWeek') {
