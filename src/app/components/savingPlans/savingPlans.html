@@ -1,72 +1,40 @@
 <div class="savingPlans">
-  <i class="fa fa-chevron-down" data-toggle="collapse" data-target="#organizationName" aria-expanded="true"></i>
-  <span>1. Organization Name ({{vm.menuTableItems.length}} Plans)</span>
+  <div class="searchBlock">
+    <input type="text" name="search" placeholder="Search a Group or a Plan" ng-model="vm.query.PlainDetails.Owner" >
+  </div>
+  <span><span>Organization Name</span><span> ({{vm.menuTableItems.length}} Plans)</span></span>
   <span class="buttonTypeOne">Add Plan</span>
   <div class="collapse in" id="organizationName">
     <div class="customTable">
       <div class="customTableHead">
-        <div> <img src="assets/tableIcon1.png" alt=""> Plan
-          <br>Details</div>
-        <div>Projected
-          <br>Efficiency</div>
-        <div>Actual&nbsp;Reported
-          <br>Efficiency</div>
-        <div>Assigned
-          <br>Computers</div>
-        <div>Actual
-          <br>Reporting</div>
-      </div>
-      <div class="customTableBody">
-        <div class="customTableRow" ng-repeat="row in vm.menuTableItems">
-          <div>
-            <span>1.{{$index + 1}}</span>
-            <span>{{row.PlainDetails.Saving}} Saving</span>
-            <br>
-            <i class="fa fa-user"></i>
-            <span>Owner</span>
-            <span>{{row.PlainDetails.Owner}}</span>
-          </div>
-          <div color-letter="{{row.ProgectedEfficiency}}"></div>
-          <div color-letter="{{row.ActualReportedEfficiency}}"></div>
-          <div>{{row.AssignedComputers}}</div>
-          <div>{{row.ActualReporting}}</div>
+        <div ng-click="vm.changeSorting('PlainDetails')">
+          <img src="assets/images/savingPlans/_Group_.png">
+          <span>Plan<br>Details</span>
         </div>
+        <div ng-click="vm.changeSorting('ProgectedEfficiency')">
+          <img src="assets/images/savingPlans/_Group_1.png">
+          <span>Projected<br>Efficiency</span>
+        </div>
+        <div ng-click="vm.changeSorting('ActualReportedEfficiency')">Actual&nbsp;Reported<br>Efficiency</div>
+        <div ng-click="vm.changeSorting('AssignedComputers')">
+          <img src="assets/images/savingPlans/_Group_2.png">
+          <span>Assigned<br>Computers</div></span>
+        <div ng-click="vm.changeSorting('ActualReporting')">Actual<br>Reporting</div>
+      </div>
+      <div class="customTableRow" ng-repeat="row in vm.menuTableItems|orderBy:vm.sort.column:vm.sort.descending|filter:vm.query">
+        <div class="customTableCell">
+          <span>1.{{$index + 1}}</span>
+          <span>{{row.PlainDetails.Saving}} Saving</span>
+          <br>
+          <i class="fa fa-user"></i>
+          <span>Owner</span>
+          <span>{{row.PlainDetails.Owner}}</span>
+        </div>
+        <div color-letter="{{row.ProgectedEfficiency}}"></div>
+        <div color-letter="{{row.ActualReportedEfficiency}}"></div>
+        <div>{{row.AssignedComputers}}</div>
+        <div>{{row.ActualReporting}}</div>
       </div>
     </div>
   </div>
 </div>
-
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Plan
-        <br>Details</th>
-      <th>Projected
-        <br>Efficiency</th>
-      <th>Actual&nbsp;Reported
-        <br>Efficiency</th>
-      <th>Assigned
-        <br>Computers</th>
-      <th>Actual
-        <br>Reporting</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="row in vm.menuTableItems">
-      <!-- |orderBy:xxx"> -->
-<!--  <td>
-        <span>1.{{$index + 1}}</span>
-        <span>{{row.PlainDetails.Saving}} Saving</span>
-        <br>
-        <i class="fa fa-user"></i>
-        <span>Owner</span>
-        <span>{{row.PlainDetails.Owner}}</span>
-      </td>
-      <td color-letter="{{row.ProgectedEfficiency}}"></td>
-      <td color-letter="{{row.ActualReportedEfficiency}}"></td>
-      <td>{{row.AssignedComputers}}</td>
-      <td>{{row.ActualReporting}}</td>
-    </tr>
-  </tbody>
-</table> -->

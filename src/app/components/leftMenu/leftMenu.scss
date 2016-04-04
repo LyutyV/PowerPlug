@@ -4,18 +4,25 @@ nav {
   min-width: 300px;
   background: #4b4a48;
   > .logo {
-    background: url('../assets/images/logo.png') no-repeat center;
-    height: 50px;
+    background: url('../assets/images/leftMenu/PowerPlug.png') no-repeat center;
+    height: 111px;
   }
   > ul {
-    padding-left: 40px;
     > li {
       list-style: none;
       color: #b4b3b1;
       cursor: pointer;
-      line-height: 35px;
+      line-height: 48px;
+      padding-left: 47px;
       &:hover {
         color: #ffffff;
+        background-color: #444141;
+      }
+      &[aria-expanded = true] {
+        color: #ffffff;
+        background-color: #444141;
+        border-top: 1px solid #666666;
+        border-bottom: 1px solid #333333;
       }
       > i {
         width: 30px;

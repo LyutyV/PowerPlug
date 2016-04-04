@@ -8,7 +8,7 @@
       return this;
       function getJSON(onReady, onError, filename) {
 
-        var menuURL = '/app/components/' + filename + '?v=' + (new Date().getTime()); // jumps cache
+        var menuURL = 'app/components/' + filename + '?v=' + (new Date().getTime()); // jumps cache
 
         onError = onError || function() {
           alert('Failure loading menu');
@@ -21,4 +21,4 @@
       }
 
     })
-})()
+})();

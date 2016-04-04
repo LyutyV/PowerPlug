@@ -14,6 +14,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  line-height: normal;
 }
 
 html {
@@ -23,6 +24,7 @@ html {
     height: 100%;
     width: 100%;
     border-top: $greenBorderTop;
+    font-family: Calibri;
     > .main-wrapper {
       display: flex;
       flex-direction: row;
@@ -31,7 +33,7 @@ html {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        padding: 0px 20px;
+        padding: 0px 34px;
         > .content {
           flex-grow: 1;
         }

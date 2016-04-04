@@ -1,9 +1,14 @@
-$greenBorderTop : 3px solid #8bc83d;
+$greenBorderTop : 5px solid #8cc63f;
+@font-face {
+    font-family: 'Calibri';
+    src: url('/assets/fonts/Calibri.ttf') format('truetype');
+}
 
 .buttonTypeOne {
   &:before {
     font-family: 'FontAwesome';
     content: '\f055';
     color: #8ecc38;
+    margin-right: 1px;
   }
 }

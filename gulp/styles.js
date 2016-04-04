@@ -56,19 +56,4 @@ var buildStyles = function() {
     .pipe($.sourcemaps.write())
     .pipe(cssFilter.restore)
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
-
-
-// return gulp.src([
-  //   path.join(conf.paths.src, '/app/index.scss')
-  // ])
-  //   .pipe($.inject(injectFiles, injectOptions))
-  //   .pipe(wiredep(_.extend({}, conf.wiredep)))
-  //   .pipe($.rubySass(sassOptions)).on('error', conf.errorHandler('RubySass'))
-  //   .pipe(cssFilter)
-  //   .pipe($.sourcemaps.init({ loadMaps: true }))
-  //   .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
-  //   .pipe($.sourcemaps.write())
-  //   .pipe(cssFilter.restore)
-  //   .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
-
 };
