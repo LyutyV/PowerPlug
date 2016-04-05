@@ -18,9 +18,9 @@
             };
         })
         .controller('SavingPlanEditorCtrl',
-                     ['$state', '$stateParams', '$scope', '$document', '$mdDialog', '$mdMedia', 'SavingPlansResource', SavingPlanEditorCtrl]);
+                     ['$state', '$stateParams', '$scope', '$animate', '$document', '$mdDialog', '$mdMedia', 'SavingPlansResource', SavingPlanEditorCtrl]);
 
-    function SavingPlanEditorCtrl($state, $stateParams, $scope, $document, $mdDialog, $mdMedia, SavingPlansResource) {
+    function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $mdDialog, $mdMedia, SavingPlansResource) {
         var vm = this;
         var policyId = $stateParams.policyId
         SavingPlansResource.get({ policyId: policyId }, function (data) {
@@ -204,26 +204,33 @@
             };
 
             //modify object
-            if (actionData.scheduleType == 'DayOfWeek' && actionData.daysConverted.length == 7)
-            {
+            if (actionData.scheduleType == 'DayOfWeek' && actionData.daysConverted.length == 7) {
                 actionData.scheduleType == 'EveryDay';
             }
-            $scope.actionData = actionData;
+            vm.actionData = actionData;
 
-            var _pr = 1;
-            $scope.Days = {
-                value:
-                    function (newValue) {
-                        console.log("NEW VALUE IS=====================================", newValue);
+            function dayModel(newValue) {
+                if (arguments.length) {
+                    this._DayBit = newValue;
+                    vm.actionData = vm.actionData | _DayBit;
+                }
+                debugger;
+                return this._DayBit
+            }
 
-                        return arguments.length ? (_pr = newValue) : _pr;
-                    }
-
-
-                    
-            };
-            
+            vm.Sunday = {
+                _DayBit: 1,
+                value: function(newValue){
+                if (arguments.length) {
+                    this._DayBit = newValue;
+            vm.actionData = vm.actionData | _DayBit;
         }
+        debugger;
+        return this._DayBit
+    }
+            }
+        }
+      
         //=================================================EndPopUp=====================================================
 
 
