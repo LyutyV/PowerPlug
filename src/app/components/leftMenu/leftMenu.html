@@ -2,7 +2,7 @@
 
 </div>
 <ul class="left-menu">
-  <li ng-repeat="item in vm.menuItems" ng-init="pIndex = $index" ng-href="{{item.sref}}" data-toggle="collapse" data-target="{{'#submenu' + $index}}" aria-expanded="false">
+  <li ng-repeat="item in vm.menuItems" ng-init="pIndex = $index" ui-sref="app.dashboard" data-toggle="collapse" data-target="{{'#submenu' + $index}}" aria-expanded="false">
     <i class="{{item.icon}}"></i> {{item.text}}
     <ul id="{{'submenu' + $index}}" class="collapse" aria-expanded="false">
       <li ng-repeat="subitem in item.submenu" ng-init="pIndex = $index" ng-href="{{subitem.sref}}">

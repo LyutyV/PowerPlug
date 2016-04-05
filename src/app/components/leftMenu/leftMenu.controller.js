@@ -3,12 +3,12 @@
 
   angular
     .module('powerPlug')
-    .controller('LeftMenuController', function() {
+    .controller('LeftMenuController', function($state) {
       var vm = this;
       //tmp
       vm.menuItems = [{
         "text": "Dashboard",
-        "sref": "#",
+        "sref": "app.dashboard",
         "icon": "fa fa-home",
         "submenu": []
       }, {
