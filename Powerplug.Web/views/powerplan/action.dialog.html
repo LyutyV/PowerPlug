@@ -1,0 +1,66 @@
+﻿<md-dialog aria-label=dataModel.perform  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{actionData.perform}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          X
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2>Using .md-dialog-content class that sets the padding as the spec</h2>
+          <md-dialog aria-label="Mango (Fruit)" ng-cloak>
+              <label>
+                  <input type="radio" name="{{actionData.scheduleType}}" ng-model="actionData.scheduleType" value="EveryDay">
+                  Every Day
+              </label> <br />
+              <label>
+                  <input type="radio" name="{{actionData.scheduleType}}" ng-model="actionData.scheduleType" value="DayOfWeek">
+                  Day of the week
+              </label> 
+              <label>
+                <input type="checkbox"  ng-model="Days.value" ng-true-value="1" ng-false-value="-2"    ng-model-options="{ getterSetter: true }" > Sunday 
+              </label>
+             <!---<label>
+              <label>
+                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="2 & actionData.daysOfWeek" actionData." value="2"> Monday
+              </label>
+              <label>
+                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="4 & actionData.daysOfWeek" actionData." value="4"> Tuesday
+              </label>
+              <label>
+                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="8 & actionData.daysOfWeek" actionData." value="8"> Wednesday
+              </label>
+              <label>
+                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="16 & actionData.daysOfWeek" actionData." value="16"> Thursday
+              </label>
+              <label>
+                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="32 & actionData.daysOfWeek" actionData." value="32"> Friday
+              </label>
+              <label>
+                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="64 & actionData.daysOfWeek" actionData." value="64"> Saturday 
+              </label>-->
+              
+              
+              
+              
+              
+              
+              
+              <br />
+          </md-dialog>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="answer('not useful')">
+        Not Useful
+      </md-button>
+      <md-button ng-click="cancel" style="margin-right:20px;">
+        Useful
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

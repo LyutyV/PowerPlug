@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('SavingPlanEditorCtrl',
-                     ['$state', '$stateParams', '$scope', 'SavingPlansResource', SavingPlanEditorCtrl]);
+                     ['$state', '$stateParams', '$scope','$mdDialog', '$mdMedia', 'SavingPlansResource', SavingPlanEditorCtrl]);
 
 
-    function SavingPlanEditorCtrl($state, $stateParams, $scope, SavingPlansResource) {
+    function SavingPlanEditorCtrl($state, $stateParams, $scope, $mdDialog, $mdMedia, SavingPlansResource) {
         var vm = this;
         var policyId = $stateParams.policyId
         SavingPlansResource.get({ policyId: policyId }, function (data) {            
@@ -146,6 +146,66 @@
                 $state.go('login');
             }
         });
+
+        //==================================================PopUp=======================================================
+        $scope.showAdvanced = function (ev, actionData) {
+            var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
+            $mdDialog.show({
+                templateUrl: 'views/powerplan/action.dialog.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: false,
+                bindToController :true,
+                fullscreen: useFullScreen,
+                locals: { actionData: actionData },
+                controller: DialogController,
+            })
+            .then(function (answer) {
+                $scope.status = 'You said the information was "' + answer + '".';
+                console.log(dataModel);
+            }, function () {
+                $scope.status = 'You cancelled the dialog.';
+            });
+            $scope.$watch(function () {
+                return $mdMedia('xs') || $mdMedia('sm');
+            }, function (wantsFullScreen) {
+                $scope.customFullscreen = (wantsFullScreen === true);
+            });
+        };
+        function DialogController($scope, $mdDialog, actionData) {
+            $scope.hide = function () {
+                $mdDialog.hide();
+            };
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+            $scope.answer = function (answer) {
+                $mdDialog.hide(answer);
+            };
+
+            //modify object
+            if (actionData.scheduleType == 'DayOfWeek' && actionData.daysConverted.length == 7)
+            {
+                actionData.scheduleType == 'EveryDay';
+            }
+            $scope.actionData = actionData;
+
+            var _pr = 1;
+            $scope.Days = {
+                value:
+                    function (newValue) {
+                        console.log("NEW VALUE IS=====================================", newValue);
+
+                        return arguments.length ? (_pr = newValue) : _pr;
+                    }
+
+
+                    
+            };
+            
+        }
+        //=================================================EndPopUp=====================================================
+
 
         vm.graphWorkDays = {};
         vm.graphWorkDays.attrs = {

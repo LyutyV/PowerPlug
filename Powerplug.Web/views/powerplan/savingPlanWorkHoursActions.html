@@ -4,7 +4,7 @@
     </div>
     <div style="float:left;padding-left:40px;height:500px;overflow-y:scroll;margin-top:37px;">
         <h4 style="margin-top:0px;">Scheduled Actions</h4>
-        <div ng-repeat="action in vm.savingPlan.actions" style="padding-bottom:20px;">
+        <div ng-repeat="action in vm.savingPlan.actions" style="padding-bottom:20px;" ng-click="showAdvanced($event, action)">
             <div>{{action.perform === 'Wake' ? 'Scheduled Wake Up' : 'System Restart'}}</div>
             <div>{{action.scheduleText}}</div>
             <div ng-if="action.perform === 'Wake'">Keep Awake for {{action.options.keepAlive}} minutes</div>
