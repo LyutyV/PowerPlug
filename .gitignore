@@ -4,3 +4,5 @@
 
 /packages
 /.vs/Powerplug.Web/v14/.suo
+/.vs/config/applicationhost.config
+/.gitignore

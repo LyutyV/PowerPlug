@@ -100,16 +100,24 @@
             if (vm.savingPlan.savings.work.options) {
                 vm.savingPlan.savings.work.options.computerMetricsConverted = {};
                 angular.forEach(vm.savingPlan.savings.work.options.computerMetrics, function (value, key) {
+                    value.computerKey = key;                    
                     vm.savingPlan.savings.work.options.computerMetricsConverted[value.counter] = value;
                     vm.savingPlan.savings.work.options.computerMetricsConverted[value.counter].thresholdInKb = vm.savingPlan.savings.work.options.computerMetricsConverted[value.counter].threshold / 1024;
+                });
+                angular.forEach(vm.savingPlan.savings.work.options.appMetrics, function (value, key) {
+                    value.appKey = key;                    
                 });
             }
             if (vm.savingPlan.savings.nonWork.options) {
                 vm.savingPlan.savings.nonWork.options.computerMetricsConverted = {};
                 angular.forEach(vm.savingPlan.savings.nonWork.options.computerMetrics, function (value, key) {
+                    value.computerKey = key;                    
                     vm.savingPlan.savings.nonWork.options.computerMetricsConverted[value.counter] = value;
                     vm.savingPlan.savings.nonWork.options.computerMetricsConverted[value.counter].thresholdInKb = vm.savingPlan.savings.nonWork.options.computerMetricsConverted[value.counter].threshold / 1024;
 
+                });
+                angular.forEach(vm.savingPlan.savings.nonWork.options.appMetrics, function (value, key) {
+                    value.appKey = key;                    
                 });
             }
 
@@ -589,6 +597,68 @@
                         vm.currentEventScripts = value.scripts;
                     }                    
                 });
+            }
+        };
+
+        vm.addSavingApplication = function (ev, id, type) {
+            var appMetric = { appKey: vm.savingPlan.savings[type].options.appMetrics.length };
+            angular.forEach(vm.savingPlan.savings[type].options.appMetrics, function (value, key) {
+                if (id === value.appKey) {
+                    appMetric = value;
+                }                
+            });
+
+            var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
+            $mdDialog.show({
+                templateUrl: 'views/powerplan/dialogs/applicationCondition.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: false,
+                bindToController: true,
+                fullscreen: useFullScreen,
+                locals: { appMetric: appMetric },
+                controller: DialogController,
+            });
+            $scope.$watch(function () {
+                return $mdMedia('xs') || $mdMedia('sm');
+            }, function (wantsFullScreen) {
+                $scope.customFullscreen = (wantsFullScreen === true);
+            });
+
+            function DialogController($scope, $mdDialog, $document, appMetric) {
+                $scope.appMetric = appMetric;
+                
+                $scope.upsertSavingApplication = function (appId) {
+                    var exeName = angular.element('#exeName')[0].value;
+                    var counter;
+                    var threshold = 0;
+                    
+                    if (angular.element('#running')[0].checked) {
+                        counter = 'Running';
+                    }
+                    else if (angular.element('#cpu')[0].checked) {
+                        threshold = angular.element('#cpuText')[0].value;
+                        counter = 'Cpu';
+                    }
+                    else if (angular.element('#io')[0].checked) {
+                        threshold = angular.element('#ioText')[0].value;
+                        counter = 'Io';
+                    }
+
+                    if (appId < vm.savingPlan.savings[type].options.appMetrics.length) {
+                        appMetric.counter = counter;
+                        appMetric.appName = exeName;
+                        appMetric.threshold = threshold;
+                    }
+                    else {
+                        vm.savingPlan.savings[type].options.appMetrics.push({ appKey : appId, appName: exeName, counter: counter, threshold: threshold });                        
+                    }
+                    $mdDialog.hide();
+                };
+
+                $scope.closeSavingApplication = function () {
+                    $mdDialog.cancel();
+                };
             }
         };
     }

@@ -1,0 +1,25 @@
+﻿<md-dialog>
+    <md-content>
+        <div>Application Condition</div>
+        <div class="well">
+            <div>Application Process</div>
+            <div><input type="file" id="exeName"/></div>
+            <div>Do not perform the computer power savings operation while:</div>
+            <div>{{appMetric.counter}}</div>
+            <div><input type="radio" name="appOperation" id="running" ng-checked="appMetric.counter === 'Running'" /> Process is Running</div>
+            <div>
+                <input type="radio" name="appOperation" id="cpu" ng-checked="appMetric.counter === 'Cpu'" /> CPU utilization is above
+                <input type="number" min="0" max="100" id="cpuText" /> Percent
+            </div>
+            <div>
+                <input type="radio" name="appOperation" id="io" ng-checked="appMetric.counter === 'Io'" /> Disk I/O operations are above
+                <input type="number" min="0" id="ioText" /> KB/Second
+            </div>
+            <hr />
+            <div style="padding-top:30px;text-align:center">
+                <md-button ng-click="upsertSavingApplication(appMetric.appKey)">OK</md-button>
+                <md-button ng-click="closeSavingApplication()">Cancel</md-button>
+            </div>
+        </div>
+    </md-content>
+</md-dialog>
