@@ -550,5 +550,34 @@
                 });
             }
         };
+
+        vm.addApplication = function (ev) {
+            var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
+            $mdDialog.show({
+                templateUrl: 'views/powerplan/dialogs/applicationCondition.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: false,
+                bindToController: true,
+                fullscreen: useFullScreen,
+                locals: {  },
+                controller: DialogController,
+            })
+            .then(function (answer) {
+                $scope.status = 'You said the information was "' + answer + '".';
+                console.log(dataModel);
+            }, function () {
+                $scope.status = 'You cancelled the dialog.';
+            });
+            $scope.$watch(function () {
+                return $mdMedia('xs') || $mdMedia('sm');
+            }, function (wantsFullScreen) {
+                $scope.customFullscreen = (wantsFullScreen === true);
+            });
+
+            function DialogController($scope, $mdDialog) {
+
+            }
+        };
     }
 }());
