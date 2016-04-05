@@ -18,12 +18,9 @@
         "submenu": []
       }, {
         "text": "Saving Plans",
-        "sref": "#",
+        "sref": "app.savingPlans",
         "icon": "fa fa-list-alt",
-        "submenu": [{
-          "text": "PowerPlug Saving plan 1/2016",
-          "sref": ""
-        }]
+        "submenu": []
 
       }, {
         "text": "Reports",

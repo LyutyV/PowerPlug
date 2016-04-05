@@ -32,6 +32,13 @@ header {
         font-weight: 300;
         margin-left: 10px;
       }
+      > div.dropdown-menu {
+        right: 0 !important;
+        left: inherit !important;
+        background-color: transparent;
+        text-align: right;
+        border: none;
+      }
     }
   }
 }

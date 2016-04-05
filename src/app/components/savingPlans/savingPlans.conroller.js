@@ -9,7 +9,7 @@
       // temporary load table content from json. Later from backend
       vm.menuTableItems = [{
         "PlainDetails": {
-          "Saving": "Normal",
+          "Saving": "Normal1",
           "Owner": "Omer Hagay"
         },
         "ProgectedEfficiency": "B",
@@ -21,13 +21,58 @@
           "Saving": "Normal",
           "Owner": "Omer Hagay"
         },
+        "ProgectedEfficiency": "E",
+        "ActualReportedEfficiency": "F",
+        "AssignedComputers": 297,
+        "ActualReporting": 290
+      }, {
+        "PlainDetails": {
+          "Saving": "Normal",
+          "Owner": "Omer Hagay"
+        },
+        "ProgectedEfficiency": "E",
+        "ActualReportedEfficiency": "F",
+        "AssignedComputers": 297,
+        "ActualReporting": 290
+      }, {
+        "PlainDetails": {
+          "Saving": "Normal",
+          "Owner": "Omer Hagay"
+        },
+        "ProgectedEfficiency": "E",
+        "ActualReportedEfficiency": "F",
+        "AssignedComputers": 297,
+        "ActualReporting": 290
+      }, {
+        "PlainDetails": {
+          "Saving": "Normal",
+          "Owner": "Omer Hagay"
+        },
+        "ProgectedEfficiency": "E",
+        "ActualReportedEfficiency": "F",
+        "AssignedComputers": 297,
+        "ActualReporting": 290
+      }, {
+        "PlainDetails": {
+          "Saving": "High",
+          "Owner": "Omer Hagay"
+        },
+        "ProgectedEfficiency": "E",
+        "ActualReportedEfficiency": "F",
+        "AssignedComputers": 297,
+        "ActualReporting": 290
+      }, {
+        "PlainDetails": {
+          "Saving": "Low",
+          "Owner": "Omer Hagay"
+        },
         "ProgectedEfficiency": "A",
         "ActualReportedEfficiency": "D",
         "AssignedComputers": 12,
         "ActualReporting": 11
       }, {
         "PlainDetails": {
-          "Saving": "Normal",
+          "Saving": "Super low",
           "Owner": "Omer Hagay"
         },
         "ProgectedEfficiency": "E",
@@ -36,7 +81,7 @@
         "ActualReporting": 290
       }, {
         "PlainDetails": {
-          "Saving": "Normal",
+          "Saving": "Very high",
           "Owner": "Omer Hagay"
         },
         "ProgectedEfficiency": "E",
@@ -45,7 +90,7 @@
         "ActualReporting": 290
       }, {
         "PlainDetails": {
-          "Saving": "Normal",
+          "Saving": "Normal3",
           "Owner": "Omer Hagay"
         },
         "ProgectedEfficiency": "E",
@@ -54,7 +99,7 @@
         "ActualReporting": 290
       }, {
         "PlainDetails": {
-          "Saving": "Normal",
+          "Saving": "Normal3",
           "Owner": "Omer Hagay"
         },
         "ProgectedEfficiency": "E",
@@ -63,7 +108,7 @@
         "ActualReporting": 290
       }, {
         "PlainDetails": {
-          "Saving": "Normal",
+          "Saving": "Normal4",
           "Owner": "Omer Hagay"
         },
         "ProgectedEfficiency": "E",
@@ -72,7 +117,7 @@
         "ActualReporting": 290
       }, {
         "PlainDetails": {
-          "Saving": "Normal",
+          "Saving": "Normal4",
           "Owner": "Omer Hagay"
         },
         "ProgectedEfficiency": "E",
@@ -81,7 +126,7 @@
         "ActualReporting": 290
       }, {
         "PlainDetails": {
-          "Saving": "Normal",
+          "Saving": "Normal5",
           "Owner": "Omer Hagay"
         },
         "ProgectedEfficiency": "E",
@@ -90,52 +135,7 @@
         "ActualReporting": 290
       }, {
         "PlainDetails": {
-          "Saving": "Normal",
-          "Owner": "Omer Hagay"
-        },
-        "ProgectedEfficiency": "E",
-        "ActualReportedEfficiency": "F",
-        "AssignedComputers": 297,
-        "ActualReporting": 290
-      }, {
-        "PlainDetails": {
-          "Saving": "Normal",
-          "Owner": "Omer Hagay"
-        },
-        "ProgectedEfficiency": "E",
-        "ActualReportedEfficiency": "F",
-        "AssignedComputers": 297,
-        "ActualReporting": 290
-      }, {
-        "PlainDetails": {
-          "Saving": "Normal",
-          "Owner": "Omer Hagay"
-        },
-        "ProgectedEfficiency": "E",
-        "ActualReportedEfficiency": "F",
-        "AssignedComputers": 297,
-        "ActualReporting": 290
-      }, {
-        "PlainDetails": {
-          "Saving": "Normal",
-          "Owner": "Omer Hagay"
-        },
-        "ProgectedEfficiency": "E",
-        "ActualReportedEfficiency": "F",
-        "AssignedComputers": 297,
-        "ActualReporting": 290
-      }, {
-        "PlainDetails": {
-          "Saving": "Normal",
-          "Owner": "Omer Hagay"
-        },
-        "ProgectedEfficiency": "E",
-        "ActualReportedEfficiency": "F",
-        "AssignedComputers": 297,
-        "ActualReporting": 290
-      }, {
-        "PlainDetails": {
-          "Saving": "Normal",
+          "Saving": "Normal5",
           "Owner": "Omer Hagay"
         },
         "ProgectedEfficiency": "E",
