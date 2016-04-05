@@ -120,12 +120,12 @@
                 font-size: 18px;
                 font-weight: 300;
               }
-              &:nth-child(2) {
-                font-family: Calibri;
-                color: #4d4d4d;
-                font-size: 18px;
-                font-weight: 700;
-              }
+              // &:nth-child(2) {
+              //   font-family: Calibri;
+              //   color: #4d4d4d;
+              //   font-size: 18px;
+              //   font-weight: 700;
+              // }
               &:nth-child(5) {
                 font-family: Calibri;
                 color: #b3b3b3;
@@ -138,6 +138,14 @@
                 font-size: 18px;
                 font-weight: 300;
               }
+            }
+            > a {
+                font-family: Calibri;
+                color: #4d4d4d;
+                font-size: 18px;
+                font-weight: 700;
+                list-style: none;
+                text-decoration: none;
             }
             > i{
                 margin: 0px 5px;
