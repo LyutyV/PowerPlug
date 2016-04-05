@@ -4,14 +4,39 @@
     'use strict';
     angular
         .module('powerPlug')
+        .directive('convertToNumber', function() {
+            return {
+                require: 'ngModel',
+                link: function(scope, element, attrs, ngModel) {
+                    ngModel.$parsers.push(function(val) {
+                        return val ? parseInt(val, 10) : null;
+                    });
+                    ngModel.$formatters.push(function(val) {
+                        return val ? '' + val : null;
+                    });
+                }
+            };
+        })
         .controller('SavingPlanEditorCtrl',
-                     ['$state', '$stateParams', '$scope','$mdDialog', '$mdMedia', 'SavingPlansResource', SavingPlanEditorCtrl]);
+                     ['$state', '$stateParams', '$scope', '$document', '$mdDialog', '$mdMedia', 'SavingPlansResource', SavingPlanEditorCtrl]);
 
-
-    function SavingPlanEditorCtrl($state, $stateParams, $scope, $mdDialog, $mdMedia, SavingPlansResource) {
+    function SavingPlanEditorCtrl($state, $stateParams, $scope, $document, $mdDialog, $mdMedia, SavingPlansResource) {
         var vm = this;
         var policyId = $stateParams.policyId
-        SavingPlansResource.get({ policyId: policyId }, function (data) {            
+        SavingPlansResource.get({ policyId: policyId }, function (data) {
+            onSuccess(data);            
+        }, function (err) {
+            onError(err);
+        });
+
+        function onError(err) {
+            console.log(err)
+            if (err.status === 401 || err.status === -1) {
+                $state.go('login');
+            }
+        }
+
+        function onSuccess(data) {
             vm.savingPlan = data;
 
             //Overview
@@ -19,7 +44,7 @@
             vm.savingPlan.validTo = new Date(vm.savingPlan.validTo);
 
             //Actions            
-            var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];            
+            var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
             angular.forEach(vm.savingPlan.actions, function (value, key) {
                 value.actionKey = key;
                 if (value.scheduleType === 'DayOfWeek' || value.scheduleType === 'DayOfMonth') {
@@ -39,7 +64,7 @@
                     }
                     value.daysConverted = numbers;
                 }
-                
+
                 if (value.scheduleType === 'DayOfWeek') {
                     if (numbers.length < 7) {
                         value.scheduleText = 'Every ';
@@ -76,16 +101,18 @@
                 vm.savingPlan.savings.work.options.computerMetricsConverted = {};
                 angular.forEach(vm.savingPlan.savings.work.options.computerMetrics, function (value, key) {
                     vm.savingPlan.savings.work.options.computerMetricsConverted[value.counter] = value;
+                    vm.savingPlan.savings.work.options.computerMetricsConverted[value.counter].thresholdInKb = vm.savingPlan.savings.work.options.computerMetricsConverted[value.counter].threshold / 1024;
                 });
             }
             if (vm.savingPlan.savings.nonWork.options) {
                 vm.savingPlan.savings.nonWork.options.computerMetricsConverted = {};
                 angular.forEach(vm.savingPlan.savings.nonWork.options.computerMetrics, function (value, key) {
                     vm.savingPlan.savings.nonWork.options.computerMetricsConverted[value.counter] = value;
+                    vm.savingPlan.savings.nonWork.options.computerMetricsConverted[value.counter].thresholdInKb = vm.savingPlan.savings.nonWork.options.computerMetricsConverted[value.counter].threshold / 1024;
+
                 });
             }
 
-            ///testCalendar();
             //Work Hours
             var workHours = [];
             var time = 0;
@@ -127,7 +154,7 @@
                 defaultView: 'agendaWeek',
                 editable: true,
                 events: workHours,
-                allDaySlot: false,                
+                allDaySlot: false,
                 header: {
                     center: '',
                     left: '',
@@ -135,17 +162,10 @@
                 }
             });
 
-
             //Events
             vm.currentEventScripts = [];
             console.log(vm.savingPlan);
-        }, function (error) {
-            console.log(error)
-            if (error.status === 401 || error.status === -1)
-            {
-                $state.go('login');
-            }
-        });
+        }
 
         //==================================================PopUp=======================================================
         $scope.showAdvanced = function (ev, actionData) {
@@ -468,8 +488,56 @@
         ];
 
         //Html Elemnts Events
+        function setComputerMetrics(id, type, multiplyNumber) {
+            var chkElement = $document[0].querySelector('#' + type + id);
+            var txtElement = $document[0].querySelector('#' + type + id + 'Text');
+            var isElementFound = false;
+            if (vm.savingPlan.savings[type].options.computerMetrics) {
+                vm.savingPlan.savings[type].options.computerMetrics = [];
+            }
+
+            if (chkElement.checked) {
+                angular.forEach(vm.savingPlan.savings[type].options.computerMetrics, function (value, key) {
+                    if (value.counter === id) {
+                        isElementFound = true;
+                        value.threshold = Number(txtElement.value) * multiplyNumber;
+                    }
+                });
+
+                if (!isElementFound) {
+                    if (!vm.savingPlan.savings[type].options.computerMetrics) {
+                        vm.savingPlan.savings[type].options.computerMetrics = [];
+                    }
+                    vm.savingPlan.savings[type].options.computerMetrics.push({ counter: id, threshold: (Number(txtElement.value) * multiplyNumber) });
+                }
+            }
+            else {
+                angular.forEach(vm.savingPlan.savings[type].options.computerMetrics, function (value, key) {
+                    if (value.counter === id) {
+                        vm.savingPlan.savings[type].options.computerMetrics.splice(key, 1);
+                        delete vm.savingPlan.savings[type].options.computerMetricsConverted[value.counter];
+                    }
+                });
+            }
+        }
+
         vm.saveChanges = function () {
-            vm.savingPlan.$update();
+            if (vm.savingPlan.savings.work.options && vm.savingPlan.savings.work.options.computerMetricsConverted) {
+                setComputerMetrics('Cpu', 'work', 1);
+                setComputerMetrics('Io', 'work', 1024);
+                setComputerMetrics('Network', 'work', 1024);
+            }
+            if (vm.savingPlan.savings.nonWork.options && vm.savingPlan.savings.nonWork.options.computerMetricsConverted) {
+                setComputerMetrics('Cpu', 'nonWork', 1);
+                setComputerMetrics('Io', 'nonWork', 1024);
+                setComputerMetrics('Network', 'nonWork', 1024);
+            }
+
+            vm.savingPlan.$update(function (data) {
+                onSuccess(data);            
+            }, function (err) {
+                onError(err);
+            });
         }
 
         vm.showEventScripts = function (eventType) {            
@@ -481,6 +549,6 @@
                     }                    
                 });
             }
-        };        
+        };
     }
 }());

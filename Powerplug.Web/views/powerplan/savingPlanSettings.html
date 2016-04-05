@@ -20,7 +20,7 @@
             <div><input type="checkbox" ng-model="vm.savingPlan.settings.allowKeepAwake" /> Allow Users to Disable Power Saving Operations</div>
             <div style="padding-left:16px;">
                 Maximum Duration 
-                <select ng-model="vm.savingPlan.settings.keepAwakeMaxHours">
+                <select ng-model="vm.savingPlan.settings.keepAwakeMaxHours" convert-to-number>
                     <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 0" value="0"></option>
                     <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 360" value="360">6 Hours</option>
                     <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 720" value="720">12 Hours</option>

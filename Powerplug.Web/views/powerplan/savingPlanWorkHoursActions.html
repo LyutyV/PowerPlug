@@ -21,7 +21,7 @@
             <div class="clearfix">
                 <div class="pull-left">
                     Turn off the display 
-                    <select ng-model="vm.savingPlan.savings.work.displalyMinutes">
+                    <select ng-model="vm.savingPlan.savings.work.displalyMinutes" convert-to-number>
                         <option value="1" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 1">1 minute</option>
                         <option value="2" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 2">2 minutes</option>
                         <option value="3" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 3">3 minutes</option>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="pull-left" style="padding-left:50px;">
                     Perform
-                    <select ng-model="vm.savingPlan.savings.work.computerMinutes">
+                    <select ng-model="vm.savingPlan.savings.work.computerMinutes" convert-to-number>
                         <option value="1" ng-selected="vm.savingPlan.savings.work.computerMinutes == 1">1 minute</option>
                         <option value="2" ng-selected="vm.savingPlan.savings.work.computerMinutes == 2">2 minutes</option>
                         <option value="3" ng-selected="vm.savingPlan.savings.work.computerMinutes == 3">3 minutes</option>
@@ -114,16 +114,16 @@
                     </uib-tab>
                     <uib-tab index="9" heading="Performance Metrics">
                         <div>
-                            <input type="checkbox" ng-checked="vm.savingPlan.savings.work.options.computerMetricsConverted.Cpu" /> CPU utilization is above
-                            <input type="text" value="{{vm.savingPlan.savings.work.options.computerMetricsConverted.Cpu.threshold}}" /> Percent
+                            <input type="checkbox" id="workCpu" ng-checked="vm.savingPlan.savings.work.options.computerMetricsConverted.Cpu" /> CPU utilization is above
+                            <input type="text" id="workCpuText" ng-model="vm.savingPlan.savings.work.options.computerMetricsConverted.Cpu.threshold" /> Percent
+                        </div>
+                        <div> 
+                            <input type="checkbox" id="workIo" ng-checked="vm.savingPlan.savings.work.options.computerMetricsConverted.Io" /> Disk I/O operations are above
+                            <input type="text" id="workIoText" ng-model="vm.savingPlan.savings.work.options.computerMetricsConverted.Io.thresholdInKb"/> KB/Second
                         </div>
                         <div>
-                            <input type="checkbox" ng-checked="vm.savingPlan.savings.work.options.computerMetricsConverted.Io" /> Disk I/O operations are above
-                            <input type="text" value="{{vm.savingPlan.savings.work.options.computerMetricsConverted.Io ? vm.savingPlan.savings.work.options.computerMetricsConverted.Io.threshold / 1024 : ''}}" /> KB/Second
-                        </div>
-                        <div>
-                            <input type="checkbox" ng-checked="vm.savingPlan.savings.work.options.computerMetricsConverted.Network" /> Network I/O operations are above
-                            <input type="text" value="{{vm.savingPlan.savings.work.options.computerMetricsConverted.Network ? vm.savingPlan.savings.work.options.computerMetricsConverted.Network.threshold / 1024 : ''}}" /> KB/Second
+                            <input type="checkbox" id="workNetwork" ng-checked="vm.savingPlan.savings.work.options.computerMetricsConverted.Network" /> Network I/O operations are above
+                            <input type="text" id="workNetworkText" ng-model="vm.savingPlan.savings.work.options.computerMetricsConverted.Network.thresholdInKb"/> KB/Second
                         </div>
                     </uib-tab>
                 </uib-tabset>
@@ -135,7 +135,7 @@
             <div class="clearfix">
                 <div class="pull-left">
                     Turn off the display
-                    <select ng-model="vm.savingPlan.savings.nonWork.displalyMinutes">
+                    <select ng-model="vm.savingPlan.savings.nonWork.displalyMinutes" convert-to-number>
                         <option value="1" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 1">1 minute</option>
                         <option value="2" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 2">2 minutes</option>
                         <option value="3" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 3">3 minutes</option>
@@ -156,7 +156,7 @@
                 </div>
                 <div class="pull-left" style="padding-left:50px;">
                     Perform
-                    <select ng-model="vm.savingPlan.savings.nonWork.computerMinutes">
+                    <select ng-model="vm.savingPlan.savings.nonWork.computerMinutes" convert-to-number>
                         <option value="1" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 1">1 minute</option>
                         <option value="2" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 2">2 minutes</option>
                         <option value="3" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 3">3 minutes</option>
@@ -228,17 +228,17 @@
                     </uib-tab>
                     <uib-tab index="5" heading="Performance Metrics">
                         <div>
-                            <input type="checkbox" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Cpu" /> CPU utilization is above
-                            <input type="text" value="{{vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Cpu.threshold}}" /> Percent
+                            <input type="checkbox" id="nonWorkCpu" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Cpu" /> CPU utilization is above
+                            <input type="number" min="0" max="100" id="nonWorkCpuText" ng-model="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Cpu.threshold" /> Percent
                         </div>
                         <div>
-                            <input type="checkbox" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Io" /> Disk I/O operations are above
-                            <input type="text" value="{{vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Io ? vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Io.threshold / 1024 : ''}}" /> KB/Second
+                            <input type="checkbox" id="nonWorkIo" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Io" /> Disk I/O operations are above
+                            <input type="number" min="0" id="nonWorkIoText" ng-model="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Io.thresholdInKb" /> KB/Second
                         </div>
                         <div>
-                            <input type="checkbox" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Network" /> Network I/O operations are above
-                            <input type="text" value="{{vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Network ? vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Network.threshold / 1024 : ''}}" /> KB/Second
-                        </div>
+                            <input type="checkbox" id="nonWorkNetwork" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Network" /> Network I/O operations are above
+                            <input type="number" min="0" id="nonWorkNetworkText" ng-model="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Network.thresholdInKb" /> KB/Second
+                        </div>                      
                     </uib-tab>
                 </uib-tabset>
             </div> 
