@@ -1,11 +1,12 @@
 nav {
-  min-width: 300px;
+  min-width: 246px;
   background: #4b4a48;
   > .logo {
     background: url('../assets/images/leftMenu/PowerPlug.png') no-repeat center;
-    height: 111px;
+    height: 90px;
   }
   > ul {
+    margin-top: 37px;
     > li {
       list-style: none;
       color: #b4b3b1;
@@ -23,7 +24,7 @@ nav {
         border-bottom: 1px solid #333333;
       }
       > i {
-        width: 30px;
+        width: 20px;
         color: #90c63d;
       }
     }
