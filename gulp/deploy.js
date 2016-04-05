@@ -16,7 +16,7 @@ gulp.task('tmp', function(){
     }));
 })
 
-gulp.task('deploy', ['clean', 'build'], function() {
+gulp.task('deploy', ['build'], function() {
   return gulp.src(conf.paths.dist + '/**/*.*')
     .pipe(ftp({
       host: 'workfield.hol.es',
