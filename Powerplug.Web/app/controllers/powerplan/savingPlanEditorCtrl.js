@@ -193,41 +193,75 @@
             });
         };
         function DialogController($scope, $mdDialog, actionData) {
-            $scope.hide = function () {
+            //Private
+            var weekDays = actionData.weekDays;
+            var SetDayModel = function (newValue) {
+                var dayInBit = newValue;
+                weekDays = (dayInBit > 0) ? (weekDays | dayInBit) : (weekDays & dayInBit);
+                console.log(weekDays)
+                return getDayModel(dayInBit);
+            }
+            var getDayModel = function (dayInBit) {
+                if ((dayInBit & weekDays) == dayInBit) {
+                    return dayInBit
+                } else return ~dayInBit
+            }
+            function GetSetDays(newValue) {
+                if (arguments.length) {
+                    return SetDayModel(newValue, this.dayInBit);
+                } else return getDayModel(this.dayInBit)
+            }
+            //Scope bind
+            $scope.daysOfMonth   = actionData.daysOfMonth;
+            $scope.KeepMonitorOn = actionData.options.KeepMonitorOn;
+            $scope.keepAlive     = actionData.options.keepAlive;
+            $scope.specificDate = (typeof actionData.specificDate != 'undefined') ? new Date(actionData.specificDate)    : null;
+            $scope.timeChosen   = (typeof actionData.fromTime != 'undefined')     ? moment(actionData.fromTime).toDate() : null;
+
+            $scope.hide = function () { $mdDialog.hide(); };
+            $scope.cancel = function () { $mdDialog.cancel()};
+            $scope.Add = function () {
+                actionData.weekDays              = weekDays;
+                actionData.daysOfMonth           = $scope.daysOfMonth;
+                actionData.options.KeepMonitorOn = $scope.KeepMonitorOn;
+                actionData.options.keepAlive     = $scope.keepAlive;
+                actionData.specificDate          = $scope.specificDate;
+                actionData.fromTime              = $scope.timeChosen
+
                 $mdDialog.hide();
             };
-            $scope.cancel = function () {
-                $mdDialog.cancel();
-            };
-            $scope.answer = function (answer) {
-                $mdDialog.hide(answer);
-            };
-
-            //modify object
+            //modify scheduleType if need
             if (actionData.scheduleType == 'DayOfWeek' && actionData.daysConverted.length == 7) {
                 actionData.scheduleType == 'EveryDay';
             }
-            vm.actionData = actionData;
-
-            function dayModel(newValue) {
-                if (arguments.length) {
-                    this._DayBit = newValue;
-                    vm.actionData = vm.actionData | _DayBit;
-                }
-                debugger;
-                return this._DayBit
+            $scope.scheduleType = actionData.scheduleType;
+            $scope.Sunday = {
+                dayInBit: 1,
+                Value: GetSetDays,
             }
-
-            vm.Sunday = {
-                _DayBit: 1,
-                value: function(newValue){
-                if (arguments.length) {
-                    this._DayBit = newValue;
-            vm.actionData = vm.actionData | _DayBit;
-        }
-        debugger;
-        return this._DayBit
-    }
+            $scope.Monday = {
+                dayInBit: 2,
+                Value: GetSetDays,
+            }
+            $scope.Tuesday = {
+                dayInBit: 4,
+                Value: GetSetDays,
+            }
+            $scope.Wednesday = {
+                dayInBit : 8,
+                Value: GetSetDays
+            }
+            $scope.Thursday = {
+                dayInBit: 16,
+                Value: GetSetDays
+            }
+            $scope.Friday = {
+                dayInBit: 32,
+                Value: GetSetDays
+            }
+            $scope.Saturday = {
+                dayInBit: 64,
+                Value: GetSetDays
             }
         }
       

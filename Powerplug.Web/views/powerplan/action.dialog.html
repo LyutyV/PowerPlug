@@ -13,53 +13,84 @@
       <div class="md-dialog-content">
         <h2>Using .md-dialog-content class that sets the padding as the spec</h2>
           <md-dialog aria-label="Mango (Fruit)" ng-cloak>
-              <label>
-                  <input type="radio" name="{{actionData.scheduleType}}" ng-model="actionData.scheduleType" value="EveryDay">
-                  Every Day
-              </label> <br />
-              <label>
-                  <input type="radio" name="{{actionData.scheduleType}}" ng-model="actionData.scheduleType" value="DayOfWeek">
-                  Day of the week
-              </label> 
-              <label>
-                <input type="checkbox"  ng-model="Sunday.value" ng-true-value="1" ng-false-value="-2" ng-model-options="{ getterSetter: true }" > Sunday 
-              </label>
-             <!---<label>
-              <label>
-                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="2 & actionData.daysOfWeek" actionData." value="2"> Monday
-              </label>
-              <label>
-                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="4 & actionData.daysOfWeek" actionData." value="4"> Tuesday
-              </label>
-              <label>
-                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="8 & actionData.daysOfWeek" actionData." value="8"> Wednesday
-              </label>
-              <label>
-                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="16 & actionData.daysOfWeek" actionData." value="16"> Thursday
-              </label>
-              <label>
-                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="32 & actionData.daysOfWeek" actionData." value="32"> Friday
-              </label>
-              <label>
-                  <input type="checkbox" name="{{actionData.scheduleType}}" ng-model="64 & actionData.daysOfWeek" actionData." value="64"> Saturday 
-              </label>-->
-              
-              
-              
-              
-              
-              
+             <div>
+                <label>
+                      <input type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="EveryDay">
+                    Every Day
+                </label> 
+              </div>
+             <div>
+                  <label>
+                      <input type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="DayOfWeek">
+                      Day of the week
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Sunday.Value" ng-true-value="1" ng-false-value="-2" ng-model-options="{ getterSetter: true }"> Sunday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Monday.Value" ng-true-value="2" ng-false-value="-3" ng-model-options="{ getterSetter: true }"> Monday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Tuesday.Value" ng-true-value="4" ng-false-value="-5" ng-model-options="{ getterSetter: true }"> Tuesday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Wednesday.Value" ng-true-value="8" ng-false-value="-9" ng-model-options="{ getterSetter: true }"> Wednesday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Thursday.Value" ng-true-value="16" ng-false-value="-17" ng-model-options="{ getterSetter: true }"> Thursday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Friday.Value" ng-true-value="32" ng-false-value="-33" ng-model-options="{ getterSetter: true }"> Friday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'" ng-model="Saturday.Value" ng-true-value="64" ng-false-value="-65" ng-model-options="{ getterSetter: true }"> Saturday
+                  </label>
+              </div>
+             <div>
+                <label>
+                    <input type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="DayOfMonth">
+                     Day of Month
+                </label>
+                 <input ng-disabled="scheduleType != 'DayOfMonth'" type='number' min="1" max="31" ng-model="daysOfMonth"/>
+              </div>
+              <div>
+                 <label>
+                      <input type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="SpecificDate">
+                     Specific Date 
+                 </label>
+                    <md-datepicker ng-disabled="scheduleType != 'SpecificDate'" ng-model="specificDate" md-placeholder="Enter date"></md-datepicker>
+              </div>
+              <hr />
+              <div>
+                  <label>
+                      <b> At</b>
+                  </label>
+                  <input type="time" ng-model="timeChosen"/>
+              </div> 
+              <hr />
+              <div>
+                  <h4>Action Settings</h4>
+                  <div>
+                  <label>
+                      Keep Monitor On <input type="checkbox" ng-model="KeepMonitorOn">
+                  </label>
+                      </div>
+                  <label>
+                     Keep awake for
+                  </label>
+                  <input type="number" ng-model="keepAlive" min="15" max="1080" />
+              </div>                                     
               
               <br />
           </md-dialog>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button ng-click="answer('not useful')">
-        Not Useful
+      <md-button ng-click="Add('Add')">
+       Add  
       </md-button>
-      <md-button ng-click="cancel" style="margin-right:20px;">
-        Useful
+      <md-button ng-click="cancel()" style="margin-right:20px;">
+        Cancel
       </md-button>
     </md-dialog-actions>
   </form>
