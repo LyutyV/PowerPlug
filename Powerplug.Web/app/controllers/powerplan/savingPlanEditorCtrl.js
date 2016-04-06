@@ -629,14 +629,6 @@
             });
         };
 
-        vm.removeSavingComputer = function (computerId, type) {
-            angular.forEach(vm.savingPlan.savings[type].options.computersNotRun, function (value, key) {
-                if (computerId === value.computerKey) {
-                    vm.savingPlan.savings[type].options.computersNotRun.splice(key, 1);
-                }
-            });
-        };
-
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
         vm.addEventScripts = function (ev) {
             $mdDialog.show({

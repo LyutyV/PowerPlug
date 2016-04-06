@@ -1,5 +1,5 @@
 ﻿<div class="panel-body">
-    <div><button ng-click="vm.addSavingComputer($event, -1, 'work')">Add</button></div>
+    <div><button ng-click="addSavingComputer($event, -1, worktype)">Add</button></div>
     <table class="table">
         <thead>
             <tr>
@@ -7,9 +7,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="computer in vm.savingPlan.savings.work.options.computersNotRun">
+            <tr ng-repeat="computer in jsonobject.computersNotRun">
                 <td>{{computer.name}}</td>
-                <td><button ng-click="vm.removeSavingComputer(computer.computerKey, 'work')">Remove</button></td>
+                <td><button ng-click="removeSavingComputer(computer.computerKey, 'work')">Remove</button></td>
             </tr>
         </tbody>
     </table>

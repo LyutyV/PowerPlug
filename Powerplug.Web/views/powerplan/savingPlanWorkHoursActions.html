@@ -79,10 +79,10 @@
                         <application-tab worktype='work' jsonobject="vm.savingPlan.savings.work.options"></application-tab>
                     </uib-tab>
                     <uib-tab index="8" heading="Computers">
-                       
+                        <computers-tab jsonobject="vm.savingPlan.savings.work.options" worktype='Work'></computers-tab>  
                     </uib-tab>
                     <uib-tab index="9" heading="Performance Metrics">
-                    
+                        <performance-metrics-tab jsonobject="vm.savingPlan.savings.work.options"></performance-metrics-tab>
                     </uib-tab>
                 </uib-tabset>
             </div>           
@@ -145,44 +145,16 @@
             <div style="padding-top:20px;">
                 <uib-tabset active="activePill2" vertical="true" type="pills" class="clearfix uibTabSet">
                     <uib-tab index="2" heading="Options" class="xxx">
-                        <div><input type="checkbox" ng-model="vm.savingPlan.savings.nonWork.options.force" /> Force operation</div>
-                        <div><input type="checkbox" ng-model="vm.savingPlan.savings.nonWork.options.logoff" /> Logoff before power saving operation</div>
-                        <div><input type="checkbox" ng-checked="vm.savingPlan.savings.nonWork.options.message" /> Display a message to the user</div>
+                        <options-tab jsonobject="vm.savingPlan.savings.nonWork.options"></options-tab>
                     </uib-tab>
                     <uib-tab index="3" heading="Applications">
                         <application-tab worktype='nonWork' jsonobject="vm.savingPlan.savings.nonWork.options"></application-tab>
                     </uib-tab>
                     <uib-tab index="4" heading="Computers">
-                        <div class="panel-body">
-                            <div><button ng-click="vm.addSavingComputer($event, -1, 'nonWork')">Add</button></div>
-                            <table class="table">                                
-                                <thead>
-                                    <tr>
-                                        <td>Computer Name</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr ng-repeat="computer in vm.savingPlan.savings.nonWork.options.computersNotRun">
-                                        <td>{{computer.name}}</td>
-                                        <td><button ng-click="vm.removeSavingComputer(computer.computerKey, 'nonWork')">Remove</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <computers-tab jsonobject="vm.savingPlan.savings.nonWork.options"  worktype='nonWork'></computers-tab>
                     </uib-tab>
                     <uib-tab index="5" heading="Performance Metrics">
-                        <div>
-                            <input type="checkbox" id="nonWorkCpu" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Cpu" /> CPU utilization is above
-                            <input type="number" min="0" max="100" id="nonWorkCpuText" ng-model="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Cpu.threshold" /> Percent
-                        </div>
-                        <div>
-                            <input type="checkbox" id="nonWorkIo" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Io" /> Disk I/O operations are above
-                            <input type="number" min="0" id="nonWorkIoText" ng-model="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Io.thresholdInKb" /> KB/Second
-                        </div>
-                        <div>
-                            <input type="checkbox" id="nonWorkNetwork" ng-checked="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Network" /> Network I/O operations are above
-                            <input type="number" min="0" id="nonWorkNetworkText" ng-model="vm.savingPlan.savings.nonWork.options.computerMetricsConverted.Network.thresholdInKb" /> KB/Second
-                        </div>                      
+                        <performance-metrics-tab jsonobject="vm.savingPlan.savings.nonWork.options"></performance-metrics-tab>
                     </uib-tab>
                 </uib-tabset>
             </div> 
