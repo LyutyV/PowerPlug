@@ -189,10 +189,9 @@
                 controller: DialogController,
             })
             .then(function (answer) {
-                $scope.status = 'You said the information was "' + answer + '".';
-                console.log(dataModel);
+                 console.log(actionData);
             }, function () {
-                $scope.status = 'You cancelled the dialog.';
+                console.log(actionData);
             });
             $scope.$watch(function () {
                 return $mdMedia('xs') || $mdMedia('sm');
@@ -223,19 +222,33 @@
             $scope.daysOfMonth   = actionData.daysOfMonth;
             $scope.KeepMonitorOn = actionData.options.KeepMonitorOn;
             $scope.keepAlive     = actionData.options.keepAlive;
-            $scope.specificDate = (typeof actionData.specificDate != 'undefined') ? new Date(actionData.specificDate)    : null;
-            $scope.timeChosen   = (typeof actionData.fromTime != 'undefined')     ? moment(actionData.fromTime).toDate() : null;
+            $scope.specificDate = (typeof actionData.specificDate != 'undefined') ? new Date(actionData.specificDate)    : new Date();
+            $scope.timeChosen   = (typeof actionData.fromTime != 'undefined')     ? moment(actionData.fromTime).toDate() : 0;
 
             $scope.hide = function () { $mdDialog.hide(); };
             $scope.cancel = function () { $mdDialog.cancel()};
             $scope.Add = function () {
-                actionData.weekDays              = weekDays;
-                actionData.daysOfMonth           = $scope.daysOfMonth;
+                //add data to json
+                actionData.scheduleType = $scope.scheduleType;
+                switch (actionData.scheduleType) {
+                    case 'EveryDay':
+                        actionData.scheduleType = 'DayOfWeek';
+                        actionData.weekDays = 127;
+                        break;
+                    case 'DayOfWeek':
+                        actionData.weekDays = weekDays;
+                        break;
+                    case 'DayOfMonth':
+                        actionData.daysOfMonth = $scope.daysOfMonth;
+                        break;
+                    case 'SpecificDate':
+                        actionData.specificDate = $scope.specificDate;
+                        break;
+                }
                 actionData.options.KeepMonitorOn = $scope.KeepMonitorOn;
-                actionData.options.keepAlive     = $scope.keepAlive;
-                actionData.specificDate          = $scope.specificDate;
-                actionData.fromTime              = $scope.timeChosen
-
+                actionData.options.keepAlive = $scope.keepAlive;
+                actionData.fromTime = $scope.timeChosen
+                //Hide dialog
                 $mdDialog.hide();
             };
             //modify scheduleType if need
