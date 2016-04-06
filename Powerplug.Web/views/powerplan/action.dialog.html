@@ -80,8 +80,25 @@
                   </label>
                   <input type="number" ng-model="keepAlive" min="15" max="1080" />
               </div>                                     
-              
-              <br />
+              <!--TABS-->
+              <uib-tabset>
+                  <uib-tab heading="Conditions" active=true>
+                    <label>
+                        Computer is idle for: 
+                        <select>
+                            <option value="option-1">Option 1</option>
+                            <option value="option-2">Option 2</option>
+                            <option value="option-3">Option 3</option>
+                        </select>
+                    </label>
+                  </uib-tab>
+                  <uib-tab heading="Options" active=true>
+                  </uib-tab>
+                  <uib-tab heading="Applications" active=true>
+                  </uib-tab>
+                  <uib-tab heading="Preformance Metrics" active=true>
+                  </uib-tab>
+              </uib-tabset>
           </md-dialog>
       </div>
     </md-dialog-content>

@@ -1,0 +1,34 @@
+﻿<md-dialog style="width:900px">
+    <md-toolbar>
+        <div style="padding-left: 20px;padding-top: 17px;">Add a Script</div>
+    </md-toolbar>
+    <md-content>        
+        <div class="well">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Name</td>
+                        <td>Owner</td>
+                        <td>Type</td>
+                        <td>Description</td>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="script in eventScripts">
+                        <td><input type="checkbox" data-id="{{script.scriptId}}" data-name="{{script.scriptName}}" data-guid="{{script.scriptGUID}}" class="script-selection"/></td>
+                        <td>{{script.scriptName}}</td>
+                        <td>{{script.owner}}</td>
+                        <td>{{script.scriptType}}</td>
+                        <td>{{script.scriptDesc}}</td>                        
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+            <div style="text-align:center">
+                <button class="btn btn-success" ng-click="addEventScripts()">OK</button>
+                <button class="btn btn-danger" ng-click="closeEventScripts()">Cancel</button>
+            </div>
+        </div>
+    </md-content>
+</md-dialog>

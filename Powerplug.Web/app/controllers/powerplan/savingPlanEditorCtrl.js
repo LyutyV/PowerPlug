@@ -14,10 +14,16 @@
                     });
                 }
             };
+<<<<<<< HEAD
         }).controller('SavingPlanEditorCtrl',
                      ['$state', '$stateParams', '$scope', '$animate', '$document', '$mdDialog', '$mdMedia', 'SavingPlansResource', SavingPlanEditorCtrl]);
+=======
+        })
+        .controller('SavingPlanEditorCtrl',
+                     ['$state', '$stateParams', '$scope', '$animate', '$document', '$mdDialog', '$mdMedia', 'SavingPlansResource', 'ComputersResource', 'ScriptsResource', SavingPlanEditorCtrl]);
+>>>>>>> 19b248841248e0872b38e487da5f39af131af431
 
-    function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $mdDialog, $mdMedia, SavingPlansResource) {
+    function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $mdDialog, $mdMedia, SavingPlansResource, ComputersResource, ScriptsResource) {
         var vm = this;
         var policyId = $stateParams.policyId
         SavingPlansResource.get({ policyId: policyId }, function (data) {
@@ -556,7 +562,7 @@
             var chkElement = $document[0].querySelector('#' + type + id);
             var txtElement = $document[0].querySelector('#' + type + id + 'Text');
             var isElementFound = false;
-            if (vm.savingPlan.savings[type].options.computerMetrics) {
+            if (!vm.savingPlan.savings[type].options.computerMetrics) {
                 vm.savingPlan.savings[type].options.computerMetrics = [];
             }
 
@@ -610,9 +616,22 @@
                 angular.forEach(vm.savingPlan.events, function (value, key) {
                     if (value.eventType === eventType) {
                         vm.currentEventScripts = value.scripts;
+                        vm.currentEvent = value.eventType;
                     }                    
                 });
             }
+        };
+
+        vm.removeEventScript = function (scriptId) {
+            angular.forEach(vm.savingPlan.events, function (value, key) {
+                if (vm.currentEvent === value.eventType) {
+                    angular.forEach(vm.savingPlan.events[key].scripts, function (valueScript, keyScript) {
+                        if (scriptId === valueScript.scriptId) {
+                            vm.savingPlan.events[key].scripts.splice(keyScript, 1);
+                        }
+                    });                    
+                }
+            });
         };
 
         vm.removeSavingComputer = function (computerId, type) {
@@ -621,11 +640,65 @@
                     vm.savingPlan.savings[type].options.computersNotRun.splice(key, 1);
                 }
             });
-        };        
+        };
 
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
-        vm.addSavingComputer = function (ev, computerId, type) {           
-            
+        vm.addEventScripts = function (ev) {
+            $mdDialog.show({
+                templateUrl: 'views/powerplan/dialogs/addScipt.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: false,
+                bindToController: true,
+                fullscreen: useFullScreen,
+                locals: {},
+                controller: DialogController,
+            });
+            $scope.$watch(function () {
+                return $mdMedia('xs') || $mdMedia('sm');
+            }, function (wantsFullScreen) {
+                $scope.customFullscreen = (wantsFullScreen === true);
+            });
+
+            function DialogController($scope, $mdDialog, $document) {
+                ScriptsResource.query(function (data) {
+                    $scope.eventScripts = data;
+                }, function (err) {
+                    onError(err);
+                });
+
+                $scope.addEventScripts = function () {
+                    angular.forEach(vm.savingPlan.events, function (valueEvent, keyEvent) {
+                        if (vm.currentEvent === valueEvent.eventType) {
+                            angular.forEach(angular.element('.script-selection:checked'), function (value, key) {
+                                var newScriptId = Number(value.getAttribute('data-id'));
+                                var newScriptName = value.getAttribute('data-name');
+                                var newScriptGUID = value.getAttribute('data-guid');
+                                var isExist = false;
+
+                                angular.forEach(vm.savingPlan.events[keyEvent].scripts, function (valueContainer, keyContainer) {
+                                    if (valueContainer.scriptId === newScriptId) {
+                                        isExist = true;
+                                    }
+                                });
+
+                                if (!isExist) {
+                                    vm.savingPlan.events[keyEvent].scripts.push({ context : 'System', scriptGUID : newScriptGUID, scriptName : newScriptName, scriptId : newScriptId});
+                                }
+                            });
+                        }
+                    });
+
+                    $mdDialog.hide();
+                };
+
+                $scope.closeEventScripts = function () {
+                    $mdDialog.cancel();
+                };
+            }
+        };
+
+        vm.addSavingComputer = function (ev, computerId, type) { 
             $mdDialog.show({
                 templateUrl: 'views/powerplan/dialogs/computerCondition.html',
                 parent: angular.element(document.body),
@@ -643,10 +716,36 @@
             });
 
             function DialogController($scope, $mdDialog, $document) {
-                //Load Computers
+                ComputersResource.query(function (data) {                    
+                    $scope.savingComputerList = data;
+                }, function (err) {
+                    onError(err);
+                });
+                
                 $scope.addSavingComputers = function () {
-                    //All checked loop
-                    //vm.savingPlan.savings[type].options.computersNotRun.push({ computerKey: appId, appName: exeName, counter: counter, threshold: threshold });
+                    angular.forEach(angular.element('.computer-selection:checked'), function (value, key) {
+                        var newComputerName = value.getAttribute('data-name');
+                        var isExist = false;
+                        if (vm.savingPlan.savings[type].options && vm.savingPlan.savings[type].options.computersNotRun) {
+                            angular.forEach(vm.savingPlan.savings[type].options.computersNotRun, function (valueContainer, keyContainer) {
+                                if (valueContainer.name === newComputerName) {
+                                    isExist = true;
+                                }
+                            });
+                        }
+
+                        if (!isExist) {
+                            if (!vm.savingPlan.savings[type].options) {
+                                vm.savingPlan.savings[type].options = {};
+                            }
+
+                            if (!vm.savingPlan.savings[type].options.computersNotRun) {
+                                vm.savingPlan.savings[type].options.computersNotRun = [];
+                            }
+                            vm.savingPlan.savings[type].options.computersNotRun.push({ computerKey: vm.savingPlan.savings[type].options.computersNotRun.length, name: newComputerName });
+                        }
+                    });
+                    
                     $mdDialog.hide();
                 };
 
