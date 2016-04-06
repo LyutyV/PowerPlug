@@ -47,7 +47,8 @@
   > i {
     color: #484848;
   }
-  > span:first-child {
+  > span:nth-child(2) {
+    line-height: 35px;
     > span {
       font-family: Calibri;
       color: #333333;
@@ -68,6 +69,7 @@
     font-size: 14.83px;
     font-weight: 700;
     cursor: pointer;
+    line-height: 33px;
   }
   > div#organizationName {
     > .customTable {
@@ -77,7 +79,7 @@
       border-spacing: 0 5px;
       > .customTableHead {
         display: table-row;
-        height: 70px;
+        height: 55px;
         font-family: Calibri;
         color: #4d4d4d;
         font-size: 13.46px;
@@ -85,6 +87,10 @@
         > div {
           display: table-cell;
           vertical-align: middle;
+          cursor: pointer;
+          &:first-child {
+            padding: 12px 0px 17px 18px;
+          }
           & img {
             display: block;
             float: left;
@@ -106,6 +112,7 @@
           }
 
           &:first-child {
+            padding-left: 18px;
             span {
               &:nth-child(1) {
                 font-family: Calibri;
@@ -113,12 +120,12 @@
                 font-size: 18px;
                 font-weight: 300;
               }
-              &:nth-child(2) {
-                font-family: Calibri;
-                color: #4d4d4d;
-                font-size: 18px;
-                font-weight: 700;
-              }
+              // &:nth-child(2) {
+              //   font-family: Calibri;
+              //   color: #4d4d4d;
+              //   font-size: 18px;
+              //   font-weight: 700;
+              // }
               &:nth-child(5) {
                 font-family: Calibri;
                 color: #b3b3b3;
@@ -131,6 +138,17 @@
                 font-size: 18px;
                 font-weight: 300;
               }
+            }
+            > a {
+                font-family: Calibri;
+                color: #4d4d4d;
+                font-size: 18px;
+                font-weight: 700;
+                list-style: none;
+                text-decoration: none;
+            }
+            > i{
+                margin: 0px 5px;
             }
           }
           &:nth-child(2),

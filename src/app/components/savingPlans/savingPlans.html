@@ -1,13 +1,13 @@
 <div class="savingPlans">
   <div class="searchBlock">
-    <input type="text" name="search" placeholder="Search a Group or a Plan" ng-model="vm.query.PlainDetails.Owner" >
+    <input type="text" name="search" placeholder="Search a Plan" ng-model="vm.query.PlainDetails.Saving" >
   </div>
-  <span><span>Organization Name</span><span> ({{vm.menuTableItems.length}} Plans)</span></span>
+  <span><span>Organization Name&nbsp;</span><span>({{vm.menuTableItems.length}} Plans)</span></span>
   <span class="buttonTypeOne">Add Plan</span>
   <div class="collapse in" id="organizationName">
     <div class="customTable">
       <div class="customTableHead">
-        <div ng-click="vm.changeSorting('PlainDetails')">
+        <div ng-click="vm.changeSorting('PlainDetails.Saving')">
           <img src="assets/images/savingPlans/_Group_.png">
           <span>Plan<br>Details</span>
         </div>
@@ -24,7 +24,7 @@
       <div class="customTableRow" ng-repeat="row in vm.menuTableItems|orderBy:vm.sort.column:vm.sort.descending|filter:vm.query">
         <div class="customTableCell">
           <span>1.{{$index + 1}}</span>
-          <span>{{row.PlainDetails.Saving}} Saving</span>
+          <a href="www.google.com">{{row.PlainDetails.Saving}} Saving</a>
           <br>
           <i class="fa fa-user"></i>
           <span>Owner</span>
