@@ -1,6 +1,4 @@
-﻿/// <reference
-
-(function () {
+﻿(function () {
     'use strict';
     angular
         .module('powerPlug')
@@ -16,8 +14,7 @@
                     });
                 }
             };
-        })
-        .controller('SavingPlanEditorCtrl',
+        }).controller('SavingPlanEditorCtrl',
                      ['$state', '$stateParams', '$scope', '$animate', '$document', '$mdDialog', '$mdMedia', 'SavingPlansResource', SavingPlanEditorCtrl]);
 
     function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $mdDialog, $mdMedia, SavingPlansResource) {
@@ -626,14 +623,6 @@
             });
         };        
 
-        vm.removeSavingApplication = function (appId, type) {
-            angular.forEach(vm.savingPlan.savings[type].options.appMetrics, function (value, key) {
-                if (appId === value.appKey) {
-                    vm.savingPlan.savings[type].options.appMetrics.splice(key, 1);
-                }
-            });            
-        };
-
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
         vm.addSavingComputer = function (ev, computerId, type) {           
             
@@ -662,75 +651,6 @@
                 };
 
                 $scope.closeSavingComputers = function () {
-                    $mdDialog.cancel();
-                };
-            }
-        };
-
-        vm.addSavingApplication = function (ev, appId, type) {
-            var appMetric = { appKey: vm.savingPlan.savings[type].options.appMetrics.length };
-            angular.forEach(vm.savingPlan.savings[type].options.appMetrics, function (value, key) {
-                if (appId === value.appKey) {
-                    appMetric = value;
-                }                
-            });
-
-            $mdDialog.show({
-                templateUrl: 'views/powerplan/dialogs/applicationCondition.html',
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                clickOutsideToClose: false,
-                bindToController: true,
-                fullscreen: useFullScreen,
-                locals: { appMetric: appMetric },
-                controller: DialogController,
-            });
-            $scope.$watch(function () {
-                return $mdMedia('xs') || $mdMedia('sm');
-            }, function (wantsFullScreen) {
-                $scope.customFullscreen = (wantsFullScreen === true);
-            });
-
-            function DialogController($scope, $mdDialog, $document, appMetric) {
-                $scope.appMetric = appMetric;
-                $scope.copyExeName = function (fileEl) {
-                    var fileName = fileEl.value;
-                    var lastIndex = fileName.lastIndexOf("\\");
-                    if (lastIndex >= 0) {
-                        fileName = fileName.substring(lastIndex + 1).replace('.exe','');
-                    }
-                    angular.element('#exeName')[0].value = fileName;
-                };
-                
-                $scope.upsertSavingApplication = function (appId) {
-                    var exeName = angular.element('#exeName')[0].value;
-                    var counter;
-                    var threshold = 0;
-                    
-                    if (angular.element('#running')[0].checked) {
-                        counter = 'Running';
-                    }
-                    else if (angular.element('#cpu')[0].checked) {
-                        threshold = angular.element('#cpuText')[0].value;
-                        counter = 'Cpu';
-                    }
-                    else if (angular.element('#io')[0].checked) {
-                        threshold = (angular.element('#ioText')[0].value) * 1024;
-                        counter = 'Io';
-                    }
-
-                    if (appId < vm.savingPlan.savings[type].options.appMetrics.length) {
-                        appMetric.counter = counter;
-                        appMetric.appName = exeName;
-                        appMetric.threshold = threshold;
-                    }
-                    else {
-                        vm.savingPlan.savings[type].options.appMetrics.push({ appKey : appId, appName: exeName, counter: counter, threshold: threshold});                        
-                    }
-                    $mdDialog.hide();
-                };
-
-                $scope.closeSavingApplication = function () {
                     $mdDialog.cancel();
                 };
             }

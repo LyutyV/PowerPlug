@@ -1,0 +1,38 @@
+﻿<div class="panel-body">
+    <div><button ng-click="addSavingApplication($event, -1, worktype)">Add</button></div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Application</td>
+                <td>Condition</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="application in  .appMetrics">
+                <td>{{application.appName}}</td>
+                <td>{{application.counter.toLowerCase() === "cpu" ? "CPU usage > " + application.threshold + " percent" : application.counter.toLowerCase() === "io" ? "IO > " + (application.threshold / 1024) + " KB/Sec" : application.counter}}</td>
+                <td><button ng-click="addSavingApplication($event, application.appKey, worktype)">Edit</button></td>
+                <td><button ng-click="removeSavingApplication(application.appKey, worktype)">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--<div class="panel-body">
+    <div><button ng-click="vm.addSavingApplication($event, -1, 'nonWork')">Add</button></div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Application</td>
+                <td>Condition</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="application in vm.savingPlan.savings.nonWork.options.appMetrics">
+                <td>{{application.appName}}</td>
+                <td>{{application.counter.toLowerCase() === "cpu" ? "CPU usage > " + application.threshold + " percent" : application.counter.toLowerCase() === "io" ? "IO > " + (application.threshold / 1024) + " KB/Sec" : application.counter}}</td>
+                <td><button ng-click="vm.addSavingApplication($event, application.appKey, 'nonWork')">Edit</button></td>
+                <td><button ng-click="vm.removeSavingApplication(application.appKey, 'nonWork')">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->

@@ -1,0 +1,16 @@
+﻿<div class="panel-body">
+    <div><button ng-click="vm.addSavingComputer($event, -1, 'work')">Add</button></div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Computer Name</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="computer in vm.savingPlan.savings.work.options.computersNotRun">
+                <td>{{computer.name}}</td>
+                <td><button ng-click="vm.removeSavingComputer(computer.computerKey, 'work')">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
