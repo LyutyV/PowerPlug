@@ -92,7 +92,7 @@
                                         <td>{{application.appName}}</td>
                                         <td>{{application.counter.toLowerCase() === "cpu" ? "CPU usage > " + application.threshold + " percent" : application.counter.toLowerCase() === "io" ? "IO > " + (application.threshold / 1024) + " KB/Sec" : application.counter}}</td>
                                         <td><button ng-click="vm.addSavingApplication($event, application.appKey, 'work')">Edit</button></td>
-                                        <td><button ng-click="vm.removeSavingApplication()">Remove</button></td>
+                                        <td><button ng-click="vm.removeSavingApplication(application.appKey, 'work')">Remove</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -100,6 +100,7 @@
                     </uib-tab>
                     <uib-tab index="8" heading="Computers">
                         <div class="panel-body">
+                            <div><button ng-click="vm.addSavingComputer($event, -1, 'work')">Add</button></div>
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -109,6 +110,7 @@
                                 <tbody>
                                     <tr ng-repeat="computer in vm.savingPlan.savings.work.options.computersNotRun">
                                         <td>{{computer.name}}</td>
+                                        <td><button ng-click="vm.removeSavingComputer(computer.computerKey, 'work')">Remove</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -195,6 +197,7 @@
                     </uib-tab>
                     <uib-tab index="3" heading="Applications">
                         <div class="panel-body">
+                            <div><button ng-click="vm.addSavingApplication($event, -1, 'nonWork')">Add</button></div>
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -206,7 +209,8 @@
                                     <tr ng-repeat="application in vm.savingPlan.savings.nonWork.options.appMetrics">
                                         <td>{{application.appName}}</td>
                                         <td>{{application.counter.toLowerCase() === "cpu" ? "CPU usage > " + application.threshold + " percent" : application.counter.toLowerCase() === "io" ? "IO > " + (application.threshold / 1024) + " KB/Sec" : application.counter}}</td>
-                                        <td></td>
+                                        <td><button ng-click="vm.addSavingApplication($event, application.appKey, 'nonWork')">Edit</button></td>
+                                        <td><button ng-click="vm.removeSavingApplication(application.appKey, 'nonWork')">Remove</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -214,7 +218,8 @@
                     </uib-tab>
                     <uib-tab index="4" heading="Computers">
                         <div class="panel-body">
-                            <table class="table">
+                            <div><button ng-click="vm.addSavingComputer($event, -1, 'nonWork')">Add</button></div>
+                            <table class="table">                                
                                 <thead>
                                     <tr>
                                         <td>Computer Name</td>
@@ -223,6 +228,7 @@
                                 <tbody>
                                     <tr ng-repeat="computer in vm.savingPlan.savings.nonWork.options.computersNotRun">
                                         <td>{{computer.name}}</td>
+                                        <td><button ng-click="vm.removeSavingComputer(computer.computerKey, 'nonWork')">Remove</button></td>
                                     </tr>
                                 </tbody>
                             </table>
