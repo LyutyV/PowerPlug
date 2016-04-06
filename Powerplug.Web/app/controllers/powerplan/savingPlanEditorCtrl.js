@@ -14,14 +14,9 @@
                     });
                 }
             };
-<<<<<<< HEAD
-        }).controller('SavingPlanEditorCtrl',
-                     ['$state', '$stateParams', '$scope', '$animate', '$document', '$mdDialog', '$mdMedia', 'SavingPlansResource', SavingPlanEditorCtrl]);
-=======
         })
         .controller('SavingPlanEditorCtrl',
                      ['$state', '$stateParams', '$scope', '$animate', '$document', '$mdDialog', '$mdMedia', 'SavingPlansResource', 'ComputersResource', 'ScriptsResource', SavingPlanEditorCtrl]);
->>>>>>> 19b248841248e0872b38e487da5f39af131af431
 
     function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $mdDialog, $mdMedia, SavingPlansResource, ComputersResource, ScriptsResource) {
         var vm = this;
