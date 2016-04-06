@@ -23,11 +23,14 @@
         </ul>
     </div>
     <div class="pull-right">
-        <h4>Scripts</h4>
+        <div class="clearfix">
+            <h4 class="pull-left">Scripts</h4><div class="pull-right"><button class="btn btn-success" ng-click="vm.addEventScripts()">Add</button></div>
+        </div>
         <table class="table" style="width:400px;">
             <tbody>
                 <tr ng-repeat="script in vm.currentEventScripts">
                     <td>{{ script.scriptName}}</td>
+                    <td><button class="btn btn-danger" ng-click="vm.removeEventScript(script.scriptId)">Remove</button></td>
                 </tr>
             </tbody>
         </table>
