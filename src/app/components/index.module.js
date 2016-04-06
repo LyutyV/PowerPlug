@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('powerPlug', ['ui.router']);
+    .module('powerPlug', ['ui.router','ui.tinymce']);
 
 })();

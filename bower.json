@@ -7,7 +7,8 @@
     "angular": "1.5.4-build.4708+sha.3b05c48",
     "font-awesome": "^4.5.0",
     "tether": "^1.2.0",
-    "bootstrap": "4.0.0-alpha.2"
+    "bootstrap": "4.0.0-alpha.2",
+    "angular-ui-tinymce": "https://github.com/vovatolstousov/ui-tinymce.git#~0.0.16"
   },
   "devDependencies": {},
   "overrides": {
