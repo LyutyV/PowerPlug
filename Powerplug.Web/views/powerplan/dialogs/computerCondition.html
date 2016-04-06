@@ -1,0 +1,28 @@
+﻿<md-dialog>
+    <md-toolbar>
+        <div style="padding-left: 20px;padding-top: 17px;">Select Computers</div>
+    </md-toolbar>
+    <md-content>        
+        <div class="well">
+            <table>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Computer Name</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="computer in savingComputerList">
+                        <td><input type="checkbox" data-name="{{computer.name}}" class="computer-selection"/></td>
+                        <td>{{computer.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+            <div style="text-align:center">
+                <md-button ng-click="addSavingComputers()">OK</md-button>
+                <md-button ng-click="closeSavingComputers()">Cancel</md-button>
+            </div>
+        </div>
+    </md-content>
+</md-dialog>
