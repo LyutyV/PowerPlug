@@ -18,9 +18,9 @@
             };
         })
         .controller('SavingPlanEditorCtrl',
-                     ['$state', '$stateParams', '$scope', '$animate', '$document', '$mdDialog', '$mdMedia', 'SavingPlansResource', SavingPlanEditorCtrl]);
+                     ['$state', '$stateParams', '$scope', '$animate', '$document', '$mdDialog', '$mdMedia', 'SavingPlansResource', 'ComputersResource', SavingPlanEditorCtrl]);
 
-    function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $mdDialog, $mdMedia, SavingPlansResource) {
+    function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $mdDialog, $mdMedia, SavingPlansResource, ComputersResource) {
         var vm = this;
         var policyId = $stateParams.policyId
         SavingPlansResource.get({ policyId: policyId }, function (data) {
@@ -546,7 +546,7 @@
             var chkElement = $document[0].querySelector('#' + type + id);
             var txtElement = $document[0].querySelector('#' + type + id + 'Text');
             var isElementFound = false;
-            if (vm.savingPlan.savings[type].options.computerMetrics) {
+            if (!vm.savingPlan.savings[type].options.computerMetrics) {
                 vm.savingPlan.savings[type].options.computerMetrics = [];
             }
 
@@ -641,10 +641,27 @@
             });
 
             function DialogController($scope, $mdDialog, $document) {
-                //Load Computers
+                ComputersResource.query(function (data) {                    
+                    $scope.savingComputerList = data;
+                }, function (err) {
+                    onError(err);
+                });
+                
                 $scope.addSavingComputers = function () {
-                    //All checked loop
-                    //vm.savingPlan.savings[type].options.computersNotRun.push({ computerKey: appId, appName: exeName, counter: counter, threshold: threshold });
+                    angular.forEach(angular.element('.computer-selection:checked'), function (value, key) {
+                        var newComputerName = value.getAttribute('data-name');
+                        var isExist = false;
+                        angular.forEach(vm.savingPlan.savings[type].options.computersNotRun, function (valueContainer, keyContainer) {
+                            if (valueContainer.name === newComputerName) {
+                                isExist = true;
+                            }                            
+                        });
+
+                        if (!isExist) {
+                            vm.savingPlan.savings[type].options.computersNotRun.push({ computerKey: vm.savingPlan.savings[type].options.computersNotRun.length, name: newComputerName });
+                        }
+                    });
+                    
                     $mdDialog.hide();
                 };
 
