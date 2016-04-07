@@ -22,6 +22,12 @@
         var vm = this;
         var policyId = $stateParams.policyId;
 
+        overviewHandler.init(vm);
+        eventHandler.init(vm, $scope, $document, $mdDialog, $mdMedia, ScriptsResource);
+        actionHandler.init(vm);
+        workHoursHandler.init(vm);
+        savingHandler.init(vm, $document);
+
         SavingPlansResource.get({ policyId: policyId }, function (data) {
             onSuccess(data);            
         }, function (err) {
@@ -38,16 +44,16 @@
         function onSuccess(data) {
             vm.savingPlan = data;
 
-            setOverviewItems(vm);              
-            setActionItems(vm);            
-            setSavingItems(vm);
-            setWorkHoursItems(vm);
-            setEventItems(vm);
+            overviewHandler.setOverviewItems();
+            actionHandler.setActionItems();
+            savingHandler.setSavingItems();
+            workHoursHandler.setWorkHoursItems();
+            eventHandler.setEventItems();
 
             console.log(vm.savingPlan);
         }
 
-        setOverviewGraphs(vm);
+        overviewHandler.setOverviewGraphs();
 
         //==================================================PopUp=======================================================
         $scope.showAdvanced = function (ev, actionData) {
@@ -163,7 +169,7 @@
                
         //Html Elements Events
         vm.saveChanges = function () {
-            updateSavingItems(vm, $document);
+            savingHandler.updateSavingItems();
             vm.savingPlan.$update(function (data) {
                 onSuccess(data);            
             }, function (err) {
@@ -171,7 +177,8 @@
             });
         }
 
-        setEventEvents(vm, $scope, $document, $mdMedia, $mdDialog, ScriptsResource);
-        setSavingEvents(vm, $scope, $document, $mdMedia, $mdDialog, ComputersResource);        
+        vm.addEventScripts = eventHandler.eventScriptDialog;
+        vm.showEventScripts = eventHandler.showEventScripts;
+        vm.removeEventScript = eventHandler.removeEventScript;
     }
 }());

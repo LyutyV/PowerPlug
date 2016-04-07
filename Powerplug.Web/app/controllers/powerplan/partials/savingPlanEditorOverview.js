@@ -1,32 +1,36 @@
-﻿function setOverviewItems(vm) {
-    vm.savingPlan.validFrom = new Date(vm.savingPlan.validFrom);
-    vm.savingPlan.validTo = new Date(vm.savingPlan.validTo);
-}
-
-function setOverviewGraphs(vm) {
-    vm.graphWorkDays = {};
-    vm.graphWorkDays.attrs = {
-        "caption": "Work Days",
-        "numberprefix": "",
-        "plotgradientcolor": "",
-        "bgcolor": "FFFFFF",
-        "showalternatehgridcolor": "0",
-        "divlinecolor": "CCCCCC",
-        "showvalues": "0",
-        "showcanvasborder": "0",
-        "canvasborderalpha": "0",
-        "canvasbordercolor": "CCCCCC",
-        "canvasborderthickness": "1",
-        "yaxismaxvalue": "",
-        "captionpadding": "30",
-        "linethickness": "3",
-        "yaxisvaluespadding": "15",
-        "legendshadow": "0",
-        "legendborderalpha": "0",
-        "palettecolors": "#f8bd19,#008ee4,#33bdda,#e44a00,#6baa01,#583e78",
-        "showborder": "0"
-    };
-    vm.graphWorkDays.categories = [
+﻿var overviewHandler = {
+    vm: {},
+    init: function (vm) {
+        overviewHandler.vm = vm;
+    },
+    setOverviewItems: function () {
+        overviewHandler.vm.savingPlan.validFrom = new Date(overviewHandler.vm.savingPlan.validFrom);
+        overviewHandler.vm.savingPlan.validTo = new Date(overviewHandler.vm.savingPlan.validTo);
+    },
+    setOverviewGraphs: function () {
+        overviewHandler.vm.graphWorkDays = {};
+        overviewHandler.vm.graphWorkDays.attrs = {
+            "caption": "Work Days",
+            "numberprefix": "",
+            "plotgradientcolor": "",
+            "bgcolor": "FFFFFF",
+            "showalternatehgridcolor": "0",
+            "divlinecolor": "CCCCCC",
+            "showvalues": "0",
+            "showcanvasborder": "0",
+            "canvasborderalpha": "0",
+            "canvasbordercolor": "CCCCCC",
+            "canvasborderthickness": "1",
+            "yaxismaxvalue": "",
+            "captionpadding": "30",
+            "linethickness": "3",
+            "yaxisvaluespadding": "15",
+            "legendshadow": "0",
+            "legendborderalpha": "0",
+            "palettecolors": "#f8bd19,#008ee4,#33bdda,#e44a00,#6baa01,#583e78",
+            "showborder": "0"
+        };
+        overviewHandler.vm.graphWorkDays.categories = [
         {
             "category": [
                 {
@@ -52,8 +56,8 @@ function setOverviewGraphs(vm) {
                 }
             ]
         }
-    ];
-    vm.graphWorkDays.dataset = [
+        ];
+        overviewHandler.vm.graphWorkDays.dataset = [
         {
             "seriesname": "Down Time",
             "data": [
@@ -132,31 +136,31 @@ function setOverviewGraphs(vm) {
                 }
             ]
         }
-    ];
+        ];
 
-    vm.graphNonWorkDays = {};
-    vm.graphNonWorkDays.attrs = {
-        "caption": "Non-Work Days",
-        "numberprefix": "",
-        "plotgradientcolor": "",
-        "bgcolor": "FFFFFF",
-        "showalternatehgridcolor": "0",
-        "divlinecolor": "CCCCCC",
-        "showvalues": "0",
-        "showcanvasborder": "0",
-        "canvasborderalpha": "0",
-        "canvasbordercolor": "CCCCCC",
-        "canvasborderthickness": "1",
-        "yaxismaxvalue": "",
-        "captionpadding": "30",
-        "linethickness": "3",
-        "yaxisvaluespadding": "15",
-        "legendshadow": "0",
-        "legendborderalpha": "0",
-        "palettecolors": "#f8bd19,#008ee4,#33bdda,#e44a00,#6baa01,#583e78",
-        "showborder": "0"
-    };
-    vm.graphNonWorkDays.categories = [
+        overviewHandler.vm.graphNonWorkDays = {};
+        overviewHandler.vm.graphNonWorkDays.attrs = {
+            "caption": "Non-Work Days",
+            "numberprefix": "",
+            "plotgradientcolor": "",
+            "bgcolor": "FFFFFF",
+            "showalternatehgridcolor": "0",
+            "divlinecolor": "CCCCCC",
+            "showvalues": "0",
+            "showcanvasborder": "0",
+            "canvasborderalpha": "0",
+            "canvasbordercolor": "CCCCCC",
+            "canvasborderthickness": "1",
+            "yaxismaxvalue": "",
+            "captionpadding": "30",
+            "linethickness": "3",
+            "yaxisvaluespadding": "15",
+            "legendshadow": "0",
+            "legendborderalpha": "0",
+            "palettecolors": "#f8bd19,#008ee4,#33bdda,#e44a00,#6baa01,#583e78",
+            "showborder": "0"
+        };
+        overviewHandler.vm.graphNonWorkDays.categories = [
         {
             "category": [
                 {
@@ -182,8 +186,8 @@ function setOverviewGraphs(vm) {
                 }
             ]
         }
-    ];
-    vm.graphNonWorkDays.dataset = [
+        ];
+        overviewHandler.vm.graphNonWorkDays.dataset = [
         {
             "seriesname": "Down Time",
             "data": [
@@ -262,7 +266,6 @@ function setOverviewGraphs(vm) {
                 }
             ]
         }
-    ];
+        ];
+    }
 }
-
-        
