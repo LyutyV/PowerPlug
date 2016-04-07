@@ -22,6 +22,7 @@
         var vm = this;
         var policyId = $stateParams.policyId;
 
+        //Init
         overviewHandler.init(vm);
         eventHandler.init(vm, $scope, $document, $mdDialog, $mdMedia, ScriptsResource);
         actionHandler.init(vm);
