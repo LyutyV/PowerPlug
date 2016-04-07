@@ -1,0 +1,114 @@
+﻿<md-dialog aria-label=dataModel.perform  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{actionData.perform}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          X
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2>Using .md-dialog-content class that sets the padding as the spec</h2>
+          <md-dialog aria-label="Mango (Fruit)" ng-cloak>
+             <div>
+                <label>
+                      <input type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="EveryDay">
+                    Every Day
+                </label> 
+              </div>
+             <div>
+                  <label>
+                      <input type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="DayOfWeek">
+                      Day of the week
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Sunday.Value" ng-true-value="1" ng-false-value="-2" ng-model-options="{ getterSetter: true }"> Sunday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Monday.Value" ng-true-value="2" ng-false-value="-3" ng-model-options="{ getterSetter: true }"> Monday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Tuesday.Value" ng-true-value="4" ng-false-value="-5" ng-model-options="{ getterSetter: true }"> Tuesday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Wednesday.Value" ng-true-value="8" ng-false-value="-9" ng-model-options="{ getterSetter: true }"> Wednesday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Thursday.Value" ng-true-value="16" ng-false-value="-17" ng-model-options="{ getterSetter: true }"> Thursday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"  ng-model="Friday.Value" ng-true-value="32" ng-false-value="-33" ng-model-options="{ getterSetter: true }"> Friday
+                  </label>
+                  <label>
+                      <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'" ng-model="Saturday.Value" ng-true-value="64" ng-false-value="-65" ng-model-options="{ getterSetter: true }"> Saturday
+                  </label>
+              </div>
+             <div>
+                <label>
+                    <input type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="DayOfMonth">
+                     Day of Month
+                </label>
+                 <input ng-disabled="scheduleType != 'DayOfMonth'" type='number' min="1" max="31" ng-model="daysOfMonth"/>
+              </div>
+              <div>
+                 <label>
+                      <input type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="SpecificDate">
+                     Specific Date 
+                 </label>
+                    <md-datepicker ng-disabled="scheduleType != 'SpecificDate'" ng-model="specificDate" md-placeholder="Enter date"></md-datepicker>
+              </div>
+              <hr />
+              <div>
+                  <label>
+                      <b> At</b>
+                  </label>
+                  <input type="time" ng-model="timeChosen"/>
+              </div> 
+              <hr />
+              <div>
+                  <h4>Action Settings</h4>
+                  <div>
+                  <label>
+                      Keep Monitor On <input type="checkbox" ng-model="KeepMonitorOn">
+                  </label>
+                      </div>
+                  <label>
+                     Keep awake for
+                  </label>
+                  <input type="number" ng-model="keepAlive" min="15" max="1080" />
+              </div>                                     
+              <!--TABS-->
+              <uib-tabset>
+                  <uib-tab heading="Conditions" active=true>
+                    <label>
+                        Computer is idle for: 
+                        <select>
+                            <option value="option-1">Option 1</option>
+                            <option value="option-2">Option 2</option>
+                            <option value="option-3">Option 3</option>
+                        </select>
+                    </label>
+                  </uib-tab>
+                  <uib-tab heading="Options" active=true>
+                  </uib-tab>
+                  <uib-tab heading="Applications" active=true>
+                  </uib-tab>
+                  <uib-tab heading="Preformance Metrics" active=true>
+                  </uib-tab>
+              </uib-tabset>
+          </md-dialog>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="Add('Add')">
+       Add  
+      </md-button>
+      <md-button ng-click="cancel()" style="margin-right:20px;">
+        Cancel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

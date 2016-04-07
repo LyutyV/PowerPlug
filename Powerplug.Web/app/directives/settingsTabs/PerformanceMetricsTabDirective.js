@@ -5,7 +5,8 @@
             return {
                 templateUrl: '../../../views/powerplan/settingsTabs/PerformanceMetrics.html',
                 scope: {
-                    jsonobject: '='
+                    jsonobject: '=',
+                    worktype: '@'
                 },
                 link: function (scope, element, attrs) {
                    

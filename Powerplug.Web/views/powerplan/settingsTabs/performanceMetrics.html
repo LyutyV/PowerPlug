@@ -1,12 +1,12 @@
 ﻿<div>
-    <input type="checkbox" id="workCpu" ng-checked="jsonobject.computerMetricsConverted.Cpu" /> CPU utilization is above
-    <input type="number" min="0" max="100" id="workCpuText" ng-model="jsonobject.computerMetricsConverted.Cpu.threshold" /> Percent
+    <input type="checkbox" ng-attr-id="{{worktype + 'Cpu'}}" ng-checked="jsonobject.computerMetricsConverted.Cpu" /> CPU utilization is above
+    <input type="number" min="0" max="100" ng-attr-id="{{worktype + 'CpuText'}}" ng-model="jsonobject.computerMetricsConverted.Cpu.threshold" /> Percent
 </div>
 <div>
-    <input type="checkbox" id="workIo" ng-checked="jsonobject.computerMetricsConverted.Io" /> Disk I/O operations are above
-    <input type="number" min="0" id="workIoText" ng-model="jsonobject.computerMetricsConverted.Io.thresholdInKb" /> KB/Second
+    <input type="checkbox" ng-attr-id="{{worktype + 'Io'}}" ng-checked="jsonobject.computerMetricsConverted.Io" /> Disk I/O operations are above
+    <input type="number" min="0" ng-attr-id="{{worktype + 'IoText'}}"  ng-model="jsonobject.computerMetricsConverted.Io.thresholdInKb" /> KB/Second
 </div>
 <div>
-    <input type="checkbox" id="workNetwork" ng-checked="jsonobject.computerMetricsConverted.Network" /> Network I/O operations are above
-    <input type="number" min="0" id="workNetworkText" ng-model="jsonobject.computerMetricsConverted.Network.thresholdInKb" /> KB/Second
+    <input type="checkbox" ng-attr-id="{{worktype + 'Network'}}" ng-checked="jsonobject.computerMetricsConverted.Network" /> Network I/O operations are above
+    <input type="number" min="0"  ng-attr-id="{{worktype + 'NetworkText'}}" ng-model="jsonobject.computerMetricsConverted.Network.thresholdInKb" /> KB/Second
 </div>
