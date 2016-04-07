@@ -11,8 +11,8 @@
     function ComputerGroupsCtrl($state, ComputerGroupsResource) {
         var vm = this;
         
-        ComputerGroupsResource.get(function (data) {
-            vm.computerGroups = data.computerGroups;
+        ComputerGroupsResource.query(function (data) {
+            vm.computerGroups = data;
         }, function (error) {
             if (error.status === 401 || error.status === -1)
             {                
