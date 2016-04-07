@@ -40,3 +40,8 @@ html {
     }
   }
 }
+
+.uibTabSet{
+    > ul{float:left;}
+    > .tab-content{float:left; padding-left:20px;}
+}
