@@ -1,6 +1,6 @@
 ﻿<div class="panel-body">
-    <div><button ng-click="addSavingComputer($event, -1, worktype)">Add</button></div>
-    <table class="table">
+    <div><button ng-click="addSavingComputer($event, -1, worktype)" class="btn btn-success">Add</button></div>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <td>Computer Name</td>
@@ -9,7 +9,7 @@
         <tbody>
             <tr ng-repeat="computer in jsonobject.computersNotRun">
                 <td>{{computer.name}}</td>
-                <td><button ng-click="removeSavingComputer(computer.computerKey, 'work')">Remove</button></td>
+                <td><button ng-click="removeSavingComputer(computer.computerKey, 'work')" class="btn btn-danger">Remove</button></td>
             </tr>
         </tbody>
     </table>

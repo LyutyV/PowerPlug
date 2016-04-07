@@ -2,9 +2,7 @@
 <html>
 <head>
     <title></title>
-	<meta charset="utf-8" />
-    <!--<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />-->
-   
+	<meta charset="utf-8" />   
     <link href="content/css/vendor/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link href="content/css/powerplan.min.css" rel="stylesheet" />
@@ -49,10 +47,6 @@
     <script src="content/js/vendor/textAngular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
 
-
- 
-
-
     <!-- Application Script -->
     <script src="app/app.js"></script>
 
@@ -67,14 +61,20 @@
     <script src="app/services/powerplan/scriptsResource.js"></script>
 
     <!-- Directive -->
-    <script src="app/controllers/powerplan/settingsTabs/optionsTabDirective.js"></script>
-    <script src="app/controllers/powerplan/settingsTabs/applicationsTabDirective.js"></script>
-    <script src="app/controllers/powerplan/settingsTabs/computersTabDirective.js"></script>
-    <script src="app/controllers/powerplan/settingsTabs/performanceMetricsTabDirective.js"></script>
+    <script src="app/directives/settingsTabs/optionsTabDirective.js"></script>
+    <script src="app/directives/settingsTabs/applicationsTabDirective.js"></script>
+    <script src="app/directives/settingsTabs/computersTabDirective.js"></script>
+    <script src="app/directives/settingsTabs/performanceMetricsTabDirective.js"></script>
+
     <!-- PowerPlan Controllers -->
     <script src="app/controllers/login/loginCtrl.js"></script>
     <script src="app/controllers/powerplan/computerGroupsCtrl.js"></script>
     <script src="app/controllers/powerplan/savingPlansCtrl.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorOverview.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorActions.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorWorkHours.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorSavings.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorEvents.js"></script>
     <script src="app/controllers/powerplan/savingPlanEditorCtrl.js"></script>
     <script src="app/controllers/dashboard/dashboardCtrl.js"></script>
     <script src="app/controllers/dashboard/dashboardView1Ctrl.js"></script>
