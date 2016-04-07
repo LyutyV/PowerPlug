@@ -1,19 +1,42 @@
-﻿body {
+﻿@import "commonControlsStyles.scss";
+@import "savingPlans.scss";
+@import "header.scss";
+@import "leftMenu.scss";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  line-height: normal;
 }
 
-.tab{
-    color:gray;
-    &.tab-active{
-        color: blue;
+html {
+  height: 100%;
+  width: 100%;
+  > body {
+    height: 100%;
+    width: 100%;
+    border-top: $greenBorderTop;
+    font-family: Calibri;
+    .topGreenLine {
+      position: fixed;
+      top: 0px;
+      width: 100%;
+      height: 5px;
+      background-color: #8cc63f;
     }
-}
-
-.uibTabSet{
-    ul{
-        float:left;
-        padding-right:50px;
+    .main-wrapper {
+      display: flex;
+      flex-direction: row;
+      height:100%;
+      > .content-wrapper {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 34px;
+        > .content {
+          flex-grow: 1;
+        }
+      }
     }
-    .tab-content{
-        float:left;
-    }
+  }
 }

@@ -13,11 +13,28 @@
         
         SavingPlansResource.query(function (data) {
             vm.savingPlans = data;
+            console.log(data);
         }, function (error) {            
             if (error.status === 401 || error.status === -1)
             {
                 $state.go('login');
             }
         });
+
+        vm.sort = {
+            column: '',
+            descending: false
+        };
+
+        vm.changeSorting = function (column) {
+            var sort = vm.sort;
+
+            if (sort.column == column) {
+                sort.descending = !sort.descending;
+            } else {
+                sort.column = column;
+                sort.descending = false;
+            }
+        };
     }
 }());

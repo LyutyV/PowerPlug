@@ -1,0 +1,44 @@
+header {
+  height: 100px;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  line-height: 100px;
+  margin: 0px -34px;
+  > div:first-child {
+    float: left;
+    line-height: 100px;
+    margin-left: 29px;
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 23px;
+    font-weight: 300;
+  }
+  > div:last-child {
+    float: right;
+    line-height: 100px;
+    margin-right: 29px;
+    > i {
+      margin-right: 30px;
+      font-size: 20px;
+    }
+    > div.dropdown {
+      display: inline-block;
+      > button {
+        background-color: transparent;
+        border: none;
+        font-family: Calibri;
+        color: #333333;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 10px;
+      }
+      > div.dropdown-menu {
+        right: 0 !important;
+        left: inherit !important;
+        top: 35px;
+        // text-align: right;
+        // border: none;
+      }
+    }
+  }
+}

@@ -17,15 +17,14 @@
             <div class="well" ui-view></div>
         </div>
         <div ng-if="innerTemplate()">
-            <div style="position:fixed;left:0px;top:0px;bottom:0px;width:220px;background-color:#000;padding-top:20px;">
-                <ul>
-                    <li><a ui-sref-active="tab-active" ui-sref="dashboard" class="tab">Dashboard</a></li>
-                    <li><a ui-sref-active="tab-active" ui-sref="savingPlans" class="tab">Saving Plans</a></li>
-                    <li><a ui-sref-active="tab-active" ui-sref="computerGroups" class="tab">Computer Groups</a></li>
-                    <li><a ui-sref-active="tab-active" ui-sref="login" class="tab">logout</a></li>
-                </ul>
+            <div class="topGreenLine"></div>
+            <div class="main-wrapper">
+                <nav ng-include="'views/leftMenu.html'" ng-controller="LeftMenuController as vm"></nav>
+                <div class="content-wrapper">
+                    <header ng-include="'views/header.html'" ng-controller="HeaderController as vm"></header>
+                    <div class="content" ui-view></div>
+                </div>                
             </div>
-            <div class="well" ui-view style="padding-left:240px;"></div>
         </div>
     </div>
     <!--<div ng-include="'views/powerplan/computerGroupsView.html'"></div>-->
@@ -65,9 +64,15 @@
     <script src="app/directives/settingsTabs/applicationsTabDirective.js"></script>
     <script src="app/directives/settingsTabs/computersTabDirective.js"></script>
     <script src="app/directives/settingsTabs/performanceMetricsTabDirective.js"></script>
+    <script src="app/directives/colorLetter/colorLetterDirective.js"></script>
+
+    <!-- Factory -->
+    <script src="app/factory/jsonLoaderFactory.js"></script>
 
     <!-- PowerPlan Login Page Controller -->
     <script src="app/controllers/login/loginCtrl.js"></script>
+    <script src="app/controllers/leftMenuCtrl.js"></script>
+    <script src="app/controllers/headerCtrl.js"></script>
     <!-- PowerPlan ComputerGroups Page Controller -->
     <script src="app/controllers/powerplan/computerGroupsCtrl.js"></script>
     <!-- PowerPlan Saving Plan Page Controller -->
