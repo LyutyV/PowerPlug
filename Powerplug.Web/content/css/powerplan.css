@@ -254,3 +254,10 @@ html {
         html > body .main-wrapper > .content-wrapper > .content {
           flex-grow: 1; }
 
+.uibTabSet > ul {
+  float: left; }
+
+.uibTabSet > .tab-content {
+  float: left;
+  padding-left: 20px; }
+

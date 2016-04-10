@@ -38,7 +38,7 @@
           },
           {
               "text": "Settings",
-              "sref": "computerGroups",
+              "sref": "settings",
               "icon": "fa fa-gear",
               "submenu": []
           },

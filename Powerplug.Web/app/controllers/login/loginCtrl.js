@@ -20,7 +20,7 @@
             AuthenticationService.Login(vm.username, vm.password, function (response) {
                 if (response.authenticated) {
                     AuthenticationService.SetToken(response.token);
-                    $state.go("computerGroups");
+                    $state.go("savingPlans");
                 }
                 else if (response.status === 401) {
                     FlashService.Error('Wrong Credentials');

@@ -102,10 +102,16 @@
                     }
                 }
             })
+            .state('settings', {
+                url: "/settings",
+                controller: 'SettingsCtrl',
+                templateUrl: 'views/settings/settingsList.html',
+                controllerAs: 'vm'
+            })
             .state('computerGroups', {
                 url: "/",
                 controller: 'ComputerGroupsCtrl',
-                templateUrl: 'views/powerplan/computerGroups.html',
+                templateUrl: 'views/settings/computerGroups.html',
                 controllerAs: 'vm'
             });
 
