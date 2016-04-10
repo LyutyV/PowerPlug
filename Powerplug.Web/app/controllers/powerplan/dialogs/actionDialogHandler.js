@@ -1,40 +1,43 @@
 ﻿var actionDialogHandler = {
     vm: {},
     $scope: {},
-    $mdMedia: {},
-    $mdDialog: {},
-    init: function (vm, $scope, $mdDialog, $mdMedia) {
+    init: function (vm, $scope, $uibModal) {
         actionDialogHandler.vm = vm;
         actionDialogHandler.$scope = $scope;
-        actionDialogHandler.$mdDialog = $mdDialog;
-        actionDialogHandler.$mdMedia = $mdMedia;
+        actionDialogHandler.$uibModal = $uibModal;
     },
-    
-    showAdvanced: function (ev, actionData) {
-        var useFullScreen = (actionDialogHandler.$mdMedia('sm') || actionDialogHandler.$mdMedia('xs')) && $scope.customFullscreen;
-        actionDialogHandler.$mdDialog.show({
-            templateUrl: 'views/powerplan/dialogs/action.dialog.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose: false,
-            bindToController :true,
-            fullscreen: useFullScreen,
-            locals: { actionData: actionData },
-            controller: actionDialogHandler.DialogController,
-        })
-        .then(function (answer) {
-            console.log(actionData);
-        }, function () {
-            console.log(actionData);
-        });
-        //actionDialogHandler.$scope.$watch(function () {
-        //    return actionDialogHandler.$mdMedia('xs') || actionDialogHandler.$mdMedia('sm');
-        //}, function (wantsFullScreen) {
-        //    $scope.customFullscreen = (wantsFullScreen === true);
-        //});
+   
+    setActionDialogItems: function () {
+        var I;
+        if (actionDialogHandler.vm.savingPlan.actions) {
+            actionDialogHandler.vm.savingPlan.actions.forEach(function (actionItem, index, array) {
+                if (actionItem.options && actionItem.options.computerMetrics) {
+                    actionItem.options.computerMetricsConverted = {};
+                    angular.forEach(actionItem.options.computerMetrics, function (value, key) {
+                        actionItem.options.computerMetricsConverted[value.counter] = value;
+                        actionItem.options.computerMetricsConverted[value.counter].thresholdInKb = value.threshold / 1024;
+                    });
+                    angular.forEach(actionItem.options.appMetrics, function (value, key) {
+                        value.appKey = key;
+                    });
+
+                    angular.forEach(actionItem.computersNotRun, function (value, key) {
+                        value.computerKey = key;
+                    });
+                }
+            });
+        }
     },
 
-    DialogController: function ($scope, $mdDialog, actionData) {
+    showAdvanced: function (ev, actionData) {
+        actionDialogHandler.$uibModal.open({
+            templateUrl: 'views/powerplan/dialogs/action.dialog.html',
+            resolve: { actionData: function () { return actionData } },
+            controller: actionDialogHandler.DialogController
+        });
+    },
+
+    DialogController: function ($scope, $uibModalInstance, actionData) {
         //===============Private==========================//
         var weekDays = actionData.weekDays;
         var SetDayModel = function (newValue) {
@@ -54,7 +57,9 @@
             } else return getDayModel(this.dayInBit)
         }
         //=================Scope bind====================//
-        $scope.daysOfMonth   = actionData.daysOfMonth;
+        $scope.options = actionData.options;
+        $scope.perform = actionData.perform;
+        $scope.daysOfMonth = actionData.daysOfMonth;
         $scope.KeepMonitorOn = actionData.options.KeepMonitorOn;
         $scope.keepAlive     = actionData.options.keepAlive;
         $scope.specificDate = (typeof actionData.specificDate != 'undefined') ? new Date(actionData.specificDate)    : new Date();
@@ -71,8 +76,7 @@
         $scope.Thursday  = { dayInBit: 16, Value: GetSetDays }
         $scope.Friday    = { dayInBit: 32, Value: GetSetDays }
         $scope.Saturday  = { dayInBit: 64, Value: GetSetDays }
-        $scope.hide = function () { $mdDialog.hide(); };
-        $scope.cancel = function () { $mdDialog.cancel()};
+        $scope.cancel = function () { $uibModalInstance.dismiss('cancel'); };
         $scope.Add = function () {
             //Save - add data to json
             actionData.scheduleType = $scope.scheduleType;
@@ -91,11 +95,13 @@
                     actionData.specificDate = $scope.specificDate;
                     break;
             }
+            //brodcast event to directive 
+            $scope.$broadcast('saveSettings', {});
             actionData.options.KeepMonitorOn = $scope.KeepMonitorOn;
             actionData.options.keepAlive = $scope.keepAlive;
             actionData.fromTime = $scope.timeChosen
             //Hide dialog
-            $mdDialog.hide();
+            $uibModalInstance.dismiss('cancel');
         };   
     }
 };

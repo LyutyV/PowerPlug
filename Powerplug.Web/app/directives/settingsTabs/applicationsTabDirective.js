@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     angular
-        .module('powerPlug').directive('applicationTab', ['$mdDialog', '$mdMedia', function ($mdDialog, $mdMedia) {
+        .module('powerPlug').directive('applicationTab', ['$uibModal', function ($uibModal) {
             return {
                 templateUrl: '../../../views/powerplan/settingsTabs/applications.html',
                 scope: {
@@ -9,31 +9,25 @@
                     worktype: '='
                 },
                 link: function (scope, element, attrs) {
+                    //copy array appMetrics - init
+                    if (typeof (scope.jsonobject) != 'undefined') {
+                        scope.appMetrics = jQuery.extend(true, [], scope.jsonobject.appMetrics);
+                    }
                     scope.addSavingApplication = function (ev, appId, type) {
-                        var appMetric = { appKey: scope.jsonobject.appMetrics.length };
-                        angular.forEach(scope.jsonobject.appMetrics, function (value, key) {
+                        var appMetric = { appKey: scope.appMetrics.length };
+                        angular.forEach(scope.appMetrics, function (value, key) {
                             if (appId === value.appKey) {
                                 appMetric = value;
                             }
                         });
-
-                        $mdDialog.show({
+                        
+                        $uibModal.open({
                             templateUrl: 'views/powerplan/dialogs/applicationCondition.html',
-                            parent: angular.element(document.body),
-                            targetEvent: ev,
-                            clickOutsideToClose: false,
-                            bindToController: true,
-                            fullscreen: $mdMedia('xs') || $mdMedia('sm'), /* TODO: useFullScreen,*/
-                            locals: { appMetric: appMetric },
+                            resolve: { appMetric: function () { return appMetric;}},
                             controller: DialogController,
-                        });
-                        scope.$watch(function () {
-                            return $mdMedia('xs') || $mdMedia('sm');
-                        }, function (wantsFullScreen) {
-                            scope.customFullscreen = (wantsFullScreen === true);
-                        });
+                        })
 
-                        function DialogController($scope, $mdDialog, $document, appMetric) {
+                        function DialogController($scope, $uibModalInstance, $document, appMetric) {
                             $scope.appMetric = appMetric;
                             $scope.copyExeName = function (fileEl) {
                                 var fileName = fileEl.value;
@@ -66,13 +60,13 @@
                                     appMetric.threshold = threshold;
                                 }
                                 else {
-                                    scope.jsonobject.appMetrics.push({ appKey: appId, appName: exeName, counter: counter, threshold: threshold });
+                                    scope.appMetrics.push({ appKey: appId, appName: exeName, counter: counter, threshold: threshold });
                                 }
-                                $mdDialog.hide();
+                                $uibModalInstance.dismiss('OK');
                             };
 
                             $scope.closeSavingApplication = function () {
-                                $mdDialog.cancel();
+                                $uibModalInstance.dismiss('cancel');
                             };
                         }
                     };
@@ -83,6 +77,10 @@
                             }
                         });
                     };
+                    //Save changes 
+                    scope.$on('saveSettings', function (event, data) {
+                        scope.jsonobject.appMetrics = jQuery.extend(true, [], scope.appMetrics);
+                    });
             
                 }
             }

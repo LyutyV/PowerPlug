@@ -8,7 +8,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="application in  jsonobject.appMetrics">
+            <tr ng-repeat="application in  appMetrics">
                 <td>{{application.appName}}</td>
                 <td>{{application.counter.toLowerCase() === "cpu" ? "CPU usage > " + application.threshold + " percent" : application.counter.toLowerCase() === "io" ? "IO > " + (application.threshold / 1024) + " KB/Sec" : application.counter}}</td>
                 <td><button ng-click="addSavingApplication($event, application.appKey, worktype)" class="btn btn-warning">Edit</button></td>

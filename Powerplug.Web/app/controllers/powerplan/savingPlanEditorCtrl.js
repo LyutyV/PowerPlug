@@ -16,16 +16,16 @@
             };
         })
         .controller('SavingPlanEditorCtrl',
-                     ['$state', '$stateParams', '$scope', '$animate', '$document', '$mdDialog', '$mdMedia', 'SavingPlansResource', 'ComputersResource', 'ScriptsResource', SavingPlanEditorCtrl]);
+                     ['$state', '$stateParams', '$scope', '$animate', '$document', '$uibModal', 'SavingPlansResource', 'ComputersResource', 'ScriptsResource', SavingPlanEditorCtrl]);
 
-    function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $mdDialog, $mdMedia, SavingPlansResource, ComputersResource, ScriptsResource) {
+    function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $uibModal, SavingPlansResource, ComputersResource, ScriptsResource) {
         var vm = this;
         var policyId = $stateParams.policyId;
 
         //Init
         overviewHandler.init(vm);
-        actionDialogHandler.init(vm, $scope, $mdDialog, $mdMedia);
-        eventHandler.init(vm, $scope, $document, $mdDialog, $mdMedia, ScriptsResource);
+        actionDialogHandler.init(vm, $scope, $uibModal);
+        //eventHandler.init(vm, $scope, $document, $mdDialog, $mdMedia, ScriptsResource);
         actionHandler.init(vm);
         workHoursHandler.init(vm);
         savingHandler.init(vm, $document);
@@ -48,6 +48,7 @@
 
             overviewHandler.setOverviewItems();
             actionHandler.setActionItems();
+            actionDialogHandler.setActionDialogItems();
             savingHandler.setSavingItems();
             workHoursHandler.setWorkHoursItems();
             eventHandler.setEventItems();

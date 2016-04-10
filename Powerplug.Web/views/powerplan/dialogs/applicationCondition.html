@@ -1,8 +1,8 @@
-﻿<md-dialog>
-    <md-toolbar>
+﻿<div>
+    <div class="modal-header">
         <div style="padding-left: 20px;padding-top: 17px;">Application Condition</div>
-    </md-toolbar>
-    <md-content>        
+    </div>
+    <div class="modal-body">        
         <div class="well">
             <div>Application Process</div>
             <div><input type="file" onchange="angular.element(this).scope().copyExeName(this)" /><input type="text" id="exeName" value="{{appMetric.appName}}"/></div>
@@ -23,5 +23,5 @@
                 <button class="btn btn-danger" ng-click="closeSavingApplication()">Cancel</button>
             </div>
         </div>
-    </md-content>
-</md-dialog>
+    </div>
+</div>
