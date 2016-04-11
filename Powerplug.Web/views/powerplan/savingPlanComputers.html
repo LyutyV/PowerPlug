@@ -1,15 +1,21 @@
 ﻿<h3>Computers</h3>
 <uib-tabset active="active">
     <uib-tab index="0" heading="Computer Groups {{vm.savingPlan.compGroups.length}}">
+        <div class="clearfix" style="padding-top:20px;">            
+            <div class="pull-right" style="padding-left:30px;"><button class="btn btn-danger" ng-click="vm.removeComputerGroups()">Remove</button></div>
+            <div class="pull-right"><button class="btn btn-success" ng-click="vm.addComputerGroups()">Add Computer Groups</button></div>            
+        </div>
         <div class="panel-body">
             <table class="table">
                 <thead>
                     <tr>
+                        <td></td>
                         <td>Computer Group Name</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="computerGroup in vm.savingPlan.compGroups">
+                        <td><input type="checkbox" data-name="{{computer.name}}" class="computer-selection" /></td>
                         <td>{{ computerGroup.groupName}}</td>
                     </tr>
                 </tbody>
@@ -17,15 +23,21 @@
         </div>
     </uib-tab>
     <uib-tab index="1" heading="Computers {{vm.savingPlan.computers.length}}">
+        <div class="clearfix" style="padding-top:20px;">
+            <div class="pull-right" style="padding-left:30px;"><button class="btn btn-danger" ng-click="vm.RemoveComputers()">Remove</button></div>
+            <div class="pull-right"><button class="btn btn-success" ng-click="vm.addComputers()">Add Computers</button></div>            
+        </div>
         <div class="panel-body">
             <table class="table">
                 <thead>
                     <tr>
+                        <td></td>
                         <td>Computer Name</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="computer in vm.savingPlan.computers">
+                        <td><input type="checkbox" data-name="{{computer.name}}" class="computer-selection" /></td>
                         <td>{{ computer.name}}</td>
                     </tr>
                 </tbody>
