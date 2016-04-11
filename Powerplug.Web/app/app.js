@@ -109,9 +109,15 @@
                 controllerAs: 'vm'
             })
             .state('computerGroups', {
-                url: "/",
+                url: "/computer-groups",
                 controller: 'ComputerGroupsCtrl',
                 templateUrl: 'views/settings/computerGroups.html',
+                controllerAs: 'vm'
+            })
+            .state('scripts', {
+                url: "/scripts",
+                controller: 'ScriptsCtrl',
+                templateUrl: 'views/settings/scripts.html',
                 controllerAs: 'vm'
             });
 
