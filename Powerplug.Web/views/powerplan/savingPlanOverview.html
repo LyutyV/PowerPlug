@@ -1,4 +1,94 @@
-﻿<div class="clearfix">
+<div class='container-fluid overview'>
+    <div class="row">
+        <div class="col-xs-9 pull-left">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="/content/images/savingPlans/Overview/PC.png" />
+                    <span>Computer savings</span>
+                    <img src="/content/images/savingPlans/Overview/sun.png" />
+                    <span>work hours: Perform Sleep after 1 hour</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="/content/images/savingPlans/Overview/PC.png" />
+                    <span>Computer savings</span>
+                    <img src="/content/images/savingPlans/Overview/moon.png" />
+                    <span>non-work hours: Perform Hibernate after 30 minutes</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="/content/images/savingPlans/Overview/Alarm.png" />
+                    <span>Wakwup actions: Every Sunday - Friday at 7:30am.</span>
+                </div>
+                <div class="col-xs-12">
+                    <img src="/content/images/savingPlans/Overview/Restart.png" />
+                    <span>Restart actions: Every Saturday between 10:00pm and 11:00pm.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3 pull-right">
+            <div>
+                <span>Valid From:</span>
+                <md-datepicker ng-model="vm.savingPlan.validFrom" md-placeholder="Enter date"></md-datepicker>
+            </div>
+            <div>
+                <span>Valid To:<span>
+                <md-datepicker ng-model="vm.savingPlan.validTo" md-placeholder="Enter date"></md-datepicker>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4">
+            <div fusioncharts width="500" height="400" type="msline" chart="{{vm.graphWorkDays.attrs}}" categories="{{vm.graphWorkDays.categories}}" dataset="{{vm.graphWorkDays.dataset}}"></div>
+        </div>
+        <div class="col-xs-4">
+            <div fusioncharts width="500" height="400" type="msline" chart="{{vm.graphNonWorkDays.attrs}}" categories="{{vm.graphNonWorkDays.categories}}" dataset="{{vm.graphNonWorkDays.dataset}}"></div>
+        </div>
+        <div class="col-xs-4">
+            <div class="row">
+                <div class="col-xs-6">
+                    <img src="/content/images/savingPlans/Overview/bigPC.png" />
+                </div>
+                <div class="col-xs-6">
+                    <img src="/content/images/savingPlans/Overview/efficiency.png" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-12 bigNumber">185</div>
+                        <div class="col-xs-12 font">Assigned Computers</div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div color-letter="B" class="col-xs-12 bigNumber"></div>
+                        <div class="col-xs-12 font">Projected Efficiency</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-12 bigNumber green">101</div>
+                        <div class="col-xs-12 font">Actual Reporting</div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div color-letter="E" class="col-xs-12 bigNumber"></div>
+                        <div class="col-xs-12 font">Actual Reported Efficiency</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="clearfix">
     <div class="pull-left">
         <ul >
             <li ng-repeat="savingPlanDetail in vm.savingPlan.details">
@@ -52,4 +142,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
