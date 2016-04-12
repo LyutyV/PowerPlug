@@ -2,8 +2,8 @@
     <div class="searchBlock">
         <input type="text" name="search" placeholder="Search a Plan" ng-model="vm.savingPlans.policyName">
     </div>
-    <span><span>Organization Name&nbsp;</span><span>({{vm.savingPlans.length}} Plans)</span></span>
-    <span class="buttonTypeOne">Add Plan</span>
+    <span><span>Organization Name&nbsp;</span><span>({{vm.savingPlans.length}} Plans)</span></span>    
+    <span class="buttonTypeOne" ui-sref="savingPlanEditor({ policyId : 0})">Add Plan</span>    
     <div class="collapse in" id="organizationName">
         <div class="customTable">
             <div class="customTableHead">
