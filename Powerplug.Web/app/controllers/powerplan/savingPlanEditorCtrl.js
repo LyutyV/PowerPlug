@@ -47,7 +47,7 @@
 
         function onSuccess(data) {
             vm.savingPlan = data;
-
+            console.log(vm.savingPlan);
             overviewHandler.setOverviewItems();
             actionHandler.setActionItems();
             actionDialogHandler.setActionDialogItems();

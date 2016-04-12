@@ -6,7 +6,7 @@
         savingHandler.$document = $document;
     },
     setSavingItems: function () {
-        if (savingHandler.vm.savingPlan.savings.work.options) {
+        if (savingHandler.vm.savingPlan.savings && savingHandler.vm.savingPlan.savings.work && savingHandler.vm.savingPlan.savings.work.options) {
             savingHandler.vm.savingPlan.savings.work.options.computerMetricsConverted = {};
             angular.forEach(savingHandler.vm.savingPlan.savings.work.options.computerMetrics, function (value, key) {
                 savingHandler.vm.savingPlan.savings.work.options.computerMetricsConverted[value.counter] = value;
@@ -20,7 +20,7 @@
                 value.computerKey = key;
             });
         }
-        if (savingHandler.vm.savingPlan.savings.nonWork.options) {
+        if (savingHandler.vm.savingPlan.savings && savingHandler.vm.savingPlan.savings.nonWork && savingHandler.vm.savingPlan.savings.nonWork.options) {
             savingHandler.vm.savingPlan.savings.nonWork.options.computerMetricsConverted = {};
             angular.forEach(savingHandler.vm.savingPlan.savings.nonWork.options.computerMetrics, function (value, key) {
                 savingHandler.vm.savingPlan.savings.nonWork.options.computerMetricsConverted[value.counter] = value;
