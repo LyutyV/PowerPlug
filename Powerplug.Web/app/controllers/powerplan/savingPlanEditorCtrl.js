@@ -62,6 +62,7 @@
        
         //Html Elements Events
         vm.saveChanges = function () {
+            debugger;
             savingHandler.updateSavingItems();
             if (vm.policyId > 0) {
                 vm.savingPlan.$update(function (data) {

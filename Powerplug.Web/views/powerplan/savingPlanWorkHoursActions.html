@@ -73,16 +73,16 @@
             <div style="padding-top:20px;">
                 <uib-tabset active="activePill" vertical="true" type="pills" class="clearfix uibTabSet">
                     <uib-tab index="6" heading="Options" class="xxx">
-                        <options-tab jsonobject="vm.savingPlan.savings.work.options"></options-tab>
+                        <options-tab jsonobject="vm.savingPlan.savings.work.options"  save-event = false></options-tab>
                     </uib-tab>
                     <uib-tab index="7" heading="Applications">
-                        <application-tab worktype='work' jsonobject="vm.savingPlan.savings.work.options"></application-tab>
+                        <application-tab worktype='work' jsonobject="vm.savingPlan.savings.work.options" save-event=false></application-tab>
                     </uib-tab>
                     <uib-tab index="8" heading="Computers">
                         <computers-tab jsonobject="vm.savingPlan.savings.work.options" worktype='Work'></computers-tab>  
                     </uib-tab>
                     <uib-tab index="9" heading="Performance Metrics">
-                        <performance-metrics-tab jsonobject="vm.savingPlan.savings.work.options" worktype='Work'></performance-metrics-tab>
+                        <performance-metrics-tab jsonobject="vm.savingPlan.savings.work.options" worktype='work' save-event= false></performance-metrics-tab>
                     </uib-tab>
                 </uib-tabset>
             </div>           
@@ -145,16 +145,16 @@
             <div style="padding-top:20px;">
                 <uib-tabset active="activePill2" vertical="true" type="pills" class="clearfix uibTabSet">
                     <uib-tab index="2" heading="Options" class="xxx">
-                        <options-tab jsonobject="vm.savingPlan.savings.nonWork.options"></options-tab>
+                        <options-tab jsonobject="vm.savingPlan.savings.nonWork.options"  save-event = false></options-tab>
                     </uib-tab>
                     <uib-tab index="3" heading="Applications">
-                        <application-tab worktype='nonWork' jsonobject="vm.savingPlan.savings.nonWork.options"></application-tab>
+                        <application-tab worktype='nonWork' jsonobject="vm.savingPlan.savings.nonWork.options" save-event=false></application-tab>
                     </uib-tab>
                     <uib-tab index="4" heading="Computers">
                         <computers-tab jsonobject="vm.savingPlan.savings.nonWork.options"  worktype='nonWork'></computers-tab>
                     </uib-tab>
                     <uib-tab index="5" heading="Performance Metrics">
-                        <performance-metrics-tab jsonobject="vm.savingPlan.savings.nonWork.options" worktype='nonWork'></performance-metrics-tab>
+                        <performance-metrics-tab jsonobject="vm.savingPlan.savings.nonWork.options" worktype='nonWork' save-event= false></performance-metrics-tab>
                     </uib-tab>
                 </uib-tabset>
             </div> 

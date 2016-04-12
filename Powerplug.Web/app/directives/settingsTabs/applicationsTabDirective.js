@@ -6,11 +6,22 @@
                 templateUrl: '../../../views/powerplan/settingsTabs/applications.html',
                 scope: {
                     jsonobject: '=',
-                    worktype: '='
+                    worktype: '@',
+                    saveEvent: '=' //Indcates there is no event that save the data to json .. every change is made will be made on the original json
                 },
                 link: function (scope, element, attrs) {
                     //copy array appMetrics - init
-                    if (typeof (scope.jsonobject) != 'undefined') {
+                    if (!scope.saveEvent) {
+                        scope.$watch('jsonobject', function (newValue, oldValue) {
+                            if (typeof (newValue) != 'undefined') {
+                                if (typeof (newValue.appMetrics) == 'undefined') {
+                                    newValue.appMetrics = [];
+                                }
+                            scope.appMetrics = newValue.appMetrics;
+                            }
+                        });
+                    }else if (typeof (scope.jsonobject) != 'undefined') {
+                        //Deep Copy -- only on saveSettings event the json would change
                         scope.appMetrics = jQuery.extend(true, [], scope.jsonobject.appMetrics);
                     }
                     scope.addSavingApplication = function (ev, appId, type) {
@@ -47,14 +58,14 @@
                                     counter = 'Running';
                                 }
                                 else if (angular.element('#cpu')[0].checked) {
-                                    threshold = angular.element('#cpuText')[0].value;
+                                    threshold = angular.element('#cpuText')[0].value || 0;
                                     counter = 'Cpu';
                                 }
                                 else if (angular.element('#io')[0].checked) {
                                     threshold = (angular.element('#ioText')[0].value) * 1024;
                                     counter = 'Io';
                                 }
-                                if (appId < scope.jsonobject.appMetrics.length) {
+                                if (scope.appMetrics && (appId < scope.appMetrics.length)) {
                                     appMetric.counter = counter;
                                     appMetric.appName = exeName;
                                     appMetric.threshold = threshold;
@@ -71,9 +82,9 @@
                         }
                     };
                     scope.removeSavingApplication = function (appId, type) {
-                        angular.forEach(scope.jsonobject.appMetrics, function (value, key) {
+                        angular.forEach(scope.appMetrics, function (value, key) {
                             if (appId === value.appKey) {
-                                scope.jsonobject.appMetrics.splice(key, 1);
+                                scope.appMetrics.splice(key, 1);           
                             }
                         });
                     };

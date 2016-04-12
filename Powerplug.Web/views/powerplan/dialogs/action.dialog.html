@@ -1,5 +1,4 @@
 ﻿<div ng-cloak>
-  <form>
       <div class="modal-header">
         <h2>{{actionData.perform}}</h2>
         <span flex></span>
@@ -82,13 +81,13 @@
                        <conditions-tab jsonobject="options"></conditions-tab>
                    </uib-tab>
                    <uib-tab heading="Options">
-                       <options-tab jsonobject="options"></options-tab>
+                       <options-tab jsonobject="options"  save-event = true></options-tab>
                    </uib-tab>
                    <uib-tab heading="Applications">
-                       <application-tab worktype='work' jsonobject="options"></application-tab>
+                       <application-tab worktype='work' jsonobject="options" save-event = true ></application-tab>
                    </uib-tab>
                    <uib-tab heading="Performance Metrics">
-                       <performance-metrics-tab jsonobject="options" worktype='Work'></performance-metrics-tab>
+                       <performance-metrics-tab jsonobject="options" worktype='Work' save-event= true></performance-metrics-tab>
                    </uib-tab>
                </uib-tabset>  
            </div>
@@ -101,5 +100,4 @@
         Cancel
       </button>
     </div>
-  </form>
 </div>
