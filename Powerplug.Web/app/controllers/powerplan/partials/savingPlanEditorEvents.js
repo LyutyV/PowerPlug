@@ -36,6 +36,7 @@
 
         function DialogController($scope, $mdDialog) {
             eventHandler.ScriptsResource.query(function (data) {
+                console.log(data);
                 $scope.eventScripts = data;
             }, function (err) {
                 onError(err);

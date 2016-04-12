@@ -4,6 +4,7 @@
         Computer Groups
     </div>
     <div class="panel-body">
+        <div class="clearfix"><div class="pull-right"><button ng-click="addComputerGroup()" class="btn btn-success">Add</button></div></div>
         <table class="table">
             <thead>
                 <tr>
@@ -12,17 +13,26 @@
                     <td>GUID</td>
                     <td>Name</td>
                     <td>Owner</td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="computerGroup in vm.computerGroups">
+                <tr ng-repeat="computerGroup in vm.computerGroups" class="computer-group-row" data-id="{{computerGroup.compGroupId}}" ng-click="vm.selectComputerGroup($event)">
                     <td>{{ computerGroup.compGroupId}}</td>
                     <td>{{ computerGroup.groupDesc}}</td>
                     <td>{{ computerGroup.groupGUID}}</td>
                     <td>{{ computerGroup.groupName}}</td>
                     <td>{{ computerGroup.owner}}</td>
+                    <td><button ng-click="editComputerGroup()" class="btn btn-warning">Edit</button></td>
+                    <td><button ng-click="removeComputerGroup()" class="btn btn-danger">Remove</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+<style>
+    .bg-computer-group-selected{
+        background-color:gray;
+    }
+</style>

@@ -1,0 +1,38 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">
+        Scripts
+    </div>
+    <div class="panel-body">
+        <div class="clearfix"><div class="pull-right"><button ng-click="addScript()" class="btn btn-success">Add</button></div></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Description</td>
+                    <td>GUID</td>
+                    <td>Name</td>
+                    <td>Owner</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="script in vm.scripts" class="script-row" data-id="{{script.scriptId}}" ng-click="vm.selectScript($event)">
+                    <td>{{ script.scriptId}}</td>
+                    <td>{{ script.scriptDesc}}</td>
+                    <td>{{ script.scriptGUID}}</td>
+                    <td>{{ script.scriptName}}</td>
+                    <td>{{ script.owner}}</td>
+                    <td><button ng-click="editScript()" class="btn btn-warning">Edit</button></td>
+                    <td><button ng-click="removeScript()" class="btn btn-danger">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    .bg-script-selected{
+        background-color:gray;
+    }
+</style>
