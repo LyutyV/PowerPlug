@@ -43,7 +43,6 @@
         var SetDayModel = function (newValue) {
             var dayInBit = newValue;
             weekDays = (dayInBit > 0) ? (weekDays | dayInBit) : (weekDays & dayInBit);
-            console.log(weekDays)
             return getDayModel(dayInBit);
         }
         var getDayModel = function (dayInBit) {

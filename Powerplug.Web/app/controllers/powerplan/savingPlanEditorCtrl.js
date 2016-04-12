@@ -60,6 +60,7 @@
        
         //Html Elements Events
         vm.saveChanges = function () {
+            debugger;
             savingHandler.updateSavingItems();
             vm.savingPlan.$update(function (data) {
                 onSuccess(data);            
