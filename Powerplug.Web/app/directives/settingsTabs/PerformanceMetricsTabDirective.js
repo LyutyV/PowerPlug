@@ -6,35 +6,80 @@
                 templateUrl: '../../../views/powerplan/settingsTabs/PerformanceMetrics.html',
                 scope: {
                     jsonobject: '=',
-                    worktype: '@'
+                    worktype: '@',
+                    saveEvent: '=' //Indcates there is no event that save the data to json .. every change is made will be made on the original json
                 },
                 link: function (scope, element, attrs) {
-                        if(typeof(scope.jsonobject) != 'undefined'){
-                            scope.isCpu = scope.jsonobject.computerMetricsConverted.Cpu? true: false;
-                            scope.cpuThreshold = scope.jsonobject.computerMetricsConverted.Cpu.threshold;
-                            scope.isIo = scope.jsonobject.computerMetricsConverted.Io? true: false;
-                            scope.ioThreshold = scope.jsonobject.computerMetricsConverted.Io.thresholdInKb;
-                            scope.isNetwork = scope.jsonobject.computerMetricsConverted.Network? true: false;
-                            scope.networkThreshold = scope.jsonobject.computerMetricsConverted.Network.thresholdInKb;
+                    //=========private functions=========
+                    var initScopeVariables = function () {
+                        scope.isCpu = false;
+                        scope.isIo = false;
+                        scope.isNetwork = false;
+                        if (scope.jsonobject.computerMetricsConverted.Cpu) {
+                            scope.isCpu = true;
+                            scope.cpuThresholdInKb = scope.jsonobject.computerMetricsConverted.Cpu.threshold;
                         }
-                        scope.$on('saveSettings', function (event, data) {
-                            if (scope.isCpu) {
-                                //scope.jsonobject.computerMetricsConverted.Cpu = scope.isCpu;
-                                scope.jsonobject.computerMetricsConverted.Cpu.counter ="Cpu"
-                                scope.jsonobject.computerMetricsConverted.Cpu.threshold = scope.cpuThreshold;
-                                //scope.jsonobject.computerMetricsConverted.Cpu.thresholdInKb = scope.cpuThreshold;
-                            }
-                            if (scope.isIo) {
-                                //scope.jsonobject.computerMetricsConverted.Io = scope.isIo;
-                                scope.jsonobject.computerMetricsConverted.Io.counter = "Io";
-                                scope.jsonobject.computerMetricsConverted.Io.thresholdInKb = scope.ioThreshold;
-                                //scope.jsonobject.computerMetricsConverted.Io.thresholdInKb = scope.ioThreshold;
+                        if (scope.jsonobject.computerMetricsConverted.Io) {
+                            scope.isIo = true;
+                            scope.ioThresholdInKb = scope.jsonobject.computerMetricsConverted.Io.thresholdInKb;
+                        }
+                        if (scope.jsonobject.computerMetricsConverted.Network) {
+                            scope.isNetwork = true;
+                            scope.networkThresholdInKb = scope.jsonobject.computerMetricsConverted.Network.thresholdInKb;
+                        }
 
+                    }
+                    var saveToJson = function () {
+                        var Io, Cpu, Network;
+                        //Clear Json array
+                        scope.jsonobject.computerMetrics = [];
+                        scope.jsonobject.computerMetricsConverted = {};
+                        if (scope.isCpu) {
+                            Cpu = {}
+                            Cpu.counter = "Cpu";
+                            Cpu.threshold = scope.cpuThreshold;
+                            Cpu.thresholdInKb = scope.cpuThreshold;
+                            //Update Json Object
+                            scope.jsonobject.computerMetrics.push(Cpu);
+                            //Update Converted Json
+                            scope.jsonobject.computerMetricsConverted.Cpu = Cpu;
+                        }
+                        if (scope.isIo) {
+                            Io = {}
+                            Io.counter = "Io";
+                            Io.threshold = scope.ioThresholdInKb * 1024;
+                            Io.thresholdInKb = scope.ioThresholdInKb;
+                            scope.jsonobject.computerMetrics.push(Io);
+                            scope.jsonobject.computerMetricsConverted.Io = Io;
+                        }
+                        if (scope.isNetwork) {
+                            Network = {}
+                            Network.counter = "Network";
+                            Network.threshold = scope.networkThresholdInKb * 1024;
+                            Network.thresholdInKb = scope.networkThresholdInKb;
+                            scope.jsonobject.computerMetrics.push(Network);
+                            scope.jsonobject.computerMetricsConverted.Network = Network;
+                        }
+                    }
+
+                    if (!scope.saveEvent) {
+                        scope.$watch('jsonobject', function (newValue, oldValue) {
+                            if (typeof(newValue) !== 'undefined') {
+                                initScopeVariables();
                             }
-                            if (scope.isNetwork) {
-                                //scope.jsonobject.computerMetricsConverted.Network = ;
-                                scope.jsonobject.computerMetricsConverted.Network.thresholdInKb = scope.networkThreshold;
-                            }
+                        });
+                    }
+                    else if (typeof (scope.jsonobject) != 'undefined' && scope.jsonobject.computerMetricsConverted) {
+                        initScopeVariables();
+                    }
+                    //update json if saveEvent = false ; update json every time checkbox or input value changed 
+                    scope.ShouldOnChangeUpdateJson = function(){
+                        if (!scope.saveEvent) {
+                            saveToJson()
+                        }
+                    }
+                    scope.$on('saveSettings', function (event, data) {
+                        saveToJson();
                         });
                 }
             }

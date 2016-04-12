@@ -3,7 +3,7 @@
     <uib-tab index="0" heading="Computer Groups {{vm.savingPlan.compGroups.length}}">
         <div class="clearfix" style="padding-top:20px;">            
             <div class="pull-right" style="padding-left:30px;"><button class="btn btn-danger" ng-click="vm.removeComputerGroups()">Remove</button></div>
-            <div class="pull-right"><button class="btn btn-success" ng-click="vm.addComputerGroups()">Add Computer Groups</button></div>            
+            <div class="pull-right"><button class="btn btn-success" ng-click="vm.showAddComputerGroups()">Add Computer Groups</button></div>            
         </div>
         <div class="panel-body">
             <table class="table">
@@ -15,7 +15,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="computerGroup in vm.savingPlan.compGroups">
-                        <td><input type="checkbox" data-name="{{computer.name}}" class="computer-selection" /></td>
+                        <td><input type="checkbox" data-id="{{computerGroup.groupGUID}}" class="computer-group-selection" /></td>
                         <td>{{ computerGroup.groupName}}</td>
                     </tr>
                 </tbody>
@@ -24,8 +24,8 @@
     </uib-tab>
     <uib-tab index="1" heading="Computers {{vm.savingPlan.computers.length}}">
         <div class="clearfix" style="padding-top:20px;">
-            <div class="pull-right" style="padding-left:30px;"><button class="btn btn-danger" ng-click="vm.RemoveComputers()">Remove</button></div>
-            <div class="pull-right"><button class="btn btn-success" ng-click="vm.addComputers()">Add Computers</button></div>            
+            <div class="pull-right" style="padding-left:30px;"><button class="btn btn-danger" ng-click="vm.removeComputers()">Remove</button></div>
+            <div class="pull-right"><button class="btn btn-success" ng-click="vm.showAddComputers()">Add Computers</button></div>            
         </div>
         <div class="panel-body">
             <table class="table">

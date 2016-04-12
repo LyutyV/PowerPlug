@@ -1,12 +1,12 @@
 ﻿<div>
-    <input type="checkbox" ng-attr-id="{{worktype + 'Cpu'}}" ng-model="isCpu" /> CPU utilization is above
-    <input type="number" min="0" max="100" ng-attr-id="{{worktype + 'CpuText'}}" ng-model="cpuThreshold" /> Percent
+    <input type="checkbox" ng-attr-id="{{worktype + 'Cpu'}}" ng-model="isCpu" ng-change="ShouldOnChangeUpdateJson()"/> CPU utilization is above
+    <input type="number" min="0" max="100" ng-attr-id="{{worktype + 'CpuText'}}" ng-model="cpuThresholdInKb" ng-change="ShouldOnChangeUpdateJson()" /> Percent
 </div>
 <div>
-    <input type="checkbox" ng-attr-id="{{worktype + 'Io'}}" ng-model="isIo" /> Disk I/O operations are above
-    <input type="number" min="0" ng-attr-id="{{worktype + 'IoText'}}"  ng-model="ioThreshold" /> KB/Second
+    <input type="checkbox" ng-attr-id="{{worktype + 'Io'}}" ng-model="isIo" ng-change="ShouldOnChangeUpdateJson()"/> Disk I/O operations are above
+    <input type="number" min="0" ng-attr-id="{{worktype + 'IoText'}}"  ng-model="ioThresholdInKb" ng-change="ShouldOnChangeUpdateJson()"/> KB/Second
 </div>
 <div>
-    <input type="checkbox" ng-attr-id="{{worktype + 'Network'}}" ng-model="isNetwork" /> Network I/O operations are above
-    <input type="number" min="0"  ng-attr-id="{{worktype + 'NetworkText'}}" ng-model="NetworkThreshold" /> KB/Second
+    <input type="checkbox" ng-attr-id="{{worktype + 'Network'}}" ng-model="isNetwork" ng-change="ShouldOnChangeUpdateJson()" /> Network I/O operations are above
+    <input type="number" min="0"  ng-attr-id="{{worktype + 'NetworkText'}}" ng-model="networkThresholdInKb" ng-change="ShouldOnChangeUpdateJson()" /> KB/Second
 </div>

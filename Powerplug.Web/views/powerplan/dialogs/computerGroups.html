@@ -1,0 +1,34 @@
+﻿<md-dialog style="width:900px">
+    <md-toolbar>
+        <div style="padding-left: 20px;padding-top: 17px;">Select Computer Group</div>
+    </md-toolbar>
+    <md-content>
+        <div class="well">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td></td>                        
+                        <td>GUID</td>
+                        <td>Name</td>
+                        <td>Owner</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="computerGroup in computerGroupsList">
+                        <td><input type="checkbox" data-id="{{computerGroup.groupGUID}}" data-name="{{ computerGroup.groupName}}" class="computer-group-selection" /></td>                        
+                        <td>{{ computerGroup.groupGUID}}</td>
+                        <td>{{ computerGroup.groupName}}</td>
+                        <td>{{ computerGroup.owner}}</td>
+                        <td>{{ computerGroup.groupDesc}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+            <div style="text-align:center">
+                <button class="btn btn-success" ng-click="addComputerGroups()">OK</button>
+                <button class="btn btn-danger" ng-click="closeComputerGroupsDialog()">Cancel</button>
+            </div>
+        </div>
+    </md-content>
+</md-dialog>

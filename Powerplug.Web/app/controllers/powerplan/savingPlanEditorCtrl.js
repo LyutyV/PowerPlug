@@ -16,11 +16,11 @@
             };
         })
         .controller('SavingPlanEditorCtrl',
-                     ['$state', '$stateParams', '$scope', '$animate', '$document', '$uibModal', '$mdDialog', '$mdMedia', 'SavingPlansResource', 'ComputersResource', 'ScriptsResource', SavingPlanEditorCtrl]);
+                     ['$state', '$stateParams', '$scope', '$animate', '$document', '$uibModal', '$mdDialog', '$mdMedia', 'SavingPlansResource', 'ComputersResource', 'ComputerGroupsResource', 'ScriptsResource', SavingPlanEditorCtrl]);
 
-    function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $uibModal, $mdDialog, $mdMedia, SavingPlansResource, ComputersResource, ScriptsResource) {
+    function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $uibModal, $mdDialog, $mdMedia, SavingPlansResource, ComputersResource, ComputerGroupsResource, ScriptsResource) {
         var vm = this;
-        var policyId = $stateParams.policyId;
+        vm.policyId = $stateParams.policyId;
 
         //Init
         overviewHandler.init(vm);
@@ -29,12 +29,14 @@
         actionHandler.init(vm);
         workHoursHandler.init(vm);
         savingHandler.init(vm, $document);
-
-        SavingPlansResource.get({ policyId: policyId }, function (data) {
-            onSuccess(data);            
+        computersHandler.init(vm, $scope, $document, $mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource);
+        
+        SavingPlansResource.get({ policyId: vm.policyId }, function (data) {
+            onSuccess(data);
         }, function (err) {
             onError(err);
         });
+        
 
         function onError(err) {
             console.log(err)
@@ -45,7 +47,7 @@
 
         function onSuccess(data) {
             vm.savingPlan = data;
-
+            console.log(vm.savingPlan);
             overviewHandler.setOverviewItems();
             actionHandler.setActionItems();
             actionDialogHandler.setActionDialogItems();
@@ -60,12 +62,22 @@
        
         //Html Elements Events
         vm.saveChanges = function () {
+            debugger;
             savingHandler.updateSavingItems();
-            vm.savingPlan.$update(function (data) {
-                onSuccess(data);            
-            }, function (err) {
-                onError(err);
-            });
+            if (vm.policyId > 0) {
+                vm.savingPlan.$update(function (data) {
+                    onSuccess(data);
+                }, function (err) {
+                    onError(err);
+                });
+            }
+            else {
+                vm.savingPlan.$save(function (data) {
+                    onSuccess(data);
+                }, function (err) {
+                    onError(err);
+                });
+            }
         }
 
         vm.addEventScripts = eventHandler.eventScriptDialog;
@@ -73,5 +85,9 @@
         vm.removeEventScript = eventHandler.removeEventScript;
         //dialog
         vm.showAdvanced = actionDialogHandler.showAdvanced;
+        vm.showAddComputers = computersHandler.addComputerDialog;
+        vm.showAddComputerGroups = computersHandler.addComputerGroupsDialog;
+        vm.removeComputerGroups = computersHandler.removeComputerGroups;
+        vm.removeComputers = computersHandler.removeComputers;
     }
 }());
