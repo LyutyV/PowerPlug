@@ -39,9 +39,6 @@ div.content-wrapper {
             }
             > div.row {
                 height: 28px;
-                // img {
-                //   margin-bottom: 8px;
-                // }
                 &:nth-child(1),
                 &:nth-child(2) {
                     img {
@@ -78,6 +75,7 @@ div.content-wrapper {
         }
     }
     > div.row {
+      padding-bottom: 35px;
         &:last-child {
             background-color: #f2f2f2;
             margin-top: 10px;
@@ -145,6 +143,7 @@ md-datepicker {
     > div {
         margin: 7px 0 0 12px;
         &.md-datepicker-input-container {
+          border: none;
             width: 88px;
         }
     }

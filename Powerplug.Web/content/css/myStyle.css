@@ -50,26 +50,28 @@ div.content-wrapper {
         font-weight: 300;
         line-height: 26.338px;
         text-align: left; }
-  .overview > div.row:last-child {
-    background-color: #f2f2f2;
-    margin-top: 10px; }
-    .overview > div.row:last-child > div.col-xs-4 {
-      padding-top: 30px; }
-      .overview > div.row:last-child > div.col-xs-4:last-child .bigNumber {
-        font-family: Calibri;
-        font-size: 33.39px;
-        font-weight: 700;
-        text-align: left; }
-      .overview > div.row:last-child > div.col-xs-4:last-child .font {
-        font-family: Calibri;
-        color: rgba(26, 26, 26, 0.7);
-        font-size: 16.69px;
-        font-weight: 300;
-        text-align: left; }
-      .overview > div.row:last-child > div.col-xs-4:last-child .green {
-        color: #8cc63f; }
-      .overview > div.row:last-child > div.col-xs-4:last-child > div.row:nth-child(2), .overview > div.row:last-child > div.col-xs-4:last-child > div.row:nth-child(3) {
-        margin-top: 30px; }
+  .overview > div.row {
+    padding-bottom: 35px; }
+    .overview > div.row:last-child {
+      background-color: #f2f2f2;
+      margin-top: 10px; }
+      .overview > div.row:last-child > div.col-xs-4 {
+        padding-top: 30px; }
+        .overview > div.row:last-child > div.col-xs-4:last-child .bigNumber {
+          font-family: Calibri;
+          font-size: 33.39px;
+          font-weight: 700;
+          text-align: left; }
+        .overview > div.row:last-child > div.col-xs-4:last-child .font {
+          font-family: Calibri;
+          color: rgba(26, 26, 26, 0.7);
+          font-size: 16.69px;
+          font-weight: 300;
+          text-align: left; }
+        .overview > div.row:last-child > div.col-xs-4:last-child .green {
+          color: #8cc63f; }
+        .overview > div.row:last-child > div.col-xs-4:last-child > div.row:nth-child(2), .overview > div.row:last-child > div.col-xs-4:last-child > div.row:nth-child(3) {
+          margin-top: 30px; }
 
 .chart-wraper {
   width: 100%;
@@ -99,6 +101,7 @@ md-datepicker {
   md-datepicker > div {
     margin: 7px 0 0 12px; }
     md-datepicker > div.md-datepicker-input-container {
+      border: none;
       width: 88px; }
   md-datepicker > button {
     display: none !important; }
