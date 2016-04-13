@@ -46,7 +46,6 @@
                     }
 
                     scope.$on('saveSettings', function (event, data) {
-                        debugger;
                         scope.jsonobject.force = scope.options.force;
                         scope.jsonobject.logoff = scope.options.logoff;
                         if (scope.options.messageChecked && !scope.jsonobject.message) {

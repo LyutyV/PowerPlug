@@ -60,7 +60,6 @@
        
         //Html Elements Events
         vm.saveChanges = function () {
-            debugger;
             savingHandler.updateSavingItems();
             vm.savingPlan.$update(function (data) {
                 onSuccess(data);            
@@ -72,7 +71,9 @@
         vm.addEventScripts = eventHandler.eventScriptDialog;
         vm.showEventScripts = eventHandler.showEventScripts;
         vm.removeEventScript = eventHandler.removeEventScript;
+        vm.getActionText = actionHandler.getSchedualText
         //dialog
-        vm.showAdvanced = actionDialogHandler.showAdvanced;
+        vm.openActionDialog = actionDialogHandler.openActionDialog;
+        vm.createNewAction = actionDialogHandler.createNewAction;
     }
 }());
