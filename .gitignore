@@ -6,3 +6,7 @@
 /.vs/Powerplug.Web/v14/.suo
 /.vs/config/applicationhost.config
 /.gitignore
+gulpfile.js
+package.json
+node_modules
+common.services.js

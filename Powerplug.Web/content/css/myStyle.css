@@ -1,30 +1,55 @@
+div.content-wrapper {
+  background-color: #f9f9f9; }
+
 .overview {
   margin: 0 -48px;
   background-color: #f9f9f9; }
-  .overview > div.row:first-child {
-    padding-right: 10px; }
-    .overview > div.row:first-child > div.col-xs-9 {
-      height: 112px; }
-      .overview > div.row:first-child > div.col-xs-9 > div.row > div.col-xs-12 > span {
+  .overview div.flex {
+    height: 112px;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 33px; }
+    .overview div.flex > div:first-child {
+      flex-grow: 1; }
+    .overview div.flex > div:last-child {
+      width: 250px;
+      height: 112px;
+      background-color: #f2f2f2; }
+      .overview div.flex > div:last-child > div {
+        height: 56px; }
+        .overview div.flex > div:last-child > div > div {
+          display: inline-block;
+          float: left;
+          line-height: 56px; }
+          .overview div.flex > div:last-child > div > div:first-child {
+            width: 70px;
+            margin-left: 38px; }
+            .overview div.flex > div:last-child > div > div:first-child > span {
+              font-family: Calibri;
+              color: rgba(26, 26, 26, 0.7);
+              font-size: 14px;
+              font-weight: 300;
+              letter-spacing: -0.182px; }
+    .overview div.flex > div > div.row {
+      height: 28px; }
+      .overview div.flex > div > div.row:nth-child(1) img, .overview div.flex > div > div.row:nth-child(2) img {
+        margin-bottom: 8px; }
+      .overview div.flex > div > div.row:nth-child(1) span, .overview div.flex > div > div.row:nth-child(2) span {
+        margin-left: 5px; }
+      .overview div.flex > div > div.row:nth-child(3) img, .overview div.flex > div > div.row:nth-child(4) img {
+        margin-left: 5px;
+        margin-bottom: 5px; }
+      .overview div.flex > div > div.row:nth-child(3) span, .overview div.flex > div > div.row:nth-child(4) span {
+        margin-left: 10px; }
+      .overview div.flex > div > div.row > div.col-xs-12 > img.margin {
+        padding-left: 10px; }
+      .overview div.flex > div > div.row > div.col-xs-12 > span {
         font-family: Calibri;
         color: rgba(26, 26, 26, 0.7);
         font-size: 16.93px;
         font-weight: 300;
         line-height: 26.338px;
         text-align: left; }
-    .overview > div.row:first-child > div.col-xs-3 {
-      height: 112px;
-      background-color: #f2f2f2; }
-      .overview > div.row:first-child > div.col-xs-3 > div {
-        line-height: 56px; }
-        .overview > div.row:first-child > div.col-xs-3 > div > span {
-          font-family: Calibri;
-          color: rgba(26, 26, 26, 0.7);
-          font-size: 14px;
-          font-weight: 300;
-          letter-spacing: -0.182px;
-          text-align: left;
-          padding-left: 23px; }
   .overview > div.row:last-child {
     background-color: #f2f2f2;
     margin-top: 10px; }
@@ -43,15 +68,22 @@
         text-align: left; }
       .overview > div.row:last-child > div.col-xs-4:last-child .green {
         color: #8cc63f; }
+      .overview > div.row:last-child > div.col-xs-4:last-child > div.row:nth-child(2), .overview > div.row:last-child > div.col-xs-4:last-child > div.row:nth-child(3) {
+        margin-top: 30px; }
 
 .chart-wraper {
-  width: 33%;
+  width: 100%;
   box-sizing: border-box;
   display: inline-block;
   padding: 0 5px; }
   .chart-wraper .chart-title {
     font-size: 20px;
-    padding: 10px 0; }
+    padding: 10px 0;
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 17px;
+    font-weight: 400;
+    text-align: left; }
   .chart-wraper .chart-work {
     padding: 10px;
     box-sizing: border-box;
@@ -60,3 +92,27 @@
     padding: 10px;
     box-sizing: border-box;
     background-color: #e6e6e6; }
+
+md-datepicker {
+  display: inline-block;
+  height: 30px; }
+  md-datepicker > div {
+    margin: 7px 0 0 12px; }
+    md-datepicker > div.md-datepicker-input-container {
+      width: 88px; }
+  md-datepicker > button {
+    display: none !important; }
+  md-datepicker button.md-focused {
+    background-color: none; }
+  md-datepicker button {
+    top: 0 !important;
+    left: 53px !important;
+    padding: 0 !important;
+    margin: 0 !important; }
+  md-datepicker input {
+    font-family: Calibri;
+    color: rgba(102, 102, 102, 0.7) !important;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: -0.182px;
+    text-align: left; }

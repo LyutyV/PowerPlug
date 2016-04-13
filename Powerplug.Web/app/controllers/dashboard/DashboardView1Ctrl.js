@@ -17,6 +17,6 @@
             $scope.firstName = Data.getFirstName();
             $scope.$apply();
         });
-        
+
     }
 }());

@@ -75,7 +75,7 @@ angular
         },
         post: function(scope) {
           var resize = function() {
-            scope.highchartsNG.size.width = $document.find('.chart-wraper')[0].clientWidth - 30;
+            scope.highchartsNG.size.width = document.getElementsByClassName('chart-wraper')[0].clientWidth - 30;
             scope.$apply();
           }
 
@@ -87,7 +87,7 @@ angular
 
           $timeout(function() {
             scope.highchartsNG.size = {
-              width: $document.find('.chart-wraper')[0].clientWidth - 30,
+              width: document.getElementsByClassName('chart-wraper')[0].clientWidth - 30,
               height: 235
             };
           }, 0);
