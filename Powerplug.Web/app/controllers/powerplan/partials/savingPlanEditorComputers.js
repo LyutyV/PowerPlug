@@ -9,6 +9,20 @@
         computersHandler.ComputersResource = ComputersResource;
         computersHandler.ComputerGroupsResource = ComputerGroupsResource;
     },
+    setComputerItems: function () {
+        computersHandler.vm.computersFromDB = [];
+        computersHandler.vm.computerGroupsFromDB = [];
+        if (computersHandler.vm.savingPlan.computers) {
+            angular.forEach(computersHandler.vm.savingPlan.computers, function (valueComputer, keyComputer) {
+                computersHandler.vm.computersFromDB.push(valueComputer);
+            });
+        }
+        if (computersHandler.vm.savingPlan.compGroups) {
+            angular.forEach(computersHandler.vm.savingPlan.compGroups, function (valueComputerGroup, keyComputerGroup) {
+                computersHandler.vm.computerGroupsFromDB.push(valueComputerGroup);
+            });
+        }
+    },
     addComputerDialog: function (ev) {
         computersHandler.$mdDialog.show({
             templateUrl: 'views/powerplan/dialogs/computerCondition.html',
@@ -81,6 +95,7 @@
 
         function DialogController($scope, $mdDialog, $document) {
             computersHandler.ComputerGroupsResource.query(function (data) {
+                console.log(data);
                 $scope.computerGroupsList = data;
             }, function (err) {
                 onError(err);
@@ -127,7 +142,6 @@
         });        
     },
     removeComputers: function () {
-        console.log('aaaa');
         angular.forEach(angular.element('.computer-selection:checked'), function (value, key) {
             var computerName = value.getAttribute('data-name');
             angular.forEach(computersHandler.vm.savingPlan.computers, function (valueComputer, keyComputer) {
@@ -138,17 +152,67 @@
         });
     },
     prepareComputersDelta: function () {
-        if (computersHandler.vm.addedComputers) {
-            computersHandler.vm.computers = [];
-        }
+        addedComputers = [];
+        removedComputers = [];
 
-        for (var i = 0; i < computersHandler.vm.computers.length; i++) {
-            if (targetArray.indexOf(checkerArray[i]) === -1) {
-                //addedComputers.push[]
+        angular.forEach(computersHandler.vm.computersFromDB, function (valueDB, keyDB) {
+            var isItemExist = false;
+            angular.forEach(computersHandler.vm.savingPlan.computers, function (valueComputer, keyComputer) {
+                if (valueComputer.name === valueDB.name) {
+                    isItemExist = true;                    
+                }
+            });
+            if (!isItemExist) {
+                removedComputers.push(valueDB);
             }
-        }
+        });
 
+        angular.forEach(computersHandler.vm.savingPlan.computers, function (valueComputer, keyComputer) {        
+            var isItemExist = false;
+            angular.forEach(computersHandler.vm.computersFromDB, function (valueDB, keyDB) {
+                if (valueComputer.name === valueDB.name) {
+                    isItemExist = true;
+                }
+            });
+            if (!isItemExist) {
+                addedComputers.push(valueComputer);
+            }
+        });
+        
+        console.log(addedComputers);
+        console.log(removedComputers);
+        computersHandler.vm.savingPlan.addComputers = addedComputers;
+        computersHandler.vm.savingPlan.removeComputers = removedComputers;
+    },
+    prepareComputerGroupsDelta: function () {
+        addedComputerGroups = [];
+        removedComputerGroups = [];
 
+        angular.forEach(computersHandler.vm.computerGroupsFromDB, function (valueDB, keyDB) {
+            var isItemExist = false;
+            angular.forEach(computersHandler.vm.savingPlan.compGroups, function (valueComputerGroup, keyComputerGroup) {
+                if (valueComputerGroup.groupGUID === valueDB.groupGUID) {
+                    isItemExist = true;
+                }
+            });
+            if (!isItemExist) {
+                removedComputerGroups.push(valueDB);
+            }
+        });
 
+        angular.forEach(computersHandler.vm.savingPlan.compGroups, function (valueComputerGroup, keyComputerGroup) {
+            var isItemExist = false;
+            angular.forEach(computersHandler.vm.computerGroupsFromDB, function (valueDB, keyDB) {
+                if (valueComputerGroup.groupGUID === valueDB.groupGUID) {
+                    isItemExist = true;
+                }
+            });
+            if (!isItemExist) {
+                addedComputerGroups.push(valueComputerGroup);
+            }
+        });
+
+        computersHandler.vm.savingPlan.addCompGroups = addedComputerGroups;
+        computersHandler.vm.savingPlan.removeCompGroups = removedComputerGroups;
     }
 };
