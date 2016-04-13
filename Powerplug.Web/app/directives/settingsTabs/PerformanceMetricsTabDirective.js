@@ -61,7 +61,7 @@
                             scope.jsonobject.computerMetricsConverted.Network = Network;
                         }
                     }
-
+                    //=========Scope Bind=========
                     if (!scope.saveEvent) {
                         scope.$watch('jsonobject', function (newValue, oldValue) {
                             if (typeof(newValue) !== 'undefined') {
@@ -80,7 +80,7 @@
                     }
                     scope.$on('saveSettings', function (event, data) {
                         saveToJson();
-                        });
+                     });
                 }
             }
         })

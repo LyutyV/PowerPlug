@@ -54,6 +54,7 @@
             savingHandler.setSavingItems();
             workHoursHandler.setWorkHoursItems();
             eventHandler.setEventItems();
+            computersHandler.setComputerItems();
 
             console.log(vm.savingPlan);
         }
@@ -62,8 +63,9 @@
 
         //Html Elements Events
         vm.saveChanges = function () {
-            debugger;
             savingHandler.updateSavingItems();
+            computersHandler.prepareComputersDelta();
+            computersHandler.prepareComputerGroupsDelta();
             if (vm.policyId > 0) {
                 vm.savingPlan.$update(function (data) {
                     onSuccess(data);
@@ -80,14 +82,18 @@
             }
         }
 
-        vm.addEventScripts = eventHandler.eventScriptDialog;
-        vm.showEventScripts = eventHandler.showEventScripts;
-        vm.removeEventScript = eventHandler.removeEventScript;
         //dialog
+        vm.addEventScripts = eventHandler.eventScriptDialog;
         vm.showAdvanced = actionDialogHandler.showAdvanced;
         vm.showAddComputers = computersHandler.addComputerDialog;
         vm.showAddComputerGroups = computersHandler.addComputerGroupsDialog;
+        //events
+        vm.showEventScripts = eventHandler.showEventScripts;
+        vm.removeEventScript = eventHandler.removeEventScript;
         vm.removeComputerGroups = computersHandler.removeComputerGroups;
-        vm.removeComputers = computersHandler.removeComputers;
+  		vm.removeComputers = computersHandler.removeComputers;
+        //dialog
+        vm.openActionDialog = actionDialogHandler.openActionDialog;
+        vm.createNewAction = actionDialogHandler.createNewAction;
     }
 }());

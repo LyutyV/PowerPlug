@@ -2,12 +2,11 @@
 <html>
 <head>
     <title></title>
-	<meta charset="utf-8" />
+	<meta charset="utf-8" />   
     <link href="content/css/vendor/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link href="content/css/powerplan.min.css" rel="stylesheet" />
-    <link href="content/angular-material.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="content/css/myStyle.css">
+    <link href="content/angular-material.min.css" rel="stylesheet" />    
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css" />
 </head>
 <body ng-app="powerPlug" style="overflow: visible">
@@ -24,13 +23,14 @@
                 <div class="content-wrapper">
                     <header ng-include="'views/header.html'" ng-controller="HeaderController as vm"></header>
                     <div class="content" ui-view></div>
-                </div>
+                </div>                
             </div>
         </div>
     </div>
     <!--<div ng-include="'views/powerplan/computerGroupsView.html'"></div>-->
-    <!-- Library Scripts -->
+    <!-- Library Scripts -->    
     <script src="content/js/vendor/moment.min.js"></script>
+    <script src="content/js/vendor/jquery-1.9.1.min.js"></script>
     <script src="content/js/vendor/angular.js"></script>
     <script src="content/js/vendor/angular-animate.min.js"></script>
     <script src="content/js/vendor/angular-aria.min.js"></script>
@@ -44,7 +44,6 @@
     <script src="content/js/vendor/textAngular-rangy.min.js"></script>
     <script src="content/js/vendor/textAngular-sanitize.min.js"></script>
     <script src="content/js/vendor/textAngular.min.js"></script>
-    <script src="content/js/vendor/jquery-1.9.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
     <script src="content/js/vendor/highcharts-ng/dist/highcharts-ng.js"></script>
     <script src="content/js/vendor/highcharts/highcharts.js"></script>
@@ -68,10 +67,9 @@
     <script src="app/directives/settingsTabs/optionsTabDirective.js"></script>
     <script src="app/directives/settingsTabs/applicationsTabDirective.js"></script>
     <script src="app/directives/settingsTabs/computersTabDirective.js"></script>
-    <script src="app/directives/settingsTabs/PerformanceMetricsTabDirective.js"></script>
+    <script src="app/directives/settingsTabs/performanceMetricsTabDirective.js"></script>
     <script src="app/directives/settingsTabs/conditionsTabDirective.js"></script>
     <script src="app/directives/colorLetter/colorLetterDirective.js"></script>
-    <script src="app/directives/charts/charts.js"></script>
 
     <!-- Factory -->
     <script src="app/factory/jsonLoaderFactory.js"></script>
@@ -98,7 +96,7 @@
     <script src="app/controllers/powerplan/savingPlanEditorCtrl.js"></script>
     <!-- PowerPlug Dashbord -->
     <script src="app/controllers/dashboard/dashboardCtrl.js"></script>
-    <script src="app/controllers/dashboard/DashboardView1Ctrl.js"></script>
-    <script src="app/controllers/dashboard/DashboardView2Ctrl.js"></script>
+    <script src="app/controllers/dashboard/dashboardView1Ctrl.js"></script>
+    <script src="app/controllers/dashboard/dashboardView2Ctrl.js"></script>    
 </body>
 </html>

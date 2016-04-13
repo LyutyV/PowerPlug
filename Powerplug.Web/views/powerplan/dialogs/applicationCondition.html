@@ -14,7 +14,7 @@
                 <input type="number" min="0" max="100" id="cpuText" value="{{appMetric.counter === 'Cpu' ? appMetric.threshold : ''}}"/> Percent
             </div>
             <div>
-                <input type="radio" name="appOperation" id="io" ng-checked="appMetric.counter === 'Io'" ng-change=""/> Disk I/O operations are above
+                <input type="radio" name="appOperation" id="io" ng-checked="appMetric.counter === 'Io'" /> Disk I/O operations are above
                 <input type="number" min="0" id="ioText" value="{{appMetric.counter === 'Io' ? (appMetric.threshold /1024) : ''}}"/> KB/Second
             </div>
             <hr />
