@@ -95,7 +95,6 @@
 
         function DialogController($scope, $mdDialog, $document) {
             computersHandler.ComputerGroupsResource.query(function (data) {
-                console.log(data);
                 $scope.computerGroupsList = data;
             }, function (err) {
                 onError(err);
@@ -179,8 +178,6 @@
             }
         });
         
-        console.log(addedComputers);
-        console.log(removedComputers);
         computersHandler.vm.savingPlan.addComputers = addedComputers;
         computersHandler.vm.savingPlan.removeComputers = removedComputers;
     },

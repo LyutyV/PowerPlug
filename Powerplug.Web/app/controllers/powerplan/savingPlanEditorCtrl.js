@@ -66,7 +66,6 @@
             savingHandler.updateSavingItems();
             computersHandler.prepareComputersDelta();
             computersHandler.prepareComputerGroupsDelta();
-            console.log(vm.savingPlan);
             if (vm.policyId > 0) {
                 vm.savingPlan.$update(function (data) {
                     onSuccess(data);

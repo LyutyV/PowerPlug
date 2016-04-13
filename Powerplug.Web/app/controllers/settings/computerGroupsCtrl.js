@@ -13,7 +13,6 @@
         
         ComputerGroupsResource.query(function (data) {
             vm.computerGroups = data;
-            console.log(data);
         }, function (error) {
             if (error.status === 401 || error.status === -1)
             {                
