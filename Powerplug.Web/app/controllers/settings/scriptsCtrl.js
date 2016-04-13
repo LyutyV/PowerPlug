@@ -13,7 +13,6 @@
         
         ScriptsResource.query(function (data) {
             vm.scripts = data;
-            console.log(data);
         }, function (error) {
             if (error.status === 401 || error.status === -1)
             {                
