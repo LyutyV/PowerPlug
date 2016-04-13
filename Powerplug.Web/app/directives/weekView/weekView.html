@@ -1,0 +1,132 @@
+<div class = "week-view-total">
+  <div class="week-view-head">
+    <div class="left-span">
+      <div class="day">Sun</div>
+      <div class="day">Mon</div>
+      <div class="day">Tue</div>
+      <div class="day">Wed</div>
+      <div class="day">Thu</div>
+      <div class="day">Fri</div>
+      <div class="day">Sat</div>
+    </div>
+  </div>
+  <div class="week-view-position" >
+    <div ng-scrollbars ng-scrollbars-config="config">
+      <div class="calendar clear">
+        <div class="left-span clear">
+          <div class="numbers">
+            <div class="number" ng-repeat="curTime in timeLine track by $index">
+              <span ng-show="$index%2==0">{{curTime}}</span>
+            </div>
+          </div>
+
+          <div class="lines">
+            <div ng-class="{line1:($index%2==0),line2:($index%2!=0)}" ng-repeat="curTime in timeLine track by $index"></div>
+          </div>
+        </div>
+        <div  class="right-span clear">
+          <div class="day-coll">
+
+
+            <div class="day" daypos="sun">
+              <div class="day-wrape" daypos="sun">
+                <div ng-repeat="workTime in workTimePos.sun track by $index" class="work-time" day="sun" num="{{$index}}" style="top:{{workTime.begin}}px;height:{{workTime.size}}px"><div class="triangle"></div></div>
+              </div>
+            </div>
+            <div class="day" daypos="mon">
+              <div class="day-wrape" daypos="mon">
+                <div ng-repeat="workTime in workTimePos.mon track by $index" class="work-time" day="mon" num="{{$index}}" style="top:{{workTime.begin}}px;height:{{workTime.size}}px"><div class="triangle"></div></div>
+              </div>
+            </div>
+            <div class="day" daypos="tue">
+              <div class="day-wrape" daypos="tue">
+                <div ng-repeat="workTime in workTimePos.tue track by $index" class="work-time" day="tue" num="{{$index}}" style="top:{{workTime.begin}}px;height:{{workTime.size}}px"><div class="triangle"></div></div>
+              </div>
+            </div>
+            <div class="day" daypos="wed">
+              <div class="day-wrape" daypos="wed">
+                <div ng-repeat="workTime in workTimePos.wed track by $index" class="work-time" day="wed" num="{{$index}}" style="top:{{workTime.begin}}px;height:{{workTime.size}}px"><div class="triangle"></div></div>
+              </div>
+            </div>
+            <div class="day" daypos="thu">
+              <div class="day-wrape" daypos="thu">
+                <div ng-repeat="workTime in workTimePos.thu track by $index" class="work-time" day="thu" num="{{$index}}" style="top:{{workTime.begin}}px;height:{{workTime.size}}px"><div class="triangle"></div></div>
+              </div>
+            </div>
+            <div class="day" daypos="fri">
+              <div class="day-wrape" daypos="fri">
+                <div ng-repeat="workTime in workTimePos.fri track by $index" class="work-time" day="fri" num="{{$index}}" style="top:{{workTime.begin}}px;height:{{workTime.size}}px"><div class="triangle"></div></div>
+              </div>
+            </div>
+            <div class="day" daypos="sat">
+              <div class="day-wrape" daypos="sat">
+                <div ng-repeat="workTime in workTimePos.sat track by $index" class="work-time" day="sat" num="{{$index}}" style="top:{{workTime.begin}}px;height:{{workTime.size}}px"><div class="triangle"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lines">
+            <div ng-class="{line1:($index%2==0),line2:($index%2!=0)}" ng-repeat="curTime in timeLine track by $index"></div>
+          </div>
+        </div>
+      </div>
+      <div class="events">
+        <div class="title">Scheduled<br>Actions</div>
+        <div ng-repeat="event in events">
+          <div class="event-name">{{event.title}}</div>
+          <div class="event-text">{{event.text}}</div>
+        </div>
+      sadfsdf
+      </div>
+    </div>
+  </div>
+  <div class="bottom-week-view">
+    <div class="day-limit-left-bord"></div>
+    <div class="day-limit">
+      <div class="day-wrap clear">
+        <div class="day">
+          <div class="day-text">
+            <span ng-show="workTimeLimit.sun.view">{{workTimeLimit.sun.begin}}-{{workTimeLimit.sun.end}}</span>
+            <span ng-show="!workTimeLimit.sun.view"> </span>
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-text">
+            <span ng-show="workTimeLimit.mon.view">{{workTimeLimit.mon.begin}}-{{workTimeLimit.mon.end}}</span>
+            <span ng-show="!workTimeLimit.mon.view"> </span>
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-text">
+            <span ng-show="workTimeLimit.tue.view">{{workTimeLimit.tue.begin}}-{{workTimeLimit.tue.end}}</span>
+            <span ng-show="!workTimeLimit.tue.view"> </span>
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-text">
+            <span ng-show="workTimeLimit.wed.view">{{workTimeLimit.wed.begin}}-{{workTimeLimit.wed.end}}</span>
+            <span ng-show="!workTimeLimit.wed.view"> </span>
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-text">
+            <span ng-show="workTimeLimit.thu.view">{{workTimeLimit.thu.begin}}-{{workTimeLimit.thu.end}}</span>
+            <span ng-show="!workTimeLimit.thu.view"> </span>
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-text">
+            <span ng-show="workTimeLimit.fri.view">{{workTimeLimit.fri.begin}}-{{workTimeLimit.fri.end}}</span>
+            <span ng-show="!workTimeLimit.fri.view"> </span>
+          </div>
+        </div>
+        <div class="day-limit-right ">
+          <div class="day-limit-right-bord ">
+            <span class="title">Resolution</span>
+            <select class="customCombobox" ng-change="timeIntervalChange()" ng-model="timeInterval" ng-options="time as time.label for time in timeIntervalList track by time.value" ></select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

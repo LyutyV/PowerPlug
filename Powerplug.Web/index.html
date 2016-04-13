@@ -2,12 +2,13 @@
 <html>
 <head>
     <title></title>
-	<meta charset="utf-8" />   
+	<meta charset="utf-8" />
     <link href="content/css/vendor/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link href="content/css/powerplan.min.css" rel="stylesheet" />
-    <link href="content/angular-material.min.css" rel="stylesheet" />    
+    <link href="content/angular-material.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css" />
+    <link rel="stylesheet" href="content/css/myStyle.css">
 </head>
 <body ng-app="powerPlug" style="overflow: visible">
     <div>
@@ -23,12 +24,12 @@
                 <div class="content-wrapper">
                     <header ng-include="'views/header.html'" ng-controller="HeaderController as vm"></header>
                     <div class="content" ui-view></div>
-                </div>                
+                </div>
             </div>
         </div>
     </div>
     <!--<div ng-include="'views/powerplan/computerGroupsView.html'"></div>-->
-    <!-- Library Scripts -->    
+    <!-- Library Scripts -->
     <script src="content/js/vendor/moment.min.js"></script>
     <script src="content/js/vendor/jquery-1.9.1.min.js"></script>
     <script src="content/js/vendor/angular.js"></script>
@@ -38,6 +39,7 @@
     <script src="content/js/vendor/angular-ui-router.min.js"></script>
     <script src="content/js/vendor/angular-cookies.js"></script>
     <script src="content/js/vendor/angular-material.min.js"></script>
+    <!-- <script src="content/js/vendor/jquery-1.9.1.min.js"></script><!--!!!!!!!!!!!!!!!!!!!!!!!!!--> -->
     <script src="content/js/vendor/ui-bootstrap-tpls.min.js"></script>
     <script src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
     <script src="content/js/vendor/angular-fusioncharts.min.js"></script>
@@ -49,6 +51,11 @@
     <script src="content/js/vendor/highcharts/highcharts.js"></script>
     <script src="content/js/vendor/highcharts/highcharts-more.js"></script>
     <script src="content/js/vendor/highcharts/modules/exporting.js"></script>
+    <script src="content/js/vendor/jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="content/js/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+    <script src="content/js/vendor/ng-scrollbars/src/scrollbars.js"></script>
+    <script src="content/js/vendor/jquery-ui/jquery-ui.js"></script>
+    <script src="content/js/vendor/lodash/lodash.js"></script>
 
     <!-- Application Script -->
     <script src="app/app.js"></script>
@@ -70,6 +77,8 @@
     <script src="app/directives/settingsTabs/performanceMetricsTabDirective.js"></script>
     <script src="app/directives/settingsTabs/conditionsTabDirective.js"></script>
     <script src="app/directives/colorLetter/colorLetterDirective.js"></script>
+    <script src="app/directives/charts/charts.js"></script>
+    <script src="app/directives/weekView/weekView.js"></script>
 
     <!-- Factory -->
     <script src="app/factory/jsonLoaderFactory.js"></script>
@@ -97,6 +106,6 @@
     <!-- PowerPlug Dashbord -->
     <script src="app/controllers/dashboard/dashboardCtrl.js"></script>
     <script src="app/controllers/dashboard/dashboardView1Ctrl.js"></script>
-    <script src="app/controllers/dashboard/dashboardView2Ctrl.js"></script>    
+    <script src="app/controllers/dashboard/dashboardView2Ctrl.js"></script>
 </body>
 </html>
