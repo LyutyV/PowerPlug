@@ -92,6 +92,8 @@
         vm.removeEventScript = eventHandler.removeEventScript;
         vm.removeComputerGroups = computersHandler.removeComputerGroups;
   		vm.removeComputers = computersHandler.removeComputers;
+        //actions
+  		vm.getActionText = actionHandler.getActionText
         //dialog
         vm.openActionDialog = actionDialogHandler.openActionDialog;
         vm.createNewAction = actionDialogHandler.createNewAction;
