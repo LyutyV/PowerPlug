@@ -1,6 +1,6 @@
 ﻿<div>
     <input type="checkbox" ng-attr-id="{{worktype + 'Cpu'}}" ng-model="isCpu" ng-change="ShouldOnChangeUpdateJson()"/> CPU utilization is above
-    <input type="number" min="0" max="100" ng-attr-id="{{worktype + 'CpuText'}}" ng-model="cpuThresholdInKb" ng-change="ShouldOnChangeUpdateJson()" /> Percent
+    <input type="number" min="0" max="100" ng-attr-id="{{worktype + 'CpuText'}}" ng-model="cpuThreshold" ng-change="ShouldOnChangeUpdateJson()" /> Percent
 </div>
 <div>
     <input type="checkbox" ng-attr-id="{{worktype + 'Io'}}" ng-model="isIo" ng-change="ShouldOnChangeUpdateJson()"/> Disk I/O operations are above

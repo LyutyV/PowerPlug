@@ -17,6 +17,7 @@
                         scope.isNetwork = false;
                         if (scope.jsonobject.computerMetricsConverted.Cpu) {
                             scope.isCpu = true;
+                            scope.cpuThreshold = scope.jsonobject.computerMetricsConverted.Cpu.threshold;
                             scope.cpuThresholdInKb = scope.jsonobject.computerMetricsConverted.Cpu.threshold;
                         }
                         if (scope.jsonobject.computerMetricsConverted.Io) {

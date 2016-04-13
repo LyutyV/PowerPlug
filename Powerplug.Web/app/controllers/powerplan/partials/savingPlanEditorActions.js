@@ -3,7 +3,7 @@
     init : function(vm){
         actionHandler.vm = vm;
     },
-    getSchedualText: function (action) {
+    getActionText: function (action) {
         if (action.scheduleType === 'DayOfWeek' || action.scheduleType === 'DayOfMonth') {
             var days;
             if (action.scheduleType === 'DayOfWeek') {
