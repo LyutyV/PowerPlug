@@ -75,7 +75,7 @@
         });
     },
 
-    DialogController: function ($scope, $uibModalInstance, param) {
+    DialogController: function ($scope, $uibModalInstance, param){
         //===============Private==========================//
         var actionData, isNewAction;
         actionData = param.actionData;
@@ -104,7 +104,8 @@
         $scope.KeepMonitorOn = actionData.options.KeepMonitorOn;
         $scope.keepAlive     = actionData.options.keepAlive;
         $scope.specificDate = (typeof actionData.specificDate != 'undefined') ? new Date(actionData.specificDate)    : new Date();
-        $scope.timeChosen   = (typeof actionData.fromTime != 'undefined')     ? moment(actionData.fromTime).toDate() : 0;
+        $scope.timeChosen = (typeof actionData.fromTime != 'undefined') ? moment(actionData.fromTime).toDate() : 0;
+        $scope.toTime = (typeof actionData.toTime != 'undefined') ? moment(actionData.toTime).toDate() : 0;
         //modify scheduleType if need
         if (actionData.scheduleType == 'DayOfWeek' && actionData.daysConverted.length == 7) {
             actionData.scheduleType == 'EveryDay';

@@ -56,23 +56,35 @@
               </div>
               <hr />
               <div>
-                  <label>
-                      <b> At</b>
-                  </label>
-                  <input type="time" ng-model="timeChosen"/>
-              </div> 
+                  <div ng-if="perform == 'Wake'">
+                      <label>
+                          <b> At</b>
+                      </label>
+                      <input type="time" ng-model="timeChosen" />
+                  </div>
+                  <div ng-if="perform == 'Restart'">
+                      <label>
+                          <b> Btween</b>
+                      </label>
+                      <input type="time" ng-model="timeChosen" />
+                      <label>
+                          <b> and</b>
+                      </label>
+                      <input type="time" ng-model="toTime" />
+                  </div>
+                  </div> 
               <hr />
               <div>
                   <h4>Action Settings</h4>
                   <div ng-if="perform == 'Wake'">
-                  <label>
-                      Keep Monitor On <input type="checkbox" ng-model="KeepMonitorOn">
-                  </label>
-                      </div>
-                  <label>
-                     Keep awake for
-                  </label>
-                  <input type="number" ng-model="keepAlive" min="15" max="1080" />
+                      <label>
+                          Keep Monitor On <input type="checkbox" ng-model="KeepMonitorOn">
+                      </label>
+                      <label>
+                          Keep awake for
+                      </label>
+                      <input type="number" ng-model="keepAlive" min="15" max="1080" />
+                  </div>
               </div>                                     
               <!--TABS-->   
            <div ng-if="perform == 'Restart'">
