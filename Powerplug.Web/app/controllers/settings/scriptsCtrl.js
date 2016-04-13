@@ -19,14 +19,28 @@
                 $state.go('login');
             }
         });
-                
+
         vm.selectScript = function (ev) {
             angular.forEach(angular.element('.script-row'), function (value) {
                 value.className = value.className.replace('bg-script-selected', '');
             });
 
             ev.target.parentNode.className = ev.target.parentNode.className + ' bg-script-selected';
-            vm.currentScript = ev.target.parentNode.attributes["data-id"].value;
+            var scriptId = ev.target.parentNode.attributes["data-id"].value;
+            angular.forEach(vm.scripts, function (value) {
+                if (value.scriptId === Number(scriptId)) {
+                    vm.currentScriptText = value.scriptText;
+                    vm.currentScriptId = value.scriptId;
+                }
+            });
+        }
+
+        vm.changeScriptText = function () {
+            angular.forEach(vm.scripts, function (value) {
+                if (value.scriptId === vm.currentScriptId) {
+                    value.scriptText = vm.currentScriptText;
+                }
+            });
         }
     }
 }());
