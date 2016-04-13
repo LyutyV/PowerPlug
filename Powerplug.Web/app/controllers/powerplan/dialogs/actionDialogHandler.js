@@ -28,17 +28,59 @@
             });
         }
     },
-
-    showAdvanced: function (ev, actionData) {
-        actionDialogHandler.$uibModal.open({
+    GetAction: function(actionType, actionsArray){
+        var action, actionKey, options;
+        action = {};
+        actionKey = actionsArray.length > 0 ? (actionsArray[actionsArray.length - 1].actionKey + 1) : 0;
+        action.actionKey = actionKey;
+        action.daysConverted = [0, 1, 2, 3, 4, 5, 6];
+        action.daysOfMonth = 0;
+        action.daysOfWeek = 127;
+        action.displayOrder = actionsArray.length;
+        action.scheduleType = 'DayOfWeek';
+        //actionType specific properties
+        action.perform = actionType;
+        options = {};
+        if (actionType == 'Restart') {
+            options.hoursLastBoot = 168;
+            options.idleTime = 30;
+            options.implicitWake = 10;
+            //hours recommendation
+            action.fromTime = "1899-12-30T02:00:00";
+            action.fromTimeConverted = "2:00 AM";
+            action.toTime = "1899-12-30T23:00:00";
+            action.toTimeConverted = "11:00 PM"
+        }
+        else if (actionType == 'Wake') {
+            options.keepAlive = 60;
+            //hours recommendation
+            action.timeConverted = "10:00 PM";
+            action.fromTime = "1899-12-30T22:00:00";
+        }
+        action.options = options;
+       
+        return action;
+    },
+    createNewAction: function (actionType, actionsArray) {
+        var action, modalInstance;
+        action = actionDialogHandler.GetAction(actionType, actionsArray);
+        modalInstance = actionDialogHandler.openActionDialog(action, true);
+        modalInstance.result.then(function () { actionsArray.push(action) });//, function () {Dismiss});
+    },
+    openActionDialog: function (actionData, isNewAction) {
+       return actionDialogHandler.$uibModal.open({
             templateUrl: 'views/powerplan/dialogs/action.dialog.html',
-            resolve: { actionData: function () { return actionData } },
+            resolve: { param: function () { return { 'actionData': actionData, 'isNewAction': isNewAction } } },
             controller: actionDialogHandler.DialogController
         });
     },
 
-    DialogController: function ($scope, $uibModalInstance, actionData) {
+    DialogController: function ($scope, $uibModalInstance, param) {
         //===============Private==========================//
+        var actionData, isNewAction;
+        actionData = param.actionData;
+        isNewAction = param.isNewAction;
+
         var weekDays = actionData.weekDays;
         var SetDayModel = function (newValue) {
             var dayInBit = newValue;
@@ -95,12 +137,12 @@
                     break;
             }
             //brodcast event to directive 
-            $scope.$broadcast('saveSettings', {});
+            $scope.$broadcast('saveSettings', { actionData: actionData });
             actionData.options.KeepMonitorOn = $scope.KeepMonitorOn;
             actionData.options.keepAlive = $scope.keepAlive;
             actionData.fromTime = $scope.timeChosen
             //Hide dialog
-            $uibModalInstance.dismiss('cancel');
+            $uibModalInstance.close('Add');
         };   
     }
 };

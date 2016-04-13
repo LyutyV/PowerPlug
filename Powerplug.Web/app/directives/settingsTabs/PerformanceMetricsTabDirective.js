@@ -3,7 +3,7 @@
     angular
         .module('powerPlug').directive('performanceMetricsTab', function () {
             return {
-                templateUrl: '../../../views/powerplan/settingsTabs/PerformanceMetrics.html',
+                templateUrl: "views/powerplan/settingsTabs/performanceMetrics.html",
                 scope: {
                     jsonobject: '=',
                     worktype: '@',
@@ -61,7 +61,7 @@
                             scope.jsonobject.computerMetricsConverted.Network = Network;
                         }
                     }
-
+                    //=========Scope Bind=========
                     if (!scope.saveEvent) {
                         scope.$watch('jsonobject', function (newValue, oldValue) {
                             if (typeof(newValue) !== 'undefined') {
@@ -72,7 +72,7 @@
                     else if (typeof (scope.jsonobject) != 'undefined' && scope.jsonobject.computerMetricsConverted) {
                         initScopeVariables();
                     }
-                    //update json if saveEvent = false ; update json every time checkbox or input value changed 
+                    //update json if saveEvent = false ; update json every time checkbox or input value changed
                     scope.ShouldOnChangeUpdateJson = function(){
                         if (!scope.saveEvent) {
                             saveToJson()
@@ -80,7 +80,7 @@
                     }
                     scope.$on('saveSettings', function (event, data) {
                         saveToJson();
-                        });
+                     });
                 }
             }
         })
