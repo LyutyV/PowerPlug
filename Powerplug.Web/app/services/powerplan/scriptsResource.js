@@ -5,6 +5,9 @@
         .factory('ScriptsResource', ['$resource', 'appSettings', ScriptsResource]);
 
     function ScriptsResource($resource, appSettings) {
-        return $resource(appSettings.serverPath + 'api/pc/scripts');
+        return {
+            basic: $resource(appSettings.serverPath + 'api/pc/scripts'),
+            detailed: $resource(appSettings.serverPath + 'api/pc/scripts/details'),
+        }
     }
 }());

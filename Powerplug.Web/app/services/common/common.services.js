@@ -2,5 +2,5 @@
     'use strict';
     angular
         .module('common.services', ['ngResource'])
-        .constant('appSettings', { serverPath: 'http://localhost:61661/' });
+        .constant('appSettings', { serverPath: 'http://powerplugapi.azurewebsites.net/' });
 }());

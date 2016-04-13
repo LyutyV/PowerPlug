@@ -8,7 +8,7 @@
                 link: function(scope, element, attrs, ngModel) {
                     ngModel.$parsers.push(function(val) {
                         return val ? parseInt(val, 10) : null;
-                    }); 
+                    });
                     ngModel.$formatters.push(function(val) {
                         return val ? '' + val : null;
                     });
@@ -30,13 +30,13 @@
         workHoursHandler.init(vm);
         savingHandler.init(vm, $document);
         computersHandler.init(vm, $scope, $document, $mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource);
-        
+
         SavingPlansResource.get({ policyId: vm.policyId }, function (data) {
             onSuccess(data);
         }, function (err) {
             onError(err);
         });
-        
+
 
         function onError(err) {
             console.log(err)
@@ -60,7 +60,7 @@
         }
 
         overviewHandler.setOverviewGraphs();
-       
+
         //Html Elements Events
         vm.saveChanges = function () {
             savingHandler.updateSavingItems();

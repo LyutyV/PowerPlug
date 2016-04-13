@@ -11,7 +11,7 @@
     function ScriptsCtrl($state, $document, ScriptsResource) {
         var vm = this;
         
-        ScriptsResource.query(function (data) {
+        ScriptsResource.detailed.query(function (data) {
             vm.scripts = data;
         }, function (error) {
             if (error.status === 401 || error.status === -1)

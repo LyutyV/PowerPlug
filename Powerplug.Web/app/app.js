@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('powerPlug', ['ngCookies', 'ngMaterial', 'ng-fusioncharts', 'ui.router', 'ui.bootstrap', 'textAngular', 'common.services'])
+        .module('powerPlug', ['ngCookies', 'ngMaterial', 'ng-fusioncharts', 'ui.router', 'ui.bootstrap', 'textAngular', 'common.services', 'highcharts-ng'])
         .config(configRoute)
         .config(configExceptionHandler)
         .config(configDatePicker)
@@ -67,9 +67,9 @@
                         controller: 'SavingPlansCtrl',
                         templateUrl: 'views/powerplan/savingPlans.html',
                         controllerAs: 'vm'
-                    }                   
+                    }
                 }
-                
+
             })
             .state('savingPlanEditor', {
                 url: "/savingPlanEditor/:policyId",
@@ -140,8 +140,8 @@
             }
         });
 
-        $rootScope.menuActive = function (url) {            
-            return $location.path() === url;           
+        $rootScope.menuActive = function (url) {
+            return $location.path() === url;
         }
 
         $rootScope.innerTemplate = function () {
