@@ -433,3 +433,9 @@ md-datepicker {
         width: 100%;
     }
 }
+
+
+//Saving Plan Styles
+.savingPlans>div#organizationName>.customTable>.customTableHead>div:focus{
+  outline: none;
+}

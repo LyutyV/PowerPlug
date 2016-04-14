@@ -343,3 +343,6 @@ md-datepicker {
     right: 0;
     height: 15px;
     width: 100%; }
+
+.savingPlans > div#organizationName > .customTable > .customTableHead > div:focus {
+  outline: none; }
