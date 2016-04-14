@@ -12,44 +12,53 @@
         link: function($scope, iElm, iAttrs) {
           $scope.onReadyLoadColors = function(colorsMap) {
             $scope.colorsMap = colorsMap;
-            $scope.watch('letter', function(){
+            $scope.$watch('letter', function(){
               switch ($scope.letter) {
                 case "A":
                   iElm.css({
                     'color': $scope.colorsMap.A
                   });
-                  iElm.html(letter);
+                  iElm.html($scope.letter);
                   break;
                 case "B":
                   iElm.css({
                     'color': $scope.colorsMap.B
                   });
-                  iElm.html(letter);
+                  iElm.html($scope.letter);
                   break;
                 case "C":
                   iElm.css({
                     'color': $scope.colorsMap.C
                   });
-                  iElm.html(letter);
+                  iElm.html($scope.letter);
                   break;
                 case "D":
                   iElm.css({
                     'color': $scope.colorsMap.D
                   });
-                  iElm.html(letter);
+                  iElm.html($scope.letter);
                   break;
                 case "E":
                   iElm.css({
                     'color': $scope.colorsMap.E
                   });
-                  iElm.html(letter);
+                  iElm.html($scope.letter);
                   break;
                 case "F":
                   iElm.css({
                     'color': $scope.colorsMap.F
                   });
-                  iElm.html(letter);
+                  iElm.html($scope.letter);
                   break;
+                case "undefined":
+                  iElm.css({
+                    'color': 'black'
+                  });
+                  break;
+                default:
+                iElm.css({
+                  'color': 'black'
+                });
               }
             })
           };
