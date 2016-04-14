@@ -154,29 +154,29 @@
         overviewHandler.vm.workTime={
           sun:[
             {
-              begin:8.30,
+              start:8.30,
               end:17.30
             },
             {
-              begin:18,
+              start:18,
               end:18.30
             }
           ],
           mon:[
             {
-              begin:9,
+              start:9,
               end:18
             }
           ],
           tue:[
             {
-              begin:9,
+              start:9,
               end:18
             }
           ],
           wed:[
             {
-              begin:9,
+              start:9,
               end:18
             }
           ],
@@ -273,6 +273,16 @@
             [11, 7]
           ]
         }];
+
+        overviewHandler.vm.text = "";
+
+        overviewHandler.vm.done = function (data2) {
+            console.log(data2);
+        };
+
+        overviewHandler.vm.preview = function (data1) {
+            console.log(data1);
+        };
 
         overviewHandler.vm.graphNonWorkDays = {};
         overviewHandler.vm.graphNonWorkDays.attrs = {
