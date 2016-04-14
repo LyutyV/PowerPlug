@@ -1,9 +1,9 @@
 ﻿<div class="savingPlans">
     <div class="searchBlock">
-        <input type="text" name="search" placeholder="Search a Plan" ng-model="vm.savingPlans.policyName">
+        <input type="text" name="search" placeholder="Search a Plan" ng-model="search.policyName">
     </div>
-    <span><span>Organization Name&nbsp;</span><span>({{vm.savingPlans.length}} Plans)</span></span>    
-    <span class="buttonTypeOne" ui-sref="savingPlanEditor({ policyId : 0})">Add Plan</span>    
+    <span><span>Organization Name&nbsp;</span><span>({{vm.savingPlans.length}} Plans)</span></span>
+    <span class="buttonTypeOne" ui-sref="savingPlanEditor({ policyId : 0})">Add Plan</span>
     <div class="collapse in" id="organizationName">
         <div class="customTable">
             <div class="customTableHead">
@@ -22,7 +22,7 @@
                 </div>
                 <div ng-click="vm.changeSorting('actualComputers')">Actual<br>Reporting</div>
             </div>
-            <div class="customTableRow" ng-repeat="row in vm.savingPlans|orderBy:vm.sort.column:vm.sort.descending">
+            <div class="customTableRow" ng-repeat="row in vm.savingPlans|filter:search|orderBy:vm.sort.column:vm.sort.descending">
                 <div class="customTableCell">
                     <span>{{$index + 1}}</span>
                     <a ui-sref="savingPlanEditor({ policyId : row.policyId})">{{row.policyName}} Saving</a>
@@ -31,8 +31,8 @@
                     <span>Owner</span>
                     <span>{{row.owner}}</span>
                 </div>
-                <div color-letter="{{row.plannedEfficiency}}"></div>
-                <div color-letter="{{row.acutalEfficiency}}"></div>
+                <div color-letter letter="row.plannedEfficiency"></div>
+                <div color-letter letter="row.acutalEfficiency"></div>
                 <div>{{row.plannedComputers}}</div>
                 <div>{{row.actualComputers}}</div>
             </div>

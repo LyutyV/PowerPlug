@@ -14,13 +14,16 @@
                     if (!scope.saveEvent) {
                         scope.$watch('jsonobject', function (newValue, oldValue) {
                             if (typeof (newValue) != 'undefined') {
-                                if (typeof (newValue.appMetrics) == 'undefined') {
+                                if (typeof (newValue.appMetrics) === 'undefined') {
                                     newValue.appMetrics = [];
                                 }
                             scope.appMetrics = newValue.appMetrics;
                             }
                         });
-                    }else if (typeof (scope.jsonobject) != 'undefined') {
+                    } else if (typeof (scope.jsonobject) != 'undefined') {
+                        if (scope.jsonobject.appMetrics === undefined) {
+                            scope.jsonobject.appMetrics = [];
+                        }
                         //Deep Copy -- only on saveSettings event the json would change
                         scope.appMetrics = jQuery.extend(true, [], scope.jsonobject.appMetrics);
                     }

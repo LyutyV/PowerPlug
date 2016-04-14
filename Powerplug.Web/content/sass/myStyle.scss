@@ -75,7 +75,7 @@ div.content-wrapper {
         }
     }
     > div.row {
-      padding-bottom: 35px;
+        padding-bottom: 35px;
         &:last-child {
             background-color: #f2f2f2;
             margin-top: 10px;
@@ -143,7 +143,7 @@ md-datepicker {
     > div {
         margin: 7px 0 0 12px;
         &.md-datepicker-input-container {
-          border: none;
+            border: none;
             width: 88px;
         }
     }
@@ -168,8 +168,6 @@ md-datepicker {
         text-align: left;
     }
 }
-
-
 //Calendar styles
 .week-view-total {
     position: relative;
@@ -431,5 +429,101 @@ md-datepicker {
         right: 0;
         height: 15px;
         width: 100%;
+    }
+}
+//Saving Plan Styles
+.savingPlans > div#organizationName > .customTable > .customTableHead > div:focus {
+    outline: none;
+}
+//CustomRadioButtomTypeOneStyles
+$offColor: #f3f3f3;
+$onColor: #8fc73e;
+$textColor: #898989;
+custom-radio-button-type-one div {
+    margin: 0 0 0.75em;
+}
+custom-radio-button-type-one input[type="radio"] {
+    display: none;
+}
+custom-radio-button-type-one input[type="radio"] + label {
+    color: $textColor;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+custom-radio-button-type-one input[type="radio"] + label span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+custom-radio-button-type-one input[type="radio"] + label span span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 4px 4px 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+custom-radio-button-type-one input[type="radio"] + label > span {
+    border: 1px solid $offColor;
+}
+custom-radio-button-type-one input[type="radio"]:checked + label span span {
+    background-color: $onColor;
+}
+custom-radio-button-type-one input[type="radio"] + label span,
+custom-radio-button-type-one input[type="radio"]:checked + label span {
+    -webkit-transition: background-color 0.4s linear;
+    -o-transition: background-color 0.4s linear;
+    -moz-transition: background-color 0.4s linear;
+    transition: background-color 0.4s linear;
+}
+// Events page
+.eventsWrapper {
+    > div {
+        border-top: 5px solid #8cc63f;
+        height: 325px;
+        > div {
+            float: left;
+            height: 100%;
+            &:first-child {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40%;
+                > div {
+                    display: flex;
+                    flex-direction: row;
+                    &:first-child {
+                        > div {
+                            &:first-child {
+                                border-left: 2px dotted black;
+                                border-top: 2px dotted black;
+                                border-bottom: 2px dotted black;
+                                border-radius: 10px 0 0 10px;
+                            }
+                            div {
+                                width: 40px;
+                                height: 32px;
+                                &:not(:first-child) {
+                                    border-top: 2px dotted black;
+                                }
+                                &:last-child {
+                                }
+                            }
+                        }
+                    }
+                    &:last-child {}
+                }
+            }
+            &:last-child {
+                width: 60%;
+            }
+        }
     }
 }
