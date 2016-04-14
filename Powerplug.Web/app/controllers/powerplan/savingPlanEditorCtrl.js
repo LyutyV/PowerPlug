@@ -45,9 +45,18 @@
             }
         }
 
+        function jsonValidation(json) {
+            if (json.savings.work.options === undefined) {
+                json.savings.work.options = {};
+            }
+            if (json.savings.nonWork.options === undefined) {
+                json.savings.nonWork.options = {};
+            }
+        }
+
         function onSuccess(data) {
+            jsonValidation(data);
             vm.savingPlan = data;
-            console.log(vm.savingPlan);
             overviewHandler.setOverviewItems();
             actionHandler.setActionItems();
             actionDialogHandler.setActionDialogItems();
@@ -58,8 +67,6 @@
             //
             overviewHandler.setOverviewGraphs();
             //
-
-
             console.log(vm.savingPlan);
         }
 
@@ -78,7 +85,12 @@
                 });
             }
             else {
-                vm.savingPlan.$save(function (data) {
+                /**********temp ---to be removed*******************/
+                var d;
+                d = new Date();
+                vm.savingPlan.policyName = "Plan - " + d.getTime();
+                /************************************************/
+                vm.savingPlan.$save({policyId : null }, function (data) {
                     onSuccess(data);
                 }, function (err) {
                     onError(err);

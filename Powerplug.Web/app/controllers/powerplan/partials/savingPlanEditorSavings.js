@@ -36,15 +36,21 @@
         }
     },
     updateSavingItems: function () {
-        if (savingHandler.vm.savingPlan.savings.work.options && savingHandler.vm.savingPlan.savings.work.options.computerMetricsConverted) {
-            savingHandler.setComputerMetrics('Cpu', 'work', 1);
-            savingHandler.setComputerMetrics('Io', 'work', 1024);
-            savingHandler.setComputerMetrics('Network', 'work', 1024);
-        }
-        if (savingHandler.vm.savingPlan.savings.nonWork.options && savingHandler.vm.savingPlan.savings.nonWork.options.computerMetricsConverted) {
-            savingHandler.setComputerMetrics('Cpu', 'nonWork', 1);
-            savingHandler.setComputerMetrics('Io', 'nonWork', 1024);
-            savingHandler.setComputerMetrics('Network', 'nonWork', 1024);
+        if (savingHandler.vm.savingPlan.savings) {
+            if (savingHandler.vm.savingPlan.savings.work &&
+                savingHandler.vm.savingPlan.savings.work.options &&
+                savingHandler.vm.savingPlan.savings.work.options.computerMetricsConverted) {
+                savingHandler.setComputerMetrics('Cpu', 'work', 1);
+                savingHandler.setComputerMetrics('Io', 'work', 1024);
+                savingHandler.setComputerMetrics('Network', 'work', 1024);
+            }
+            if (savingHandler.vm.savingPlan.savings.nonWork &&
+                savingHandler.vm.savingPlan.savings.nonWork.options &&
+                savingHandler.vm.savingPlan.savings.nonWork.options.computerMetricsConverted) {
+                savingHandler.setComputerMetrics('Cpu', 'nonWork', 1);
+                savingHandler.setComputerMetrics('Io', 'nonWork', 1024);
+                savingHandler.setComputerMetrics('Network', 'nonWork', 1024);
+            }
         }
     },
     setComputerMetrics: function (id, type, multiplyNumber) {
