@@ -1,4 +1,9 @@
-﻿<div ng-cloak>
+﻿<style>
+    .md-datepicker-calendar-pane.md-pane-open {
+        z-index: 1090;
+    }
+</style>
+<div ng-cloak>
       <div class="modal-header">
         <h2>{{actionData.perform}}</h2>
         <span flex></span>
@@ -78,7 +83,7 @@
                   <h4>Action Settings</h4>
                   <div ng-if="perform == 'Wake'">
                       <label>
-                          Keep Monitor On <input type="checkbox" ng-model="KeepMonitorOn">
+                          Keep Monitor On <input type="checkbox" ng-model="checkbox.keepMonitorOn">
                       </label>
                       <label>
                           Keep awake for

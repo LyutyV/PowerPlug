@@ -42,7 +42,7 @@
         action.perform = actionType;
         options = {};
         if (actionType == 'Restart') {
-            options.hoursLastBoot = 168;
+            options.hoursLastBoot = 0;
             options.idleTime = 30;
             options.implicitWake = 10;
             //hours recommendation
@@ -80,8 +80,7 @@
         var actionData, isNewAction;
         actionData = param.actionData;
         isNewAction = param.isNewAction;
-
-        var weekDays = actionData.weekDays;
+        var weekDays = actionData.daysOfWeek;
         var SetDayModel = function (newValue) {
             var dayInBit = newValue;
             weekDays = (dayInBit > 0) ? (weekDays | dayInBit) : (weekDays & dayInBit);
@@ -101,14 +100,15 @@
         $scope.options = actionData.options;
         $scope.perform = actionData.perform;
         $scope.daysOfMonth = actionData.daysOfMonth;
-        $scope.KeepMonitorOn = actionData.options.KeepMonitorOn;
+        $scope.checkbox = {};
+        $scope.checkbox.keepMonitorOn = actionData.options.keepMonitorOn === undefined ? false : actionData.options.keepMonitorOn;
         $scope.keepAlive     = actionData.options.keepAlive;
         $scope.specificDate = (typeof actionData.specificDate != 'undefined') ? new Date(actionData.specificDate)    : new Date();
         $scope.timeChosen = (typeof actionData.fromTime != 'undefined') ? moment(actionData.fromTime).toDate() : 0;
         $scope.toTime = (typeof actionData.toTime != 'undefined') ? moment(actionData.toTime).toDate() : 0;
         //modify scheduleType if need
         if (actionData.scheduleType == 'DayOfWeek' && actionData.daysConverted.length == 7) {
-            actionData.scheduleType == 'EveryDay';
+            actionData.scheduleType = 'EveryDay';
         }
         $scope.scheduleType = actionData.scheduleType;
         $scope.Sunday    = { dayInBit: 1, Value: GetSetDays }
@@ -125,10 +125,10 @@
             switch (actionData.scheduleType) {
                 case 'EveryDay':
                     actionData.scheduleType = 'DayOfWeek';
-                    actionData.weekDays = 127;
+                    actionData.daysOfWeek = 127;
                     break;
                 case 'DayOfWeek':
-                    actionData.weekDays = weekDays;
+                    actionData.daysOfWeek = weekDays;
                     break;
                 case 'DayOfMonth':
                     actionData.daysOfMonth = $scope.daysOfMonth;
@@ -137,11 +137,12 @@
                     actionData.specificDate = $scope.specificDate;
                     break;
             }
-            //brodcast event to directive 
-            $scope.$broadcast('saveSettings', { actionData: actionData });
-            actionData.options.KeepMonitorOn = $scope.KeepMonitorOn;
+
+            actionData.options.keepMonitorOn = $scope.checkbox.keepMonitorOn;
             actionData.options.keepAlive = $scope.keepAlive;
             actionData.fromTime = $scope.timeChosen
+            //brodcast event to directive 
+            $scope.$broadcast('saveSettings', { actionData: actionData });
             //Hide dialog
             $uibModalInstance.close('Add');
         };   
