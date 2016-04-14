@@ -37,19 +37,19 @@
             })
         }
 
-        var myEl = angular.element(document.querySelector('#calendar'));
-        myEl.fullCalendar({
-            height: 500,
-            defaultDate: '2012-01-01',
-            defaultView: 'agendaWeek',
-            editable: true,
-            events: workHours,
-            allDaySlot: false,
-            header: {
-                center: '',
-                left: '',
-                right: ''
-            }
-        });
+        // var myEl = angular.element(document.querySelector('#calendar'));
+        // myEl.fullCalendar({
+        //     height: 500,
+        //     defaultDate: '2012-01-01',
+        //     defaultView: 'agendaWeek',
+        //     editable: true,
+        //     events: workHours,
+        //     allDaySlot: false,
+        //     header: {
+        //         center: '',
+        //         left: '',
+        //         right: ''
+        //     }
+        // });
     }
 };

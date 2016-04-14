@@ -52,11 +52,9 @@
     <div class="row">
         <div class="col-xs-4">
           <charts data-chart-type="'work'" data-graph="vm.graph"></charts>
-            <!-- <div fusioncharts width="500" height="400" type="msline" chart="{{vm.graphWorkDays.attrs}}" categories="{{vm.graphWorkDays.categories}}" dataset="{{vm.graphWorkDays.dataset}}"></div> -->
         </div>
         <div class="col-xs-4">
           <charts data-chart-type="'non-work'" data-graph="vm.graph"></charts>
-            <!-- <div fusioncharts width="500" height="400" type="msline" chart="{{vm.graphNonWorkDays.attrs}}" categories="{{vm.graphNonWorkDays.categories}}" dataset="{{vm.graphNonWorkDays.dataset}}"></div> -->
         </div>
         <div class="col-xs-4">
             <div class="row">
@@ -70,13 +68,13 @@
             <div class="row">
                 <div class="col-xs-6">
                     <div class="row">
-                        <div class="col-xs-12 bigNumber">185</div>
+                        <div class="col-xs-12 bigNumber">{{vm.savingPlan.plannedComputers}}</div>
                         <div class="col-xs-12 font">Assigned Computers</div>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="row">
-                        <div color-letter="B" class="col-xs-12 bigNumber"></div>
+                        <div color-letter data-letter="vm.savingPlan.plannedEfficiency" class="col-xs-12 bigNumber"></div>
                         <div class="col-xs-12 font">Projected Efficiency</div>
                     </div>
                 </div>
@@ -84,13 +82,13 @@
             <div class="row">
                 <div class="col-xs-6">
                     <div class="row">
-                        <div class="col-xs-12 bigNumber green">101</div>
+                        <div class="col-xs-12 bigNumber green">{{vm.savingPlan.actualComputers}}</div>
                         <div class="col-xs-12 font">Actual Reporting</div>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="row">
-                        <div color-letter="E" class="col-xs-12 bigNumber"></div>
+                        <div color-letter data-letter="vm.savingPlan.acutalEfficiency" class="col-xs-12 bigNumber"></div>
                         <div class="col-xs-12 font">Actual Reported Efficiency</div>
                     </div>
                 </div>

@@ -138,6 +138,57 @@
         }
         ];
 
+        overviewHandler.vm.events=[
+          {
+            type:"clock",
+            title: "Scheduled Wake Up",
+            text: 'On 8/30/2015 at 3:55 PM Keep awake for 1 hour...'
+          },
+          {
+            type:"clock",
+            title: "Weekly Wake Up",
+            text: 'Every Sunday On 8/30/2015 at 3:55 PM Keep awake for 1 hour...'
+          }
+        ];
+
+        overviewHandler.vm.workTime={
+          sun:[
+            {
+              begin:8.30,
+              end:17.30
+            },
+            {
+              begin:18,
+              end:18.30
+            }
+          ],
+          mon:[
+            {
+              begin:9,
+              end:18
+            }
+          ],
+          tue:[
+            {
+              begin:9,
+              end:18
+            }
+          ],
+          wed:[
+            {
+              begin:9,
+              end:18
+            }
+          ],
+          thu:[],
+          fri:[],
+          sat:[]
+        };
+
+        overviewHandler.vm.workTimeChange = function(workTimeList){
+          console.log(workTimeList);
+        }
+
         overviewHandler.vm.graph = [{
           name: 'Tokyo',
           color: "#bf2b29",
