@@ -348,8 +348,8 @@ md-datepicker {
 .savingPlans > div#organizationName > .customTable > .customTableHead > div:focus {
   outline: none; }
 
-custom-radio-button-type-one div {
-  margin: 0 0 0.75em; }
+custom-radio-button-type-one {
+  display: block; }
 
 custom-radio-button-type-one input[type="radio"] {
   display: none; }
@@ -357,32 +357,23 @@ custom-radio-button-type-one input[type="radio"] {
 custom-radio-button-type-one input[type="radio"] + label {
   color: #898989;
   font-family: Arial, sans-serif;
-  font-size: 14px; }
+  font-size: 14px;
+  outline: none; }
 
 custom-radio-button-type-one input[type="radio"] + label span {
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  width: 16px;
+  height: 16px;
   margin: -1px 4px 0 0;
   vertical-align: middle;
   cursor: pointer;
   -moz-border-radius: 50%;
   border-radius: 50%; }
 
-custom-radio-button-type-one input[type="radio"] + label span span {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin: 4px 4px 0;
-  vertical-align: middle;
-  cursor: pointer;
-  -moz-border-radius: 50%;
-  border-radius: 50%; }
+custom-radio-button-type-one input[type="radio"] + label > span:first-child {
+  background-color: #f3f3f3; }
 
-custom-radio-button-type-one input[type="radio"] + label > span {
-  border: 1px solid #f3f3f3; }
-
-custom-radio-button-type-one input[type="radio"]:checked + label span span {
+custom-radio-button-type-one input[type="radio"]:checked + label > span:first-child {
   background-color: #8fc73e; }
 
 custom-radio-button-type-one input[type="radio"] + label span,
@@ -392,42 +383,162 @@ custom-radio-button-type-one input[type="radio"]:checked + label span {
   -moz-transition: background-color 0.4s linear;
   transition: background-color 0.4s linear; }
 
-.eventsWrapper > div {
-  border-top: 5px solid #8cc63f;
-  height: 325px; }
-  .eventsWrapper > div > div {
-    float: left;
-    height: 100%; }
-    .eventsWrapper > div > div:first-child {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40%; }
-      .eventsWrapper > div > div:first-child > div {
+custom-radio-button-type-one input[type="radio"]:checked + label span:last-child {
+  color: #333333 !important;
+  font-weight: 700; }
+
+.eventsWrapper {
+  background-color: #ffffff;
+  margin: 0 -50px;
+  padding: 25px 50px 1px; }
+  .eventsWrapper > div {
+    border-top: 5px solid #8cc63f;
+    height: 325px; }
+    .eventsWrapper > div > div {
+      float: left;
+      height: 100%; }
+      .eventsWrapper > div > div:first-child {
         display: flex;
-        flex-direction: row; }
-        .eventsWrapper > div > div:first-child > div:first-child > div:first-child {
+        justify-content: center;
+        align-items: flex-start;
+        width: 40%; }
+        .eventsWrapper > div > div:first-child > div {
+          margin-top: 40px;
           display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center; }
-        .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul {
-          margin: 0;
-          padding: 0; }
-          .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li {
-            list-style: none; }
-        .eventsWrapper > div > div:first-child > div:first-child > div > div {
-          border-left: 2px dotted black;
-          border-top: 2px dotted black;
-          border-bottom: 2px dotted black;
-          border-radius: 10px 0 0 10px; }
-          .eventsWrapper > div > div:first-child > div:first-child > div > div > div {
-            width: 40px;
-            height: 32px; }
-            .eventsWrapper > div > div:first-child > div:first-child > div > div > div:not(:first-child) {
-              border-top: 2px dotted black; }
-    .eventsWrapper > div > div:last-child {
-      width: 60%; }
+          flex-direction: row; }
+          .eventsWrapper > div > div:first-child > div:first-child > div:first-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 5px; }
+          .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul {
+            margin: 0;
+            padding: 0; }
+            .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li {
+              cursor: auto;
+              list-style: none;
+              height: 40px; }
+              .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li:focus {
+                outline: none; }
+              .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li:first-child {
+                padding-top: 8px; }
+              .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li:nth-child(2) {
+                padding-top: 10px; }
+              .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li:nth-child(3) {
+                padding-top: 12px; }
+              .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li:nth-child(4) {
+                padding-top: 13px; }
+              .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li:nth-child(5) {
+                padding-top: 14px; }
+              .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li:nth-child(6) {
+                padding-top: 15px; }
+              .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li custom-radio-button-type-one > div > label > span:last-child {
+                width: inherit;
+                height: inherit;
+                font-family: Calibri;
+                color: rgba(128, 128, 128, 0.7);
+                font-size: 13px;
+                font-weight: 300;
+                letter-spacing: -0.169px;
+                text-align: center; }
+          .eventsWrapper > div > div:first-child > div:first-child > div > div {
+            border-left: 2px dotted black;
+            border-top: 2px dotted black;
+            border-bottom: 2px dotted black;
+            border-radius: 10px 0 0 10px; }
+            .eventsWrapper > div > div:first-child > div:first-child > div > div > div {
+              width: 40px;
+              height: 41px; }
+              .eventsWrapper > div > div:first-child > div:first-child > div > div > div:not(:first-child) {
+                border-top: 2px dotted black; }
+      .eventsWrapper > div > div:last-child {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; }
+        .eventsWrapper > div > div:last-child > div {
+          margin-top: 40px;
+          width: 425px; }
+          .eventsWrapper > div > div:last-child > div > span {
+            display: block; }
+            .eventsWrapper > div > div:last-child > div > span:first-child {
+              font-family: Calibri;
+              color: #1a1a1a;
+              font-size: 14px;
+              font-weight: 700;
+              letter-spacing: -0.182px;
+              text-align: left; }
+            .eventsWrapper > div > div:last-child > div > span:nth-child(2) {
+              font-family: Calibri;
+              color: #333333;
+              font-size: 12px;
+              font-weight: 300;
+              letter-spacing: -0.156px;
+              line-height: 18px;
+              text-align: justify; }
+          .eventsWrapper > div > div:last-child > div > div:nth-child(3) {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px; }
+            .eventsWrapper > div > div:last-child > div > div:nth-child(3) > span {
+              display: block; }
+              .eventsWrapper > div > div:last-child > div > div:nth-child(3) > span:first-child {
+                float: left;
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: -0.182px; }
+              .eventsWrapper > div > div:last-child > div > div:nth-child(3) > span:last-child {
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 14.83px;
+                font-weight: 700;
+                text-align: left;
+                float: right; }
+                .eventsWrapper > div > div:last-child > div > div:nth-child(3) > span:last-child::before {
+                  margin-right: 5px; }
+          .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul {
+            margin: 0;
+            padding: 0; }
+            .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul > li {
+              list-style: none;
+              border-top: 1px solid #cccccc;
+              background-color: #f8f8f8; }
+              .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul > li:hover {
+                background-color: #efefef; }
+                .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul > li:hover > div > span:first-child {
+                  font-weight: 700; }
+                .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul > li:hover > div > span:last-child {
+                  display: block; }
+              .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul > li:last-child {
+                border-bottom: 1px solid #cccccc; }
+              .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul > li > div {
+                height: 37px;
+                display: flex;
+                justify-content: space-between; }
+                .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul > li > div span {
+                  line-height: 37px; }
+                  .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul > li > div span:first-child {
+                    margin-left: 21px;
+                    font-family: Calibri;
+                    color: #333333;
+                    font-size: 13px;
+                    font-weight: 300;
+                    letter-spacing: -0.169px;
+                    text-align: left; }
+                  .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul > li > div span:last-child {
+                    display: none;
+                    margin-right: 13px;
+                    font-family: Calibri;
+                    color: rgba(26, 26, 26, 0.7);
+                    font-size: 12.66px;
+                    font-weight: 700;
+                    text-align: left; }
+                    .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul > li > div span:last-child::before {
+                      margin-right: 5px;
+                      content: '\f1f8'; }
 
 .mce-menubar,
 .mce-statusbar {
@@ -507,3 +618,60 @@ custom-radio-button-type-one input[type="radio"]:checked + label span {
       background-color: #8cc63e; }
     .wraper-tinymce .btn-block-tinymce .btn-primary {
       background-color: #28b8ed; }
+
+.descriptionWrapper {
+  margin: 0 -50px;
+  padding: 22px 51px 35px 50px;
+  background-color: #f2f2f2; }
+  .descriptionWrapper > h3 {
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 23px;
+    font-weight: 300;
+    text-align: left; }
+  .descriptionWrapper > div.panel-body {
+    border-top: 5px solid #8cc63f;
+    padding: 16px 15px 15px 0; }
+    .descriptionWrapper > div.panel-body > span {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.195px;
+      text-align: left; }
+    .descriptionWrapper > div.panel-body > div {
+      margin-top: 5px; }
+
+md-dialog.addScript > md-toolbar {
+  background-color: #ffffff;
+  padding-left: 45px;
+  padding-right: 34px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  md-dialog.addScript > md-toolbar > div {
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 24px;
+    font-weight: 300;
+    text-align: left; }
+  md-dialog.addScript > md-toolbar > i {
+    color: black; }
+
+md-dialog.addScript > md-content > div {
+  background-color: #ffffff;
+  border: none; }
+  md-dialog.addScript > md-content > div > div > button {
+    height: 40px;
+    width: 120px;
+    border: none;
+    font-family: Calibri;
+    color: #ffffff;
+    font-size: 20.3px;
+    font-weight: 700; }
+    md-dialog.addScript > md-content > div > div > button:first-child {
+      background-color: #8cc63f; }
+    md-dialog.addScript > md-content > div > div > button:last-child {
+      background-color: #808080; }
