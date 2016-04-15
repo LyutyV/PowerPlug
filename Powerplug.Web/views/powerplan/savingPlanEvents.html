@@ -1,38 +1,109 @@
-﻿<h3>Events</h3>
-<div class="clearfix">
-    <div class="pull-left">
-        <ul>
-            <li ng-click="vm.showEventScripts(1)">
-                Before Standby(Sleep/Hibernate)
-            </li>
-            <li ng-click="vm.showEventScripts(6)">
-                Before System Restart
-            </li>
-            <li ng-click="vm.showEventScripts(2)">
-                Before Shutdown
-            </li>
-            <li ng-click="vm.showEventScripts(4)">
-                After System Startup(Boot)
-            </li>
-            <li ng-click="vm.showEventScripts(3)">
-                After System Resume
-            </li>
-            <li ng-click="vm.showEventScripts(5)">
-                After UserLogin
-            </li>            
-        </ul>
-    </div>
-    <div class="pull-right" ng-show="vm.currentEvent">
-        <div class="clearfix">
-            <h4 class="pull-left">Scripts</h4><div class="pull-right"><button class="btn btn-success" ng-click="vm.addEventScripts()">Add</button></div>
+<div class="eventsWrapper">
+    <h3>Events</h3>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        <li ng-click="vm.showEventScripts(1)">
+                            <custom-radio-button-type-one id="'radio01'" name="'radio'" text="'Before Standby(Sleep/Hibernate)'"></custom-radio-button-type-one>
+                        </li>
+                        <li ng-click="vm.showEventScripts(6)">
+                            <custom-radio-button-type-one id="'radio02'" name="'radio'" text="'Before System Restart'"></custom-radio-button-type-one>
+                        </li>
+                        <li ng-click="vm.showEventScripts(2)">
+                            <custom-radio-button-type-one id="'radio03'" name="'radio'" text="'Before Shutdown'"></custom-radio-button-type-one>
+                        </li>
+                        <li ng-click="vm.showEventScripts(4)">
+                            <custom-radio-button-type-one id="'radio04'" name="'radio'" text="'After System Startup(Boot)'"></custom-radio-button-type-one>
+                        </li>
+                        <li ng-click="vm.showEventScripts(3)">
+                            <custom-radio-button-type-one id="'radio05'" name="'radio'" text="'After System Resume'"></custom-radio-button-type-one>
+                        </li>
+                        <li ng-click="vm.showEventScripts(5)">
+                            <custom-radio-button-type-one id="'radio06'" name="'radio'" text="'After UserLogin'"></custom-radio-button-type-one>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <table class="table" style="width:400px;">
-            <tbody>
-                <tr ng-repeat="script in vm.currentEventScripts">
-                    <td>{{ script.scriptName}}</td>
-                    <td><button class="btn btn-danger" ng-click="vm.removeEventScript(script.scriptId)">Remove</button></td>
-                </tr>
-            </tbody>
-        </table>
+        <div>
+            <div class="pull-right" ng-show="vm.currentEvent">
+                <div class="clearfix">
+                    <h4 class="pull-left">Scripts</h4>
+                    <div class="pull-right">
+                        <button class="btn btn-success" ng-click="vm.addEventScripts()">Add</button>
+                    </div>
+                </div>
+                <table class="table" style="width:400px;">
+                    <tbody>
+                        <tr ng-repeat="script in vm.currentEventScripts">
+                            <td>{{ script.scriptName}}</td>
+                            <td>
+                                <button class="btn btn-danger" ng-click="vm.removeEventScript(script.scriptId)">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
+<!--
+    <div class="clearfix">
+        <div class="pull-left">
+            <ul>
+                <li ng-click="vm.showEventScripts(1)">
+                    Before Standby(Sleep/Hibernate)
+                </li>
+                <li ng-click="vm.showEventScripts(6)">
+                    Before System Restart
+                </li>
+                <li ng-click="vm.showEventScripts(2)">
+                    Before Shutdown
+                </li>
+                <li ng-click="vm.showEventScripts(4)">
+                    After System Startup(Boot)
+                </li>
+                <li ng-click="vm.showEventScripts(3)">
+                    After System Resume
+                </li>
+                <li ng-click="vm.showEventScripts(5)">
+                    After UserLogin
+                </li>
+            </ul>
+        </div>
+        <div class="pull-right" ng-show="vm.currentEvent">
+            <div class="clearfix">
+                <h4 class="pull-left">Scripts</h4>
+                <div class="pull-right">
+                    <button class="btn btn-success" ng-click="vm.addEventScripts()">Add</button>
+                </div>
+            </div>
+            <table class="table" style="width:400px;">
+                <tbody>
+                    <tr ng-repeat="script in vm.currentEventScripts">
+                        <td>{{ script.scriptName}}</td>
+                        <td>
+                            <button class="btn btn-danger" ng-click="vm.removeEventScript(script.scriptId)">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+ -->
+<!-- <custom-radio-button-type-one id="'radio01'" name="'radio'" text="'Radio button 1'"></custom-radio-button-type-one>
+<custom-radio-button-type-one id="'radio02'" name="'radio'" text="'Radio button 2'"></custom-radio-button-type-one>
+ -->

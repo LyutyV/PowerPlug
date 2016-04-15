@@ -407,19 +407,30 @@ custom-radio-button-type-one input[type="radio"]:checked + label span {
         display: flex;
         flex-direction: row; }
         .eventsWrapper > div > div:first-child > div:first-child > div:first-child {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+        .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul {
+          margin: 0;
+          padding: 0; }
+          .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li {
+            list-style: none; }
+        .eventsWrapper > div > div:first-child > div:first-child > div > div {
           border-left: 2px dotted black;
           border-top: 2px dotted black;
           border-bottom: 2px dotted black;
           border-radius: 10px 0 0 10px; }
-        .eventsWrapper > div > div:first-child > div:first-child > div div {
-          width: 40px;
-          height: 32px; }
-          .eventsWrapper > div > div:first-child > div:first-child > div div:not(:first-child) {
-            border-top: 2px dotted black; }
+          .eventsWrapper > div > div:first-child > div:first-child > div > div > div {
+            width: 40px;
+            height: 32px; }
+            .eventsWrapper > div > div:first-child > div:first-child > div > div > div:not(:first-child) {
+              border-top: 2px dotted black; }
     .eventsWrapper > div > div:last-child {
       width: 60%; }
 
-.mce-menubar, .mce-statusbar {
+.mce-menubar,
+.mce-statusbar {
   display: none !important; }
 
 .mce-container-body:after {
@@ -435,7 +446,7 @@ custom-radio-button-type-one input[type="radio"]:checked + label span {
   width: 525px !important;
   position: relative !important;
   margin-left: -100% !important;
-  padding-top: 0px !important;
+  padding-top: 0 !important;
   margin-top: -4px !important; }
 
 .mce-edit-area {
@@ -444,7 +455,9 @@ custom-radio-button-type-one input[type="radio"]:checked + label span {
   box-sizing: border-box !important;
   padding-right: 525px !important; }
 
-.mce-tinymce, .mce-toolbar-grp, .wraper-tinymce .mce-panel {
+.mce-tinymce,
+.mce-toolbar-grp,
+.wraper-tinymce .mce-panel {
   background-color: transparent !important;
   border: none !important;
   border-width: 0px !important;
@@ -469,26 +482,26 @@ custom-radio-button-type-one input[type="radio"]:checked + label span {
   background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%) !important;
   background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%) !important;
   background: linear-gradient(to bottom, white 0%, #f6f6f6 47%, #ededed 100%) !important;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 ) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#ffffff', endColorstr='#ededed', GradientType=0 ) !important;
   padding: 2px !important; }
 
 .mce-btn-group:not(:first-child) {
-  margin-left: 0px !important; }
+  margin-left: 0 !important; }
 
 .mce-btn-group {
   border-left: 1px solid #d9d9d9 !important;
-  margin-left: 0px !important;
-  margin-right: 0px !important; }
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
 
 .wraper-tinymce {
   position: relative; }
   .wraper-tinymce .btn-block-tinymce {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     right: 353px; }
     .wraper-tinymce .btn-block-tinymce .btn {
-      border-radius: 0px;
-      border: 0px;
+      border-radius: 0;
+      border: 0;
       font-weight: bold; }
     .wraper-tinymce .btn-block-tinymce .btn-success {
       background-color: #8cc63e; }
