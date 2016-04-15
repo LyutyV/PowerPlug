@@ -5,10 +5,9 @@
 /packages
 /.vs/Powerplug.Web/v14/.suo
 /.vs/config/applicationhost.config
+/.gitignore
 gulpfile.js
 package.json
 node_modules
 Powerplug.Web/bower_components
-/Powerplug.Web/app/services/common/common.services.js
-/Powerplug.Web/index.html
 **/common.services.js
