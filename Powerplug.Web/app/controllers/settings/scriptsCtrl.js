@@ -28,10 +28,13 @@
             vm.scripts = data;
             vm.scriptsFromDB = data;
             vm.deletedScripts = [];
+            vm.currentScriptText = '';
+            vm.currentScriptId = 0;
+            vm.currentScriptType = '';
         }
 
         vm.selectScript = function (ev) {
-            if (ev.target.tagName.toLowerCase() !== 'button') {
+            if (ev.target.tagName.toLowerCase() !== 'span') {
                 angular.forEach(angular.element('.script-row'), function (value) {
                     value.className = value.className.replace('bg-script-selected', '');
                 });
@@ -42,6 +45,7 @@
                     if (value.scriptId === Number(scriptId)) {
                         vm.currentScriptText = value.scriptText;
                         vm.currentScriptId = value.scriptId;
+                        vm.currentScriptType = value.scriptType;
                     }
                 });
             }
@@ -54,6 +58,17 @@
                     if (value.status !== 'added') {
                         value.status = 'updated';
                     }                    
+                }
+            });
+        }
+
+        vm.changeScriptType = function () {
+            angular.forEach(vm.scripts, function (value) {
+                if (value.scriptId === vm.currentScriptId) {
+                    value.scriptType = vm.currentScriptType;
+                    if (value.status !== 'added') {
+                        value.status = 'updated';
+                    }
                 }
             });
         }
@@ -90,6 +105,14 @@
                 onSuccess(data);
             }, function (err) {
                 onError(err);
+            });
+        }
+
+        vm.discardChanges = function () {
+            ScriptsResource.detailed.query(function (data) {
+                onSuccess(data);
+            }, function (error) {
+                onError(error);
             });
         }
 
