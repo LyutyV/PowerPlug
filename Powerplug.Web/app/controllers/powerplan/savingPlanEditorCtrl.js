@@ -31,7 +31,7 @@
         savingHandler.init(vm, $document);
         computersHandler.init(vm, $scope, $document, $mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource);
 
-        SavingPlansResource.get({ policyId: vm.policyId }, function (data) {
+        SavingPlansResource.basic.get({ policyId: vm.policyId }, function (data) {
             onSuccess(data);
         }, function (err) {
             onError(err);
