@@ -11,6 +11,41 @@ angular
       templateUrl: 'app/directives/charts/charts.html',
       link: {
         pre: function(scope) {
+          if (!scope.graph) {
+            scope.graph = graph = [
+              {
+              name: 'Tokyo',
+              color: "#bf2b29",
+              data: [
+                [0, 7],
+                [1, 7],
+                [11, 7]
+              ]
+            }, {
+              name: 'ssssss',
+              color: "#8ec536",
+              data: [
+                [0, 7],
+                [1, 7],
+                [11, 7]
+              ]
+            }, {
+              name: 'ssssss',
+              color: "#28aadc",
+              data: [
+                [0, 7],
+                [1, 7],
+                [11, 7]
+              ]
+            }];
+;
+          }
+          scope.$watch('graph', build);
+
+          function build(){
+              scope.highchartsNG.series = scope.graph;
+
+          }
           scope.highchartsNG = {
             title: {
               text: ''
@@ -71,7 +106,7 @@ angular
             scope.highchartsNG.options.yAxis.alternateGridColor = '#eeeeee';
           }
 
-          scope.highchartsNG.series = scope.graph;
+
         },
         post: function(scope) {
           var resize = function() {

@@ -140,50 +140,27 @@
 
         overviewHandler.vm.events=[
           {
-            type:"clock",
+            type:"Wakeup",
             title: "Scheduled Wake Up",
-            text: 'On 8/30/2015 at 3:55 PM Keep awake for 1 hour...'
+            text: 'On 8/30/2015 at 3:55 PM Keep awake for 1 hour...',
+            weekDay: 'sun',
+            start: 17.3
           },
           {
-            type:"clock",
+            type:"Wakeup",
             title: "Weekly Wake Up",
-            text: 'Every Sunday On 8/30/2015 at 3:55 PM Keep awake for 1 hour...'
+            text: 'Every Sunday On 8/30/2015 at 3:55 PM Keep awake for 1 hour...',
+            weekDay: 'mon',
+            start: 17.3
+          },
+          {
+            type:"Restart",
+            title: "Weekly Wake Up",
+            text: 'Every Sunday On 8/30/2015 at 3:55 PM Keep awake for 1 hour...',
+            weekDay: 'thu',
+            start: 18
           }
         ];
-
-        overviewHandler.vm.workTime={
-          sun:[
-            {
-              begin:8.30,
-              end:17.30
-            },
-            {
-              begin:18,
-              end:18.30
-            }
-          ],
-          mon:[
-            {
-              begin:9,
-              end:18
-            }
-          ],
-          tue:[
-            {
-              begin:9,
-              end:18
-            }
-          ],
-          wed:[
-            {
-              begin:9,
-              end:18
-            }
-          ],
-          thu:[],
-          fri:[],
-          sat:[]
-        };
 
         overviewHandler.vm.workTimeChange = function(workTimeList){
           console.log(workTimeList);
@@ -273,6 +250,16 @@
             [11, 7]
           ]
         }];
+
+        overviewHandler.vm.text = "";
+
+        overviewHandler.vm.done = function (data2) {
+            console.log(data2);
+        };
+
+        overviewHandler.vm.preview = function (data1) {
+            console.log(data1);
+        };
 
         overviewHandler.vm.graphNonWorkDays = {};
         overviewHandler.vm.graphNonWorkDays.attrs = {

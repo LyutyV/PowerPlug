@@ -64,10 +64,13 @@
             workHoursHandler.setWorkHoursItems();
             eventHandler.setEventItems();
             computersHandler.setComputerItems();
+            //
+            overviewHandler.setOverviewGraphs();
+            //
             console.log(vm.savingPlan);
         }
 
-        overviewHandler.setOverviewGraphs();
+//overviewHandler.setOverviewGraphs();
 
         //Html Elements Events
         vm.saveChanges = function () {

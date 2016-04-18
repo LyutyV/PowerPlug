@@ -1,0 +1,24 @@
+{
+  "name": "myBowerPackagesForPowerPlug",
+  "version": "1",
+  "description": "bla",
+  "authors": [
+    "Sasha"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~4.11.0",
+    "highcharts-ng": "~0.0.11",
+    "highcharts": "~4.2.3",
+    "ng-scrollbars": "~0.0.10",
+    "jquery-ui": "~1.11.4",
+    "angular-ui-tinymce": "https://github.com/vovatolstousov/ui-tinymce.git#~0.0.16"
+  }
+}

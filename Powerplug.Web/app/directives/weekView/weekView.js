@@ -1,17 +1,74 @@
 angular
   .module('powerPlug')
-  .directive('weekView', function($timeout,$window,$document) {
+  .directive('weekView', function($timeout,$window) {
     return {
       restrict: 'E',
       replace: true,
       scope: {
         events:'=',
-        workTime: '=',
+        workTimeList: '=',
         workTimeChange: '&'
       },
       templateUrl: 'app/directives/weekView/weekView.html',
       link: {
-        pre: function(scope) {
+        pre: function(scope,element) {
+          if (!element.mCustomScrollbar){
+            element.__proto__.mCustomScrollbar = $.mCustomScrollbar;
+          }
+        },
+        post: function(scope,element) {
+          var dayList = ['sun','mon','tue','wed','thu','fri','sat'];
+          var datyViewlLmit = {
+            begin: 8,
+            end:24
+          }
+
+          var fromListToWeekWorkTime= function(callback){
+            scope.workTime = {
+              'sun':[],
+              'mon':[],
+              'tue':[],
+              'wed':[],
+              'thu':[],
+              'fri':[],
+              'sat':[]};
+
+            for (var i in scope.workTimeList){
+              var dateStart = new Date(scope.workTimeList[i].start._d);
+              var dayNum = dateStart.getDay();
+              if (dayList[dayNum]) {
+                var dateEnd = new Date(scope.workTimeList[i].end._d);
+
+                var workTime = {
+                  start: Number(dateStart.getHours() + '.' + dateStart.getMinutes()),
+                  end:Number(dateEnd.getHours() + '.' + dateEnd.getMinutes())
+                }
+
+                scope.workTime[dayList[dayNum]].unshift(workTime);
+              }
+            }
+            callback && callback();
+          };
+
+          var fromWeekToListWorkTime= function(callback){
+            callback && callback();
+          };
+
+          var fromListToWeekEvents = function(callback){
+            scope.eventsTime = {
+              'sun':[],
+              'mon':[],
+              'tue':[],
+              'wed':[],
+              'thu':[],
+              'fri':[],
+              'sat':[]};
+            for (var i in scope.events){
+              scope.eventsTime[scope.events[i].weekDay].unshift(angular.copy(scope.events[i]));
+            }
+
+            callback && callback();
+          }
 
           var timeToDec = function(time){
             return Number(Math.floor(time)) + Number((time - Math.floor(time))/0.6);
@@ -21,7 +78,141 @@ angular
             return Number(Math.floor(dec)) + Number((dec - Math.floor(dec))*0.6);
           }
 
-          scope.findWorkTimeLimits = function(){
+
+
+          var workListChackMerge = function() {
+            var flag = false;
+            var rep = false;
+
+            for (var i in scope.workTime) {
+              do{
+                var length1 = scope.workTime[i].length
+                rep = false;
+
+                for (var j = 0; j<length1; j++) {
+                  for (var k = Number(j)+1; k<length1; k++) {
+                    if (k==j||!scope.workTime[i][j]||!scope.workTime[i][k]){
+                      continue;
+                    }
+                      if (scope.workTime[i][j].start <= scope.workTime[i][k].start && scope.workTime[i][j].end >= scope.workTime[i][k].start){
+                        flag = rep = true;
+                        if (scope.workTime[i][k].end > scope.workTime[i][j].end) {
+                          scope.workTime[i][j].end = scope.workTime[i][k].end;
+                        }
+                        scope.workTime[i][k]=null;
+                      }
+                      else if (scope.workTime[i][k].start <= scope.workTime[i][j].start && scope.workTime[i][k].end >= scope.workTime[i][j].start){
+                        flag = rep = true;
+                        if (scope.workTime[i][j].end > scope.workTime[i][k].end) {
+                          scope.workTime[i][k].end = scope.workTime[i][j].end;
+                        }
+                        scope.workTime[i][j]=null;
+                      }
+                    }
+                }
+              }while(rep);
+              var temp = [];
+              for (var k in scope.workTime[i]){
+                if (scope.workTime[i][k]){
+                  temp.unshift(scope.workTime[i][k]);
+                }
+              }
+              scope.workTime[i] = temp;
+            }
+            return flag;
+          }
+
+          var workListChangePrepare = function(flag){
+            var temp = workListChackMerge();
+            if (temp || flag){
+              fromWeekToListWorkTime(function(){
+                scope.workTimeChange({data: scope.workTimeList});
+              });
+            }
+            findWorkTimeLimits();
+            findWorkTimePositions();
+          }
+
+          var workListViewEventSet = function(){
+
+            $timeout(function() {
+
+                scope.$apply();
+                $( ".work-time" ).resizable({
+                  grid: 16,
+                  maxWidth: $(document).find('.day-wrape')[0].clientWidth-11,
+                  minWidth: $(document).find('.day-wrape')[0].clientWidth-11,
+                  stop:function( event, ui ){
+                    var elementHeight =$(document).find('.day-coll .day')[0].clientHeight;
+                    var height = $(ui.helper[0]).height();
+                    var pos = $(ui.helper[0]).position();
+                    pos.top = Number(pos.top.toFixed(0)) ;
+                    height = Number(height.toFixed(0)) + 2;
+
+                    var temp = pos.top + height;
+                    if (temp>elementHeight){
+                      temp = elementHeight;
+                    }
+
+                    temp = Number((temp / 16).toFixed(0));
+                    temp +=  (decToTime(datyViewlLmit.begin ) /scope.timeInterval.value);
+
+                    scope.workTime[$(ui.helper[0]).attr('day')][$(ui.helper[0]).attr('num')].end = decToTime(Number(temp*scope.timeInterval.value));
+
+                    $(ui.helper[0]).remove();
+                    workListChangePrepare(true);
+                  }
+                });
+
+                $( ".work-time" ).draggable({
+                  handle: ".triangle",
+                  grid: [ $(document).find('.day-coll .day')[0].clientWidth, 16 ],
+                  stop: function( event, ui ) {
+                    var elementWidth =$(document).find('.day-coll .day')[0].clientWidth;
+                    var elementHeight =$(document).find('.day-coll .day')[0].clientHeight;
+                    var pos = $(ui.helper[0]).position();
+                    var height = $(ui.helper[0]).height();
+
+
+                    var posDisplacement = _.indexOf(dayList, $(ui.helper[0]).attr('day'));
+                    posDisplacement = (posDisplacement)?(posDisplacement * elementWidth):0;
+
+                    pos.left = Number(pos.left.toFixed(0)) + Number(posDisplacement);
+
+                    if (pos.left < 0 || pos.left > (elementWidth * 7 -1) || pos.top < 0 || (pos.top + height) > elementHeight){
+                      _.pullAt(scope.workTime[$(ui.helper[0]).attr('day')], $(ui.helper[0]).attr('num'));
+                    }
+                    else{
+                      var dayNom = (pos.left / elementWidth);
+                      dayNom = ((dayNom - Number(dayNom.toFixed(0))) > 0)? (Number(dayNom.toFixed(0)) + 1):Number(dayNom.toFixed(0))
+
+
+                      pos.top = Number((pos.top / 16).toFixed(0));
+                      pos.top +=  (decToTime(datyViewlLmit.begin ) /scope.timeInterval.value);
+
+                      var temp = scope.workTime[$(ui.helper[0]).attr('day')][$(ui.helper[0]).attr('num')];
+
+                      var timeBegin = Number(((pos.top) * scope.timeInterval.value).toFixed(2));
+                      var timeEnd = decToTime(timeBegin + Number(timeToDec(temp.end).toFixed(2)) - Number(timeToDec(temp.start).toFixed(2)));
+                      timeBegin = decToTime(timeBegin);
+
+                      _.pullAt(scope.workTime[$(ui.helper[0]).attr('day')], $(ui.helper[0]).attr('num'));
+
+                      temp.start = timeBegin;
+                      temp.end = timeEnd;
+                      scope.workTime[dayList[dayNom]].push(temp);
+                    }
+
+                    $(ui.helper[0]).remove();
+                    workListChangePrepare(true);
+                  }
+                });
+
+                $( ".work-time, .triangle" ).disableSelection();
+            }, 0);
+          }
+
+          var findWorkTimeLimits = function(){
             scope.workTimeLimit = {};
             for (var i in scope.workTime){
               scope.workTimeLimit[i] = {
@@ -30,199 +221,52 @@ angular
               }
               for (var j in scope.workTime[i]){
 
-                if (scope.workTimeLimit[i].begin>scope.workTime[i][j].begin){
-                  scope.workTimeLimit[i].begin = scope.workTime[i][j].begin;
+                if (scope.workTimeLimit[i].begin>scope.workTime[i][j].start){
+                  scope.workTimeLimit[i].begin = scope.workTime[i][j].start;
                 }
 
                 if (scope.workTimeLimit[i].end<scope.workTime[i][j].end){
                   scope.workTimeLimit[i].end = scope.workTime[i][j].end;
                 }
               }
-
+              scope.workTimeLimit[i].begin = scope.workTimeLimit[i].begin.toFixed(2);
+              scope.workTimeLimit[i].end = scope.workTimeLimit[i].end.toFixed(2);
               scope.workTimeLimit[i].view = (scope.workTimeLimit[i].begin<25 && scope.workTimeLimit[i].end>-1);
 
             }
           }
 
-          //scope.findWorkTimeLimits();
-
-          var workListChackMerge = function() {
-            var flag = false;
-            for (var i in scope.workTime) {
-              for (var j in scope.workTime[i]) {
-                for (var k in scope.workTime[i]) {
-                  if (j != k) {
-                    if (scope.workTime[i][j].begin < scope.workTime[i][k].begin && scope.workTime[i][j].end > scope.workTime[i][k].begin){
-                      flag = true;
-                      if (scope.workTime[i][k].end > scope.workTime[i][j].end) {
-                        scope.workTime[i][j].end = scope.workTime[i][k].end;
-                      }
-                      _.pullAt(scope.workTime[i], k);
-                    }
-                    else if (scope.workTime[i][j].end == scope.workTime[i][k].begin) {
-                      flag = true;
-                      scope.workTime[i][j].end = scope.workTime[i][k].end;
-                      _.pullAt(scope.workTime[i], k);
-                    }
-                  }
-                }
+          var findWorkTimePositions = function(){
+            scope.workTimePos = {};
+            for (var i in scope.workTime){
+                scope.workTimePos[i] = [];
+              for (var j in scope.workTime[i]){
+                scope.workTimePos[i][j]={begin : Number((timeToDec(scope.workTime[i][j].start - datyViewlLmit.begin)/ scope.timeInterval.value).toFixed()) * 16};
+                scope.workTimePos[i][j].size = Number((timeToDec(scope.workTime[i][j].end - datyViewlLmit.begin)/ scope.timeInterval.value).toFixed()) * 16;
+                scope.workTimePos[i][j].size -= scope.workTimePos[i][j].begin;
               }
             }
-            return flag;
-          }
-
-          var workListChangePrepare = function(flag){
-            var temp = workListChackMerge();
-            if (temp || flag){
-              scope.workTimeChange({data: scope.workTime});
-            }
-            scope.findWorkTimePositions();
-            scope.findWorkTimeLimits();
-            viewEventSet();
-          }
-
-          var viewEventSet = function(){
-
-            $timeout(function() {
-
-                var dayList = ['sun','mon','tue','wed','thu','fri','sat'];
-
-                $( ".work-time" ).resizable({
-                  grid: 16,
-                  maxWidth: $document.find('.day-wrape')[0].clientWidth-11,
-                  minWidth: $document.find('.day-wrape')[0].clientWidth-11,
-                  stop:function( event, ui ){
-                    var elementHeight =$document.find('.day-coll .day')[0].clientHeight;
-                    var height = $(ui.helper[0]).height();
-                    var pos = $(ui.helper[0]).position();
-                    pos.top = Number(pos.top.toFixed(0));
-                    height = Number(height.toFixed(0)) + 2;
-
-                    var temp = pos.top + height;
-                    if (temp>elementHeight){
-                      temp = elementHeight;
-                    }
-
-                    var prev = 0;
-                    var post = 16;
-                    while (!(prev<=temp && post>temp)) {
-                      prev = post;
-                      post += 16;
-                    }
-
-                    if ((temp - prev) > (post - temp)){
-                      temp = post;
-                    }
-                    else{
-                      temp = prev;
-                    }
-
-                    scope.workTime[$(ui.helper[0]).attr('day')][$(ui.helper[0]).attr('num')].end = decToTime(Number((temp/16)*scope.timeInterval.value));
-
-
-                    $(ui.helper[0]).remove();
-
-                    workListChangePrepare(true);
-                  }
-                });
-
-                $( ".work-time" ).draggable({
-                  handle: ".triangle",
-                  grid: [ $document.find('.day-coll .day')[0].clientWidth, 16 ],
-                  stop: function( event, ui ) {
-                    var elementWidth =$document.find('.day-coll .day')[0].clientWidth;
-                    var elementHeight =$document.find('.day-coll .day')[0].clientHeight;
-                    var pos = $(ui.helper[0]).position();
-                    var height = $(ui.helper[0]).height();
-
-
-                    var posDisplacement = _.indexOf(dayList, $(ui.helper[0]).attr('day'));
-
-                    if (posDisplacement){
-                      posDisplacement = posDisplacement * elementWidth;
-                    }
-                    else{
-                      posDisplacement = 0;
-                    }
-
-                    pos.left = Number(pos.left.toFixed(0)) + Number(posDisplacement);
-
-                    if (pos.left < 0 || pos.left > (elementWidth * 7 -1) || pos.top < 0 || (pos.top + height) > elementHeight){
-                      _.pullAt(scope.workTime[$(ui.helper[0]).attr('day')], $(ui.helper[0]).attr('num'));
-                    }
-                    else{
-
-                      var prev = 0, post = elementWidth;
-                      var dayNom = 0;
-                      while (!(prev<=pos.left && post>pos.left)) {
-                        prev = post;
-                        post += elementWidth;
-                        dayNom++;
-                      }
-
-                      prev = 0;
-                      post = 16;
-                      while (!(prev<=pos.top && post>pos.top)) {
-                        prev = post;
-                        post += 16;
-                      }
-
-                      if ((pos.top - prev) > (post - pos.top)){
-                        pos.top = post;
-                      }
-                      else{
-                        pos.top = prev;
-                      }
-
-                      var temp = scope.workTime[$(ui.helper[0]).attr('day')][$(ui.helper[0]).attr('num')];
-
-
-                      var timeBegin = Number(((pos.top / 16) * scope.timeInterval.value).toFixed(2));
-
-                      var timeEnd = decToTime(timeBegin + Number(timeToDec(temp.end).toFixed(2)) - Number(timeToDec(temp.begin).toFixed(2)));
-
-                      timeBegin = decToTime(timeBegin);
-
-                      _.pullAt(scope.workTime[$(ui.helper[0]).attr('day')], $(ui.helper[0]).attr('num'));
-
-                      temp.begin = timeBegin;
-                      temp.end = timeEnd;
-                      scope.workTime[dayList[dayNom]].push(temp);
-
-                    }
-
-                    $(ui.helper[0]).remove();
-                    workListChangePrepare(true);
-                  }
-                });
-                $( ".work-time, .triangle" ).disableSelection();
-            }, 0);
-          }
-
-          var resize = function() {
-            viewEventSet();
-            scope.$apply();
+            workListViewEventSet();
           }
 
           var addWorkTime = function(e) {
             if ($(e.target).attr('daypos')){
 
-              var prev = 0;
-              var post = 16;
-              while (!(prev<=e.offsetY && post>e.offsetY)) {
-                prev = post;
-                post += 16;
-              }
-
-              var temp = Number((prev / 16).toFixed());
+              var temp = Math.floor((e.offsetY / 16));
+              temp +=  (decToTime(datyViewlLmit.begin ) /scope.timeInterval.value);
 
               scope.workTime[$(e.target).attr('daypos')].unshift({
-                begin: decToTime(temp * scope.timeInterval.value),
+                start: decToTime(temp * scope.timeInterval.value),
                 end: decToTime((temp + 1) * scope.timeInterval.value)
               });
 
               workListChangePrepare(true);
             }
+          }
+
+          var resize = function(){
+            workListViewEventSet();
+            viewEventSet();
           }
 
           angular.element($window).bind('resize', resize);
@@ -233,42 +277,6 @@ angular
             $('.day-coll .day').unbind('click', addWorkTime);
           });
 
-          scope.findWorkTimePositions = function(){
-            scope.workTimePos = {};
-            for (var i in scope.workTime){
-                scope.workTimePos[i] = [];
-              for (var j in scope.workTime[i]){
-                var temp = Math.floor(scope.workTime[i][j].begin);
-                scope.workTimePos[i][j]={begin : Number(temp/scope.timeInterval.value)};
-                scope.workTimePos[i][j].begin += Number(((scope.workTime[i][j].begin - temp)/0.6)/scope.timeInterval.value);
-
-                temp = Math.floor(scope.workTime[i][j].end);
-                scope.workTimePos[i][j].size = Number(Math.floor(temp)/scope.timeInterval.value);
-                scope.workTimePos[i][j].size += Number(((scope.workTime[i][j].end - temp)/0.6)/scope.timeInterval.value);
-                scope.workTimePos[i][j].size -= scope.workTimePos[i][j].begin;
-
-                scope.workTimePos[i][j].size = (scope.workTimePos[i][j].size * 16).toFixed(0);
-                scope.workTimePos[i][j].begin = (scope.workTimePos[i][j].begin * 16).toFixed(0);
-              }
-            }
-            viewEventSet();
-          }
-
-          scope.findEventPositions = function(){
-            scope.eventsPos = {};
-            for (var i in scope.events){
-              if (!scope.eventsPos[scope.events[i].day]){
-                scope.eventsPos[scope.events[i].day] = [];
-              }
-              var temp = Math.floor(scope.events[i].time);
-              scope.eventsPos[scope.events[i].day]={pos : Number(temp/scope.timeInterval.value)};
-              scope.eventsPos[scope.events[i].day].pos += Number(((scope.events[i].time - temp)/0.6)/scope.timeInterval.value);
-
-              scope.eventsPos[scope.events[i].day].pos = (scope.eventsPos[scope.events[i].day].pos * 16).toFixed(0);
-
-            }
-            viewEventSet();
-          }
           scope.config = {
             autoHideScrollbar: false,
             theme: 'light',
@@ -281,7 +289,6 @@ angular
               enable:false
             }
           };
-
 
           scope.timeIntervalList = [
             /*{
@@ -305,24 +312,110 @@ angular
           scope.timeInterval = scope.timeIntervalList[0];
 
           scope.timeIntervalChange = function(){
-            var curTime = 0;
+            timeLineBuild();
+            findWorkTimePositions();
+          }
+
+          var timeLineBuild = function(){
+            var curTime = datyViewlLmit.begin;
             scope.timeLine = [];
 
-            while (curTime <= 24){
+            while (curTime <= datyViewlLmit.end){
               scope.timeLine.push(Number(Math.floor(curTime)) + Number((((curTime - Math.floor(curTime)) * 0.6)).toFixed(2)));
               curTime += scope.timeInterval.value;
             }
-            scope.findWorkTimePositions();
+          }
 
+          var initWorkTime = function(){
+            if (scope.workTimeList){
+              fromListToWeekWorkTime(function(){
+                timeLineBuild();
+                workListChangePrepare(false);
+              });
+            }
+          }
+
+          scope.$watch('workTimeList', initWorkTime);
+
+          var eventListChangePrepare = function(flag) {
+            findEventPositions();
+          }
+
+          var buildEventPos = function(i, j) {
+            scope.eventsTime[i][j].pos = Math.floor(timeToDec(scope.eventsTime[i][j].start - datyViewlLmit.begin)/ scope.timeInterval.value * 16);
+          }
+
+          var findEventPositions = function(){
+            for (var i in scope.eventsTime) {
+              for (var j in scope.eventsTime[i]) {
+                buildEventPos(i,j);
+                //scope.eventsTime[i][j].pos = Math.floor(timeToDec(scope.eventsTime[i][j].start - datyViewlLmit.begin)/ scope.timeInterval.value * 16 + 2 );
+              }
+            }
             viewEventSet();
           }
 
-          scope.timeIntervalChange();
+          var viewEventSet = function () {
+            $timeout(function() {
+
+                scope.$apply();
+
+                $( ".event-time" ).draggable({
+                  grid: [ $(document).find('.day-coll .day')[0].clientWidth, 16 ],
+                  stop: function( event, ui ) {
+                    var elementWidth =$(document).find('.day-coll .day')[0].clientWidth;
+                    var elementHeight =$(document).find('.day-coll .day')[0].clientHeight;
+                    var pos = $(ui.helper[0]).position();
 
 
-        },
-        post: function() {
+                    var posDisplacement = _.indexOf(dayList, $(ui.helper[0]).attr('day'));
+                    posDisplacement = (posDisplacement)?(posDisplacement * elementWidth):0;
 
+                    pos.left = Number(pos.left.toFixed(0)) + Number(posDisplacement);
+
+                    if (pos.left < 0 || pos.left > (elementWidth * 7 -1) || pos.top < 0 || pos.top > elementHeight){
+                      _.pullAt(scope.eventsTime[$(ui.helper[0]).attr('day')], $(ui.helper[0]).attr('num'));
+                    }
+                    else{
+                      var dayNom = (pos.left / elementWidth);
+                      dayNom = ((dayNom - Number(dayNom.toFixed(0))) > 0)? (Number(dayNom.toFixed(0)) + 1):Number(dayNom.toFixed(0))
+
+                      pos.top = Number((pos.top / 16).toFixed(0));
+                      pos.top +=  (decToTime(datyViewlLmit.begin ) /scope.timeInterval.value);
+
+                      var temp = scope.eventsTime[$(ui.helper[0]).attr('day')][$(ui.helper[0]).attr('num')];
+
+                      var timeBegin = Number(((pos.top) * scope.timeInterval.value).toFixed(2));
+                      timeBegin = decToTime(timeBegin);
+
+                      _.pullAt(scope.eventsTime[$(ui.helper[0]).attr('day')], $(ui.helper[0]).attr('num'));
+
+                      temp.start = timeBegin;
+                      scope.eventsTime[dayList[dayNom]].push(temp);
+                      //buildEventPos(dayList[dayNom],scope.eventsTime[dayList[dayNom]].length-1);
+                      //$(ui.helper[0]).css('top',temp.start + 'px');
+                      $(ui.helper[0]).remove();
+                      console.log(scope.eventsTime);
+                    }
+
+                    eventListChangePrepare(true);
+                  }
+                });
+                $( ".event-time" ).disableSelection();
+            }, 0);
+          }
+
+          var initEvents = function(){
+            if (scope.events){
+              fromListToWeekEvents(function(){
+                timeLineBuild();
+                //findEventPositions();
+                eventListChangePrepare(false);
+              });
+            }
+          }
+
+          scope.$watch('events', initEvents);
         }
       }
     };
