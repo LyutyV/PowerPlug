@@ -218,6 +218,19 @@ md-datepicker {
               position: relative;
               box-sizing: border-box;
               height: 100%; }
+              .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time {
+                box-sizing: border-box;
+                position: absolute;
+                display: block;
+                width: 100%;
+                z-index: 17;
+                height: 16px; }
+                .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .line {
+                  display: block;
+                  width: 100%;
+                  background-color: #29abe2;
+                  margin-top: 2px;
+                  height: 5px; }
               .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .work-time {
                 box-sizing: border-box;
                 position: absolute;
@@ -247,7 +260,18 @@ md-datepicker {
       padding: 0 5px; }
       .week-view-total .week-view-position .events .title {
         text-align: left;
-        font-size: 20px; }
+        font-size: 16px; }
+      .week-view-total .week-view-position .events .event-img {
+        height: 16px;
+        margin-top: 20px;
+        margin-bottom: 10px; }
+      .week-view-total .week-view-position .events .event-name {
+        text-align: left;
+        font-size: 12px;
+        font-weight: bold; }
+      .week-view-total .week-view-position .events .event-text {
+        text-align: left;
+        font-size: 12px; }
   .week-view-total .bottom-week-view {
     width: 100%;
     box-sizing: border-box;
