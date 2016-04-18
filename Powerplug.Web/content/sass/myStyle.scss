@@ -277,6 +277,22 @@ md-datepicker {
                             position: relative;
                             box-sizing: border-box;
                             height: 100%;
+                            .event-time{
+                                box-sizing: border-box;
+                                position: absolute;
+                                display: block;
+                                width: 100%;
+                                z-index: 17;
+                                height: 16px;
+
+                                .line{
+                                    display: block;
+                                    width: 100%;
+                                    background-color: #29abe2;
+                                    margin-top: 2px;
+                                    height: 5px;
+                                }
+                            }
                             .work-time {
                                 box-sizing: border-box;
                                 position: absolute;
@@ -313,7 +329,21 @@ md-datepicker {
             padding: 0 5px;
             .title {
                 text-align: left;
-                font-size: 20px;
+                font-size: 16px;
+            }
+            .event-img{
+                height: 16px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            .event-name {
+                text-align: left;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            .event-text{
+                text-align: left;
+                font-size: 12px;
             }
         }
     }
