@@ -85,6 +85,9 @@
                     'workhoursaction@savingPlanEditor': {
                         templateUrl: 'views/powerplan/savingPlanWorkHoursActions.html'
                     },
+                    'worktimesaction@savingPlanEditor': {
+                        templateUrl: 'views/powerplan/savingPlanWorkTime.html'
+                    },
                     'events@savingPlanEditor': {
                         templateUrl: 'views/powerplan/savingPlanEvents.html'
                     },

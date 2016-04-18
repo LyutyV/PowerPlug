@@ -8,92 +8,91 @@ div.content-wrapper {
 .overview {
   margin: 0 -48px;
   background-color: #f9f9f9; }
-  .overview div.flex {
+  .overview > div:first-child {
     height: 112px;
     display: flex;
     justify-content: flex-end;
     padding-left: 33px; }
-    .overview div.flex > div:first-child {
+    .overview > div:first-child > div:first-child {
       flex-grow: 1; }
-    .overview div.flex > div:last-child {
+    .overview > div:first-child > div:last-child {
       width: 250px;
       height: 112px;
       background-color: #f2f2f2; }
-      .overview div.flex > div:last-child > div {
+      .overview > div:first-child > div:last-child > div {
         height: 56px; }
-        .overview div.flex > div:last-child > div > div {
+        .overview > div:first-child > div:last-child > div > div {
           display: inline-block;
           float: left;
           line-height: 56px; }
-          .overview div.flex > div:last-child > div > div:first-child {
+          .overview > div:first-child > div:last-child > div > div:first-child {
             width: 70px;
             margin-left: 38px; }
-            .overview div.flex > div:last-child > div > div:first-child > span {
+            .overview > div:first-child > div:last-child > div > div:first-child > span {
               font-family: Calibri;
               color: rgba(26, 26, 26, 0.7);
               font-size: 14px;
               font-weight: 300;
               letter-spacing: -0.182px; }
-    .overview div.flex > div > div.row {
+    .overview > div:first-child > div > div.row {
       height: 28px; }
-      .overview div.flex > div > div.row:nth-child(1) img, .overview div.flex > div > div.row:nth-child(2) img {
+      .overview > div:first-child > div > div.row:nth-child(1) img, .overview > div:first-child > div > div.row:nth-child(2) img {
         margin-bottom: 8px; }
-      .overview div.flex > div > div.row:nth-child(1) span, .overview div.flex > div > div.row:nth-child(2) span {
+      .overview > div:first-child > div > div.row:nth-child(1) span, .overview > div:first-child > div > div.row:nth-child(2) span {
         margin-left: 5px; }
-      .overview div.flex > div > div.row:nth-child(3) img, .overview div.flex > div > div.row:nth-child(4) img {
+      .overview > div:first-child > div > div.row:nth-child(3) img, .overview > div:first-child > div > div.row:nth-child(4) img {
         margin-left: 5px;
         margin-bottom: 5px; }
-      .overview div.flex > div > div.row:nth-child(3) span, .overview div.flex > div > div.row:nth-child(4) span {
+      .overview > div:first-child > div > div.row:nth-child(3) span, .overview > div:first-child > div > div.row:nth-child(4) span {
         margin-left: 10px; }
-      .overview div.flex > div > div.row > div.col-xs-12 > img.margin {
+      .overview > div:first-child > div > div.row > div.col-xs-12 > img.margin {
         padding-left: 10px; }
-      .overview div.flex > div > div.row > div.col-xs-12 > span {
+      .overview > div:first-child > div > div.row > div.col-xs-12 > span {
         font-family: Calibri;
         color: rgba(26, 26, 26, 0.7);
         font-size: 16.93px;
         font-weight: 300;
         line-height: 26.338px;
         text-align: left; }
-  .overview > div.row {
-    padding-bottom: 35px; }
-    .overview > div.row:last-child {
-      background-color: #f2f2f2;
+  .overview > div:nth-child(2) {
+    background-color: #f2f2f2;
+    padding-bottom: 35px;
+    margin-top: 10px; }
+    .overview > div:nth-child(2) > div:last-child {
       margin-top: 10px; }
-      .overview > div.row:last-child > div.col-xs-4 {
+      .overview > div:nth-child(2) > div:last-child > div {
         padding-top: 30px; }
-        .overview > div.row:last-child > div.col-xs-4:last-child .bigNumber {
+        .overview > div:nth-child(2) > div:last-child > div .bigNumber {
           font-family: Calibri;
           font-size: 33.39px;
           font-weight: 700;
           text-align: left; }
-        .overview > div.row:last-child > div.col-xs-4:last-child .font {
+        .overview > div:nth-child(2) > div:last-child > div .font {
           font-family: Calibri;
           color: rgba(26, 26, 26, 0.7);
           font-size: 16.69px;
           font-weight: 300;
           text-align: left; }
-        .overview > div.row:last-child > div.col-xs-4:last-child .green {
+        .overview > div:nth-child(2) > div:last-child > div .green {
           color: #8cc63f; }
-        .overview > div.row:last-child > div.col-xs-4:last-child > div.row:nth-child(2), .overview > div.row:last-child > div.col-xs-4:last-child > div.row:nth-child(3) {
-          margin-top: 30px; }
-  .overview div.menu {
+  .overview > div:last-child {
     height: 45px;
     background-color: #8cc63f;
     margin: 0 -12px; }
-    .overview div.menu ul {
+    .overview > div:last-child ul {
       line-height: 45px;
       text-align: center; }
-      .overview div.menu ul li {
+      .overview > div:last-child ul li {
         list-style: none;
         display: inline-block; }
-        .overview div.menu ul li > a {
+        .overview > div:last-child ul li > a {
           font-family: Calibri;
           color: #ffffff;
           font-size: 17px;
           font-weight: 400;
           padding: 0 15px;
           text-decoration: none; }
-        .overview div.menu ul li:not(:first-child) {
+        .overview > div:last-child ul li:not(:first-child) {
           border-left: 1px solid #ffffff; }
 
 .chart-wraper {
