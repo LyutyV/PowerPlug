@@ -494,6 +494,12 @@ $onColor: #8fc73e;
 $textColor: #898989;
 custom-radio-button-type-one {
     display: block;
+    &:focus {
+      outline: none;
+    }
+    div {
+      outline: none;;
+    }
 }
 custom-radio-button-type-one input[type="radio"] {
     display: none;
@@ -1111,3 +1117,92 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
     -moz-transition: background-color 0.4s linear;
     transition: background-color 0.4s linear;
 }
+// Work time section
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+    background-color: #a3d165;
+    font-family: Calibri;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+    outline: none;
+    border: none;
+}
+.savingPlanWorkTime {
+    padding: 40px;
+    background-color: #f2f2f2;
+    margin: 0 -49px;
+    ul {
+        li {
+            border-bottom: 6px solid #808080;
+            a,
+            a:active,
+            a:focus,
+            a:hover {
+                padding: 5px 15px;
+                border-radius: 8px 8px 0 0;
+                margin-right: none;
+                background-color: #808080;
+                font-family: Calibri;
+                color: #ffffff;
+                font-size: 19px;
+                font-weight: 300;
+                outline: none;
+                border: none;
+            }
+            &.active {
+                border-bottom: 6px solid #88b73d;
+            }
+            &:not(:first-child) {
+                margin-left: 5px;
+            }
+        }
+    }
+    div.tab-content {
+        div.tab-pane {
+            &:first-child {}
+        }
+    }
+}
+////////////
+//CustomRadioButtomTypeOneStyles
+// input.custom-radio-button-type-one {
+//     display: block;
+// }
+// input.custom-radio-button-type-one[type="radio"] {
+//     display: none;
+// }
+// input.custom-radio-button-type-one[type="radio"] + label {
+//     color: $textColor;
+//     font-family: Arial, sans-serif;
+//     font-size: 14px;
+//     outline: none;
+// }
+// input.custom-radio-button-type-one[type="radio"] + label span {
+//     display: inline-block;
+//     width: 16px;
+//     height: 16px;
+//     margin: -1px 4px 0 0;
+//     vertical-align: middle;
+//     cursor: pointer;
+//     -moz-border-radius: 50%;
+//     border-radius: 50%;
+// }
+// input.custom-radio-button-type-one[type="radio"] + label > span:first-child {
+//     background-color: $offColor;
+// }
+// input.custom-radio-button-type-one[type="radio"]:checked + label > span:first-child {
+//     background-color: $onColor;
+// }
+// input.custom-radio-button-type-one[type="radio"] + label span,
+// input.custom-radio-button-type-one[type="radio"]:checked + label span {
+//     -webkit-transition: background-color 0.4s linear;
+//     -o-transition: background-color 0.4s linear;
+//     -moz-transition: background-color 0.4s linear;
+//     transition: background-color 0.4s linear;
+// }
+// input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child {
+//     color: #333333 !important;
+//     font-weight: 700 !important;
+// }
