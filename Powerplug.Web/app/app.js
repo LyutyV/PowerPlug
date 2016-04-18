@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('powerPlug', ['ngCookies', 'ngMaterial', 'ng-fusioncharts', 'ui.router', 'ui.bootstrap', 'textAngular', 'common.services', 'highcharts-ng', 'ngScrollbars'])
+        .module('powerPlug', ['ngCookies', 'ngMaterial', 'ng-fusioncharts', 'ui.router', 'ui.bootstrap', 'textAngular', 'common.services', 'highcharts-ng', 'ngScrollbars', 'ui.tinymce'])
         .config(configRoute)
         .config(configExceptionHandler)
         .config(configDatePicker)

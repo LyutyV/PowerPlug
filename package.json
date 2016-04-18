@@ -1,0 +1,22 @@
+{
+  "name": "powerplug.web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://LyutyV@bitbucket.org/powerplug/powerplug.web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/powerplug/powerplug.web#readme",
+  "devDependencies": {
+    "browser-sync": "^2.12.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  },
+  "dependencies": {}
+}

@@ -1,6 +1,6 @@
 angular
   .module('powerPlug')
-  .directive('weekView', function($timeout,$window,$document) {
+  .directive('weekView', function($timeout,$window) {
     return {
       restrict: 'E',
       replace: true,
@@ -11,7 +11,15 @@ angular
       },
       templateUrl: 'app/directives/weekView/weekView.html',
       link: {
-        pre: function(scope) {
+        pre: function(scope,element) {
+
+
+
+
+
+          if (!element.mCustomScrollbar){
+            element.__proto__.mCustomScrollbar = $.mCustomScrollbar;
+          }
 
           var timeToDec = function(time){
             return Number(Math.floor(time)) + Number((time - Math.floor(time))/0.6);
@@ -30,43 +38,61 @@ angular
               }
               for (var j in scope.workTime[i]){
 
-                if (scope.workTimeLimit[i].begin>scope.workTime[i][j].begin){
-                  scope.workTimeLimit[i].begin = scope.workTime[i][j].begin;
+                if (scope.workTimeLimit[i].begin>scope.workTime[i][j].start){
+                  scope.workTimeLimit[i].begin = scope.workTime[i][j].start;
                 }
 
                 if (scope.workTimeLimit[i].end<scope.workTime[i][j].end){
                   scope.workTimeLimit[i].end = scope.workTime[i][j].end;
                 }
               }
-
+              scope.workTimeLimit[i].begin = scope.workTimeLimit[i].begin.toFixed(2);
+              scope.workTimeLimit[i].end = scope.workTimeLimit[i].end.toFixed(2);
               scope.workTimeLimit[i].view = (scope.workTimeLimit[i].begin<25 && scope.workTimeLimit[i].end>-1);
 
             }
           }
 
-          //scope.findWorkTimeLimits();
+          scope.findWorkTimeLimits();
 
           var workListChackMerge = function() {
             var flag = false;
+            var rep = false;
+
             for (var i in scope.workTime) {
-              for (var j in scope.workTime[i]) {
-                for (var k in scope.workTime[i]) {
-                  if (j != k) {
-                    if (scope.workTime[i][j].begin < scope.workTime[i][k].begin && scope.workTime[i][j].end > scope.workTime[i][k].begin){
-                      flag = true;
-                      if (scope.workTime[i][k].end > scope.workTime[i][j].end) {
-                        scope.workTime[i][j].end = scope.workTime[i][k].end;
+              do{
+                var length1 = scope.workTime[i].length
+                rep = false;
+
+                for (var j = 0; j<length1; j++) {
+                  for (var k = Number(j)+1; k<length1; k++) {
+                    if (k==j||!scope.workTime[i][j]||!scope.workTime[i][k]){
+                      continue;
+                    }
+                      if (scope.workTime[i][j].start <= scope.workTime[i][k].start && scope.workTime[i][j].end >= scope.workTime[i][k].start){
+                        flag = rep = true;
+                        if (scope.workTime[i][k].end > scope.workTime[i][j].end) {
+                          scope.workTime[i][j].end = scope.workTime[i][k].end;
+                        }
+                        scope.workTime[i][k]=null;
                       }
-                      _.pullAt(scope.workTime[i], k);
+                      else if (scope.workTime[i][k].start <= scope.workTime[i][j].start && scope.workTime[i][k].end >= scope.workTime[i][j].start){
+                        flag = rep = true;
+                        if (scope.workTime[i][j].end > scope.workTime[i][k].end) {
+                          scope.workTime[i][k].end = scope.workTime[i][j].end;
+                        }
+                        scope.workTime[i][j]=null;
+                      }
                     }
-                    else if (scope.workTime[i][j].end == scope.workTime[i][k].begin) {
-                      flag = true;
-                      scope.workTime[i][j].end = scope.workTime[i][k].end;
-                      _.pullAt(scope.workTime[i], k);
-                    }
-                  }
+                }
+              }while(rep);
+              var temp = [];
+              for (var k in scope.workTime[i]){
+                if (scope.workTime[i][k]){
+                  temp.unshift(scope.workTime[i][k]);
                 }
               }
+              scope.workTime[i] = temp;
             }
             return flag;
           }
@@ -86,13 +112,12 @@ angular
             $timeout(function() {
 
                 var dayList = ['sun','mon','tue','wed','thu','fri','sat'];
-
                 $( ".work-time" ).resizable({
                   grid: 16,
-                  maxWidth: $document.find('.day-wrape')[0].clientWidth-11,
-                  minWidth: $document.find('.day-wrape')[0].clientWidth-11,
+                  maxWidth: $(document).find('.day-wrape')[0].clientWidth-11,
+                  minWidth: $(document).find('.day-wrape')[0].clientWidth-11,
                   stop:function( event, ui ){
-                    var elementHeight =$document.find('.day-coll .day')[0].clientHeight;
+                    var elementHeight =$(document).find('.day-coll .day')[0].clientHeight;
                     var height = $(ui.helper[0]).height();
                     var pos = $(ui.helper[0]).position();
                     pos.top = Number(pos.top.toFixed(0));
@@ -128,10 +153,10 @@ angular
 
                 $( ".work-time" ).draggable({
                   handle: ".triangle",
-                  grid: [ $document.find('.day-coll .day')[0].clientWidth, 16 ],
+                  grid: [ $(document).find('.day-coll .day')[0].clientWidth, 16 ],
                   stop: function( event, ui ) {
-                    var elementWidth =$document.find('.day-coll .day')[0].clientWidth;
-                    var elementHeight =$document.find('.day-coll .day')[0].clientHeight;
+                    var elementWidth =$(document).find('.day-coll .day')[0].clientWidth;
+                    var elementHeight =$(document).find('.day-coll .day')[0].clientHeight;
                     var pos = $(ui.helper[0]).position();
                     var height = $(ui.helper[0]).height();
 
@@ -179,13 +204,13 @@ angular
 
                       var timeBegin = Number(((pos.top / 16) * scope.timeInterval.value).toFixed(2));
 
-                      var timeEnd = decToTime(timeBegin + Number(timeToDec(temp.end).toFixed(2)) - Number(timeToDec(temp.begin).toFixed(2)));
+                      var timeEnd = decToTime(timeBegin + Number(timeToDec(temp.end).toFixed(2)) - Number(timeToDec(temp.start).toFixed(2)));
 
                       timeBegin = decToTime(timeBegin);
 
                       _.pullAt(scope.workTime[$(ui.helper[0]).attr('day')], $(ui.helper[0]).attr('num'));
 
-                      temp.begin = timeBegin;
+                      temp.start = timeBegin;
                       temp.end = timeEnd;
                       scope.workTime[dayList[dayNom]].push(temp);
 
@@ -217,7 +242,7 @@ angular
               var temp = Number((prev / 16).toFixed());
 
               scope.workTime[$(e.target).attr('daypos')].unshift({
-                begin: decToTime(temp * scope.timeInterval.value),
+                start: decToTime(temp * scope.timeInterval.value),
                 end: decToTime((temp + 1) * scope.timeInterval.value)
               });
 
@@ -238,9 +263,9 @@ angular
             for (var i in scope.workTime){
                 scope.workTimePos[i] = [];
               for (var j in scope.workTime[i]){
-                var temp = Math.floor(scope.workTime[i][j].begin);
+                var temp = Math.floor(scope.workTime[i][j].start);
                 scope.workTimePos[i][j]={begin : Number(temp/scope.timeInterval.value)};
-                scope.workTimePos[i][j].begin += Number(((scope.workTime[i][j].begin - temp)/0.6)/scope.timeInterval.value);
+                scope.workTimePos[i][j].begin += Number(((scope.workTime[i][j].start - temp)/0.6)/scope.timeInterval.value);
 
                 temp = Math.floor(scope.workTime[i][j].end);
                 scope.workTimePos[i][j].size = Number(Math.floor(temp)/scope.timeInterval.value);
@@ -269,6 +294,7 @@ angular
             }
             viewEventSet();
           }
+
           scope.config = {
             autoHideScrollbar: false,
             theme: 'light',
@@ -281,7 +307,6 @@ angular
               enable:false
             }
           };
-
 
           scope.timeIntervalList = [
             /*{
@@ -317,8 +342,14 @@ angular
             viewEventSet();
           }
 
-          scope.timeIntervalChange();
 
+          function initWorkTime (){
+            scope.timeIntervalChange();
+            workListChangePrepare(false);
+          }
+
+
+          scope.$watch('workTime', initWorkTime);
 
         },
         post: function() {
