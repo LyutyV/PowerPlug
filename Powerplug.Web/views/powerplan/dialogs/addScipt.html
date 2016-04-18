@@ -4,6 +4,7 @@
         <i class="fa fa-times" ng-click="closeEventScripts()"></i>
     </md-toolbar>
     <md-content>
+        <span>{{eventScripts.length}} Scripts</span>
         <div class="well">
             <table class="table">
                 <thead>
@@ -17,7 +18,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="script in eventScripts">
-                        <td><input type="checkbox" data-id="{{script.scriptId}}" data-name="{{script.scriptName}}" data-guid="{{script.scriptGUID}}" class="script-selection"/></td>
+                        <td><input type="checkbox" id="{{script.scriptId}}" data-name="{{script.scriptName}}" data-guid="{{script.scriptGUID}}" class="script-selection custom-checkbox-green"/><label for='{{script.scriptId}}'></label></td>
                         <td>{{script.scriptName}}</td>
                         <td>{{script.owner}}</td>
                         <td>{{script.scriptType}}</td>
