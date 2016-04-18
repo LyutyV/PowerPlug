@@ -60,44 +60,44 @@
         }
 
         varWorkDaysGraphArr = [];
-        //if (overviewHandler.vm.savingPlan.workDaysData) {
-        //    angular.forEach(overviewHandler.vm.savingPlan.workDaysData, function (value, key) {
-        //        var serieObj = {};
-        //        serieObj.name = value.seriesName;
-        //        serieObj.data = value.data;
-        //        if (value.seriesName === 'Work Time') {
-        //            serieObj.color = "#8ec536";
-        //        }
-        //        else if (value.seriesName === 'Down Time') {
-        //            serieObj.color = "#bf2b29";
-        //        }
-        //        else if (value.seriesName === 'Idle Time') {
-        //            serieObj.color = "#28aadc";
-        //        }
-        //        varWorkDaysGraphArr.push(serieObj);
-        //    });
-        //}
+        if (overviewHandler.vm.savingPlan.workDaysData) {
+            angular.forEach(overviewHandler.vm.savingPlan.workDaysData, function (value, key) {
+                var serieObj = {};
+                serieObj.name = value.seriesName;
+                serieObj.data = value.data;
+                if (value.seriesName === 'Work Time') {
+                    serieObj.color = "#8ec536";
+                }
+                else if (value.seriesName === 'Down Time') {
+                    serieObj.color = "#bf2b29";
+                }
+                else if (value.seriesName === 'Idle Time') {
+                    serieObj.color = "#28aadc";
+                }
+                varWorkDaysGraphArr.push(serieObj);
+            });
+        }
 
         overviewHandler.vm.workDaysGraph = varWorkDaysGraphArr;
 
         varNonWorkDaysGraphArr = [];
-        //if (overviewHandler.vm.savingPlan.nonWorkDaysData) {
-        //    angular.forEach(overviewHandler.vm.savingPlan.nonWorkDaysData, function (value, key) {
-        //        var serieObj = {};
-        //        serieObj.name = value.seriesName;
-        //        serieObj.data = value.data;
-        //        if (value.seriesName === 'Work Time') {
-        //            serieObj.color = "#8ec536";
-        //        }
-        //        else if (value.seriesName === 'Down Time') {
-        //            serieObj.color = "#bf2b29";
-        //        }
-        //        else if (value.seriesName === 'Idle Time') {
-        //            serieObj.color = "#28aadc";
-        //        }
-        //        varNonWorkDaysGraphArr.push(serieObj);
-        //    });
-        //}
+        if (overviewHandler.vm.savingPlan.nonWorkDaysData) {
+            angular.forEach(overviewHandler.vm.savingPlan.nonWorkDaysData, function (value, key) {
+                var serieObj = {};
+                serieObj.name = value.seriesName;
+                serieObj.data = value.data;
+                if (value.seriesName === 'Work Time') {
+                    serieObj.color = "#8ec536";
+                }
+                else if (value.seriesName === 'Down Time') {
+                    serieObj.color = "#bf2b29";
+                }
+                else if (value.seriesName === 'Idle Time') {
+                    serieObj.color = "#28aadc";
+                }
+                varNonWorkDaysGraphArr.push(serieObj);
+            });
+        }
 
         overviewHandler.vm.nonWorkDaysGraph = varNonWorkDaysGraphArr;
 
