@@ -1167,42 +1167,42 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
 }
 ////////////
 //CustomRadioButtomTypeOneStyles
-// input.custom-radio-button-type-one {
-//     display: block;
-// }
-// input.custom-radio-button-type-one[type="radio"] {
-//     display: none;
-// }
-// input.custom-radio-button-type-one[type="radio"] + label {
-//     color: $textColor;
-//     font-family: Arial, sans-serif;
-//     font-size: 14px;
-//     outline: none;
-// }
-// input.custom-radio-button-type-one[type="radio"] + label span {
-//     display: inline-block;
-//     width: 16px;
-//     height: 16px;
-//     margin: -1px 4px 0 0;
-//     vertical-align: middle;
-//     cursor: pointer;
-//     -moz-border-radius: 50%;
-//     border-radius: 50%;
-// }
-// input.custom-radio-button-type-one[type="radio"] + label > span:first-child {
-//     background-color: $offColor;
-// }
-// input.custom-radio-button-type-one[type="radio"]:checked + label > span:first-child {
-//     background-color: $onColor;
-// }
-// input.custom-radio-button-type-one[type="radio"] + label span,
-// input.custom-radio-button-type-one[type="radio"]:checked + label span {
-//     -webkit-transition: background-color 0.4s linear;
-//     -o-transition: background-color 0.4s linear;
-//     -moz-transition: background-color 0.4s linear;
-//     transition: background-color 0.4s linear;
-// }
-// input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child {
-//     color: #333333 !important;
-//     font-weight: 700 !important;
-// }
+input.custom-radio-button-type-one {
+    display: block;
+}
+input.custom-radio-button-type-one[type="radio"] {
+    display: none;
+}
+input.custom-radio-button-type-one[type="radio"] + label {
+    color: $textColor;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+input.custom-radio-button-type-one[type="radio"] + label span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+input.custom-radio-button-type-one[type="radio"] + label > span:first-child {
+    background-color: $offColor;
+}
+input.custom-radio-button-type-one[type="radio"]:checked + label > span:first-child {
+    background-color: $onColor;
+}
+input.custom-radio-button-type-one[type="radio"] + label span,
+input.custom-radio-button-type-one[type="radio"]:checked + label span {
+    -webkit-transition: background-color 0.4s linear;
+    -o-transition: background-color 0.4s linear;
+    -moz-transition: background-color 0.4s linear;
+    transition: background-color 0.4s linear;
+}
+input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child {
+    color: #333333 !important;
+    font-weight: 700 !important;
+}
