@@ -5,6 +5,6 @@
         .factory('ComputerGroupsResource', ['$resource', 'appSettings', ComputerGroupsResource]);
 
     function ComputerGroupsResource($resource, appSettings) {
-        return $resource(appSettings.serverPath + 'api/computer-groups');
+        return $resource(appSettings.serverPath + 'api/pc/computer-groups');
     }
 }());
