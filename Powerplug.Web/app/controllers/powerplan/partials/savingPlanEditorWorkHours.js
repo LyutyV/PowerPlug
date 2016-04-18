@@ -10,6 +10,7 @@
         var startTime;
         var endTime;
         var currentTime = moment('2012-01-01');
+
         angular.forEach(workHoursHandler.vm.savingPlan.workHours.workTimeMask.split(''), function (value, key) {
             if (value === '1') {
                 if (!active) {
@@ -36,6 +37,8 @@
                 end: endTime
             })
         }
+
+        workHoursHandler.vm.workTime = workHours;
 
         // var myEl = angular.element(document.querySelector('#calendar'));
         // myEl.fullCalendar({
