@@ -26,11 +26,27 @@
                     </tr>
                 </tbody>
             </table>
-            <hr />
-            <div>
-
+            <div class="savedStriptInfo">
+              <span>Saved scripts</span>
+              <div>
+                <div>
+                  <input type="checkbox" id="chb1" name="" class="custom-checkbox-green"/><label for='chb1'></label>
+                </div>
+                <div>
+                  <span>Show all scripts</span>
+                </div>
+                <div>
+                  <span>Execution Context</span>
+                </div>
+                <div>
+                  <input class="custom-radio-button-t2" type='radio' id='r1' name='rad1' checked/><label for='r1'><span><span></span></span>System</label>
+                </div>
+                <div>
+                  <input class="custom-radio-button-t2" type='radio' id='r2' name='rad1' /><label for='r2'><span><span></span></span>User</label>
+                </div>
+              </div>
             </div>
-            <div style="text-align:center">
+            <div class="buttonsBlock">
                 <button ng-click="addEventScripts()">OK</button>
                 <button ng-click="closeEventScripts()">Cancel</button>
             </div>

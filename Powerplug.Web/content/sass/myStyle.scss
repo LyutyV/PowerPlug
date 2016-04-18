@@ -1,3 +1,6 @@
+.topGreenLine {
+    z-index: 100;
+}
 div.content-wrapper {
     background-color: #f9f9f9;
 }
@@ -277,15 +280,14 @@ md-datepicker {
                             position: relative;
                             box-sizing: border-box;
                             height: 100%;
-                            .event-time{
+                            .event-time {
                                 box-sizing: border-box;
                                 position: absolute;
                                 display: block;
                                 width: 100%;
                                 z-index: 17;
                                 height: 16px;
-
-                                .line{
+                                .line {
                                     display: block;
                                     width: 100%;
                                     background-color: #29abe2;
@@ -331,7 +333,7 @@ md-datepicker {
                 text-align: left;
                 font-size: 16px;
             }
-            .event-img{
+            .event-img {
                 height: 16px;
                 margin-top: 20px;
                 margin-bottom: 10px;
@@ -341,7 +343,7 @@ md-datepicker {
                 font-size: 12px;
                 font-weight: bold;
             }
-            .event-text{
+            .event-text {
                 text-align: left;
                 font-size: 12px;
             }
@@ -868,38 +870,126 @@ md-dialog.addScript {
             font-weight: 700;
         }
         > div {
-            background-color: #ffffff;
-            border: none;
-            > table {
-                > thead {
-                    font-family: Calibri;
-                    color: rgba(26, 26, 26, 0.7);
-                    font-size: 14px;
-                    font-weight: 700;
-                    letter-spacing: -0.182px;
+            &:nth-child(2) {
+                background-color: #ffffff;
+                border: none;
+                > table {
+                    margin-bottom: 0;
+                    border-bottom: 1px solid #b2b2b2;
+                    > thead {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 14px;
+                        font-weight: 700;
+                        letter-spacing: -0.182px;
+                        td {
+                            padding-left: 0;
+                        }
+                    }
+                    > tbody {
+                        font-family: Calibri;
+                        color: #333333;
+                        font-size: 14px;
+                        font-weight: 300;
+                        letter-spacing: -0.182px;
+                        > tr {
+                            > td {
+                                &:first-child {
+                                    text-align: center;
+                                }
+                                padding: 0;
+                                line-height: 40px;
+                            }
+                        }
+                    }
                 }
-                > tbody {
-                    font-family: Calibri;
-                    color: #333333;
-                    font-size: 14px;
-                    font-weight: 300;
-                    letter-spacing: -0.182px;
+                > div {
+                    &:nth-child(3) {
+                        text-align: center;
+                        padding: 15px 0;
+                        background-color: #f2f2f2;
+                    }
+                    > button {
+                        height: 40px;
+                        width: 120px;
+                        border: none;
+                        font-family: Calibri;
+                        color: #ffffff;
+                        font-size: 20.3px;
+                        font-weight: 700;
+                        &:first-child {
+                            background-color: #8cc63f;
+                        }
+                        &:last-child {
+                            background-color: #808080;
+                        }
+                    }
                 }
             }
-            > div {
-                > button {
-                    height: 40px;
-                    width: 120px;
-                    border: none;
+            div.savedStriptInfo {
+                margin: 5px 0;
+                background-color: #f8f8f8;
+                > span {
+                    margin-top: 20px;
+                    display: inline-block;
+                    margin-left: 54px;
                     font-family: Calibri;
-                    color: #ffffff;
-                    font-size: 20.3px;
+                    color: #4d4d4d;
+                    font-size: 18px;
                     font-weight: 700;
-                    &:first-child {
-                        background-color: #8cc63f;
-                    }
-                    &:last-child {
-                        background-color: #808080;
+                }
+                > div {
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 19px;
+                    padding-bottom: 19px;
+                    border-bottom: 1px solid #b3b3b3;
+                    > div {
+                        &:nth-child(1) {
+                            margin-left: 89px;
+                            line-height: 27px;
+                        }
+                        &:nth-child(2) {
+                            line-height: 28px;
+                            font-family: Calibri;
+                            color: #333333;
+                            font-size: 14px;
+                            font-weight: 300;
+                            letter-spacing: -0.182px;
+                        }
+                        &:nth-child(3) {
+                            line-height: 28px;
+                            font-family: Calibri;
+                            color: #333333;
+                            font-size: 14px;
+                            font-weight: 700;
+                            letter-spacing: -0.182px;
+                            margin-left: 73px;
+                        }
+                        &:nth-child(4) {
+                            margin-left: 24px;
+                            > label {
+                                font-family: Calibri;
+                                color: rgba(26, 26, 26, 0.7);
+                                font-size: 13px;
+                                font-weight: 300;
+                                letter-spacing: -0.169px;
+                                line-height: 14px;
+                                text-align: left;
+                            }
+                        }
+                        &:nth-child(5) {
+                            margin-left: 48px;
+                            > label {
+                                font-family: Calibri;
+                                color: rgba(26, 26, 26, 0.7);
+                                font-size: 13px;
+                                font-weight: 300;
+                                letter-spacing: -0.169px;
+                                line-height: 14px;
+                                text-align: left;
+                            }
+                        }
                     }
                 }
             }
@@ -913,13 +1003,13 @@ md-dialog.addScript {
 input.custom-checkbox-green {
     & + label {
         /* Это для всех браузеров, кроме совсем старых, которые не поддерживают
-      селекторы с плюсом. Показываем, что label кликабелен. */
+    селекторы с плюсом. Показываем, что label кликабелен. */
         cursor: pointer;
         margin-bottom: 0;
     }
     /* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
-    Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
-    в них все нижеследующие стили не сработают. */
+  Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
+  в них все нижеследующие стили не сработают. */
     /* Прячем оригинальный чекбокс. */
     &:not(checked) {
         position: absolute;
@@ -927,12 +1017,16 @@ input.custom-checkbox-green {
         & + label {
             position: relative;
             /* будем позиционировать псевдочекбокс относительно label */
+            padding: 0 0 0 30px;
             /* оставляем слева от label место под псевдочекбокс */
             &:before {
                 content: '\f00c';
                 font-family: 'FontAwesome';
                 font-size: 12px;
                 color: #93c349;
+                position: absolute;
+                top: -10px;
+                left: 0;
                 width: 15px;
                 height: 15px;
                 border: 1px solid #989898;
@@ -944,6 +1038,9 @@ input.custom-checkbox-green {
         & + label {
             &:before {
                 content: '';
+                position: absolute;
+                top: -10px;
+                left: 0;
                 width: 15px;
                 height: 15px;
                 border: 1px solid #d7d7d7;
@@ -952,3 +1049,45 @@ input.custom-checkbox-green {
     }
 }
 //}
+// Custom radio button type 2
+input.custom-radio-button-t2[type="radio"] {
+    display: none;
+}
+input.custom-radio-button-t2[type="radio"] + label {
+    color: #898989;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+input.custom-radio-button-t2[type="radio"] + label span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+input.custom-radio-button-t2[type="radio"] + label span span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 4px 4px 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+input.custom-radio-button-t2[type="radio"] + label > span {
+    border: 1px solid #f3f3f3;
+}
+input.custom-radio-button-t2[type="radio"]:checked + label span span {
+    background-color: #8fc73e;
+}
+input.custom-radio-button-t2[type="radio"] + label span,
+input.custom-radio-button-t2[type="radio"]:checked + label span {
+    -webkit-transition: background-color 0.4s linear;
+    -o-transition: background-color 0.4s linear;
+    -moz-transition: background-color 0.4s linear;
+    transition: background-color 0.4s linear;
+}
