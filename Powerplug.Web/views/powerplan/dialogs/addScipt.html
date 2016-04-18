@@ -1,17 +1,18 @@
-﻿<md-dialog style="width:900px">
+﻿<md-dialog class="addScript" style="width:900px">
     <md-toolbar>
-        <div style="padding-left: 20px;padding-top: 17px;">Add a Script</div>
+        <div>Add a Script</div>
+        <i class="fa fa-times" ng-click="closeEventScripts()"></i>
     </md-toolbar>
-    <md-content>        
+    <md-content>
         <div class="well">
-            <table class="table table-striped">
+            <table class="table">
                 <thead>
                     <tr>
                         <td></td>
                         <td>Name</td>
                         <td>Owner</td>
                         <td>Type</td>
-                        <td>Description</td>                        
+                        <td>Description</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,14 +21,17 @@
                         <td>{{script.scriptName}}</td>
                         <td>{{script.owner}}</td>
                         <td>{{script.scriptType}}</td>
-                        <td>{{script.scriptDesc}}</td>                        
+                        <td>{{script.scriptDesc}}</td>
                     </tr>
                 </tbody>
             </table>
             <hr />
+            <div>
+
+            </div>
             <div style="text-align:center">
-                <button class="btn btn-success" ng-click="addEventScripts()">OK</button>
-                <button class="btn btn-danger" ng-click="closeEventScripts()">Cancel</button>
+                <button ng-click="addEventScripts()">OK</button>
+                <button ng-click="closeEventScripts()">Cancel</button>
             </div>
         </div>
     </md-content>

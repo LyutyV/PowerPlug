@@ -171,7 +171,7 @@ md-datepicker {
 //Calendar styles
 .week-view-total {
     position: relative;
-    z-index:5;
+    z-index: 5;
     .week-view-head {
         position: absolute;
         top: 0;
@@ -470,8 +470,8 @@ md-datepicker {
 $offColor: #f3f3f3;
 $onColor: #8fc73e;
 $textColor: #898989;
-custom-radio-button-type-one div {
-    margin: 0 0 0.75em;
+custom-radio-button-type-one {
+    display: block;
 }
 custom-radio-button-type-one input[type="radio"] {
     display: none;
@@ -480,31 +480,22 @@ custom-radio-button-type-one input[type="radio"] + label {
     color: $textColor;
     font-family: Arial, sans-serif;
     font-size: 14px;
+    outline: none;
 }
 custom-radio-button-type-one input[type="radio"] + label span {
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 16px;
+    height: 16px;
     margin: -1px 4px 0 0;
     vertical-align: middle;
     cursor: pointer;
     -moz-border-radius: 50%;
     border-radius: 50%;
 }
-custom-radio-button-type-one input[type="radio"] + label span span {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin: 4px 4px 0;
-    vertical-align: middle;
-    cursor: pointer;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
+custom-radio-button-type-one input[type="radio"] + label > span:first-child {
+    background-color: $offColor;
 }
-custom-radio-button-type-one input[type="radio"] + label > span {
-    border: 1px solid $offColor;
-}
-custom-radio-button-type-one input[type="radio"]:checked + label span span {
+custom-radio-button-type-one input[type="radio"]:checked + label > span:first-child {
     background-color: $onColor;
 }
 custom-radio-button-type-one input[type="radio"] + label span,
@@ -514,8 +505,15 @@ custom-radio-button-type-one input[type="radio"]:checked + label span {
     -moz-transition: background-color 0.4s linear;
     transition: background-color 0.4s linear;
 }
+custom-radio-button-type-one input[type="radio"]:checked + label span:last-child {
+    color: #333333 !important;
+    font-weight: 700;
+}
 // Events page
 .eventsWrapper {
+    background-color: #ffffff;
+    margin: 0 -50px;
+    padding: 25px 50px 1px;
     > div {
         border-top: 5px solid #8cc63f;
         height: 325px;
@@ -525,139 +523,364 @@ custom-radio-button-type-one input[type="radio"]:checked + label span {
             &:first-child {
                 display: flex;
                 justify-content: center;
-                align-items: center;
+                align-items: flex-start;
                 width: 40%;
                 > div {
+                    margin-top: 40px;
                     display: flex;
                     flex-direction: row;
                     &:first-child {
                         > div {
                             &:first-child {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: 5px;
+                            }
+                            &:last-child {
+                                ul {
+                                    margin: 0;
+                                    padding: 0;
+                                    li {
+                                        cursor: auto;
+                                        list-style: none;
+                                        height: 40px;
+                                        &:focus {
+                                            outline: none;
+                                        }
+                                        &:first-child {
+                                            padding-top: 8px;
+                                        }
+                                        &:nth-child(2) {
+                                            padding-top: 10px;
+                                        }
+                                        &:nth-child(3) {
+                                            padding-top: 12px;
+                                        }
+                                        &:nth-child(4) {
+                                            padding-top: 13px;
+                                        }
+                                        &:nth-child(5) {
+                                            padding-top: 14px;
+                                        }
+                                        &:nth-child(6) {
+                                            padding-top: 15px;
+                                        }
+                                        custom-radio-button-type-one {
+                                            > div {
+                                                > label {
+                                                    > span {
+                                                        &:first-child {}
+                                                        &:last-child {
+                                                            width: inherit;
+                                                            height: inherit;
+                                                            font-family: Calibri;
+                                                            color: rgba(128, 128, 128, 0.7);
+                                                            font-size: 13px;
+                                                            font-weight: 300;
+                                                            letter-spacing: -0.169px;
+                                                            text-align: center;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            > div {
                                 border-left: 2px dotted black;
                                 border-top: 2px dotted black;
                                 border-bottom: 2px dotted black;
                                 border-radius: 10px 0 0 10px;
-                            }
-                            div {
-                                width: 40px;
-                                height: 32px;
-                                &:not(:first-child) {
-                                    border-top: 2px dotted black;
-                                }
-                                &:last-child {
+                                > div {
+                                    width: 40px;
+                                    height: 41px;
+                                    &:not(:first-child) {
+                                        border-top: 2px dotted black;
+                                    }
                                 }
                             }
                         }
                     }
-                    &:last-child {}
                 }
             }
             &:last-child {
                 width: 60%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                > div {
+                    margin-top: 40px;
+                    width: 425px;
+                    > span {
+                        display: block;
+                        &:first-child {
+                            font-family: Calibri;
+                            color: #1a1a1a;
+                            font-size: 14px;
+                            font-weight: 700;
+                            letter-spacing: -0.182px;
+                            text-align: left;
+                        }
+                        &:nth-child(2) {
+                            font-family: Calibri;
+                            color: #333333;
+                            font-size: 12px;
+                            font-weight: 300;
+                            letter-spacing: -0.156px;
+                            line-height: 18px;
+                            text-align: justify;
+                        }
+                    }
+                    > div {
+                        &:nth-child(3) {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 30px;
+                            > span {
+                                display: block;
+                                &:first-child {
+                                    float: left;
+                                    font-family: Calibri;
+                                    color: rgba(26, 26, 26, 0.7);
+                                    font-size: 14px;
+                                    font-weight: 700;
+                                    letter-spacing: -0.182px;
+                                }
+                                &:last-child {
+                                    font-family: Calibri;
+                                    color: rgba(26, 26, 26, 0.7);
+                                    font-size: 14.83px;
+                                    font-weight: 700;
+                                    text-align: left;
+                                    float: right;
+                                    &::before {
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(4) {
+                            > ul {
+                                margin: 0;
+                                padding: 0;
+                                > li {
+                                    list-style: none;
+                                    border-top: 1px solid #cccccc;
+                                    background-color: #f8f8f8;
+                                    &:hover {
+                                        background-color: #efefef;
+                                        > div {
+                                            > span {
+                                                &:first-child {
+                                                    font-weight: 700;
+                                                }
+                                                &:last-child {
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &:last-child {
+                                        border-bottom: 1px solid #cccccc;
+                                    }
+                                    > div {
+                                        height: 37px;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        span {
+                                            line-height: 37px;
+                                            &:first-child {
+                                                margin-left: 21px;
+                                                font-family: Calibri;
+                                                color: #333333;
+                                                font-size: 13px;
+                                                font-weight: 300;
+                                                letter-spacing: -0.169px;
+                                                text-align: left;
+                                            }
+                                            &:last-child {
+                                                display: none;
+                                                margin-right: 13px;
+                                                font-family: Calibri;
+                                                color: rgba(26, 26, 26, 0.7);
+                                                font-size: 12.66px;
+                                                font-weight: 700;
+                                                text-align: left;
+                                                &::before {
+                                                    margin-right: 5px;
+                                                    content: '\f1f8';
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 }
 //tinyMCE description
-
-
-.mce-menubar, .mce-statusbar{
-  display:none!important;
+.mce-menubar,
+.mce-statusbar {
+    display: none!important;
 }
-
-
-.mce-container-body:after{
-  display:block;
-  clear:both;
-  content:'';
+.mce-container-body:after {
+    display: block;
+    clear: both;
+    content: '';
 }
-
-.mce-stack-layout{
-  position:relative;
+.mce-stack-layout {
+    position: relative;
 }
-
-.mce-toolbar-grp{
-  float:right!important;
-  width:525px!important;
-  position:relative!important;
-  margin-left:-100%!important;
-  padding-top:0px!important;
-  margin-top:-4px!important;
+.mce-toolbar-grp {
+    float: right!important;
+    width: 525px!important;
+    position: relative!important;
+    margin-left: -100% !important;
+    padding-top: 0 !important;
+    margin-top: -4px !important;
 }
-
-.mce-edit-area{
-  float:left!important;
-  width:100%!important;
-  box-sizing:  border-box!important;
-  padding-right:525px!important;
+.mce-edit-area {
+    float: left!important;
+    width: 100%!important;
+    box-sizing: border-box!important;
+    padding-right: 525px !important;
 }
-
-.mce-tinymce, .mce-toolbar-grp, .wraper-tinymce .mce-panel{
-  background-color:transparent!important;
-  border:none!important;
-  border-width:0px!important;
-  border-color:transparent!important;
+.mce-tinymce,
+.mce-toolbar-grp,
+.wraper-tinymce .mce-panel {
+    background-color: transparent!important;
+    border: none!important;
+    border-width: 0px!important;
+    border-color: transparent!important;
 }
-
-
-
-.mce-edit-area iframe{
-  border: 1px solid #9e9e9e;
-  min-height: 162px;
+.mce-edit-area iframe {
+    border: 1px solid #9e9e9e;
+    min-height: 162px;
 }
-
-.mce-toolbar{
-  padding-left:20px!important;
-  padding-right:20px!important;
-
+.mce-toolbar {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
 }
-
-.mce-btn{
-  background-color:transparent!important;
+.mce-btn {
+    background-color: transparent!important;
 }
-
-.mce-btn-group{
-  background: rgba(255,255,255,1)!important;
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)))!important;
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
-  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
-  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 )!important;
-  padding:2px!important;
+.mce-btn-group {
+    background: rgba(255,255,255,1)!important;
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)))!important;
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#ffffff', endColorstr='#ededed', GradientType=0 )!important;
+    padding: 2px !important;
 }
-
-.mce-btn-group:not(:first-child){
-  margin-left: 0px!important;
+.mce-btn-group:not(:first-child) {
+    margin-left: 0 !important;
 }
-
-.mce-btn-group{
-  border-left: 1px solid #d9d9d9!important;
-  margin-left: 0px!important;
-  margin-right: 0px!important;
+.mce-btn-group {
+    border-left: 1px solid #d9d9d9!important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
-
-.wraper-tinymce{
-  position: relative;
-
-  .btn-block-tinymce{
-    position: absolute;
-    bottom: 0px;
-    right: 353px;
-
-    .btn{
-      border-radius:0px;
-      border:0px;
-      font-weight:bold;
+.wraper-tinymce {
+    position: relative;
+    .btn-block-tinymce {
+        position: absolute;
+        bottom: 0;
+        right: 353px;
+        .btn {
+            border-radius: 0;
+            border: 0;
+            font-weight: bold;
+        }
+        .btn-success {
+            background-color: #8cc63e;
+        }
+        .btn-primary {
+            background-color: #28b8ed;
+        }
     }
-
-    .btn-success{
-      background-color:#8cc63e;
+}
+//Description styles
+.descriptionWrapper {
+    margin: 0 -50px;
+    padding: 22px 51px 35px 50px;
+    background-color: #f2f2f2;
+    > h3 {
+        font-family: Calibri;
+        color: rgba(26, 26, 26, 0.7);
+        font-size: 23px;
+        font-weight: 300;
+        text-align: left;
     }
-
-    .btn-primary{
-      background-color:#28b8ed;
+    > div.panel-body {
+        border-top: 5px solid #8cc63f;
+        padding: 16px 15px 15px 0;
+        > span {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: -0.195px;
+            text-align: left;
+        }
+        > div {
+            margin-top: 5px;
+        }
     }
-  }
+}
+// Add script dialog
+md-dialog.addScript {
+    > md-toolbar {
+        background-color: #ffffff;
+        padding-left: 45px;
+        padding-right: 34px;
+        min-height: 110px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        > div {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 24px;
+            font-weight: 300;
+            text-align: left;
+        }
+        > i {
+            color: black;
+        }
+    }
+    > md-content {
+        > div {
+            background-color: #ffffff;
+            border: none;
+            > div {
+              
+                > button {
+                    height: 40px;
+                    width: 120px;
+                    border: none;
+                    font-family: Calibri;
+                    color: #ffffff;
+                    font-size: 20.3px;
+                    font-weight: 700;
+                    &:first-child {
+                        background-color: #8cc63f;
+                    }
+                    &:last-child {
+                        background-color: #808080;
+                    }
+                }
+            }
+        }
+    }
 }

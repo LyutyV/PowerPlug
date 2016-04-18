@@ -4,6 +4,7 @@
         actionHandler.vm = vm;
     },
     getActionText: function (action) {
+        action.scheduleText = null;
         var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
         if (action.scheduleType === 'DayOfWeek' || action.scheduleType === 'DayOfMonth') {
             var days;
