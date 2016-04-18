@@ -9,5 +9,4 @@
 gulpfile.js
 package.json
 node_modules
-Powerplug.Web/bower_components
 **/common.services.js
