@@ -113,6 +113,30 @@ div.content-wrapper {
             }
         }
     }
+    div.menu {
+        height: 45px;
+        background-color: #8cc63f;
+        margin: 0 -12px;
+        ul {
+            line-height: 45px;
+            text-align: center;
+            li {
+                > a {
+                    font-family: Calibri;
+                    color: #ffffff;
+                    font-size: 17px;
+                    font-weight: 400;
+                    padding: 0 15px;
+                    text-decoration: none;
+                }
+                list-style: none;
+                display: inline-block;
+                &:not(:first-child) {
+                    border-left: 1px solid #ffffff;
+                }
+            }
+        }
+    }
 }
 // Chart directive
 .chart-wraper {
@@ -509,7 +533,7 @@ custom-radio-button-type-one input[type="radio"]:checked + label span {
 }
 custom-radio-button-type-one input[type="radio"]:checked + label span:last-child {
     color: #333333 !important;
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 // Events page
 .eventsWrapper {

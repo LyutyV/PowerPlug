@@ -76,6 +76,25 @@ div.content-wrapper {
           color: #8cc63f; }
         .overview > div.row:last-child > div.col-xs-4:last-child > div.row:nth-child(2), .overview > div.row:last-child > div.col-xs-4:last-child > div.row:nth-child(3) {
           margin-top: 30px; }
+  .overview div.menu {
+    height: 45px;
+    background-color: #8cc63f;
+    margin: 0 -12px; }
+    .overview div.menu ul {
+      line-height: 45px;
+      text-align: center; }
+      .overview div.menu ul li {
+        list-style: none;
+        display: inline-block; }
+        .overview div.menu ul li > a {
+          font-family: Calibri;
+          color: #ffffff;
+          font-size: 17px;
+          font-weight: 400;
+          padding: 0 15px;
+          text-decoration: none; }
+        .overview div.menu ul li:not(:first-child) {
+          border-left: 1px solid #ffffff; }
 
 .chart-wraper {
   width: 100%;
@@ -413,7 +432,7 @@ custom-radio-button-type-one input[type="radio"]:checked + label span {
 
 custom-radio-button-type-one input[type="radio"]:checked + label span:last-child {
   color: #333333 !important;
-  font-weight: 700; }
+  font-weight: 700 !important; }
 
 .eventsWrapper {
   background-color: #ffffff;
