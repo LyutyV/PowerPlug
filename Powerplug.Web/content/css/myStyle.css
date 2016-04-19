@@ -247,6 +247,44 @@ md-datepicker {
                 width: 100%;
                 z-index: 17;
                 height: 16px; }
+                .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .wrape-relative {
+                  position: relative; }
+                  .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .wrape-relative .popover-block {
+                    position: absolute;
+                    bottom: 15px;
+                    left: calc(-10px - 50%);
+                    background-color: #fff;
+                    width: 224px;
+                    display: block;
+                    border: 1px solid #29abe2;
+                    text-align: center;
+                    font-size: 0px; }
+                    .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .wrape-relative .popover-block .btn {
+                      border-radius: 0px !important;
+                      margin: 0px !important;
+                      background-color: #29abe2;
+                      border: 1px solid #29abe2;
+                      width: 50%;
+                      box-sizing: border-box; }
+                    .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .wrape-relative .popover-block .event-img {
+                      height: 26px;
+                      margin: 10px 0; }
+                    .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .wrape-relative .popover-block .event-name {
+                      font-weight: bolder;
+                      margin: 2px 0;
+                      font-size: 16px;
+                      padding: 0 5px; }
+                    .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .wrape-relative .popover-block .event-text {
+                      padding: 0 5px 5px 5px;
+                      font-size: 16px; }
+                    .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .wrape-relative .popover-block .arrow {
+                      position: absolute;
+                      bottom: -10px;
+                      left: calc(50% + 10px);
+                      margin-left: -11px;
+                      border: 5px solid transparent;
+                      border-left: 5px solid #29abe2;
+                      border-top: 5px solid #29abe2; }
                 .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .line {
                   display: block;
                   width: 100%;
@@ -279,21 +317,23 @@ md-datepicker {
       margin-left: -100%;
       border-left: 1px solid #e0e0e0;
       height: 100%;
-      padding: 0 5px; }
+      padding: 0 0 0 5px; }
       .week-view-total .week-view-position .events .title {
         text-align: left;
         font-size: 16px; }
-      .week-view-total .week-view-position .events .event-img {
-        height: 16px;
-        margin-top: 20px;
-        margin-bottom: 10px; }
-      .week-view-total .week-view-position .events .event-name {
-        text-align: left;
-        font-size: 12px;
-        font-weight: bold; }
-      .week-view-total .week-view-position .events .event-text {
-        text-align: left;
-        font-size: 12px; }
+      .week-view-total .week-view-position .events .event-block {
+        padding: 0 5px 0 0; }
+        .week-view-total .week-view-position .events .event-block .event-img {
+          height: 16px;
+          margin-top: 20px;
+          margin-bottom: 10px; }
+        .week-view-total .week-view-position .events .event-block .event-name {
+          text-align: left;
+          font-size: 12px;
+          font-weight: bold; }
+        .week-view-total .week-view-position .events .event-block .event-text {
+          text-align: left;
+          font-size: 12px; }
   .week-view-total .bottom-week-view {
     width: 100%;
     box-sizing: border-box;

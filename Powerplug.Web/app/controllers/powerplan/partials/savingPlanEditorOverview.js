@@ -148,22 +148,37 @@
           },
           {
             type:"Wakeup",
-            title: "Weekly Wake Up",
+            title: "Weekly Wake Up1",
             text: 'Every Sunday On 8/30/2015 at 3:55 PM Keep awake for 1 hour...',
             weekDay: 'mon',
             start: 17.3
           },
           {
             type:"Restart",
-            title: "Weekly Wake Up",
+            title: "Weekly Wake Up2",
             text: 'Every Sunday On 8/30/2015 at 3:55 PM Keep awake for 1 hour...',
             weekDay: 'thu',
+            start: 18
+          },
+          {
+            type:"Restart",
+            title: "Weekly Wake Up3",
+            text: 'Every Sunday On 8/30/2015 at 3:55 PM Keep awake for 1 hour...',
+            weekDay: 'fri',
             start: 18
           }
         ];
 
         overviewHandler.vm.workTimeChange = function(workTimeList){
           console.log(workTimeList);
+        }
+
+        overviewHandler.vm.eventsChange = function(eventsList){
+          console.log(eventsList);
+        }
+
+        overviewHandler.vm.eventsEdit = function(event){
+          console.log(event);
         }
 
         overviewHandler.vm.graph = [{
