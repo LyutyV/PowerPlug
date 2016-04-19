@@ -1,12 +1,86 @@
 <div class="savingPlanWorkTime">
-  <uib-tabset active="active">
-      <uib-tab index="0" heading="Work time">
-        <div>
-          <div>
-          </div>
-          <div></div>
-        </div>
-      </uib-tab>
-      <uib-tab index="1" heading="Non Work time"></uib-tab>
-  </uib-tabset>
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="Work time">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <label class="customDropdown"><span>Turn off the display</span>
+                                    <select ng-model="vm.comboItems[0]" ng-options="item.name for item in vm.comboItems"></select>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <label class="customDropdown"><span>Perform</span>
+                                    <select ng-model="vm.comboItems[1]" ng-options="item.name for item in vm.comboItems"></select>
+                                </label>
+                            </div>
+                            <div class="col-xs-4">
+                                <label class="customDropdown"><span>Computer per saving</span>
+                                    <select ng-model="vm.comboItems[2]" ng-options="item.name for item in vm.comboItems"></select>
+                                </label>
+                            </div>
+                            <div class="col-xs-4">
+                                <div>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-caret-down" title="Toggle dropdown menu"></span></a>
+                                    <span>Settings</span>
+                                    <ul class="dropdown-menu">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <uib-tabset active="active">
+                        <uib-tab index="0" heading="Options">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="checkbox" id="01" name="chb1" class="custom-checkbox-green-type01">
+                                        <label for="01">Force operation</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="checkbox" id="02" name="chb2" class="custom-checkbox-green-type01">
+                                        <label for="02">Logoff before power saving operation</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="checkbox" id="03" name="chb3" class="custom-checkbox-green-type01">
+                                        <label for="03">Display a message to the user</label>
+                                        <button>Specify</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                        <uib-tab index="1" heading="Computers">
+                            <div class="container">
+                                <span>Do not Perform the operation while:</span>
+                                <span class="buttonTypeOneRemove">Remove</span>
+                                <span class="buttonTypeOneEdit">Edit</span>
+                                <span class="buttonTypeOneAdd">Add</span>
+                                <div>
+                                    <div class="container">
+                                      <div class="row">
+                                        <div class="col-xs-4">Application</div>
+                                        <div class="col-xs-4">Condition</div>
+                                      </div>
+                                      <div class="row"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                        <uib-tab index="2" heading="Applications"></uib-tab>
+                        <uib-tab index="3" heading="Performance Metrics"></uib-tab>
+                    </uib-tabset>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab index="1" heading="Non Work time"></uib-tab>
+    </uib-tabset>
 </div>
