@@ -1,7 +1,9 @@
-﻿<md-dialog class="addScript" style="width:900px">
+
+<md-dialog class="addScript" style="width:900px">
     <md-toolbar>
         <div>Add a Script</div>
-        <i class="fa fa-times" ng-click="closeEventScripts()"></i>
+        <!-- <i class="fa fa-times" ></i> -->
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeEventScripts()">
     </md-toolbar>
     <md-content>
         <span>{{eventScripts.length}} Scripts</span>
@@ -18,7 +20,11 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="script in eventScripts">
-                        <td><input type="checkbox" id="{{script.scriptId}}" data-name="{{script.scriptName}}" data-guid="{{script.scriptGUID}}" class="script-selection custom-checkbox-green"/><label for='{{script.scriptId}}'></label></td>
+                        <td>
+                            <!-- <input type="checkbox" id="{{script.scriptId}}" data-name="{{script.scriptName}}" data-guid="{{script.scriptGUID}}" class="script-selection custom-checkbox-green" /> -->
+                            <input type="checkbox" id="{{script.scriptId}}" data-name="{{script.scriptName}}" data-guid="{{script.scriptGUID}}" class="script-selection custom-checkbox-green-type00" />
+                            <label for='{{script.scriptId}}'></label>
+                        </td>
                         <td>{{script.scriptName}}</td>
                         <td>{{script.owner}}</td>
                         <td>{{script.scriptType}}</td>
@@ -27,24 +33,27 @@
                 </tbody>
             </table>
             <div class="savedStriptInfo">
-              <span>Saved scripts</span>
-              <div>
+                <span>Saved scripts</span>
                 <div>
-                  <input type="checkbox" id="chb1" name="" class="custom-checkbox-green"/><label for='chb1'></label>
+                    <div>
+                        <input type="checkbox" id="chb1" name="" class="custom-checkbox-green" />
+                        <label for='chb1'></label>
+                    </div>
+                    <div>
+                        <span>Show all scripts</span>
+                    </div>
+                    <div>
+                        <span>Execution Context</span>
+                    </div>
+                    <div>
+                        <input class="custom-radio-button-t2" type='radio' id='r1' name='rad1' checked/>
+                        <label for='r1'><span><span></span></span>System</label>
+                    </div>
+                    <div>
+                        <input class="custom-radio-button-t2" type='radio' id='r2' name='rad1' />
+                        <label for='r2'><span><span></span></span>User</label>
+                    </div>
                 </div>
-                <div>
-                  <span>Show all scripts</span>
-                </div>
-                <div>
-                  <span>Execution Context</span>
-                </div>
-                <div>
-                  <input class="custom-radio-button-t2" type='radio' id='r1' name='rad1' checked/><label for='r1'><span><span></span></span>System</label>
-                </div>
-                <div>
-                  <input class="custom-radio-button-t2" type='radio' id='r2' name='rad1' /><label for='r2'><span><span></span></span>User</label>
-                </div>
-              </div>
             </div>
             <div class="buttonsBlock">
                 <button ng-click="addEventScripts()">OK</button>
