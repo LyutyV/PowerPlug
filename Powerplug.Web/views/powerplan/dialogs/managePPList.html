@@ -1,0 +1,31 @@
+﻿<div ng-cloak>
+    <div class="modal-header">
+        <div ng-click="cancel()"> X </div>
+    </div>
+    <div class="modal-body">
+        <h2>ui.sortable event order</h2>
+        <div class="clearfix">
+            <button style="float:right" ng-click="deletePolicies()">Delete</button>
+            <div style="float:left">
+                <ul ui-sortable="sortableOptions" ng-model="PParray" class="list sortable-policies">
+                    <li ng-repeat="PPItem in PParray" class="item">
+                        <input type="checkbox" ng-model="PPItem.checked"/> {{PPItem.policyName}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="floatleft" style="margin-left: 20px;">
+            <ul class="list logList">
+                <li ng-repeat="entry in sortingLog track by $index" class="logItem">
+                    {{entry}}
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="modal-footer">
+        <button ng-click="Add('Add')">  Add </button>
+        <button ng-click="cancel()" style="margin-right:20px;"> Cancel </button>
+    </div>
+</div>

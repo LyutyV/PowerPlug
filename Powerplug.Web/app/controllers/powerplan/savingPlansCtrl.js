@@ -5,14 +5,15 @@
     angular
         .module('powerPlug')
         .controller('SavingPlansCtrl',
-                     ['$state', 'SavingPlansResource', SavingPlansCtrl]);
+                     ['$state', '$uibModal', 'SavingPlansResource', SavingPlansCtrl]);
 
 
-    function SavingPlansCtrl($state, SavingPlansResource) {
+    function SavingPlansCtrl($state, $uibModal, SavingPlansResource) {
         var vm = this;
-        
-        SavingPlansResource.query(function (data) {
+
+        SavingPlansResource.basic.query(function (data) {
             vm.savingPlans = data;
+            managePPListHandler.init(vm, $uibModal, SavingPlansResource);
         }, function (error) {            
             if (error.status === 401 || error.status === -1)
             {
@@ -35,5 +36,8 @@
                 sort.descending = false;
             }
         };
+
+        //init  manage power plan list handler
+        vm.openManageDialog = managePPListHandler.openManageDialog;
     }
 }());

@@ -6,7 +6,9 @@
 
     function ScriptsResource($resource, appSettings) {
         return {
-            basic: $resource(appSettings.serverPath + 'api/pc/scripts'),
+            basic: $resource(appSettings.serverPath + 'api/pc/scripts', null, {
+                'saveAll': { method: 'POST', isArray: true }
+            }),
             detailed: $resource(appSettings.serverPath + 'api/pc/scripts/details'),
         }
     }
