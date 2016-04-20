@@ -26,7 +26,6 @@
 
         function onSuccess(data) {
             vm.scripts = data;
-            vm.scriptsFromDB = data;
             vm.deletedScripts = [];
             vm.currentScriptText = '';
             vm.currentScriptId = 0;
@@ -101,7 +100,7 @@
             returnObj.create = createdScripts;
             returnObj.update = updatedScripts;
             ScriptsResource.basic.saveAll(returnObj, function (data) {
-                alert('Successfully Done!')
+                alert('Successfully Done!');
                 onSuccess(data);
             }, function (err) {
                 onError(err);

@@ -1,7 +1,12 @@
 <h3>Work Hours & Actions</h3>
 
 <div class="clearfix" style="padding-bottom:30px;">
-    <week-view data-events='vm.events' data-work-time-list='vm.workTime' work-time-change="vm.workTimeChange(data)"></week-view>
+    <week-view
+        data-actions='vm.savingPlan.actions'
+        data-work-time-list='vm.workTime'
+        work-time-change="vm.workTimeChange(data)"
+        action-remove="vm.actionRemove(data)"
+        action-edit="vm.actionEdit(data)"></week-view>
 </div>
 
 ﻿<!-- <h3>Work Hours & Actions</h3>

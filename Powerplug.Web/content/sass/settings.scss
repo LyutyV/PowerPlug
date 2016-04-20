@@ -1,11 +1,21 @@
 .settings{
+    padding-top:20px;
+    .nav-tabs > li{
+        margin-bottom:5px;
+        > a, > a:focus, > a:hover {
+            padding-left: 20px;
+            padding-right: 20px;
+            min-width: 150px;
+            text-align: center;
+        }
+    }
     .save-button-margin{
         height:100px;
         width:100%;
     }
-    .buttons-container{
+    .buttons-container{ 
         position:fixed;
-        bottom:0px;
+        bottom:0px; 
         right:0px;
         left:246px;
         background-color:#f2f2f2;
@@ -71,9 +81,21 @@
             padding:5px;
         }
     }
+    .green-line{
+        width: 100%;
+        height: 5px;
+        background-color: #8cc63f;
+    }
+    .powerConsumption-content 
+    {
+        padding-top: 20px;
+    }
+    > .script-content
+    {
+        padding-top: 12px;
+    }
     > .script-content, .powerConsumption-content 
     {
-        padding-top: 32px;
         > span {
             font-family: Calibri;
             color: #4d4d4d; 
@@ -142,7 +164,9 @@
                                 font-family: Calibri;
                                 width:50px;
                                 border:none;
-                                outline:none;
+                                outline:none;    
+                                height: 28px;
+                                padding: 5px;
                             }
                             select{
                                 font-family: Calibri;                                

@@ -6,7 +6,7 @@
 
     function PowerConsumptionResource($resource, appSettings) {
         return $resource(appSettings.serverPath + 'api/pc/power-consumption', null, {
-            'saveAll': { method: 'POST', isArray: true }
+            'saveAll': { method: 'POST'}
         });
     }
 }());
