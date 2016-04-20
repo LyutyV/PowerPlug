@@ -1,4 +1,4 @@
-﻿<div class="panel panel-primary">
+﻿<div class="panel panel-primary computer-groups">
     <div class="panel-heading"
          style="font-size:large">
         Computer Groups
@@ -18,7 +18,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="computerGroup in vm.computerGroups" class="computer-group-row" data-id="{{computerGroup.compGroupId}}" ng-click="vm.selectComputerGroup($event)">
+                <tr ng-repeat="computerGroup in vm.computerGroups" class="computer-group-row" ng-class="{ 'bg-computer-group-selected': $index == vm.selectedGroupIndex }"  
+                    data-id="{{computerGroup.compGroupId}}" ng-click="vm.selectComputerGroup($index)">
                     <td>{{ computerGroup.compGroupId}}</td>
                     <td>{{ computerGroup.groupDesc}}</td>
                     <td>{{ computerGroup.groupGUID}}</td>
@@ -29,7 +30,45 @@
                 </tr>
             </tbody>
         </table>
+        <div style="margin-bottom:100px;">
+            <div class="members-header">
+                <span> Memeber Definition</span>
+                <div class="computer-group-action" ng-click="vm.openAddDialog()">
+                    <div class="action-icon"> + </div>
+                    <span>Add</span>
+                </div>
+                <div class="computer-group-action">
+                    <select>
+                        <option>Computer Name</option>
+                        <option>Computer Mask</option>
+                        <option>IP Mask</option>
+                        <option>IP Range</option>
+                    </select>
+               </div>
+                <div class="computer-group-action">
+                    <select>
+                        <option>Include</option>
+                        <option>Exclude</option>
+                    </select>
+                </div>
+                <hr />
+            </div>
+            <ul>
+                <li ng-repeat="computer in vm.groupMembersHash[vm.selectedGroupId].members">
+                    <span> {{computer.memberDef}} </span>
+                    <div class="computer-group-action">
+                        <div class="action-icon"> / </div>
+                        <span>Edit</span>
+                    </div>
+                    <div class="computer-group-action">
+                        <div class="action-icon"> - </div>
+                        <span>Remove</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
+    
 </div>
 <style>
     .bg-computer-group-selected{

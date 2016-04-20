@@ -5,28 +5,74 @@
     angular
         .module('powerPlug')
         .controller('ComputerGroupsCtrl',
-                     ['$state', '$document', 'ComputerGroupsResource', ComputerGroupsCtrl]);
+                     ['$scope', '$mdDialog', '$mdMedia','$state', '$document', 'ComputerGroupsResource', ComputerGroupsCtrl]);
 
 
-    function ComputerGroupsCtrl($state, $document, ComputerGroupsResource) {
-        var vm = this;
-        
-        ComputerGroupsResource.query(function (data) {
-            vm.computerGroups = data;
-        }, function (error) {
-            if (error.status === 401 || error.status === -1)
-            {                
-                $state.go('login');
-            }
-        });
-                
-        vm.selectComputerGroup = function (ev) {
-            angular.forEach(angular.element('.computer-group-row'), function (value) {
-                value.className = value.className.replace('bg-computer-group-selected', '');
+    function ComputerGroupsCtrl($scope, $mdDialog, $mdMedia, $state, $document, ComputerGroupsResource) {
+        //============Private===========================================
+        function initGroupMembersHash() {
+            //case of unselected group 
+            vm.groupMembersHash[-1] = { 'members': [] }
+            //init hash object with all computers group ids
+            vm.computerGroups.forEach(function (groupItem, index, array) {
+                vm.groupMembersHash[groupItem.compGroupId] = {};
             });
-
-            ev.target.parentNode.className = ev.target.parentNode.className + ' bg-computer-group-selected';
-            vm.currentGroup = ev.target.parentNode.attributes["data-id"].value;
         }
+        function initPopups() {
+            IPMaksPopupHandler.init(vm, $scope, $document, $mdDialog, $mdMedia);
+            }
+
+            function isEmpty(object) {
+                for (var key in object) {
+                    if (object.hasOwnProperty(key)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            function onError(err) {
+                console.log(err)
+                if (err.status === 401 || err.status === -1) {
+                    $state.go('login');
+                }
+            }
+
+            function onSuccess(data) {
+                console.log(data);
+                vm.groupMembersHash[data.compGroupId] = data;
+            }
+            //=======================vm Binding====================================
+            var vm = this;
+            vm.selectedGroupIndex = -1;
+            vm.selectedGroupId = -1;
+            vm.groupMembersHash = {};
+            ComputerGroupsResource.groups.query(function (data) {
+                vm.computerGroups = data;
+                initGroupMembersHash();
+                console.log(data);
+            }, function (error) {
+                if (error.status === 401 || error.status === -1)
+                {                
+                    $state.go('login');
+                }
+            });
+                
+            vm.selectComputerGroup = function ($index) {
+                var groupId;
+                vm.selectedGroupIndex = $index;
+                groupId = vm.computerGroups[$index].compGroupId;
+                if (isEmpty(vm.groupMembersHash[groupId])){
+                    ComputerGroupsResource.groupMembers.get({ groupId: groupId }, function (data) {
+                        onSuccess(data);
+                    }, function (err) {
+                        onError(err);
+                    });
+                }
+                vm.selectedGroupId = groupId;
+            }
+            debugger;
+        vm.openAddDialog = IPMaksPopupHandler.openIPMaskDialog;
+            //===========init===================//
+            initPopups()
     }
 }());

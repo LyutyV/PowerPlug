@@ -5,6 +5,13 @@
         .factory('ComputerGroupsResource', ['$resource', 'appSettings', ComputerGroupsResource]);
 
     function ComputerGroupsResource($resource, appSettings) {
-        return $resource(appSettings.serverPath + 'api/pc/computer-groups');
+        return {
+            
+            groups: $resource(appSettings.serverPath + 'api/pc/computer-groups'),
+            groupMembers: $resource(appSettings.serverPath + 'api/pc/computer-groups/:groupId', { groupId: '@groupId' },
+                {
+                    'update': { method: 'PUT' }
+                }),
+        }
     }
 }());

@@ -94,7 +94,7 @@
         });
 
         function DialogController($scope, $mdDialog, $document) {
-            computersHandler.ComputerGroupsResource.query(function (data) {
+            computersHandler.ComputerGroupsResource.groups.query(function (data) {
                 $scope.computerGroupsList = data;
             }, function (err) {
                 onError(err);

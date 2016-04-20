@@ -1,0 +1,27 @@
+﻿<md-dialog style="width:900px">
+    <md-toolbar>
+        <div style="padding-left: 20px;padding-top: 17px;">Select Computer Group</div>
+    </md-toolbar>
+    <md-content>
+        <div class="well">
+          <lable>
+              IP Adress 
+              <select ng-model="MemberTypeId">
+                  <option value="4" ng-selected="4 == MemberTypeId">Equals</option>
+                  <option value="6" ng-selected="6 == MemberTypeId">Not Equals</option>
+              </select>
+          </lable>
+            <div>
+                <input ng-model="IP.part1"/>
+                <input ng-model="IP.part2"/>
+                <input ng-model="IP.part3"/>
+                <input ng-model="IP.part4"/>
+            </div>
+            <hr />
+            <div style="text-align:center">
+                <button class="btn btn-success" ng-click="add()">OK</button>
+                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
+    </md-content>
+</md-dialog>

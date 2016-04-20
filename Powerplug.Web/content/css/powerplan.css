@@ -223,6 +223,13 @@ nav {
           width: 20px;
           color: #90c63d; }
 
+.computer-groups .computer-group-action {
+  float: right;
+  margin: 5px;
+  cursor: pointer; }
+  .computer-groups .computer-group-action .action-icon {
+    float: left; }
+
 * {
   margin: 0px;
   padding: 0px;
