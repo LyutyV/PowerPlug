@@ -1,0 +1,177 @@
+.settings{
+    .save-button-margin{
+        height:100px;
+        width:100%;
+    }
+    .buttons-container{
+        position:fixed;
+        bottom:0px;
+        right:0px;
+        left:246px;
+        background-color:#f2f2f2;
+        height:100px; 
+        z-index: 10;
+        div{
+            padding-top:30px;
+            padding-right:30px;
+            text-align:center;
+            .btn-save-green{
+                width:160px;
+                height:44px;
+                background-color:#8cc63f;
+                border:none;
+                text-align:center;
+                color:#fff;
+                font-size:20px;
+                font-weight:bold;
+                font-family:Calibri;
+                margin-right:2px;
+                outline:none;
+            }
+            .btn-discard-gray{
+                width:160px;
+                height:44px;
+                background-color:#808080;
+                border:none;
+                text-align:center;
+                color:#fff;
+                font-size:20px;
+                font-weight:bold;
+                font-family:Calibri;
+                outline:none;
+            }
+        }
+    }    
+    > .bg-separator{
+        height:74px;
+        background-color: rgba(242,242,242,0.6);
+        width:100%;
+        margin-bottom:20px;
+    }
+    .type-selection{
+        padding-top:10px;
+        padding-bottom:10px;
+        font-family:Calibri;
+        font-weight:bold;
+        font-size:16px;    
+        color: rgba(26, 26, 26, 0.7);
+        select{
+            font-weight:normal;
+            width:225px;
+            height:40px;
+            margin-left:20px;
+            color: rgba(26, 26, 26, 1);
+            font-size:14px;
+        }
+    }
+    .text-container{
+        textarea{
+            width:100%; 
+            height:300px;
+            padding:5px;
+        }
+    }
+    > .script-content, .powerConsumption-content 
+    {
+        padding-top: 32px;
+        > span {
+            font-family: Calibri;
+            color: #4d4d4d; 
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        > table {
+            margin-top: 20px;
+            > thead {
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: -0.182px;
+                > tr > td {                    
+                    > .add-script {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 14.83px;
+                        font-weight: 700;
+                        text-align: left;
+                        float: right;
+                        display: block;
+                        padding-right: 30px;
+                        &:before{
+                            margin-right: 5px;
+                        }
+                    }
+                    > .import-script {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 14.83px;
+                        font-weight: 700;
+                        text-align: left;
+                        float: right;
+                        display: block;
+                        padding-right: 40px;
+                        &:before{
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+            > tbody{
+                font-family: Calibri;
+                color: #333333;
+                font-size: 14px;
+                font-weight: 300;
+                letter-spacing: -0.182px;
+                > tr {
+                    border: none;
+                    outline: none;
+                    &.bg-script-selected {
+                        background-color: rgba(242,242,242,0.6);
+                    }
+                    > td {
+                        height: 46px;
+                        vertical-align: middle;
+                        font-family: Calibri; 
+                        &.bolder{
+                            font-weight: bold;
+                        }
+                        &.grid-cell{
+                            input[type="text"]{
+                                font-family: Calibri;
+                                width:50px;
+                                border:none;
+                                outline:none;
+                            }
+                            select{
+                                font-family: Calibri;                                
+                                border:none;
+                                outline:none;
+                            }
+                        }
+                        &.button-padding{
+                            padding-right:48px;
+                        }  
+                        &.button-container{
+                            width:100px;
+                            text-align:right;             
+                        }
+                        > .edit-script, > .remove-script {
+                            font-family: Calibri;
+                            color: rgba(26, 26, 26, 0.7);
+                            font-size: 14.83px;
+                            font-weight: 700;
+                            text-align: left;
+                            float: right;
+                            display: block;
+                            &:before{
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,12 +1,291 @@
 <div class="savingPlanWorkTime">
-  <uib-tabset active="active">
-      <uib-tab index="0" heading="Work time">
-        <div>
-          <div>
-          </div>
-          <div></div>
-        </div>
-      </uib-tab>
-      <uib-tab index="1" heading="Non Work time"></uib-tab>
-  </uib-tabset>
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="Work time">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <label class="customDropdown"><span>Turn off the display</span>
+                                    <select ng-model="vm.modelForDropdown[0]" ng-options="item.name for item in vm.comboItems"></select>
+                                </label>
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="customDropdown"><span>Perform</span>
+                                    <select ng-model="vm.modelForDropdown[1]" ng-options="item.name for item in vm.comboItems"></select>
+                                </label>
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="customDropdown"><span>Computer per saving</span>
+                                    <select ng-model="vm.modelForDropdown[2]" ng-options="item.name for item in vm.comboItems"></select>
+                                </label>
+                            </div>
+                            <div class="col-xs-3">
+                                <div>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-caret-down" title="Toggle dropdown menu"></span></a>
+                                    <span>Settings</span>
+                                    <ul class="dropdown-menu">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <uib-tabset active="0">
+                        <uib-tab index="0" heading="Options">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="checkbox" id="01" name="chb1" class="custom-checkbox-green-type01">
+                                        <label for="01">Force operation</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="checkbox" id="02" name="chb2" class="custom-checkbox-green-type01">
+                                        <label for="02">Logoff before power saving operation</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="checkbox" id="03" name="chb3" class="custom-checkbox-green-type01">
+                                        <label for="03">Display a message to the user</label>
+                                        <button>Specify</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                        <uib-tab index="1" heading="Computers">
+                            <div class="container-fluid">
+                                <span>Do not Perform the operation while:</span>
+                                <span class="buttonTypeOneRemove">Remove</span>
+                                <span class="buttonTypeOneEdit">Edit</span>
+                                <span class="buttonTypeOneAdd">Add</span>
+                                <div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-xs-4">Application</div>
+                                            <div class="col-xs-4">Condition</div>
+                                        </div>
+                                        <div class="row">
+                                            <ul>
+                                                <li ng-repeat="application in ['app1', 'app2', 'app3', 'app4', 'app5']">
+                                                    <div class="col-xs-4">Some application {{$index}}</div>
+                                                    <div class="col-xs-8">Some condition {{$index}}</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                        <uib-tab index="2" heading="Applications">
+                            <div class="container-fluid">
+                                <span>Do not Perform the operation while the following computers are on:</span>
+                                <span class="buttonTypeOneRemove">Remove</span>
+                                <span class="buttonTypeOneAdd">Add</span>
+                                <div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-xs-4">Computer name</div>
+                                            <div class="col-xs-4">Type</div>
+                                        </div>
+                                        <div class="row">
+                                            <ul>
+                                                <li ng-repeat="application in ['app1', 'app2', 'app3', 'app4', 'app5']">
+                                                    <div class="col-xs-4">Some comp name {{$index}}</div>
+                                                    <div class="col-xs-8">Some type {{$index}}</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                        <uib-tab index="3" heading="Performance Metrics">
+                            <div class="container-fluid">
+                                <span>Do not Perform the operation while:</span>
+                                <div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <input type="checkbox" id="011" name="chb011" class="custom-checkbox-green-type01">
+                                                <label for="011">CPU utilization is above</label>
+                                                <label class="customDropdown"><span>Turn off the display</span>
+                                                    <select ng-model="vm.modelForDropdown[6]" ng-options="item.name for item in vm.comboItems"></select>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <input type="checkbox" id="012" name="chb012" class="custom-checkbox-green-type01">
+                                                <label for="012">Disk I/O operations are above</label>
+                                                <label class="customDropdown"><span>Turn off the display</span>
+                                                    <select ng-model="vm.modelForDropdown[7]" ng-options="item.name for item in vm.comboItems"></select>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <input type="checkbox" id="013" name="chb013" class="custom-checkbox-green-type01">
+                                                <label for="013">Network I/O Operations are above</label>
+                                                <label class="customDropdown"><span>Turn off the display</span>
+                                                    <select ng-model="vm.modelForDropdown[8]" ng-options="item.name for item in vm.comboItems"></select>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </uib-tab>
+                    </uib-tabset>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab index="1" heading="Non Work time">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <label class="customDropdown"><span>Turn off the display</span>
+                                    <select ng-model="vm.modelForDropdown[3]" ng-options="item.name for item in vm.comboItems"></select>
+                                </label>
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="customDropdown"><span>Perform</span>
+                                    <select ng-model="vm.modelForDropdown[4]" ng-options="item.name for item in vm.comboItems"></select>
+                                </label>
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="customDropdown"><span>Computer per saving</span>
+                                    <select ng-model="vm.modelForDropdown[5]" ng-options="item.name for item in vm.comboItems"></select>
+                                </label>
+                            </div>
+                            <div class="col-xs-3">
+                                <div>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-caret-down" title="Toggle dropdown menu"></span></a>
+                                    <span>Settings</span>
+                                    <ul class="dropdown-menu">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <uib-tabset active="4">
+                        <uib-tab index="4" heading="Options">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="checkbox" id="01" name="chb1" class="custom-checkbox-green-type01">
+                                        <label for="01">Force operation</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="checkbox" id="02" name="chb2" class="custom-checkbox-green-type01">
+                                        <label for="02">Logoff before power saving operation</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="checkbox" id="03" name="chb3" class="custom-checkbox-green-type01">
+                                        <label for="03">Display a message to the user</label>
+                                        <button>Specify</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                        <uib-tab index="5" heading="Computers">
+                            <div class="container-fluid">
+                                <span>Do not Perform the operation while:</span>
+                                <span class="buttonTypeOneRemove">Remove</span>
+                                <span class="buttonTypeOneEdit">Edit</span>
+                                <span class="buttonTypeOneAdd">Add</span>
+                                <div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-xs-4">Application</div>
+                                            <div class="col-xs-4">Condition</div>
+                                        </div>
+                                        <div class="row">
+                                            <ul>
+                                                <li ng-repeat="application in ['app1', 'app2', 'app3', 'app4', 'app5']">
+                                                    <div class="col-xs-4">Some application {{$index}}</div>
+                                                    <div class="col-xs-8">Some condition {{$index}}</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                        <uib-tab index="6" heading="Applications">
+                            <div class="container-fluid">
+                                <span>Do not Perform the operation while the following computers are on:</span>
+                                <span class="buttonTypeOneRemove">Remove</span>
+                                <span class="buttonTypeOneAdd">Add</span>
+                                <div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-xs-4">Computer name</div>
+                                            <div class="col-xs-4">Type</div>
+                                        </div>
+                                        <div class="row">
+                                            <ul>
+                                                <li ng-repeat="application in ['app1', 'app2', 'app3', 'app4', 'app5']">
+                                                    <div class="col-xs-4">Some comp name {{$index}}</div>
+                                                    <div class="col-xs-8">Some type {{$index}}</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                        <uib-tab index="7" heading="Performance Metrics">
+                            <div class="container-fluid">
+                                <span>Do not Perform the operation while:</span>
+                                <div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <input type="checkbox" id="021" name="chb011" class="custom-checkbox-green-type01">
+                                                <label for="021">CPU utilization is above</label>
+                                                <label class="customDropdown"><span>Turn off the display</span>
+                                                    <select ng-model="vm.modelForDropdown[9]" ng-options="item.name for item in vm.comboItems"></select>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <input type="checkbox" id="022" name="chb022" class="custom-checkbox-green-type01">
+                                                <label for="022">Disk I/O operations are above</label>
+                                                <label class="customDropdown"><span>Turn off the display</span>
+                                                    <select ng-model="vm.modelForDropdown[10]" ng-options="item.name for item in vm.comboItems"></select>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <input type="checkbox" id="023" name="chb023" class="custom-checkbox-green-type01">
+                                                <label for="023">Network I/O Operations are above</label>
+                                                <label class="customDropdown"><span>Turn off the display</span>
+                                                    <select ng-model="vm.modelForDropdown[11]" ng-options="item.name for item in vm.comboItems"></select>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                    </uib-tabset>
+                </div>
+            </div>
+        </uib-tab>
+    </uib-tabset>
 </div>

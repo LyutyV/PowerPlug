@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .topGreenLine {
   z-index: 100; }
 
@@ -522,13 +521,18 @@ custom-radio-button-type-one input[type="radio"]:checked + label span:last-child
                 padding-top: 14px; }
               .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li:nth-child(6) {
                 padding-top: 15px; }
-              .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li custom-radio-button-type-one > div > label > span:last-child {
-                width: inherit;
-                height: inherit;
+              .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li > input + label {
                 font-family: Calibri;
                 color: rgba(128, 128, 128, 0.7);
                 font-size: 13px;
                 font-weight: 300;
+                letter-spacing: -0.169px;
+                text-align: center; }
+              .eventsWrapper > div > div:first-child > div:first-child > div:last-child ul li > input:checked + label {
+                font-family: Calibri;
+                color: #333333;
+                font-size: 13px;
+                font-weight: 700;
                 letter-spacing: -0.169px;
                 text-align: center; }
           .eventsWrapper > div > div:first-child > div:first-child > div > div {
@@ -746,8 +750,8 @@ md-dialog.addScript > md-toolbar {
     font-size: 24px;
     font-weight: 300;
     text-align: left; }
-  md-dialog.addScript > md-toolbar > i {
-    color: black; }
+  md-dialog.addScript > md-toolbar > img {
+    cursor: pointer; }
 
 md-dialog.addScript > md-content > span {
   margin-left: 37px;
@@ -781,6 +785,33 @@ md-dialog.addScript > md-content > div:nth-child(2) {
         line-height: 40px; }
         md-dialog.addScript > md-content > div:nth-child(2) > table > tbody > tr > td:first-child {
           text-align: center; }
+          md-dialog.addScript > md-content > div:nth-child(2) > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 {
+            display: none; }
+            md-dialog.addScript > md-content > div:nth-child(2) > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 + label {
+              position: relative;
+              margin: 0;
+              height: 15px;
+              width: 35px; }
+            md-dialog.addScript > md-content > div:nth-child(2) > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 + label::before {
+              position: absolute;
+              content: '';
+              height: 15px;
+              width: 15px;
+              border: 1px solid #d9d9d9;
+              left: 10px;
+              top: 3px; }
+            md-dialog.addScript > md-content > div:nth-child(2) > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00:checked + label::before {
+              position: absolute;
+              content: '\f00c';
+              font-family: 'FontAwesome';
+              color: #a3d165;
+              height: 15px;
+              width: 15px;
+              border: 1px solid #d9d9d9;
+              text-align: center;
+              line-height: 15px;
+              left: 10px;
+              top: 3px; }
   md-dialog.addScript > md-content > div:nth-child(2) > div:nth-child(3) {
     text-align: center;
     padding: 15px 0;
@@ -854,46 +885,37 @@ md-dialog.addScript > md-content > div div.savedStriptInfo {
         line-height: 14px;
         text-align: left; }
 
-/* Cначала обозначаем стили для IE8 и более старых версий
-  т.е. здесь мы немного облагораживаем стандартный чекбокс. */
-input.custom-checkbox-green {
-  /* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
-  Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
-  в них все нижеследующие стили не сработают. */
-  /* Прячем оригинальный чекбокс. */ }
-  input.custom-checkbox-green + label {
-    /* Это для всех браузеров, кроме совсем старых, которые не поддерживают
-    селекторы с плюсом. Показываем, что label кликабелен. */
-    cursor: pointer;
-    margin-bottom: 0; }
-  input.custom-checkbox-green:not(checked) {
-    position: absolute;
-    opacity: 0; }
-    input.custom-checkbox-green:not(checked) + label {
-      position: relative;
-      /* будем позиционировать псевдочекбокс относительно label */
-      padding: 0 0 0 30px;
-      /* оставляем слева от label место под псевдочекбокс */ }
-      input.custom-checkbox-green:not(checked) + label:before {
-        content: '\f00c';
-        font-family: 'FontAwesome';
-        font-size: 12px;
-        color: #93c349;
-        position: absolute;
-        top: -10px;
-        left: 0;
-        width: 15px;
-        height: 15px;
-        border: 1px solid #989898;
-        text-align: center; }
-  input.custom-checkbox-green:checked + label:before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 0;
-    width: 15px;
-    height: 15px;
-    border: 1px solid #d7d7d7; }
+input.custom-checkbox-green + label {
+  cursor: pointer;
+  margin-bottom: 0; }
+
+input.custom-checkbox-green:checked + label:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #d7d7d7; }
+
+input.custom-checkbox-green:not(checked) {
+  position: absolute;
+  opacity: 0; }
+  input.custom-checkbox-green:not(checked) + label {
+    position: relative;
+    padding: 0 0 0 30px; }
+    input.custom-checkbox-green:not(checked) + label:before {
+      content: '\f00c';
+      font-family: 'FontAwesome';
+      font-size: 12px;
+      color: #93c349;
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #989898;
+      text-align: center; }
 
 input.custom-radio-button-t2[type="radio"] {
   display: none; }
@@ -924,7 +946,10 @@ input.custom-radio-button-t2[type="radio"] + label span span {
   border-radius: 50%; }
 
 input.custom-radio-button-t2[type="radio"] + label > span {
-  border: 1px solid #f3f3f3; }
+  border: 1px solid #dbdbdb; }
+
+input.custom-radio-button-t2[type="radio"] + label span span {
+  background-color: #dbdbdb; }
 
 input.custom-radio-button-t2[type="radio"]:checked + label span span {
   background-color: #8fc73e; }
@@ -936,41 +961,294 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
   -moz-transition: background-color 0.4s linear;
   transition: background-color 0.4s linear; }
 
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:focus,
-.nav-tabs > li.active > a:hover {
-  background-color: #a3d165;
-  font-family: Calibri;
-  color: #ffffff;
-  font-size: 19px;
-  font-weight: 700;
-  outline: none;
-  border: none; }
-
-.savingPlanWorkTime {
-  padding: 40px;
-  background-color: #f2f2f2;
-  margin: 0 -49px; }
-  .savingPlanWorkTime ul li {
-    border-bottom: 6px solid #808080; }
-    .savingPlanWorkTime ul li a,
-    .savingPlanWorkTime ul li a:active,
-    .savingPlanWorkTime ul li a:focus,
-    .savingPlanWorkTime ul li a:hover {
-      padding: 5px 15px;
-      border-radius: 8px 8px 0 0;
-      margin-right: none;
+.nav-tabs {
+  border-bottom: none; }
+  .nav-tabs > li {
+    margin-bottom: 8px; }
+    .nav-tabs > li > a,
+    .nav-tabs > li a:focus,
+    .nav-tabs > li a:hover {
       background-color: #808080;
       font-family: Calibri;
       color: #ffffff;
       font-size: 19px;
       font-weight: 300;
       outline: none;
-      border: none; }
-    .savingPlanWorkTime ul li.active {
-      border-bottom: 6px solid #88b73d; }
-    .savingPlanWorkTime ul li:not(:first-child) {
-      margin-left: 5px; }
+      border: none;
+      border-bottom: 6px solid #808080;
+      padding: 5px 0; }
+    .nav-tabs > li.active > a,
+    .nav-tabs > li.active a:focus,
+    .nav-tabs > li.active a:hover {
+      background-color: #a3d165;
+      color: #ffffff;
+      border-bottom: 6px solid #88b73d;
+      font-weight: 700; }
+
+.customDropdown {
+  font-family: Calibri;
+  color: rgba(26, 26, 26, 0.7);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: -0.182px; }
+  .customDropdown > span {
+    line-height: 40px; }
+  .customDropdown > select {
+    height: 40px;
+    width: 150px; }
+
+.buttonTypeOneAdd:before {
+  font-family: 'FontAwesome';
+  font-size: 17px;
+  content: '\f055';
+  color: #8ecc38;
+  margin-right: 1px; }
+
+.buttonTypeOneRemove:before {
+  font-family: 'FontAwesome';
+  font-size: 17px;
+  content: '\f1f8';
+  color: #8ecc38;
+  margin-right: 1px; }
+
+.buttonTypeOneEdit:before {
+  font-family: 'FontAwesome';
+  font-size: 17px;
+  content: '\f040';
+  color: #8ecc38;
+  margin-right: 1px; }
+
+.savingPlanWorkTime {
+  padding: 40px;
+  background-color: #f2f2f2;
+  margin: 0 -49px; }
+  .savingPlanWorkTime > div[active="active"] > ul {
+    border-bottom: none; }
+    .savingPlanWorkTime > div[active="active"] > ul > li {
+      width: 165px;
+      text-align: center; }
+      .savingPlanWorkTime > div[active="active"] > ul > li:not(:first-child) {
+        margin-left: 5px; }
+  .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid {
+    background-color: #f2f2f2; }
+    .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: -0.182px; }
+      .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child {
+        background-color: #ffffff; }
+        .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid {
+          margin-top: 15px; }
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > span, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > span {
+            margin-right: 13px; }
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > select, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > select {
+            background-color: #ffffff;
+            border-color: #d9d9d9;
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: -0.182px;
+            width: 125px; }
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div {
+            display: flex;
+            position: relative;
+            float: right; }
+            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > a, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > a {
+              height: 39px;
+              width: 40px;
+              display: inline-block;
+              text-align: center;
+              line-height: 39px;
+              background-color: #238fb5;
+              color: #ffffff; }
+            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > span, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > span {
+              height: 39px;
+              width: 85px;
+              background-color: #29abe2;
+              display: inline-block;
+              line-height: 39px;
+              color: #ffffff;
+              padding-left: 15px;
+              font-family: Calibri;
+              font-size: 15px;
+              font-weight: 700; }
+            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > ul, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > ul {
+              position: absolute;
+              width: 160px; }
+      .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child {
+        background-color: #ffffff;
+        margin-top: 5px;
+        padding-top: 20px;
+        padding-bottom: 20px; }
+        .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div {
+          position: relative; }
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > ul {
+            width: 241px;
+            margin-left: 24px; }
+            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul > li, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > ul > li {
+              display: block;
+              float: none;
+              text-align: center; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul > li > a, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > ul > li > a {
+                border-bottom-color: #f7f7f7;
+                background-color: #f7f7f7;
+                font-family: Calibri;
+                color: #cccccc;
+                font-size: 16.85px;
+                font-weight: 300; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul > li.active > a, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > ul > li.active > a {
+                border-bottom-color: #88b73d;
+                background-color: #a3d165;
+                font-family: Calibri;
+                color: #ffffff;
+                font-size: 16.85px;
+                font-weight: 700; }
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content {
+            width: calc(100% - 289px);
+            position: absolute;
+            top: 0;
+            left: 289px;
+            padding: 0; }
+            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane {
+              padding-left: 70px; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row > div.col-xs-12, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row > div.col-xs-12 {
+                line-height: 40px;
+                height: 40px; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 {
+                display: none; }
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 + label, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 + label {
+                  margin: 0;
+                  font-family: Calibri;
+                  color: rgba(26, 26, 26, 0.7);
+                  font-size: 13px;
+                  font-weight: 300;
+                  letter-spacing: -0.169px;
+                  line-height: 14px;
+                  text-align: left; }
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 + label::before, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 + label::before {
+                  position: absolute;
+                  content: '';
+                  height: 24px;
+                  width: 24px;
+                  left: -15px;
+                  top: 7px;
+                  border: 1px solid #d9d9d9; }
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01:checked + label::before, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01:checked + label::before {
+                  position: absolute;
+                  content: '\f00c';
+                  font-family: 'FontAwesome';
+                  color: #a3d165;
+                  height: 24px;
+                  width: 24px;
+                  left: -15px;
+                  top: 7px;
+                  border: 1px solid #d9d9d9;
+                  text-align: center;
+                  line-height: 24px; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child button, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child button {
+                outline: none;
+                background-color: #29abe2;
+                border: none;
+                height: 29px;
+                line-height: 29px;
+                width: 80px;
+                font-family: Calibri;
+                color: #ffffff;
+                font-size: 13px;
+                font-weight: 700;
+                margin-left: 20px; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > span:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > span:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > span:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > span:first-child {
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: -0.208px;
+                text-align: left; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > span:not(:first-child), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > span:not(:first-child), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > span:not(:first-child), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > span:not(:first-child) {
+                float: right;
+                margin-left: 22px;
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 12.66px;
+                font-weight: 700;
+                text-align: left; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:first-child {
+                padding-top: 28px;
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: -0.182px;
+                border-top: 3px solid #8cc63f;
+                border-bottom: 1px solid #bcbcbc; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child {
+                height: 130px;
+                overflow-y: auto; }
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li {
+                  list-style: none; }
+                  .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li > div {
+                    height: 50px;
+                    line-height: 50px; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > span:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > span:first-child {
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: -0.208px;
+                text-align: left; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row:first-child {
+                border-top: 3px solid #8cc63f; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 {
+                height: 55px;
+                line-height: 55px; }
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 > .customDropdown > select, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 > .customDropdown > select {
+                  background-color: #ffffff;
+                  height: 39px;
+                  width: 140px;
+                  margin-left: 18px;
+                  border-color: #d9d9d9;
+                  font-family: Calibri;
+                  color: rgba(26, 26, 26, 0.7);
+                  font-size: 14px;
+                  font-weight: 300;
+                  letter-spacing: -0.182px; }
+                  .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 > .customDropdown > select:focus, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 > .customDropdown > select:focus {
+                    outline: none; }
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 {
+                display: none; }
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 + label, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 + label {
+                  margin: 0 0 0 50px;
+                  font-family: Calibri;
+                  color: rgba(26, 26, 26, 0.7);
+                  font-size: 13px;
+                  font-weight: 300;
+                  letter-spacing: -0.169px;
+                  line-height: 14px;
+                  text-align: left;
+                  position: relative; }
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 + label::before, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 + label::before {
+                  position: absolute;
+                  content: '';
+                  height: 24px;
+                  width: 24px;
+                  left: -35px;
+                  top: -6px;
+                  border: 1px solid #d9d9d9; }
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01:checked + label::before, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01:checked + label::before {
+                  position: absolute;
+                  content: '\f00c';
+                  font-family: 'FontAwesome';
+                  color: #a3d165;
+                  height: 24px;
+                  width: 24px;
+                  left: -35px;
+                  top: -6px;
+                  border: 1px solid #d9d9d9;
+                  text-align: center;
+                  line-height: 24px; }
 
 input.custom-radio-button-type-one {
   display: block; }
