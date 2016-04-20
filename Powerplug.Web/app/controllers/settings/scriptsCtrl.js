@@ -26,7 +26,6 @@
 
         function onSuccess(data) {
             vm.scripts = data;
-            vm.scriptsFromDB = data;
             vm.deletedScripts = [];
             vm.currentScriptText = '';
             vm.currentScriptId = 0;

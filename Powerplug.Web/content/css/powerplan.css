@@ -347,7 +347,9 @@ nav {
             font-family: Calibri;
             width: 50px;
             border: none;
-            outline: none; }
+            outline: none;
+            height: 28px;
+            padding: 5px; }
           .settings > .script-content > table > tbody > tr > td.grid-cell select, .settings .powerConsumption-content > table > tbody > tr > td.grid-cell select {
             font-family: Calibri;
             border: none;

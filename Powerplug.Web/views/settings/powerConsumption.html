@@ -16,10 +16,10 @@
                     <tbody>
                         <tr ng-repeat="row in vm.powerConsumption.default">
                             <td class="bolder">{{ row.computerType }}</td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionHibernate" ng-change="vm.ChangeConsumption(row.computerType, 'powerConsumptionHibernate', row.powerConsumptionHibernate)" valid-number convert-to-number /></td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionSleep" ng-change="vm.ChangeConsumption()" valid-number /></td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionOn" ng-change="vm.ChangeConsumption()" valid-number/></td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionWork" ng-change="vm.ChangeConsumption()" valid-number/></td>
+                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionHibernate" ng-change="vm.ChangeConsumptionByType(row.computerType, 'powerConsumptionHibernate', row.powerConsumptionHibernate)" valid-number convert-to-number /></td>
+                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionSleep" ng-change="vm.ChangeConsumptionByType(row.computerType, 'powerConsumptionSleep', row.powerConsumptionHibernate)" valid-number convert-to-number /></td>
+                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionOn" ng-change="vm.ChangeConsumptionByType(row.computerType, 'powerConsumptionOn', row.powerConsumptionHibernate)" valid-number convert-to-number/></td>
+                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionWork" ng-change="vm.ChangeConsumptionByType(row.computerType, 'powerConsumptionWork', row.powerConsumptionHibernate)" valid-number convert-to-number/></td>
                         </tr>
                     </tbody>
                 </table>
@@ -44,11 +44,11 @@
                         <tr ng-repeat="row in vm.powerConsumption.models">
                             <td class="bolder">{{ row.model}}</td>
                             <td>{{ row.computers}}</td>
-                            <td class="grid-cell"><select ng-model="row.assignment"><option value="ComputerType">By Computer Type</option><option value="ComputerModel">By Computer Model</option></select></td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionHibernate" valid-number /></td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionSleep" valid-number/></td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionOn" valid-number/></td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionWork" valid-number/></td>
+                            <td class="grid-cell"><select ng-model="row.assignment" ng-change="vm.ChangeModelAssignment(row)"><option value="ComputerType">By Computer Type</option><option value="ComputerModel">By Computer Model</option></select></td>
+                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionHibernate" ng-disabled="row.assignment === 'ComputerType'" ng-change="vm.ChangeConsumptionByModel(row.modelId, 'powerConsumptionHibernate', row.powerConsumptionHibernate)" valid-number convert-to-number/></td>
+                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionSleep" ng-disabled="row.assignment === 'ComputerType'" ng-change="vm.ChangeConsumptionByModel(row.modelId, 'powerConsumptionSleep', row.powerConsumptionHibernate)" valid-number convert-to-number/></td>
+                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionOn" ng-disabled="row.assignment === 'ComputerType'" ng-change="vm.ChangeConsumptionByModel(row.modelId, 'powerConsumptionOn', row.powerConsumptionHibernate)" valid-number convert-to-number/></td>
+                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionWork" ng-disabled="row.assignment === 'ComputerType'" ng-change="vm.ChangeConsumptionByModel(row.modelId, 'powerConsumptionWork', row.powerConsumptionHibernate)" valid-number convert-to-number/></td>
                         </tr>
                     </tbody>
                 </table>
@@ -73,11 +73,11 @@
                         <tr ng-repeat="row in vm.powerConsumption.computers">
                             <td class="bolder">{{ row.computerName}}</td>
                             <td class="bolder">{{ row.responsibleUser}}</td>
-                            <td class="grid-cell"><select ng-model="row.assignment"><option value="ComputerType">By Computer Type</option><option value="ComputerModel">By Computer Model</option></select></td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionHibernate" valid-number /></td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionSleep" valid-number/></td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionOn" valid-number /></td>
-                            <td class="grid-cell"><input type="text" ng-model="row.powerConsumptionWork" valid-number/></td>
+                            <td class="grid-cell"><select ng-model="row.assignment"><option value="ComputerModel">By Computer Model</option><option value="Computer">By Computer</option></select></td>
+                            <td class="grid-cell"><input type="text" ng-disabled="row.assignment === 'ComputerModel'" ng-model="row.powerConsumptionHibernate" valid-number convert-to-number/></td>
+                            <td class="grid-cell"><input type="text" ng-disabled="row.assignment === 'ComputerModel'" ng-model="row.powerConsumptionSleep" valid-number convert-to-number/></td>
+                            <td class="grid-cell"><input type="text" ng-disabled="row.assignment === 'ComputerModel'" ng-model="row.powerConsumptionOn" valid-number convert-to-number/></td>
+                            <td class="grid-cell"><input type="text" ng-disabled="row.assignment === 'ComputerModel'" ng-model="row.powerConsumptionWork" valid-number convert-to-number/></td>
                         </tr>
                     </tbody>
                 </table>
