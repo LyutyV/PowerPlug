@@ -12,7 +12,6 @@
         var vm = this;
 
         PowerConsumptionResource.get(function (data) {
-            console.log(data);
             onSuccess(data);
         }, function (error) {
             onError(error);
@@ -115,8 +114,6 @@
             },function (error) {
                 onError(error);
             });
-
-            console.log(defaultArr);
         }
 
         vm.discardChanges = function () {

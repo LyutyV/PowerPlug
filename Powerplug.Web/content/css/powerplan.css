@@ -223,74 +223,84 @@ nav {
           width: 20px;
           color: #90c63d; }
 
-.settings .save-button-margin {
-  height: 100px;
-  width: 100%; }
-
-.settings .buttons-container {
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
-  left: 246px;
-  background-color: #f2f2f2;
-  height: 100px;
-  z-index: 10; }
-  .settings .buttons-container div {
-    padding-top: 30px;
-    padding-right: 30px;
-    text-align: center; }
-    .settings .buttons-container div .btn-save-green {
-      width: 160px;
-      height: 44px;
-      background-color: #8cc63f;
-      border: none;
-      text-align: center;
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: Calibri;
-      margin-right: 2px;
-      outline: none; }
-    .settings .buttons-container div .btn-discard-gray {
-      width: 160px;
-      height: 44px;
-      background-color: #808080;
-      border: none;
-      text-align: center;
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: Calibri;
-      outline: none; }
-
-.settings > .bg-separator {
-  height: 74px;
-  background-color: rgba(242, 242, 242, 0.6);
-  width: 100%;
-  margin-bottom: 20px; }
-
-.settings .type-selection {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: Calibri;
-  font-weight: bold;
-  font-size: 16px;
-  color: rgba(26, 26, 26, 0.7); }
-  .settings .type-selection select {
-    font-weight: normal;
-    width: 225px;
-    height: 40px;
-    margin-left: 20px;
-    color: #1a1a1a;
-    font-size: 14px; }
-
-.settings .text-container textarea {
-  width: 100%;
-  height: 300px;
-  padding: 5px; }
-
-.settings > .script-content, .settings .powerConsumption-content {
-  padding-top: 32px; }
+.settings {
+  padding-top: 20px; }
+  .settings .nav-tabs > li {
+    margin-bottom: 5px; }
+    .settings .nav-tabs > li > a, .settings .nav-tabs > li > a:focus, .settings .nav-tabs > li > a:hover {
+      padding-left: 20px;
+      padding-right: 20px;
+      min-width: 150px;
+      text-align: center; }
+  .settings .save-button-margin {
+    height: 100px;
+    width: 100%; }
+  .settings .buttons-container {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 246px;
+    background-color: #f2f2f2;
+    height: 100px;
+    z-index: 10; }
+    .settings .buttons-container div {
+      padding-top: 30px;
+      padding-right: 30px;
+      text-align: center; }
+      .settings .buttons-container div .btn-save-green {
+        width: 160px;
+        height: 44px;
+        background-color: #8cc63f;
+        border: none;
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Calibri;
+        margin-right: 2px;
+        outline: none; }
+      .settings .buttons-container div .btn-discard-gray {
+        width: 160px;
+        height: 44px;
+        background-color: #808080;
+        border: none;
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Calibri;
+        outline: none; }
+  .settings > .bg-separator {
+    height: 74px;
+    background-color: rgba(242, 242, 242, 0.6);
+    width: 100%;
+    margin-bottom: 20px; }
+  .settings .type-selection {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(26, 26, 26, 0.7); }
+    .settings .type-selection select {
+      font-weight: normal;
+      width: 225px;
+      height: 40px;
+      margin-left: 20px;
+      color: #1a1a1a;
+      font-size: 14px; }
+  .settings .text-container textarea {
+    width: 100%;
+    height: 300px;
+    padding: 5px; }
+  .settings .green-line {
+    width: 100%;
+    height: 5px;
+    background-color: #8cc63f; }
+  .settings .powerConsumption-content {
+    padding-top: 20px; }
+  .settings > .script-content {
+    padding-top: 12px; }
   .settings > .script-content > span, .settings .powerConsumption-content > span {
     font-family: Calibri;
     color: #4d4d4d;

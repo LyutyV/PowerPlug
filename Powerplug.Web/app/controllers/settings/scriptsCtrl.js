@@ -100,7 +100,7 @@
             returnObj.create = createdScripts;
             returnObj.update = updatedScripts;
             ScriptsResource.basic.saveAll(returnObj, function (data) {
-                alert('Successfully Done!')
+                alert('Successfully Done!');
                 onSuccess(data);
             }, function (err) {
                 onError(err);
