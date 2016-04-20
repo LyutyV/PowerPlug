@@ -229,13 +229,12 @@
         </div>
       </div>
       <div class="events" ng-scrollbars ng-scrollbars-config="config">
-        <div ng-repeat="events in eventsTime">
-          <div ng-repeat="event in events" class = "event-block">
-            <img ng-show="event.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
-            <img ng-show="event.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
-            <div class="event-name">{{event.title}}</div>
-            <div class="event-text">{{event.text}}</div>
-          </div>
+
+        <div ng-repeat="event in actions"  class = "event-block">
+          <img ng-show="event.perform=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
+          <img ng-show="event.perform=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
+          <div class="event-name">{{event.title}}</div>
+          <div class="event-text">{{event.scheduleText}}</div>
         </div>
       </div>
     </div>

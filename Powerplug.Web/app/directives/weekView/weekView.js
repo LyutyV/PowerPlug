@@ -5,11 +5,11 @@ angular
       restrict: 'E',
       replace: true,
       scope: {
-        events:'=',
+        actions:'=',
         workTimeList: '=',
         workTimeChange: '&',
-        eventsChange:'&',
-        eventEdit:'&'
+        actionRemove:'&',
+        actionEdit:'&'
       },
       templateUrl: 'app/directives/weekView/weekView.html',
       link: {
@@ -35,7 +35,6 @@ angular
               'fri':[],
               'sat':[]};
 
-              console.log(scope.workTimeList);
 
             for (var i in scope.workTimeList){
               var dateStart = new Date(scope.workTimeList[i].start._d);
@@ -55,7 +54,25 @@ angular
           };
 
           var fromWeekToListWorkTime= function(callback){
-            callback && callback(scope.workTimeList);
+            var weekBegin = new Date();
+            weekBegin.setHours(0,0,0,0);
+            weekBegin.setHours(-weekBegin.getDay() * 24);
+            var k = 0;
+            var newWorkTime = [];
+
+            for (var i in scope.workTime){
+              var curentDay = _.clone(weekBegin);
+              curentDay.setHours(24*k);
+              for (var j in scope.workTime[i]){
+                newWorkTime.push({
+                  end: moment((_.clone(curentDay)).setMinutes( Math.floor(scope.workTime[i][j].end)*60 + (scope.workTime[i][j].end - Math.floor(scope.workTime[i][j].end))*100)),
+                  start: moment((_.clone(curentDay)).setMinutes( Math.floor(scope.workTime[i][j].start)*60 + (scope.workTime[i][j].start - Math.floor(scope.workTime[i][j].start))*100))
+                });
+              }
+              k++;
+            }
+
+            callback && callback(newWorkTime);
           };
 
           var fromListToWeekEvents = function(callback){
@@ -69,23 +86,43 @@ angular
               'sat':[]
             };
 
-            console.log(scope.events);
+            var weekBegin = new Date();
+            weekBegin.setHours(0,0,0,0);
+            weekBegin.setHours(-weekBegin.getDay() * 24);
 
-            for (var i in scope.events){
-              if (scope.events[i].scheduleType ==  "DayOfWeek") {
-                for (var j in scope.events[i].daysConverted){
-                  var data = new Date(scope.events[i].fromTime);
-                  scope.eventsTime[dayList[scope.events[i].daysConverted[j]]].unshift({
-                    actionKey : scope.events[i].actionKey,
+            var weekEnd = _.clone(weekBegin);
+            weekEnd.setHours(7 * 24);
+
+            for (var i in scope.actions){
+              if (scope.actions[i].scheduleType ==  "DayOfWeek" || scope.actions[i].scheduleType ==  "DayOfMonth") {
+                for (var j in scope.actions[i].daysConverted){
+                  var data = moment(scope.actions[i].fromTime);
+                  data = data._d;
+                  scope.eventsTime[dayList[scope.actions[i].daysConverted[j]]].unshift({
+                    actionKey : scope.actions[i].actionKey,
                     start: Number(data.getHours().toString() + '.' + data.getMinutes().toString()),
-                    text: scope.events[i].scheduleText,
+                    text: scope.actions[i].scheduleText,
                     title: '',
-                    type: scope.events[i].perform,
+                    type: scope.actions[i].perform
+                  });
+                }
+              }
+              else if (scope.actions[i].scheduleType ==  "SpecificDate") {
+                var date = new Date(scope.actions[i].dateConverted);
+                if(date>=weekBegin && date<weekEnd)
+                {
+                  var data = moment(scope.actions[i].fromTime);
+                  data = data._d;
+                  scope.eventsTime[dayList[date.getDay()]].unshift({
+                    actionKey : scope.actions[i].actionKey,
+                    start: Number(data.getHours().toString() + '.' + data.getMinutes().toString()),
+                    text: scope.actions[i].scheduleText,
+                    title: '',
+                    type: scope.actions[i].perform
                   });
                 }
               }
             }
-            console.log(scope.eventsTime);
             callback && callback();
           }
 
@@ -320,10 +357,10 @@ angular
           };
 
           scope.timeIntervalList = [
-            /*{
+            {
               label: '15 min',
               value: 0.25
-            },*/
+            },
             {
               label: '30 min',
               value: 0.5
@@ -331,14 +368,14 @@ angular
             {
               label: '1 hour',
               value: 1
-            }/*,
+            },
             {
               label: '2 hours',
               value: 2
-            }*/
+            }
           ];
 
-          scope.timeInterval = scope.timeIntervalList[0];
+          scope.timeInterval = scope.timeIntervalList[1];
 
           scope.timeIntervalChange = function(){
             timeLineBuild();
@@ -454,7 +491,7 @@ angular
           }
 
           var initEvents = function(){
-            if (scope.events){
+            if (scope.actions){
               fromListToWeekEvents(function(){
                 if (!timeLineSuccess){
                   timeLineBuild();
@@ -469,15 +506,14 @@ angular
           }
 
           scope.removeEvent = function(day, number) {
-            _.pullAt(scope.eventsTime[day], number);
-            eventListChangePrepare(true);
+            scope.actionRemove({data:scope.eventsTime[day][number].actionKey })
           }
 
           scope.editEvent = function(day, number) {
-            scope.eventEdit({data:scope.eventsTime[day][number] });
+            scope.actionEdit({data:scope.eventsTime[day][number].actionKey });
           }
 
-          scope.$watch('events', initEvents);
+          scope.$watch('actions', initEvents);
         }
       }
     };

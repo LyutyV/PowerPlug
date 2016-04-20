@@ -313,7 +313,7 @@ md-datepicker {
                                     .popover-block{
                                         position: absolute;
                                         bottom: 15px;
-                                        left:calc(-10px - 50%);
+                                        left:calc(-112px + 50%);
                                         background-color: #fff;
                                         width: 224px;
                                         display: block;
@@ -358,7 +358,6 @@ md-datepicker {
                                         display: block;
                                         width: 100%;
                                         background-color: #29abe2;
-                                        margin-top: 2px;
                                         height: 5px;
                                     }
                             }
