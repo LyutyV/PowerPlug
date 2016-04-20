@@ -25,7 +25,10 @@
         }, {
           name: '100 KB/Second'
         }];
-        vm.modelForDropdown = [vm.comboItems[0], vm.comboItems[1], vm.comboItems[2], vm.comboItems[3], vm.comboItems[4], vm.comboItems[5]];
+        vm.modelForDropdown = [vm.comboItems[0], vm.comboItems[1], vm.comboItems[2],  //these for top dropdowns on work day tab
+                                vm.comboItems[0], vm.comboItems[1], vm.comboItems[2],  //these for top dropdowns on non work day tab
+                                vm.comboItems[3], vm.comboItems[4], vm.comboItems[5],  //these for dropdowns on performanse metrics tab on work day tab
+                                vm.comboItems[3], vm.comboItems[4], vm.comboItems[5]];  //these for dropdowns on performanse metrics tab on non work day tab
 // End tmp model for selects in Savings section
 
         //Init

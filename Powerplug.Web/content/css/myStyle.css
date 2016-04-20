@@ -990,21 +990,21 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
       text-align: center; }
       .savingPlanWorkTime > div[active="active"] > ul > li:not(:first-child) {
         margin-left: 5px; }
-  .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid {
+  .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid {
     background-color: #f2f2f2; }
-    .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row {
+    .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row {
       font-family: Calibri;
       color: rgba(26, 26, 26, 0.7);
       font-size: 14px;
       font-weight: 300;
       letter-spacing: -0.182px; }
-      .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child {
+      .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child {
         background-color: #ffffff; }
-        .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid {
+        .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid {
           margin-top: 15px; }
-          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > span {
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > span, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > span {
             margin-right: 13px; }
-          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > select {
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > select, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > select {
             background-color: #ffffff;
             border-color: #d9d9d9;
             font-family: Calibri;
@@ -1013,22 +1013,22 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
             font-weight: 300;
             letter-spacing: -0.182px;
             width: 125px; }
-          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div {
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div {
             display: flex;
             position: relative;
             float: right; }
-            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > a {
+            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > a, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > a {
               height: 39px;
               width: 40px;
               display: inline-block;
               text-align: center;
               line-height: 39px;
-              background-color: #4d4d4d;
+              background-color: #238fb5;
               color: #ffffff; }
-            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > span {
+            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > span, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > span {
               height: 39px;
               width: 85px;
-              background-color: #333333;
+              background-color: #29abe2;
               display: inline-block;
               line-height: 39px;
               color: #ffffff;
@@ -1036,51 +1036,51 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
               font-family: Calibri;
               font-size: 15px;
               font-weight: 700; }
-            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > ul {
+            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > ul, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > ul {
               position: absolute;
               width: 160px; }
-      .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child {
+      .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child {
         background-color: #ffffff;
         margin-top: 5px;
         padding-top: 20px;
         padding-bottom: 20px; }
-        .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div {
+        .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div {
           position: relative; }
-          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul {
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > ul {
             width: 241px;
             margin-left: 24px; }
-            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul > li {
+            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul > li, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > ul > li {
               display: block;
               float: none;
               text-align: center; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul > li > a {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul > li > a, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > ul > li > a {
                 border-bottom-color: #f7f7f7;
                 background-color: #f7f7f7;
                 font-family: Calibri;
                 color: #cccccc;
                 font-size: 16.85px;
                 font-weight: 300; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul > li.active > a {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > ul > li.active > a, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > ul > li.active > a {
                 border-bottom-color: #88b73d;
                 background-color: #a3d165;
                 font-family: Calibri;
                 color: #ffffff;
                 font-size: 16.85px;
                 font-weight: 700; }
-          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content {
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content {
             width: calc(100% - 289px);
             position: absolute;
             top: 0;
             left: 289px;
             padding: 0; }
-            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane {
+            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane {
               padding-left: 70px; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row > div.col-xs-12 {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row > div.col-xs-12, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row > div.col-xs-12 {
                 line-height: 40px;
                 height: 40px; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 {
                 display: none; }
-                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 + label {
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 + label, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 + label {
                   margin: 0;
                   font-family: Calibri;
                   color: rgba(26, 26, 26, 0.7);
@@ -1089,7 +1089,7 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
                   letter-spacing: -0.169px;
                   line-height: 14px;
                   text-align: left; }
-                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 + label::before {
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 + label::before, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01 + label::before {
                   position: absolute;
                   content: '';
                   height: 24px;
@@ -1097,7 +1097,7 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
                   left: -15px;
                   top: 7px;
                   border: 1px solid #d9d9d9; }
-                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01:checked + label::before {
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01:checked + label::before, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row input.custom-checkbox-green-type01:checked + label::before {
                   position: absolute;
                   content: '\f00c';
                   font-family: 'FontAwesome';
@@ -1109,7 +1109,7 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
                   border: 1px solid #d9d9d9;
                   text-align: center;
                   line-height: 24px; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child button {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child button, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child button {
                 outline: none;
                 background-color: #29abe2;
                 border: none;
@@ -1121,14 +1121,14 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
                 font-size: 13px;
                 font-weight: 700;
                 margin-left: 20px; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > span:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > span:first-child {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > span:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > span:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > span:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > span:first-child {
                 font-family: Calibri;
                 color: rgba(26, 26, 26, 0.7);
                 font-size: 16px;
                 font-weight: 400;
                 letter-spacing: -0.208px;
                 text-align: left; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > span:not(:first-child), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > span:not(:first-child) {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > span:not(:first-child), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > span:not(:first-child), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > span:not(:first-child), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > span:not(:first-child) {
                 float: right;
                 margin-left: 22px;
                 font-family: Calibri;
@@ -1136,7 +1136,7 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
                 font-size: 12.66px;
                 font-weight: 700;
                 text-align: left; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:first-child {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:first-child {
                 padding-top: 28px;
                 font-family: Calibri;
                 color: rgba(26, 26, 26, 0.7);
@@ -1145,27 +1145,27 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
                 letter-spacing: -0.182px;
                 border-top: 3px solid #8cc63f;
                 border-bottom: 1px solid #bcbcbc; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child {
                 height: 130px;
                 overflow-y: auto; }
-                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li {
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li {
                   list-style: none; }
-                  .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li > div {
+                  .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > div.container-fluid > div > div.container-fluid > div.row:last-child > ul > li > div {
                     height: 50px;
                     line-height: 50px; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > span:first-child {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > span:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > span:first-child {
                 font-family: Calibri;
                 color: rgba(26, 26, 26, 0.7);
                 font-size: 16px;
                 font-weight: 400;
                 letter-spacing: -0.208px;
                 text-align: left; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row:first-child {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row:first-child {
                 border-top: 3px solid #8cc63f; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 {
                 height: 55px;
                 line-height: 55px; }
-                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 > .customDropdown > select {
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 > .customDropdown > select, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 > .customDropdown > select {
                   background-color: #ffffff;
                   height: 39px;
                   width: 140px;
@@ -1176,11 +1176,11 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
                   font-size: 14px;
                   font-weight: 300;
                   letter-spacing: -0.182px; }
-                  .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 > .customDropdown > select:focus {
+                  .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 > .customDropdown > select:focus, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid > div.row > div.col-xs-12 > .customDropdown > select:focus {
                     outline: none; }
-              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 {
+              .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 {
                 display: none; }
-                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 + label {
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 + label, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 + label {
                   margin: 0 0 0 50px;
                   font-family: Calibri;
                   color: rgba(26, 26, 26, 0.7);
@@ -1190,7 +1190,7 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
                   line-height: 14px;
                   text-align: left;
                   position: relative; }
-                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 + label::before {
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 + label::before, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01 + label::before {
                   position: absolute;
                   content: '';
                   height: 24px;
@@ -1198,7 +1198,7 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
                   left: -35px;
                   top: -6px;
                   border: 1px solid #d9d9d9; }
-                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01:checked + label::before {
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01:checked + label::before, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:last-child > div.container-fluid > div > div.container-fluid input.custom-checkbox-green-type01:checked + label::before {
                   position: absolute;
                   content: '\f00c';
                   font-family: 'FontAwesome';
