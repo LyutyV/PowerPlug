@@ -1,10 +1,32 @@
-﻿<div>
-    Script Name: <input type="text" ng-model="script.scriptName"/>
-</div>
-<div>
-    Description: <textarea style="width:150px;height:200px;" ng-model="script.scriptDesc"></textarea>
-</div>
-<div style="text-align:center">
-    <button class="btn btn-success" ng-click="addUpdateScript()">OK</button>
-    <button class="btn btn-danger" ng-click="closeScriptDialog()">Cancel</button>
-</div>
+﻿<md-dialog style="width:900px">
+    <md-toolbar>
+        <div style="padding-left: 20px;padding-top: 17px;">Select Computer Group</div>
+    </md-toolbar>
+    <md-content>
+        <div class="well">
+            <div>
+                IP Adress from
+            </div>
+            <div>
+                <input ng-model="IPFrom.part1" />
+                <input ng-model="IPFrom.part2" />
+                <input ng-model="IPFrom.part3" />
+                <input ng-model="IPFrom.part4" />
+            </div>
+            <div>
+                IP Adress to
+            </div>
+            <div>
+                <input ng-model="IPTo.part1" />
+                <input ng-model="IPTo.part2" />
+                <input ng-model="IPTo.part3" />
+                <input ng-model="IPTo.part4" />
+            </div>
+            <hr />
+            <div style="text-align:center">
+                <button class="btn btn-success" ng-click="add()">OK</button>
+                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
+    </md-content>
+</md-dialog>

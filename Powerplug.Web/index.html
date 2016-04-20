@@ -48,7 +48,7 @@
     <script src="content/js/vendor/textAngular-sanitize.min.js"></script>
     <script src="content/js/vendor/textAngular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
-    
+
     <script src="bower_components/highcharts/highcharts.js"></script>
     <script src="bower_components/highcharts-ng/dist/highcharts-ng.min.js"></script>
     <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -58,7 +58,8 @@
     <script src="bower_components/tinymce-dist/tinymce.js"></script>
     <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
     <script src="content/js/vendor/sortable.js"></script>
-
+     
+    <!--updated file-->
 
     <!-- Application Script -->
     <script src="app/app.js"></script>
@@ -72,6 +73,7 @@
     <script src="app/services/powerplan/savingPlansResource.js"></script>
     <script src="app/services/powerplan/computersResource.js"></script>
     <script src="app/services/powerplan/scriptsResource.js"></script>
+    <script src="app/services/powerplan/powerConsumptionResource.js"></script>
 
     <!-- Directive -->
     <script src="app/directives/settingsTabs/optionsTabDirective.js"></script>
@@ -84,6 +86,8 @@
     <script src="app/directives/weekView/weekView.js"></script>
     <script src="app/directives/descripotion/descripotion.js"></script>
     <script src="app/directives/customRadioButtonTypeOne/customRadioButton.directive.js"></script>
+    <script src="app/directives/validateNumber/validateNumberDirective.js"></script>
+    <script src="app/directives/convertToNumber/convertToNumberDirective.js"></script>
 
     <!-- Factory -->
     <script src="app/factory/jsonLoaderFactory.js"></script>
@@ -96,7 +100,11 @@
     <script src="app/controllers/settings/settingsCtrl.js"></script>
     <script src="app/controllers/settings/computerGroupsCtrl.js"></script>
     <script src="app/controllers/settings/scriptsCtrl.js"></script>
+    <script src="app/controllers/settings/powerConsumptionCtrl.js"></script>
+    <!-- PowerPlug Settings Page Dialogs -->
     <script src="app/controllers/settings/dialogs/IPMaskPopupHandler.js"></script>
+    <script src="app/controllers/settings/dialogs/computerMaskPopupHandler.js"></script>
+    <script src="app/controllers/settings/dialogs/IPRangePopupHandler.js"></script>
     <!-- PowerPlug Saving Plan Page Controller -->
     <script src="app/controllers/powerplan/savingPlansCtrl.js"></script>
     <script src="app/controllers/powerplan/partials/savingPlanEditorOverview.js"></script>
@@ -107,7 +115,7 @@
     <script src="app/controllers/powerplan/partials/savingPlanEditorComputers.js"></script>
     <!--PowerPlug  Saving Plan Dialogs-->
     <script src="app/controllers/powerplan/dialogs/actionDialogHandler.js"></script>
-    <script src="app/controllers/powerplan/dialogs/managePPListHandler.js"></script>
+    <script src="app/controllers/powerplan/dialogs/ManagePPListHandler.js"></script>
         <!--powerPlan Saving Paln MainController-->
     <script src="app/controllers/powerplan/savingPlanEditorCtrl.js"></script>
     <!-- PowerPlug Dashbord -->

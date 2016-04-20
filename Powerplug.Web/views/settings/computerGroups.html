@@ -38,12 +38,7 @@
                     <span>Add</span>
                 </div>
                 <div class="computer-group-action">
-                    <select>
-                        <option>Computer Name</option>
-                        <option>Computer Mask</option>
-                        <option>IP Mask</option>
-                        <option>IP Range</option>
-                    </select>
+                    <select ng-model="vm.popupType" ng-options="option.value as option.name for option in vm.popupTypeOptions"></select>
                </div>
                 <div class="computer-group-action">
                     <select>

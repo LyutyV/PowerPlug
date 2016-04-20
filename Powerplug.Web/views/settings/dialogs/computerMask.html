@@ -5,17 +5,13 @@
     <md-content>
         <div class="well">
           <lable>
-              IP Adress 
-              <select ng-model="MemberTypeId" ng-options="option.value as option.name for option in memberTypeOptions">
-               
-              </select>
+              Computer Name
+              <select ng-model="MemberTypeId" ng-options="option.value as option.name for option in memberTypeOptions"></select>
           </lable>
             <div>
-                <input ng-model="IP.part1"/>
-                <input ng-model="IP.part2"/>
-                <input ng-model="IP.part3"/>
-                <input ng-model="IP.part4"/>
+                <input ng-model="computerName"/>
             </div>
+            <div> wildcard "*" can be used to include multiple computers</div>
             <hr />
             <div style="text-align:center">
                 <button class="btn btn-success" ng-click="add()">OK</button>

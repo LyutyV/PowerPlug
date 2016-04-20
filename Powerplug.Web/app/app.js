@@ -86,6 +86,9 @@
                     'workhoursaction@savingPlanEditor': {
                         templateUrl: 'views/powerplan/savingPlanWorkHoursActions.html'
                     },
+                    'worktimesaction@savingPlanEditor': {
+                        templateUrl: 'views/powerplan/savingPlanWorkTime.html'
+                    },
                     'events@savingPlanEditor': {
                         templateUrl: 'views/powerplan/savingPlanEvents.html'
                     },
@@ -119,6 +122,12 @@
                 url: "/scripts",
                 controller: 'ScriptsCtrl',
                 templateUrl: 'views/settings/scripts.html',
+                controllerAs: 'vm'
+            })
+            .state('powerConsumption', {
+                url: "/powerConsumption",
+                controller: 'PowerConsumptionCtrl',
+                templateUrl: 'views/settings/powerConsumption.html',
                 controllerAs: 'vm'
             });
 

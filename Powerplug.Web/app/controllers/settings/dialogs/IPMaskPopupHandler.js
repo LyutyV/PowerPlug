@@ -7,12 +7,7 @@
         IPMaksPopupHandler.$mdDialog = $mdDialog;
         IPMaksPopupHandler.$mdMedia = $mdMedia;
     },
-    addIPMak: function (a) {
-        debugger;
-        console.log(a);
-    },
-    cancel: function(){
-    },
+ 
     openIPMaskDialog: function (ev) {
         IPMaksPopupHandler.$mdDialog.show({
             templateUrl: 'views/settings/dialogs/IPMask.html',
@@ -22,7 +17,7 @@
             bindToController: true,
             locals: {},
             controller: DialogController,
-        }).then(IPMaksPopupHandler.addIPMak, IPMaksPopupHandler.cancelDialod);
+        });
 
         function DialogController($scope, $mdDialog, $document) {
             //===============private===============/
@@ -36,13 +31,8 @@
             }
           //=============Scope Binding=============/  
             $scope.MemberTypeId = 4;
-            $scope.IP = {
-                part1: null,
-                part2: null,
-                part3: null,
-                part4: null
-            }
-          
+            $scope.IP = { part1: null, part2: null, part3: null, part4: null}
+            $scope.memberTypeOptions = [ { name: 'Equals', value: 4 }, { name: 'Not Equals', value: 6 }];
             $scope.add = function () {
                 var memeberDef;
                 memeberDef = $scope.IP.part1 + "." + $scope.IP.part2 + "." + $scope.IP.part3 + "." + $scope.IP.part4;

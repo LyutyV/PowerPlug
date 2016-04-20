@@ -53,7 +53,9 @@
         $scope.Add = function () {
             sortListOrder();
             $uibModalInstance.close('applay');
-            _savingPlansResource.priority.saveAll(_deletedArr.concat($scope.PParray));
+            _savingPlansResource.priority.saveAll(_deletedArr.concat($scope.PParray), function (data) {
+                _vm.savingPlans = data;
+            });
         };
     }
 

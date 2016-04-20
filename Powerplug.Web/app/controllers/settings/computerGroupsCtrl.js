@@ -20,6 +20,8 @@
         }
         function initPopups() {
             IPMaksPopupHandler.init(vm, $scope, $document, $mdDialog, $mdMedia);
+            computerMaksPopupHandler.init(vm, $scope, $document, $mdDialog, $mdMedia);
+            IPRangePopupHandler.init(vm, $scope, $document, $mdDialog);
             }
 
             function isEmpty(object) {
@@ -45,6 +47,9 @@
             var vm = this;
             vm.selectedGroupIndex = -1;
             vm.selectedGroupId = -1;
+            vm.popupType = 'computerName';
+            vm.popupTypeOptions = [{ name: 'Computer Name', value: 'computerName' }, { name: 'Computer Mask', value: 'computerMask' },
+                { name: 'IP Mask', value: 'IPMask' }, { name: 'IP Range', value: 'IPRange' }];
             vm.groupMembersHash = {};
             ComputerGroupsResource.groups.query(function (data) {
                 vm.computerGroups = data;
@@ -70,8 +75,23 @@
                 }
                 vm.selectedGroupId = groupId;
             }
-            debugger;
-        vm.openAddDialog = IPMaksPopupHandler.openIPMaskDialog;
+        
+            vm.openAddDialog = function () {
+                switch( vm.popupType) {
+                    case 'computerName':
+                        IPMaksPopupHandler.openIPMaskDialog();
+                        break;
+                    case 'computerMask':
+                        computerMaksPopupHandler.openComputerMaskDialog();
+                        break;
+                    case 'IPMask':
+                        IPMaksPopupHandler.openIPMaskDialog();
+                        break;
+                    case 'IPRange':
+                        IPRangePopupHandler.openIPRangeDialog();
+                        break;
+                }
+            };
             //===========init===================//
             initPopups()
     }
