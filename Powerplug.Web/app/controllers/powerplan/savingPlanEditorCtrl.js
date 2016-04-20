@@ -1,13 +1,32 @@
-﻿(function () {
+﻿
+(function () {
     'use strict';
     angular
-        .module('powerPlug')        
+
+        .module('powerPlug')
         .controller('SavingPlanEditorCtrl',
                      ['$state', '$stateParams', '$scope', '$animate', '$document', '$uibModal', '$mdDialog', '$mdMedia', 'SavingPlansResource', 'ComputersResource', 'ComputerGroupsResource', 'ScriptsResource', SavingPlanEditorCtrl]);
 
     function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $uibModal, $mdDialog, $mdMedia, SavingPlansResource, ComputersResource, ComputerGroupsResource, ScriptsResource) {
         var vm = this;
         vm.policyId = $stateParams.policyId;
+
+// tmp model for selects in Savings section
+        vm.comboItems = [{
+          name: '20 minutes'
+        }, {
+          name: 'Sleep'
+        }, {
+          name: '45 minutes'
+        }, {
+          name: '10 percent'
+        }, {
+          name: '500 KB/Second'
+        }, {
+          name: '100 KB/Second'
+        }];
+        vm.modelForDropdown = [vm.comboItems[0], vm.comboItems[1], vm.comboItems[2], vm.comboItems[3], vm.comboItems[4], vm.comboItems[5]];
+// End tmp model for selects in Savings section
 
         //Init
         overviewHandler.init(vm);
@@ -18,11 +37,14 @@
         savingHandler.init(vm, $document);
         computersHandler.init(vm, $scope, $document, $mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource);
 
-        SavingPlansResource.basic.get({ policyId: vm.policyId }, function (data) {
+        SavingPlansResource.basic.get({
+            policyId: vm.policyId
+        }, function (data) {
             onSuccess(data);
         }, function (err) {
             onError(err);
         });
+
 
 
         function onError(err) {
@@ -57,8 +79,6 @@
             console.log(vm.savingPlan);
         }
 
-//overviewHandler.setOverviewGraphs();
-
         //Html Elements Events
         vm.saveChanges = function () {
             savingHandler.updateSavingItems();
@@ -70,14 +90,15 @@
                 }, function (err) {
                     onError(err);
                 });
-            }
-            else {
+            } else {
                 /**********temp ---to be removed*******************/
                 var d;
                 d = new Date();
                 vm.savingPlan.policyName = "Plan - " + d.getTime();
                 /************************************************/
-                vm.savingPlan.$save({policyId : null }, function (data) {
+                vm.savingPlan.$save({
+                    policyId: null
+                }, function (data) {
                     onSuccess(data);
                 }, function (err) {
                     onError(err);
@@ -94,9 +115,9 @@
         vm.showEventScripts = eventHandler.showEventScripts;
         vm.removeEventScript = eventHandler.removeEventScript;
         vm.removeComputerGroups = computersHandler.removeComputerGroups;
-  		vm.removeComputers = computersHandler.removeComputers;
+        vm.removeComputers = computersHandler.removeComputers;
         //actions
-  		vm.getActionText = actionHandler.getActionText
+        vm.getActionText = actionHandler.getActionText
         //dialog
         vm.openActionDialog = actionDialogHandler.openActionDialog;
         vm.createNewAction = actionDialogHandler.createNewAction;
