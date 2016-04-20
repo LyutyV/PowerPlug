@@ -1,41 +1,35 @@
-﻿<div class="panel panel-primary computer-groups">
-    <div class="panel-heading"
-         style="font-size:large">
+﻿<div class="settings">
+    <div style="font-size:large">
         Computer Groups
     </div>
-    <div class="panel-body">
-        <div class="clearfix"><div class="pull-right"><button ng-click="addComputerGroup()" class="btn btn-success">Add</button></div></div>
+    <div class="computer-groups">
+        <div class="clearfix"><div class="pull-right"><span ng-click="addComputerGroup()" class="buttonTypeOneAdd">Add</span></div></div>
         <table class="table">
             <thead>
                 <tr>
-                    <td>Id</td>
-                    <td>Description</td>
-                    <td>GUID</td>
                     <td>Name</td>
                     <td>Owner</td>
+                    <td>Description</td>
                     <td></td>
                     <td></td>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="computerGroup in vm.computerGroups" class="computer-group-row" ng-class="{ 'bg-computer-group-selected': $index == vm.selectedGroupIndex }"  
+                <tr ng-repeat="computerGroup in vm.computerGroups" class="computer-group-row" ng-class="{ 'bg-row-selected': $index == vm.selectedGroupIndex }"  
                     data-id="{{computerGroup.compGroupId}}" ng-click="vm.selectComputerGroup($index)">
-                    <td>{{ computerGroup.compGroupId}}</td>
-                    <td>{{ computerGroup.groupDesc}}</td>
-                    <td>{{ computerGroup.groupGUID}}</td>
                     <td>{{ computerGroup.groupName}}</td>
                     <td>{{ computerGroup.owner}}</td>
-                    <td><button ng-click="editComputerGroup()" class="btn btn-warning">Edit</button></td>
-                    <td><button ng-click="removeComputerGroup()" class="btn btn-danger">Remove</button></td>
+                    <td>{{ computerGroup.groupDesc}}</td>
+                    <td><span ng-click="editComputerGroup()" class="buttonTypeOneEdit">Edit</span></td>
+                    <td><span ng-click="removeComputerGroup()" class="buttonTypeOneRemove">Remove</span></td>
                 </tr>
             </tbody>
         </table>
-        <div style="margin-bottom:100px;">
+        <div class="green-line">
             <div class="members-header">
                 <span> Memeber Definition</span>
                 <div class="computer-group-action" ng-click="vm.openAddDialog()">
-                    <div class="action-icon"> + </div>
-                    <span>Add</span>
+                    <span class="buttonTypeOneAdd">Add</span>
                 </div>
                 <div class="computer-group-action">
                     <select ng-model="vm.popupType" ng-options="option.value as option.name for option in vm.popupTypeOptions"></select>
@@ -46,27 +40,31 @@
                         <option>Exclude</option>
                     </select>
                 </div>
-                <hr />
             </div>
             <ul>
                 <li ng-repeat="computer in vm.groupMembersHash[vm.selectedGroupId].members">
                     <span> {{computer.memberDef}} </span>
                     <div class="computer-group-action">
-                        <div class="action-icon"> / </div>
-                        <span>Edit</span>
+                        <span class="buttonTypeOneEdit">Edit</span>
                     </div>
                     <div class="computer-group-action">
-                        <div class="action-icon"> - </div>
-                        <span>Remove</span>
+                        <span class="buttonTypeOneRemove">Remove</span>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
+    <div class="save-button-margin"></div>
+    <div class="buttons-container">
+        <div>
+            <input type="button" value="Save Changes" class="btn-save-green" ng-click="vm.saveChanges()" />
+            <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
+        </div>
+    </div>
     
 </div>
 <style>
-    .bg-computer-group-selected{
-        background-color:gray;
+    div.content-wrapper {
+        background-color: #fff;
     }
 </style>
