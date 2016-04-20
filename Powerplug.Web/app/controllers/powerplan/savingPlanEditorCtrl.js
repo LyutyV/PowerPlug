@@ -80,6 +80,9 @@
             overviewHandler.setOverviewGraphs();
             //
             console.log(vm.savingPlan);
+            for (var i in vm.savingPlan.actions){
+                vm.getActionText(vm.savingPlan.actions[i]);
+            }
         }
 
         //Html Elements Events
