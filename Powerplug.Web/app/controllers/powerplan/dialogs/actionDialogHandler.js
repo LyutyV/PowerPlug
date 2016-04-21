@@ -6,7 +6,7 @@
         actionDialogHandler.$scope = $scope;
         actionDialogHandler.$uibModal = $uibModal;
     },
-   
+
     setActionDialogItems: function () {
         var I;
         if (actionDialogHandler.vm.savingPlan.actions) {
@@ -58,7 +58,7 @@
             action.fromTime = "1899-12-30T22:00:00";
         }
         action.options = options;
-       
+
         return action;
     },
     createNewAction: function (actionType, actionsArray) {
@@ -71,7 +71,8 @@
        return actionDialogHandler.$uibModal.open({
             templateUrl: 'views/powerplan/dialogs/action.dialog.html',
             resolve: { param: function () { return { 'actionData': actionData, 'isNewAction': isNewAction } } },
-            controller: actionDialogHandler.DialogController
+            controller: actionDialogHandler.DialogController,
+            windowClass : 'action-calendar'
         });
     },
 
@@ -141,10 +142,10 @@
             actionData.options.keepMonitorOn = $scope.checkbox.keepMonitorOn;
             actionData.options.keepAlive = $scope.keepAlive;
             actionData.fromTime = $scope.timeChosen
-            //brodcast event to directive 
+            //brodcast event to directive
             $scope.$broadcast('saveSettings', { actionData: actionData });
             //Hide dialog
             $uibModalInstance.close('Add');
-        };   
+        };
     }
 };
