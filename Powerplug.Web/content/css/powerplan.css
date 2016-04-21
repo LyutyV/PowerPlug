@@ -308,20 +308,31 @@ nav {
     padding-top: 20px; }
   .settings > .script-content {
     padding-top: 12px; }
-  .settings > .script-content > span, .settings .powerConsumption-content > span {
+  .settings > .computer-groups .members-header {
+    height: 46px;
+    line-height: 46px; }
+  .settings > .computer-groups li {
+    list-style-type: none;
+    height: 46px;
+    font-family: Calibri;
+    border-bottom: 1px solid #ddd;
+    line-height: 46px; }
+  .settings > .computer-groups li:last-child {
+    border-bottom: none; }
+  .settings > .script-content > span, .settings .powerConsumption-content > span, .settings .computer-groups > span {
     font-family: Calibri;
     color: #4d4d4d;
     font-size: 18px;
     font-weight: 700; }
-  .settings > .script-content > table, .settings .powerConsumption-content > table {
+  .settings > .script-content > table, .settings .powerConsumption-content > table, .settings .computer-groups > table {
     margin-top: 20px; }
-    .settings > .script-content > table > thead, .settings .powerConsumption-content > table > thead {
+    .settings > .script-content > table > thead, .settings .powerConsumption-content > table > thead, .settings .computer-groups > table > thead {
       font-family: Calibri;
       color: rgba(26, 26, 26, 0.7);
       font-size: 14px;
       font-weight: 700;
       letter-spacing: -0.182px; }
-      .settings > .script-content > table > thead > tr > td > .add-script, .settings .powerConsumption-content > table > thead > tr > td > .add-script {
+      .settings > .script-content > table > thead > tr > td > .add-script, .settings .powerConsumption-content > table > thead > tr > td > .add-script, .settings .computer-groups > table > thead > tr > td > .add-script {
         font-family: Calibri;
         color: rgba(26, 26, 26, 0.7);
         font-size: 14.83px;
@@ -330,9 +341,9 @@ nav {
         float: right;
         display: block;
         padding-right: 30px; }
-        .settings > .script-content > table > thead > tr > td > .add-script:before, .settings .powerConsumption-content > table > thead > tr > td > .add-script:before {
+        .settings > .script-content > table > thead > tr > td > .add-script:before, .settings .powerConsumption-content > table > thead > tr > td > .add-script:before, .settings .computer-groups > table > thead > tr > td > .add-script:before {
           margin-right: 5px; }
-      .settings > .script-content > table > thead > tr > td > .import-script, .settings .powerConsumption-content > table > thead > tr > td > .import-script {
+      .settings > .script-content > table > thead > tr > td > .import-script, .settings .powerConsumption-content > table > thead > tr > td > .import-script, .settings .computer-groups > table > thead > tr > td > .import-script {
         font-family: Calibri;
         color: rgba(26, 26, 26, 0.7);
         font-size: 14.83px;
@@ -341,42 +352,42 @@ nav {
         float: right;
         display: block;
         padding-right: 40px; }
-        .settings > .script-content > table > thead > tr > td > .import-script:before, .settings .powerConsumption-content > table > thead > tr > td > .import-script:before {
+        .settings > .script-content > table > thead > tr > td > .import-script:before, .settings .powerConsumption-content > table > thead > tr > td > .import-script:before, .settings .computer-groups > table > thead > tr > td > .import-script:before {
           margin-right: 5px; }
-    .settings > .script-content > table > tbody, .settings .powerConsumption-content > table > tbody {
+    .settings > .script-content > table > tbody, .settings .powerConsumption-content > table > tbody, .settings .computer-groups > table > tbody {
       font-family: Calibri;
       color: #333333;
       font-size: 14px;
       font-weight: 300;
       letter-spacing: -0.182px; }
-      .settings > .script-content > table > tbody > tr, .settings .powerConsumption-content > table > tbody > tr {
+      .settings > .script-content > table > tbody > tr, .settings .powerConsumption-content > table > tbody > tr, .settings .computer-groups > table > tbody > tr {
         border: none;
         outline: none; }
-        .settings > .script-content > table > tbody > tr.bg-script-selected, .settings .powerConsumption-content > table > tbody > tr.bg-script-selected {
+        .settings > .script-content > table > tbody > tr.bg-row-selected, .settings .powerConsumption-content > table > tbody > tr.bg-row-selected, .settings .computer-groups > table > tbody > tr.bg-row-selected {
           background-color: rgba(242, 242, 242, 0.6); }
-        .settings > .script-content > table > tbody > tr > td, .settings .powerConsumption-content > table > tbody > tr > td {
+        .settings > .script-content > table > tbody > tr > td, .settings .powerConsumption-content > table > tbody > tr > td, .settings .computer-groups > table > tbody > tr > td {
           height: 46px;
           vertical-align: middle;
           font-family: Calibri; }
-          .settings > .script-content > table > tbody > tr > td.bolder, .settings .powerConsumption-content > table > tbody > tr > td.bolder {
+          .settings > .script-content > table > tbody > tr > td.bolder, .settings .powerConsumption-content > table > tbody > tr > td.bolder, .settings .computer-groups > table > tbody > tr > td.bolder {
             font-weight: bold; }
-          .settings > .script-content > table > tbody > tr > td.grid-cell input[type="text"], .settings .powerConsumption-content > table > tbody > tr > td.grid-cell input[type="text"] {
+          .settings > .script-content > table > tbody > tr > td.grid-cell input[type="text"], .settings .powerConsumption-content > table > tbody > tr > td.grid-cell input[type="text"], .settings .computer-groups > table > tbody > tr > td.grid-cell input[type="text"] {
             font-family: Calibri;
             width: 50px;
             border: none;
             outline: none;
             height: 28px;
             padding: 5px; }
-          .settings > .script-content > table > tbody > tr > td.grid-cell select, .settings .powerConsumption-content > table > tbody > tr > td.grid-cell select {
+          .settings > .script-content > table > tbody > tr > td.grid-cell select, .settings .powerConsumption-content > table > tbody > tr > td.grid-cell select, .settings .computer-groups > table > tbody > tr > td.grid-cell select {
             font-family: Calibri;
             border: none;
             outline: none; }
-          .settings > .script-content > table > tbody > tr > td.button-padding, .settings .powerConsumption-content > table > tbody > tr > td.button-padding {
+          .settings > .script-content > table > tbody > tr > td.button-padding, .settings .powerConsumption-content > table > tbody > tr > td.button-padding, .settings .computer-groups > table > tbody > tr > td.button-padding {
             padding-right: 48px; }
-          .settings > .script-content > table > tbody > tr > td.button-container, .settings .powerConsumption-content > table > tbody > tr > td.button-container {
+          .settings > .script-content > table > tbody > tr > td.button-container, .settings .powerConsumption-content > table > tbody > tr > td.button-container, .settings .computer-groups > table > tbody > tr > td.button-container {
             width: 100px;
             text-align: right; }
-          .settings > .script-content > table > tbody > tr > td > .edit-script, .settings > .script-content > table > tbody > tr > td > .remove-script, .settings .powerConsumption-content > table > tbody > tr > td > .edit-script, .settings .powerConsumption-content > table > tbody > tr > td > .remove-script {
+          .settings > .script-content > table > tbody > tr > td > .edit-script, .settings > .script-content > table > tbody > tr > td > .remove-script, .settings .powerConsumption-content > table > tbody > tr > td > .edit-script, .settings .powerConsumption-content > table > tbody > tr > td > .remove-script, .settings .computer-groups > table > tbody > tr > td > .edit-script, .settings .computer-groups > table > tbody > tr > td > .remove-script {
             font-family: Calibri;
             color: rgba(26, 26, 26, 0.7);
             font-size: 14.83px;
@@ -384,7 +395,7 @@ nav {
             text-align: left;
             float: right;
             display: block; }
-            .settings > .script-content > table > tbody > tr > td > .edit-script:before, .settings > .script-content > table > tbody > tr > td > .remove-script:before, .settings .powerConsumption-content > table > tbody > tr > td > .edit-script:before, .settings .powerConsumption-content > table > tbody > tr > td > .remove-script:before {
+            .settings > .script-content > table > tbody > tr > td > .edit-script:before, .settings > .script-content > table > tbody > tr > td > .remove-script:before, .settings .powerConsumption-content > table > tbody > tr > td > .edit-script:before, .settings .powerConsumption-content > table > tbody > tr > td > .remove-script:before, .settings .computer-groups > table > tbody > tr > td > .edit-script:before, .settings .computer-groups > table > tbody > tr > td > .remove-script:before {
               margin-right: 5px; }
 
 * {

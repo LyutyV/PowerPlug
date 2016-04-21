@@ -94,7 +94,23 @@
     {
         padding-top: 12px;
     }
-    > .script-content, .powerConsumption-content 
+    > .computer-groups  {
+        
+        .members-header{
+            height:46px;
+            line-height:46px;
+        }
+        li {
+            list-style-type: none;
+            height: 46px;
+            font-family: Calibri; 
+            border-bottom: 1px solid #ddd;
+            line-height: 46px;
+        }
+        li:last-child { border-bottom: none; }
+
+    }
+    > .script-content, .powerConsumption-content, .computer-groups  
     {
         > span {
             font-family: Calibri;
@@ -149,7 +165,7 @@
                 > tr {
                     border: none;
                     outline: none;
-                    &.bg-script-selected {
+                    &.bg-row-selected {
                         background-color: rgba(242,242,242,0.6);
                     }
                     > td {
