@@ -9,7 +9,7 @@
                     <td>Description</td>
                     <td colspan="2">
                         <span class="buttonTypeOne import-script">Import</span>
-                        <span class="buttonTypeOne add-script" ng-click="vm.showScriptDialog(0)">Add</span>
+                        <span class="buttonTypeOneAdd add-script" ng-click="vm.showScriptDialog(0)">Add</span>
                     </td>
                 </tr>
             </thead>
@@ -18,8 +18,8 @@
                     <td>{{ script.scriptName}}</td>
                     <td>{{ script.owner}}</td>
                     <td>{{ script.scriptDesc}}</td>
-                    <td class="button-container"><span class="buttonTypeOne edit-script" ng-click="vm.showScriptDialog(script.scriptId)">Edit</span></td>
-                    <td class="button-container button-padding"><span class="buttonTypeOne remove-script" ng-click="vm.removeScript(script.scriptId)">Remove</span></td>                    
+                    <td class="button-container"><span class="buttonTypeOneEdit edit-script" ng-click="vm.showScriptDialog(script.scriptId)">Edit</span></td>
+                    <td class="button-container button-padding"><span class="buttonTypeOneRemove remove-script" ng-click="vm.removeScript(script.scriptId)">Remove</span></td>                    
                 </tr>
             </tbody>
         </table>
