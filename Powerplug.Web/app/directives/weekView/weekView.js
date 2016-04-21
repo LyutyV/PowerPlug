@@ -20,9 +20,31 @@ angular
         },
         post: function(scope,element) {
           var dayList = ['sun','mon','tue','wed','thu','fri','sat'];
-          var datyViewlLmit = {
+
+          scope.datyViewlLmit = {
+            begin: 0,
+            end:24,
+            flag:false
+          };
+          var defaultDatyViewlLmit = {
             begin: 0,
             end:24
+          };
+          var restrictedDatyViewlLmit = {
+            begin: 9,
+            end:18.3
+          };
+
+          scope.timeLimitChange = function() {
+            if(!scope.datyViewlLmit.flag ){
+              scope.datyViewlLmit.begin = defaultDatyViewlLmit.begin;
+              scope.datyViewlLmit.end = defaultDatyViewlLmit.end;
+            }
+            else{
+              scope.datyViewlLmit.begin = restrictedDatyViewlLmit.begin;
+              scope.datyViewlLmit.end = restrictedDatyViewlLmit.end;
+            }
+            scope.timeIntervalChange();
           }
 
           var fromListToWeekWorkTime= function(callback){
@@ -221,7 +243,7 @@ angular
                     }
 
                     temp = Number((temp / 16).toFixed(0));
-                    temp +=  (decToTime(datyViewlLmit.begin ) /scope.timeInterval.value);
+                    temp +=  (decToTime(scope.datyViewlLmit.begin ) /scope.timeInterval.value);
 
                     scope.workTime[$(ui.helper[0]).attr('day')][$(ui.helper[0]).attr('num')].end = decToTime(Number(temp*scope.timeInterval.value));
 
@@ -254,7 +276,7 @@ angular
 
 
                       pos.top = Number((pos.top / 16).toFixed(0));
-                      pos.top +=  (decToTime(datyViewlLmit.begin ) /scope.timeInterval.value);
+                      pos.top +=  (decToTime(scope.datyViewlLmit.begin ) /scope.timeInterval.value);
 
                       var temp = scope.workTime[$(ui.helper[0]).attr('day')][$(ui.helper[0]).attr('num')];
 
@@ -307,8 +329,8 @@ angular
             for (var i in scope.workTime){
                 scope.workTimePos[i] = [];
               for (var j in scope.workTime[i]){
-                scope.workTimePos[i][j]={begin : Number((timeToDec(scope.workTime[i][j].start - datyViewlLmit.begin)/ scope.timeInterval.value).toFixed()) * 16};
-                scope.workTimePos[i][j].size = Number((timeToDec(scope.workTime[i][j].end - datyViewlLmit.begin)/ scope.timeInterval.value).toFixed()) * 16;
+                scope.workTimePos[i][j]={begin : Number((timeToDec(scope.workTime[i][j].start - scope.datyViewlLmit.begin)/ scope.timeInterval.value).toFixed()) * 16};
+                scope.workTimePos[i][j].size = Number((timeToDec(scope.workTime[i][j].end - scope.datyViewlLmit.begin)/ scope.timeInterval.value).toFixed()) * 16;
                 scope.workTimePos[i][j].size -= scope.workTimePos[i][j].begin;
               }
             }
@@ -319,7 +341,7 @@ angular
             if ($(e.target).attr('daypos')){
 
               var temp = Math.floor((e.offsetY / 16));
-              temp +=  (decToTime(datyViewlLmit.begin ) /scope.timeInterval.value);
+              temp +=  (decToTime(scope.datyViewlLmit.begin ) /scope.timeInterval.value);
 
               scope.workTime[$(e.target).attr('daypos')].unshift({
                 start: decToTime(temp * scope.timeInterval.value),
@@ -386,10 +408,10 @@ angular
           var timeLineSuccess = false;
 
           var timeLineBuild = function(){
-            var curTime = datyViewlLmit.begin;
+            var curTime = scope.datyViewlLmit.begin;
             scope.timeLine = [];
 
-            while (curTime <= datyViewlLmit.end){
+            while (curTime <= scope.datyViewlLmit.end){
               scope.timeLine.push(Number(Math.floor(curTime)) + Number((((curTime - Math.floor(curTime)) * 0.6)).toFixed(2)));
               curTime += scope.timeInterval.value;
             }
@@ -430,7 +452,7 @@ angular
             for (var i in scope.eventsTime) {
               for (var j in scope.eventsTime[i]) {
                 scope.eventsTimePos[i][j] = _.clone(scope.eventsTime[i][j]);
-                scope.eventsTimePos[i][j].pos = Math.floor(timeToDec(scope.eventsTime[i][j].start - datyViewlLmit.begin)/ scope.timeInterval.value * 16 + 2 );
+                scope.eventsTimePos[i][j].pos = Math.floor(timeToDec(scope.eventsTime[i][j].start - scope.datyViewlLmit.begin)/ scope.timeInterval.value * 16 + 2 );
                 scope.eventsTimePos[i][j].viewPopup = false;
               }
             }

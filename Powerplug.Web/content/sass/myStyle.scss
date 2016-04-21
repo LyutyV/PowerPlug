@@ -775,6 +775,55 @@ div[ui-view="workhoursaction"] {
         width: 100%;
     }
 }
+
+.time-lmit-block{
+    position: relative;
+
+    line-height: 75px;
+    padding-left: 30px;
+    color:#494949;
+    input.custom-checkbox-green-type01 {
+       display: none;
+       &+label {
+           margin: 0;
+           font-family: Calibri;
+           color: rgba(26, 26, 26, 0.7);
+           font-size: 13px;
+           font-weight: 300;
+           letter-spacing: -0.169px;
+           line-height: 14px;
+           text-align: left;
+       }
+       &+label::before {
+           position: absolute;
+           content: '';
+           height: 17px;
+           width: 17px;
+           left: 0px;
+           top: 28px;
+           border: 1px solid #d9d9d9 ;
+       }
+       &:checked + label::before {
+           position: absolute;
+           content: '\f00c';
+           font-family: 'FontAwesome';
+           color: #a3d165 ;
+           height: 17px;
+           width: 17px;
+           left: 0px;
+           top: 28px;
+           border: 1px solid #d9d9d9 ;
+           text-align: center;
+           line-height: 17px;
+       }
+    }
+    .thin-text{
+        font-weight: 300;
+    }
+    .thick-text{
+        font-weight: 700;
+    }
+}
 //Saving Plan Styles
 .savingPlans > div#organizationName > .customTable > .customTableHead > div:focus {
     outline: none;
