@@ -45,7 +45,6 @@ angular
               scope.datyViewlLmit.end = restrictedDatyViewlLmit.end;
             }
             scope.timeIntervalChange();
-            console.log(scope.datyViewlLmit);
           }
 
           var fromListToWeekWorkTime= function(callback){
