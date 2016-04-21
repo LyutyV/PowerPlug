@@ -1,4 +1,4 @@
-﻿<div class="panel-body">
+﻿<!-- <div class="panel-body">
     <div><button ng-click="addSavingApplication($event, -1, worktype)" class="btn btn-success">Add</button></div>
     <table class="table table-striped">
         <thead>
@@ -16,4 +16,27 @@
             </tr>
         </tbody>
     </table>
+</div> -->
+
+<div class="container-fluid">
+    <span>Do not Perform the operation while:</span>
+    <span class="buttonTypeOneRemove">Remove</span>
+    <span class="buttonTypeOneEdit">Edit</span>
+    <span class="buttonTypeOneAdd" ng-click="addSavingApplication($event, -1, worktype)">Add</span>
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-4">Application</div>
+                <div class="col-xs-4">Condition</div>
+            </div>
+            <div class="row">
+                <ul>
+                    <li ng-repeat="application in  appMetrics">
+                        <div class="col-xs-4">{{application.appName}}</div>
+                        <div class="col-xs-8">{{application.counter.toLowerCase() === "cpu" ? "CPU usage > " + application.threshold + " percent" : application.counter.toLowerCase() === "io" ? "IO > " + (application.threshold / 1024) + " KB/Sec" : application.counter}}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
