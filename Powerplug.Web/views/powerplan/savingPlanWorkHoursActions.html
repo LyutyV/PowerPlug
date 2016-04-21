@@ -1,12 +1,13 @@
 <div>
     <h3>Work Hours & Actions</h3>
-    <span class="buttonTypeOneAdd">Add</span>
+    <span class="buttonTypeOneAdd" ng-click="vm.createNewAction('Restart', vm.savingPlan.actions)">Add Restart</span>
+    <span class="buttonTypeOneAdd" ng-click="vm.createNewAction('Wake', vm.savingPlan.actions)">Add Wakeup</span>
 </div>
 <div class="clearfix" style="padding-bottom:30px;">
     <week-view data-actions='vm.savingPlan.actions' data-work-time-list='vm.workTime' work-time-change="vm.workTimeChange(data)" action-remove="vm.actionRemove(data)" action-edit="vm.actionEdit(data)"></week-view>
 </div>
 
-<h3>Work Hours & Actions</h3>
+<!-- <h3>Work Hours & Actions</h3>
 <div class="clearfix" style="padding-bottom:30px;">
     <div id="calendar" style="max-width: 1050px;margin: 0 auto;float:left;">
     </div>
@@ -29,7 +30,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- <uib-tabset active="active">
     <uib-tab index="0" heading="Work Hours">
         <div class="panel-body">

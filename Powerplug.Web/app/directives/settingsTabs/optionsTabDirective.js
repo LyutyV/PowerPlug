@@ -3,13 +3,28 @@
     angular
         .module('powerPlug').directive('optionsTab', function () {
             return {
-                templateUrl: '../../../views/powerplan/settingsTabs/options.html',     
+                templateUrl: '../../../views/powerplan/settingsTabs/options.html',
                 scope: {
                     jsonobject: '=',
                     saveEvent: '=' //Indcates there is no event that save the data to json .. every change is made will be made on the original json
                 },
                 link: function (scope, element, attrs) {
-                 
+                  
+                  // This code set's different id for checkboxes
+                  function setId(){
+                    var inputArr = element.find('input');
+                    var labelArr = element.find('label');
+
+                    for (var i = 0; i < labelArr.length; i++) {
+                      var rand = Math.random();
+                      inputArr[i].setAttribute('id', rand);
+                      labelArr[i].setAttribute('for', rand);
+                    }
+                  };
+                  setId();
+                  // End this code set's different id for checkboxes
+
+
                     //copy array appMetrics - init
                     if (!scope.saveEvent) {
                         scope.$watch('jsonobject', function (newValue, oldValue){
