@@ -1,20 +1,109 @@
-md-dialog.addComputerWrapper > md-toolbar {
-  background-color: #ffffff;
-  padding-left: 32px;
-  padding-right: 34px;
-  min-height: 110px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; }
-  md-dialog.addComputerWrapper > md-toolbar > div {
-    font-family: Calibri;
-    color: rgba(26, 26, 26, 0.7);
-    font-size: 24px;
-    font-weight: 300;
-    text-align: left; }
-  md-dialog.addComputerWrapper > md-toolbar > img {
-    cursor: pointer; }
+md-dialog.addComputerWrapper {
+  min-height: 80%; }
+  md-dialog.addComputerWrapper > md-toolbar {
+    background-color: #ffffff;
+    padding-left: 32px;
+    padding-right: 34px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    md-dialog.addComputerWrapper > md-toolbar > div {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 24px;
+      font-weight: 300;
+      text-align: left; }
+    md-dialog.addComputerWrapper > md-toolbar > img {
+      cursor: pointer; }
+  md-dialog.addComputerWrapper > md-content > div:first-child {
+    padding-left: 33px;
+    padding-right: 22px; }
+    md-dialog.addComputerWrapper > md-content > div:first-child > ul {
+      border-bottom: 5px solid #8cc63f;
+      margin-bottom: 18px; }
+      md-dialog.addComputerWrapper > md-content > div:first-child > ul > li > a {
+        padding: 0 30px;
+        height: 44px;
+        line-height: 44px; }
+    md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child {
+      padding-right: 0px;
+      border-left: 1px solid #cccccc; }
+      md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:first-child > div.col-xs-12 {
+        padding: 0px;
+        display: flex;
+        align-items: center; }
+        md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:first-child > div.col-xs-12 > span {
+          font-family: Calibri;
+          color: #4d4d4d;
+          font-size: 18px;
+          font-weight: 700;
+          text-align: left;
+          margin-right: 53px; }
+        md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:first-child > div.col-xs-12 > input {
+          flex-grow: 1;
+          height: 33px; }
+      md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 {
+        padding: 0px; }
+        md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid {
+          padding: 0px; }
+          md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > thead {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.182px; }
+          md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody {
+            font-family: Calibri;
+            color: #333333;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: -0.182px;
+            background-color: #ffffff; }
+            md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 {
+              display: none; }
+              md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 + label {
+                position: relative;
+                margin: 0;
+                height: 15px;
+                width: 35px; }
+              md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 + label::before {
+                position: absolute;
+                content: '';
+                height: 15px;
+                width: 15px;
+                border: 1px solid #d9d9d9;
+                left: 10px;
+                top: 3px; }
+              md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00:checked + label::before {
+                position: absolute;
+                content: '\f00c';
+                font-family: 'FontAwesome';
+                color: #a3d165;
+                height: 15px;
+                width: 15px;
+                border: 1px solid #d9d9d9;
+                text-align: center;
+                line-height: 15px;
+                left: 10px;
+                top: 3px; }
+  md-dialog.addComputerWrapper > md-content > div:last-child {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 15px 0; }
+    md-dialog.addComputerWrapper > md-content > div:last-child > button {
+      height: 40px;
+      width: 120px;
+      border: none;
+      font-family: Calibri;
+      color: #ffffff;
+      font-size: 20.3px;
+      font-weight: 700; }
+      md-dialog.addComputerWrapper > md-content > div:last-child > button:first-child {
+        background-color: #8cc63f; }
+      md-dialog.addComputerWrapper > md-content > div:last-child > button:last-child {
+        background-color: #808080; }
 
 md-dialog.addScript > md-toolbar {
   background-color: #ffffff;
@@ -319,7 +408,7 @@ div[ui-view="workhoursaction"] > div:first-child {
     font-size: 23px;
     font-weight: 300;
     float: left;
-    margin: 0px; }
+    margin: 0; }
   div[ui-view="workhoursaction"] > div:first-child > span.buttonTypeOneAdd {
     float: right;
     font-family: Calibri;
@@ -330,6 +419,8 @@ div[ui-view="workhoursaction"] > div:first-child {
     div[ui-view="workhoursaction"] > div:first-child > span.buttonTypeOneAdd:before {
       margin-right: 5px;
       font-size: 20px; }
+    div[ui-view="workhoursaction"] > div:first-child > span.buttonTypeOneAdd:last-child {
+      margin-right: 30px; }
 
 .week-view-total {
   position: relative;
@@ -640,7 +731,7 @@ div[ui-view="workhoursaction"] > div:first-child {
       content: '';
       height: 17px;
       width: 17px;
-      left: 0px;
+      left: 0;
       top: 28px;
       border: 1px solid #d9d9d9; }
     .time-lmit-block input.custom-checkbox-green-type01:checked + label::before {
@@ -650,7 +741,7 @@ div[ui-view="workhoursaction"] > div:first-child {
       color: #a3d165;
       height: 17px;
       width: 17px;
-      left: 0px;
+      left: 0;
       top: 28px;
       border: 1px solid #d9d9d9;
       text-align: center;

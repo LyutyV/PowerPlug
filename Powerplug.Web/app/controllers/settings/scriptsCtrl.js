@@ -35,10 +35,10 @@
         vm.selectScript = function (ev) {
             if (ev.target.tagName.toLowerCase() !== 'span') {
                 angular.forEach(angular.element('.script-row'), function (value) {
-                    value.className = value.className.replace('bg-script-selected', '');
+                    value.className = value.className.replace('bg-row-selected', '');
                 });
 
-                ev.target.parentNode.className = ev.target.parentNode.className + ' bg-script-selected';
+                ev.target.parentNode.className = ev.target.parentNode.className + ' bg-row-selected';
                 var scriptId = ev.target.parentNode.attributes["data-id"].value;
                 angular.forEach(vm.scripts, function (value) {
                     if (value.scriptId === Number(scriptId)) {

@@ -10,21 +10,21 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12">
-            <input type="checkbox" id="01" name="chb1" class="custom-checkbox-green-type01" ng-model="options.force">
-            <label for="01">Force operation</label>
+        <div class="col-xs-12 labelWrapper">
+            <input type="checkbox" class="custom-checkbox-green-type01" ng-model="options.force">
+            <label>Force operation</label>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <input type="checkbox" id="02" name="chb2" class="custom-checkbox-green-type01" ng-model="options.logoff">
-            <label for="02">Logoff before power saving operation</label>
+            <input type="checkbox" class="custom-checkbox-green-type01" ng-model="options.logoff">
+            <label>Logoff before power saving operation</label>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <input type="checkbox" id="03" name="chb3" class="custom-checkbox-green-type01" ng-model="options.messageChecked" ng-change="updateMessage()">
-            <label for="03">Display a message to the user</label>
+            <input type="checkbox" class="custom-checkbox-green-type01" ng-model="options.messageChecked" ng-change="updateMessage()">
+            <label>Display a message to the user</label>
             <button>Specify</button>
         </div>
     </div>
