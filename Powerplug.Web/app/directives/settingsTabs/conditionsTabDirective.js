@@ -16,7 +16,7 @@
                         scope.jsonobject.hoursLastBoot = scope.hoursLastBoot;
                         scope.jsonobject.idleTime = scope.idleTime;
                     });
-                   
+
                 }
             }
         })
