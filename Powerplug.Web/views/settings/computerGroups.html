@@ -1,58 +1,57 @@
 ﻿<div class="settings">
-    <div style="font-size:large">
-        Computer Groups
-    </div>
     <div class="computer-groups">
-        <div class="clearfix"><div class="pull-right"><span ng-click="addComputerGroup()" class="buttonTypeOneAdd">Add</span></div></div>
+        <span> Computer Groups</span>
         <table class="table">
             <thead>
                 <tr>
                     <td>Name</td>
                     <td>Owner</td>
                     <td>Description</td>
-                    <td></td>
-                    <td></td>
+                    <td colspan="2"> <span ng-click="addComputerGroup()" class="buttonTypeOneAdd  action-settings">Add</span> </td>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="computerGroup in vm.computerGroups" class="computer-group-row" ng-class="{ 'bg-row-selected': $index == vm.selectedGroupIndex }"  
+                <tr ng-repeat="computerGroup in vm.computerGroups" class="computer-group-row" ng-class="{ 'bg-row-selected': $index == vm.selectedGroupIndex }"
                     data-id="{{computerGroup.compGroupId}}" ng-click="vm.selectComputerGroup($index)">
                     <td>{{ computerGroup.groupName}}</td>
                     <td>{{ computerGroup.owner}}</td>
                     <td>{{ computerGroup.groupDesc}}</td>
-                    <td><span ng-click="editComputerGroup()" class="buttonTypeOneEdit">Edit</span></td>
-                    <td><span ng-click="removeComputerGroup()" class="buttonTypeOneRemove">Remove</span></td>
+                    <td style="width: 250px;"><span ng-click="editComputerGroup()" class="buttonTypeOneEdit  action-settings">Edit</span></td>
+                    <td style="width: 150px;"><span ng-click="removeComputerGroup()" class="buttonTypeOneRemove action-settings">Remove</span></td>
                 </tr>
             </tbody>
         </table>
-        <div class="green-line">
-            <div class="members-header">
-                <span> Memeber Definition</span>
-                <div class="computer-group-action" ng-click="vm.openAddDialog()">
-                    <span class="buttonTypeOneAdd">Add</span>
-                </div>
-                <div class="computer-group-action">
-                    <select ng-model="vm.popupType" ng-options="option.value as option.name for option in vm.popupTypeOptions"></select>
-               </div>
-                <div class="computer-group-action">
-                    <select>
-                        <option>Include</option>
-                        <option>Exclude</option>
-                    </select>
-                </div>
-            </div>
-            <ul>
-                <li ng-repeat="computer in vm.groupMembersHash[vm.selectedGroupId].members">
-                    <span> {{computer.memberDef}} </span>
-                    <div class="computer-group-action">
-                        <span class="buttonTypeOneEdit">Edit</span>
-                    </div>
-                    <div class="computer-group-action">
-                        <span class="buttonTypeOneRemove">Remove</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
+
+        <uib-tabset active="active">
+            <uib-tab index="0" heading="Members">
+                <div class="green-line"> </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td class=''>Memeber Definition</td>
+                            <td colspan="2">
+                                <span class="buttonTypeOneAdd action-settings" ng-click="vm.openAddDialog()">Add</span>
+                                <select ng-model="vm.popupType" class="action-settings big-select" ng-options="option.value as option.name for option in vm.popupTypeOptions"></select>
+                                <select class="action-settings big-select">
+                                    <option>Include</option>
+                                    <option>Exclude</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="computer in vm.groupMembersHash[vm.selectedGroupId].members">
+                            <td>{{computer.memberDef}} </td>
+                            <td style="width: 450px; "> <span class="buttonTypeOneEdit action-settings">Edit</span> </td>
+                            <td style="width:150px;"> <span class="buttonTypeOneRemove action-settings">Remove</span> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </uib-tab>
+            <uib-tab index="1" heading="Security">
+                <div style="margin-bottom:100px;"></div>
+            </uib-tab>
+        </uib-tabset>
     </div>
     <div class="save-button-margin"></div>
     <div class="buttons-container">
@@ -61,7 +60,7 @@
             <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
         </div>
     </div>
-    
+
 </div>
 <style>
     div.content-wrapper {
