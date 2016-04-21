@@ -1,3 +1,31 @@
-﻿     <div><input type="checkbox" ng-model="options.force" /> Force operation</div>
-    <div><input type="checkbox" ng-model="options.logoff" /> Logoff before power saving operation</div>
-    <div><input type="checkbox" ng-model="options.messageChecked" ng-change="updateMessage()" /> Display a message to the user</div>
+<!--
+<div>
+    <input type="checkbox" ng-model="options.force" /> Force operation</div>
+<div>
+    <input type="checkbox" ng-model="options.logoff" /> Logoff before power saving operation</div>
+<div>
+    <input type="checkbox" ng-model="options.messageChecked" ng-change="updateMessage()" /> Display a message to the user</div> -->
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <input type="checkbox" id="01" name="chb1" class="custom-checkbox-green-type01" ng-model="options.force">
+            <label for="01">Force operation</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <input type="checkbox" id="02" name="chb2" class="custom-checkbox-green-type01" ng-model="options.logoff">
+            <label for="02">Logoff before power saving operation</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <input type="checkbox" id="03" name="chb3" class="custom-checkbox-green-type01" ng-model="options.messageChecked" ng-change="updateMessage()">
+            <label for="03">Display a message to the user</label>
+            <button>Specify</button>
+        </div>
+    </div>
+</div>

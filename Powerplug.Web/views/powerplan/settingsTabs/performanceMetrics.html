@@ -1,4 +1,4 @@
-﻿<div>
+﻿<!-- <div>
     <input type="checkbox" ng-attr-id="{{worktype + 'Cpu'}}" ng-model="isCpu" ng-change="ShouldOnChangeUpdateJson()"/> CPU utilization is above
     <input type="number" min="0" max="100" ng-attr-id="{{worktype + 'CpuText'}}" ng-model="cpuThreshold" ng-change="ShouldOnChangeUpdateJson()" /> Percent
 </div>
@@ -9,4 +9,35 @@
 <div>
     <input type="checkbox" ng-attr-id="{{worktype + 'Network'}}" ng-model="isNetwork" ng-change="ShouldOnChangeUpdateJson()" /> Network I/O operations are above
     <input type="number" min="0"  ng-attr-id="{{worktype + 'NetworkText'}}" ng-model="networkThresholdInKb" ng-change="ShouldOnChangeUpdateJson()" /> KB/Second
+</div> -->
+
+
+<div class="container-fluid">
+    <span>Do not Perform the operation while:</span>
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                  <input type="checkbox" ng-attr-id="{{worktype + 'Cpu'}}" ng-model="isCpu" ng-change="ShouldOnChangeUpdateJson()" class="custom-checkbox-green-type01"/>
+                  <label for="{{worktype + 'Cpu'}}">CPU utilization is above</label>
+                  <input type="number" min="0" max="100" ng-attr-id="{{worktype + 'CpuText'}}" ng-model="cpuThreshold" ng-change="ShouldOnChangeUpdateJson()" /> Percent
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                  <input type="checkbox" ng-attr-id="{{worktype + 'Io'}}" ng-model="isIo" ng-change="ShouldOnChangeUpdateJson()" class="custom-checkbox-green-type01"/>
+                  <label for="{{worktype + 'Io'}}">Disk I/O operations are above</label>
+                  <input type="number" min="0" ng-attr-id="{{worktype + 'IoText'}}"  ng-model="ioThresholdInKb" ng-change="ShouldOnChangeUpdateJson()"/> KB/Second
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                  <input type="checkbox" ng-attr-id="{{worktype + 'Network'}}" ng-model="isNetwork" ng-change="ShouldOnChangeUpdateJson()" class="custom-checkbox-green-type01"/>
+                  <label for="{{worktype + 'Network'}}">Network I/O Operations are above</label>
+                  <input type="number" min="0"  ng-attr-id="{{worktype + 'NetworkText'}}" ng-model="networkThresholdInKb" ng-change="ShouldOnChangeUpdateJson()" /> KB/Second
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
