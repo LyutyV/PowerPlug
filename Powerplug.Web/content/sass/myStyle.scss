@@ -2169,6 +2169,34 @@ input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child
     }
     .modal-body{
         padding-bottom: 35px;
+        input[type="number"]{
+                        background: transparent;
+                        height: 32px;
+                        padding: 0px 0 0px 10px;
+                        border: 1px solid #d9d9d9;
+                        font-size: 14px;
+                        line-height: 20px;
+        }
+        input[type="time"]{
+                        background: transparent;
+                        height: 32px;
+                        padding: 0px 0 0px 10px;
+                        border: 1px solid #d9d9d9;
+                        font-size: 14px;
+                        line-height: 32px;
+                        margin: 0 10px;
+-webkit-appearance:none;
+        }
+
+input[type="time"]::-webkit-clear-button {
+   display: none;
+-webkit-appearance:none;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator{
+   display: none;
+-webkit-appearance:none;
+}
         hr{
           border-top: 1px solid #ccc;
         }
@@ -2271,7 +2299,7 @@ input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child
                     select{
                         border-radius: 0;
                         background: transparent;
-                        height: 34px;
+                        height: 32px;
                         padding: 5px;
                         border: 1px solid #d9d9d9;
                         font-size: 14px;
