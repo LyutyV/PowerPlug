@@ -1398,158 +1398,203 @@ input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child
 
 /********************************************/
 /* action calendar popup form*/
-@media (min-width: 768px) {
-  .action-calendar .modal-dialog {
-    width: 930px !important; } }
+/*@media (min-width: 768px){
+    .action-calendar .modal-dialog {
+        width: 930px!important;
+    }
+}
 
-.action-calendar .modal-content {
-  border-radius: 0px; }
+.action-calendar{
+    .modal-content{
+        border-radius: 0px;
+    }
+    .modal-header{
+        border-bottom: 0px;
+        padding-top:2   5px;
+        .title-before{
+            display: inline-block;
+            padding-right: 20px;
+            border-right: 1px solid #9b9b9b;
+            color:#9b9b9b;
+            font-size:24px;
+            font-weight: 100;
+        }
+        .title{
+            display: inline-block;
+            padding-left: 15px;
+            color:#7b7b7b;
+            font-size:24px;
+            font-weight: 100;
+        }
+        .close-btn{
+            line-height: 29px;
+            font-weight: 100;
+            color: #868686;
+            font-size: 20px;
+        }
+    }
+    .modal-body{
+        padding-bottom: 35px;
+        input[type="number"]{
+                        background: transparent;
+                        height: 32px;
+                        padding: 0px 0 0px 10px;
+                        border: 1px solid #d9d9d9;
+                        font-size: 14px;
+                        line-height: 20px;
+        }
+        input[type="time"]{
+                        background: transparent;
+                        height: 32px;
+                        padding: 0px 0 0px 10px;
+                        border: 1px solid #d9d9d9;
+                        font-size: 14px;
+                        line-height: 32px;
+                        margin: 0 10px;
+-webkit-appearance:none;
+        }
 
-.action-calendar .modal-header {
-  border-bottom: 0px;
-  padding-top: 2   5px; }
-  .action-calendar .modal-header .title-before {
-    display: inline-block;
-    padding-right: 20px;
-    border-right: 1px solid #9b9b9b;
-    color: #9b9b9b;
-    font-size: 24px;
-    font-weight: 100; }
-  .action-calendar .modal-header .title {
-    display: inline-block;
-    padding-left: 15px;
-    color: #7b7b7b;
-    font-size: 24px;
-    font-weight: 100; }
-  .action-calendar .modal-header .close-btn {
-    line-height: 29px;
-    font-weight: 100;
-    color: #868686;
-    font-size: 20px; }
+input[type="time"]::-webkit-clear-button {
+   display: none;
+-webkit-appearance:none;
+}
 
-.action-calendar .modal-body {
-  padding-bottom: 35px; }
-  .action-calendar .modal-body input[type="number"] {
-    background: transparent;
-    height: 32px;
-    padding: 0px 0 0px 10px;
-    border: 1px solid #d9d9d9;
-    font-size: 14px;
-    line-height: 20px; }
-  .action-calendar .modal-body input[type="time"] {
-    background: transparent;
-    height: 32px;
-    padding: 0px 0 0px 10px;
-    border: 1px solid #d9d9d9;
-    font-size: 14px;
-    line-height: 32px;
-    margin: 0 10px;
-    -webkit-appearance: none; }
-  .action-calendar .modal-body input[type="time"]::-webkit-clear-button {
+input[type="time"]::-webkit-calendar-picker-indicator{
+   display: none;
+-webkit-appearance:none;
+}
+        hr{
+          border-top: 1px solid #ccc;
+        }
+        .body-enter{
+
+            color:#333333;
+            font-size:16px;
+            font-weight: bold;
+        }
+        .action-type-select{
+            padding: 15px 0;
+            .left-col{
+                padding-right: 0px;
+            }
+            .datepicker-wrape{
+                border:1px solid #d9d9d9;
+                display: inline-block;
+                width: 120px;
+                z-index: 50;
+            }
+            .ratio-label{
+                color:#7b7b7b;
+                font-weight: bold;
+                margin-bottom: 0px;
+                span span{
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            .md-datepicker-input-mask{
+                display: none;
+            }
+
+        }
+        .keepMonitorOn{
+            display: inline-block;
+            margin: 15px 0;
+        }
+        .midle-text{
+            display: inline-block;
+            padding-right: 20px;
+            font-weight: 100;
+        }
+        .day-select{
+            position: relative;
+            display: inline-block;
+            padding-left: 30px;
+            padding-right: 15px;
+            line-height: 30px;
+        }
+        input.custom-checkbox-green-type01 {
+           display: none;
+           &+label {
+               margin: 0;
+               font-family: Calibri;
+               color: rgba(26, 26, 26, 0.7);
+               font-size: 14px;
+               font-weight: 300;
+               letter-spacing: -0.169px;
+               line-height: 16px;
+               text-align: left;
+           }
+           &+label::before {
+               position: absolute;
+               content: '';
+               height: 24px;
+               width: 24px;
+               left: 0px;
+               top: 2px;
+               border: 1px solid #d9d9d9 ;
+           }
+           &:checked + label::before {
+               position: absolute;
+               content: '\f00c';
+               font-family: 'FontAwesome';
+               color: #a3d165 ;
+               height: 24px;
+               width: 24px;
+               left: 0px;
+               top: 2px;
+               border: 1px solid #d9d9d9 ;
+               text-align: center;
+               line-height: 24px;
+           }
+        }
+        .nav-tabs{
+            width:100%;
+            li > a, .nav-tabs > li a:focus, .nav-tabs > li a:hover{
+                padding:5px 10px!important;
+            }
+        }
+        .uibTabSet{
+            margin-top: 20px;
+            .conditions{
+                div{
+                    padding: 25px 0 0 0;
+                    label{
+                        font-weight: 100;
+                    }
+                    select{
+                        border-radius: 0;
+                        background: transparent;
+                        height: 32px;
+                        padding: 5px;
+                        border: 1px solid #d9d9d9;
+                        font-size: 14px;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+
+    }
+    .modal-footer{
+        border-top:0px;
+        background-color: #f2f2f2;
+        text-align: center;
+        .btn{
+            width: 100px;
+            border-radius: 0;
+            border: oldlace;
+        }
+        .add{
+            background-color: #8cc63f
+        }
+        .cancel{
+            background-color: #808080
+        }
+    }
+}
+
+.md-datepicker-input-mask{
     display: none;
-    -webkit-appearance: none; }
-  .action-calendar .modal-body input[type="time"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none; }
-  .action-calendar .modal-body hr {
-    border-top: 1px solid #ccc; }
-  .action-calendar .modal-body .body-enter {
-    color: #333333;
-    font-size: 16px;
-    font-weight: bold; }
-  .action-calendar .modal-body .action-type-select {
-    padding: 15px 0; }
-    .action-calendar .modal-body .action-type-select .left-col {
-      padding-right: 0px; }
-    .action-calendar .modal-body .action-type-select .datepicker-wrape {
-      border: 1px solid #d9d9d9;
-      display: inline-block;
-      width: 120px;
-      z-index: 50; }
-    .action-calendar .modal-body .action-type-select .ratio-label {
-      color: #7b7b7b;
-      font-weight: bold;
-      margin-bottom: 0px; }
-      .action-calendar .modal-body .action-type-select .ratio-label span span {
-        width: 15px;
-        height: 15px; }
-    .action-calendar .modal-body .action-type-select .md-datepicker-input-mask {
-      display: none; }
-  .action-calendar .modal-body .keepMonitorOn {
-    display: inline-block;
-    margin: 15px 0; }
-  .action-calendar .modal-body .midle-text {
-    display: inline-block;
-    padding-right: 20px;
-    font-weight: 100; }
-  .action-calendar .modal-body .day-select {
-    position: relative;
-    display: inline-block;
-    padding-left: 30px;
-    padding-right: 15px;
-    line-height: 30px; }
-  .action-calendar .modal-body input.custom-checkbox-green-type01 {
-    display: none; }
-    .action-calendar .modal-body input.custom-checkbox-green-type01 + label {
-      margin: 0;
-      font-family: Calibri;
-      color: rgba(26, 26, 26, 0.7);
-      font-size: 14px;
-      font-weight: 300;
-      letter-spacing: -0.169px;
-      line-height: 16px;
-      text-align: left; }
-    .action-calendar .modal-body input.custom-checkbox-green-type01 + label::before {
-      position: absolute;
-      content: '';
-      height: 24px;
-      width: 24px;
-      left: 0px;
-      top: 2px;
-      border: 1px solid #d9d9d9; }
-    .action-calendar .modal-body input.custom-checkbox-green-type01:checked + label::before {
-      position: absolute;
-      content: '\f00c';
-      font-family: 'FontAwesome';
-      color: #a3d165;
-      height: 24px;
-      width: 24px;
-      left: 0px;
-      top: 2px;
-      border: 1px solid #d9d9d9;
-      text-align: center;
-      line-height: 24px; }
-  .action-calendar .modal-body .nav-tabs {
-    width: 100%; }
-    .action-calendar .modal-body .nav-tabs li > a, .action-calendar .modal-body .nav-tabs .nav-tabs > li a:focus, .action-calendar .modal-body .nav-tabs .nav-tabs > li a:hover {
-      padding: 5px 10px !important; }
-  .action-calendar .modal-body .uibTabSet {
-    margin-top: 20px; }
-    .action-calendar .modal-body .uibTabSet .conditions div {
-      padding: 25px 0 0 0; }
-      .action-calendar .modal-body .uibTabSet .conditions div label {
-        font-weight: 100; }
-      .action-calendar .modal-body .uibTabSet .conditions div select {
-        border-radius: 0;
-        background: transparent;
-        height: 32px;
-        padding: 5px;
-        border: 1px solid #d9d9d9;
-        font-size: 14px;
-        line-height: 1; }
-
-.action-calendar .modal-footer {
-  border-top: 0px;
-  background-color: #f2f2f2;
-  text-align: center; }
-  .action-calendar .modal-footer .btn {
-    width: 100px;
-    border-radius: 0;
-    border: oldlace; }
-  .action-calendar .modal-footer .add {
-    background-color: #8cc63f; }
-  .action-calendar .modal-footer .cancel {
-    background-color: #808080; }
-
-.md-datepicker-input-mask {
-  display: none; }
+}
+*/
