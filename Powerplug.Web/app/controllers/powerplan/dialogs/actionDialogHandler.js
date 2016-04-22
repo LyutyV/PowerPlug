@@ -68,12 +68,25 @@
         modalInstance.result.then(function () { actionsArray.push(action) });//, function () {Dismiss});
     },
     openActionDialog: function (actionData, isNewAction) {
-       return actionDialogHandler.$uibModal.open({
+       var modal = actionDialogHandler.$uibModal.open({
             templateUrl: 'views/powerplan/dialogs/action.dialog.html',
             resolve: { param: function () { return { 'actionData': actionData, 'isNewAction': isNewAction } } },
             controller: actionDialogHandler.DialogController,
             windowClass : 'action-calendar'
         });
+
+        modal.rendered.then(function(){
+            $('.datetimepicker').datetimepicker({
+                format: 'LT',
+                defaultDate:actionData.fromTime
+            });
+        });
+
+        modal.closed.then(function(){
+            $('.datetimepicker').datetimepicker('remove');
+        });
+
+        return modal;
     },
 
     DialogController: function ($scope, $uibModalInstance, param){
@@ -121,6 +134,10 @@
         $scope.Saturday  = { dayInBit: 64, Value: GetSetDays }
         $scope.cancel = function () { $uibModalInstance.dismiss('cancel'); };
         $scope.Add = function () {
+            $scope.timeChosen = moment($('#atDate').val(),'hh:mm A')._d;
+            if ($('#toTime').val()){
+                $scope.toTime = moment($('#toTime').val(),'hh:mm A')._d;
+            }
             //Save - add data to json
             actionData.scheduleType = $scope.scheduleType;
             switch (actionData.scheduleType) {
@@ -141,7 +158,9 @@
 
             actionData.options.keepMonitorOn = $scope.checkbox.keepMonitorOn;
             actionData.options.keepAlive = $scope.keepAlive;
-            actionData.fromTime = $scope.timeChosen
+            actionData.fromTime = $scope.timeChosen;
+
+            actionHandler.getActionText(actionData);
             //brodcast event to directive
             $scope.$broadcast('saveSettings', { actionData: actionData });
             //Hide dialog

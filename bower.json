@@ -19,6 +19,8 @@
     "highcharts": "~4.2.3",
     "ng-scrollbars": "~0.0.10",
     "jquery-ui": "~1.11.4",
-    "angular-ui-tinymce": "https://github.com/vovatolstousov/ui-tinymce.git#~0.0.16"
+    "angular-ui-tinymce": "https://github.com/vovatolstousov/ui-tinymce.git#~0.0.16",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37",
+    "bootstrap": "~3.3.6"
   }
 }

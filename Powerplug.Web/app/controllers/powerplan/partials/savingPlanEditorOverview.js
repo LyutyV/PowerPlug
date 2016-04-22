@@ -48,9 +48,10 @@
         }
 
         overviewHandler.vm.actionEdit = function(action){
-          console.log(action);
+          var index = _.findIndex(overviewHandler.vm.savingPlan.actions,{actionKey:action});
+          overviewHandler.vm.openActionDialog(overviewHandler.vm.savingPlan.actions[index],false);
         }
-                
+
         varWorkDaysGraphArr = [];
         if (overviewHandler.vm.savingPlan.workDaysData) {
             angular.forEach(overviewHandler.vm.savingPlan.workDaysData, function (value, key) {

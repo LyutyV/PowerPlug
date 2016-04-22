@@ -985,6 +985,7 @@ div[ui-view="workhoursaction"] {
                                 .wrape-relative {
                                     position: relative;
                                     .popover-block {
+                                        outline: none;
                                         position: absolute;
                                         bottom: 15px;
                                         left: calc(-112px + 50%);
@@ -1000,6 +1001,19 @@ div[ui-view="workhoursaction"] {
                                             background-color: #29abe2;
                                             border: 1px solid #29abe2;
                                             width: 50%;
+                                            box-sizing: border-box;
+                                        }
+                                        .btndiv {
+                                            color: #fff;
+                                            cursor: pointer;
+                                            padding: 6px 12px;
+                                            border-radius: 0px!important;
+                                            margin: 0 !important;
+                                            background-color: #29abe2;
+                                            border: 1px solid #29abe2;
+                                            width: 50%;
+                                            float: left;
+                                            font-size: 14px;
                                             box-sizing: border-box;
                                         }
                                         .event-img {
@@ -2570,7 +2584,8 @@ input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child
 }
 /********************************************/
 /* action calendar popup form*/
-/*@media (min-width: 768px){
+/*
+@media (min-width: 768px){
     .action-calendar .modal-dialog {
         width: 930px!important;
     }
@@ -2607,34 +2622,35 @@ input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child
     }
     .modal-body{
         padding-bottom: 35px;
+        .time-picker-label{
+            display: inline-block;
+            line-height: 34px;
+            padding: 0 10px 0 5px;
+        }
         input[type="number"]{
-                        background: transparent;
-                        height: 32px;
-                        padding: 0px 0 0px 10px;
-                        border: 1px solid #d9d9d9;
-                        font-size: 14px;
-                        line-height: 20px;
+            background: transparent;
+            height: 32px;
+            padding: 0px 0 0px 10px;
+            border: 1px solid #d9d9d9;
+            font-size: 14px;
+            line-height: 20px;
         }
         input[type="time"]{
-                        background: transparent;
-                        height: 32px;
-                        padding: 0px 0 0px 10px;
-                        border: 1px solid #d9d9d9;
-                        font-size: 14px;
-                        line-height: 32px;
-                        margin: 0 10px;
--webkit-appearance:none;
+            background: transparent;
+            height: 32px;
+            padding: 0px 0 0px 10px;
+            border: 1px solid #d9d9d9;
+            font-size: 14px;
+            line-height: 32px;
+            margin: 0 10px;
+            -webkit-appearance:none;
         }
 
-input[type="time"]::-webkit-clear-button {
-   display: none;
--webkit-appearance:none;
-}
+        input[type="time"]::-webkit-clear-button {
+            display: none;
+            -webkit-appearance:none;
+        }
 
-input[type="time"]::-webkit-calendar-picker-indicator{
-   display: none;
--webkit-appearance:none;
-}
         hr{
           border-top: 1px solid #ccc;
         }
@@ -2746,7 +2762,10 @@ input[type="time"]::-webkit-calendar-picker-indicator{
                 }
             }
         }
-
+        .time-chuse-line{
+            display: flex;
+            align-items: center;
+        }
     }
     .modal-footer{
         border-top:0px;
@@ -2764,9 +2783,33 @@ input[type="time"]::-webkit-calendar-picker-indicator{
             background-color: #808080
         }
     }
+
+
 }
 
 .md-datepicker-input-mask{
     display: none;
+}*/
+
+.time-picker{
+    width:120px;
+    input{
+        border-radius: 0;
+        border-right: 0;
+    }
+    input:focus{
+        box-shadow: none;
+        border-color: #d4d4d4;
+    }
+    span{
+        border-radius: 0;
+    }
+    .input-group-addon{
+        padding:0 12px!important;
+        background-color: #fff;
+        .glyphicon{
+            display: block;
+            font-size: 12px;
+        }
+    }
 }
-*/

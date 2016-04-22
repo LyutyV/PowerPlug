@@ -106,18 +106,50 @@
 
             <hr />
             <div>
-              <div ng-if="perform == 'Wake'">
-                <label class="body-enter">
+              <div ng-if="perform == 'Wake'" class="time-chuse-line">
+                <span class="body-enter time-picker-label">
                     <b> At</b>
-                </label>
-                <input type="time" ng-model="timeChosen" />
-              </div>
-              <div ng-if="perform == 'Restart'">
-                <span class="body-enter">Btween</span>
-                <input type="time" ng-model="timeChosen" />
+                </span>
 
-                  <span class="body-enter">and</span>
-                <input type="time" ng-model="toTime" />
+
+
+                <div class="time-picker">
+                    <div class='input-group date datetimepicker'>
+                        <input type='text' id="atDate" class="form-control" />
+                        <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-triangle-top"></span>
+                          <span class="glyphicon glyphicon-triangle-bottom"></span>
+                        </span>
+                    </div>
+                </div>
+
+
+              </div>
+              <div ng-if="perform == 'Restart'" class="time-chuse-line">
+                <span class="body-enter time-picker-label">Btween</span>
+
+                <div class="time-picker">
+                    <div class='input-group date datetimepicker'>
+                        <input type='text' id="atDate" class="form-control" />
+                        <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-triangle-top"></span>
+                          <span class="glyphicon glyphicon-triangle-bottom"></span>
+                        </span>
+                    </div>
+                </div>
+
+                  <span class="body-enter time-picker-label">and</span>
+
+                  <div class="time-picker">
+                    <div class='input-group date datetimepicker'>
+                        <input type='text' id="toTime" class="form-control" />
+                        <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-triangle-top"></span>
+                          <span class="glyphicon glyphicon-triangle-bottom"></span>
+                        </span>
+                    </div>
+                </div>
+
               </div>
             </div>
               <hr />
