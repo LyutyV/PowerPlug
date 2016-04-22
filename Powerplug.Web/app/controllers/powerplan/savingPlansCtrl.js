@@ -14,7 +14,7 @@
         SavingPlansResource.basic.query(function (data) {
             vm.savingPlans = data;
             managePPListHandler.init(vm, $uibModal, SavingPlansResource);
-        }, function (error) {            
+        }, function (error) {
             if (error.status === 401 || error.status === -1)
             {
                 $state.go('login');

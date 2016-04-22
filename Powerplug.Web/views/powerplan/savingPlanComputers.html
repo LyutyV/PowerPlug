@@ -1,47 +1,66 @@
-﻿<h3>Computers</h3>
-<uib-tabset active="active">
-    <uib-tab index="0" heading="Computer Groups {{vm.savingPlan.compGroups.length}}">
-        <div class="clearfix" style="padding-top:20px;">            
-            <div class="pull-right" style="padding-left:30px;"><button class="btn btn-danger" ng-click="vm.removeComputerGroups()">Remove</button></div>
-            <div class="pull-right"><button class="btn btn-success" ng-click="vm.showAddComputerGroups()">Add Computer Groups</button></div>            
-        </div>
-        <div class="panel-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <td></td>
-                        <td>Computer Group Name</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="computerGroup in vm.savingPlan.compGroups">
-                        <td><input type="checkbox" data-id="{{computerGroup.groupGUID}}" class="computer-group-selection" /></td>
-                        <td>{{ computerGroup.groupName}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </uib-tab>
-    <uib-tab index="1" heading="Computers {{vm.savingPlan.computers.length}}">
-        <div class="clearfix" style="padding-top:20px;">
-            <div class="pull-right" style="padding-left:30px;"><button class="btn btn-danger" ng-click="vm.removeComputers()">Remove</button></div>
-            <div class="pull-right"><button class="btn btn-success" ng-click="vm.showAddComputers()">Add Computers</button></div>            
-        </div>
-        <div class="panel-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <td></td>
-                        <td>Computer Name</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="computer in vm.savingPlan.computers">
-                        <td><input type="checkbox" data-name="{{computer.name}}" class="computer-selection" /></td>
-                        <td>{{ computer.name}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </uib-tab>
-</uib-tabset>
+<div class="computersWrapper">
+  <uib-tabset active="active">
+      <uib-tab index="0">
+        <uib-tab-heading>
+          <span>Computer Groups</span>
+          <div><span>{{vm.savingPlan.compGroups.length}}</span></div>
+        </uib-tab-heading>
+          <div class="clearfix" style="padding-top:20px;">
+              <div class="pull-right" style="padding-left:30px;"><button class="btn btn-danger" ng-click="vm.removeComputerGroups()">Remove</button></div>
+              <div class="pull-right"><button class="btn btn-success" ng-click="vm.showAddComputerGroups()">Add Computer Groups</button></div>
+          </div>
+          <div class="panel-body">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <td></td>
+                          <td>Computer Group Name</td>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr ng-repeat="computerGroup in vm.savingPlan.compGroups">
+                          <td><input type="checkbox" data-id="{{computerGroup.groupGUID}}" class="computer-group-selection" /></td>
+                          <td>{{ computerGroup.groupName}}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </uib-tab>
+      <uib-tab index="1">
+        <uib-tab-heading>
+          <span>Computers</span>
+          <div><span>{{vm.savingPlan.computers.length}}</span></div>
+        </uib-tab-heading>
+          <div>
+              <span class="buttonTypeOneAdd" ng-click="vm.showAddComputers()">Add Computers</span>
+              <span class="buttonTypeOneRemove" ng-click="vm.removeComputers()">Remove</span>
+          </div>
+          <div>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-1">
+                  <!-- <input id="spc00" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.selectedAll" ng-click="vm.checkAll()"/>
+                  <label for="spc00"></label> -->
+                </div>
+                <div class="col-xs-5">Computer Name</div>
+                <div class="col-xs-6">Type</div>
+              </div>
+            </div>
+          </div>
+          <div ng-scrollbars ng-scrollbars-config="vm.config">
+            <div class="container-fluid">
+              <div class="row" ng-repeat="computer in vm.savingPlan.computers">
+                <div class="col-xs-1">
+                  <!-- <input type="checkbox" data-name="{{computer.name}}" class="computer-selection" /> -->
+                  <input id="{{$index + 'spc'}}" type="checkbox" class="custom-checkbox-green-type00" data-name="{{computer.name}}"/>
+                  <label for="{{$index + 'spc'}}"></label>
+                </div>
+                <div class="col-xs-5">{{ computer.name}}</div>
+                <div class="col-xs-5">Some type</div>
+                <div class="col-xs-1"><i class="fa fa-trash"></i> Remove</div>
+              </div>
+            </div>
+          </div>
+      </uib-tab>
+  </uib-tabset>
+</div>

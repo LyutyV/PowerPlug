@@ -1,3 +1,195 @@
+div.computersWrapper {
+  background-color: #f2f2f2;
+  margin: 0 -50px;
+  padding: 55px 40px; }
+  div.computersWrapper > div[active="active"] > ul {
+    border-bottom: 4px solid #8cc63f; }
+    div.computersWrapper > div[active="active"] > ul > li {
+      width: 250px;
+      text-align: left; }
+      div.computersWrapper > div[active="active"] > ul > li > a {
+        border: none;
+        border-bottom: 6px solid #e6e6e6;
+        background-color: #e6e6e6;
+        padding: 0;
+        margin: 0;
+        font-family: Calibri;
+        color: #808080;
+        font-size: 20.3px;
+        font-weight: 300; }
+        div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading {
+          display: flex;
+          height: 44px;
+          justify-content: space-between;
+          align-items: center; }
+          div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading > span {
+            margin-left: 17px; }
+          div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading > div {
+            border-radius: 100%;
+            background-color: #cccccc;
+            font-family: Calibri;
+            font-size: 16.15px;
+            font-weight: 700;
+            height: 27px;
+            width: 27px;
+            line-height: 27px;
+            text-align: center;
+            margin-right: 10px; }
+            div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading > div > span {
+              display: inline-block;
+              vertical-align: middle;
+              font-family: Calibri;
+              color: #808080;
+              font-size: 16.15px;
+              font-weight: 700;
+              line-height: 31px; }
+      div.computersWrapper > div[active="active"] > ul > li.active > a {
+        border-bottom-color: #88b73d;
+        background-color: #a3d165;
+        color: #ffffff;
+        font-weight: 700; }
+        div.computersWrapper > div[active="active"] > ul > li.active > a > uib-tab-heading > div {
+          background-color: #ffffff; }
+          div.computersWrapper > div[active="active"] > ul > li.active > a > uib-tab-heading > div > span {
+            color: #8cc63f; }
+      div.computersWrapper > div[active="active"] > ul > li:last-child {
+        margin-left: 8px; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child {
+    position: relative; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 18px;
+      font-weight: 700;
+      position: absolute;
+      top: -51px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span.buttonTypeOneAdd {
+        right: 120px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span.buttonTypeOneRemove {
+        right: 0; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span::before {
+        font-size: 20px;
+        margin-right: 10px; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) {
+    border-bottom: 1px solid #b3b3b3;
+    margin-top: 25px;
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.182px; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) {
+    height: 329px; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row {
+      height: 47px;
+      border-bottom: 1px solid #cccccc;
+      font-family: Calibri;
+      color: #333333;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: -0.182px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div {
+        line-height: 47px; }
+        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 {
+          display: none; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label {
+            position: relative;
+            margin: 0;
+            height: 15px;
+            width: 35px; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label::before {
+            position: absolute;
+            content: '';
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            left: 10px;
+            top: 3px;
+            background-color: #ffffff; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00:checked + label::before {
+            position: absolute;
+            content: '\f00c';
+            font-family: 'FontAwesome';
+            color: #a3d165;
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            text-align: center;
+            line-height: 15px;
+            left: 10px;
+            top: 3px;
+            background-color: #ffffff; }
+        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:last-child {
+          display: none; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover {
+        font-family: Calibri;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.182px;
+        background-color: #333333; }
+        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child {
+          display: block; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child > i {
+            color: #86bd3e; }
+
+div.addAppWrapper > div.modal-header {
+  padding: 0;
+  border: none; }
+  div.addAppWrapper > div.modal-header > span {
+    display: inline-block;
+    margin: 45px 33px;
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 24px;
+    font-weight: 300; }
+  div.addAppWrapper > div.modal-header > img {
+    float: right;
+    margin: 52px 30px; }
+
+div.addAppWrapper > div.modal-body {
+  border-top: 5px solid #8cc63f;
+  padding: 0;
+  margin: 0; }
+  div.addAppWrapper > div.modal-body > div.well {
+    border: none;
+    background-color: #ffffff;
+    padding: 0 33px;
+    margin: 0; }
+    div.addAppWrapper > div.modal-body > div.well > div {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: -0.182px; }
+      div.addAppWrapper > div.modal-body > div.well > div > input.custom-radio-button-t2 + label {
+        font-family: Calibri;
+        color: rgba(26, 26, 26, 0.7);
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: -0.169px;
+        line-height: 14px; }
+      div.addAppWrapper > div.modal-body > div.well > div > input.custom-radio-button-t2:checked + label {
+        font-weight: 700; }
+      div.addAppWrapper > div.modal-body > div.well > div > input[type='number'] {
+        width: 90px;
+        margin-left: 25px; }
+      div.addAppWrapper > div.modal-body > div.well > div:last-child {
+        text-align: center;
+        background-color: #f2f2f2;
+        margin: 0 -33px; }
+        div.addAppWrapper > div.modal-body > div.well > div:last-child > button {
+          border: none;
+          height: 40px;
+          width: 100px;
+          margin: 31px 0;
+          font-family: Calibri;
+          color: #ffffff;
+          font-size: 20.3px;
+          font-weight: 700; }
+          div.addAppWrapper > div.modal-body > div.well > div:last-child > button:first-child {
+            background-color: #8cc63f; }
+
 md-dialog.addComputerWrapper {
   min-height: 80%; }
   md-dialog.addComputerWrapper > md-toolbar {
@@ -27,67 +219,84 @@ md-dialog.addComputerWrapper {
         padding: 0 30px;
         height: 44px;
         line-height: 44px; }
-    md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child {
-      padding-right: 0px;
-      border-left: 1px solid #cccccc; }
-      md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:first-child > div.col-xs-12 {
-        padding: 0px;
-        display: flex;
-        align-items: center; }
-        md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:first-child > div.col-xs-12 > span {
-          font-family: Calibri;
-          color: #4d4d4d;
-          font-size: 18px;
-          font-weight: 700;
-          text-align: left;
-          margin-right: 53px; }
-        md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:first-child > div.col-xs-12 > input {
-          flex-grow: 1;
-          height: 33px; }
-      md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 {
-        padding: 0px; }
-        md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid {
-          padding: 0px; }
-          md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > thead {
+    md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid {
+      padding-left: 0; }
+      md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:first-child > div.container-fluid > div.row:first-child {
+        font-family: Calibri;
+        color: #4d4d4d;
+        font-size: 18px;
+        font-weight: 700; }
+      md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:first-child > div.container-fluid > div.row:nth-child(2) {
+        font-family: Calibri;
+        color: #4d4d4d;
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: -0.156px; }
+        md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:first-child > div.container-fluid > div.row:nth-child(2) > span {
+          float: right; }
+          md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:first-child > div.container-fluid > div.row:nth-child(2) > span::before {
+            font-size: 17px; }
+      md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child {
+        padding-right: 0;
+        border-left: 1px solid #cccccc; }
+        md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:first-child > div.col-xs-12 {
+          padding: 0;
+          display: flex;
+          align-items: center; }
+          md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:first-child > div.col-xs-12 > span {
             font-family: Calibri;
-            color: rgba(26, 26, 26, 0.7);
-            font-size: 14px;
+            color: #4d4d4d;
+            font-size: 18px;
             font-weight: 700;
-            letter-spacing: -0.182px; }
-          md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody {
-            font-family: Calibri;
-            color: #333333;
-            font-size: 14px;
-            font-weight: 300;
-            letter-spacing: -0.182px;
-            background-color: #ffffff; }
-            md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 {
-              display: none; }
-              md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 + label {
-                position: relative;
-                margin: 0;
-                height: 15px;
-                width: 35px; }
-              md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 + label::before {
-                position: absolute;
-                content: '';
-                height: 15px;
-                width: 15px;
-                border: 1px solid #d9d9d9;
-                left: 10px;
-                top: 3px; }
-              md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00:checked + label::before {
-                position: absolute;
-                content: '\f00c';
-                font-family: 'FontAwesome';
-                color: #a3d165;
-                height: 15px;
-                width: 15px;
-                border: 1px solid #d9d9d9;
-                text-align: center;
-                line-height: 15px;
-                left: 10px;
-                top: 3px; }
+            text-align: left;
+            margin-right: 53px; }
+          md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:first-child > div.col-xs-12 > input {
+            flex-grow: 1;
+            height: 33px; }
+        md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 {
+          padding: 0; }
+          md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid {
+            padding: 0; }
+            md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > thead {
+              font-family: Calibri;
+              color: rgba(26, 26, 26, 0.7);
+              font-size: 14px;
+              font-weight: 700;
+              letter-spacing: -0.182px; }
+            md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody {
+              font-family: Calibri;
+              color: #333333;
+              font-size: 14px;
+              font-weight: 300;
+              letter-spacing: -0.182px;
+              background-color: #ffffff; }
+              md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 {
+                display: none; }
+                md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 + label {
+                  position: relative;
+                  margin: 0;
+                  height: 15px;
+                  width: 35px; }
+                md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 + label::before {
+                  position: absolute;
+                  content: '';
+                  height: 15px;
+                  width: 15px;
+                  border: 1px solid #d9d9d9;
+                  left: 10px;
+                  top: 3px; }
+                md-dialog.addComputerWrapper > md-content > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:last-child > div.container-fluid > div.row:last-child > div.col-xs-12 > div.container-fluid > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00:checked + label::before {
+                  position: absolute;
+                  content: '\f00c';
+                  font-family: 'FontAwesome';
+                  color: #a3d165;
+                  height: 15px;
+                  width: 15px;
+                  border: 1px solid #d9d9d9;
+                  text-align: center;
+                  line-height: 15px;
+                  left: 10px;
+                  top: 3px; }
   md-dialog.addComputerWrapper > md-content > div:last-child {
     background-color: #f2f2f2;
     text-align: center;
@@ -401,7 +610,8 @@ md-datepicker {
 div[ui-view="workhoursaction"] > div:first-child {
   height: 40px;
   border-bottom: 5px solid #8cc63f;
-  margin-bottom: 44px; }
+  margin-bottom: 44px;
+  margin-top: 46px; }
   div[ui-view="workhoursaction"] > div:first-child > h3 {
     font-family: Calibri;
     color: rgba(26, 26, 26, 0.7);
@@ -678,26 +888,6 @@ div[ui-view="workhoursaction"] > div:first-child {
           text-align: center;
           background-color: #8cc63e;
           color: #fff; }
-  .week-view-total .mCSB_container_wrapper {
-    margin-right: 7px; }
-  .week-view-total .mCSB_scrollTools {
-    width: 7px; }
-  .week-view-total .mCSB_scrollTools .mCSB_draggerContainer {
-    margin: 2px 0; }
-  .week-view-total .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    width: 6px;
-    background-color: #8ac841;
-    border-radius: 0; }
-  .week-view-total .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
-    background-color: #8ac841; }
-  .week-view-total .mCSB_scrollTools .mCSB_draggerRail {
-    box-sizing: border-box;
-    width: 6px;
-    background-color: #e8e8e8; }
-  .week-view-total .mCSB_container_wrapper > .mCSB_container {
-    padding-right: 0; }
-  .week-view-total .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden {
-    margin-right: 7px !important; }
   .week-view-total .clear:after {
     content: '';
     display: block;
@@ -709,6 +899,34 @@ div[ui-view="workhoursaction"] > div:first-child {
     right: 0;
     height: 15px;
     width: 100%; }
+
+.mCSB_container_wrapper {
+  margin-right: 7px !important; }
+
+.mCSB_scrollTools {
+  width: 7px !important; }
+
+.mCSB_scrollTools .mCSB_draggerContainer {
+  margin: 2px 0 !important; }
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 6px !important;
+  background-color: #8ac841 !important;
+  border-radius: 0 !important; }
+
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background-color: #8ac841 !important; }
+
+.mCSB_scrollTools .mCSB_draggerRail {
+  box-sizing: border-box !important;
+  width: 6px !important;
+  background-color: #e8e8e8 !important; }
+
+.mCSB_container_wrapper > .mCSB_container {
+  padding-right: 0 !important; }
+
+.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden {
+  margin-right: 7px !important; }
 
 .time-lmit-block {
   position: relative;
@@ -1099,8 +1317,8 @@ input.custom-radio-button-t2[type="radio"] + label {
 
 input.custom-radio-button-t2[type="radio"] + label span {
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   margin: -1px 4px 0 0;
   vertical-align: middle;
   cursor: pointer;
@@ -1109,9 +1327,9 @@ input.custom-radio-button-t2[type="radio"] + label span {
 
 input.custom-radio-button-t2[type="radio"] + label span span {
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin: 4px 4px 0;
+  width: 18px;
+  height: 18px;
+  margin: 2px 2px 0;
   vertical-align: middle;
   cursor: pointer;
   -moz-border-radius: 50%;
@@ -1187,6 +1405,13 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
   font-family: 'FontAwesome';
   font-size: 17px;
   content: '\f040';
+  color: #8ecc38;
+  margin-right: 1px; }
+
+.buttonTypeOneRefresh:before {
+  font-family: 'FontAwesome';
+  font-size: 17px;
+  content: '\f021';
   color: #8ecc38;
   margin-right: 1px; }
 

@@ -3,7 +3,7 @@
     <span class="buttonTypeOneAdd" ng-click="vm.createNewAction('Restart', vm.savingPlan.actions)">Add Restart</span>
     <span class="buttonTypeOneAdd" ng-click="vm.createNewAction('Wake', vm.savingPlan.actions)">Add Wakeup</span>
 </div>
-<div class="clearfix" style="padding-bottom:30px;">
+<div class="clearfix">
     <week-view data-actions='vm.savingPlan.actions' data-work-time-list='vm.workTime' work-time-change="vm.workTimeChange(data)" action-remove="vm.actionRemove(data)" action-edit="vm.actionEdit(data)"></week-view>
 </div>
 
