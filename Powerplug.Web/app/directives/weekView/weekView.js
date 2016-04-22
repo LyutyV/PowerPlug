@@ -519,11 +519,6 @@ angular
                   timeLineBuild();
                 }
                 eventListChangePrepare(false);
-                $('body .popover-block').bind('blur', function(a,s,d){
-                  console.log(a);
-                  console.log(s);
-                  console.log(d);
-                });
               });
             }
           }
