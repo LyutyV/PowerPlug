@@ -39,8 +39,8 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-xs-1">
-                  <!-- <input id="spc00" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.selectedAll" ng-click="vm.checkAll()"/>
-                  <label for="spc00"></label> -->
+                  <input id="spc00" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.selectedAll" ng-click="vm.checkAll()"/>
+                  <label for="spc00"></label>
                 </div>
                 <div class="col-xs-5">Computer Name</div>
                 <div class="col-xs-6">Type</div>
@@ -52,7 +52,7 @@
               <div class="row" ng-repeat="computer in vm.savingPlan.computers">
                 <div class="col-xs-1">
                   <!-- <input type="checkbox" data-name="{{computer.name}}" class="computer-selection" /> -->
-                  <input id="{{$index + 'spc'}}" type="checkbox" class="custom-checkbox-green-type00" data-name="{{computer.name}}"/>
+                  <input id="{{$index + 'spc'}}" type="checkbox" class="custom-checkbox-green-type00" data-name="{{computer.name}}" ng-model="computer.selected" />
                   <label for="{{$index + 'spc'}}"></label>
                 </div>
                 <div class="col-xs-5">{{ computer.name}}</div>

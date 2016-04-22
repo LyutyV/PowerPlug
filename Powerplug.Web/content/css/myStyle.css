@@ -78,6 +78,35 @@ div.computersWrapper {
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.182px; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00 {
+      display: none; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00 + label {
+        position: relative;
+        margin: 0;
+        height: 15px;
+        width: 35px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00 + label::before {
+        position: absolute;
+        content: '';
+        height: 15px;
+        width: 15px;
+        border: 1px solid #d9d9d9;
+        left: 10px;
+        top: -2px;
+        background-color: #ffffff; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00:checked + label::before {
+        position: absolute;
+        content: '\f00c';
+        font-family: 'FontAwesome';
+        color: #a3d165;
+        height: 15px;
+        width: 15px;
+        border: 1px solid #d9d9d9;
+        text-align: center;
+        line-height: 15px;
+        left: 10px;
+        top: -2px;
+        background-color: #ffffff; }
   div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) {
     height: 329px; }
     div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row {

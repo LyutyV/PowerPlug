@@ -10,6 +10,19 @@
         var vm = this;
         vm.policyId = $stateParams.policyId;
 
+        // Check all checkbox in Computers section
+        vm.checkAll = function () {
+            if (vm.selectedAll) {
+                vm.selectedAll = true;
+            } else {
+                vm.selectedAll = false;
+            }
+            angular.forEach(vm.savingPlan.computers, function (computer) {
+                computer.selected = vm.selectedAll;
+            });
+        };
+        // End check all checkbox in Computers section
+
         //Scrollbar (Dirty way becose of old Jqyery)
         if (!$document.mCustomScrollbar) {
             $document.__proto__.mCustomScrollbar = $.mCustomScrollbar;
