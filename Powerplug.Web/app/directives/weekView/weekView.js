@@ -120,13 +120,15 @@ angular
                 for (var j in scope.actions[i].daysConverted){
                   var data = moment(scope.actions[i].fromTime);
                   data = data._d;
-                  scope.eventsTime[dayList[scope.actions[i].daysConverted[j]]].unshift({
-                    actionKey : scope.actions[i].actionKey,
-                    start: Number(data.getHours().toString() + '.' + data.getMinutes().toString()),
-                    text: scope.actions[i].scheduleText,
-                    title: '',
-                    type: scope.actions[i].perform
-                  });
+                  if (dayList[scope.actions[i].daysConverted[j]]){
+                    scope.eventsTime[dayList[scope.actions[i].daysConverted[j]]].unshift({
+                      actionKey : scope.actions[i].actionKey,
+                      start: Number(data.getHours().toString() + '.' + data.getMinutes().toString()),
+                      text: scope.actions[i].scheduleText,
+                      title: '',
+                      type: scope.actions[i].perform
+                    });
+                  }
                 }
               }
               else if (scope.actions[i].scheduleType ==  "SpecificDate") {
