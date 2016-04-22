@@ -530,6 +530,7 @@ div[ui-view="workhoursaction"] > div:first-child {
                 .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .wrape-relative {
                   position: relative; }
                   .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .wrape-relative .popover-block {
+                    outline: none;
                     position: absolute;
                     bottom: 15px;
                     left: calc(-112px + 50%);
@@ -545,6 +546,18 @@ div[ui-view="workhoursaction"] > div:first-child {
                       background-color: #29abe2;
                       border: 1px solid #29abe2;
                       width: 50%;
+                      box-sizing: border-box; }
+                    .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .wrape-relative .popover-block .btndiv {
+                      color: #fff;
+                      cursor: pointer;
+                      padding: 6px 12px;
+                      border-radius: 0px !important;
+                      margin: 0 !important;
+                      background-color: #29abe2;
+                      border: 1px solid #29abe2;
+                      width: 50%;
+                      float: left;
+                      font-size: 14px;
                       box-sizing: border-box; }
                     .week-view-total .week-view-position .calendar .right-span .day-coll .day .day-wrape .event-time .wrape-relative .popover-block .event-img {
                       height: 26px;

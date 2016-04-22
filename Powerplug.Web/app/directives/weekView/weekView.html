@@ -38,20 +38,20 @@
                     <div ng-repeat="eventTime in eventsTimePos.sun track by $index" class="event-time" day="sun" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('sun',$index)"></div>
-                        <div class="popover-block" ng-show="eventTime.viewPopup">
+                        <div class="popover-block" tabindex="1"  day="sun" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
                           <div class="event-name">{{eventTime.title}}</div>
                           <div class="event-text">{{eventTime.text}}</div>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="editEvent('sun',$index)">
+                          <div  class="btndiv btn-edit" >
                             <img src="/content/images/pen.png">
                             Edit
-                          </button>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="removeEvent('sun',$index)">
+                          </div>
+                          <div  class="btndiv btn-remove" >
                             <img src="/content/images/trash.png">
                             Remove
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -68,20 +68,20 @@
                     <div ng-repeat="eventTime in eventsTimePos.mon track by $index" class="event-time" day="mon" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('mon',$index)"></div>
-                        <div class="popover-block" ng-show="eventTime.viewPopup">
+                        <div class="popover-block"  tabindex="1"  day="mon" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
                           <div class="event-name">{{eventTime.title}}</div>
                           <div class="event-text">{{eventTime.text}}</div>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="editEvent('mon',$index)">
+                          <div  class="btndiv btn-edit" >
                             <img src="/content/images/pen.png">
                             Edit
-                          </button>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="removeEvent('mon',$index)">
+                          </div>
+                          <div  class="btndiv btn-remove" >
                             <img src="/content/images/trash.png">
                             Remove
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -95,20 +95,20 @@
                     <div ng-repeat="eventTime in eventsTimePos.tue track by $index" class="event-time" day="tue" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('tue',$index)"></div>
-                        <div class="popover-block" ng-show="eventTime.viewPopup">
+                        <div class="popover-block" tabindex="1"   day="tue" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
                           <div class="event-name">{{eventTime.title}}</div>
                           <div class="event-text">{{eventTime.text}}</div>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="editEvent('tue',$index)">
+                          <div  class="btndiv btn-edit" >
                             <img src="/content/images/pen.png">
                             Edit
-                          </button>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="removeEvent('tue',$index)">
+                          </div>
+                          <div  class="btndiv btn-remove" >
                             <img src="/content/images/trash.png">
                             Remove
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -122,20 +122,20 @@
                     <div ng-repeat="eventTime in eventsTimePos.wed track by $index" class="event-time" day="wed" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('wed',$index)"></div>
-                        <div class="popover-block" ng-show="eventTime.viewPopup">
+                        <div class="popover-block"  tabindex="1"  day="wed" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
                           <div class="event-name">{{eventTime.title}}</div>
                           <div class="event-text">{{eventTime.text}}</div>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="editEvent('wed',$index)">
+                          <div  class="btndiv btn-edit" >
                             <img src="/content/images/pen.png">
                             Edit
-                          </button>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="removeEvent('wed',$index)">
+                          </div>
+                          <div  class="btndiv btn-remove" >
                             <img src="/content/images/trash.png">
                             Remove
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -149,20 +149,20 @@
                     <div ng-repeat="eventTime in eventsTimePos.thu track by $index" class="event-time" day="thu" num="{{$index}}" ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('thu',$index)"></div>
-                        <div class="popover-block" ng-show="eventTime.viewPopup">
+                        <div class="popover-block" tabindex="1"   day="thu" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
                           <div class="event-name">{{eventTime.title}}</div>
                           <div class="event-text">{{eventTime.text}}</div>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="editEvent('thu',$index)">
+                          <div  class="btndiv btn-edit" >
                             <img src="/content/images/pen.png">
                             Edit
-                          </button>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="removeEvent('thu',$index)">
+                          </div>
+                          <div  class="btndiv btn-remove" >
                             <img src="/content/images/trash.png">
                             Remove
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -176,20 +176,20 @@
                     <div ng-repeat="eventTime in eventsTimePos.fri track by $index" class="event-time" day="fri" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('fri',$index)"></div>
-                        <div class="popover-block" ng-show="eventTime.viewPopup">
+                        <div class="popover-block" tabindex="1"   day="fri" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
                           <div class="event-name">{{eventTime.title}}</div>
                           <div class="event-text">{{eventTime.text}}</div>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="editEvent('fri',$index)">
+                          <div  class="btndiv btn-edit" >
                             <img src="/content/images/pen.png">
                             Edit
-                          </button>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="removeEvent('fri',$index)">
+                          </div>
+                          <div  class="btndiv btn-remove" >
                             <img src="/content/images/trash.png">
                             Remove
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -204,20 +204,20 @@
                     <div ng-repeat="eventTime in eventsTimePos.sat track by $index" class="event-time" day="sat" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('sat',$index)"></div>
-                        <div class="popover-block" ng-show="eventTime.viewPopup">
+                        <div class="popover-block" tabindex="1"  day="sat" num="{{$index}}" ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
                           <div class="event-name">{{eventTime.title}}</div>
                           <div class="event-text">{{eventTime.text}}</div>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="editEvent('sat',$index)">
+                          <div  class="btndiv btn-edit" >
                             <img src="/content/images/pen.png">
                             Edit
-                          </button>
-                          <button type="button" class="btn btn-primary" autocomplete="off" ng-click="removeEvent('sat',$index)">
+                          </div>
+                          <div  class="btndiv btn-remove" >
                             <img src="/content/images/trash.png">
                             Remove
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </div>

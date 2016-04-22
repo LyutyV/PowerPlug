@@ -429,7 +429,7 @@ angular
             }
           }
 
-          scope.$watch('workTimeList', initWorkTime);
+          scope.$watch('workTimeList', initWorkTime, true);
 
           var eventListChangePrepare = function(flag) {
             findEventPositions();
@@ -519,12 +519,50 @@ angular
                   timeLineBuild();
                 }
                 eventListChangePrepare(false);
+                $('body .popover-block').bind('blur', function(a,s,d){
+                  console.log(a);
+                  console.log(s);
+                  console.log(d);
+                });
               });
             }
           }
 
           scope.popoverViewChange = function(day, number) {
             scope.eventsTimePos[day][number].viewPopup = !scope.eventsTimePos[day][number].viewPopup;
+              setTimeout(function() {
+                $('.popover-block[day="'+day+'"][num="'+number+'"]')[0].focus();
+                var popupclose = function(element) {
+                  hidePopup($(element.currentTarget).attr('day'),$(element.currentTarget).attr('num'));
+                  scope.$apply();
+                }
+
+                var hidePopup = function(day,num){
+                  scope.eventsTimePos[day][num].viewPopup = false;
+                  $('.popover-block').unbind('blur', popupclose);
+                  $('.popover-block .btn-edit').unbind('click', editAction);
+                  $('.popover-block .btn-remove').unbind('click', removeAction);
+                }
+
+                var editAction = function(element){
+                  var parent = $(element.currentTarget).parent('.popover-block');
+                  scope.editEvent(parent.attr('day'),parent.attr('num'));
+                  hidePopup(parent.attr('day'),parent.attr('num'));
+                }
+
+                var removeAction = function(element){
+                  var parent = $(element.currentTarget).parent('.popover-block');
+                  scope.removeEvent(parent.attr('day'),parent.attr('num'));
+                  hidePopup(parent.attr('day'),parent.attr('num'));
+                  /*delete after remove function is done*/
+                  scope.$apply();
+                  /**************************************/
+                }
+
+                $('.popover-block').bind('blur', popupclose);
+                $('.popover-block .btn-edit').bind('click', editAction);
+                $('.popover-block .btn-remove').bind('click', removeAction);
+              }, 0);
           }
 
           scope.removeEvent = function(day, number) {
@@ -535,7 +573,7 @@ angular
             scope.actionEdit({data:scope.eventsTime[day][number].actionKey });
           }
 
-          scope.$watch('actions', initEvents);
+          scope.$watch( 'actions', initEvents,true);
         }
       }
     };
