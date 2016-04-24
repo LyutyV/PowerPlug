@@ -196,7 +196,7 @@
 }
 md-dialog{
     &.script-prop{
-        >md-toolbar{
+        > md-toolbar{
             background-color: #ffffff;
             padding-left: 32px;
             padding-right: 34px;
@@ -212,7 +212,7 @@ md-dialog{
                 text-align: left;
             }
         }
-        >md-content{
+        > md-content{
             background-color: #ffffff;
             padding-left: 32px;
             padding-right: 34px;
