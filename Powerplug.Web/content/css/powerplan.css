@@ -381,6 +381,62 @@ nav {
             width: 100px;
             text-align: right; }
 
+md-dialog.script-prop > md-toolbar {
+  background-color: #ffffff;
+  padding-left: 32px;
+  padding-right: 34px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  md-dialog.script-prop > md-toolbar > div {
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 24px;
+    font-weight: 300;
+    text-align: left; }
+
+md-dialog.script-prop > md-content {
+  background-color: #ffffff;
+  padding-left: 32px;
+  padding-right: 34px; }
+  md-dialog.script-prop > md-content .script-data-row {
+    padding-bottom: 20px; }
+    md-dialog.script-prop > md-content .script-data-row span {
+      width: 100px;
+      display: inline-block;
+      font-family: Calibri;
+      font-size: 16px;
+      color: rgba(26, 26, 26, 0.7); }
+    md-dialog.script-prop > md-content .script-data-row input[type=text] {
+      width: 300px;
+      height: 40px;
+      color: #1a1a1a;
+      font-size: 14px;
+      padding: 5px; }
+    md-dialog.script-prop > md-content .script-data-row textarea {
+      width: 300px;
+      height: 150px;
+      color: #1a1a1a;
+      font-size: 14px;
+      padding: 5px; }
+  md-dialog.script-prop > md-content .buttonsBlock {
+    text-align: center;
+    padding: 15px 0;
+    padding-left: 100px; }
+    md-dialog.script-prop > md-content .buttonsBlock > button {
+      height: 40px;
+      width: 120px;
+      border: none;
+      font-family: Calibri;
+      color: #ffffff;
+      font-size: 20.3px;
+      font-weight: 700; }
+      md-dialog.script-prop > md-content .buttonsBlock > button:first-child {
+        background-color: #8cc63f; }
+      md-dialog.script-prop > md-content .buttonsBlock > button:last-child {
+        background-color: #808080; }
+
 * {
   margin: 0px;
   padding: 0px;
