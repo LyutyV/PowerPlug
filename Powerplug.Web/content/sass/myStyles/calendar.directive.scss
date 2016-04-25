@@ -127,6 +127,17 @@ div[ui-view="workhoursaction"] {
                     left: 57px;
                     width: calc(100% - 72px);
                     height: calc(100% - 66px);
+
+                    .back-block-blure{
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        z-index: 16;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: none;
+                    }
                     .day {
                         display: inline-block;
                         width: 14.2857%;
@@ -148,7 +159,7 @@ div[ui-view="workhoursaction"] {
                                 height: 16px;
                                 .wrape-relative {
                                     position: relative;
-                                    .popover-block {
+                                    .popover-up {
                                         outline: none;
                                         position: absolute;
                                         bottom: 15px;
@@ -159,6 +170,41 @@ div[ui-view="workhoursaction"] {
                                         border: 1px solid #29abe2;
                                         text-align: center;
                                         font-size: 0;
+
+                                        .arrow {
+                                            position: absolute;
+                                            bottom: -10px;
+                                            left: calc(50% + 10px);
+                                            margin-left: -11px;
+                                            border: 5px solid transparent;
+                                            border-left: 5px solid #29abe2;
+                                            border-top: 5px solid #29abe2;
+                                        }
+                                    }
+
+                                    .popover-down {
+                                        outline: none;
+                                        position: absolute;
+                                        top: 15px;
+                                        left: calc(-112px + 50%);
+                                        background-color: #fff;
+                                        width: 224px;
+                                        display: block;
+                                        border: 1px solid #29abe2;
+                                        text-align: center;
+                                        font-size: 0;
+
+                                        .arrow {
+                                            position: absolute;
+                                            top: -10px;
+                                            left: calc(50% + 10px);
+                                            margin-left: -11px;
+                                            border: 5px solid transparent;
+                                            border-left: 5px solid #29abe2;
+                                            border-bottom: 5px solid #29abe2;
+                                        }
+                                    }
+                                    .popover-block {
                                         .btn {
                                             border-radius: 0px!important;
                                             margin: 0 !important;
@@ -193,15 +239,6 @@ div[ui-view="workhoursaction"] {
                                         .event-text {
                                             padding: 0 5px 5px;
                                             font-size: 16px;
-                                        }
-                                        .arrow {
-                                            position: absolute;
-                                            bottom: -10px;
-                                            left: calc(50% + 10px);
-                                            margin-left: -11px;
-                                            border: 5px solid transparent;
-                                            border-left: 5px solid #29abe2;
-                                            border-top: 5px solid #29abe2;
                                         }
                                     }
                                 }
@@ -251,6 +288,7 @@ div[ui-view="workhoursaction"] {
                 font-size: 16px;
             }
             .event-block {
+                outline: none;
                 padding: 0 5px 0 0;
                 .event-img {
                     height: 16px;
@@ -342,6 +380,34 @@ div[ui-view="workhoursaction"] {
             }
         }
     }
+    .mCSB_container_wrapper {
+        margin-right: 7px;
+    }
+    .mCSB_scrollTools {
+        width: 7px;
+    }
+    .mCSB_scrollTools .mCSB_draggerContainer {
+        margin: 2px 0;
+    }
+    .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+        width: 6px;
+        background-color: #8ac841;
+        border-radius: 0;
+    }
+    .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+        background-color: #8ac841;
+    }
+    .mCSB_scrollTools .mCSB_draggerRail {
+        box-sizing: border-box;
+        width: 6px;
+        background-color: #e8e8e8;
+    }
+    .mCSB_container_wrapper > .mCSB_container {
+        padding-right: 0;
+    }
+    .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden {
+        margin-right: 7px !important;
+    }
     .clear:after {
         content: '';
         display: block;
@@ -355,34 +421,6 @@ div[ui-view="workhoursaction"] {
         height: 15px;
         width: 100%;
     }
-}
-.mCSB_container_wrapper {
-    margin-right: 7px !important;
-}
-.mCSB_scrollTools {
-    width: 7px!important;
-}
-.mCSB_scrollTools .mCSB_draggerContainer {
-    margin: 2px 0 !important;
-}
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    width: 6px!important;
-    background-color: #8ac841!important;
-    border-radius: 0!important;
-}
-.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
-    background-color: #8ac841!important;
-}
-.mCSB_scrollTools .mCSB_draggerRail {
-    box-sizing: border-box!important;
-    width: 6px!important;
-    background-color: #e8e8e8!important;
-}
-.mCSB_container_wrapper > .mCSB_container {
-    padding-right: 0 !important;
-}
-.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden {
-    margin-right: 7px !important;
 }
 .time-lmit-block {
     position: relative;

@@ -125,7 +125,7 @@ angular
                       actionKey : scope.actions[i].actionKey,
                       start: Number(data.getHours().toString() + '.' + data.getMinutes().toString()),
                       text: scope.actions[i].scheduleText,
-                      title: '',
+                      title: (scope.actions[i].perform=="Wake")?'Wake Up':'Restart',
                       type: scope.actions[i].perform
                     });
                   }
@@ -141,7 +141,7 @@ angular
                     actionKey : scope.actions[i].actionKey,
                     start: Number(data.getHours().toString() + '.' + data.getMinutes().toString()),
                     text: scope.actions[i].scheduleText,
-                    title: '',
+                    title: (scope.actions[i].perform=="Wake")?'Wake Up':'Restart',
                     type: scope.actions[i].perform
                   });
                 }
@@ -340,7 +340,7 @@ angular
           }
 
           var addWorkTime = function(e) {
-            if ($(e.target).attr('daypos')){
+            if ($(e.target).attr('daypos')) {
 
               var temp = Math.floor((e.offsetY / 16));
               temp +=  (decToTime(scope.datyViewlLmit.begin ) /scope.timeInterval.value);
@@ -528,6 +528,15 @@ angular
           scope.popoverViewChange = function(day, number) {
             scope.eventsTimePos[day][number].viewPopup = !scope.eventsTimePos[day][number].viewPopup;
               setTimeout(function() {
+                var popoverBlock = $('.popover-block[day="' + day + '"][num="' + number + '"]');
+                if (popoverBlock.height() > scope.eventsTimePos[day][number].pos){
+                  popoverBlock.removeClass('popover-up');
+                  popoverBlock.addClass('popover-down');
+                }
+                else{
+                  popoverBlock.removeClass('popover-down');
+                  popoverBlock.addClass('popover-up');
+                }
                 $('.popover-block[day="'+day+'"][num="'+number+'"]')[0].focus();
                 var popupclose = function(element) {
                   hidePopup($(element.currentTarget).attr('day'),$(element.currentTarget).attr('num'));
@@ -539,6 +548,7 @@ angular
                   $('.popover-block').unbind('blur', popupclose);
                   $('.popover-block .btn-edit').unbind('click', editAction);
                   $('.popover-block .btn-remove').unbind('click', removeAction);
+                  $('.back-block-blure').css('display','none');
                 }
 
                 var editAction = function(element){
@@ -555,7 +565,7 @@ angular
                   scope.$apply();
                   /**************************************/
                 }
-
+                $('.back-block-blure').css('display','block');
                 $('.popover-block').bind('blur', popupclose);
                 $('.popover-block .btn-edit').bind('click', editAction);
                 $('.popover-block .btn-remove').bind('click', removeAction);
