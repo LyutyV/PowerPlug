@@ -895,26 +895,6 @@ div[ui-view="workhoursaction"] > div:first-child {
           text-align: center;
           background-color: #8cc63e;
           color: #fff; }
-  .week-view-total .mCSB_container_wrapper {
-    margin-right: 7px; }
-  .week-view-total .mCSB_scrollTools {
-    width: 7px; }
-  .week-view-total .mCSB_scrollTools .mCSB_draggerContainer {
-    margin: 2px 0; }
-  .week-view-total .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    width: 6px;
-    background-color: #8ac841;
-    border-radius: 0; }
-  .week-view-total .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
-    background-color: #8ac841; }
-  .week-view-total .mCSB_scrollTools .mCSB_draggerRail {
-    box-sizing: border-box;
-    width: 6px;
-    background-color: #e8e8e8; }
-  .week-view-total .mCSB_container_wrapper > .mCSB_container {
-    padding-right: 0; }
-  .week-view-total .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden {
-    margin-right: 7px !important; }
   .week-view-total .clear:after {
     content: '';
     display: block;
@@ -967,6 +947,34 @@ div[ui-view="workhoursaction"] > div:first-child {
     font-weight: 300; }
   .time-lmit-block .thick-text {
     font-weight: 700; }
+
+.main-wrapper .mCSB_container_wrapper {
+  margin-right: 7px; }
+
+.main-wrapper .mCSB_scrollTools {
+  width: 7px; }
+
+.main-wrapper .mCSB_scrollTools .mCSB_draggerContainer {
+  margin: 2px 0; }
+
+.main-wrapper .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 6px;
+  background-color: #8ac841;
+  border-radius: 0; }
+
+.main-wrapper .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background-color: #8ac841; }
+
+.main-wrapper .mCSB_scrollTools .mCSB_draggerRail {
+  box-sizing: border-box;
+  width: 6px;
+  background-color: #e8e8e8; }
+
+.main-wrapper .mCSB_container_wrapper > .mCSB_container {
+  padding-right: 0; }
+
+.main-wrapper .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden {
+  margin-right: 7px !important; }
 
 .chart-wraper {
   width: 100%;
@@ -1506,7 +1514,8 @@ div.computersWrapper {
         letter-spacing: -0.182px;
         background-color: #333333; }
         div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child {
-          display: block; }
+          display: block;
+          text-align: right; }
           div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child > i {
             color: #86bd3e; }
 
@@ -1876,6 +1885,62 @@ div.computersWrapper {
         margin-left: 5px; }
   .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid {
     background-color: #f2f2f2; }
+    .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo {
+      background-color: #ffffff;
+      margin: 0px -15px;
+      padding: 10px 0px;
+      display: flex;
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: -0.182px; }
+      .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div > label, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div > label {
+        margin-bottom: 0px; }
+        .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div > label > span, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div > label > span {
+          margin-right: 13px; }
+        .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div > label > select, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div > label > select {
+          background-color: #ffffff;
+          border-color: #d9d9d9;
+          font-family: Calibri;
+          color: rgba(26, 26, 26, 0.7);
+          font-size: 14px;
+          font-weight: 300;
+          letter-spacing: -0.182px;
+          width: 125px; }
+      .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:nth-child(2), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:nth-child(3), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:nth-child(2), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:nth-child(3) {
+        margin-left: 15px; }
+      .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:last-child {
+        flex-grow: 1;
+        text-align: right; }
+        .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:last-child > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:last-child > div {
+          display: flex;
+          position: relative;
+          float: right;
+          margin-right: 10px; }
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:last-child > div > a, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:last-child > div > a {
+            height: 39px;
+            width: 40px;
+            display: inline-block;
+            text-align: center;
+            line-height: 39px;
+            background-color: #238fb5;
+            color: #ffffff; }
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:last-child > div > span, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:last-child > div > span {
+            height: 39px;
+            width: 85px;
+            background-color: #29abe2;
+            display: inline-block;
+            line-height: 39px;
+            color: #ffffff;
+            padding-left: 15px;
+            font-family: Calibri;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: left; }
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:last-child > div > ul, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:last-child > div > ul {
+            position: absolute;
+            width: 160px; }
     .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row {
       font-family: Calibri;
       color: rgba(26, 26, 26, 0.7);
@@ -1886,43 +1951,6 @@ div.computersWrapper {
         background-color: #ffffff; }
         .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid {
           margin-top: 15px; }
-          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > span, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > span {
-            margin-right: 13px; }
-          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > select, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3 > label > select {
-            background-color: #ffffff;
-            border-color: #d9d9d9;
-            font-family: Calibri;
-            color: rgba(26, 26, 26, 0.7);
-            font-size: 14px;
-            font-weight: 300;
-            letter-spacing: -0.182px;
-            width: 125px; }
-          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div {
-            display: flex;
-            position: relative;
-            float: right; }
-            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > a, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > a {
-              height: 39px;
-              width: 40px;
-              display: inline-block;
-              text-align: center;
-              line-height: 39px;
-              background-color: #238fb5;
-              color: #ffffff; }
-            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > span, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > span {
-              height: 39px;
-              width: 85px;
-              background-color: #29abe2;
-              display: inline-block;
-              line-height: 39px;
-              color: #ffffff;
-              padding-left: 15px;
-              font-family: Calibri;
-              font-size: 15px;
-              font-weight: 700; }
-            .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > ul, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid > div.row > div.col-xs-3:last-child > div > ul {
-              position: absolute;
-              width: 160px; }
       .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child {
         background-color: #ffffff;
         margin-top: 5px;
