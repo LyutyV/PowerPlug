@@ -135,6 +135,12 @@
                 controller: 'ConsolePermissionCtrl',
                 templateUrl: 'views/settings/consolePermission.html',
                 controllerAs: 'vm'
+            })
+            .state('electricityPrice', {
+                url: "/electricityPrice",
+                controller: 'ElectricityPriceCtrl',
+                templateUrl: 'views/settings/electricityPrice.html',
+                controllerAs: 'vm'
             });
 
     }
