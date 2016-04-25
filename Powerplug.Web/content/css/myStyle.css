@@ -54,6 +54,107 @@ div.computersWrapper {
             color: #8cc63f; }
       div.computersWrapper > div[active="active"] > ul > li:last-child {
         margin-left: 8px; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child {
+    position: relative; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 18px;
+      font-weight: 700;
+      position: absolute;
+      top: -51px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span.buttonTypeOneAdd {
+        right: 120px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span.buttonTypeOneRemove {
+        right: 0; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span::before {
+        font-size: 20px;
+        margin-right: 10px; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) {
+    border-bottom: 1px solid #b3b3b3;
+    margin-top: 25px;
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.182px; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00 {
+      display: none; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00 + label {
+        position: relative;
+        margin: 0;
+        height: 15px;
+        width: 35px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00 + label::before {
+        position: absolute;
+        content: '';
+        height: 15px;
+        width: 15px;
+        border: 1px solid #d9d9d9;
+        left: 10px;
+        top: -2px;
+        background-color: #ffffff; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00:checked + label::before {
+        position: absolute;
+        content: '\f00c';
+        font-family: 'FontAwesome';
+        color: #a3d165;
+        height: 15px;
+        width: 15px;
+        border: 1px solid #d9d9d9;
+        text-align: center;
+        line-height: 15px;
+        left: 10px;
+        top: -2px;
+        background-color: #ffffff; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) {
+    height: 329px; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row {
+      height: 47px;
+      border-bottom: 1px solid #cccccc;
+      font-family: Calibri;
+      color: #333333;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: -0.182px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div {
+        line-height: 47px; }
+        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 {
+          display: none; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label {
+            position: relative;
+            margin: 0;
+            height: 15px;
+            width: 35px; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label::before {
+            position: absolute;
+            content: '';
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            left: 10px;
+            top: 3px;
+            background-color: #ffffff; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00:checked + label::before {
+            position: absolute;
+            content: '\f00c';
+            font-family: 'FontAwesome';
+            color: #a3d165;
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            text-align: center;
+            line-height: 15px;
+            left: 10px;
+            top: 3px;
+            background-color: #ffffff; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row:hover {
+        font-family: Calibri;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.182px;
+        background-color: #333333; }
   div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child {
     position: relative; }
     div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span {

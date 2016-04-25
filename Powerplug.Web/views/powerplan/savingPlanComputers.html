@@ -5,11 +5,37 @@
           <span>Computer Groups</span>
           <div><span>{{vm.savingPlan.compGroups.length}}</span></div>
         </uib-tab-heading>
-          <div class="clearfix" style="padding-top:20px;">
-              <div class="pull-right" style="padding-left:30px;"><button class="btn btn-danger" ng-click="vm.removeComputerGroups()">Remove</button></div>
-              <div class="pull-right"><button class="btn btn-success" ng-click="vm.showAddComputerGroups()">Add Computer Groups</button></div>
+          <div>
+              <span class="buttonTypeOneAdd" ng-click="vm.showAddComputerGroups()">Add Computer Group</span>
+              <span class="buttonTypeOneRemove" ng-click="vm.removeComputerGroups()">Remove</span>
           </div>
-          <div class="panel-body">
+          <div>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-1">
+                  <input id="spc01" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.selectedAllGroups" ng-click="vm.checkAll('groups')"/>
+                  <label for="spc01"></label>
+                </div>
+                <div class="col-xs-5">Computer Group Name</div>
+                <!-- <div class="col-xs-6">Type</div> -->
+              </div>
+            </div>
+          </div>
+          <div ng-scrollbars ng-scrollbars-config="vm.config">
+            <div class="container-fluid">
+              <div class="row" ng-repeat="computerGroup in vm.savingPlan.compGroups">
+                <div class="col-xs-1">
+                  <!-- <input type="checkbox" data-name="{{computer.name}}" class="computer-selection" /> -->
+                  <input id="{{computerGroup.groupGUID}}" type="checkbox" class="custom-checkbox-green-type00" data-name="{{computerGroup.groupName}}" ng-model="computerGroup.selected" />
+                  <label for="{{computerGroup.groupGUID}}"></label>
+                </div>
+                <div class="col-xs-5">{{ computerGroup.groupName}}</div>
+                <!-- <div class="col-xs-5">Some type</div> -->
+                <!-- <div class="col-xs-1"><i class="fa fa-trash"></i> Remove</div> -->
+              </div>
+            </div>
+          </div>
+          <!-- <div class="panel-body">
               <table class="table">
                   <thead>
                       <tr>
@@ -24,7 +50,7 @@
                       </tr>
                   </tbody>
               </table>
-          </div>
+          </div> -->
       </uib-tab>
       <uib-tab index="1">
         <uib-tab-heading>
@@ -39,7 +65,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-xs-1">
-                  <input id="spc00" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.selectedAll" ng-click="vm.checkAll()"/>
+                  <input id="spc00" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.selectedAllComps" ng-click="vm.checkAll('comps')"/>
                   <label for="spc00"></label>
                 </div>
                 <div class="col-xs-5">Computer Name</div>

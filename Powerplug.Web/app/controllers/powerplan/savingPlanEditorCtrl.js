@@ -11,19 +11,42 @@
         vm.policyId = $stateParams.policyId;
 
         // Check all checkbox in Computers section
-        vm.checkAll = function () {
-            if (vm.selectedAll) {
-                vm.selectedAll = true;
-            } else {
-                vm.selectedAll = false;
+        vm.checkAll = function (seed) {
+          switch (seed) {
+            case 'groups':
+            {
+              if (vm.selectedAllGroups) {
+                  vm.selectedAllGroups = true;
+              } else {
+                  vm.selectedAllGroups = false;
+              }
+              angular.forEach(vm.savingPlan.compGroups, function (group) {
+                  group.selected = vm.selectedAllGroups;
+              });
+              break;
             }
-            angular.forEach(vm.savingPlan.computers, function (computer) {
-                computer.selected = vm.selectedAll;
-            });
+            case 'comps':
+            {
+              if (vm.selectedAllComps) {
+                  vm.selectedAllComps = true;
+              } else {
+                  vm.selectedAllComps = false;
+              }
+              angular.forEach(vm.savingPlan.computers, function (computer) {
+                  computer.selected = vm.selectedAllComps;
+              });
+              break;
+            }
+            default:
+              console.log();
+
+          }
+
+
         };
         // End check all checkbox in Computers section
 
-        //Scrollbar (Dirty way becose of old Jqyery)
+        //Scrollbar (Dirty way because of old Jquery)
         if (!$document.mCustomScrollbar) {
             $document.__proto__.mCustomScrollbar = $.mCustomScrollbar;
         }
