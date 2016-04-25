@@ -1,268 +1,7 @@
-div.computersWrapper {
-  background-color: #f2f2f2;
-  margin: 0 -50px;
-  padding: 55px 40px; }
-  div.computersWrapper > div[active="active"] > ul {
-    border-bottom: 4px solid #8cc63f; }
-    div.computersWrapper > div[active="active"] > ul > li {
-      width: 250px;
-      text-align: left; }
-      div.computersWrapper > div[active="active"] > ul > li > a {
-        border: none;
-        border-bottom: 6px solid #e6e6e6;
-        background-color: #e6e6e6;
-        padding: 0;
-        margin: 0;
-        font-family: Calibri;
-        color: #808080;
-        font-size: 20.3px;
-        font-weight: 300; }
-        div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading {
-          display: flex;
-          height: 44px;
-          justify-content: space-between;
-          align-items: center; }
-          div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading > span {
-            margin-left: 17px; }
-          div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading > div {
-            border-radius: 100%;
-            background-color: #cccccc;
-            font-family: Calibri;
-            font-size: 16.15px;
-            font-weight: 700;
-            height: 27px;
-            width: 27px;
-            line-height: 27px;
-            text-align: center;
-            margin-right: 10px; }
-            div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading > div > span {
-              display: inline-block;
-              vertical-align: middle;
-              font-family: Calibri;
-              color: #808080;
-              font-size: 16.15px;
-              font-weight: 700;
-              line-height: 31px; }
-      div.computersWrapper > div[active="active"] > ul > li.active > a {
-        border-bottom-color: #88b73d;
-        background-color: #a3d165;
-        color: #ffffff;
-        font-weight: 700; }
-        div.computersWrapper > div[active="active"] > ul > li.active > a > uib-tab-heading > div {
-          background-color: #ffffff; }
-          div.computersWrapper > div[active="active"] > ul > li.active > a > uib-tab-heading > div > span {
-            color: #8cc63f; }
-      div.computersWrapper > div[active="active"] > ul > li:last-child {
-        margin-left: 8px; }
-  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child {
-    position: relative; }
-    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span {
-      font-family: Calibri;
-      color: rgba(26, 26, 26, 0.7);
-      font-size: 18px;
-      font-weight: 700;
-      position: absolute;
-      top: -51px; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span.buttonTypeOneAdd {
-        right: 120px; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span.buttonTypeOneRemove {
-        right: 0; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span::before {
-        font-size: 20px;
-        margin-right: 10px; }
-  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) {
-    border-bottom: 1px solid #b3b3b3;
-    margin-top: 25px;
-    font-family: Calibri;
-    color: rgba(26, 26, 26, 0.7);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: -0.182px; }
-    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00 {
-      display: none; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00 + label {
-        position: relative;
-        margin: 0;
-        height: 15px;
-        width: 35px; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00 + label::before {
-        position: absolute;
-        content: '';
-        height: 15px;
-        width: 15px;
-        border: 1px solid #d9d9d9;
-        left: 10px;
-        top: -2px;
-        background-color: #ffffff; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00:checked + label::before {
-        position: absolute;
-        content: '\f00c';
-        font-family: 'FontAwesome';
-        color: #a3d165;
-        height: 15px;
-        width: 15px;
-        border: 1px solid #d9d9d9;
-        text-align: center;
-        line-height: 15px;
-        left: 10px;
-        top: -2px;
-        background-color: #ffffff; }
-  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) {
-    height: 329px; }
-    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row {
-      height: 47px;
-      border-bottom: 1px solid #cccccc;
-      font-family: Calibri;
-      color: #333333;
-      font-size: 14px;
-      font-weight: 300;
-      letter-spacing: -0.182px; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div {
-        line-height: 47px; }
-        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 {
-          display: none; }
-          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label {
-            position: relative;
-            margin: 0;
-            height: 15px;
-            width: 35px; }
-          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label::before {
-            position: absolute;
-            content: '';
-            height: 15px;
-            width: 15px;
-            border: 1px solid #d9d9d9;
-            left: 10px;
-            top: 3px;
-            background-color: #ffffff; }
-          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00:checked + label::before {
-            position: absolute;
-            content: '\f00c';
-            font-family: 'FontAwesome';
-            color: #a3d165;
-            height: 15px;
-            width: 15px;
-            border: 1px solid #d9d9d9;
-            text-align: center;
-            line-height: 15px;
-            left: 10px;
-            top: 3px;
-            background-color: #ffffff; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row:hover {
-        font-family: Calibri;
-        color: #ffffff;
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: -0.182px;
-        background-color: #333333; }
-  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child {
-    position: relative; }
-    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span {
-      font-family: Calibri;
-      color: rgba(26, 26, 26, 0.7);
-      font-size: 18px;
-      font-weight: 700;
-      position: absolute;
-      top: -51px; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span.buttonTypeOneAdd {
-        right: 120px; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span.buttonTypeOneRemove {
-        right: 0; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span::before {
-        font-size: 20px;
-        margin-right: 10px; }
-  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) {
-    border-bottom: 1px solid #b3b3b3;
-    margin-top: 25px;
-    font-family: Calibri;
-    color: rgba(26, 26, 26, 0.7);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: -0.182px; }
-    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00 {
-      display: none; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00 + label {
-        position: relative;
-        margin: 0;
-        height: 15px;
-        width: 35px; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00 + label::before {
-        position: absolute;
-        content: '';
-        height: 15px;
-        width: 15px;
-        border: 1px solid #d9d9d9;
-        left: 10px;
-        top: -2px;
-        background-color: #ffffff; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00:checked + label::before {
-        position: absolute;
-        content: '\f00c';
-        font-family: 'FontAwesome';
-        color: #a3d165;
-        height: 15px;
-        width: 15px;
-        border: 1px solid #d9d9d9;
-        text-align: center;
-        line-height: 15px;
-        left: 10px;
-        top: -2px;
-        background-color: #ffffff; }
-  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) {
-    height: 329px; }
-    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row {
-      height: 47px;
-      border-bottom: 1px solid #cccccc;
-      font-family: Calibri;
-      color: #333333;
-      font-size: 14px;
-      font-weight: 300;
-      letter-spacing: -0.182px; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div {
-        line-height: 47px; }
-        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 {
-          display: none; }
-          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label {
-            position: relative;
-            margin: 0;
-            height: 15px;
-            width: 35px; }
-          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label::before {
-            position: absolute;
-            content: '';
-            height: 15px;
-            width: 15px;
-            border: 1px solid #d9d9d9;
-            left: 10px;
-            top: 3px;
-            background-color: #ffffff; }
-          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00:checked + label::before {
-            position: absolute;
-            content: '\f00c';
-            font-family: 'FontAwesome';
-            color: #a3d165;
-            height: 15px;
-            width: 15px;
-            border: 1px solid #d9d9d9;
-            text-align: center;
-            line-height: 15px;
-            left: 10px;
-            top: 3px;
-            background-color: #ffffff; }
-        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:last-child {
-          display: none; }
-      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover {
-        font-family: Calibri;
-        color: #ffffff;
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: -0.182px;
-        background-color: #333333; }
-        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child {
-          display: block; }
-          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child > i {
-            color: #86bd3e; }
-
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
 div.addAppWrapper > div.modal-header {
   padding: 0;
   border: none; }
@@ -594,148 +333,230 @@ md-dialog.addScript > md-content > div div.savedStriptInfo {
         line-height: 14px;
         text-align: left; }
 
-.topGreenLine {
-  z-index: 100; }
+/********************************************/
+/* action calendar popup form*/
+/*
+@media (min-width: 768px){
+    .action-calendar .modal-dialog {
+        width: 930px!important;
+    }
+}
 
-div.content-wrapper {
-  background-color: #f9f9f9; }
+.action-calendar{
+    .modal-content{
+        border-radius: 0px;
+    }
+    .modal-header{
+        border-bottom: 0px;
+        padding-top:2   5px;
+        .title-before{
+            display: inline-block;
+            padding-right: 20px;
+            border-right: 1px solid #9b9b9b;
+            color:#9b9b9b;
+            font-size:24px;
+            font-weight: 100;
+        }
+        .title{
+            display: inline-block;
+            padding-left: 15px;
+            color:#7b7b7b;
+            font-size:24px;
+            font-weight: 100;
+        }
+        .close-btn{
+            line-height: 29px;
+            font-weight: 100;
+            color: #868686;
+            font-size: 20px;
+        }
+    }
+    .modal-body{
+        padding-bottom: 35px;
+        .time-picker-label{
+            display: inline-block;
+            line-height: 34px;
+            padding: 0 10px 0 5px;
+        }
+        input[type="number"]{
+            background: transparent;
+            height: 32px;
+            padding: 0px 0 0px 10px;
+            border: 1px solid #d9d9d9;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        input[type="time"]{
+            background: transparent;
+            height: 32px;
+            padding: 0px 0 0px 10px;
+            border: 1px solid #d9d9d9;
+            font-size: 14px;
+            line-height: 32px;
+            margin: 0 10px;
+            -webkit-appearance:none;
+        }
 
-.overview {
-  margin: 0 -48px;
-  background-color: #f9f9f9; }
-  .overview > div:first-child {
-    height: 112px;
-    display: flex;
-    justify-content: flex-end;
-    padding-left: 33px; }
-    .overview > div:first-child > div:first-child {
-      flex-grow: 1; }
-    .overview > div:first-child > div:last-child {
-      width: 250px;
-      height: 112px;
-      background-color: #f2f2f2; }
-      .overview > div:first-child > div:last-child > div {
-        height: 56px; }
-        .overview > div:first-child > div:last-child > div > div {
-          display: inline-block;
-          float: left;
-          line-height: 56px; }
-          .overview > div:first-child > div:last-child > div > div:first-child {
-            width: 70px;
-            margin-left: 38px; }
-            .overview > div:first-child > div:last-child > div > div:first-child > span {
-              font-family: Calibri;
-              color: rgba(26, 26, 26, 0.7);
-              font-size: 14px;
-              font-weight: 300;
-              letter-spacing: -0.182px; }
-    .overview > div:first-child > div > div.row {
-      height: 28px; }
-      .overview > div:first-child > div > div.row:nth-child(1) img, .overview > div:first-child > div > div.row:nth-child(2) img {
-        margin-bottom: 8px; }
-      .overview > div:first-child > div > div.row:nth-child(1) span, .overview > div:first-child > div > div.row:nth-child(2) span {
-        margin-left: 5px; }
-      .overview > div:first-child > div > div.row:nth-child(3) img, .overview > div:first-child > div > div.row:nth-child(4) img {
-        margin-left: 5px;
-        margin-bottom: 5px; }
-      .overview > div:first-child > div > div.row:nth-child(3) span, .overview > div:first-child > div > div.row:nth-child(4) span {
-        margin-left: 10px; }
-      .overview > div:first-child > div > div.row > div.col-xs-12 > img.margin {
-        padding-left: 10px; }
-      .overview > div:first-child > div > div.row > div.col-xs-12 > span {
-        font-family: Calibri;
-        color: rgba(26, 26, 26, 0.7);
-        font-size: 16.93px;
-        font-weight: 300;
-        line-height: 26.338px;
-        text-align: left; }
-  .overview > div:nth-child(2) {
-    background-color: #f2f2f2;
-    padding-bottom: 35px;
-    margin-top: 10px; }
-    .overview > div:nth-child(2) > div:last-child {
-      margin-top: 10px; }
-      .overview > div:nth-child(2) > div:last-child > div {
-        padding-top: 30px; }
-        .overview > div:nth-child(2) > div:last-child > div .bigNumber {
-          font-family: Calibri;
-          font-size: 33.39px;
-          font-weight: 700;
-          text-align: left; }
-        .overview > div:nth-child(2) > div:last-child > div .font {
-          font-family: Calibri;
-          color: rgba(26, 26, 26, 0.7);
-          font-size: 16.69px;
-          font-weight: 300;
-          text-align: left; }
-        .overview > div:nth-child(2) > div:last-child > div .green {
-          color: #8cc63f; }
-  .overview > div:last-child {
-    height: 45px;
-    background-color: #8cc63f;
-    margin: 0 -12px; }
-    .overview > div:last-child ul {
-      line-height: 45px;
-      text-align: center; }
-      .overview > div:last-child ul li {
-        list-style: none;
-        display: inline-block; }
-        .overview > div:last-child ul li > a {
-          font-family: Calibri;
-          color: #ffffff;
-          font-size: 17px;
-          font-weight: 400;
-          padding: 0 15px;
-          text-decoration: none; }
-        .overview > div:last-child ul li:not(:first-child) {
-          border-left: 1px solid #ffffff; }
+        input[type="time"]::-webkit-clear-button {
+            display: none;
+            -webkit-appearance:none;
+        }
 
-.chart-wraper {
-  width: 100%;
-  box-sizing: border-box;
-  display: inline-block;
-  padding: 0 5px; }
-  .chart-wraper .chart-title {
-    font-size: 20px;
-    padding: 10px 0;
-    font-family: Calibri;
-    color: rgba(26, 26, 26, 0.7);
-    font-size: 17px;
-    font-weight: 400;
-    text-align: left; }
-  .chart-wraper .chart-work {
-    padding: 10px;
-    box-sizing: border-box;
+        hr{
+          border-top: 1px solid #ccc;
+        }
+        .body-enter{
+
+            color:#333333;
+            font-size:16px;
+            font-weight: bold;
+        }
+        .action-type-select{
+            padding: 15px 0;
+            .left-col{
+                padding-right: 0px;
+            }
+            .datepicker-wrape{
+                border:1px solid #d9d9d9;
+                display: inline-block;
+                width: 120px;
+                z-index: 50;
+            }
+            .ratio-label{
+                color:#7b7b7b;
+                font-weight: bold;
+                margin-bottom: 0px;
+                span span{
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            .md-datepicker-input-mask{
+                display: none;
+            }
+
+        }
+        .keepMonitorOn{
+            display: inline-block;
+            margin: 15px 0;
+        }
+        .midle-text{
+            display: inline-block;
+            padding-right: 20px;
+            font-weight: 100;
+        }
+        .day-select{
+            position: relative;
+            display: inline-block;
+            padding-left: 30px;
+            padding-right: 15px;
+            line-height: 30px;
+        }
+        input.custom-checkbox-green-type01 {
+           display: none;
+           &+label {
+               margin: 0;
+               font-family: Calibri;
+               color: rgba(26, 26, 26, 0.7);
+               font-size: 14px;
+               font-weight: 300;
+               letter-spacing: -0.169px;
+               line-height: 16px;
+               text-align: left;
+           }
+           &+label::before {
+               position: absolute;
+               content: '';
+               height: 24px;
+               width: 24px;
+               left: 0px;
+               top: 2px;
+               border: 1px solid #d9d9d9 ;
+           }
+           &:checked + label::before {
+               position: absolute;
+               content: '\f00c';
+               font-family: 'FontAwesome';
+               color: #a3d165 ;
+               height: 24px;
+               width: 24px;
+               left: 0px;
+               top: 2px;
+               border: 1px solid #d9d9d9 ;
+               text-align: center;
+               line-height: 24px;
+           }
+        }
+        .nav-tabs{
+            width:100%;
+            li > a, .nav-tabs > li a:focus, .nav-tabs > li a:hover{
+                padding:5px 10px!important;
+            }
+        }
+        .uibTabSet{
+            margin-top: 20px;
+            .conditions{
+                div{
+                    padding: 25px 0 0 0;
+                    label{
+                        font-weight: 100;
+                    }
+                    select{
+                        border-radius: 0;
+                        background: transparent;
+                        height: 32px;
+                        padding: 5px;
+                        border: 1px solid #d9d9d9;
+                        font-size: 14px;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+        .time-chuse-line{
+            display: flex;
+            align-items: center;
+        }
+    }
+    .modal-footer{
+        border-top:0px;
+        background-color: #f2f2f2;
+        text-align: center;
+        .btn{
+            width: 100px;
+            border-radius: 0;
+            border: oldlace;
+        }
+        .add{
+            background-color: #8cc63f
+        }
+        .cancel{
+            background-color: #808080
+        }
+    }
+
+
+}
+
+.md-datepicker-input-mask{
+    display: none;
+}*/
+.time-picker {
+  width: 120px; }
+  .time-picker input {
+    border-radius: 0;
+    border-right: 0; }
+  .time-picker input:focus {
+    box-shadow: none;
+    border-color: #d4d4d4; }
+  .time-picker span {
+    border-radius: 0; }
+  .time-picker .input-group-addon {
+    padding: 0 12px !important;
     background-color: #fff; }
-  .chart-wraper .chart-non-work {
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: #e6e6e6; }
-
-md-datepicker {
-  display: inline-block;
-  height: 30px; }
-  md-datepicker > div {
-    margin: 7px 0 0 12px; }
-    md-datepicker > div.md-datepicker-input-container {
-      border: none;
-      width: 88px; }
-  md-datepicker > button {
-    display: none !important; }
-  md-datepicker button.md-focused {
-    background-color: none; }
-  md-datepicker button {
-    top: 0 !important;
-    left: 53px !important;
-    padding: 0 !important;
-    margin: 0 !important; }
-  md-datepicker input {
-    font-family: Calibri;
-    color: rgba(102, 102, 102, 0.7) !important;
-    font-size: 14px;
-    font-weight: 300;
-    letter-spacing: -0.182px;
-    text-align: left; }
+    .time-picker .input-group-addon .glyphicon {
+      display: block;
+      font-size: 12px; }
 
 div[ui-view="workhoursaction"] > div:first-child {
   height: 40px;
@@ -1112,8 +933,27 @@ div[ui-view="workhoursaction"] > div:first-child {
   .time-lmit-block .thick-text {
     font-weight: 700; }
 
-.savingPlans > div#organizationName > .customTable > .customTableHead > div:focus {
-  outline: none; }
+.chart-wraper {
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 5px; }
+  .chart-wraper .chart-title {
+    font-size: 20px;
+    padding: 10px 0;
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 17px;
+    font-weight: 400;
+    text-align: left; }
+  .chart-wraper .chart-work {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #fff; }
+  .chart-wraper .chart-non-work {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #e6e6e6; }
 
 custom-radio-button-type-one {
   display: block; }
@@ -1157,6 +997,585 @@ custom-radio-button-type-one input[type="radio"]:checked + label span {
 custom-radio-button-type-one input[type="radio"]:checked + label span:last-child {
   color: #333333 !important;
   font-weight: 700 !important; }
+
+input.custom-checkbox-green + label {
+  cursor: pointer;
+  margin-bottom: 0; }
+
+input.custom-checkbox-green:checked + label:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #d7d7d7; }
+
+input.custom-checkbox-green:not(checked) {
+  position: absolute;
+  opacity: 0; }
+  input.custom-checkbox-green:not(checked) + label {
+    position: relative;
+    padding: 0 0 0 30px; }
+    input.custom-checkbox-green:not(checked) + label:before {
+      content: '\f00c';
+      font-family: 'FontAwesome';
+      font-size: 12px;
+      color: #93c349;
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #989898;
+      text-align: center; }
+
+input.custom-radio-button-t2[type="radio"] {
+  display: none; }
+
+input.custom-radio-button-t2[type="radio"] + label {
+  color: #898989;
+  font-family: Arial, sans-serif;
+  font-size: 14px; }
+
+input.custom-radio-button-t2[type="radio"] + label span {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
+
+input.custom-radio-button-t2[type="radio"] + label span span {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: 2px 2px 0;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
+
+input.custom-radio-button-t2[type="radio"] + label > span {
+  border: 1px solid #dbdbdb; }
+
+input.custom-radio-button-t2[type="radio"] + label span span {
+  background-color: #dbdbdb; }
+
+input.custom-radio-button-t2[type="radio"]:checked + label span span {
+  background-color: #8fc73e; }
+
+input.custom-radio-button-t2[type="radio"] + label span,
+input.custom-radio-button-t2[type="radio"]:checked + label span {
+  -webkit-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
+  -moz-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear; }
+
+.customDropdown {
+  font-family: Calibri;
+  color: rgba(26, 26, 26, 0.7);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: -0.182px; }
+  .customDropdown > span {
+    line-height: 40px; }
+  .customDropdown > select {
+    height: 40px;
+    width: 150px; }
+
+.buttonTypeOneAdd:before {
+  font-family: 'FontAwesome';
+  font-size: 17px;
+  content: '\f055';
+  color: #8ecc38;
+  margin-right: 1px; }
+
+.buttonTypeOneRemove:before {
+  font-family: 'FontAwesome';
+  font-size: 17px;
+  content: '\f1f8';
+  color: #8ecc38;
+  margin-right: 1px; }
+
+.buttonTypeOneEdit:before {
+  font-family: 'FontAwesome';
+  font-size: 17px;
+  content: '\f040';
+  color: #8ecc38;
+  margin-right: 1px; }
+
+.buttonTypeOneRefresh:before {
+  font-family: 'FontAwesome';
+  font-size: 17px;
+  content: '\f021';
+  color: #8ecc38;
+  margin-right: 1px; }
+
+input.custom-radio-button-type-one {
+  display: block; }
+
+input.custom-radio-button-type-one[type="radio"] {
+  display: none; }
+
+input.custom-radio-button-type-one[type="radio"] + label {
+  color: #898989;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  outline: none; }
+
+input.custom-radio-button-type-one[type="radio"] + label span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
+
+input.custom-radio-button-type-one[type="radio"] + label > span:first-child {
+  background-color: #f3f3f3; }
+
+input.custom-radio-button-type-one[type="radio"]:checked + label > span:first-child {
+  background-color: #8fc73e; }
+
+input.custom-radio-button-type-one[type="radio"] + label span,
+input.custom-radio-button-type-one[type="radio"]:checked + label span {
+  -webkit-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
+  -moz-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear; }
+
+input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child {
+  color: #333333 !important;
+  font-weight: 700 !important; }
+
+.topGreenLine {
+  z-index: 100; }
+
+div.content-wrapper {
+  background-color: #f9f9f9; }
+
+md-datepicker {
+  display: inline-block;
+  height: 30px; }
+  md-datepicker > div {
+    margin: 7px 0 0 12px; }
+    md-datepicker > div.md-datepicker-input-container {
+      border: none;
+      width: 88px; }
+  md-datepicker > button {
+    display: none !important; }
+  md-datepicker button.md-focused {
+    background-color: none; }
+  md-datepicker button {
+    top: 0 !important;
+    left: 53px !important;
+    padding: 0 !important;
+    margin: 0 !important; }
+  md-datepicker input {
+    font-family: Calibri;
+    color: rgba(102, 102, 102, 0.7) !important;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: -0.182px;
+    text-align: left; }
+
+.nav-tabs {
+  border-bottom: none; }
+  .nav-tabs > li {
+    margin-bottom: 8px; }
+    .nav-tabs > li > a,
+    .nav-tabs > li a:focus,
+    .nav-tabs > li a:hover {
+      border: none;
+      background-color: #808080;
+      font-family: Calibri;
+      color: #ffffff;
+      font-size: 19px;
+      font-weight: 300;
+      outline: none;
+      border: none;
+      border-bottom: 6px solid #808080;
+      padding: 5px 0; }
+    .nav-tabs > li.active > a,
+    .nav-tabs > li.active a:focus,
+    .nav-tabs > li.active a:hover {
+      background-color: #a3d165;
+      color: #ffffff;
+      border: none;
+      border-bottom: 6px solid #88b73d;
+      font-weight: 700; }
+
+div.computersWrapper {
+  background-color: #f2f2f2;
+  margin: 0 -50px;
+  padding: 55px 40px; }
+  div.computersWrapper > div[active="active"] > ul {
+    border-bottom: 4px solid #8cc63f; }
+    div.computersWrapper > div[active="active"] > ul > li {
+      width: 250px;
+      text-align: left; }
+      div.computersWrapper > div[active="active"] > ul > li > a {
+        border: none;
+        border-bottom: 6px solid #e6e6e6;
+        background-color: #e6e6e6;
+        padding: 0;
+        margin: 0;
+        font-family: Calibri;
+        color: #808080;
+        font-size: 20.3px;
+        font-weight: 300; }
+        div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading {
+          display: flex;
+          height: 44px;
+          justify-content: space-between;
+          align-items: center; }
+          div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading > span {
+            margin-left: 17px; }
+          div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading > div {
+            border-radius: 100%;
+            background-color: #cccccc;
+            font-family: Calibri;
+            font-size: 16.15px;
+            font-weight: 700;
+            height: 27px;
+            width: 27px;
+            line-height: 27px;
+            text-align: center;
+            margin-right: 10px; }
+            div.computersWrapper > div[active="active"] > ul > li > a > uib-tab-heading > div > span {
+              display: inline-block;
+              vertical-align: middle;
+              font-family: Calibri;
+              color: #808080;
+              font-size: 16.15px;
+              font-weight: 700;
+              line-height: 31px; }
+      div.computersWrapper > div[active="active"] > ul > li.active > a {
+        border-bottom-color: #88b73d;
+        background-color: #a3d165;
+        color: #ffffff;
+        font-weight: 700; }
+        div.computersWrapper > div[active="active"] > ul > li.active > a > uib-tab-heading > div {
+          background-color: #ffffff; }
+          div.computersWrapper > div[active="active"] > ul > li.active > a > uib-tab-heading > div > span {
+            color: #8cc63f; }
+      div.computersWrapper > div[active="active"] > ul > li:last-child {
+        margin-left: 8px; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child {
+    position: relative; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 18px;
+      font-weight: 700;
+      position: absolute;
+      top: -51px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span.buttonTypeOneAdd {
+        right: 120px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span.buttonTypeOneRemove {
+        right: 0; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span::before {
+        font-size: 20px;
+        margin-right: 10px; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) {
+    border-bottom: 1px solid #b3b3b3;
+    margin-top: 25px;
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.182px; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00 {
+      display: none; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00 + label {
+        position: relative;
+        margin: 0;
+        height: 15px;
+        width: 35px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00 + label::before {
+        position: absolute;
+        content: '';
+        height: 15px;
+        width: 15px;
+        border: 1px solid #d9d9d9;
+        left: 10px;
+        top: -2px;
+        background-color: #ffffff; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) input.custom-checkbox-green-type00:checked + label::before {
+        position: absolute;
+        content: '\f00c';
+        font-family: 'FontAwesome';
+        color: #a3d165;
+        height: 15px;
+        width: 15px;
+        border: 1px solid #d9d9d9;
+        text-align: center;
+        line-height: 15px;
+        left: 10px;
+        top: -2px;
+        background-color: #ffffff; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) {
+    height: 329px; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row {
+      height: 47px;
+      border-bottom: 1px solid #cccccc;
+      font-family: Calibri;
+      color: #333333;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: -0.182px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div {
+        line-height: 47px; }
+        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 {
+          display: none; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label {
+            position: relative;
+            margin: 0;
+            height: 15px;
+            width: 35px; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label::before {
+            position: absolute;
+            content: '';
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            left: 10px;
+            top: 3px;
+            background-color: #ffffff; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00:checked + label::before {
+            position: absolute;
+            content: '\f00c';
+            font-family: 'FontAwesome';
+            color: #a3d165;
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            text-align: center;
+            line-height: 15px;
+            left: 10px;
+            top: 3px;
+            background-color: #ffffff; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row:hover {
+        font-family: Calibri;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.182px;
+        background-color: #333333; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child {
+    position: relative; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 18px;
+      font-weight: 700;
+      position: absolute;
+      top: -51px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span.buttonTypeOneAdd {
+        right: 120px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span.buttonTypeOneRemove {
+        right: 0; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span::before {
+        font-size: 20px;
+        margin-right: 10px; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) {
+    border-bottom: 1px solid #b3b3b3;
+    margin-top: 25px;
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.182px; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00 {
+      display: none; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00 + label {
+        position: relative;
+        margin: 0;
+        height: 15px;
+        width: 35px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00 + label::before {
+        position: absolute;
+        content: '';
+        height: 15px;
+        width: 15px;
+        border: 1px solid #d9d9d9;
+        left: 10px;
+        top: -2px;
+        background-color: #ffffff; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) input.custom-checkbox-green-type00:checked + label::before {
+        position: absolute;
+        content: '\f00c';
+        font-family: 'FontAwesome';
+        color: #a3d165;
+        height: 15px;
+        width: 15px;
+        border: 1px solid #d9d9d9;
+        text-align: center;
+        line-height: 15px;
+        left: 10px;
+        top: -2px;
+        background-color: #ffffff; }
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) {
+    height: 329px; }
+    div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row {
+      height: 47px;
+      border-bottom: 1px solid #cccccc;
+      font-family: Calibri;
+      color: #333333;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: -0.182px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div {
+        line-height: 47px; }
+        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 {
+          display: none; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label {
+            position: relative;
+            margin: 0;
+            height: 15px;
+            width: 35px; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00 + label::before {
+            position: absolute;
+            content: '';
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            left: 10px;
+            top: 3px;
+            background-color: #ffffff; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:first-child > input.custom-checkbox-green-type00:checked + label::before {
+            position: absolute;
+            content: '\f00c';
+            font-family: 'FontAwesome';
+            color: #a3d165;
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            text-align: center;
+            line-height: 15px;
+            left: 10px;
+            top: 3px;
+            background-color: #ffffff; }
+        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:last-child {
+          display: none; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover {
+        font-family: Calibri;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.182px;
+        background-color: #333333; }
+        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child {
+          display: block; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child > i {
+            color: #86bd3e; }
+
+.mce-menubar,
+.mce-statusbar {
+  display: none !important; }
+
+.mce-container-body:after {
+  display: block;
+  clear: both;
+  content: ''; }
+
+.mce-stack-layout {
+  position: relative; }
+
+.mce-toolbar-grp {
+  float: right !important;
+  width: 525px !important;
+  position: relative !important;
+  margin-left: -100% !important;
+  padding-top: 0 !important;
+  margin-top: -4px !important; }
+
+.mce-edit-area {
+  float: left !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding-right: 525px !important; }
+
+.mce-tinymce,
+.mce-toolbar-grp,
+.wraper-tinymce .mce-panel {
+  background-color: transparent !important;
+  border: none !important;
+  border-width: 0px !important;
+  border-color: transparent !important; }
+
+.mce-edit-area iframe {
+  border: 1px solid #9e9e9e;
+  min-height: 162px; }
+
+.mce-toolbar {
+  padding-left: 20px !important;
+  padding-right: 20px !important; }
+
+.mce-btn {
+  background-color: transparent !important; }
+
+.mce-btn-group {
+  background: white !important;
+  background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%) !important;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed)) !important;
+  background: -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%) !important;
+  background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%) !important;
+  background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%) !important;
+  background: linear-gradient(to bottom, white 0%, #f6f6f6 47%, #ededed 100%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#ffffff', endColorstr='#ededed', GradientType=0 ) !important;
+  padding: 2px !important; }
+
+.mce-btn-group:not(:first-child) {
+  margin-left: 0 !important; }
+
+.mce-btn-group {
+  border-left: 1px solid #d9d9d9 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.wraper-tinymce {
+  position: relative; }
+  .wraper-tinymce .btn-block-tinymce {
+    position: absolute;
+    bottom: 0;
+    right: 353px; }
+    .wraper-tinymce .btn-block-tinymce .btn {
+      border-radius: 0;
+      border: 0;
+      font-weight: bold; }
+    .wraper-tinymce .btn-block-tinymce .btn-success {
+      background-color: #8cc63e; }
+    .wraper-tinymce .btn-block-tinymce .btn-primary {
+      background-color: #28b8ed; }
+
+.descriptionWrapper {
+  margin: 0 -50px;
+  padding: 22px 51px 35px 50px;
+  background-color: #f2f2f2; }
+  .descriptionWrapper > h3 {
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 23px;
+    font-weight: 300;
+    text-align: left; }
+  .descriptionWrapper > div.panel-body {
+    border-top: 5px solid #8cc63f;
+    padding: 16px 15px 15px 0; }
+    .descriptionWrapper > div.panel-body > span {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.195px;
+      text-align: left; }
+    .descriptionWrapper > div.panel-body > div {
+      margin-top: 5px; }
 
 .eventsWrapper {
   background-color: #ffffff;
@@ -1316,247 +1735,98 @@ custom-radio-button-type-one input[type="radio"]:checked + label span:last-child
                       margin-right: 5px;
                       content: '\f1f8'; }
 
-.mce-menubar,
-.mce-statusbar {
-  display: none !important; }
-
-.mce-container-body:after {
-  display: block;
-  clear: both;
-  content: ''; }
-
-.mce-stack-layout {
-  position: relative; }
-
-.mce-toolbar-grp {
-  float: right !important;
-  width: 525px !important;
-  position: relative !important;
-  margin-left: -100% !important;
-  padding-top: 0 !important;
-  margin-top: -4px !important; }
-
-.mce-edit-area {
-  float: left !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  padding-right: 525px !important; }
-
-.mce-tinymce,
-.mce-toolbar-grp,
-.wraper-tinymce .mce-panel {
-  background-color: transparent !important;
-  border: none !important;
-  border-width: 0px !important;
-  border-color: transparent !important; }
-
-.mce-edit-area iframe {
-  border: 1px solid #9e9e9e;
-  min-height: 162px; }
-
-.mce-toolbar {
-  padding-left: 20px !important;
-  padding-right: 20px !important; }
-
-.mce-btn {
-  background-color: transparent !important; }
-
-.mce-btn-group {
-  background: white !important;
-  background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%) !important;
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed)) !important;
-  background: -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%) !important;
-  background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%) !important;
-  background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%) !important;
-  background: linear-gradient(to bottom, white 0%, #f6f6f6 47%, #ededed 100%) !important;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#ffffff', endColorstr='#ededed', GradientType=0 ) !important;
-  padding: 2px !important; }
-
-.mce-btn-group:not(:first-child) {
-  margin-left: 0 !important; }
-
-.mce-btn-group {
-  border-left: 1px solid #d9d9d9 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important; }
-
-.wraper-tinymce {
-  position: relative; }
-  .wraper-tinymce .btn-block-tinymce {
-    position: absolute;
-    bottom: 0;
-    right: 353px; }
-    .wraper-tinymce .btn-block-tinymce .btn {
-      border-radius: 0;
-      border: 0;
-      font-weight: bold; }
-    .wraper-tinymce .btn-block-tinymce .btn-success {
-      background-color: #8cc63e; }
-    .wraper-tinymce .btn-block-tinymce .btn-primary {
-      background-color: #28b8ed; }
-
-.descriptionWrapper {
-  margin: 0 -50px;
-  padding: 22px 51px 35px 50px;
-  background-color: #f2f2f2; }
-  .descriptionWrapper > h3 {
-    font-family: Calibri;
-    color: rgba(26, 26, 26, 0.7);
-    font-size: 23px;
-    font-weight: 300;
-    text-align: left; }
-  .descriptionWrapper > div.panel-body {
-    border-top: 5px solid #8cc63f;
-    padding: 16px 15px 15px 0; }
-    .descriptionWrapper > div.panel-body > span {
-      font-family: Calibri;
-      color: rgba(26, 26, 26, 0.7);
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: -0.195px;
-      text-align: left; }
-    .descriptionWrapper > div.panel-body > div {
-      margin-top: 5px; }
-
-input.custom-checkbox-green + label {
-  cursor: pointer;
-  margin-bottom: 0; }
-
-input.custom-checkbox-green:checked + label:before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: 0;
-  width: 15px;
-  height: 15px;
-  border: 1px solid #d7d7d7; }
-
-input.custom-checkbox-green:not(checked) {
-  position: absolute;
-  opacity: 0; }
-  input.custom-checkbox-green:not(checked) + label {
-    position: relative;
-    padding: 0 0 0 30px; }
-    input.custom-checkbox-green:not(checked) + label:before {
-      content: '\f00c';
-      font-family: 'FontAwesome';
-      font-size: 12px;
-      color: #93c349;
-      position: absolute;
-      top: -10px;
-      left: 0;
-      width: 15px;
-      height: 15px;
-      border: 1px solid #989898;
+.overview {
+  margin: 0 -48px;
+  background-color: #f9f9f9; }
+  .overview > div:first-child {
+    height: 112px;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 33px; }
+    .overview > div:first-child > div:first-child {
+      flex-grow: 1; }
+    .overview > div:first-child > div:last-child {
+      width: 250px;
+      height: 112px;
+      background-color: #f2f2f2; }
+      .overview > div:first-child > div:last-child > div {
+        height: 56px; }
+        .overview > div:first-child > div:last-child > div > div {
+          display: inline-block;
+          float: left;
+          line-height: 56px; }
+          .overview > div:first-child > div:last-child > div > div:first-child {
+            width: 70px;
+            margin-left: 38px; }
+            .overview > div:first-child > div:last-child > div > div:first-child > span {
+              font-family: Calibri;
+              color: rgba(26, 26, 26, 0.7);
+              font-size: 14px;
+              font-weight: 300;
+              letter-spacing: -0.182px; }
+    .overview > div:first-child > div > div.row {
+      height: 28px; }
+      .overview > div:first-child > div > div.row:nth-child(1) img, .overview > div:first-child > div > div.row:nth-child(2) img {
+        margin-bottom: 8px; }
+      .overview > div:first-child > div > div.row:nth-child(1) span, .overview > div:first-child > div > div.row:nth-child(2) span {
+        margin-left: 5px; }
+      .overview > div:first-child > div > div.row:nth-child(3) img, .overview > div:first-child > div > div.row:nth-child(4) img {
+        margin-left: 5px;
+        margin-bottom: 5px; }
+      .overview > div:first-child > div > div.row:nth-child(3) span, .overview > div:first-child > div > div.row:nth-child(4) span {
+        margin-left: 10px; }
+      .overview > div:first-child > div > div.row > div.col-xs-12 > img.margin {
+        padding-left: 10px; }
+      .overview > div:first-child > div > div.row > div.col-xs-12 > span {
+        font-family: Calibri;
+        color: rgba(26, 26, 26, 0.7);
+        font-size: 16.93px;
+        font-weight: 300;
+        line-height: 26.338px;
+        text-align: left; }
+  .overview > div:nth-child(2) {
+    background-color: #f2f2f2;
+    padding-bottom: 35px;
+    margin-top: 10px; }
+    .overview > div:nth-child(2) > div:last-child {
+      margin-top: 10px; }
+      .overview > div:nth-child(2) > div:last-child > div {
+        padding-top: 30px; }
+        .overview > div:nth-child(2) > div:last-child > div .bigNumber {
+          font-family: Calibri;
+          font-size: 33.39px;
+          font-weight: 700;
+          text-align: left; }
+        .overview > div:nth-child(2) > div:last-child > div .font {
+          font-family: Calibri;
+          color: rgba(26, 26, 26, 0.7);
+          font-size: 16.69px;
+          font-weight: 300;
+          text-align: left; }
+        .overview > div:nth-child(2) > div:last-child > div .green {
+          color: #8cc63f; }
+  .overview > div:last-child {
+    height: 45px;
+    background-color: #8cc63f;
+    margin: 0 -12px; }
+    .overview > div:last-child ul {
+      line-height: 45px;
       text-align: center; }
+      .overview > div:last-child ul li {
+        list-style: none;
+        display: inline-block; }
+        .overview > div:last-child ul li > a {
+          font-family: Calibri;
+          color: #ffffff;
+          font-size: 17px;
+          font-weight: 400;
+          padding: 0 15px;
+          text-decoration: none; }
+        .overview > div:last-child ul li:not(:first-child) {
+          border-left: 1px solid #ffffff; }
 
-input.custom-radio-button-t2[type="radio"] {
-  display: none; }
-
-input.custom-radio-button-t2[type="radio"] + label {
-  color: #898989;
-  font-family: Arial, sans-serif;
-  font-size: 14px; }
-
-input.custom-radio-button-t2[type="radio"] + label span {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  margin: -1px 4px 0 0;
-  vertical-align: middle;
-  cursor: pointer;
-  -moz-border-radius: 50%;
-  border-radius: 50%; }
-
-input.custom-radio-button-t2[type="radio"] + label span span {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  margin: 2px 2px 0;
-  vertical-align: middle;
-  cursor: pointer;
-  -moz-border-radius: 50%;
-  border-radius: 50%; }
-
-input.custom-radio-button-t2[type="radio"] + label > span {
-  border: 1px solid #dbdbdb; }
-
-input.custom-radio-button-t2[type="radio"] + label span span {
-  background-color: #dbdbdb; }
-
-input.custom-radio-button-t2[type="radio"]:checked + label span span {
-  background-color: #8fc73e; }
-
-input.custom-radio-button-t2[type="radio"] + label span,
-input.custom-radio-button-t2[type="radio"]:checked + label span {
-  -webkit-transition: background-color 0.4s linear;
-  -o-transition: background-color 0.4s linear;
-  -moz-transition: background-color 0.4s linear;
-  transition: background-color 0.4s linear; }
-
-.nav-tabs {
-  border-bottom: none; }
-  .nav-tabs > li {
-    margin-bottom: 8px; }
-    .nav-tabs > li > a,
-    .nav-tabs > li a:focus,
-    .nav-tabs > li a:hover {
-      background-color: #808080;
-      font-family: Calibri;
-      color: #ffffff;
-      font-size: 19px;
-      font-weight: 300;
-      outline: none;
-      border: none;
-      border-bottom: 6px solid #808080;
-      padding: 5px 0; }
-    .nav-tabs > li.active > a,
-    .nav-tabs > li.active a:focus,
-    .nav-tabs > li.active a:hover {
-      background-color: #a3d165;
-      color: #ffffff;
-      border-bottom: 6px solid #88b73d;
-      font-weight: 700; }
-
-.customDropdown {
-  font-family: Calibri;
-  color: rgba(26, 26, 26, 0.7);
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: -0.182px; }
-  .customDropdown > span {
-    line-height: 40px; }
-  .customDropdown > select {
-    height: 40px;
-    width: 150px; }
-
-.buttonTypeOneAdd:before {
-  font-family: 'FontAwesome';
-  font-size: 17px;
-  content: '\f055';
-  color: #8ecc38;
-  margin-right: 1px; }
-
-.buttonTypeOneRemove:before {
-  font-family: 'FontAwesome';
-  font-size: 17px;
-  content: '\f1f8';
-  color: #8ecc38;
-  margin-right: 1px; }
-
-.buttonTypeOneEdit:before {
-  font-family: 'FontAwesome';
-  font-size: 17px;
-  content: '\f040';
-  color: #8ecc38;
-  margin-right: 1px; }
-
-.buttonTypeOneRefresh:before {
-  font-family: 'FontAwesome';
-  font-size: 17px;
-  content: '\f021';
-  color: #8ecc38;
-  margin-right: 1px; }
+.savingPlans > div#organizationName > .customTable > .customTableHead > div:focus {
+  outline: none; }
 
 .savingPlanWorkTime {
   padding: 40px;
@@ -1815,267 +2085,3 @@ input.custom-radio-button-t2[type="radio"]:checked + label span {
                   border: 1px solid #d9d9d9;
                   text-align: center;
                   line-height: 24px; }
-
-input.custom-radio-button-type-one {
-  display: block; }
-
-input.custom-radio-button-type-one[type="radio"] {
-  display: none; }
-
-input.custom-radio-button-type-one[type="radio"] + label {
-  color: #898989;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  outline: none; }
-
-input.custom-radio-button-type-one[type="radio"] + label span {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin: -1px 4px 0 0;
-  vertical-align: middle;
-  cursor: pointer;
-  -moz-border-radius: 50%;
-  border-radius: 50%; }
-
-input.custom-radio-button-type-one[type="radio"] + label > span:first-child {
-  background-color: #f3f3f3; }
-
-input.custom-radio-button-type-one[type="radio"]:checked + label > span:first-child {
-  background-color: #8fc73e; }
-
-input.custom-radio-button-type-one[type="radio"] + label span,
-input.custom-radio-button-type-one[type="radio"]:checked + label span {
-  -webkit-transition: background-color 0.4s linear;
-  -o-transition: background-color 0.4s linear;
-  -moz-transition: background-color 0.4s linear;
-  transition: background-color 0.4s linear; }
-
-input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child {
-  color: #333333 !important;
-  font-weight: 700 !important; }
-
-/********************************************/
-/* action calendar popup form*/
-/*
-@media (min-width: 768px){
-    .action-calendar .modal-dialog {
-        width: 930px!important;
-    }
-}
-
-.action-calendar{
-    .modal-content{
-        border-radius: 0px;
-    }
-    .modal-header{
-        border-bottom: 0px;
-        padding-top:2   5px;
-        .title-before{
-            display: inline-block;
-            padding-right: 20px;
-            border-right: 1px solid #9b9b9b;
-            color:#9b9b9b;
-            font-size:24px;
-            font-weight: 100;
-        }
-        .title{
-            display: inline-block;
-            padding-left: 15px;
-            color:#7b7b7b;
-            font-size:24px;
-            font-weight: 100;
-        }
-        .close-btn{
-            line-height: 29px;
-            font-weight: 100;
-            color: #868686;
-            font-size: 20px;
-        }
-    }
-    .modal-body{
-        padding-bottom: 35px;
-        .time-picker-label{
-            display: inline-block;
-            line-height: 34px;
-            padding: 0 10px 0 5px;
-        }
-        input[type="number"]{
-            background: transparent;
-            height: 32px;
-            padding: 0px 0 0px 10px;
-            border: 1px solid #d9d9d9;
-            font-size: 14px;
-            line-height: 20px;
-        }
-        input[type="time"]{
-            background: transparent;
-            height: 32px;
-            padding: 0px 0 0px 10px;
-            border: 1px solid #d9d9d9;
-            font-size: 14px;
-            line-height: 32px;
-            margin: 0 10px;
-            -webkit-appearance:none;
-        }
-
-        input[type="time"]::-webkit-clear-button {
-            display: none;
-            -webkit-appearance:none;
-        }
-
-        hr{
-          border-top: 1px solid #ccc;
-        }
-        .body-enter{
-
-            color:#333333;
-            font-size:16px;
-            font-weight: bold;
-        }
-        .action-type-select{
-            padding: 15px 0;
-            .left-col{
-                padding-right: 0px;
-            }
-            .datepicker-wrape{
-                border:1px solid #d9d9d9;
-                display: inline-block;
-                width: 120px;
-                z-index: 50;
-            }
-            .ratio-label{
-                color:#7b7b7b;
-                font-weight: bold;
-                margin-bottom: 0px;
-                span span{
-                    width: 15px;
-                    height: 15px;
-                }
-            }
-            .md-datepicker-input-mask{
-                display: none;
-            }
-
-        }
-        .keepMonitorOn{
-            display: inline-block;
-            margin: 15px 0;
-        }
-        .midle-text{
-            display: inline-block;
-            padding-right: 20px;
-            font-weight: 100;
-        }
-        .day-select{
-            position: relative;
-            display: inline-block;
-            padding-left: 30px;
-            padding-right: 15px;
-            line-height: 30px;
-        }
-        input.custom-checkbox-green-type01 {
-           display: none;
-           &+label {
-               margin: 0;
-               font-family: Calibri;
-               color: rgba(26, 26, 26, 0.7);
-               font-size: 14px;
-               font-weight: 300;
-               letter-spacing: -0.169px;
-               line-height: 16px;
-               text-align: left;
-           }
-           &+label::before {
-               position: absolute;
-               content: '';
-               height: 24px;
-               width: 24px;
-               left: 0px;
-               top: 2px;
-               border: 1px solid #d9d9d9 ;
-           }
-           &:checked + label::before {
-               position: absolute;
-               content: '\f00c';
-               font-family: 'FontAwesome';
-               color: #a3d165 ;
-               height: 24px;
-               width: 24px;
-               left: 0px;
-               top: 2px;
-               border: 1px solid #d9d9d9 ;
-               text-align: center;
-               line-height: 24px;
-           }
-        }
-        .nav-tabs{
-            width:100%;
-            li > a, .nav-tabs > li a:focus, .nav-tabs > li a:hover{
-                padding:5px 10px!important;
-            }
-        }
-        .uibTabSet{
-            margin-top: 20px;
-            .conditions{
-                div{
-                    padding: 25px 0 0 0;
-                    label{
-                        font-weight: 100;
-                    }
-                    select{
-                        border-radius: 0;
-                        background: transparent;
-                        height: 32px;
-                        padding: 5px;
-                        border: 1px solid #d9d9d9;
-                        font-size: 14px;
-                        line-height: 1;
-                    }
-                }
-            }
-        }
-        .time-chuse-line{
-            display: flex;
-            align-items: center;
-        }
-    }
-    .modal-footer{
-        border-top:0px;
-        background-color: #f2f2f2;
-        text-align: center;
-        .btn{
-            width: 100px;
-            border-radius: 0;
-            border: oldlace;
-        }
-        .add{
-            background-color: #8cc63f
-        }
-        .cancel{
-            background-color: #808080
-        }
-    }
-
-
-}
-
-.md-datepicker-input-mask{
-    display: none;
-}*/
-.time-picker {
-  width: 120px; }
-  .time-picker input {
-    border-radius: 0;
-    border-right: 0; }
-  .time-picker input:focus {
-    box-shadow: none;
-    border-color: #d4d4d4; }
-  .time-picker span {
-    border-radius: 0; }
-  .time-picker .input-group-addon {
-    padding: 0 12px !important;
-    background-color: #fff; }
-    .time-picker .input-group-addon .glyphicon {
-      display: block;
-      font-size: 12px; }

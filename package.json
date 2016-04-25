@@ -18,5 +18,9 @@
     "gulp": "^3.9.1",
     "gulp-sass": "^2.2.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-debug": "^2.1.2",
+    "gulp-inject": "^4.0.0",
+    "gulp-notify": "^2.2.0"
+  }
 }
