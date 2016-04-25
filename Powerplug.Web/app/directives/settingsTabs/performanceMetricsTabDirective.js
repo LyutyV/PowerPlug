@@ -3,7 +3,7 @@
     angular
         .module('powerPlug').directive('performanceMetricsTab', function () {
             return {
-                templateUrl: "../../../views/powerplan/settingsTabs/performanceMetrics.html",
+                templateUrl: "views/powerplan/settingsTabs/performanceMetrics.html",
                 scope: {
                     jsonobject: '=',
                     worktype: '@',

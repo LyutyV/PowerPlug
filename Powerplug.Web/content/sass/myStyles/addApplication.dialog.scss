@@ -1,0 +1,71 @@
+div.addAppWrapper {
+    > div {
+        &.modal-header {
+            padding: 0;
+            border: none;
+            > span {
+                display: inline-block;
+                margin: 45px 33px;
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 24px;
+                font-weight: 300;
+            }
+            > img {
+                float: right;
+                margin: 52px 30px;
+            }
+        }
+        &.modal-body {
+            border-top: 5px solid #8cc63f;
+            padding: 0;
+            margin: 0;
+            > div.well {
+                border: none;
+                background-color: #ffffff;
+                padding: 0 33px;
+                margin: 0;
+                > div {
+                    font-family: Calibri;
+                    color: rgba(26, 26, 26, 0.7);
+                    font-size: 14px;
+                    font-weight: 300;
+                    letter-spacing: -0.182px;
+                    > input.custom-radio-button-t2 + label {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 13px;
+                        font-weight: 300;
+                        letter-spacing: -0.169px;
+                        line-height: 14px;
+                    }
+                    > input.custom-radio-button-t2:checked + label {
+                        font-weight: 700;
+                    }
+                    > input[type='number'] {
+                        width: 90px;
+                        margin-left: 25px;
+                    }
+                    &:last-child {
+                        text-align: center;
+                        background-color: #f2f2f2;
+                        margin: 0 -33px;
+                        > button {
+                            border: none;
+                            height: 40px;
+                            width: 100px;
+                            margin: 31px 0;
+                            font-family: Calibri;
+                            color: #ffffff;
+                            font-size: 20.3px;
+                            font-weight: 700;
+                            &:first-child {
+                                background-color: #8cc63f;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

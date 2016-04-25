@@ -129,6 +129,12 @@
                 controller: 'PowerConsumptionCtrl',
                 templateUrl: 'views/settings/powerConsumption.html',
                 controllerAs: 'vm'
+            })
+            .state('consolePermission', {
+                url: "/consolePermission",
+                controller: 'ConsolePermissionCtrl',
+                templateUrl: 'views/settings/consolePermission.html',
+                controllerAs: 'vm'
             });
 
     }

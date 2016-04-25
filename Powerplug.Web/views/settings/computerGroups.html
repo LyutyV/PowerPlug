@@ -7,7 +7,7 @@
                     <td>Name</td>
                     <td>Owner</td>
                     <td>Description</td>
-                    <td colspan="2"> <span ng-click="addComputerGroup()" class="buttonTypeOneAdd  action-settings">Add</span> </td>
+                    <td colspan="2"> <span ng-click="vm.openComputerGroupDialog(-1)" class="buttonTypeOneAdd  action-settings">Add</span> </td>
                 </tr>
             </thead>
             <tbody>
@@ -16,8 +16,8 @@
                     <td>{{ computerGroup.groupName}}</td>
                     <td>{{ computerGroup.owner}}</td>
                     <td>{{ computerGroup.groupDesc}}</td>
-                    <td style="width: 250px;"><span ng-click="editComputerGroup()" class="buttonTypeOneEdit  action-settings">Edit</span></td>
-                    <td style="width: 150px;"><span ng-click="removeComputerGroup()" class="buttonTypeOneRemove action-settings">Remove</span></td>
+                    <td style="width: 250px;"><span ng-click="vm.openComputerGroupDialog($index)" class="buttonTypeOneEdit  action-settings">Edit</span></td>
+                    <td style="width: 150px;"><span ng-click="vm.removeComputerGroup()" class="buttonTypeOneRemove action-settings">Remove</span></td>
                 </tr>
             </tbody>
         </table>
@@ -30,7 +30,7 @@
                         <tr>
                             <td class=''>Memeber Definition</td>
                             <td colspan="2">
-                                <span class="buttonTypeOneAdd action-settings" ng-click="vm.openAddDialog()">Add</span>
+                                <span class="buttonTypeOneAdd action-settings" ng-click="vm.openAddDialog(-1)">Add</span>
                                 <select ng-model="vm.popupType" class="action-settings big-select" ng-options="option.value as option.name for option in vm.popupTypeOptions"></select>
                                 <select class="action-settings big-select">
                                     <option>Include</option>
@@ -41,8 +41,10 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="computer in vm.groupMembersHash[vm.selectedGroupId].members">
-                            <td>{{computer.memberDef}} </td>
-                            <td style="width: 450px; "> <span class="buttonTypeOneEdit action-settings">Edit</span> </td>
+                            <td>{{vm.getComputerDefinitionText(computer)}} </td>
+                            <td style="width: 450px; "> 
+                                <span ng-if="(computer.memberTypeId > 1) && (computer.memberTypeId < 7)" class="buttonTypeOneEdit action-settings" ng-click="vm.openAddDialog($index)">Edit</span>
+                             </td>
                             <td style="width:150px;"> <span class="buttonTypeOneRemove action-settings">Remove</span> </td>
                         </tr>
                     </tbody>

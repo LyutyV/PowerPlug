@@ -4,32 +4,85 @@
     angular
 
         .module('powerPlug')
-        .controller('SavingPlanEditorCtrl',
-                     ['$state', '$stateParams', '$scope', '$animate', '$document', '$uibModal', '$mdDialog', '$mdMedia', 'SavingPlansResource', 'ComputersResource', 'ComputerGroupsResource', 'ScriptsResource', SavingPlanEditorCtrl]);
+        .controller('SavingPlanEditorCtrl', ['$state', '$stateParams', '$scope', '$animate', '$document', '$uibModal', '$mdDialog', '$mdMedia', 'SavingPlansResource', 'ComputersResource', 'ComputerGroupsResource', 'ScriptsResource', SavingPlanEditorCtrl]);
 
     function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $uibModal, $mdDialog, $mdMedia, SavingPlansResource, ComputersResource, ComputerGroupsResource, ScriptsResource) {
         var vm = this;
         vm.policyId = $stateParams.policyId;
 
-// tmp model for selects in Savings section
+        // Check all checkbox in Computers section
+        vm.checkAll = function (seed) {
+          switch (seed) {
+            case 'groups':
+            {
+              if (vm.selectedAllGroups) {
+                  vm.selectedAllGroups = true;
+              } else {
+                  vm.selectedAllGroups = false;
+              }
+              angular.forEach(vm.savingPlan.compGroups, function (group) {
+                  group.selected = vm.selectedAllGroups;
+              });
+              break;
+            }
+            case 'comps':
+            {
+              if (vm.selectedAllComps) {
+                  vm.selectedAllComps = true;
+              } else {
+                  vm.selectedAllComps = false;
+              }
+              angular.forEach(vm.savingPlan.computers, function (computer) {
+                  computer.selected = vm.selectedAllComps;
+              });
+              break;
+            }
+            default:
+              console.log();
+
+          }
+
+
+        };
+        // End check all checkbox in Computers section
+
+        //Scrollbar (Dirty way because of old Jquery)
+        if (!$document.mCustomScrollbar) {
+            $document.__proto__.mCustomScrollbar = $.mCustomScrollbar;
+        }
+        vm.config = {
+            autoHideScrollbar: false,
+            theme: 'light',
+            advanced: {
+                updateOnContentResize: true
+            },
+            setHeight: 329,
+            scrollInertia: 0
+        }
+
+        //End scrollbar
+
+
+        // tmp model for selects in Savings section
         vm.comboItems = [{
-          name: '20 minutes'
+            name: '20 minutes'
         }, {
-          name: 'Sleep'
+            name: 'Sleep'
         }, {
-          name: '45 minutes'
+            name: '45 minutes'
         }, {
-          name: '10 percent'
+            name: '10 percent'
         }, {
-          name: '500 KB/Second'
+            name: '500 KB/Second'
         }, {
-          name: '100 KB/Second'
+            name: '100 KB/Second'
         }];
-        vm.modelForDropdown = [vm.comboItems[0], vm.comboItems[1], vm.comboItems[2],  //these for top dropdowns on work day tab
-                                vm.comboItems[0], vm.comboItems[1], vm.comboItems[2],  //these for top dropdowns on non work day tab
-                                vm.comboItems[3], vm.comboItems[4], vm.comboItems[5],  //these for dropdowns on performanse metrics tab on work day tab
-                                vm.comboItems[3], vm.comboItems[4], vm.comboItems[5]];  //these for dropdowns on performanse metrics tab on non work day tab
-// End tmp model for selects in Savings section
+        vm.modelForDropdown = [vm.comboItems[0], vm.comboItems[1], vm.comboItems[2], //these for top dropdowns on work day tab
+            vm.comboItems[0], vm.comboItems[1], vm.comboItems[2], //these for top dropdowns on non work day tab
+            vm.comboItems[3], vm.comboItems[4], vm.comboItems[5], //these for dropdowns on performanse metrics tab on work day tab
+            vm.comboItems[3], vm.comboItems[4], vm.comboItems[5]
+        ]; //these for dropdowns on performanse metrics tab on non work day tab
+        // End tmp model for selects in Savings section
 
         //Init
         overviewHandler.init(vm);
@@ -80,7 +133,7 @@
             overviewHandler.setOverviewGraphs();
             //
             console.log(vm.savingPlan);
-            for (var i in vm.savingPlan.actions){
+            for (var i in vm.savingPlan.actions) {
                 vm.getActionText(vm.savingPlan.actions[i]);
             }
         }
@@ -124,7 +177,7 @@
         vm.removeComputers = computersHandler.removeComputers;
         //actions
         vm.getActionText = actionHandler.getActionText
-        //dialog
+            //dialog
         vm.openActionDialog = actionDialogHandler.openActionDialog;
         vm.createNewAction = actionDialogHandler.createNewAction;
     }
