@@ -1,6 +1,6 @@
-﻿<div>
-    <label> Computer is idel for:
-        <select  ng-model="idleTime" >
+﻿<div class="tab-line">
+    <label class="tab-label"> Computer is idel for:
+        <select  ng-model="idleTime"  class="tab-select">
             <option value="15" ng-selected="jsonobject.idleTime == 15 "> 15 minutes </option>
             <option value="30" ng-selected="jsonobject.idleTime == 30 "> 30 minutes </option>
             <option value="45" ng-selected="jsonobject.idleTime == 45 "> 45 minutes </option>
@@ -11,8 +11,8 @@
             <option value="300" ng-selected="jsonobject.idleTime == 300 "> 5 hour </option>
         </select></label>
 </div>
-<div>
-    <label>
+<div class="tab-line">
+    <label class="tab-label">
         Computer was not restarted for
         <input type="number" min="0" max="31" ng-model="hoursLastBoot" /> Days
     </label>

@@ -18,6 +18,7 @@
         <div class="calendar clear">
           <div ng-scrollbars ng-scrollbars-config="config">
             <div class="left-span clear">
+
               <div class="numbers">
                 <div class="number" ng-repeat="curTime in timeLine track by $index">
                   <span ng-show="$index%2==0">{{curTime}}</span>
@@ -29,7 +30,10 @@
               </div>
             </div>
             <div  class="right-span clear">
+
               <div class="day-coll">
+
+              <div class = "back-block-blure"></div>
 
                 <div class="day" daypos="sun">
                   <div class="day-wrape" daypos="sun">
@@ -38,7 +42,7 @@
                     <div ng-repeat="eventTime in eventsTimePos.sun track by $index" class="event-time" day="sun" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('sun',$index)"></div>
-                        <div class="popover-block" tabindex="1"  day="sun" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                        <div class="popover-block popover-up" tabindex="1"  day="sun" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
@@ -68,7 +72,7 @@
                     <div ng-repeat="eventTime in eventsTimePos.mon track by $index" class="event-time" day="mon" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('mon',$index)"></div>
-                        <div class="popover-block"  tabindex="1"  day="mon" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                        <div class="popover-block popover-up"  tabindex="1"  day="mon" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
@@ -95,7 +99,7 @@
                     <div ng-repeat="eventTime in eventsTimePos.tue track by $index" class="event-time" day="tue" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('tue',$index)"></div>
-                        <div class="popover-block" tabindex="1"   day="tue" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                        <div class="popover-block popover-up" tabindex="1"   day="tue" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
@@ -122,7 +126,7 @@
                     <div ng-repeat="eventTime in eventsTimePos.wed track by $index" class="event-time" day="wed" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('wed',$index)"></div>
-                        <div class="popover-block"  tabindex="1"  day="wed" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                        <div class="popover-block popover-up"  tabindex="1"  day="wed" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
@@ -149,7 +153,7 @@
                     <div ng-repeat="eventTime in eventsTimePos.thu track by $index" class="event-time" day="thu" num="{{$index}}" ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('thu',$index)"></div>
-                        <div class="popover-block" tabindex="1"   day="thu" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                        <div class="popover-block popover-up" tabindex="1"   day="thu" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
@@ -176,7 +180,7 @@
                     <div ng-repeat="eventTime in eventsTimePos.fri track by $index" class="event-time" day="fri" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('fri',$index)"></div>
-                        <div class="popover-block" tabindex="1"   day="fri" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                        <div class="popover-block popover-up" tabindex="1"   day="fri" num="{{$index}}"  ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
@@ -204,7 +208,7 @@
                     <div ng-repeat="eventTime in eventsTimePos.sat track by $index" class="event-time" day="sat" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
                       <div class="wrape-relative">
                         <div class="line" ng-click="popoverViewChange('sat',$index)"></div>
-                        <div class="popover-block" tabindex="1"  day="sat" num="{{$index}}" ng-show="eventTime.viewPopup">
+                        <div class="popover-block popover-up" tabindex="1"  day="sat" num="{{$index}}" ng-show="eventTime.viewPopup">
                           <div class="arrow"></div>
                           <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
                           <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
@@ -234,10 +238,11 @@
         </div>
         <div class="events" ng-scrollbars ng-scrollbars-config="config">
 
-          <div ng-repeat="event in actions"  class = "event-block">
+          <div ng-repeat="event in actions"  class = "event-block" ng-click="actionEdit({data:event.actionKey})">
             <img ng-show="event.perform=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
             <img ng-show="event.perform=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
-            <div class="event-name">{{event.title}}</div>
+            <div class="event-name"  ng-show="event.perform=='Wake'">Wake Up</div>
+            <div class="event-name" ng-show="event.perform=='Restart'">Restart</div>
             <div class="event-text">{{event.scheduleText}}</div>
           </div>
         </div>
