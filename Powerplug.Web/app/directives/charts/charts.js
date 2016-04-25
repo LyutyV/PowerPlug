@@ -119,13 +119,14 @@ angular
           scope.$on('$destroy', function () {
             angular.element($window).unbind('resize', resize);
           });
-
-          $timeout(function() {
-            scope.highchartsNG.size = {
-              width: document.getElementsByClassName('chart-wraper')[0].clientWidth - 30,
-              height: 235
-            };
-          }, 0);
+          if (document.getElementsByClassName('chart-wraper')){
+            $timeout(function() {
+              scope.highchartsNG.size = {
+                width: document.getElementsByClassName('chart-wraper')[0].clientWidth - 30,
+                height: 235
+              };
+            }, 0);
+          }
 
         }
       }
