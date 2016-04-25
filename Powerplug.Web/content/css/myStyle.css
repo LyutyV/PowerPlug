@@ -1325,6 +1325,8 @@ div.computersWrapper {
       div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span::before {
         font-size: 20px;
         margin-right: 10px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span:focus {
+        outline: none; }
   div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(2) {
     border-bottom: 1px solid #b3b3b3;
     margin-top: 25px;
@@ -1426,6 +1428,8 @@ div.computersWrapper {
       div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span::before {
         font-size: 20px;
         margin-right: 10px; }
+      div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span:focus {
+        outline: none; }
   div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(2) {
     border-bottom: 1px solid #b3b3b3;
     margin-top: 25px;
@@ -1743,6 +1747,8 @@ div.computersWrapper {
                 float: right; }
                 .eventsWrapper > div > div:last-child > div > div:nth-child(3) > span:last-child::before {
                   margin-right: 5px; }
+                .eventsWrapper > div > div:last-child > div > div:nth-child(3) > span:last-child:focus {
+                  outline: none; }
           .eventsWrapper > div > div:last-child > div > div:nth-child(4) > ul {
             margin: 0;
             padding: 0; }
@@ -1913,6 +1919,8 @@ div.computersWrapper {
           font-weight: 300;
           letter-spacing: -0.182px;
           width: 125px; }
+          .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div > label > select:focus, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div > label > select:focus {
+            outline: none; }
       .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:nth-child(2), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:nth-child(3), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:nth-child(2), .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:nth-child(3) {
         margin-left: 15px; }
       .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.flexo > div:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.flexo > div:last-child {
@@ -1952,10 +1960,6 @@ div.computersWrapper {
       font-size: 14px;
       font-weight: 300;
       letter-spacing: -0.182px; }
-      .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child {
-        background-color: #ffffff; }
-        .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:first-child > div.container-fluid, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:first-child > div.container-fluid {
-          margin-top: 15px; }
       .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child {
         background-color: #ffffff;
         margin-top: 5px;
@@ -2053,6 +2057,8 @@ div.computersWrapper {
                 font-size: 12.66px;
                 font-weight: 700;
                 text-align: left; }
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > application-tab > div.container-fluid > span:not(:first-child):focus, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > application-tab > div.container-fluid > span:not(:first-child):focus {
+                  outline: none; }
               .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > application-tab > div.container-fluid > div > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(2) > application-tab > div.container-fluid > div > div.container-fluid > div.row:first-child {
                 padding-top: 28px;
                 font-family: Calibri;
@@ -2085,6 +2091,8 @@ div.computersWrapper {
                 font-size: 12.66px;
                 font-weight: 700;
                 text-align: left; }
+                .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > computers-tab > div.container-fluid > span:not(:first-child):focus, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > computers-tab > div.container-fluid > span:not(:first-child):focus {
+                  outline: none; }
               .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:first-child > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > computers-tab > div.container-fluid > div > div.container-fluid > div.row:first-child, .savingPlanWorkTime > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div.container-fluid > div.row:last-child > div > div.tab-content > div.tab-pane:nth-child(3) > computers-tab > div.container-fluid > div > div.container-fluid > div.row:first-child {
                 padding-top: 28px;
                 font-family: Calibri;

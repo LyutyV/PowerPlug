@@ -45,6 +45,9 @@
                                     font-weight: 300;
                                     letter-spacing: -0.182px;
                                     width: 125px;
+                                    &:focus {
+                                      outline: none;
+                                    }
                                 }
                             }
                             &:first-child,
@@ -96,64 +99,6 @@
                             font-size: 14px;
                             font-weight: 300;
                             letter-spacing: -0.182px;
-                            &:first-child {
-                                //Upper part of work time pane
-                                background-color: #ffffff;
-                                > div.container-fluid {
-                                    margin-top: 15px;
-                                    > div.row {
-                                        > div.col-xs-3 {
-                                            // > label {
-                                            //     > span {
-                                            //         margin-right: 13px;
-                                            //     }
-                                            //     > select {
-                                            //         background-color: #ffffff;
-                                            //         border-color: #d9d9d9;
-                                            //         font-family: Calibri;
-                                            //         color: rgba(26, 26, 26, 0.7);
-                                            //         font-size: 14px;
-                                            //         font-weight: 300;
-                                            //         letter-spacing: -0.182px;
-                                            //         width: 125px;
-                                            //     }
-                                            // }
-                                            // &:last-child {
-                                                // > div {
-                                                //     display: flex;
-                                                //     position: relative;
-                                                //     float: right;
-                                                //     > a {
-                                                //         height: 39px;
-                                                //         width: 40px;
-                                                //         display: inline-block;
-                                                //         text-align: center;
-                                                //         line-height: 39px;
-                                                //         background-color: #238fb5;
-                                                //         color: #ffffff;
-                                                //     }
-                                                //     > span {
-                                                //         height: 39px;
-                                                //         width: 85px;
-                                                //         background-color: #29abe2;
-                                                //         display: inline-block;
-                                                //         line-height: 39px;
-                                                //         color: #ffffff;
-                                                //         padding-left: 15px;
-                                                //         font-family: Calibri;
-                                                //         font-size: 15px;
-                                                //         font-weight: 700;
-                                                //     }
-                                                //     > ul {
-                                                //         position: absolute;
-                                                //         width: 160px;
-                                                //     }
-                                                // }
-                                            // }
-                                        }
-                                    }
-                                }
-                            }
                             &:last-child {
                                 //Down part of work time pane
                                 background-color: #ffffff;
@@ -282,7 +227,9 @@
                                                                 font-size: 12.66px;
                                                                 font-weight: 700;
                                                                 text-align: left;
-                                                                &::before {}
+                                                                &:focus {
+                                                                  outline: none;
+                                                                }
                                                             }
                                                         }
                                                         > div {
@@ -337,7 +284,9 @@
                                                                 font-size: 12.66px;
                                                                 font-weight: 700;
                                                                 text-align: left;
-                                                                &::before {}
+                                                                &:focus {
+                                                                  outline: none;
+                                                                }
                                                             }
                                                         }
                                                         > div {
