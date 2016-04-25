@@ -80,10 +80,16 @@
                 format: 'LT',
                 defaultDate:actionData.fromTime
             });
+
+            $('.specific-date').datetimepicker({
+                format: 'MM/DD/YYYY',
+                defaultDate:(typeof actionData.specificDate != 'undefined') ? new Date(actionData.specificDate)    : new Date()
+            });
         });
 
         modal.closed.then(function(){
             $('.datetimepicker').datetimepicker('remove');
+            $('.specific-date').datetimepicker('remove');
         });
 
         return modal;
@@ -138,6 +144,7 @@
             if ($('#toTime').val()){
                 $scope.toTime = moment($('#toTime').val(),'hh:mm A')._d;
             }
+            $scope.specificDate = moment($('#specific-date').val(),'MM/DD/YYYY')._d;
             //Save - add data to json
             actionData.scheduleType = $scope.scheduleType;
             switch (actionData.scheduleType) {
