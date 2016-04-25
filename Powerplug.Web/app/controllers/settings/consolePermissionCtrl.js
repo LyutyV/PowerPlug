@@ -25,12 +25,19 @@
         }
 
         function onSuccess(data) {
-            vm.scripts = data;
-            vm.deletedScripts = [];
-            vm.currentScriptText = '';
-            vm.currentScriptId = 0;
-            vm.currentScriptType = '';
-        }        
+            vm.permissions = data;
+        }
+
+        vm.checkAll = function (seed) {
+            if (vm.selectedAll) {
+                vm.selectedAll = true;
+            } else {
+                vm.selectedAll = false;
+            }
+            angular.forEach(vm.permissions, function (permission) {
+                permission.selected = vm.selectedAll;
+            });
+        }
 
         vm.saveChanges = function () {
             ///dooo
@@ -43,7 +50,7 @@
         }
 
         vm.discardChanges = function () {
-            ScriptsResource.detailed.query(function (data) {
+            ConsolePermissionResource.query(function (data) {
                 onSuccess(data);
             }, function (error) {
                 onError(error);
