@@ -3,7 +3,8 @@
 
   angular
     .module('powerPlug')
-    .controller('HeaderController', function(){
-
-    })
+    .controller('HeaderController', ['$state', function($state){
+        var vm = this;
+        vm.state = $state;
+    }])
 })();
