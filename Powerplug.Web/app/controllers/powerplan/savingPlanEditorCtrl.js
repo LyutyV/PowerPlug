@@ -38,11 +38,8 @@
               break;
             }
             default:
-              console.log();
-
+              console.log('Error. Default value of select all (groups or comps) agr');
           }
-
-
         };
         // End check all checkbox in Computers section
 
@@ -61,28 +58,6 @@
         }
 
         //End scrollbar
-
-
-        // tmp model for selects in Savings section
-        vm.comboItems = [{
-            name: '20 minutes'
-        }, {
-            name: 'Sleep'
-        }, {
-            name: '45 minutes'
-        }, {
-            name: '10 percent'
-        }, {
-            name: '500 KB/Second'
-        }, {
-            name: '100 KB/Second'
-        }];
-        vm.modelForDropdown = [vm.comboItems[0], vm.comboItems[1], vm.comboItems[2], //these for top dropdowns on work day tab
-            vm.comboItems[0], vm.comboItems[1], vm.comboItems[2], //these for top dropdowns on non work day tab
-            vm.comboItems[3], vm.comboItems[4], vm.comboItems[5], //these for dropdowns on performanse metrics tab on work day tab
-            vm.comboItems[3], vm.comboItems[4], vm.comboItems[5]
-        ]; //these for dropdowns on performanse metrics tab on non work day tab
-        // End tmp model for selects in Savings section
 
         //Init
         overviewHandler.init(vm);
@@ -130,6 +105,7 @@
             eventHandler.setEventItems();
             computersHandler.setComputerItems();
             //
+            vm.showEventScripts(1);   //this show's right part of the Events section on page load.
             overviewHandler.setOverviewGraphs();
             //
             console.log(vm.savingPlan);

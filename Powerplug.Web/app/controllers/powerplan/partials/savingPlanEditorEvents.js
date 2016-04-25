@@ -14,7 +14,7 @@
         eventHandler.ScriptsResource = ScriptsResource;
     },
     setEventItems: function () {
-        eventHandler.vm.currentEventScripts = [];        
+        eventHandler.vm.currentEventScripts = [];
     },
     eventScriptDialog: function (ev) {
         var useFullScreen = (eventHandler.$mdMedia('sm') || eventHandler.$mdMedia('xs')) && eventHandler.$scope.customFullscreen;
@@ -52,8 +52,8 @@
                 if (isEventFound === false) {
                     if (!eventHandler.vm.savingPlan.events) {
                         eventHandler.vm.savingPlan.events = [];
-                        eventHandler.vm.savingPlan.events.push({ eventType: eventHandler.vm.currentEvent, scripts: [] });                        
-                    }                    
+                        eventHandler.vm.savingPlan.events.push({ eventType: eventHandler.vm.currentEvent, scripts: [] });
+                    }
                     fillScripts(0);
                 }
 
@@ -77,13 +77,34 @@
 
                     eventHandler.vm.currentEventScripts = eventHandler.vm.savingPlan.events[keyEvent].scripts;
                 }
-                
+
                 $mdDialog.hide();
             };
 
             $scope.closeEventScripts = function () {
                 $mdDialog.cancel();
             };
+
+            // Select all checkboxes function in add script dialog
+            $scope.checkAll = function(seed) {
+              switch (seed) {
+                case 'scripts':
+                {
+                  if ($scope.selectedAllScripts) {
+                      $scope.selectedAllScripts = true;
+                  } else {
+                      $scope.selectedAllScripts = false;
+                  }
+                  angular.forEach($scope.eventScripts, function (script) {
+                      script.selected = $scope.selectedAllScripts;
+                  });
+                  break;
+                }
+                default:
+                  console.log('Error. Default value of select all (groups or comps) agr');
+              }
+            }
+            // End select all checkboxes function in add script dialog
         }
     },
     showEventScripts: function (eventType) {

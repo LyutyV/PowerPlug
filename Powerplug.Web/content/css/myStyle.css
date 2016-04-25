@@ -222,6 +222,10 @@ md-dialog.addScript > md-content > div:nth-child(2) {
       letter-spacing: -0.182px; }
       md-dialog.addScript > md-content > div:nth-child(2) > table > thead td {
         padding-left: 0; }
+        md-dialog.addScript > md-content > div:nth-child(2) > table > thead td:first-child {
+          padding: 0;
+          vertical-align: middle;
+          text-align: center; }
     md-dialog.addScript > md-content > div:nth-child(2) > table > tbody {
       font-family: Calibri;
       color: #333333;
@@ -233,33 +237,6 @@ md-dialog.addScript > md-content > div:nth-child(2) {
         line-height: 40px; }
         md-dialog.addScript > md-content > div:nth-child(2) > table > tbody > tr > td:first-child {
           text-align: center; }
-          md-dialog.addScript > md-content > div:nth-child(2) > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 {
-            display: none; }
-            md-dialog.addScript > md-content > div:nth-child(2) > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 + label {
-              position: relative;
-              margin: 0;
-              height: 15px;
-              width: 35px; }
-            md-dialog.addScript > md-content > div:nth-child(2) > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00 + label::before {
-              position: absolute;
-              content: '';
-              height: 15px;
-              width: 15px;
-              border: 1px solid #d9d9d9;
-              left: 10px;
-              top: 3px; }
-            md-dialog.addScript > md-content > div:nth-child(2) > table > tbody > tr > td:first-child > input.custom-checkbox-green-type00:checked + label::before {
-              position: absolute;
-              content: '\f00c';
-              font-family: 'FontAwesome';
-              color: #a3d165;
-              height: 15px;
-              width: 15px;
-              border: 1px solid #d9d9d9;
-              text-align: center;
-              line-height: 15px;
-              left: 10px;
-              top: 3px; }
   md-dialog.addScript > md-content > div:nth-child(2) > div:nth-child(3) {
     text-align: center;
     padding: 15px 0;
@@ -332,6 +309,34 @@ md-dialog.addScript > md-content > div div.savedStriptInfo {
         letter-spacing: -0.169px;
         line-height: 14px;
         text-align: left; }
+
+md-dialog.addScript input.custom-checkbox-green-type00 {
+  display: none; }
+  md-dialog.addScript input.custom-checkbox-green-type00 + label {
+    position: relative;
+    margin: 0;
+    height: 15px;
+    width: 35px; }
+  md-dialog.addScript input.custom-checkbox-green-type00 + label::before {
+    position: absolute;
+    content: '';
+    height: 15px;
+    width: 15px;
+    border: 1px solid #d9d9d9;
+    left: 10px;
+    top: 3px; }
+  md-dialog.addScript input.custom-checkbox-green-type00:checked + label::before {
+    position: absolute;
+    content: '\f00c';
+    font-family: 'FontAwesome';
+    color: #a3d165;
+    height: 15px;
+    width: 15px;
+    border: 1px solid #d9d9d9;
+    text-align: center;
+    line-height: 15px;
+    left: 10px;
+    top: 3px; }
 
 /********************************************/
 /* action calendar popup form*/

@@ -10,7 +10,10 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <td></td>
+                        <td>
+                          <input type="checkbox" id="as00" class="custom-checkbox-green-type00" ng-model="selectedAllScripts" ng-click="checkAll('scripts')"/>
+                          <label for='as00'></label>
+                        </td>
                         <td>Name</td>
                         <td>Owner</td>
                         <td>Type</td>
@@ -21,7 +24,7 @@
                     <tr ng-repeat="script in eventScripts">
                         <td>
                             <!-- <input type="checkbox" id="{{script.scriptId}}" data-name="{{script.scriptName}}" data-guid="{{script.scriptGUID}}" class="script-selection custom-checkbox-green" /> -->
-                            <input type="checkbox" id="{{script.scriptId}}" data-name="{{script.scriptName}}" data-guid="{{script.scriptGUID}}" class="script-selection custom-checkbox-green-type00" />
+                            <input type="checkbox" id="{{script.scriptId}}" data-name="{{script.scriptName}}" data-guid="{{script.scriptGUID}}" class="script-selection custom-checkbox-green-type00" ng-model="script.selected"/>
                             <label for='{{script.scriptId}}'></label>
                         </td>
                         <td>{{script.scriptName}}</td>

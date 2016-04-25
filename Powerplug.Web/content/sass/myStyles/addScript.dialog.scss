@@ -42,6 +42,11 @@ md-dialog.addScript {
                         letter-spacing: -0.182px;
                         td {
                             padding-left: 0;
+                            &:first-child {
+                                padding: 0;
+                                vertical-align: middle;
+                                text-align: center;
+                            }
                         }
                     }
                     > tbody {
@@ -55,37 +60,37 @@ md-dialog.addScript {
                                 &:first-child {
                                     text-align: center;
                                     /////////////
-                                    > input.custom-checkbox-green-type00 {
-                                        display: none;
-                                        &+label {
-                                            position: relative;
-                                            margin: 0;
-                                            height: 15px;
-                                            width: 35px;
-                                        }
-                                        &+label::before {
-                                            position: absolute;
-                                            content: '';
-                                            height: 15px;
-                                            width: 15px;
-                                            border: 1px solid #d9d9d9;
-                                            left: 10px;
-                                            top: 3px;
-                                        }
-                                        &:checked + label::before {
-                                            position: absolute;
-                                            content: '\f00c';
-                                            font-family: 'FontAwesome';
-                                            color: #a3d165;
-                                            height: 15px;
-                                            width: 15px;
-                                            border: 1px solid #d9d9d9;
-                                            text-align: center;
-                                            line-height: 15px;
-                                            left: 10px;
-                                            top: 3px;
-                                        }
-                                    }
+                                    // > input.custom-checkbox-green-type00 {
+                                    //     display: none;
+                                    //     &+label {
+                                    //         position: relative;
+                                    //         margin: 0;
+                                    //         height: 15px;
+                                    //         width: 35px;
+                                    //     }
+                                    //     &+label::before {
+                                    //         position: absolute;
+                                    //         content: '';
+                                    //         height: 15px;
+                                    //         width: 15px;
+                                    //         border: 1px solid #d9d9d9;
+                                    //         left: 10px;
+                                    //         top: 3px;
+                                    //     }
+                                    //     &:checked + label::before {
+                                    //         position: absolute;
+                                    //         content: '\f00c';
+                                    //         font-family: 'FontAwesome';
+                                    //         color: #a3d165;
+                                    //         height: 15px;
+                                    //         width: 15px;
+                                    //         border: 1px solid #d9d9d9;
+                                    //         text-align: center;
+                                    //         line-height: 15px;
+                                    //         left: 10px;
+                                    //         top: 3px;
+                                    //     }
+                                    // }
                                     /////////////
                                 }
                                 padding: 0;
@@ -184,6 +189,37 @@ md-dialog.addScript {
                     }
                 }
             }
+        }
+    }
+    input.custom-checkbox-green-type00 {
+        display: none;
+        &+label {
+            position: relative;
+            margin: 0;
+            height: 15px;
+            width: 35px;
+        }
+        &+label::before {
+            position: absolute;
+            content: '';
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            left: 10px;
+            top: 3px;
+        }
+        &:checked + label::before {
+            position: absolute;
+            content: '\f00c';
+            font-family: 'FontAwesome';
+            color: #a3d165;
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            text-align: center;
+            line-height: 15px;
+            left: 10px;
+            top: 3px;
         }
     }
 }
