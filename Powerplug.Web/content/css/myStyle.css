@@ -1317,7 +1317,7 @@ div.computersWrapper {
       font-size: 18px;
       font-weight: 700;
       position: absolute;
-      top: -51px; }
+      top: -60px; }
       div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span.buttonTypeOneAdd {
         right: 120px; }
       div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span.buttonTypeOneRemove {
@@ -1418,7 +1418,7 @@ div.computersWrapper {
       font-size: 18px;
       font-weight: 700;
       position: absolute;
-      top: -51px; }
+      top: -60px; }
       div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span.buttonTypeOneAdd {
         right: 120px; }
       div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span.buttonTypeOneRemove {
@@ -1518,6 +1518,11 @@ div.computersWrapper {
           text-align: right; }
           div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child > i {
             color: #86bd3e; }
+
+@media screen and (max-width: 1160px) {
+  div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span:first-child, div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span:first-child {
+    right: 0px;
+    top: -80px; } }
 
 .mce-menubar,
 .mce-statusbar {
