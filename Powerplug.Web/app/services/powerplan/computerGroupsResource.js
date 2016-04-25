@@ -10,7 +10,7 @@
             groups: $resource(appSettings.serverPath + 'api/pc/computer-groups'),
             groupMembers: $resource(appSettings.serverPath + 'api/pc/computer-groups/:groupId', { groupId: '@groupId' },
                 {
-                    'update': { method: 'PUT' }
+                    'saveAll': { method: 'POST', isArray: true }
                 }),
         }
     }

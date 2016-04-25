@@ -9,7 +9,7 @@
     },
  
     openIPMaskDialog: function (computerIndex) {
-        IPMaksPopupHandler.$mdDialog.show({
+        return IPMaksPopupHandler.$mdDialog.show({
             templateUrl: 'views/settings/dialogs/IPMask.html',
             parent: angular.element(document.body),
             clickOutsideToClose: false,
@@ -21,22 +21,7 @@
         function DialogController($scope, $mdDialog, $document, computerIndex) {
             //===============private===============/
             var _selectedGroup;
-            function addComputerObjectToJson(memberDef) {
-                var computerObject;
-                if (computerIndex >= 0) {
-                    _selectedGroup.members[computerIndex].memberTypeId = $scope.memberTypeId;
-                    _selectedGroup.members[computerIndex].memberDef = memberDef;
-                }
-                else {
-                    //Add New
-                    computerObject = {
-                        "memberTypeId": $scope.memberTypeId,
-                        "memberDef": memberDef,
-                        "memberIncExc": true
-                    }
-                    _selectedGroup.members.push(computerObject)
-                }
-            }
+            var _returnObjByPromise = { computerFields: {} };
             function init() {
                 var IPAdressArr;
                 _selectedGroup = IPMaksPopupHandler.vm.groupMembersHash[IPMaksPopupHandler.vm.selectedGroupId];
@@ -49,18 +34,24 @@
                     $scope.IP.part4 = IPAdressArr[3];
                 } 
             }
-          //=============Scope Binding=============/  
+            //=============Scope Binding=============/ 
+            $scope.isChange = false;
             $scope.memberTypeId = 4;
             $scope.IP = { part1: null, part2: null, part3: null, part4: null}
             $scope.memberTypeOptions = [ { name: 'Equals', value: 4 }, { name: 'Not Equals', value: 6 }];
             $scope.add = function () {
                 var memberDef;
                 memberDef = $scope.IP.part1 + "." + $scope.IP.part2 + "." + $scope.IP.part3 + "." + $scope.IP.part4;
-                addComputerObjectToJson(memberDef)
-                $mdDialog.hide();
+                _returnObjByPromise.computerFields = {
+                    "memberTypeId": $scope.memberTypeId,
+                    "memberDef": memberDef,
+                    "memberIncExc": true
+                }
+                _returnObjByPromise.isChange = $scope.isChange;
+                $mdDialog.hide({ computerObject: _returnObjByPromise });
             }
             $scope.cancel = function () {
-                $mdDialog.hide();
+                $mdDialog.cancel()
             }
             //===================Init=====================/
             init();
