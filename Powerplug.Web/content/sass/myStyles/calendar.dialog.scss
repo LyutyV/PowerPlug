@@ -1,5 +1,4 @@
-/********************************************/
-/* action calendar popup form*/
+
 
 @media (min-width: 768px){
     .action-calendar .modal-dialog {
@@ -87,15 +86,6 @@
                 width: 120px;
                 z-index: 50;
             }
-            .ratio-label{
-                color:#7b7b7b;
-                font-weight: bold;
-                margin-bottom: 0px;
-                span span{
-                    width: 15px;
-                    height: 15px;
-                }
-            }
             .md-datepicker-input-mask{
                 display: none;
             }
@@ -152,19 +142,6 @@
                line-height: 24px;
            }
         }
-        /*.nav-tabs{
-            height: 39px;
-            width:100%;
-            .nav-tabs > li > a, .nav-tabs > li a:focus, .nav-tabs > li a:hover{
-                padding:5px 10px!important;
-                border: 1px solid transparent;
-            }
-            .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-                border: 1px solid #ddd!important;
-                border-bottom-color: transparent!important;
-            }
-        }*/
-
         .nav-tabs {
             border-bottom: none;
             width:100%;
@@ -198,9 +175,33 @@
         }
         .uibTabSet{
             margin-top: 20px;
+            .tab-content{
+                width: 100%;
+                padding-right: 20px;
+            }
             .tabs{
+                width: 100%;
                 .tab-line{
                     padding: 25px 0 0 0;
+                    .aplication-title{
+                        padding-top: 28px;
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 14px;
+                        font-weight: 700;
+                        letter-spacing: -0.182px;
+                        border-top: 3px solid #8cc63f;
+                        border-bottom: 1px solid #bcbcbc;
+                    }
+                    .performanceMetrics-title{
+                        padding-top: 28px;
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 14px;
+                        font-weight: 700;
+                        letter-spacing: -0.182px;
+                        border-top: 3px solid #8cc63f;
+                    }
                     .tab-label{
                         font-weight: 100;
                     }
@@ -212,6 +213,28 @@
                         border: 1px solid #d9d9d9;
                         font-size: 14px;
                         line-height: 1;
+                    }
+                    .tab-button{
+                        outline: none;
+                        background-color: #29abe2;
+                        border: none;
+                        height: 29px;
+                        line-height: 29px;
+                        width: 80px;
+                        font-family: Calibri;
+                        color: #ffffff;
+                        font-size: 13px;
+                        font-weight: 700;
+                        margin-left: 20px;
+                    }
+                    .buttonTypeOne{
+                        float: right;
+                        margin-left: 22px;
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 12.66px;
+                        font-weight: 700;
+                        text-align: left;
                     }
                 }
             }

@@ -333,8 +333,6 @@ md-dialog.addScript > md-content > div div.savedStriptInfo {
         line-height: 14px;
         text-align: left; }
 
-/********************************************/
-/* action calendar popup form*/
 @media (min-width: 768px) {
   .action-calendar .modal-dialog {
     width: 930px !important; } }
@@ -365,19 +363,7 @@ md-dialog.addScript > md-content > div div.savedStriptInfo {
     font-size: 20px; }
 
 .action-calendar .modal-body {
-  padding-bottom: 35px;
-  /*.nav-tabs{
-            height: 39px;
-            width:100%;
-            .nav-tabs > li > a, .nav-tabs > li a:focus, .nav-tabs > li a:hover{
-                padding:5px 10px!important;
-                border: 1px solid transparent;
-            }
-            .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-                border: 1px solid #ddd!important;
-                border-bottom-color: transparent!important;
-            }
-        }*/ }
+  padding-bottom: 35px; }
   .action-calendar .modal-body .time-picker-label {
     display: inline-block;
     line-height: 34px;
@@ -416,13 +402,6 @@ md-dialog.addScript > md-content > div div.savedStriptInfo {
       display: inline-block;
       width: 120px;
       z-index: 50; }
-    .action-calendar .modal-body .action-type-select .ratio-label {
-      color: #7b7b7b;
-      font-weight: bold;
-      margin-bottom: 0px; }
-      .action-calendar .modal-body .action-type-select .ratio-label span span {
-        width: 15px;
-        height: 15px; }
     .action-calendar .modal-body .action-type-select .md-datepicker-input-mask {
       display: none; }
   .action-calendar .modal-body .keepMonitorOn {
@@ -496,18 +475,60 @@ md-dialog.addScript > md-content > div div.savedStriptInfo {
         font-weight: 700; }
   .action-calendar .modal-body .uibTabSet {
     margin-top: 20px; }
-    .action-calendar .modal-body .uibTabSet .tabs .tab-line {
-      padding: 25px 0 0 0; }
-      .action-calendar .modal-body .uibTabSet .tabs .tab-line .tab-label {
-        font-weight: 100; }
-      .action-calendar .modal-body .uibTabSet .tabs .tab-line .tab-select {
-        border-radius: 0;
-        background: transparent;
-        height: 32px;
-        padding: 5px;
-        border: 1px solid #d9d9d9;
-        font-size: 14px;
-        line-height: 1; }
+    .action-calendar .modal-body .uibTabSet .tab-content {
+      width: 100%;
+      padding-right: 20px; }
+    .action-calendar .modal-body .uibTabSet .tabs {
+      width: 100%; }
+      .action-calendar .modal-body .uibTabSet .tabs .tab-line {
+        padding: 25px 0 0 0; }
+        .action-calendar .modal-body .uibTabSet .tabs .tab-line .aplication-title {
+          padding-top: 28px;
+          font-family: Calibri;
+          color: rgba(26, 26, 26, 0.7);
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: -0.182px;
+          border-top: 3px solid #8cc63f;
+          border-bottom: 1px solid #bcbcbc; }
+        .action-calendar .modal-body .uibTabSet .tabs .tab-line .performanceMetrics-title {
+          padding-top: 28px;
+          font-family: Calibri;
+          color: rgba(26, 26, 26, 0.7);
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: -0.182px;
+          border-top: 3px solid #8cc63f; }
+        .action-calendar .modal-body .uibTabSet .tabs .tab-line .tab-label {
+          font-weight: 100; }
+        .action-calendar .modal-body .uibTabSet .tabs .tab-line .tab-select {
+          border-radius: 0;
+          background: transparent;
+          height: 32px;
+          padding: 5px;
+          border: 1px solid #d9d9d9;
+          font-size: 14px;
+          line-height: 1; }
+        .action-calendar .modal-body .uibTabSet .tabs .tab-line .tab-button {
+          outline: none;
+          background-color: #29abe2;
+          border: none;
+          height: 29px;
+          line-height: 29px;
+          width: 80px;
+          font-family: Calibri;
+          color: #ffffff;
+          font-size: 13px;
+          font-weight: 700;
+          margin-left: 20px; }
+        .action-calendar .modal-body .uibTabSet .tabs .tab-line .buttonTypeOne {
+          float: right;
+          margin-left: 22px;
+          font-family: Calibri;
+          color: rgba(26, 26, 26, 0.7);
+          font-size: 12.66px;
+          font-weight: 700;
+          text-align: left; }
   .action-calendar .modal-body .time-chuse-line {
     display: flex;
     align-items: center; }
