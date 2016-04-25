@@ -4,14 +4,14 @@
     'use strict';
     angular
         .module('powerPlug')
-        .controller('ConsolePermissionCtrl',
-                     ['$state', '$document', '$mdDialog', '$mdMedia', '$scope', 'ConsolePermissionResource', ConsolePermissionCtrl]);
+        .controller('ElectricityPriceCtrl',
+                     ['$state', '$document', '$mdDialog', '$mdMedia', '$scope', 'ElectricityPriceResource', ElectricityPriceCtrl]);
 
 
-    function ConsolePermissionCtrl($state, $document, $mdDialog, $mdMedia, $scope, ConsolePermissionResource) {
+    function ElectricityPriceCtrl($state, $document, $mdDialog, $mdMedia, $scope, ElectricityPriceResource) {
         var vm = this;
 
-        ConsolePermissionResource.query(function (data) {
+        ElectricityPriceResource.query(function (data) {
             onSuccess(data);
         }, function (error) {
             onError(error);
@@ -25,7 +25,7 @@
         }
 
         function onSuccess(data) {
-            vm.permissions = data;
+            vm.prices = data;
         }
 
         vm.checkAll = function (seed) {
@@ -41,7 +41,7 @@
 
         vm.saveChanges = function () {
             ///dooo
-            ConsolePermissionResource.saveAll(returnObj, function (data) {
+            ElectricityPriceResource.saveAll(returnObj, function (data) {
                 alert('Successfully Done!');
                 onSuccess(data);
             }, function (err) {
@@ -50,7 +50,7 @@
         }
 
         vm.discardChanges = function () {
-            ConsolePermissionResource.query(function (data) {
+            ElectricityPriceResource.query(function (data) {
                 onSuccess(data);
             }, function (error) {
                 onError(error);
