@@ -76,11 +76,13 @@
         });
 
         modal.rendered.then(function(){
+            //start time  picker
             $('.datetimepicker').datetimepicker({
                 format: 'LT',
                 defaultDate:actionData.fromTime
             });
 
+            //start date  picker
             $('.specific-date').datetimepicker({
                 format: 'MM/DD/YYYY',
                 defaultDate:(typeof actionData.specificDate != 'undefined') ? new Date(actionData.specificDate)    : new Date()
@@ -88,6 +90,7 @@
         });
 
         modal.closed.then(function(){
+            //remove date & time picker
             $('.datetimepicker').datetimepicker('remove');
             $('.specific-date').datetimepicker('remove');
         });

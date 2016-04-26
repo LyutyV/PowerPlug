@@ -110,8 +110,10 @@ angular
         },
         post: function(scope) {
           var resize = function() {
-            scope.highchartsNG.size.width = document.getElementsByClassName('chart-wraper')[0].clientWidth - 30;
-            scope.$apply();
+            if ($('.chart-wraper')&&$('.chart-wraper')[0]&&$('.chart-wraper')[0].clientWidth){
+              scope.highchartsNG.size.width = $('.chart-wraper')[0].clientWidth - 30;
+              scope.$apply();
+            }
           }
 
           angular.element($window).bind('resize', resize);
@@ -119,14 +121,15 @@ angular
           scope.$on('$destroy', function () {
             angular.element($window).unbind('resize', resize);
           });
-          if (document.getElementsByClassName('chart-wraper')&&document.getElementsByClassName('chart-wraper')[0]&&document.getElementsByClassName('chart-wraper')[0].clientWidth){
+
             $timeout(function() {
-              scope.highchartsNG.size = {
-                width: document.getElementsByClassName('chart-wraper')[0].clientWidth - 30,
-                height: 235
-              };
+              if ($('.chart-wraper')&&$('.chart-wraper')[0]&&$('.chart-wraper')[0].clientWidth){
+                scope.highchartsNG.size = {
+                  width: $('.chart-wraper')[0].clientWidth - 30,
+                  height: 235
+                };
+              }
             }, 0);
-          }
 
         }
       }
