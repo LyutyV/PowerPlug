@@ -13,6 +13,44 @@
         height:100px;
         width:100%;
     }
+    input.custom-checkbox-green-type00{
+        display:none;
+        + label{
+            position: relative;
+            margin: 0;
+            height: 15px;
+            width: 35px;
+            &:before{
+                position: absolute;
+                content: '';
+                height: 15px;
+                width: 15px;
+                border: 1px solid #d9d9d9;
+                left: 10px;
+                top: 3px;
+                background-color: #ffffff;
+            }
+        }
+        &:checked{
+            + label{
+                &:before{
+                    position: absolute;
+                    content: '\f00c';
+                    font-family: 'FontAwesome';
+                    color: #a3d165;
+                    height: 15px;
+                    width: 15px;
+                    border: 1px solid #d9d9d9;
+                    text-align: center;
+                    line-height: 15px;
+                    left: 10px;
+                    top: 3px;
+                    background-color: #ffffff;
+                }
+            }
+        }   
+    }
+
     .buttons-container{ 
         position:fixed;
         bottom:0px; 
@@ -111,8 +149,20 @@
             transform: translateY(-50%);
         }
     }
-    > .script-content, .powerConsumption-content, .computer-groups  
+    > .script-content, .powerConsumption-content, .computer-groups, .consolePermission-content, .electricityPrice-content
     {
+        .action-settings {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 14.83px;
+            font-weight: 700;
+            text-align: left;
+            margin-left: 30px;
+            &:before{
+                margin-right: 5px;
+            }
+        }
+
         > span {
             font-family: Calibri;
             color: #4d4d4d; 
@@ -122,22 +172,13 @@
 
         table {
             margin-top: 20px;
-            tr > td {                    
-                > .action-settings {
-                    font-family: Calibri;
-                    color: rgba(26, 26, 26, 0.7);
-                    font-size: 14.83px;
-                    font-weight: 700;
-                    text-align: left;
+            tr > td {                                    
+                > .action-settings{
                     float: right;
                     display: block;
-                    margin-left: 30px;
-                    &:before{
-                        margin-right: 5px;
+                    &:last-child {
+                        margin-left:0px;
                     }
-                }
-                > .action-settings:last-child {
-                    margin-left:0px;
                 }
             }
             > thead {

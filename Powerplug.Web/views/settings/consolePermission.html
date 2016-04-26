@@ -1,45 +1,60 @@
 ﻿<div class="settings">
     <div class="consolePermission-content">
-        <span>Console Permissions</span>
         <div class="clearfix">
-            <div class="pull-left">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <td>Script Name</td>
-                            <td>Owner</td>
-                            <td>Description</td>
-                            <td colspan="2">
-                                <span class="buttonTypeOne action-settings">Import</span>
-                                <span class="buttonTypeOneAdd action-settings" ng-click="vm.showScriptDialog(0)">Add</span>
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="script in vm.scripts" class="script-row" data-id="{{script.scriptId}}" ng-click="vm.selectScript($event)">
-                            <td>{{ script.scriptName}}</td>
-                            <td>{{ script.owner}}</td>
-                            <td>{{ script.scriptDesc}}</td>
-                            <td class="button-container"><span class="buttonTypeOneEdit action-settings" ng-click="vm.showScriptDialog(script.scriptId)">Edit</span></td>
-                            <td class="button-container"><span class="buttonTypeOneRemove action-settings" ng-click="vm.removeScript(script.scriptId)">Remove</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="pull-left" style="width:500px;">
+                <div style="border-right: solid 1px #dedede;margin-right:3px;">
+                    <span style="color: #4d4d4d;font-weight: 700;font-size: 16px;">Group and Users</span>
+                    <span class="buttonTypeOneAdd action-settings" ng-click="vm.showScriptDialog(0)" style="padding-left: 185px;display:inline-block;">Add</span>
+                    <span class="buttonTypeOneRemove action-settings" ng-click="vm.showScriptDialog(0)" style="display:inline-block;">Remove</span>
+                </div>
+                <div style="width:500px;position:fixed;bottom: 120px;top: 144px;">
+                    <div style="position:absolute;top: 0px;bottom: 0px;overflow-y:auto;right: 3px;left: 0px;border-right: solid 1px #dedede;padding-right: 20px;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <input id="spc01" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.selectedAll" ng-click="vm.checkAll()" />
+                                        <label for="spc01"></label>
+                                    </td>
+                                    <td>Object</td>
+                                    <td>Type</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="permission in vm.permissions" class="script-row" data-id="{{permission.scriptId}}" ng-click="vm.selectPermission($event)">
+                                    <td>
+                                        <input id="{{permission.scriptId}}" type="checkbox" class="custom-checkbox-green-type00" data-name="{{permission.scriptName}}" ng-model="permission.selected" />
+                                        <label for="{{permission.scriptId}}"></label>
+                                    </td>
+                                    <td>{{ permission.scriptName}}</td>
+                                    <td>{{ permission.owner}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <div class="pull-left">
+            <div style="padding-left:20px;overflow:hidden;">
                 <uib-tabset active="active">
-                    <uib-tab index="0" heading="Script">
-                        <div class="type-selection">
-                            Type
-                            <select ng-model="vm.currentScriptType" ng-change="vm.changeScriptType()">
-                                <option value="vbs">VBScript</option>
-                                <option value="bat">Batch</option>
-                                <option value="cmd">CMD</option>
-                                <option value="js">JScript</option>
-                            </select>
-                        </div>
-                        <div class="text-container">
-                            <textarea ng-change="vm.changeScriptText()" ng-model="vm.currentScriptText"></textarea>
+                    <uib-tab index="0" heading="Roles">
+                        <div class="green-line"></div>
+                        <div class="clearfix" style="padding-top:10px;">
+                            <div class="pull-right" style="width:300px;">
+                                <div style="color: #4d4d4d;font-weight: 700;font-size: 16px;padding-bottom:10px;">Permission Description</div>
+                                <div>
+                                    dsfdsfdsf dsf sedf dsfdsfdsfds fsdfdsdsfsdfdsf
+                                    sd f ds fds fds fdsfdsfdsfd dsfdsfd sdfsdfsdfsdf sdf sdfdsfdsfdsfdsds
+                                </div>
+                            </div>
+                            <div style="overflow:hidden;">
+                                <ul>
+                                    <li ng-repeat="permission in vm.permissions" class="script-row" style="padding-top: 5px;padding-bottom: 5px;list-style: none;">
+                                        <input id="li-{{permission.scriptId}}" type="checkbox" class="custom-checkbox-green-type00" />
+                                        <label for="li-{{permission.scriptId}}"></label>
+                                        {{ permission.scriptName}}
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </uib-tab>
                 </uib-tabset>
@@ -58,4 +73,4 @@
     div.content-wrapper {
         background-color: #fff;
     }    
-</style>
+</divstyle>

@@ -3,8 +3,9 @@
 
     angular
       .module('powerPlug')
-      .controller('LeftMenuController', function ($state) {
+      .controller('LeftMenuController', ['$state', function ($state) {          
           var vm = this;
+          vm.state = $state;
           //tmp
           vm.menuItems = [
           {
@@ -41,12 +42,6 @@
               "sref": "settings",
               "icon": "fa fa-gear",
               "submenu": []
-          },
-          {
-              "text": "Configurations",
-              "sref": "#",
-              "icon": "fa fa-wrench",
-              "submenu": []
           }];
-      });
+      }]);
 })();

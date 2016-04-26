@@ -59,39 +59,6 @@ md-dialog.addScript {
                             > td {
                                 &:first-child {
                                     text-align: center;
-                                    /////////////
-                                    // > input.custom-checkbox-green-type00 {
-                                    //     display: none;
-                                    //     &+label {
-                                    //         position: relative;
-                                    //         margin: 0;
-                                    //         height: 15px;
-                                    //         width: 35px;
-                                    //     }
-                                    //     &+label::before {
-                                    //         position: absolute;
-                                    //         content: '';
-                                    //         height: 15px;
-                                    //         width: 15px;
-                                    //         border: 1px solid #d9d9d9;
-                                    //         left: 10px;
-                                    //         top: 3px;
-                                    //     }
-                                    //     &:checked + label::before {
-                                    //         position: absolute;
-                                    //         content: '\f00c';
-                                    //         font-family: 'FontAwesome';
-                                    //         color: #a3d165;
-                                    //         height: 15px;
-                                    //         width: 15px;
-                                    //         border: 1px solid #d9d9d9;
-                                    //         text-align: center;
-                                    //         line-height: 15px;
-                                    //         left: 10px;
-                                    //         top: 3px;
-                                    //     }
-                                    // }
-                                    /////////////
                                 }
                                 padding: 0;
                                 line-height: 40px;
