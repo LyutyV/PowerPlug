@@ -59,21 +59,23 @@
             initGroupMembersHash();
             console.log(data);
         }
-        function updateComputersNameMembers(groupIndex) {
+        function updateComputersNameMembers(groupIndex, isInclude) {
             vm.groupMembersHash[groupIndex].members.forEach(function (computerItem, index, array) {
                 if (typeof (computerItem.name) !== 'undefined') {
                     computerItem.memberDef = computerItem.name;
                     delete computerItem['name'];
                     computerItem.memberTypeId = 1;
-                    computerItem.memberIncExc = true;
-                    computerItem.compGroupId = vm.groupMembersHash[groupIndex].compGroupId;
+                    computerItem.memberIncExc = isInclude;
                     if (vm.groupMembersHash[groupIndex].status !== 'added') {
-                        vm.groupMembersHash[groupIndex].status = 'updated';
+                        computerItem.compGroupId = vm.groupMembersHash[groupIndex].compGroupId;
                     }
                 }
             });
+            if (vm.groupMembersHash[groupIndex].status !== 'added') {
+                vm.groupMembersHash[groupIndex].status = 'updated';
+            }
         }
-        function updateGroupMembers(groupIndex, promise, computerIndex) {
+        function updateGroupMembers(groupIndex, promise, computerIndex, isInclude) {
             if (!promise.computerObject.isChange) {
                 return;
             }
@@ -86,8 +88,16 @@
                 for (var field in promise.computerObject.computerFields) {
                     vm.groupMembersHash[groupIndex].members[computerIndex][field] = promise.computerObject.computerFields[field];
                 }
+                if (vm.groupMembersHash[groupIndex].status !== 'added') {
+                    vm.groupMembersHash[groupIndex].members[computerIndex].compGroupId = vm.groupMembersHash[groupIndex].compGroupId;
+                }
+                vm.groupMembersHash[groupIndex].members[computerIndex].memberIncExc = isInclude;
             } else {
                 //added new computer to group
+                promise.computerObject.computerFields.memberIncExc = isInclude;
+                if (vm.groupMembersHash[groupIndex].status !== 'added') {
+                    promise.computerObject.computerFields.compGroupId = vm.groupMembersHash[groupIndex].compGroupId;
+                }
                 vm.groupMembersHash[groupIndex].members.push(promise.computerObject.computerFields);
             }
         }
@@ -123,12 +133,10 @@
         vm.popupTypeOptions = [{ name: 'Computer Name', value: 'computerName' }, { name: 'Computer Mask', value: 'computerMask' },
            { name: 'IP Mask', value: 'IPMask' }, { name: 'IP Range', value: 'IPRange' }];
         vm.groupMembersHash = {};
+        vm.incExc = "Include";
         vm.getComputerDefinitionText = function (computerObj) {
             var defenitionText;
             switch (computerObj.memberTypeId) {
-                case 1:
-                    defenitionText = computerObj.memberDef;
-                    break;
                 case 2:
                     defenitionText = '[Computer Name] like ' + computerObj.memberDef;
                     break;
@@ -143,6 +151,9 @@
                     break;
                 case 6:
                     defenitionText = '[IP Address] not like ' + computerObj.memberDef;
+                    break;
+                default:
+                    defenitionText = computerObj.memberDef;
                     break;
             }
             return defenitionText;
@@ -172,27 +183,29 @@
         }
         vm.openAddDialog = function (index) {
             var editPopupType = 0;
+            var isInclude;
+            isInclude = vm.incExc === "Include" ? 1 : 0;
             if (index >= 0) {
                 editPopupType = vm.groupMembersHash[vm.selectedGroupId].members[index].memberTypeId;
             }
             if ('computerName' == vm.popupType && (index < 0)) {
                 computersNameDialodHandler.addComputerDialog(vm.groupMembersHash[vm.selectedGroupId].members, true).then(function (computerObj) {
-                    updateComputersNameMembers(vm.selectedGroupId);
+                    updateComputersNameMembers(vm.selectedGroupId, isInclude);
                 });
             }
             else if (('computerMask' == vm.popupType) || (editPopupType == 2) || (editPopupType == 5)){
                 computerMaksPopupHandler.openComputerMaskDialog(index).then(function (computerObj) {
-                    updateGroupMembers(vm.selectedGroupId, computerObj, index);
+                    updateGroupMembers(vm.selectedGroupId, computerObj, index, isInclude);
                 });
             }
             else if (('IPMask' == vm.popupType) ||  (editPopupType == 4) || (editPopupType == 6)){
                 IPMaksPopupHandler.openIPMaskDialog(index).then(function (computerObj) {
-                    updateGroupMembers(vm.selectedGroupId, computerObj, index);
+                    updateGroupMembers(vm.selectedGroupId, computerObj, index, isInclude);
                 });
             }
             else if (('IPRange' == vm.popupType) || (editPopupType == 3)) {
                 IPRangePopupHandler.openIPRangeDialog(index).then(function (computerObj) {
-                    updateGroupMembers(vm.selectedGroupId, computerObj, index);
+                    updateGroupMembers(vm.selectedGroupId, computerObj, index, isInclude);
                 });
                 }
         };
@@ -211,10 +224,10 @@
             });
             returnObj.create = createdGroups;
             returnObj.update = updatedGroups;
-            console.log("return object is :", returnObj);
             ComputerGroupsResource.groupMembers.saveAll(returnObj, function (data) {
                 alert('Successfully Done!');
                 onSuccessGetGroup(data);
+                vm.selectedGroupId = -1;
             }, function (err) {
                 onError(err);
             });
@@ -222,6 +235,7 @@
         vm.discardChanges = function () {
             ComputerGroupsResource.groups.query(function (data) {
                 onSuccessAllGroups(data);
+                vm.selectedGroupId = -1;
             }, function (error) {
                 onError(error);
             });

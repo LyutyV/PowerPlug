@@ -31,7 +31,6 @@
                     _returnObjByPromise.computerFields = {
                         "memberTypeId": $scope.memberTypeId,
                         "memberDef": $scope.computerName,
-                        "memberIncExc": true
                     }
                 }
             }

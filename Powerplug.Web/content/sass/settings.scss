@@ -132,17 +132,7 @@
         height: 5px;
         background-color: #8cc63f;
     }
-    
-    > .computer-groups  {
-        .computer-group-action{
-            position: relative;
-            top: 50%;
-            -ms-transform: translateY(-50%);
-            -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-        }
-    }
-    .settings-content, .computer-groups
+    .settings-content
     {
         &.powerConsumption-content 
         {
@@ -190,9 +180,6 @@
                         margin-left:0px;
                     }
                 }
-                > .action-settings.buttonTypeOneAdd{
-                    margin-top:11px;
-                } 
             }
             > thead {
                 font-family: Calibri;
@@ -217,6 +204,12 @@
                         height: 46px;
                         vertical-align: middle;
                         font-family: Calibri; 
+                        .fa-plus{
+                            color:#8cc63f;
+                        }
+                        .fa-minus{
+                            color:#C63F4A;
+                        }
                         &.bolder{
                             font-weight: bold;
                         }
