@@ -1199,9 +1199,6 @@ input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child
 .topGreenLine {
   z-index: 100; }
 
-div.content-wrapper {
-  background-color: #f9f9f9; }
-
 md-datepicker {
   display: inline-block;
   height: 30px; }
@@ -1791,7 +1788,8 @@ div.computersWrapper {
                       content: '\f1f8'; }
 
 .overview {
-  margin: 0 -48px;
+  margin: -15px -50px 0px -50px;
+  padding-top: 15px;
   background-color: #f9f9f9; }
   .overview > div:first-child {
     height: 112px;
@@ -1880,8 +1878,178 @@ div.computersWrapper {
         .overview > div:last-child ul li:not(:first-child) {
           border-left: 1px solid #ffffff; }
 
+div.permissionsWrapper {
+  background-color: #ffffff;
+  margin: 0px -50px 23px -50px;
+  padding: 0px 50px; }
+  div.permissionsWrapper > div:first-child {
+    display: flex;
+    justify-content: space-between; }
+    div.permissionsWrapper > div:first-child > span {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.195px; }
+    div.permissionsWrapper > div:first-child > div > span {
+      margin-left: 10px; }
+      div.permissionsWrapper > div:first-child > div > span:first-child {
+        font-family: Calibri;
+        color: rgba(26, 26, 26, 0.7);
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: -0.195px; }
+      div.permissionsWrapper > div:first-child > div > span:nth-child(2) {
+        font-family: Calibri;
+        color: rgba(26, 26, 26, 0.7);
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.195px; }
+      div.permissionsWrapper > div:first-child > div > span:last-child {
+        font-family: Calibri;
+        color: #8cc63f;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.195px; }
+  div.permissionsWrapper > div.tableWrapper {
+    margin-top: 13px;
+    background-color: #f8f8f8; }
+    div.permissionsWrapper > div.tableWrapper > div.tableHead {
+      display: flex;
+      padding: 23px 0px 9px 18px;
+      border-bottom: 1px solid #b3b3b3;
+      margin: 0px 16px;
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.182px; }
+      div.permissionsWrapper > div.tableWrapper > div.tableHead > div {
+        flex-grow: 1;
+        width: 33.3%; }
+        div.permissionsWrapper > div.tableWrapper > div.tableHead > div:last-child {
+          position: absolute;
+          right: 65px;
+          width: initial; }
+          div.permissionsWrapper > div.tableWrapper > div.tableHead > div:last-child > span {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 18px;
+            font-weight: 700; }
+            div.permissionsWrapper > div.tableWrapper > div.tableHead > div:last-child > span::before {
+              margin-right: 9px;
+              font-size: 20px; }
+            div.permissionsWrapper > div.tableWrapper > div.tableHead > div:last-child > span:focus {
+              outline: none; }
+    div.permissionsWrapper > div.tableWrapper > div.tableBody {
+      min-height: 125px; }
+      div.permissionsWrapper > div.tableWrapper > div.tableBody > div.tableRow {
+        padding-left: 18px;
+        margin: 0px 16px;
+        display: flex;
+        font-family: Calibri;
+        color: rgba(26, 26, 26, 0.7);
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.182px;
+        height: 40px; }
+        div.permissionsWrapper > div.tableWrapper > div.tableBody > div.tableRow > div {
+          flex-grow: 1;
+          display: inline-block;
+          line-height: 40px; }
+
 .savingPlans > div#organizationName > .customTable > .customTableHead > div:focus {
   outline: none; }
+
+div.settingsWrapper {
+  background-color: #ffffff;
+  margin: 0 -50px;
+  padding: 50px; }
+  div.settingsWrapper > span {
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 23px;
+    font-weight: 300; }
+  div.settingsWrapper > div.container-fluid {
+    margin-top: 13px;
+    padding-top: 36px;
+    border-top: 4px solid #8cc63f; }
+    div.settingsWrapper > div.container-fluid > div.row:first-child > div.col-xs-6 {
+      padding: 0; }
+      div.settingsWrapper > div.container-fluid > div.row:first-child > div.col-xs-6:last-child > span {
+        margin-left: 4px; }
+      div.settingsWrapper > div.container-fluid > div.row:first-child > div.col-xs-6 > span {
+        font-family: Calibri;
+        color: rgba(26, 26, 26, 0.7);
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.195px;
+        display: block;
+        margin-bottom: 10px; }
+    div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6 {
+      padding: 0; }
+      div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6:first-child > div {
+        margin-right: 4px; }
+      div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6:last-child > div {
+        margin-left: 4px; }
+      div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6 > div {
+        background-color: #f8f8f8;
+        padding-left: 50px;
+        min-height: 50px;
+        line-height: 50px; }
+        div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6 > div > input.custom-checkbox {
+          display: none; }
+          div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6 > div > input.custom-checkbox + label {
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 13px;
+            font-weight: 300;
+            letter-spacing: -0.169px;
+            margin: 0; }
+            div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6 > div > input.custom-checkbox + label::before {
+              content: '';
+              height: 24px;
+              width: 24px;
+              position: absolute;
+              left: 0;
+              top: 50%;
+              border: 1px solid #d6d6d6;
+              transform: translate(-50%, -50%); }
+          div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6 > div > input.custom-checkbox:checked + label::before {
+            content: '\f00c';
+            font-family: 'FontAwesome';
+            text-align: center;
+            line-height: 24px;
+            border-color: #969696;
+            color: #333333; }
+        div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6 > div > label.customDropdown {
+          margin: 0px;
+          margin-left: 35px; }
+          div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6 > div > label.customDropdown > span {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 13px;
+            font-weight: 300;
+            letter-spacing: -0.169px;
+            line-height: 14px;
+            margin-right: 15px; }
+          div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6 > div > label.customDropdown > select {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 13px;
+            font-weight: 300;
+            letter-spacing: -0.169px;
+            line-height: 14px;
+            height: 30px;
+            width: 100px;
+            background-color: #ffffff;
+            outline: none;
+            border: 1px solid #f2f2f2; }
+        div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6 > div:last-child, div.settingsWrapper > div.container-fluid > div.row:nth-child(2) > div.col-xs-6 > div:nth-child(5) {
+          padding-left: 70px; }
 
 .savingPlanWorkTime {
   padding: 40px;
