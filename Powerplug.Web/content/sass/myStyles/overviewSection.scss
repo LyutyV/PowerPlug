@@ -33,6 +33,14 @@
                                     letter-spacing: -0.182px;
                                 }
                             }
+                            &:last-child {
+                              button.md-button.md-focused {
+                                background-color: #fff;
+                                > div {
+                                  border-top-color: black;
+                                }
+                              }
+                            }
                         }
                     }
                 }

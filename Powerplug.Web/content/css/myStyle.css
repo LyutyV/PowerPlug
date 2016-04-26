@@ -340,14 +340,20 @@ md-dialog.addScript input.custom-checkbox-green-type00 {
 
 @media (min-width: 768px) {
   .action-calendar .modal-dialog {
-    width: 930px !important; } }
+    width: 875px !important; } }
+
+@media (max-width: 900px) {
+  .action-calendar .modal-dialog {
+    width: 100% !important; } }
 
 .action-calendar .modal-content {
   border-radius: 0px; }
 
 .action-calendar .modal-header {
-  border-bottom: 0px;
-  padding-top: 2   5px; }
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 50px;
+  border-bottom: 0px; }
   .action-calendar .modal-header .title-before {
     display: inline-block;
     padding-right: 20px;
@@ -360,7 +366,7 @@ md-dialog.addScript input.custom-checkbox-green-type00 {
     padding-left: 15px;
     color: #7b7b7b;
     font-size: 24px;
-    font-weight: 100; }
+    font-weight: bold; }
   .action-calendar .modal-header .close-btn {
     line-height: 29px;
     font-weight: 100;
@@ -368,25 +374,27 @@ md-dialog.addScript input.custom-checkbox-green-type00 {
     font-size: 20px; }
 
 .action-calendar .modal-body {
-  padding-bottom: 35px; }
+  padding-bottom: 35px;
+  padding-left: 35px;
+  padding-right: 35px; }
   .action-calendar .modal-body .time-picker-label {
     display: inline-block;
     line-height: 34px;
-    padding: 0 10px 0 5px; }
+    padding: 0 10px 0 0px; }
   .action-calendar .modal-body input[type="number"] {
     background: transparent;
-    height: 32px;
+    height: 40px;
     padding: 0px 0 0px 10px;
     border: 1px solid #d9d9d9;
     font-size: 14px;
-    line-height: 20px; }
+    line-height: 40px; }
   .action-calendar .modal-body input[type="time"] {
     background: transparent;
-    height: 32px;
+    height: 40px;
     padding: 0px 0 0px 10px;
     border: 1px solid #d9d9d9;
     font-size: 14px;
-    line-height: 32px;
+    line-height: 40px;
     margin: 0 10px;
     -webkit-appearance: none; }
   .action-calendar .modal-body input[type="time"]::-webkit-clear-button {
@@ -394,14 +402,32 @@ md-dialog.addScript input.custom-checkbox-green-type00 {
     -webkit-appearance: none; }
   .action-calendar .modal-body hr {
     border-top: 1px solid #ccc; }
-  .action-calendar .modal-body .body-enter {
+  .action-calendar .modal-body .body-enter-justify, .action-calendar .modal-body .body-enter {
     color: #333333;
     font-size: 16px;
-    font-weight: bold; }
+    display: inline-block;
+    font-weight: bold;
+    padding-right: 25px; }
+  .action-calendar .modal-body .body-enter-justify {
+    padding-left: 25px; }
   .action-calendar .modal-body .action-type-select {
-    padding: 15px 0; }
-    .action-calendar .modal-body .action-type-select .left-col {
-      padding-right: 0px; }
+    padding: 15px 0;
+    min-height: 40px;
+    box-sizing: content-box; }
+    .action-calendar .modal-body .action-type-select .left-block-line {
+      min-height: 40px;
+      padding-right: 0px;
+      line-height: 40px; }
+      .action-calendar .modal-body .action-type-select .left-block-line label {
+        margin: 0px;
+        line-height: 40px; }
+    .action-calendar .modal-body .action-type-select .day-list {
+      min-height: 40px;
+      margin-left: -10px;
+      line-height: 40px; }
+      .action-calendar .modal-body .action-type-select .day-list label {
+        margin: 0px;
+        line-height: 32px; }
     .action-calendar .modal-body .action-type-select .datepicker-wrape {
       border: 1px solid #d9d9d9;
       display: inline-block;
@@ -421,7 +447,7 @@ md-dialog.addScript input.custom-checkbox-green-type00 {
     display: inline-block;
     padding-left: 30px;
     padding-right: 15px;
-    line-height: 30px; }
+    line-height: 40px; }
   .action-calendar .modal-body input.custom-checkbox-green-type01 {
     display: none; }
     .action-calendar .modal-body input.custom-checkbox-green-type01 + label {
@@ -439,7 +465,7 @@ md-dialog.addScript input.custom-checkbox-green-type00 {
       height: 24px;
       width: 24px;
       left: 0px;
-      top: 2px;
+      top: 7px;
       border: 1px solid #d9d9d9; }
     .action-calendar .modal-body input.custom-checkbox-green-type01:checked + label::before {
       position: absolute;
@@ -449,7 +475,7 @@ md-dialog.addScript input.custom-checkbox-green-type00 {
       height: 24px;
       width: 24px;
       left: 0px;
-      top: 2px;
+      top: 7px;
       border: 1px solid #d9d9d9;
       text-align: center;
       line-height: 24px; }
@@ -464,22 +490,24 @@ md-dialog.addScript input.custom-checkbox-green-type00 {
         background-color: #808080;
         font-family: Calibri;
         color: #ffffff;
-        font-size: 19px;
+        font-size: 16px;
         font-weight: 300;
         outline: none;
-        border: 1px solid transparent;
-        border-bottom: 6px solid #808080;
-        padding: 5px 10px; }
+        border: 0px;
+        border-radius: 0;
+        padding: 10px 20px; }
       .action-calendar .modal-body .nav-tabs > li.active > a,
       .action-calendar .modal-body .nav-tabs > li.active a:focus,
       .action-calendar .modal-body .nav-tabs > li.active a:hover {
-        background-color: #a3d165;
+        background-color: #8cc63e;
         color: #ffffff;
-        border: 1px solid #ddd;
-        border-bottom: 6px solid #88b73d;
+        border: 0px;
         font-weight: 700; }
   .action-calendar .modal-body .uibTabSet {
     margin-top: 20px; }
+    .action-calendar .modal-body .uibTabSet > .tab-content {
+      float: left;
+      padding-left: 0px; }
     .action-calendar .modal-body .uibTabSet .tab-content {
       width: 100%;
       padding-right: 20px; }
@@ -509,17 +537,24 @@ md-dialog.addScript input.custom-checkbox-green-type00 {
         .action-calendar .modal-body .uibTabSet .tabs .tab-line .tab-select {
           border-radius: 0;
           background: transparent;
-          height: 32px;
+          height: 40px;
           padding: 5px;
           border: 1px solid #d9d9d9;
           font-size: 14px;
-          line-height: 1; }
+          line-height: 40px;
+          margin-left: 20px;
+          margin-right: 20px; }
+        .action-calendar .modal-body .uibTabSet .tabs .tab-line .tab-input {
+          margin-left: 20px;
+          margin-right: 20px;
+          height: 40px;
+          line-height: 40px; }
         .action-calendar .modal-body .uibTabSet .tabs .tab-line .tab-button {
           outline: none;
           background-color: #29abe2;
           border: none;
-          height: 29px;
-          line-height: 29px;
+          height: 40px;
+          line-height: 40px;
           width: 80px;
           font-family: Calibri;
           color: #ffffff;
@@ -545,7 +580,8 @@ md-dialog.addScript input.custom-checkbox-green-type00 {
   .action-calendar .modal-footer .btn {
     width: 100px;
     border-radius: 0;
-    border: oldlace; }
+    border: oldlace;
+    padding: 11px 12px; }
   .action-calendar .modal-footer .add {
     background-color: #8cc63f; }
   .action-calendar .modal-footer .cancel {
@@ -559,7 +595,9 @@ md-dialog.addScript input.custom-checkbox-green-type00 {
   .time-picker input, .date-picker input {
     border-radius: 0;
     border-right: 0;
-    padding-right: 0; }
+    padding-right: 0;
+    height: 40px;
+    line-height: 40px; }
   .time-picker input:focus, .date-picker input:focus {
     box-shadow: none;
     border-color: #d4d4d4; }
@@ -1817,6 +1855,10 @@ div.computersWrapper {
               font-size: 14px;
               font-weight: 300;
               letter-spacing: -0.182px; }
+          .overview > div:first-child > div:last-child > div > div:last-child button.md-button.md-focused {
+            background-color: #fff; }
+            .overview > div:first-child > div:last-child > div > div:last-child button.md-button.md-focused > div {
+              border-top-color: black; }
     .overview > div:first-child > div > div.row {
       height: 28px; }
       .overview > div:first-child > div > div.row:nth-child(1) img, .overview > div:first-child > div > div.row:nth-child(2) img {
