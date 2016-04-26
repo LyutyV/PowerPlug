@@ -223,13 +223,6 @@ nav {
           width: 20px;
           color: #90c63d; }
 
-.computer-groups .computer-group-action {
-  float: right;
-  margin: 5px;
-  cursor: pointer; }
-  .computer-groups .computer-group-action .action-icon {
-    float: left; }
-
 .settings {
   padding-top: 20px; }
   .settings .nav-tabs > li {
@@ -340,83 +333,79 @@ nav {
     width: 100%;
     height: 5px;
     background-color: #8cc63f; }
-  .settings > .computer-groups .computer-group-action {
-    position: relative;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%); }
-  .settings .settings-content.powerConsumption-content, .settings .computer-groups.powerConsumption-content {
+  .settings .settings-content.powerConsumption-content {
     padding-top: 20px; }
-  .settings .settings-content .script-content, .settings .computer-groups .script-content {
+  .settings .settings-content .script-content {
     padding-top: 12px; }
-  .settings .settings-content .permission-selection, .settings .computer-groups .permission-selection {
+  .settings .settings-content .permission-selection {
     padding-bottom: 30px; }
-    .settings .settings-content .permission-selection div, .settings .computer-groups .permission-selection div {
+    .settings .settings-content .permission-selection div {
       font-family: Calibri;
       color: rgba(26, 26, 26, 0.7);
       font-size: 14px;
       padding-top: 10px; }
-  .settings .settings-content .action-settings, .settings .computer-groups .action-settings {
+  .settings .settings-content .action-settings {
     font-family: Calibri;
     color: rgba(26, 26, 26, 0.7);
     font-size: 14.83px;
     font-weight: 700;
     text-align: left;
     margin-left: 30px; }
-    .settings .settings-content .action-settings:before, .settings .computer-groups .action-settings:before {
+    .settings .settings-content .action-settings:before {
       margin-right: 5px; }
-  .settings .settings-content > span, .settings .computer-groups > span {
+  .settings .settings-content > span {
     font-family: Calibri;
     color: #4d4d4d;
     font-size: 18px;
     font-weight: 700; }
-  .settings .settings-content table, .settings .computer-groups table {
+  .settings .settings-content table {
     margin-top: 20px; }
-    .settings .settings-content table tr > td > .action-settings, .settings .computer-groups table tr > td > .action-settings {
+    .settings .settings-content table tr > td > .action-settings {
       float: right;
       display: block; }
-      .settings .settings-content table tr > td > .action-settings:last-child, .settings .computer-groups table tr > td > .action-settings:last-child {
+      .settings .settings-content table tr > td > .action-settings:last-child {
         margin-left: 0px; }
-    .settings .settings-content table tr > td > .action-settings.buttonTypeOneAdd, .settings .computer-groups table tr > td > .action-settings.buttonTypeOneAdd {
-      margin-top: 11px; }
-    .settings .settings-content table > thead, .settings .computer-groups table > thead {
+    .settings .settings-content table > thead {
       font-family: Calibri;
       color: rgba(26, 26, 26, 0.7);
       font-size: 14px;
       font-weight: 700;
       letter-spacing: -0.182px; }
-    .settings .settings-content table > tbody, .settings .computer-groups table > tbody {
+    .settings .settings-content table > tbody {
       font-family: Calibri;
       color: #333333;
       font-size: 14px;
       font-weight: 300;
       letter-spacing: -0.182px; }
-      .settings .settings-content table > tbody > tr, .settings .computer-groups table > tbody > tr {
+      .settings .settings-content table > tbody > tr {
         border: none;
         outline: none; }
-        .settings .settings-content table > tbody > tr.bg-row-selected, .settings .computer-groups table > tbody > tr.bg-row-selected {
+        .settings .settings-content table > tbody > tr.bg-row-selected {
           background-color: rgba(242, 242, 242, 0.6); }
-        .settings .settings-content table > tbody > tr > td, .settings .computer-groups table > tbody > tr > td {
+        .settings .settings-content table > tbody > tr > td {
           height: 46px;
           vertical-align: middle;
           font-family: Calibri; }
-          .settings .settings-content table > tbody > tr > td.bolder, .settings .computer-groups table > tbody > tr > td.bolder {
+          .settings .settings-content table > tbody > tr > td .fa-plus {
+            color: #8cc63f; }
+          .settings .settings-content table > tbody > tr > td .fa-minus {
+            color: #C63F4A; }
+          .settings .settings-content table > tbody > tr > td.bolder {
             font-weight: bold; }
-          .settings .settings-content table > tbody > tr > td.grid-cell input[type="text"], .settings .computer-groups table > tbody > tr > td.grid-cell input[type="text"] {
+          .settings .settings-content table > tbody > tr > td.grid-cell input[type="text"] {
             font-family: Calibri;
             width: 50px;
             border: none;
             outline: none;
             height: 28px;
             padding: 5px; }
-          .settings .settings-content table > tbody > tr > td.grid-cell select, .settings .computer-groups table > tbody > tr > td.grid-cell select {
+          .settings .settings-content table > tbody > tr > td.grid-cell select {
             font-family: Calibri;
             border: none;
             outline: none; }
-          .settings .settings-content table > tbody > tr > td.button-padding, .settings .computer-groups table > tbody > tr > td.button-padding {
+          .settings .settings-content table > tbody > tr > td.button-padding {
             padding-right: 48px; }
-          .settings .settings-content table > tbody > tr > td.button-container, .settings .computer-groups table > tbody > tr > td.button-container {
+          .settings .settings-content table > tbody > tr > td.button-container {
             width: 100px;
             text-align: right; }
 

@@ -45,7 +45,6 @@
                 _returnObjByPromise.computerFields = {
                     "memberTypeId": $scope.memberTypeId,
                     "memberDef": memberDef,
-                    "memberIncExc": true
                 }
                 _returnObjByPromise.isChange = $scope.isChange;
                 $mdDialog.hide({ computerObject: _returnObjByPromise });
