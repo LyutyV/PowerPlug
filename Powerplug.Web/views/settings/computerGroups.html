@@ -1,6 +1,5 @@
 ﻿<div class="settings">
     <div class="computer-groups">
-        <span> Computer Groups</span>
         <table class="table">
             <thead>
                 <tr>
@@ -17,7 +16,7 @@
                     <td>{{ computerGroup.owner}}</td>
                     <td>{{ computerGroup.groupDesc}}</td>
                     <td style="width: 250px;"><span ng-click="vm.openComputerGroupDialog($index)" class="buttonTypeOneEdit  action-settings">Edit</span></td>
-                    <td style="width: 150px;"><span ng-click="vm.removeComputerGroup()" class="buttonTypeOneRemove action-settings">Remove</span></td>
+                    <td style="width: 150px;"><span ng-click="vm.removeComputerGroup(computerGroup, $index)" class="buttonTypeOneRemove action-settings">Remove</span></td>
                 </tr>
             </tbody>
         </table>
@@ -45,7 +44,7 @@
                             <td style="width: 450px; "> 
                                 <span ng-if="(computer.memberTypeId > 1) && (computer.memberTypeId < 7)" class="buttonTypeOneEdit action-settings" ng-click="vm.openAddDialog($index)">Edit</span>
                              </td>
-                            <td style="width:150px;"> <span class="buttonTypeOneRemove action-settings">Remove</span> </td>
+                            <td style="width:150px;"> <span class="buttonTypeOneRemove action-settings" ng-click="vm.removeComputer(computer, $index)">Remove</span> </td>
                         </tr>
                     </tbody>
                 </table>

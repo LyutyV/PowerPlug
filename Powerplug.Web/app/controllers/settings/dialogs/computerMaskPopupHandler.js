@@ -9,7 +9,7 @@
     },
  
     openComputerMaskDialog: function (computerIndex) {
-        computerMaksPopupHandler.$mdDialog.show({
+        return computerMaksPopupHandler.$mdDialog.show({
             templateUrl: 'views/settings/dialogs/computerMask.html',
             parent: angular.element(document.body),
             clickOutsideToClose: false,
@@ -21,19 +21,18 @@
         function DialogController($scope, $mdDialog, $document, computerIndex) {
             //===============private===============/
             var _selectedGroup;
+            var _returnObjByPromise = { computerFields: {} };
             function addComputerObjectToJson() {
-                var computerObject;
                 if (computerIndex => 0) {
-                    _selectedGroup.members[computerIndex].memberDef = $scope.computerName;
-                    _selectedGroup.members[computerIndex].memberTypeId = $scope.memberTypeId ;
+                    _returnObjByPromise.computerFields.memberDef = $scope.computerName;
+                    _returnObjByPromise.computerFields.memberTypeId = $scope.memberTypeId;
                 }
                 else {
-                    computerObject = {
+                    _returnObjByPromise.computerFields = {
                         "memberTypeId": $scope.memberTypeId,
                         "memberDef": $scope.computerName,
                         "memberIncExc": true
                     }
-                    _selectedGroup.members.push(computerObject)
                 }
             }
             function init() {
@@ -44,16 +43,17 @@
                 }
             }
             //=============Scope Binding=============/  
-            
+            $scope.isChange = false;
             $scope.memberTypeId = 2;
             $scope.memberTypeOptions = [{ name: 'is like', value: 2 }, { name: 'is not like', value: 5 }];
             $scope.computerName = null;
             $scope.add = function () {
                 addComputerObjectToJson();
-                $mdDialog.hide();
+                _returnObjByPromise.isChange = $scope.isChange;
+                $mdDialog.hide({ computerObject: _returnObjByPromise });
             }
             $scope.cancel = function () {
-                $mdDialog.hide();
+                $mdDialog.cancel();
             }
             //===============init================/
             init();

@@ -6,15 +6,15 @@
         <div class="well">
           <lable>
               IP Adress 
-              <select ng-model="memberTypeId" ng-options="option.value as option.name for option in memberTypeOptions">
+              <select ng-change="isChange = true" ng-model="memberTypeId" ng-options="option.value as option.name for option in memberTypeOptions">
                
               </select>
           </lable>
             <div>
-                <input ng-model="IP.part1"/>
-                <input ng-model="IP.part2"/>
-                <input ng-model="IP.part3"/>
-                <input ng-model="IP.part4"/>
+                <input ng-change="isChange = true" ng-model="IP.part1"/>
+                <input ng-change="isChange = true" ng-model="IP.part2"/>
+                <input ng-change="isChange = true" ng-model="IP.part3"/>
+                <input ng-change="isChange = true" ng-model="IP.part4"/>
             </div>
             <hr />
             <div style="text-align:center">

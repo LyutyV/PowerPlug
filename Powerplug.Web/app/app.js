@@ -59,21 +59,18 @@
                         controller: 'DashboardView2Ctrl',
                         controllerAs: 'vm'
                     }
-                }
+                },
+                title : 'Dashboard'
             })
             .state('savingPlans', {
-                url: "/savingPlans",
-                views: {
-                    '': {
-                        controller: 'SavingPlansCtrl',
-                        templateUrl: 'views/powerplan/savingPlans.html',
-                        controllerAs: 'vm'
-                    }
-                }
-
+                url: "/savingPlans",                
+                controller: 'SavingPlansCtrl',
+                templateUrl: 'views/powerplan/savingPlans.html',
+                controllerAs: 'vm',
+                title: 'Saving Plans'
             })
             .state('savingPlanEditor', {
-                url: "/savingPlanEditor/:policyId",
+                url: "/savingPlans/:policyId",
                 views: {
                     '': {
                         templateUrl: 'views/powerplan/savingPlanEditor.html',
@@ -104,37 +101,50 @@
                     'description@savingPlanEditor': {
                         templateUrl: 'views/powerplan/savingPlanDescription.html'
                     }
-                }
+                },
+                title: 'Saving Plans > '
             })
             .state('settings', {
                 url: "/settings",
                 controller: 'SettingsCtrl',
                 templateUrl: 'views/settings/settingsList.html',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                title: 'Settings'
             })
             .state('computerGroups', {
-                url: "/computer-groups",
+                url: "/settings/computer-groups",
                 controller: 'ComputerGroupsCtrl',
                 templateUrl: 'views/settings/computerGroups.html',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                title: 'Settings > Computer Groups'
             })
             .state('scripts', {
-                url: "/scripts",
+                url: "/settings/scripts",
                 controller: 'ScriptsCtrl',
                 templateUrl: 'views/settings/scripts.html',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                title: 'Settings > Scripts Library'
             })
             .state('powerConsumption', {
-                url: "/powerConsumption",
+                url: "/settings/powerConsumption",
                 controller: 'PowerConsumptionCtrl',
                 templateUrl: 'views/settings/powerConsumption.html',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                title: 'Settings > Computer Power Consumption'
             })
             .state('consolePermission', {
-                url: "/consolePermission",
+                url: "/settings/consolePermission",
                 controller: 'ConsolePermissionCtrl',
                 templateUrl: 'views/settings/consolePermission.html',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                title: 'Settings > Console Permission'
+            })
+            .state('electricityPrice', {
+                url: "/settings/electricityPrice",
+                controller: 'ElectricityPriceCtrl',
+                templateUrl: 'views/settings/electricityPrice.html',
+                controllerAs: 'vm',
+                title: 'Settings > Electricity Price'
             });
 
     }
