@@ -119,7 +119,7 @@ angular
           scope.$on('$destroy', function () {
             angular.element($window).unbind('resize', resize);
           });
-          if (document.getElementsByClassName('chart-wraper')){
+          if (document.getElementsByClassName('chart-wraper')&&document.getElementsByClassName('chart-wraper')[0]&&document.getElementsByClassName('chart-wraper')[0].clientWidth){
             $timeout(function() {
               scope.highchartsNG.size = {
                 width: document.getElementsByClassName('chart-wraper')[0].clientWidth - 30,
