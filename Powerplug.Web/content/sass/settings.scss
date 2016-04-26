@@ -132,25 +132,25 @@
         height: 5px;
         background-color: #8cc63f;
     }
-    .powerConsumption-content 
+    .settings-content
     {
-        padding-top: 20px;
-    }
-    > .script-content
-    {
-        padding-top: 12px;
-    }
-    > .computer-groups  {
-        .computer-group-action{
-            position: relative;
-            top: 50%;
-            -ms-transform: translateY(-50%);
-            -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+        &.powerConsumption-content 
+        {
+            padding-top: 20px;
         }
-    }
-    > .script-content, .powerConsumption-content, .computer-groups, .consolePermission-content, .electricityPrice-content
-    {
+        & .script-content
+        {
+            padding-top: 12px;
+        }
+        .permission-selection{
+            padding-bottom:30px; 
+            div{
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 14px;
+                padding-top:10px;
+            }
+        }
         .action-settings {
             font-family: Calibri;
             color: rgba(26, 26, 26, 0.7);
@@ -204,6 +204,12 @@
                         height: 46px;
                         vertical-align: middle;
                         font-family: Calibri; 
+                        .fa-plus{
+                            color:#8cc63f;
+                        }
+                        .fa-minus{
+                            color:#C63F4A;
+                        }
                         &.bolder{
                             font-weight: bold;
                         }
@@ -236,7 +242,13 @@
     }
 }
 md-dialog{
-    &.script-prop{
+    &.settings-prop{
+        &.powerRate-prop{
+            width: 60%;
+            > md-content{
+                padding-top: 50px;
+            }
+        }
         > md-toolbar{
             background-color: #ffffff;
             padding-left: 32px;
@@ -253,39 +265,15 @@ md-dialog{
                 text-align: left;
             }
         }
-        > md-content{
-            background-color: #ffffff;
-            padding-left: 32px;
-            padding-right: 34px;
-            .script-data-row{
-                padding-bottom: 20px;
-                span{
-                    width:100px;
-                    display:inline-block;
-                    font-family: Calibri;
-                    font-size: 16px;
-                    color: rgba(26, 26, 26, 0.7);
-                }
-                input[type=text]{
-                    width: 300px;
-                    height: 40px;
-                    color: #1a1a1a;
-                    font-size: 14px;
-                    padding: 5px;
-                }
-                textarea{
-                    width: 300px;
-                    height: 150px;
-                    color: #1a1a1a;
-                    font-size: 14px;
-                    padding: 5px;
-                }
-            }
-            .buttonsBlock{
+        .buttonsBlock{
                 text-align: center;
                 padding: 15px 0;
-                padding-left: 100px;
-                > button{
+                width:100%;
+                background-color: rgb(248,248,248);
+                > div{
+                    margin:0 auto;
+                }
+                button{
                     height: 40px;
                     width: 120px;
                     border: none;
@@ -301,6 +289,153 @@ md-dialog{
                     }
                 }
             }
-        }
+        > md-content{
+            background-color: #ffffff;
+            padding-left: 32px;
+            padding-right: 34px;
+            .settings-table-container{
+                padding-top: 25px;
+                .action-settings {
+                    font-family: Calibri;
+                    color: rgba(26, 26, 26, 0.7);
+                    font-size: 14.83px;
+                    font-weight: 700;
+                    text-align: left;
+                    margin-left: 30px;
+                    &:before{
+                        margin-right: 5px;
+                    }
+                }
+                > span {
+                    font-family: Calibri;
+                    color: rgba(26, 26, 26, 0.7);
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+                table {
+                    margin-top: 20px;
+                    tr > td {                                    
+                        > .action-settings{
+                            float: right;
+                            display: block;
+                            &:last-child {
+                                margin-left:0px;
+                            }
+                        }
+                    }
+                    > thead {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 14px;
+                        font-weight: 700;
+                        letter-spacing: -0.182px;
+                    }
+                    > tbody{
+                        font-family: Calibri;
+                        color: #333333;
+                        font-size: 14px;
+                        font-weight: 300;
+                        letter-spacing: -0.182px;
+                        > tr {
+                            border: none;
+                            outline: none;
+                            &.bg-row-selected {
+                                background-color: rgba(242,242,242,0.6);
+                            }
+                            > td {
+                                height: 46px;
+                                vertical-align: middle;
+                                font-family: Calibri; 
+                                &.bolder{
+                                    font-weight: bold;
+                                }
+                                &.grid-cell{
+                                    input[type="text"]{
+                                        font-family: Calibri;
+                                        width:50px;
+                                        border:none;
+                                        outline:none;    
+                                        height: 28px;
+                                        padding: 5px;
+                                    }
+                                    select{
+                                        font-family: Calibri;                                
+                                        border:none;
+                                        outline:none;
+                                    }
+                                }
+                                &.button-padding{
+                                    padding-right:48px;
+                                }  
+                                &.button-container{
+                                    width:100px;
+                                    text-align:right;             
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .settings-side-note{
+                    display:inline-block;
+                    font-family: Calibri;
+                    font-size: 14px;
+                    color: rgba(26, 26, 26, 0.7);
+                    padding-bottom: 16px;
+            }
+            .settings-data-row{
+                padding-bottom: 20px;
+                &.power-rate-data{
+                    span{
+                        font-size: 14px;
+                        font-weight: bold;
+                        width: 130px;
+                    }
+                }
+                span{
+                    width:100px;
+                    display:inline-block;
+                    font-family: Calibri;
+                    font-size: 16px;
+                    color: rgba(26, 26, 26, 0.7);
+                }
+                input[type=text]{
+                    width: 300px;
+                    height: 40px;
+                    color: #1a1a1a;
+                    font-size: 14px;
+                    padding: 5px;
+                }
+                input[type=text].small-input{
+                    width: 53px;
+                    margin-right: 5px;
+                }
+                input[type=text].med-input{
+                    width: 210px;
+                }
+                select{
+                    font-weight: normal;
+                    width: 105px;
+                    height: 40px;
+                    margin-left: 20px;
+                    margin-right: 10px;
+                    color: #1a1a1a;
+                    font-size: 14px;
+                }
+                textarea{
+                    width: 300px;
+                    height: 150px;
+                    color: #1a1a1a;
+                    font-size: 14px;
+                    padding: 5px;
+                }
+                label{
+                    display:inline-block;
+                    font-family: Calibri;
+                    font-size: 16px;
+                    color: rgb(93,93,93);
+                }
+            }
+        }        
     }
 }

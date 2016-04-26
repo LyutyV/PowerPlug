@@ -145,6 +145,20 @@
                 templateUrl: 'views/settings/electricityPrice.html',
                 controllerAs: 'vm',
                 title: 'Settings > Electricity Price'
+            })
+            .state('wakeupPortalPermission', {
+                url: "/settings/wakeupPortalPermission",
+                controller: 'WakeupPortalPermissionCtrl',
+                templateUrl: 'views/settings/wakeupPortalPermission.html',
+                controllerAs: 'vm',
+                title: 'Settings > Wake-Up Portal Permission'
+            })
+            .state('locations', {
+                url: "/settings/locations",
+                controller: 'LocationsCtrl',
+                templateUrl: 'views/settings/locations.html',
+                controllerAs: 'vm',
+                title: 'Settings > Locations & Power Rates'
             });
 
     }

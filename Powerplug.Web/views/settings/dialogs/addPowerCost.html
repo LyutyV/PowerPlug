@@ -1,0 +1,22 @@
+﻿<div class="addAppWrapper">
+    <div class="modal-header">
+        <span>Add Power Rate</span>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeSavingApplication()">
+    </div>
+    <div class="modal-body">
+        <div class="well">            
+            <div>
+                <div class="settings-data-row">
+                    <span>From Date:</span> <md-datepicker ng-model="vm.savingPlan.validTo" md-placeholder="Enter date"></md-datepicker>
+                </div>
+                <div class="settings-data-row">
+                    <span>Power Rate:</span> <textarea ng-model="script.scriptDesc" valid-number convert-to-number></textarea>
+                </div>
+                <div class="buttonsBlock">
+                    <button ng-click="addUpdateScript()">OK</button>
+                    <button ng-click="closeScriptDialog()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

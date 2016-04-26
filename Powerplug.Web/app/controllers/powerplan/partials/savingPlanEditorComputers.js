@@ -8,6 +8,8 @@
         computersHandler.$mdMedia = $mdMedia;
         computersHandler.ComputersResource = ComputersResource;
         computersHandler.ComputerGroupsResource = ComputerGroupsResource;
+        computersNameDialodHandler.init($mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource);
+
     },
     setComputerItems: function () {
         computersHandler.vm.computersFromDB = [];
@@ -23,58 +25,8 @@
             });
         }
     },
-    addComputerDialog: function (ev) {
-        computersHandler.$mdDialog.show({
-            templateUrl: 'views/powerplan/dialogs/computerCondition.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose: false,
-            bindToController: true,
-            fullscreen: computersHandler.$mdMedia('xs') || computersHandler.$mdMedia('sm'), /* TODO: useFullScreen,*/
-            locals: {},
-            controller: DialogController,
-        });
-        computersHandler.$scope.$watch(function () {
-            return computersHandler.$mdMedia('xs') || computersHandler.$mdMedia('sm');
-        }, function (wantsFullScreen) {
-            computersHandler.$scope.customFullscreen = (wantsFullScreen === true);
-        });
-
-        function DialogController($scope, $mdDialog, $document) {
-            computersHandler.ComputersResource.query(function (data) {
-                $scope.savingComputerList = data;
-            }, function (err) {
-                onError(err);
-            });
-
-            $scope.addSavingComputers = function () {
-                angular.forEach(angular.element('.computer-selection:checked'), function (value, key) {
-                    var newComputerName = value.getAttribute('data-name');
-                    var isExist = false;
-                    if (computersHandler.vm.savingPlan.computers) {
-                        angular.forEach(computersHandler.vm.savingPlan.computers, function (valueContainer, keyContainer) {
-                            if (valueContainer.name === newComputerName) {
-                                isExist = true;
-                            }
-                        });
-                    }
-
-                    if (!isExist) {
-                        if (!computersHandler.vm.savingPlan.computers) {
-                            computersHandler.vm.savingPlan.computers = [];
-                        }
-                        computersHandler.vm.savingPlan.computers.push({ name: newComputerName });
-                    }
-                });
-
-                $mdDialog.hide();
-            };
-
-            $scope.closeSavingComputers = function () {
-                $mdDialog.cancel();
-            };
-        }
-
+    addComputerDialog: function (computersArr) {
+        computersNameDialodHandler.addComputerDialog(computersArr);
     },
     addComputerGroupsDialog: function (ev) {
         computersHandler.$mdDialog.show({

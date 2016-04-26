@@ -1,5 +1,5 @@
 ﻿<div class="settings">
-    <div class="computer-groups">
+    <div class="settings-content">
         <table class="table">
             <thead>
                 <tr>
@@ -21,17 +21,17 @@
             </tbody>
         </table>
 
-        <uib-tabset active="active">
+        <uib-tabset active="active" ng-show="vm.selectedGroupId > 0">
             <uib-tab index="0" heading="Members">
                 <div class="green-line"> </div>
                 <table class="table">
                     <thead>
                         <tr>
-                            <td class=''>Memeber Definition</td>
+                            <td colspan="2">Memeber Definition</td>
                             <td colspan="2">
-                                <span class="buttonTypeOneAdd action-settings" ng-click="vm.openAddDialog(-1)">Add</span>
+                                <span class="buttonTypeOneAdd action-settings" ng-click="vm.openAddDialog(-1)" style="margin-top:11px;">Add</span>
                                 <select ng-model="vm.popupType" class="action-settings big-select" ng-options="option.value as option.name for option in vm.popupTypeOptions"></select>
-                                <select class="action-settings big-select">
+                                <select ng-model="vm.incExc" class="action-settings big-select">
                                     <option>Include</option>
                                     <option>Exclude</option>
                                 </select>
@@ -40,6 +40,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="computer in vm.groupMembersHash[vm.selectedGroupId].members">
+                            <td width="20px"> <i class="fa" aria-hidden="true" ng-class="computer.memberIncExc? 'fa-plus': 'fa-minus'"></i></td>
                             <td>{{vm.getComputerDefinitionText(computer)}} </td>
                             <td style="width: 450px; "> 
                                 <span ng-if="(computer.memberTypeId > 1) && (computer.memberTypeId < 7)" class="buttonTypeOneEdit action-settings" ng-click="vm.openAddDialog($index)">Edit</span>

@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('ElectricityPriceCtrl',
-                     ['$state', '$document', '$mdDialog', '$mdMedia', '$scope', 'ElectricityPriceResource', ElectricityPriceCtrl]);
+                     ['$state', '$document', '$mdDialog', '$mdMedia', '$scope', '$uibModal', 'ElectricityPriceResource', ElectricityPriceCtrl]);
 
 
-    function ElectricityPriceCtrl($state, $document, $mdDialog, $mdMedia, $scope, ElectricityPriceResource) {
+    function ElectricityPriceCtrl($state, $document, $mdDialog, $mdMedia, $scope, $uibModal, ElectricityPriceResource) {
         var vm = this;
 
         ElectricityPriceResource.query(function (data) {
@@ -28,17 +28,6 @@
             vm.prices = data;
         }
 
-        vm.checkAll = function (seed) {
-            if (vm.selectedAll) {
-                vm.selectedAll = true;
-            } else {
-                vm.selectedAll = false;
-            }
-            angular.forEach(vm.permissions, function (permission) {
-                permission.selected = vm.selectedAll;
-            });
-        }
-
         vm.saveChanges = function () {
             ///dooo
             ElectricityPriceResource.saveAll(returnObj, function (data) {
@@ -55,6 +44,51 @@
             }, function (error) {
                 onError(error);
             });
-        }        
+        }
+
+        vm.showPowerRateDialog = function (powerRateId, ev) {
+            var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
+            $mdDialog.show({
+                templateUrl: 'views/settings/dialogs/powerRate.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: false,
+                bindToController: true,
+                fullscreen: useFullScreen,
+                locals: { powerRateId: powerRateId, prices: vm.prices },
+                controller: DialogController,
+            });
+            $scope.$watch(function () {
+                return $mdMedia('xs') || $mdMedia('sm');
+            }, function (wantsFullScreen) {
+                $scope.customFullscreen = (wantsFullScreen === true);
+            });
+
+            function DialogController($scope, $mdDialog, powerRateId, prices) {
+                $scope.prices = prices;
+                $scope.addPowerCostDialog = function () {
+                    $uibModal.open({
+                        templateUrl: 'views/settings/dialogs/addPowerCost.html',
+                        resolve: { },
+                        controller: DialogController,
+                    })
+
+                    function DialogController($scope, $uibModalInstance, $document) {
+                        $scope.insertPowerCost = function () {                            
+                            $uibModalInstance.dismiss('OK');
+                        };
+
+                        $scope.closeSavingApplication = function () {
+                            $uibModalInstance.dismiss('cancel');
+                        };
+                    }
+                }
+
+                $scope.closeScriptDialog = function () {                    
+                    $mdDialog.cancel();
+                };
+            }
+
+        }
     }
 }());

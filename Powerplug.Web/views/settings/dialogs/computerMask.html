@@ -1,22 +1,23 @@
-﻿<md-dialog style="width:900px">
+﻿<md-dialog class="settings-prop">
     <md-toolbar>
-        <div style="padding-left: 20px;padding-top: 17px;">Select Computer Group</div>
+        <div>Define Computer Group Members</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
     </md-toolbar>
     <md-content>
-        <div class="well">
-          <lable>
-              Computer Name
-              <select ng-model="memberTypeId" ng-change="isChange = true" ng-options="option.value as option.name for option in memberTypeOptions"></select>
-          </lable>
-            <div>
-                <input ng-model="computerName" ng-change="isChange = true"/>
+        <div>
+            <div class="settings-data-row">
+                <label>Computer Name</label>
+                 <select ng-model="memberTypeId" ng-change="isChange = true" 
+                         ng-options="option.value as option.name for option in memberTypeOptions"></select>
+                <input type="text" ng-model="computerName" ng-change="isChange = true" class="med-input"/>
             </div>
-            <div> wildcard "*" can be used to include multiple computers</div>
-            <hr />
-            <div style="text-align:center">
-                <button class="btn btn-success" ng-click="add()">OK</button>
-                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
-            </div>
+            <div class="settings-side-note"> wildcard "*" can be used to include multiple computers</div>
         </div>
     </md-content>
+    <div class="buttonsBlock">
+        <div>
+            <button ng-click="add()">OK</button>
+            <button ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
 </md-dialog>
