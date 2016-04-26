@@ -1,32 +1,30 @@
-﻿<md-dialog style="width:900px">
+﻿<md-dialog class="settings-prop">
     <md-toolbar>
-        <div style="padding-left: 20px;padding-top: 17px;">Select Computer Group</div>
+        <div>Define Computer Group Members</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
     </md-toolbar>
     <md-content>
-        <div class="well">
-            <div>
-                IP Adress from
+        <div>
+            <div class="settings-data-row">
+                <label style="width:100px">IP Adress from</label>
+                <input type="text" ng-change="isChange = true" ng-model="IPFrom.part1" class="small-input"/>
+                <input type="text" ng-change="isChange = true" ng-model="IPFrom.part2" class="small-input" />
+                <input type="text" ng-change="isChange = true" ng-model="IPFrom.part3" class="small-input" />
+                <input type="text" ng-change="isChange = true" ng-model="IPFrom.part4" class="small-input" /> 
             </div>
-            <div>
-                <input ng-change="isChange = true" ng-model="IPFrom.part1" />
-                <input ng-change="isChange = true" ng-model="IPFrom.part2" />
-                <input ng-change="isChange = true" ng-model="IPFrom.part3" />
-                <input ng-change="isChange = true" ng-model="IPFrom.part4" />
-            </div>
-            <div>
-                IP Adress to
-            </div>
-            <div>
-                <input ng-change="isChange = true" ng-model="IPTo.part1" />
-                <input ng-change="isChange = true" ng-model="IPTo.part2" />
-                <input ng-change="isChange = true" ng-model="IPTo.part3" />
-                <input ng-change="isChange = true" ng-model="IPTo.part4" />
-            </div>
-            <hr />
-            <div style="text-align:center">
-                <button class="btn btn-success" ng-click="add()">OK</button>
-                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+            <div class="settings-data-row">
+                <label style="width:100px">IP Adress to</label>
+                <input type="text" ng-change="isChange = true" ng-model="IPTo.part1" class="small-input"/>
+                <input type="text" ng-change="isChange = true" ng-model="IPTo.part2" class="small-input"/>
+                <input type="text" ng-change="isChange = true" ng-model="IPTo.part3" class="small-input"/>
+                <input type="text" ng-change="isChange = true" ng-model="IPTo.part4" class="small-input"/>
             </div>
         </div>
     </md-content>
+    <div class="buttonsBlock">
+        <div>
+            <button ng-click="add()">OK</button>
+            <button ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
 </md-dialog>

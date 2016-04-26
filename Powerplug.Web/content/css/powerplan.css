@@ -371,6 +371,8 @@ nav {
       display: block; }
       .settings > .script-content table tr > td > .action-settings:last-child, .settings .powerConsumption-content table tr > td > .action-settings:last-child, .settings .computer-groups table tr > td > .action-settings:last-child, .settings .consolePermission-content table tr > td > .action-settings:last-child, .settings .electricityPrice-content table tr > td > .action-settings:last-child {
         margin-left: 0px; }
+    .settings > .script-content table tr > td > .action-settings.buttonTypeOneAdd, .settings .powerConsumption-content table tr > td > .action-settings.buttonTypeOneAdd, .settings .computer-groups table tr > td > .action-settings.buttonTypeOneAdd, .settings .consolePermission-content table tr > td > .action-settings.buttonTypeOneAdd, .settings .electricityPrice-content table tr > td > .action-settings.buttonTypeOneAdd {
+      margin-top: 11px; }
     .settings > .script-content table > thead, .settings .powerConsumption-content table > thead, .settings .computer-groups table > thead, .settings .consolePermission-content table > thead, .settings .electricityPrice-content table > thead {
       font-family: Calibri;
       color: rgba(26, 26, 26, 0.7);
@@ -430,6 +432,26 @@ md-dialog.settings-prop > md-toolbar {
     font-size: 24px;
     font-weight: 300;
     text-align: left; }
+
+md-dialog.settings-prop .buttonsBlock {
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  background-color: #f8f8f8; }
+  md-dialog.settings-prop .buttonsBlock > div {
+    margin: 0 auto; }
+  md-dialog.settings-prop .buttonsBlock button {
+    height: 40px;
+    width: 120px;
+    border: none;
+    font-family: Calibri;
+    color: #ffffff;
+    font-size: 20.3px;
+    font-weight: 700; }
+    md-dialog.settings-prop .buttonsBlock button:first-child {
+      background-color: #8cc63f; }
+    md-dialog.settings-prop .buttonsBlock button:last-child {
+      background-color: #808080; }
 
 md-dialog.settings-prop > md-content {
   background-color: #ffffff;
@@ -497,6 +519,12 @@ md-dialog.settings-prop > md-content {
             md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td.button-container {
               width: 100px;
               text-align: right; }
+  md-dialog.settings-prop > md-content .settings-side-note {
+    display: inline-block;
+    font-family: Calibri;
+    font-size: 14px;
+    color: rgba(26, 26, 26, 0.7);
+    padding-bottom: 16px; }
   md-dialog.settings-prop > md-content .settings-data-row {
     padding-bottom: 20px; }
     md-dialog.settings-prop > md-content .settings-data-row.power-rate-data span {
@@ -515,28 +543,30 @@ md-dialog.settings-prop > md-content {
       color: #1a1a1a;
       font-size: 14px;
       padding: 5px; }
+    md-dialog.settings-prop > md-content .settings-data-row input[type=text].small-input {
+      width: 53px;
+      margin-right: 5px; }
+    md-dialog.settings-prop > md-content .settings-data-row input[type=text].med-input {
+      width: 210px; }
+    md-dialog.settings-prop > md-content .settings-data-row select {
+      font-weight: normal;
+      width: 105px;
+      height: 40px;
+      margin-left: 20px;
+      margin-right: 10px;
+      color: #1a1a1a;
+      font-size: 14px; }
     md-dialog.settings-prop > md-content .settings-data-row textarea {
       width: 300px;
       height: 150px;
       color: #1a1a1a;
       font-size: 14px;
       padding: 5px; }
-  md-dialog.settings-prop > md-content .buttonsBlock {
-    text-align: center;
-    padding: 15px 0;
-    padding-left: 100px; }
-    md-dialog.settings-prop > md-content .buttonsBlock > button {
-      height: 40px;
-      width: 120px;
-      border: none;
+    md-dialog.settings-prop > md-content .settings-data-row label {
+      display: inline-block;
       font-family: Calibri;
-      color: #ffffff;
-      font-size: 20.3px;
-      font-weight: 700; }
-      md-dialog.settings-prop > md-content .buttonsBlock > button:first-child {
-        background-color: #8cc63f; }
-      md-dialog.settings-prop > md-content .buttonsBlock > button:last-child {
-        background-color: #808080; }
+      font-size: 16px;
+      color: #5d5d5d; }
 
 * {
   margin: 0px;

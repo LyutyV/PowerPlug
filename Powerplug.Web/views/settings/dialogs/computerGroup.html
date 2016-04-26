@@ -1,10 +1,22 @@
-﻿<div>
-    Group Name: <input ng-change="isChange = true" type="text" ng-model="group.groupName" />
-</div>
-<div>
-    Description: <textarea ng-change="isChange = true" style="width:150px;height:200px;" ng-model="group.groupDesc"></textarea>
-</div>
-<div style="text-align:center">
-    <button class="btn btn-success" ng-click="addUpdateGroup()">OK</button>
-    <button class="btn btn-danger" ng-click="closeDialog()">Cancel</button>
-</div>
+﻿<md-dialog class="settings-prop">
+    <md-toolbar>
+        <div>Group Properties</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeDialog()">
+    </md-toolbar>
+    <md-content>
+        <div>
+            <div class="settings-data-row">
+                <span>Group Name:</span> <input type="text" ng-change="isChange = true" ng-model="group.groupName"  />
+            </div>
+            <div class="settings-data-row">
+                <span>Description:</span> <textarea ng-change="isChange = true" ng-model="group.groupDesc"></textarea>
+            </div>
+        </div>
+    </md-content>
+    <div class="buttonsBlock">
+        <div>
+            <button ng-click="addUpdateGroup()">OK</button>
+            <button ng-click="closeDialog()">Cancel</button>
+        </div>
+    </div>
+</md-dialog>
