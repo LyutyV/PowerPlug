@@ -4,14 +4,14 @@
     'use strict';
     angular
         .module('powerPlug')
-        .controller('WakeupPortalPermissionCtrl',
-                     ['$state', '$document', '$mdDialog', '$mdMedia', '$scope', '$uibModal', 'WakeupPortalPermissionResource', WakeupPortalPermissionCtrl]);
+        .controller('LocationsCtrl',
+                     ['$state', '$document', '$mdDialog', '$mdMedia', '$scope', 'LocationsResource', LocationsCtrl]);
 
 
-    function WakeupPortalPermissionCtrl($state, $document, $mdDialog, $mdMedia, $scope, $uibModal, WakeupPortalPermissionResource) {
+    function LocationsCtrl($state, $document, $mdDialog, $mdMedia, $scope, LocationsResource) {
         var vm = this;
 
-        WakeupPortalPermissionResource.query(function (data) {
+        LocationsResource.query(function (data) {
             onSuccess(data);
         }, function (error) {
             onError(error);
@@ -25,12 +25,12 @@
         }
 
         function onSuccess(data) {
-            vm.permissions = data;
+            vm.location = data;
         }
 
         vm.saveChanges = function () {
             ///dooo
-            WakeupPortalPermissionResource.saveAll(returnObj, function (data) {
+            LocationsResource.saveAll(returnObj, function (data) {
                 alert('Successfully Done!');
                 onSuccess(data);
             }, function (err) {
@@ -39,7 +39,7 @@
         }
 
         vm.discardChanges = function () {
-            WakeupPortalPermissionResource.query(function (data) {
+            LocationsResource.query(function (data) {
                 onSuccess(data);
             }, function (error) {
                 onError(error);

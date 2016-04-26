@@ -1,0 +1,34 @@
+﻿<div class="settings">
+    <div class="settings-content">
+        <div class="clearfix">
+            <div class="pull-left" style="width:300px;">
+                <div>
+                    <span style="color: #4d4d4d;font-weight: 700;font-size: 16px;">Locations</span>                   
+                </div>
+                <div style="border:solid 1px #dedede;height:400px;">                    
+                    <ul>
+                        <li style="list-style:none;">Powerplug</li>
+                    </ul>                    
+                </div>
+            </div>
+            <div style="padding-left:20px;overflow:hidden;">
+                <div class="location-input-container">
+                    <div>Name</div>
+                    <div><input type="text" /></div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="save-button-margin"></div>
+    <div class="buttons-container">
+        <div>
+            <input type="button" value="Save Changes" class="btn-save-green" ng-click="vm.saveChanges()" />
+            <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
+        </div>
+    </div>
+</div>
+<style>    
+    div.content-wrapper {
+        background-color: #fff;
+    }    
+</style>

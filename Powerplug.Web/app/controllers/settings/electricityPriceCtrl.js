@@ -28,17 +28,6 @@
             vm.prices = data;
         }
 
-        vm.checkAll = function (seed) {
-            if (vm.selectedAll) {
-                vm.selectedAll = true;
-            } else {
-                vm.selectedAll = false;
-            }
-            angular.forEach(vm.permissions, function (permission) {
-                permission.selected = vm.selectedAll;
-            });
-        }
-
         vm.saveChanges = function () {
             ///dooo
             ElectricityPriceResource.saveAll(returnObj, function (data) {
