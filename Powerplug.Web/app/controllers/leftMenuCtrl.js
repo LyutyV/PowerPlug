@@ -15,12 +15,6 @@
               "submenu": []
           },
           {
-              "text": "Real-Time",
-              "sref": "#",
-              "icon": "fa fa-clock-o",
-              "submenu": []
-          },
-          {
               "text": "Saving Plans",
               "sref": "savingPlans",
               "icon": "fa fa-list-alt",
