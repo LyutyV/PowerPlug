@@ -220,8 +220,8 @@
             });
         }
         vm.discardChanges = function () {
-            ComputerGroupsResource.detailed.query(function (data) {
-                onSuccessGetGroup(data);
+            ComputerGroupsResource.groups.query(function (data) {
+                onSuccessAllGroups(data);
             }, function (error) {
                 onError(error);
             });
