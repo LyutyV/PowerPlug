@@ -132,14 +132,7 @@
         height: 5px;
         background-color: #8cc63f;
     }
-    .powerConsumption-content 
-    {
-        padding-top: 20px;
-    }
-    > .script-content
-    {
-        padding-top: 12px;
-    }
+    
     > .computer-groups  {
         .computer-group-action{
             position: relative;
@@ -149,8 +142,25 @@
             transform: translateY(-50%);
         }
     }
-    > .script-content, .powerConsumption-content, .computer-groups, .consolePermission-content, .electricityPrice-content
+    .settings-content, .computer-groups
     {
+        &.powerConsumption-content 
+        {
+            padding-top: 20px;
+        }
+        & .script-content
+        {
+            padding-top: 12px;
+        }
+        .permission-selection{
+            padding-bottom:30px;
+            div{
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 14px;
+                padding-top:10px;
+            }
+        }
         .action-settings {
             font-family: Calibri;
             color: rgba(26, 26, 26, 0.7);

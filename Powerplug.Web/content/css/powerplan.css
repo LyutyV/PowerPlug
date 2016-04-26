@@ -340,74 +340,81 @@ nav {
     width: 100%;
     height: 5px;
     background-color: #8cc63f; }
-  .settings .powerConsumption-content {
-    padding-top: 20px; }
-  .settings > .script-content {
-    padding-top: 12px; }
   .settings > .computer-groups .computer-group-action {
     position: relative;
     top: 50%;
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%); }
-  .settings > .script-content .action-settings, .settings .powerConsumption-content .action-settings, .settings .computer-groups .action-settings, .settings .consolePermission-content .action-settings, .settings .electricityPrice-content .action-settings {
+  .settings .settings-content.powerConsumption-content, .settings .computer-groups.powerConsumption-content {
+    padding-top: 20px; }
+  .settings .settings-content .script-content, .settings .computer-groups .script-content {
+    padding-top: 12px; }
+  .settings .settings-content .permission-selection, .settings .computer-groups .permission-selection {
+    padding-bottom: 30px; }
+    .settings .settings-content .permission-selection div, .settings .computer-groups .permission-selection div {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 14px;
+      padding-top: 10px; }
+  .settings .settings-content .action-settings, .settings .computer-groups .action-settings {
     font-family: Calibri;
     color: rgba(26, 26, 26, 0.7);
     font-size: 14.83px;
     font-weight: 700;
     text-align: left;
     margin-left: 30px; }
-    .settings > .script-content .action-settings:before, .settings .powerConsumption-content .action-settings:before, .settings .computer-groups .action-settings:before, .settings .consolePermission-content .action-settings:before, .settings .electricityPrice-content .action-settings:before {
+    .settings .settings-content .action-settings:before, .settings .computer-groups .action-settings:before {
       margin-right: 5px; }
-  .settings > .script-content > span, .settings .powerConsumption-content > span, .settings .computer-groups > span, .settings .consolePermission-content > span, .settings .electricityPrice-content > span {
+  .settings .settings-content > span, .settings .computer-groups > span {
     font-family: Calibri;
     color: #4d4d4d;
     font-size: 18px;
     font-weight: 700; }
-  .settings > .script-content table, .settings .powerConsumption-content table, .settings .computer-groups table, .settings .consolePermission-content table, .settings .electricityPrice-content table {
+  .settings .settings-content table, .settings .computer-groups table {
     margin-top: 20px; }
-    .settings > .script-content table tr > td > .action-settings, .settings .powerConsumption-content table tr > td > .action-settings, .settings .computer-groups table tr > td > .action-settings, .settings .consolePermission-content table tr > td > .action-settings, .settings .electricityPrice-content table tr > td > .action-settings {
+    .settings .settings-content table tr > td > .action-settings, .settings .computer-groups table tr > td > .action-settings {
       float: right;
       display: block; }
-      .settings > .script-content table tr > td > .action-settings:last-child, .settings .powerConsumption-content table tr > td > .action-settings:last-child, .settings .computer-groups table tr > td > .action-settings:last-child, .settings .consolePermission-content table tr > td > .action-settings:last-child, .settings .electricityPrice-content table tr > td > .action-settings:last-child {
+      .settings .settings-content table tr > td > .action-settings:last-child, .settings .computer-groups table tr > td > .action-settings:last-child {
         margin-left: 0px; }
-    .settings > .script-content table > thead, .settings .powerConsumption-content table > thead, .settings .computer-groups table > thead, .settings .consolePermission-content table > thead, .settings .electricityPrice-content table > thead {
+    .settings .settings-content table > thead, .settings .computer-groups table > thead {
       font-family: Calibri;
       color: rgba(26, 26, 26, 0.7);
       font-size: 14px;
       font-weight: 700;
       letter-spacing: -0.182px; }
-    .settings > .script-content table > tbody, .settings .powerConsumption-content table > tbody, .settings .computer-groups table > tbody, .settings .consolePermission-content table > tbody, .settings .electricityPrice-content table > tbody {
+    .settings .settings-content table > tbody, .settings .computer-groups table > tbody {
       font-family: Calibri;
       color: #333333;
       font-size: 14px;
       font-weight: 300;
       letter-spacing: -0.182px; }
-      .settings > .script-content table > tbody > tr, .settings .powerConsumption-content table > tbody > tr, .settings .computer-groups table > tbody > tr, .settings .consolePermission-content table > tbody > tr, .settings .electricityPrice-content table > tbody > tr {
+      .settings .settings-content table > tbody > tr, .settings .computer-groups table > tbody > tr {
         border: none;
         outline: none; }
-        .settings > .script-content table > tbody > tr.bg-row-selected, .settings .powerConsumption-content table > tbody > tr.bg-row-selected, .settings .computer-groups table > tbody > tr.bg-row-selected, .settings .consolePermission-content table > tbody > tr.bg-row-selected, .settings .electricityPrice-content table > tbody > tr.bg-row-selected {
+        .settings .settings-content table > tbody > tr.bg-row-selected, .settings .computer-groups table > tbody > tr.bg-row-selected {
           background-color: rgba(242, 242, 242, 0.6); }
-        .settings > .script-content table > tbody > tr > td, .settings .powerConsumption-content table > tbody > tr > td, .settings .computer-groups table > tbody > tr > td, .settings .consolePermission-content table > tbody > tr > td, .settings .electricityPrice-content table > tbody > tr > td {
+        .settings .settings-content table > tbody > tr > td, .settings .computer-groups table > tbody > tr > td {
           height: 46px;
           vertical-align: middle;
           font-family: Calibri; }
-          .settings > .script-content table > tbody > tr > td.bolder, .settings .powerConsumption-content table > tbody > tr > td.bolder, .settings .computer-groups table > tbody > tr > td.bolder, .settings .consolePermission-content table > tbody > tr > td.bolder, .settings .electricityPrice-content table > tbody > tr > td.bolder {
+          .settings .settings-content table > tbody > tr > td.bolder, .settings .computer-groups table > tbody > tr > td.bolder {
             font-weight: bold; }
-          .settings > .script-content table > tbody > tr > td.grid-cell input[type="text"], .settings .powerConsumption-content table > tbody > tr > td.grid-cell input[type="text"], .settings .computer-groups table > tbody > tr > td.grid-cell input[type="text"], .settings .consolePermission-content table > tbody > tr > td.grid-cell input[type="text"], .settings .electricityPrice-content table > tbody > tr > td.grid-cell input[type="text"] {
+          .settings .settings-content table > tbody > tr > td.grid-cell input[type="text"], .settings .computer-groups table > tbody > tr > td.grid-cell input[type="text"] {
             font-family: Calibri;
             width: 50px;
             border: none;
             outline: none;
             height: 28px;
             padding: 5px; }
-          .settings > .script-content table > tbody > tr > td.grid-cell select, .settings .powerConsumption-content table > tbody > tr > td.grid-cell select, .settings .computer-groups table > tbody > tr > td.grid-cell select, .settings .consolePermission-content table > tbody > tr > td.grid-cell select, .settings .electricityPrice-content table > tbody > tr > td.grid-cell select {
+          .settings .settings-content table > tbody > tr > td.grid-cell select, .settings .computer-groups table > tbody > tr > td.grid-cell select {
             font-family: Calibri;
             border: none;
             outline: none; }
-          .settings > .script-content table > tbody > tr > td.button-padding, .settings .powerConsumption-content table > tbody > tr > td.button-padding, .settings .computer-groups table > tbody > tr > td.button-padding, .settings .consolePermission-content table > tbody > tr > td.button-padding, .settings .electricityPrice-content table > tbody > tr > td.button-padding {
+          .settings .settings-content table > tbody > tr > td.button-padding, .settings .computer-groups table > tbody > tr > td.button-padding {
             padding-right: 48px; }
-          .settings > .script-content table > tbody > tr > td.button-container, .settings .powerConsumption-content table > tbody > tr > td.button-container, .settings .computer-groups table > tbody > tr > td.button-container, .settings .consolePermission-content table > tbody > tr > td.button-container, .settings .electricityPrice-content table > tbody > tr > td.button-container {
+          .settings .settings-content table > tbody > tr > td.button-container, .settings .computer-groups table > tbody > tr > td.button-container {
             width: 100px;
             text-align: right; }
 
