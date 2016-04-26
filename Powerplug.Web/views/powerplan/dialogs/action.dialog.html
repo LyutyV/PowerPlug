@@ -15,7 +15,7 @@
       <div class="modal-body">
         <span class="body-enter">When (date & Time)</span>
             <div class="row action-type-select">
-              <div class="col-xs-12">
+              <div class="col-xs-12 left-block-line">
                 <input class="custom-radio-button-t2" type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="EveryDay" id="Every-Day">
                 <label for="Every-Day" class="ratio-label"><span><span></span></span>Every Day</label>
               </div>
@@ -23,12 +23,12 @@
 
             <div class="row action-type-select">
 
-              <div class="col-sm-2 left-col">
+              <div class="col-sm-2 left-block-line">
                 <input class="custom-radio-button-t2" type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="DayOfWeek" id="Day-of-week">
                 <label for="Day-of-week" class="ratio-label"><span><span></span></span>Day of the week:</label>
               </div>
 
-              <div class="col-sm-10">
+              <div class="col-sm-10 day-list">
                 <span class="day-select">
                   <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'" class="custom-checkbox-green-type01"  ng-model="Sunday.Value" ng-true-value="1" ng-false-value="-2" ng-model-options="{ getterSetter: true }" id="sun-check" >
                   <label for="sun-check">
@@ -82,22 +82,22 @@
 
             <div class="row action-type-select">
 
-              <div class="col-sm-2">
+              <div class="col-sm-2 left-block-line">
                 <input class="custom-radio-button-t2" type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="DayOfMonth" id="DayOfMonth">
                 <label for="DayOfMonth" class="ratio-label"><span><span></span></span>Day of Month</label>
               </div>
 
-              <div class="col-sm-10">
+              <div class="col-sm-10 right-block-line">
                 <input ng-disabled="scheduleType != 'DayOfMonth'" type='number' min="1" max="31" ng-model="daysOfMonth"/>
                 </div>
             </div>
 
             <div class="row  action-type-select">
-              <div class="col-sm-2">
+              <div class="col-sm-2 left-block-line">
                 <input class="custom-radio-button-t2" type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="SpecificDate" id="SpecificDate">
                 <label for="SpecificDate" class="ratio-label"><span><span></span></span>Specific Date</label>
               </div>
-              <div class="col-sm-10">
+              <div class="col-sm-10 right-block-line">
               <!--********************************************************************-->
                     <div class="form-group date-picker">
                       <div class='input-group date specific-date'>
@@ -149,7 +149,7 @@
                     </div>
                 </div>
 
-                  <span class="body-enter time-picker-label">and</span>
+                  <span class="body-enter-justify time-picker-label">and</span>
 
                   <div class="time-picker">
                     <div class='input-group date datetimepicker'>
