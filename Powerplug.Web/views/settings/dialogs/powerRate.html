@@ -1,0 +1,44 @@
+﻿<md-dialog class="settings-prop powerRate-prop">
+    <md-toolbar>
+        <div>Power Rate</div>
+        <!-- <i class="fa fa-times" ></i> -->
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeScriptDialog()">
+    </md-toolbar>
+    <md-content>        
+        <div>
+            <div class="settings-data-row power-rate-data">
+                <span>Power Rate Name</span> <input type="text" ng-model="script.scriptName" />
+            </div>
+            <div class="settings-data-row power-rate-data">
+                <span>Power Company</span> <input type="text" ng-model="script.scriptName" />
+            </div>
+            <div class="settings-table-container">
+                <span>Power Cost</span>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>From Date</td>
+                            <td>To Date</td>
+                            <td>Cost per kWh</td>
+                            <td colspan="2">
+                                <span class="buttonTypeOneAdd action-settings" ng-click="addPowerCostDialog()">Add</span>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="price in prices" class="script-row" data-id="{{price.scriptId}}" ng-click="vm.selectScript($event)">
+                            <td>{{ price.scriptName}}</td>
+                            <td>{{ price.owner}}</td>
+                            <td>{{ price.scriptDesc}}</td>                            
+                            <td class="button-container"><span class="buttonTypeOneRemove action-settings" ng-click="vm.removeScript(price.scriptId)">Remove</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>    
+            <div class="buttonsBlock">
+                <button ng-click="addUpdateScript()">OK</button>
+                <button ng-click="closeScriptDialog()">Cancel</button>
+            </div>
+        </div>
+    </md-content>
+</md-dialog>

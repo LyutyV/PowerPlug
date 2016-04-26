@@ -9,7 +9,7 @@
                     <td>Cost per kWh</td>
                     <td>Power Company</td>
                     <td colspan="2">                        
-                        <span class="buttonTypeOneAdd action-settings" ng-click="vm.showScriptDialog(0)">Add</span>
+                        <span class="buttonTypeOneAdd action-settings" ng-click="vm.showPowerRateDialog(0)">Add</span>
                     </td>
                 </tr>
             </thead>
@@ -19,7 +19,7 @@
                     <td>{{ price.owner}}</td>
                     <td>{{ price.scriptDesc}}</td>
                     <td>{{ price.owner}}</td>
-                    <td class="button-container"><span class="buttonTypeOneEdit action-settings" ng-click="vm.showScriptDialog(price.scriptId)">Edit</span></td>
+                    <td class="button-container"><span class="buttonTypeOneEdit action-settings" ng-click="vm.showPowerRateDialog(price.scriptId)">Edit</span></td>
                     <td class="button-container"><span class="buttonTypeOneRemove action-settings" ng-click="vm.removeScript(price.scriptId)">Remove</span></td>                    
                 </tr>
             </tbody>

@@ -411,7 +411,12 @@ nav {
             width: 100px;
             text-align: right; }
 
-md-dialog.script-prop > md-toolbar {
+md-dialog.settings-prop.powerRate-prop {
+  width: 60%; }
+  md-dialog.settings-prop.powerRate-prop > md-content {
+    padding-top: 50px; }
+
+md-dialog.settings-prop > md-toolbar {
   background-color: #ffffff;
   padding-left: 32px;
   padding-right: 34px;
@@ -419,42 +424,108 @@ md-dialog.script-prop > md-toolbar {
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
-  md-dialog.script-prop > md-toolbar > div {
+  md-dialog.settings-prop > md-toolbar > div {
     font-family: Calibri;
     color: rgba(26, 26, 26, 0.7);
     font-size: 24px;
     font-weight: 300;
     text-align: left; }
 
-md-dialog.script-prop > md-content {
+md-dialog.settings-prop > md-content {
   background-color: #ffffff;
   padding-left: 32px;
   padding-right: 34px; }
-  md-dialog.script-prop > md-content .script-data-row {
+  md-dialog.settings-prop > md-content .settings-table-container {
+    padding-top: 25px; }
+    md-dialog.settings-prop > md-content .settings-table-container .action-settings {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 14.83px;
+      font-weight: 700;
+      text-align: left;
+      margin-left: 30px; }
+      md-dialog.settings-prop > md-content .settings-table-container .action-settings:before {
+        margin-right: 5px; }
+    md-dialog.settings-prop > md-content .settings-table-container > span {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 14px;
+      font-weight: 700; }
+    md-dialog.settings-prop > md-content .settings-table-container table {
+      margin-top: 20px; }
+      md-dialog.settings-prop > md-content .settings-table-container table tr > td > .action-settings {
+        float: right;
+        display: block; }
+        md-dialog.settings-prop > md-content .settings-table-container table tr > td > .action-settings:last-child {
+          margin-left: 0px; }
+      md-dialog.settings-prop > md-content .settings-table-container table > thead {
+        font-family: Calibri;
+        color: rgba(26, 26, 26, 0.7);
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.182px; }
+      md-dialog.settings-prop > md-content .settings-table-container table > tbody {
+        font-family: Calibri;
+        color: #333333;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.182px; }
+        md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr {
+          border: none;
+          outline: none; }
+          md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr.bg-row-selected {
+            background-color: rgba(242, 242, 242, 0.6); }
+          md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td {
+            height: 46px;
+            vertical-align: middle;
+            font-family: Calibri; }
+            md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td.bolder {
+              font-weight: bold; }
+            md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td.grid-cell input[type="text"] {
+              font-family: Calibri;
+              width: 50px;
+              border: none;
+              outline: none;
+              height: 28px;
+              padding: 5px; }
+            md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td.grid-cell select {
+              font-family: Calibri;
+              border: none;
+              outline: none; }
+            md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td.button-padding {
+              padding-right: 48px; }
+            md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td.button-container {
+              width: 100px;
+              text-align: right; }
+  md-dialog.settings-prop > md-content .settings-data-row {
     padding-bottom: 20px; }
-    md-dialog.script-prop > md-content .script-data-row span {
+    md-dialog.settings-prop > md-content .settings-data-row.power-rate-data span {
+      font-size: 14px;
+      font-weight: bold;
+      width: 130px; }
+    md-dialog.settings-prop > md-content .settings-data-row span {
       width: 100px;
       display: inline-block;
       font-family: Calibri;
       font-size: 16px;
       color: rgba(26, 26, 26, 0.7); }
-    md-dialog.script-prop > md-content .script-data-row input[type=text] {
+    md-dialog.settings-prop > md-content .settings-data-row input[type=text] {
       width: 300px;
       height: 40px;
       color: #1a1a1a;
       font-size: 14px;
       padding: 5px; }
-    md-dialog.script-prop > md-content .script-data-row textarea {
+    md-dialog.settings-prop > md-content .settings-data-row textarea {
       width: 300px;
       height: 150px;
       color: #1a1a1a;
       font-size: 14px;
       padding: 5px; }
-  md-dialog.script-prop > md-content .buttonsBlock {
+  md-dialog.settings-prop > md-content .buttonsBlock {
     text-align: center;
     padding: 15px 0;
     padding-left: 100px; }
-    md-dialog.script-prop > md-content .buttonsBlock > button {
+    md-dialog.settings-prop > md-content .buttonsBlock > button {
       height: 40px;
       width: 120px;
       border: none;
@@ -462,9 +533,9 @@ md-dialog.script-prop > md-content {
       color: #ffffff;
       font-size: 20.3px;
       font-weight: 700; }
-      md-dialog.script-prop > md-content .buttonsBlock > button:first-child {
+      md-dialog.settings-prop > md-content .buttonsBlock > button:first-child {
         background-color: #8cc63f; }
-      md-dialog.script-prop > md-content .buttonsBlock > button:last-child {
+      md-dialog.settings-prop > md-content .buttonsBlock > button:last-child {
         background-color: #808080; }
 
 * {
