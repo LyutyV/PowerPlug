@@ -30,6 +30,7 @@
             IPRangePopupHandler.init(vm, $scope, $document, $mdDialog);
 
             computerGroupPopupHandler.init(vm, $scope, $document, $mdDialog, $mdMedia);
+            computersNameDialodHandler.init($mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource);
             vm.openComputerGroupDialog = function (groupIndex) {
                 computerGroupPopupHandler.openComputerGroupDialog(groupIndex).then(
                     function (promiseObj) { addUpdateGroup(promiseObj, groupIndex); });
@@ -58,9 +59,22 @@
             initGroupMembersHash();
             console.log(data);
         }
+        function updateComputersNameMembers(groupIndex) {
+            vm.groupMembersHash[groupIndex].members.forEach(function (computerItem, index, array) {
+                if (typeof (computerItem.name) !== 'undefined') {
+                    computerItem.memberDef = computerItem.name;
+                    delete computerItem['name'];
+                    computerItem.memberTypeId = 1;
+                    computerItem.memberIncExc = true;
+                    computerItem.compGroupId = vm.groupMembersHash[groupIndex].compGroupId;
+                    if (vm.groupMembersHash[groupIndex].status !== 'added') {
+                        vm.groupMembersHash[groupIndex].status = 'updated';
+                    }
+                }
+            });
+        }
         function updateGroupMembers(groupIndex, promise, computerIndex) {
             if (!promise.computerObject.isChange) {
-                console.log("nothing has change :( ");
                 return;
             }
             //if update 
@@ -80,7 +94,6 @@
         function addUpdateGroup(promiseObj, groupIndex) {
             var hashIndex, newGroup = {};
             if (!promiseObj.groupObject.isChange) {
-                console.log("nothing Change");
                 return;
             }
             if (groupIndex > 0) {
@@ -163,8 +176,8 @@
                 editPopupType = vm.groupMembersHash[vm.selectedGroupId].members[index].memberTypeId;
             }
             if ('computerName' == vm.popupType && (index < 0)) {
-                IPMaksPopupHandler.openIPMaskDialog(index).then(function (computerObj) {
-                    updateGroupMembers(vm.selectedGroupId, computerObj, index);
+                computersNameDialodHandler.addComputerDialog(vm.groupMembersHash[vm.selectedGroupId].members, true).then(function (computerObj) {
+                    updateComputersNameMembers(vm.selectedGroupId);
                 });
             }
             else if (('computerMask' == vm.popupType) || (editPopupType == 2) || (editPopupType == 5)){
