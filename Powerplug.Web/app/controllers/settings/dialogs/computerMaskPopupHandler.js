@@ -23,7 +23,7 @@
             var _selectedGroup;
             var _returnObjByPromise = { computerFields: {} };
             function addComputerObjectToJson() {
-                if (computerIndex => 0) {
+                if (computerIndex >= 0) {
                     _returnObjByPromise.computerFields.memberDef = $scope.computerName;
                     _returnObjByPromise.computerFields.memberTypeId = $scope.memberTypeId;
                 }
@@ -37,7 +37,7 @@
             }
             function init() {
                 _selectedGroup = computerMaksPopupHandler.vm.groupMembersHash[computerMaksPopupHandler.vm.selectedGroupId];
-                if (computerIndex => 0) {
+                if (computerIndex >= 0) {
                     $scope.computerName = _selectedGroup.members[computerIndex].memberDef;
                     $scope.memberTypeId = _selectedGroup.members[computerIndex].memberTypeId;
                 }
