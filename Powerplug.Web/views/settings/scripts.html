@@ -24,8 +24,8 @@
             </tbody>
         </table>
     </div>
-    <div class="bg-separator"></div>
-    <uib-tabset active="active">
+    <div class="bg-separator" ng-show="vm.currentScriptId > 0"></div>
+    <uib-tabset active="active" ng-show="vm.currentScriptId > 0">
         <uib-tab index="0" heading="Script">
             <div class="type-selection">
                 Type
