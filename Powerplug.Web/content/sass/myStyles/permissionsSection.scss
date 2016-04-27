@@ -1,0 +1,100 @@
+div.permissionsWrapper {
+    background-color: #ffffff;
+    margin: 0px -50px 23px -50px;
+    padding: 0px 50px;
+    > div {
+        &:first-child {
+            display: flex;
+            justify-content: space-between;
+            > span {
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 15px;
+                font-weight: 700;
+                letter-spacing: -0.195px;
+            }
+            > div {
+                > span {
+                    margin-left: 10px;
+                    &:first-child {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 15px;
+                        font-weight: 300;
+                        letter-spacing: -0.195px;
+                    }
+                    &:nth-child(2) {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 15px;
+                        font-weight: 700;
+                        letter-spacing: -0.195px;
+                    }
+                    &:last-child {
+                        font-family: Calibri;
+                        color: #8cc63f;
+                        font-size: 15px;
+                        font-weight: 700;
+                        letter-spacing: -0.195px;
+                    }
+                }
+            }
+        }
+        &.tableWrapper {
+            margin-top: 13px;
+            background-color: #f8f8f8;
+            > div.tableHead {
+                display: flex;
+                padding: 23px 0px 9px 18px;
+                border-bottom: 1px solid #b3b3b3;
+                margin: 0px 16px;
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: -0.182px;
+                > div {
+                    flex-grow: 1;
+                    width: 33.3%;
+                    &:last-child {
+                      position: absolute;
+                      right: 65px;
+                      width: initial;
+                      > span {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 18px;
+                        font-weight: 700;
+                        &::before {
+                          margin-right: 9px;
+                          font-size: 20px;
+                        }
+                        &:focus {
+                          outline: none;
+                        }
+                      }
+                    }
+                }
+            }
+            > div.tableBody {
+              min-height: 125px;
+              > div.tableRow {
+                padding-left: 18px;
+                margin: 0px 16px;
+                display: flex;
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: -0.182px;
+                height: 40px;
+                > div {
+                  flex-grow: 1;
+                  display: inline-block;
+                  line-height: 40px;
+                }
+              }
+            }
+        }
+    }
+}
