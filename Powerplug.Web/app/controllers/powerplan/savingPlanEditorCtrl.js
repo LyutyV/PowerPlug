@@ -1,4 +1,4 @@
-﻿
+﻿//TODO remove mdMedia
 (function () {
     'use strict';
     angular

@@ -93,7 +93,25 @@
         }
 
         overviewHandler.vm.nonWorkDaysGraph = varNonWorkDaysGraphArr;
-
+        //==================Date Picker==================
+        overviewHandler.vm.altInputFormats = ['M!/d!/yyyy'];
+        overviewHandler.vm.dateOptions = {
+            formatYear: 'yy',
+            maxDate: new Date(2020, 5, 22),
+            minDate: new Date(),
+            startingDay: 1
+        };
+        //From Date Picker
+        overviewHandler.vm.popupFromDate = { opened: false };
+        overviewHandler.vm.openFromDate = function () {
+            overviewHandler.vm.popupFromDate.opened = true;
+        };
+        //To Date Picker
+        overviewHandler.vm.popupToDate = { opened: false };
+        overviewHandler.vm.openToDate = function () {
+            overviewHandler.vm.popupToDate.opened = true;
+        };
+        //==============End Date Picker================
         overviewHandler.vm.text = "";
 
         overviewHandler.vm.done = function (data2) {

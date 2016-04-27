@@ -36,15 +36,37 @@
                     <span>Valid From</span>
                 </div>
                 <div>
-                    <md-datepicker ng-model="vm.savingPlan.validFrom" md-placeholder="Enter date"></md-datepicker>
+                    <!-- bootstarp date picker start -->
+                    <div class="date-picker">
+                        <div class='input-group date power-plug-date-picker'>
+                            <input class="form-control" ng-click="vm.openFromDate()" uib-datepicker-popup ng-model="vm.savingPlan.validFrom" 
+                                   is-open="vm.popupFromDate.opened" datepicker-options="vm.dateOptions" close-text="Close" alt-input-formats="vm.altInputFormats" />
+                            <span class="input-group-addon" ng-click="vm.openFromDate()">
+                                <span class="glyphicon glyphicon-triangle-bottom">
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- bootstarp date picker end -->
                 </div>
             </div>
             <div>
                 <div>
-                    <span>Valid To<span>
+                    <span>Valid To</span>
                 </div>
                 <div>
-                  <md-datepicker ng-model="vm.savingPlan.validTo" md-placeholder="Enter date"></md-datepicker>
+                    <!-- bootstarp date picker start -->
+                    <div class="date-picker">
+                        <div class='input-group date power-plug-date-picker'>
+                            <input class="form-control" ng-click="vm.openToDate()" uib-datepicker-popup ng-model="vm.savingPlan.validTo"
+                                   is-open="vm.popupToDate.opened" datepicker-options="vm.dateOptions" close-text="Close" alt-input-formats="vm.altInputFormats" />
+                            <span class="input-group-addon" ng-click="vm.openToDate()">
+                                <span class="glyphicon glyphicon-triangle-bottom">
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- bootstarp date picker end -->
                 </div>
             </div>
         </div>
