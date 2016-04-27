@@ -1,11 +1,8 @@
 ﻿var IPRangePopupHandler = {
     vm: {},
-    init: function (vm, $scope, $document, $mdDialog, $mdMedia) {
+    init: function (vm, $mdDialog) {
         IPRangePopupHandler.vm = vm;
-        IPRangePopupHandler.$scope = $scope;
-        IPRangePopupHandler.$document = $document;
         IPRangePopupHandler.$mdDialog = $mdDialog;
-        IPRangePopupHandler.$mdMedia = $mdMedia;
     },
  
     openIPRangeDialog: function (computerIndex) {
@@ -18,7 +15,7 @@
             controller: DialogController,
         });
 
-        function DialogController($scope, $mdDialog, $document, computerIndex) {
+        function DialogController($scope, $mdDialog, computerIndex) {
           //===============private===============/
           var _selectedGroup;
           var _returnObjByPromise = { computerFields: {} };

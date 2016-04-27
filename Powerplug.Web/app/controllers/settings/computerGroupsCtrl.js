@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('ComputerGroupsCtrl',
-                     ['$scope', '$mdDialog', '$mdMedia','$state', '$document','ComputersResource', 'ComputerGroupsResource', ComputerGroupsCtrl]);
+                     ['$scope', '$mdDialog', '$mdMedia','$state', 'ComputersResource', 'ComputerGroupsResource', ComputerGroupsCtrl]);
 
 
-    function ComputerGroupsCtrl($scope, $mdDialog, $mdMedia, $state, $document,ComputersResource, ComputerGroupsResource) {
+    function ComputerGroupsCtrl($scope, $mdDialog, $mdMedia, $state, ComputersResource, ComputerGroupsResource) {
         //============Private===========================================
         var vm = this;
         var _maxGroupId = 0;
@@ -25,12 +25,11 @@
             });
         }
         function initPopups() {
-            IPMaksPopupHandler.init(vm, $scope, $document, $mdDialog, $mdMedia);
-            computerMaksPopupHandler.init(vm, $scope, $document, $mdDialog, $mdMedia);
-            IPRangePopupHandler.init(vm, $scope, $document, $mdDialog);
-
-            computerGroupPopupHandler.init(vm, $scope, $document, $mdDialog, $mdMedia);
-            computersNameDialodHandler.init($mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource);
+            IPMaksPopupHandler.init(vm, $mdDialog);
+            computerMaksPopupHandler.init(vm, $mdDialog);
+            IPRangePopupHandler.init(vm, $mdDialog);
+            computerGroupPopupHandler.init(vm, $mdDialog);
+            computersNameDialodHandler.init($mdDialog, ComputersResource, ComputerGroupsResource);
             vm.openComputerGroupDialog = function (groupIndex) {
                 computerGroupPopupHandler.openComputerGroupDialog(groupIndex).then(
                     function (promiseObj) { addUpdateGroup(promiseObj, groupIndex); });

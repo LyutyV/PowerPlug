@@ -5,18 +5,19 @@
     angular
         .module('powerPlug')
         .controller('ConsolePermissionCtrl',
-                     ['$state', '$document', '$mdDialog', '$mdMedia', '$scope', 'ConsolePermissionResource', ConsolePermissionCtrl]);
+                     ['$state', '$document', '$mdDialog', '$scope', 'ConsolePermissionResource', ConsolePermissionCtrl]);
 
 
-    function ConsolePermissionCtrl($state, $document, $mdDialog, $mdMedia, $scope, ConsolePermissionResource) {
-        var vm = this;
-
+    function ConsolePermissionCtrl($state, $document, $mdDialog, $scope, ConsolePermissionResource) {
+        var vm = this;        
         ConsolePermissionResource.query(function (data) {
             onSuccess(data);
         }, function (error) {
             onError(error);
         });
-
+        function init() {
+            addUserPopupHandler.init($mdDialog);
+        }
         function onError(err) {
             console.log(err);
             if (err.status === 401 || err.status === -1) {
@@ -40,7 +41,6 @@
         }
 
         vm.saveChanges = function () {
-            ///dooo
             ConsolePermissionResource.saveAll(returnObj, function (data) {
                 alert('Successfully Done!');
                 onSuccess(data);
@@ -48,13 +48,16 @@
                 onError(err);
             });
         }
-
         vm.discardChanges = function () {
             ConsolePermissionResource.query(function (data) {
                 onSuccess(data);
             }, function (error) {
                 onError(error);
             });
-        }        
+        }
+        vm.openAddUserDialog = addUserPopupHandler.openDialog;
+        //================init=====================
+        init();
+
     }
 }());
