@@ -41,8 +41,9 @@ div.permissionsWrapper {
             }
         }
         &.tableWrapper {
-            background-color: #ddd;
+            background-color: #f8f8f8;
             padding: 23px 16px;
+            min-height: 170px;
             > table {
                 width: 100%;
                 > thead {

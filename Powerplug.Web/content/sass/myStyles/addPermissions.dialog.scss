@@ -25,8 +25,126 @@ md-dialog.addPermissionsWrapper {
         padding: 0 32px;
         > div.container-fluid {
             > div.row {
-                &:first-child {}
+                &:first-child {
+                  display: flex;
+                  justify-content: space-between;
+                  background-color: #f8f8f8;
+                  height: 196px;
+                  align-items: stretch;
+                  > div {
+                    flex-grow: 1;
+                    &:first-child {
+                      > div {
+                        height: 65px;
+                        line-height: 65px;
+                        margin-left: 31px;
+                        > span {
+                          font-family: Calibri;
+                          color: #4d4d4d;
+                          font-size: 18px;
+                          font-weight: 700;
+                          text-align: left;
+                        }
+                        &:last-child {
+                          display: flex;
+                          justify-content: space-between;
+                          align-items: center;
+                          > span {
+                            display: block;
+                              &:last-child {
+                                margin-right: 12px;
+                                font-family: Calibri;
+                                color: rgba(26, 26, 26, 0.7);
+                                font-size: 14px;
+                                font-weight: 300;
+                                letter-spacing: -0.182px;
+                              }
+                          }
+                        }
+                      }
+                    }
+                    &:nth-child(2) {
+                      > div {
+                        height: 65px;
+                        &:first-child,
+                        &:nth-child(2) {
+                          > div {
+                            display: inline-block;
+                            margin-top: 15px;
+                            &:first-child {
+                              float: left;
+                              width: 288px;
+                              height: 34px;
+                              background-color: #ffffff;
+                              line-height: 34px;
+                              font-family: Calibri;
+                              color: rgba(102, 102, 102, 0.7);
+                              font-size: 14px;
+                              font-weight: 300;
+                              letter-spacing: -0.182px;
+                              padding-left: 12px;
+                              border: 2px solid #e2e2e2;
+                            }
+                            &:last-child {
+                              width: 34px;
+                              height: 34px;
+                              background-color: #333333;
+                              color: #ffffff;
+                              position: relative;
+                              border: 2px solid #e2e2e2;
+                              border-left: none;
+                              > span {
+                                position: absolute;
+                                bottom: 3px;
+                                left: 11px;
+                              }
+                            }
+                          }
+                        }
+                        &:nth-child(3) {
+                          line-height: 65px;
+                          > label {
+                            > select {
+                              background-color: #ffffff;
+                              height: 33px;
+                              width: 105px;
+                              border: 1px solid #bebebe;
+                              &:focus {
+                                outline: none;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                    &:nth-child(3) {
+                      > div.btn-group {
+                        margin-top: 39px;
+                        > a {
+                          height: 55px;
+                          padding: 0px;
+                          line-height: 55px;
+                          border-radius: 0px;
+                          font-family: Calibri;
+                          color: #ffffff;
+                          font-size: 23px;
+                          font-weight: 700;
+                          border: none;
+                          &:first-child {
+                            background-color: #29abe2;
+                            width: 110px;
+                          }
+                          &:last-child {
+                            background-color: #3a8ec1;
+                            width: 55px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
                 &:last-child {
+                  margin-top: 31px;
                     > span {
                         font-family: Calibri;
                         color: #4d4d4d;

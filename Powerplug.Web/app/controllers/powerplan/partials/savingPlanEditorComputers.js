@@ -27,11 +27,93 @@
         function DialogController($scope, $mdDialog, $document) {
             $scope.addPermission = function () {
                 $mdDialog.hide();
-            };
+            }
 
             $scope.closePermissionDialog = function () {
                 $mdDialog.cancel();
-            };            
+            }
+            // Select all checkboxes function in add script dialog
+            $scope.checkAll = function (seed) {
+                    switch (seed) {
+                    case 'users':
+                        {
+                            if ($scope.selectedAllUsers) {
+                                $scope.selectedAllUsers = true;
+                            } else {
+                                $scope.selectedAllUsers = false;
+                            }
+                            angular.forEach($scope.users, function (user) {
+                                user.selected = $scope.selectedAllUsers;
+                            });
+                            break;
+                        }
+                    default:
+                        console.log('Error. Default value of select all (groups or comps) agr');
+                    }
+                }
+
+            // End select all checkboxes function in add script dialog
+
+            // tmp model for filling Add Permissions dialog
+            $scope.users = [{
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }]
+
+            // end tmp model for filling Add Permissions dialog
+
         }
 
     }

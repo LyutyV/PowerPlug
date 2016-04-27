@@ -1,56 +1,4 @@
-<md-dialog class="addPermissionsWrapper">
-    <md-toolbar>
-        <div>Add Permissions</div>
-        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeEventScripts()">
-    </md-toolbar>
-    <md-content>
-      <div class="container-fluid">
-        <div class="row"></div>
-        <div class="row">
-          <span>{{}}0 Users</span>
-          <table class="table">
-              <thead>
-                  <tr>
-                      <td>
-                        <input type="checkbox" id="as00" class="custom-checkbox-green-type00" ng-model="selectedAllUsers" ng-click="checkAll('users')"/>
-                        <label for='as00'></label>
-                      </td>
-                      <td>Name</td>
-                      <td>Logon Name</td>
-                      <td>Description</td>
-                      <td>In Folder</td>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr ng-repeat="user in users" deleteThisSectionItsOnlyForExample>
-                    <td>
-                      <input type="checkbox" id="{{$index}}" class="custom-checkbox-green-type00" ng-model="user.selected"/>
-                      <label for="{{$index}}"></label>
-                    </td>
-                    <td>{{user.name}}</td>
-                    <td>{{user.logonName}}</td>
-                    <td>{{user.description}}</td>
-                    <td>{{user.isInFolder}}</td>
-                  </tr>
-              </tbody>
-          </table>
-        </div>
-      </div>
-    </md-content>
-    <div class="buttonsBlock">
-        <button ng-click="addEventScripts()">Add</button>
-        <button ng-click="closeEventScripts()">Cancel</button>
-    </div>
-</md-dialog>
-
-
-
-
-
-
-
-
-<!-- <md-dialog class="addScript" style="width:900px">
+<md-dialog class="addScript" style="width:900px">
     <md-toolbar>
         <div>Add a Script</div>
         <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeEventScripts()">
@@ -113,4 +61,4 @@
             </div>
         </div>
     </md-content>
-</md-dialog> -->
+</md-dialog>
