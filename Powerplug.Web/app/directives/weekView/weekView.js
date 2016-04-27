@@ -21,6 +21,8 @@ angular
         post: function(scope,element) {
           var dayList = ['sun','mon','tue','wed','thu','fri','sat'];
 
+          var defaultScrollPosition = 9;
+
           scope.datyViewlLmit = {
             begin: 0,
             end:24,
@@ -413,11 +415,25 @@ angular
             var curTime = scope.datyViewlLmit.begin;
             scope.timeLine = [];
 
+            var anchor = -1;
+            var i=0;
+
             while (curTime <= scope.datyViewlLmit.end){
-              scope.timeLine.push(Number(Math.floor(curTime)) + Number((((curTime - Math.floor(curTime)) * 0.6)).toFixed(2)));
+              var time = Number(Math.floor(curTime)) + Number((((curTime - Math.floor(curTime)) * 0.6)).toFixed(2));
+              if (anchor<0 && time>=defaultScrollPosition){
+                anchor = i;
+              }
+              else{
+                i++;
+              }
+              scope.timeLine.push(time);
               curTime += scope.timeInterval.value;
             }
             timeLineSuccess = true;
+
+            setTimeout(function(){
+                $('#mCSB_7_container_wrapper').animate( { scrollTop:anchor*16 } , 500);
+            },0);
           }
 
           var initWorkTime = function(){
