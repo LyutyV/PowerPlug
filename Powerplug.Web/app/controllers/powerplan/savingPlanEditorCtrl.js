@@ -67,6 +67,7 @@
         workHoursHandler.init(vm);
         savingHandler.init(vm, $document);
         computersHandler.init(vm, $scope, $document, $mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource);
+        permissionHandler.init(vm, $scope, $document, $mdDialog, $mdMedia);
 
         SavingPlansResource.basic.get({
             policyId: vm.policyId
@@ -156,5 +157,7 @@
             //dialog
         vm.openActionDialog = actionDialogHandler.openActionDialog;
         vm.createNewAction = actionDialogHandler.createNewAction;
+
+        vm.addPermissions = permissionHandler.addPermissionsDialog;
     }
 }());
