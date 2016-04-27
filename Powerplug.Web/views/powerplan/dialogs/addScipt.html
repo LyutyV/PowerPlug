@@ -1,7 +1,6 @@
 <md-dialog class="addScript" style="width:900px">
     <md-toolbar>
         <div>Add a Script</div>
-        <!-- <i class="fa fa-times" ></i> -->
         <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeEventScripts()">
     </md-toolbar>
     <md-content>
@@ -23,7 +22,6 @@
                 <tbody>
                     <tr ng-repeat="script in eventScripts">
                         <td>
-                            <!-- <input type="checkbox" id="{{script.scriptId}}" data-name="{{script.scriptName}}" data-guid="{{script.scriptGUID}}" class="script-selection custom-checkbox-green" /> -->
                             <input type="checkbox" id="{{script.scriptId}}" data-name="{{script.scriptName}}" data-guid="{{script.scriptGUID}}" class="script-selection custom-checkbox-green-type00" ng-model="script.selected"/>
                             <label for='{{script.scriptId}}'></label>
                         </td>

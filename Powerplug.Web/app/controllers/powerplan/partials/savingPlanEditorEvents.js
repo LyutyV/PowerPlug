@@ -1,4 +1,5 @@
-﻿var eventHandler = {
+﻿
+var eventHandler = {
     vm: {},
     $scope: {},
     $document: [],
@@ -52,7 +53,10 @@
                 if (isEventFound === false) {
                     if (!eventHandler.vm.savingPlan.events) {
                         eventHandler.vm.savingPlan.events = [];
-                        eventHandler.vm.savingPlan.events.push({ eventType: eventHandler.vm.currentEvent, scripts: [] });
+                        eventHandler.vm.savingPlan.events.push({
+                            eventType: eventHandler.vm.currentEvent,
+                            scripts: []
+                        });
                     }
                     fillScripts(0);
                 }
@@ -71,7 +75,12 @@
                         });
 
                         if (!isExist) {
-                            eventHandler.vm.savingPlan.events[keyEvent].scripts.push({ context: 'System', scriptGUID: newScriptGUID, scriptName: newScriptName, scriptId: newScriptId });
+                            eventHandler.vm.savingPlan.events[keyEvent].scripts.push({
+                                context: 'System',
+                                scriptGUID: newScriptGUID,
+                                scriptName: newScriptName,
+                                scriptId: newScriptId
+                            });
                         }
                     });
 
@@ -86,24 +95,25 @@
             };
 
             // Select all checkboxes function in add script dialog
-            $scope.checkAll = function(seed) {
-              switch (seed) {
+            $scope.checkAll = function (seed) {
+                switch (seed) {
                 case 'scripts':
-                {
-                  if ($scope.selectedAllScripts) {
-                      $scope.selectedAllScripts = true;
-                  } else {
-                      $scope.selectedAllScripts = false;
-                  }
-                  angular.forEach($scope.eventScripts, function (script) {
-                      script.selected = $scope.selectedAllScripts;
-                  });
-                  break;
-                }
+                    {
+                        if ($scope.selectedAllScripts) {
+                            $scope.selectedAllScripts = true;
+                        } else {
+                            $scope.selectedAllScripts = false;
+                        }
+                        angular.forEach($scope.eventScripts, function (script) {
+                            script.selected = $scope.selectedAllScripts;
+                        });
+                        break;
+                    }
                 default:
-                  console.log('Error. Default value of select all (groups or comps) agr');
-              }
+                    console.log('Error. Default value of select all (groups or comps) agr');
+                }
             }
+
             // End select all checkboxes function in add script dialog
         }
     },

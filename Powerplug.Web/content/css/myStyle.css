@@ -183,6 +183,183 @@ md-dialog.addComputerWrapper {
       md-dialog.addComputerWrapper > md-content > div:last-child > button:last-child {
         background-color: #808080; }
 
+md-dialog.addPermissionsWrapper {
+  overflow: inherit;
+  min-width: 900px; }
+  md-dialog.addPermissionsWrapper > md-toolbar {
+    background-color: #ffffff;
+    padding-left: 32px;
+    padding-right: 34px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    md-dialog.addPermissionsWrapper > md-toolbar > div {
+      font-family: Calibri;
+      color: rgba(26, 26, 26, 0.7);
+      font-size: 24px;
+      font-weight: 300;
+      text-align: left; }
+    md-dialog.addPermissionsWrapper > md-toolbar > img {
+      cursor: pointer; }
+  md-dialog.addPermissionsWrapper > md-content {
+    padding: 0 32px; }
+    md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child {
+      display: flex;
+      justify-content: space-between;
+      background-color: #f8f8f8;
+      height: 196px;
+      align-items: stretch; }
+      md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div {
+        flex-grow: 1; }
+        md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:first-child > div {
+          height: 65px;
+          line-height: 65px;
+          margin-left: 31px; }
+          md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:first-child > div > span {
+            font-family: Calibri;
+            color: #4d4d4d;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: left; }
+          md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:first-child > div:last-child {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; }
+            md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:first-child > div:last-child > span {
+              display: block; }
+              md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:first-child > div:last-child > span:last-child {
+                margin-right: 12px;
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 14px;
+                font-weight: 300;
+                letter-spacing: -0.182px; }
+        md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div {
+          height: 65px; }
+          md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div:first-child > div, md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div:nth-child(2) > div {
+            display: inline-block;
+            margin-top: 15px; }
+            md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div:first-child > div:first-child, md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div:nth-child(2) > div:first-child {
+              float: left;
+              width: 288px;
+              height: 34px;
+              background-color: #ffffff;
+              line-height: 34px;
+              font-family: Calibri;
+              color: rgba(102, 102, 102, 0.7);
+              font-size: 14px;
+              font-weight: 300;
+              letter-spacing: -0.182px;
+              padding-left: 12px;
+              border: 2px solid #e2e2e2; }
+            md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div:first-child > div:last-child, md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div:nth-child(2) > div:last-child {
+              width: 34px;
+              height: 34px;
+              background-color: #333333;
+              color: #ffffff;
+              position: relative;
+              border: 2px solid #e2e2e2;
+              border-left: none; }
+              md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div:first-child > div:last-child > span, md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div:nth-child(2) > div:last-child > span {
+                position: absolute;
+                bottom: 3px;
+                left: 11px; }
+          md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div:nth-child(3) {
+            line-height: 65px; }
+            md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div:nth-child(3) > label > select {
+              background-color: #ffffff;
+              height: 33px;
+              width: 105px;
+              border: 1px solid #bebebe; }
+              md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(2) > div:nth-child(3) > label > select:focus {
+                outline: none; }
+        md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(3) > div.btn-group {
+          margin-top: 39px; }
+          md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(3) > div.btn-group > a {
+            height: 55px;
+            padding: 0px;
+            line-height: 55px;
+            border-radius: 0px;
+            font-family: Calibri;
+            color: #ffffff;
+            font-size: 23px;
+            font-weight: 700;
+            border: none; }
+            md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(3) > div.btn-group > a:first-child {
+              background-color: #29abe2;
+              width: 110px; }
+            md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:first-child > div:nth-child(3) > div.btn-group > a:last-child {
+              background-color: #3a8ec1;
+              width: 55px; }
+    md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:last-child {
+      margin-top: 31px; }
+      md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:last-child > span {
+        font-family: Calibri;
+        color: #4d4d4d;
+        font-size: 18px;
+        font-weight: 700; }
+      md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:last-child > table > thead {
+        font-family: Calibri;
+        color: rgba(26, 26, 26, 0.7);
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.182px; }
+      md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:last-child > table > tbody {
+        font-family: Calibri;
+        color: #333333;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.182px; }
+        md-dialog.addPermissionsWrapper > md-content > div.container-fluid > div.row:last-child > table > tbody > tr > td {
+          border: none;
+          border-top: 1px solid #cccccc; }
+  md-dialog.addPermissionsWrapper > div.buttonsBlock {
+    text-align: center;
+    min-height: 100px;
+    background-color: #f2f2f2; }
+    md-dialog.addPermissionsWrapper > div.buttonsBlock > button {
+      margin-top: 30px;
+      height: 40px;
+      width: 120px;
+      border: none;
+      font-family: Calibri;
+      color: #ffffff;
+      font-size: 20.3px;
+      font-weight: 700; }
+      md-dialog.addPermissionsWrapper > div.buttonsBlock > button:first-child {
+        background-color: #8cc63f; }
+      md-dialog.addPermissionsWrapper > div.buttonsBlock > button:last-child {
+        background-color: #808080; }
+  md-dialog.addPermissionsWrapper input.custom-checkbox-green-type00 {
+    display: none; }
+    md-dialog.addPermissionsWrapper input.custom-checkbox-green-type00 + label {
+      position: relative;
+      margin: 0;
+      height: 15px;
+      width: 35px; }
+    md-dialog.addPermissionsWrapper input.custom-checkbox-green-type00 + label::before {
+      position: absolute;
+      content: '';
+      height: 15px;
+      width: 15px;
+      border: 1px solid #d9d9d9;
+      left: 10px;
+      top: 3px; }
+    md-dialog.addPermissionsWrapper input.custom-checkbox-green-type00:checked + label::before {
+      position: absolute;
+      content: '\f00c';
+      font-family: 'FontAwesome';
+      color: #a3d165;
+      height: 15px;
+      width: 15px;
+      border: 1px solid #d9d9d9;
+      text-align: center;
+      line-height: 15px;
+      left: 10px;
+      top: 3px; }
+
 md-dialog.addScript > md-toolbar {
   background-color: #ffffff;
   padding-left: 32px;
@@ -1922,8 +2099,8 @@ div.computersWrapper {
 
 div.permissionsWrapper {
   background-color: #ffffff;
-  margin: 0px -50px 23px -50px;
-  padding: 0px 50px; }
+  margin: 0 -50px 23px;
+  padding: 0 50px; }
   div.permissionsWrapper > div:first-child {
     display: flex;
     justify-content: space-between; }
@@ -1954,51 +2131,48 @@ div.permissionsWrapper {
         font-weight: 700;
         letter-spacing: -0.195px; }
   div.permissionsWrapper > div.tableWrapper {
-    margin-top: 13px;
-    background-color: #f8f8f8; }
-    div.permissionsWrapper > div.tableWrapper > div.tableHead {
-      display: flex;
-      padding: 23px 0px 9px 18px;
-      border-bottom: 1px solid #b3b3b3;
-      margin: 0px 16px;
-      font-family: Calibri;
-      color: rgba(26, 26, 26, 0.7);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: -0.182px; }
-      div.permissionsWrapper > div.tableWrapper > div.tableHead > div {
-        flex-grow: 1;
-        width: 33.3%; }
-        div.permissionsWrapper > div.tableWrapper > div.tableHead > div:last-child {
-          position: absolute;
-          right: 65px;
-          width: initial; }
-          div.permissionsWrapper > div.tableWrapper > div.tableHead > div:last-child > span {
-            font-family: Calibri;
-            color: rgba(26, 26, 26, 0.7);
-            font-size: 18px;
-            font-weight: 700; }
-            div.permissionsWrapper > div.tableWrapper > div.tableHead > div:last-child > span::before {
-              margin-right: 9px;
-              font-size: 20px; }
-            div.permissionsWrapper > div.tableWrapper > div.tableHead > div:last-child > span:focus {
-              outline: none; }
-    div.permissionsWrapper > div.tableWrapper > div.tableBody {
-      min-height: 125px; }
-      div.permissionsWrapper > div.tableWrapper > div.tableBody > div.tableRow {
-        padding-left: 18px;
-        margin: 0px 16px;
-        display: flex;
+    background-color: #f8f8f8;
+    padding: 23px 16px;
+    min-height: 170px; }
+    div.permissionsWrapper > div.tableWrapper > table {
+      width: 100%; }
+      div.permissionsWrapper > div.tableWrapper > table > thead {
+        border-bottom: 1px solid #b3b3b3;
         font-family: Calibri;
         color: rgba(26, 26, 26, 0.7);
         font-size: 14px;
         font-weight: 700;
-        letter-spacing: -0.182px;
-        height: 40px; }
-        div.permissionsWrapper > div.tableWrapper > div.tableBody > div.tableRow > div {
-          flex-grow: 1;
-          display: inline-block;
-          line-height: 40px; }
+        letter-spacing: -0.182px; }
+        div.permissionsWrapper > div.tableWrapper > table > thead > tr > td:last-child {
+          position: relative; }
+          div.permissionsWrapper > div.tableWrapper > table > thead > tr > td:last-child > span:last-child {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 18px;
+            font-weight: 700; }
+            div.permissionsWrapper > div.tableWrapper > table > thead > tr > td:last-child > span:last-child:before {
+              font-size: 21px;
+              margin-right: 9px; }
+      div.permissionsWrapper > div.tableWrapper > table > tbody > tr {
+        height: 40px;
+        font-family: Calibri;
+        color: rgba(26, 26, 26, 0.7);
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.182px; }
+        div.permissionsWrapper > div.tableWrapper > table > tbody > tr > td:last-child {
+          position: relative; }
+          div.permissionsWrapper > div.tableWrapper > table > tbody > tr > td:last-child > span:last-child {
+            position: absolute;
+            right: 0;
+            bottom: 50%;
+            transform: translate(0%, 50%);
+            cursor: pointer; }
+            div.permissionsWrapper > div.tableWrapper > table > tbody > tr > td:last-child > span:last-child > i {
+              color: #8cc63f; }
 
 .savingPlans > div#organizationName > .customTable > .customTableHead > div:focus {
   outline: none; }

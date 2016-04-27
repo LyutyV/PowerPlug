@@ -1,22 +1,4 @@
-﻿<!-- <div class="panel-body">
-    <div><button ng-click="addSavingComputer($event, -1, worktype)" class="btn btn-success">Add</button></div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <td>Computer Name</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="computer in jsonobject.computersNotRun">
-                <td>{{computer.name}}</td>
-                <td><button ng-click="removeSavingComputer(computer.computerKey, 'work')" class="btn btn-danger">Remove</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div> -->
-
-
-<div class="container-fluid">
+﻿<div class="container-fluid">
     <span>Do not Perform the operation while the following computers are on:</span>
     <span class="buttonTypeOneRemove">Remove</span>
     <span class="buttonTypeOneAdd" ng-click="addSavingComputer($event, -1, worktype)">Add</span>

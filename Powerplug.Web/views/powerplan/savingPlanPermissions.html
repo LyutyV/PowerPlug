@@ -8,45 +8,33 @@
         </div>
     </div>
     <div class="tableWrapper">
-      <div class="tableHead">
-        <div>Group / User Name</div>
-        <div>View</div>
-        <div>Edit</div>
-        <div><span class="buttonTypeOneAdd" ng-click="vm.addPermissions()">Add</span></div>
-      </div>
-      <div class="tableBody">
-        <div class="tableRow" deleteThisSectionItsOnlyForExample>
-          <div>test1</div>
-          <div>test2</div>
-          <div>test3</div>
+      <table>
+        <thead>
+          <tr>
+            <td>Group / User Name</td>
+            <td>View</td>
+            <td><span>Edit</span><span class="buttonTypeOneAdd" ng-click="vm.addPermissions()">Add</span></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr deleteThisSectionItsOnlyForExample>
+            <td>test1</td>
+            <td>test2</td>
+            <td>
+              <span>test3</span>
+              <span><i class="fa fa-trash"></i> Remove</span>
+            </td>
+          </tr>
+          <tr class="tableRow" ng-repeat="permission in vm.savingPlan.permissions">
+            <td>{{permission.permObjDesc}}</td>
+            <td>{{permission.viewPerm}}</td>
+            <td>
+              <span>{{permission.editPerm}}</span>
+              <span><i class="fa fa-trash"></i> Remove</span>
+            </td>
+          </tr>
         </div>
-        <div class="tableRow">
-          <div>{{permission.permObjDesc}}</div>
-          <div>{{permission.viewPerm}}</div>
-          <div>{{permission.editPerm}}</div>
-        </div>
-      </div>
-        <!-- <table>
-            <thead>
-                <tr>
-                    <td>Group / User Name</td>
-                    <td>View</td>
-                    <td>Edit</td>
-                    <td>button</td>
-                </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>test</td>
-                <td>test1</td>
-                <td colspan="2">test2</td>
-              </tr>
-                <tr ng-repeat="permission in vm.savingPlan.permissions">
-                    <td>{{permission.permObjDesc}}</td>
-                    <td>{{permission.viewPerm}}</td>
-                    <td colspan="2">{{permission.editPerm}}</td>
-                </tr>
-            </tbody>
-        </table> -->
+        </tbody>
+      </table>
     </div>
 </div>

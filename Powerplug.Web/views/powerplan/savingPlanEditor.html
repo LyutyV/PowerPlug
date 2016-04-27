@@ -3,14 +3,14 @@
         <!-- <div style="margin-bottom:20px;">
            Policy Name: <input type="text" ng-model="vm.savingPlan.policyName" />
         </div> -->
-        <div ui-view="overview"></div>
-        <div ui-view="workhoursaction"></div>
-        <div ui-view="worktimesaction"></div>
-        <div ui-view="events"></div>
-        <div ui-view="computers"></div>
-        <div ui-view="settings"></div>
-        <div ui-view="permissions"></div>
-        <div ui-view="description"></div>
+        <div  ui-view="overview"></div>
+        <div id="workhoursaction" ui-view="workhoursaction"></div>
+        <div id="worktimesaction" ui-view="worktimesaction"></div>
+        <div id="events" ui-view="events"></div>
+        <div id="computers" ui-view="computers"></div>
+        <div id="settings" ui-view="settings"></div>
+        <div id="permissions" ui-view="permissions"></div>
+        <div id="description" ui-view="description"></div>
     </div>
 </div>
 <!-- <div style="position:fixed;bottom:0px;right:0px;left:246px;border-top:solid 3px gray;background-color:#f3f3f3;height:100px; z-index: 10;" class="clearfix">

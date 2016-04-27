@@ -78,19 +78,19 @@
 
             $scope.closeComputerGroupsDialog = function () {
                 $mdDialog.cancel();
-            };            
+            };
         }
 
     },
-    removeComputerGroups: function () {        
+    removeComputerGroups: function () {
         angular.forEach(angular.element('.computer-group-selection:checked'), function (value, key) {
             var computerGroupId = value.getAttribute('data-id');
             angular.forEach(computersHandler.vm.savingPlan.compGroups, function (valueCompGroup, keyCompGroup) {
                 if (computerGroupId === valueCompGroup.groupGUID) {
-                    computersHandler.vm.savingPlan.compGroups.splice(keyCompGroup, 1);                   
+                    computersHandler.vm.savingPlan.compGroups.splice(keyCompGroup, 1);
                 }
             });
-        });        
+        });
     },
     removeComputers: function () {
         angular.forEach(angular.element('.computer-selection:checked'), function (value, key) {
@@ -110,7 +110,7 @@
             var isItemExist = false;
             angular.forEach(computersHandler.vm.savingPlan.computers, function (valueComputer, keyComputer) {
                 if (valueComputer.name === valueDB.name) {
-                    isItemExist = true;                    
+                    isItemExist = true;
                 }
             });
             if (!isItemExist) {
@@ -118,7 +118,7 @@
             }
         });
 
-        angular.forEach(computersHandler.vm.savingPlan.computers, function (valueComputer, keyComputer) {        
+        angular.forEach(computersHandler.vm.savingPlan.computers, function (valueComputer, keyComputer) {
             var isItemExist = false;
             angular.forEach(computersHandler.vm.computersFromDB, function (valueDB, keyDB) {
                 if (valueComputer.name === valueDB.name) {
@@ -129,7 +129,7 @@
                 addedComputers.push(valueComputer);
             }
         });
-        
+
         computersHandler.vm.savingPlan.addComputers = addedComputers;
         computersHandler.vm.savingPlan.removeComputers = removedComputers;
     },
