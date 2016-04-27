@@ -29,7 +29,6 @@
         }
 
         vm.saveChanges = function () {
-            ///dooo
             ElectricityPriceResource.saveAll(returnObj, function (data) {
                 alert('Successfully Done!');
                 onSuccess(data);
@@ -47,31 +46,39 @@
         }
 
         vm.showPowerRateDialog = function (powerRateId, ev) {
-            var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
             $mdDialog.show({
                 templateUrl: 'views/settings/dialogs/powerRate.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: false,
                 bindToController: true,
-                fullscreen: useFullScreen,
                 locals: { powerRateId: powerRateId, prices: vm.prices },
                 controller: DialogController,
-            });
-            $scope.$watch(function () {
-                return $mdMedia('xs') || $mdMedia('sm');
-            }, function (wantsFullScreen) {
-                $scope.customFullscreen = (wantsFullScreen === true);
             });
 
             function DialogController($scope, $mdDialog, powerRateId, prices) {
                 $scope.prices = prices;
                 $scope.addPowerCostDialog = function () {
-                    $uibModal.open({
+                    var modal = $uibModal.open({
                         templateUrl: 'views/settings/dialogs/addPowerCost.html',
                         resolve: { },
                         controller: DialogController,
+                        backdrop: 'static'
                     })
+                    modal.rendered.then(function () {
+                        //start time  picker
+                        $('.power-plug-date-picker').datetimepicker({
+                            format: 'MM/DD/YYYY',
+                            defaultDate: new Date()
+                        });
+                    });
+
+                    modal.closed.then(function () {
+                        //remove date & time picker
+                        $('.datetimepicker').datetimepicker('remove');
+                    });
+
+                    return modal;
 
                     function DialogController($scope, $uibModalInstance, $document) {
                         $scope.insertPowerCost = function () {                            

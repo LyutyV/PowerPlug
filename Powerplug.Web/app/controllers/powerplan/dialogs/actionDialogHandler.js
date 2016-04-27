@@ -72,7 +72,8 @@
             templateUrl: 'views/powerplan/dialogs/action.dialog.html',
             resolve: { param: function () { return { 'actionData': actionData, 'isNewAction': isNewAction } } },
             controller: actionDialogHandler.DialogController,
-            windowClass : 'action-calendar'
+            windowClass: 'action-calendar',
+            backdrop: 'static'
         });
 
         modal.rendered.then(function(){

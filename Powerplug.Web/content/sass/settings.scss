@@ -1,7 +1,9 @@
-.settings{
-    padding-top:20px;
-    .nav-tabs > li{
-        margin-bottom:5px;
+.settings {
+    padding-top: 20px;
+
+    .nav-tabs > li {
+        margin-bottom: 5px;
+
         > a, > a:focus, > a:hover {
             padding-left: 20px;
             padding-right: 20px;
@@ -9,18 +11,22 @@
             text-align: center;
         }
     }
-    .save-button-margin{
-        height:100px;
-        width:100%;
+
+    .save-button-margin {
+        height: 100px;
+        width: 100%;
     }
-    input.custom-checkbox-green-type00{
-        display:none;
-        + label{
+
+    input.custom-checkbox-green-type00 {
+        display: none;
+
+        + label {
             position: relative;
             margin: 0;
             height: 15px;
             width: 35px;
-            &:before{
+
+            &:before {
                 position: absolute;
                 content: '';
                 height: 15px;
@@ -31,9 +37,10 @@
                 background-color: #ffffff;
             }
         }
-        &:checked{
-            + label{
-                &:before{
+
+        &:checked {
+            + label {
+                &:before {
                     position: absolute;
                     content: '\f00c';
                     font-family: 'FontAwesome';
@@ -48,109 +55,120 @@
                     background-color: #ffffff;
                 }
             }
-        }   
+        }
     }
 
-    .buttons-container{ 
-        position:fixed;
-        bottom:0px; 
-        right:0px;
-        left:246px;
-        background-color:#f2f2f2;
-        height:100px; 
+    .buttons-container {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        left: 246px;
+        background-color: #f2f2f2;
+        height: 100px;
         z-index: 10;
-        div{
-            padding-top:30px;
-            padding-right:30px;
-            text-align:center;
-            .btn-save-green{
-                width:160px;
-                height:44px;
-                background-color:#8cc63f;
-                border:none;
-                text-align:center;
-                color:#fff;
-                font-size:20px;
-                font-weight:bold;
-                font-family:Calibri;
-                margin-right:2px;
-                outline:none;
+
+        div {
+            padding-top: 30px;
+            padding-right: 30px;
+            text-align: center;
+
+            .btn-save-green {
+                width: 160px;
+                height: 44px;
+                background-color: #8cc63f;
+                border: none;
+                text-align: center;
+                color: #fff;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: Calibri;
+                margin-right: 2px;
+                outline: none;
             }
-            .btn-discard-gray{
-                width:160px;
-                height:44px;
-                background-color:#808080;
-                border:none;
-                text-align:center;
-                color:#fff;
-                font-size:20px;
-                font-weight:bold;
-                font-family:Calibri;
-                outline:none;
+
+            .btn-discard-gray {
+                width: 160px;
+                height: 44px;
+                background-color: #808080;
+                border: none;
+                text-align: center;
+                color: #fff;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: Calibri;
+                outline: none;
             }
         }
-    }    
-    > .bg-separator{
-        height:74px;
+    }
+
+    > .bg-separator {
+        height: 74px;
         background-color: rgba(242,242,242,0.6);
-        width:100%;
-        margin-bottom:20px;
+        width: 100%;
+        margin-bottom: 20px;
     }
-    .type-selection{
-        padding-top:10px;
-        padding-bottom:10px;
-        font-family:Calibri;
-        font-weight:bold;
-        font-size:16px;    
+
+    .type-selection {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-family: Calibri;
+        font-weight: bold;
+        font-size: 16px;
         color: rgba(26, 26, 26, 0.7);
-        select{
-            font-weight:normal;
-            width:225px;
-            height:40px;
-            margin-left:20px;
+
+        select {
+            font-weight: normal;
+            width: 225px;
+            height: 40px;
+            margin-left: 20px;
             color: rgba(26, 26, 26, 1);
-            font-size:14px;
+            font-size: 14px;
         }
     }
-    select.big-select{
-            font-weight:normal;
-            width:225px;
-            height:40px;
-            margin-left:20px;
-            color: rgba(26, 26, 26, 1);
-            font-size:14px;
-        }
-    .text-container{
-        textarea{
-            width:100%; 
-            height:300px;
-            padding:5px;
+
+    select.big-select {
+        font-weight: normal;
+        width: 225px;
+        height: 40px;
+        margin-left: 20px;
+        color: rgba(26, 26, 26, 1);
+        font-size: 14px;
+    }
+
+    .text-container {
+        textarea {
+            width: 100%;
+            height: 300px;
+            padding: 5px;
         }
     }
-    .green-line{
+
+    .green-line {
         width: 100%;
         height: 5px;
         background-color: #8cc63f;
     }
-    .settings-content
-    {
-        &.powerConsumption-content 
-        {
+
+    .settings-content {
+        &.powerConsumption-content {
             padding-top: 20px;
         }
-        & .script-content
-        {
+
+        & .script-content {
             padding-top: 12px;
         }
-        .permission-selection{
-            padding-bottom:30px; 
-            div{
+
+        .permission-selection {
+            padding-bottom: 30px;
+
+            div {
                 font-family: Calibri;
                 color: rgba(26, 26, 26, 0.7);
                 font-size: 14px;
-                padding-top:10px;
+                padding-top: 10px;
             }
         }
+
         .action-settings {
             font-family: Calibri;
             color: rgba(26, 26, 26, 0.7);
@@ -158,29 +176,33 @@
             font-weight: 700;
             text-align: left;
             margin-left: 30px;
-            &:before{
+
+            &:before {
                 margin-right: 5px;
             }
         }
 
         > span {
             font-family: Calibri;
-            color: #4d4d4d; 
+            color: #4d4d4d;
             font-size: 18px;
             font-weight: 700;
         }
 
         table {
             margin-top: 20px;
-            tr > td {                                    
-                > .action-settings{
+
+            tr > td {
+                > .action-settings {
                     float: right;
                     display: block;
+
                     &:last-child {
-                        margin-left:0px;
+                        margin-left: 0px;
                     }
                 }
             }
+
             > thead {
                 font-family: Calibri;
                 color: rgba(26, 26, 26, 0.7);
@@ -188,68 +210,82 @@
                 font-weight: 700;
                 letter-spacing: -0.182px;
             }
-            > tbody{
+
+            > tbody {
                 font-family: Calibri;
                 color: #333333;
                 font-size: 14px;
                 font-weight: 300;
                 letter-spacing: -0.182px;
+
                 > tr {
                     border: none;
                     outline: none;
+
                     &.bg-row-selected {
                         background-color: rgba(242,242,242,0.6);
                     }
+
                     > td {
                         height: 46px;
                         vertical-align: middle;
-                        font-family: Calibri; 
-                        .fa-plus{
-                            color:#8cc63f;
+                        font-family: Calibri;
+
+                        .fa-plus {
+                            color: #8cc63f;
                         }
-                        .fa-minus{
-                            color:#C63F4A;
+
+                        .fa-minus {
+                            color: #C63F4A;
                         }
-                        &.bolder{
+
+                        &.bolder {
                             font-weight: bold;
                         }
-                        &.grid-cell{
-                            input[type="text"]{
+
+                        &.grid-cell {
+                            input[type="text"] {
                                 font-family: Calibri;
-                                width:50px;
-                                border:none;
-                                outline:none;    
+                                width: 50px;
+                                border: none;
+                                outline: none;
                                 height: 28px;
                                 padding: 5px;
                             }
-                            select{
-                                font-family: Calibri;                                
-                                border:none;
-                                outline:none;
+
+                            select {
+                                font-family: Calibri;
+                                border: none;
+                                outline: none;
                             }
                         }
-                        &.button-padding{
-                            padding-right:48px;
-                        }  
-                        &.button-container{
-                            width:100px;
-                            text-align:right;             
+
+                        &.button-padding {
+                            padding-right: 48px;
                         }
-                      }
+
+                        &.button-container {
+                            width: 100px;
+                            text-align: right;
+                        }
+                    }
                 }
             }
         }
     }
 }
-md-dialog{
-    &.settings-prop{
-        &.powerRate-prop{
+
+md-dialog {
+    &.settings-prop {
+        &.powerRate-prop {
             width: 60%;
-            > md-content{
+
+            > md-content {
                 padding-top: 50px;
             }
         }
-        > md-toolbar{
+
+        > md-toolbar {
             background-color: #ffffff;
             padding-left: 32px;
             padding-right: 34px;
@@ -257,7 +293,8 @@ md-dialog{
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            > div{
+
+            > div {
                 font-family: Calibri;
                 color: rgba(26, 26, 26, 0.7);
                 font-size: 24px;
@@ -265,37 +302,48 @@ md-dialog{
                 text-align: left;
             }
         }
-        .buttonsBlock{
-                text-align: center;
-                padding: 15px 0;
-                width:100%;
-                background-color: rgb(248,248,248);
-                > div{
-                    margin:0 auto;
+
+        .buttonsBlock {
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            background-color: rgb(248,248,248);
+
+            > div {
+                margin: 0 auto;
+            }
+
+            button {
+                height: 40px;
+                width: 120px;
+                border: none;
+                font-family: Calibri;
+                color: #ffffff;
+                font-size: 20.3px;
+                font-weight: 700;
+
+                &:first-child {
+                    background-color: #8cc63f;
                 }
-                button{
-                    height: 40px;
-                    width: 120px;
-                    border: none;
-                    font-family: Calibri;
-                    color: #ffffff;
-                    font-size: 20.3px;
-                    font-weight: 700;
-                    &:first-child {
-                        background-color: #8cc63f;
-                    }
-                    &:last-child{
-                        background-color: #808080;
-                    }
+
+                &:last-child {
+                    background-color: #808080;
                 }
             }
-        > md-content{
+        }
+
+        > md-content {
             background-color: #ffffff;
             padding-left: 32px;
             padding-right: 34px;
-            .help-block.error{color: #a94442}
-            .settings-table-container{
+
+            .help-block.error {
+                color: #a94442;
+            }
+
+            .settings-table-container {
                 padding-top: 25px;
+
                 .action-settings {
                     font-family: Calibri;
                     color: rgba(26, 26, 26, 0.7);
@@ -303,27 +351,33 @@ md-dialog{
                     font-weight: 700;
                     text-align: left;
                     margin-left: 30px;
-                    &:before{
+
+                    &:before {
                         margin-right: 5px;
                     }
                 }
+
                 > span {
                     font-family: Calibri;
                     color: rgba(26, 26, 26, 0.7);
                     font-size: 14px;
                     font-weight: 700;
                 }
+
                 table {
                     margin-top: 20px;
-                    tr > td {                                    
-                        > .action-settings{
+
+                    tr > td {
+                        > .action-settings {
                             float: right;
                             display: block;
+
                             &:last-child {
-                                margin-left:0px;
+                                margin-left: 0px;
                             }
                         }
                     }
+
                     > thead {
                         font-family: Calibri;
                         color: rgba(26, 26, 26, 0.7);
@@ -331,93 +385,111 @@ md-dialog{
                         font-weight: 700;
                         letter-spacing: -0.182px;
                     }
-                    > tbody{
+
+                    > tbody {
                         font-family: Calibri;
                         color: #333333;
                         font-size: 14px;
                         font-weight: 300;
                         letter-spacing: -0.182px;
+
                         > tr {
                             border: none;
                             outline: none;
+
                             &.bg-row-selected {
                                 background-color: rgba(242,242,242,0.6);
                             }
+
                             > td {
                                 height: 46px;
                                 vertical-align: middle;
-                                font-family: Calibri; 
-                                &.bolder{
+                                font-family: Calibri;
+
+                                &.bolder {
                                     font-weight: bold;
                                 }
-                                &.grid-cell{
-                                    input[type="text"]{
+
+                                &.grid-cell {
+                                    input[type="text"] {
                                         font-family: Calibri;
-                                        width:50px;
-                                        border:none;
-                                        outline:none;    
+                                        width: 50px;
+                                        border: none;
+                                        outline: none;
                                         height: 28px;
                                         padding: 5px;
                                     }
-                                    select{
-                                        font-family: Calibri;                                
-                                        border:none;
-                                        outline:none;
+
+                                    select {
+                                        font-family: Calibri;
+                                        border: none;
+                                        outline: none;
                                     }
                                 }
-                                &.button-padding{
-                                    padding-right:48px;
-                                }  
-                                &.button-container{
-                                    width:100px;
-                                    text-align:right;             
+
+                                &.button-padding {
+                                    padding-right: 48px;
+                                }
+
+                                &.button-container {
+                                    width: 100px;
+                                    text-align: right;
                                 }
                             }
                         }
                     }
                 }
             }
-            .settings-side-note{
-                    display:inline-block;
-                    font-family: Calibri;
-                    font-size: 14px;
-                    color: rgba(26, 26, 26, 0.7);
-                    padding-bottom: 16px;
+
+            .settings-side-note {
+                display: inline-block;
+                font-family: Calibri;
+                font-size: 14px;
+                color: rgba(26, 26, 26, 0.7);
+                padding-bottom: 16px;
             }
-            .settings-data-row{
+
+            .settings-data-row {
                 padding-bottom: 20px;
-                &.power-rate-data{
-                    span{
+
+                &.power-rate-data {
+                    span {
                         font-size: 14px;
                         font-weight: bold;
                         width: 130px;
                     }
                 }
-                span{
-                    width:100px;
-                    display:inline-block;
+
+                span {
+                    width: 100px;
+                    display: inline-block;
                     font-family: Calibri;
                     font-size: 16px;
                     color: rgba(26, 26, 26, 0.7);
                 }
+
                 .form-control {
-                    display:inline;
+                    display: inline;
                 }
-                input[type=text],  input[type="password"]{
+
+                input[type=text], input[type="password"] {
                     width: 300px;
                     height: 40px;
                     color: #1a1a1a;
                     font-size: 14px;
                     padding: 5px;
                 }
-                input[type=text].small-input{
+
+                input[type=text].small-input {
                     width: 53px;
                     margin-right: 5px;
                 }
-                input[type=text].med-input{
+
+                input[type=text].med-input {
                     width: 210px;
                 }
-                select{
+
+                select {
                     font-weight: normal;
                     width: 105px;
                     height: 40px;
@@ -426,20 +498,140 @@ md-dialog{
                     color: #1a1a1a;
                     font-size: 14px;
                 }
-                textarea{
+
+                textarea {
                     width: 300px;
                     height: 150px;
                     color: #1a1a1a;
                     font-size: 14px;
                     padding: 5px;
                 }
-                label{
-                    display:inline-block;
+
+                label {
+                    display: inline-block;
                     font-family: Calibri;
                     font-size: 16px;
                     color: rgb(93,93,93);
                 }
             }
-        }        
+        }
+    }
+}
+
+.modal-dialog {
+    .settings-prop {
+        .powerplug-modal-header {
+            background-color: #ffffff;
+            padding-left: 32px;
+            padding-right: 34px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 64px;
+
+            > div {
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 24px;
+                font-weight: 300;
+                text-align: left;
+            }
+        }
+
+        .buttonsBlock {
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            background-color: rgb(248,248,248);
+
+            > div {
+                margin: 0 auto;
+            }
+
+            button {
+                height: 40px;
+                width: 120px;
+                border: none;
+                font-family: Calibri;
+                color: #ffffff;
+                font-size: 20.3px;
+                font-weight: 700;
+
+                &:first-child {
+                    background-color: #8cc63f;
+                }
+
+                &:last-child {
+                    background-color: #808080;
+                }
+            }
+        }
+
+        .modal-body {
+            background-color: #ffffff;
+            padding-left: 32px;
+            padding-right: 34px;
+
+            .date-picker {
+                display: inline-block;
+                .power-plug-date-picker {
+                    width:300px;
+                    input.form-control {
+                        padding: 24px 0px 24px 5px;
+                        border-color:#A9A9A9;
+                        color:black;
+                    }
+                    .input-group-addon{
+                         border-color:#A9A9A9;
+                    }
+                }
+            }
+
+            .settings-data-row {
+                padding-bottom: 20px;
+
+                >span {
+                    width: 100px;
+                    display: inline-block;
+                    font-family: Calibri;
+                    font-size: 16px;
+                    color: rgba(26,26,26,.7);
+                }
+
+                input[type=text], input[type="password"] {
+                    width: 300px;
+                    height: 40px;
+                    color: #1a1a1a;
+                    font-size: 14px;
+                    padding: 5px;
+                }
+
+                select {
+                    font-weight: normal;
+                    width: 105px;
+                    height: 40px;
+                    margin-left: 20px;
+                    margin-right: 10px;
+                    color: #1a1a1a;
+                    font-size: 14px;
+                }
+
+                textarea {
+                    width: 300px;
+                    height: 150px;
+                    color: #1a1a1a;
+                    font-size: 14px;
+                    padding: 5px;
+                }
+
+                label {
+                    display: inline-block;
+                    font-family: Calibri;
+                    font-size: 16px;
+                    color: rgb(93,93,93);
+                }
+            }
+        }
     }
 }

@@ -39,6 +39,7 @@
                             templateUrl: 'views/powerplan/dialogs/applicationCondition.html',
                             resolve: { appMetric: function () { return appMetric;}},
                             controller: DialogController,
+                            backdrop: 'static'
                         })
 
                         function DialogController($scope, $uibModalInstance, $document, appMetric) {
