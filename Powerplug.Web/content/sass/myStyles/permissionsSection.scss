@@ -1,7 +1,7 @@
 div.permissionsWrapper {
     background-color: #ffffff;
-    margin: 0px -50px 23px -50px;
-    padding: 0px 50px;
+    margin: 0 -50px 23px;
+    padding: 0 50px;
     > div {
         &:first-child {
             display: flex;
@@ -41,59 +41,67 @@ div.permissionsWrapper {
             }
         }
         &.tableWrapper {
-            margin-top: 13px;
-            background-color: #f8f8f8;
-            > div.tableHead {
-                display: flex;
-                padding: 23px 0px 9px 18px;
-                border-bottom: 1px solid #b3b3b3;
-                margin: 0px 16px;
-                font-family: Calibri;
-                color: rgba(26, 26, 26, 0.7);
-                font-size: 14px;
-                font-weight: 700;
-                letter-spacing: -0.182px;
-                > div {
-                    flex-grow: 1;
-                    width: 33.3%;
-                    &:last-child {
-                      position: absolute;
-                      right: 65px;
-                      width: initial;
-                      > span {
-                        font-family: Calibri;
-                        color: rgba(26, 26, 26, 0.7);
-                        font-size: 18px;
-                        font-weight: 700;
-                        &::before {
-                          margin-right: 9px;
-                          font-size: 20px;
+            background-color: #ddd;
+            padding: 23px 16px;
+            > table {
+                width: 100%;
+                > thead {
+                    border-bottom: 1px solid #b3b3b3;
+                    font-family: Calibri;
+                    color: rgba(26, 26, 26, 0.7);
+                    font-size: 14px;
+                    font-weight: 700;
+                    letter-spacing: -0.182px;
+                    > tr {
+                        > td {
+                            &:last-child {
+                                position: relative;
+                                > span {
+                                    &:last-child {
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 0;
+                                        font-family: Calibri;
+                                        color: rgba(26, 26, 26, 0.7);
+                                        font-size: 18px;
+                                        font-weight: 700;
+                                        &:before {
+                                            font-size: 21px;
+                                            margin-right: 9px;
+                                        }
+                                    }
+                                }
+                            }
                         }
-                        &:focus {
-                          outline: none;
-                        }
-                      }
                     }
                 }
-            }
-            > div.tableBody {
-              min-height: 125px;
-              > div.tableRow {
-                padding-left: 18px;
-                margin: 0px 16px;
-                display: flex;
-                font-family: Calibri;
-                color: rgba(26, 26, 26, 0.7);
-                font-size: 14px;
-                font-weight: 700;
-                letter-spacing: -0.182px;
-                height: 40px;
-                > div {
-                  flex-grow: 1;
-                  display: inline-block;
-                  line-height: 40px;
+                > tbody {
+                    > tr {
+                        height: 40px;
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 14px;
+                        font-weight: 700;
+                        letter-spacing: -0.182px;
+                        > td {
+                            &:last-child {
+                                position: relative;
+                                > span {
+                                    &:last-child {
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 50%;
+                                        transform: translate(0%, 50%);
+                                        cursor: pointer;
+                                        > i {
+                                            color: #8cc63f;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
         }
     }

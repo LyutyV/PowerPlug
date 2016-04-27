@@ -1,24 +1,4 @@
-﻿<!-- <div class="panel-body">
-    <div><button ng-click="addSavingApplication($event, -1, worktype)" class="btn btn-success">Add</button></div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <td>Application</td>
-                <td>Condition</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="application in  appMetrics">
-                <td>{{application.appName}}</td>
-                <td>{{application.counter.toLowerCase() === "cpu" ? "CPU usage > " + application.threshold + " percent" : application.counter.toLowerCase() === "io" ? "IO > " + (application.threshold / 1024) + " KB/Sec" : application.counter}}</td>
-                <td><button ng-click="addSavingApplication($event, application.appKey, worktype)" class="btn btn-warning">Edit</button></td>
-                <td><button ng-click="removeSavingApplication(application.appKey, worktype)" class="btn btn-danger">Remove</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div> -->
-
-<div class="container-fluid tab-line">
+﻿<div class="container-fluid tab-line">
     <span>Do not Perform the operation while:</span>
     <span class="buttonTypeOneRemove buttonTypeOne">Remove</span>
     <span class="buttonTypeOneEdit buttonTypeOne">Edit</span>

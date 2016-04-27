@@ -1,4 +1,5 @@
-﻿var eventHandler = {
+﻿
+var eventHandler = {
     vm: {},
     $scope: {},
     $document: [],
@@ -52,7 +53,10 @@
                 if (isEventFound === false) {
                     if (!eventHandler.vm.savingPlan.events) {
                         eventHandler.vm.savingPlan.events = [];
-                        eventHandler.vm.savingPlan.events.push({ eventType: eventHandler.vm.currentEvent, scripts: [] });
+                        eventHandler.vm.savingPlan.events.push({
+                            eventType: eventHandler.vm.currentEvent,
+                            scripts: []
+                        });
                     }
                     fillScripts(0);
                 }
@@ -71,7 +75,12 @@
                         });
 
                         if (!isExist) {
-                            eventHandler.vm.savingPlan.events[keyEvent].scripts.push({ context: 'System', scriptGUID: newScriptGUID, scriptName: newScriptName, scriptId: newScriptId });
+                            eventHandler.vm.savingPlan.events[keyEvent].scripts.push({
+                                context: 'System',
+                                scriptGUID: newScriptGUID,
+                                scriptName: newScriptName,
+                                scriptId: newScriptId
+                            });
                         }
                     });
 
@@ -85,26 +94,98 @@
                 $mdDialog.cancel();
             };
 
+            // tmp model for filling Add Permissions dialog
+            $scope.users = [{
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }, {
+                name: 'User Name',
+                logonName: 'Logon Name',
+                description: 'Description',
+                isInFolder: true
+            }]
+
+            // end tmp model for filling Add Permissions dialog
+
             // Select all checkboxes function in add script dialog
-            $scope.checkAll = function(seed) {
-              switch (seed) {
-                case 'scripts':
-                {
-                  if ($scope.selectedAllScripts) {
-                      $scope.selectedAllScripts = true;
-                  } else {
-                      $scope.selectedAllScripts = false;
-                  }
-                  angular.forEach($scope.eventScripts, function (script) {
-                      script.selected = $scope.selectedAllScripts;
-                  });
-                  break;
+            $scope.checkAll = function (seed) {
+                    switch (seed) {
+                    case 'users':
+                        {
+                            if ($scope.selectedAllUsers) {
+                                $scope.selectedAllUsers = true;
+                            } else {
+                                $scope.selectedAllUsers = false;
+                            }
+                            angular.forEach($scope.users, function (user) {
+                                user.selected = $scope.selectedAllUsers;
+                            });
+                            break;
+                        }
+                    case 'scripts':
+                        {
+                            if ($scope.selectedAllScripts) {
+                                $scope.selectedAllScripts = true;
+                            } else {
+                                $scope.selectedAllScripts = false;
+                            }
+                            angular.forEach($scope.eventScripts, function (script) {
+                                script.selected = $scope.selectedAllScripts;
+                            });
+                            break;
+                        }
+                    default:
+                        console.log('Error. Default value of select all (groups or comps) agr');
+                    }
                 }
-                default:
-                  console.log('Error. Default value of select all (groups or comps) agr');
-              }
-            }
-            // End select all checkboxes function in add script dialog
+                // End select all checkboxes function in add script dialog
         }
     },
     showEventScripts: function (eventType) {

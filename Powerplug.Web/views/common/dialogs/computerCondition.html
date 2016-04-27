@@ -29,7 +29,7 @@
                     <div class="row">
                       <div class="col-xs-12">
                         <span>{{savingComputerList.length}} computers</span>
-                        <input type="text" name="computerSearch" placeholder="Search">
+                        <input type="text" placeholder="Search" name="computerSearch" ng-model="computerSearch.name">
                       </div>
                     </div>
                     <div class="row">
@@ -46,7 +46,7 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr ng-repeat="computer in savingComputerList">
+                                  <tr ng-repeat="computer in savingComputerList|filter:computerSearch">
                                       <td>
                                           <input id="{{$index}}" type="checkbox" data-name="{{computer.name}}" class="computer-selection custom-checkbox-green-type00"/>
                                           <label for='{{$index}}'></label>
