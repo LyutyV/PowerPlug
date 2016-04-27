@@ -293,6 +293,7 @@ md-dialog{
             background-color: #ffffff;
             padding-left: 32px;
             padding-right: 34px;
+            .help-block.error{color: #a94442}
             .settings-table-container{
                 padding-top: 25px;
                 .action-settings {
@@ -399,7 +400,10 @@ md-dialog{
                     font-size: 16px;
                     color: rgba(26, 26, 26, 0.7);
                 }
-                input[type=text]{
+                .form-control {
+                    display:inline;
+                }
+                input[type=text],  input[type="password"]{
                     width: 300px;
                     height: 40px;
                     color: #1a1a1a;

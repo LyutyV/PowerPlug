@@ -1,11 +1,8 @@
 ﻿var computerGroupPopupHandler = {
     vm: {},
-    init: function (vm, $scope, $document, $mdDialog, $mdMedia) {
+    init: function (vm, $mdDialog) {
         computerGroupPopupHandler.vm = vm;
-        computerGroupPopupHandler.$scope = $scope;
-        computerGroupPopupHandler.$document = $document;
         computerGroupPopupHandler.$mdDialog = $mdDialog;
-        computerGroupPopupHandler.$mdMedia = $mdMedia;
     },
  
     openComputerGroupDialog: function (groupIndex) {
@@ -18,7 +15,7 @@
             controller: DialogController,
         });
 
-        function DialogController($scope, $mdDialog, $document, groupIndex) {
+        function DialogController($scope, $mdDialog, groupIndex) {
             //================Private============================
             var _editGroup;
             var _returnObjByPromise = { groupFields: {}}

@@ -1,11 +1,8 @@
 ﻿var IPMaksPopupHandler = {
     vm: {},
-    init: function (vm, $scope, $document, $mdDialog, $mdMedia) {
+    init: function (vm, $mdDialog) {
         IPMaksPopupHandler.vm = vm;
-        IPMaksPopupHandler.$scope = $scope;
-        IPMaksPopupHandler.$document = $document;
         IPMaksPopupHandler.$mdDialog = $mdDialog;
-        IPMaksPopupHandler.$mdMedia = $mdMedia;
     },
  
     openIPMaskDialog: function (computerIndex) {
@@ -18,7 +15,7 @@
             controller: DialogController,
         });
 
-        function DialogController($scope, $mdDialog, $document, computerIndex) {
+        function DialogController($scope, $mdDialog, computerIndex) {
             //===============private===============/
             var _selectedGroup;
             var _returnObjByPromise = { computerFields: {} };

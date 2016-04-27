@@ -1,7 +1,6 @@
 ﻿var computersNameDialodHandler = {
-    init: function ($mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource) {
+    init: function ($mdDialog, ComputersResource, ComputerGroupsResource) {
         computersHandler.$mdDialog = $mdDialog;
-        computersHandler.$mdMedia = $mdMedia;
         computersHandler.ComputersResource = ComputersResource;
         computersHandler.ComputerGroupsResource = ComputerGroupsResource;
     },

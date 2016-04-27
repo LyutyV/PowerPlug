@@ -453,6 +453,8 @@ md-dialog.settings-prop > md-content {
   background-color: #ffffff;
   padding-left: 32px;
   padding-right: 34px; }
+  md-dialog.settings-prop > md-content .help-block.error {
+    color: #a94442; }
   md-dialog.settings-prop > md-content .settings-table-container {
     padding-top: 25px; }
     md-dialog.settings-prop > md-content .settings-table-container .action-settings {
@@ -533,7 +535,9 @@ md-dialog.settings-prop > md-content {
       font-family: Calibri;
       font-size: 16px;
       color: rgba(26, 26, 26, 0.7); }
-    md-dialog.settings-prop > md-content .settings-data-row input[type=text] {
+    md-dialog.settings-prop > md-content .settings-data-row .form-control {
+      display: inline; }
+    md-dialog.settings-prop > md-content .settings-data-row input[type=text], md-dialog.settings-prop > md-content .settings-data-row input[type="password"] {
       width: 300px;
       height: 40px;
       color: #1a1a1a;

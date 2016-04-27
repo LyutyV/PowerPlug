@@ -1,11 +1,8 @@
 ﻿var computerMaksPopupHandler = {
     vm: {},
-    init: function (vm, $scope, $document, $mdDialog, $mdMedia) {
+    init: function (vm, $mdDialog) {
         computerMaksPopupHandler.vm = vm;
-        computerMaksPopupHandler.$scope = $scope;
-        computerMaksPopupHandler.$document = $document;
         computerMaksPopupHandler.$mdDialog = $mdDialog;
-        computerMaksPopupHandler.$mdMedia = $mdMedia;
     },
  
     openComputerMaskDialog: function (computerIndex) {
@@ -18,7 +15,7 @@
             controller: DialogController,
         });
 
-        function DialogController($scope, $mdDialog, $document, computerIndex) {
+        function DialogController($scope, $mdDialog, computerIndex) {
             //===============private===============/
             var _selectedGroup;
             var _returnObjByPromise = { computerFields: {} };
