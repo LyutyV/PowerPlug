@@ -1,11 +1,10 @@
 ﻿var computersHandler = {
     vm: {},
-    init: function (vm, $scope, $document, $mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource) {
+    init: function (vm, $scope, $document, $mdDialog, ComputersResource, ComputerGroupsResource) {
         computersHandler.vm = vm;
         computersHandler.$scope = $scope;
         computersHandler.$document = $document;
         computersHandler.$mdDialog = $mdDialog;
-        computersHandler.$mdMedia = $mdMedia;
         computersHandler.ComputersResource = ComputersResource;
         computersHandler.ComputerGroupsResource = ComputerGroupsResource;
         computersNameDialodHandler.init($mdDialog, ComputersResource, ComputerGroupsResource);
