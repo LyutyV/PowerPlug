@@ -572,9 +572,12 @@ md-dialog {
             background-color: #ffffff;
             padding-left: 32px;
             padding-right: 34px;
-
+           .middle{
+                vertical-align:middle;
+           }
             .date-picker {
                 display: inline-block;
+                 vertical-align:middle;
                 .power-plug-date-picker {
                     width:300px;
                     input.form-control {
