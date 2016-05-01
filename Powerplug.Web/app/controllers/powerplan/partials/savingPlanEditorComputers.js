@@ -1,120 +1,169 @@
-﻿var permissionHandler = {
+﻿var computersHandler = {
     vm: {},
-    init: function (vm, $scope, $document, $mdDialog, $mdMedia) {
-        permissionHandler.vm = vm;
-        permissionHandler.$scope = $scope;
-        permissionHandler.$document = $document;
-        permissionHandler.$mdDialog = $mdDialog;
-        permissionHandler.$mdMedia = $mdMedia;
+    init: function (vm, $scope, $document, $mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource) {
+        computersHandler.vm = vm;
+        computersHandler.$scope = $scope;
+        computersHandler.$document = $document;
+        computersHandler.$mdDialog = $mdDialog;
+        computersHandler.$mdMedia = $mdMedia;
+        computersHandler.ComputersResource = ComputersResource;
+        computersHandler.ComputerGroupsResource = ComputerGroupsResource;
+        computersNameDialodHandler.init($mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource);
+
     },
-    addPermissionsDialog: function (ev) {
-        permissionHandler.$mdDialog.show({
-            templateUrl: 'views/powerplan/dialogs/addPermission.html',
+    setComputerItems: function () {
+        computersHandler.vm.computersFromDB = [];
+        computersHandler.vm.computerGroupsFromDB = [];
+        if (computersHandler.vm.savingPlan.computers) {
+            angular.forEach(computersHandler.vm.savingPlan.computers, function (valueComputer, keyComputer) {
+                computersHandler.vm.computersFromDB.push(valueComputer);
+            });
+        }
+        if (computersHandler.vm.savingPlan.compGroups) {
+            angular.forEach(computersHandler.vm.savingPlan.compGroups, function (valueComputerGroup, keyComputerGroup) {
+                computersHandler.vm.computerGroupsFromDB.push(valueComputerGroup);
+            });
+        }
+    },
+    addComputerDialog: function (computersArr) {
+        computersNameDialodHandler.addComputerDialog(computersArr);
+    },
+    addComputerGroupsDialog: function (ev) {
+        computersHandler.$mdDialog.show({
+            templateUrl: 'views/powerplan/dialogs/computerGroups.html',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose: false,
             bindToController: true,
-            fullscreen: permissionHandler.$mdMedia('xs') || permissionHandler.$mdMedia('sm'), /* TODO: useFullScreen,*/
+            fullscreen: computersHandler.$mdMedia('xs') || computersHandler.$mdMedia('sm'), /* TODO: useFullScreen,*/
             locals: {},
             controller: DialogController,
         });
-        permissionHandler.$scope.$watch(function () {
-            return permissionHandler.$mdMedia('xs') || permissionHandler.$mdMedia('sm');
+        computersHandler.$scope.$watch(function () {
+            return computersHandler.$mdMedia('xs') || computersHandler.$mdMedia('sm');
         }, function (wantsFullScreen) {
-            permissionHandler.$scope.customFullscreen = (wantsFullScreen === true);
+            computersHandler.$scope.customFullscreen = (wantsFullScreen === true);
         });
 
         function DialogController($scope, $mdDialog, $document) {
-            $scope.addPermission = function () {
-                $mdDialog.hide();
-            }
+            console.log(computersHandler);
+            console.log(computersHandler.ComputerGroupsResource);
+            computersHandler.ComputerGroupsResource.groups.query(function (data) {
+                $scope.computerGroupsList = data;
+            }, function (err) {
+                onError(err);
+            });
 
-            $scope.closePermissionDialog = function () {
-                $mdDialog.cancel();
-            }
-            // Select all checkboxes function in add script dialog
-            $scope.checkAll = function (seed) {
-                    switch (seed) {
-                    case 'users':
-                        {
-                            if ($scope.selectedAllUsers) {
-                                $scope.selectedAllUsers = true;
-                            } else {
-                                $scope.selectedAllUsers = false;
+            $scope.addComputerGroups = function () {
+                angular.forEach(angular.element('.computer-group-selection:checked'), function (value, key) {
+                    var newComputerGroupId = value.getAttribute('data-id');
+                    var newComputerGroupName = value.getAttribute('data-name');
+                    var isExist = false;
+                    if (computersHandler.vm.savingPlan.compGroups) {
+                        angular.forEach(computersHandler.vm.savingPlan.compGroups, function (valueContainer, keyContainer) {
+                            if (valueContainer.groupGUID === newComputerGroupId) {
+                                isExist = true;
                             }
-                            angular.forEach($scope.users, function (user) {
-                                user.selected = $scope.selectedAllUsers;
-                            });
-                            break;
-                        }
-                    default:
-                        console.log('Error. Default value of select all (groups or comps) agr');
+                        });
                     }
-                }
 
-            // End select all checkboxes function in add script dialog
+                    if (!isExist) {
+                        if (!computersHandler.vm.savingPlan.compGroups) {
+                            computersHandler.vm.savingPlan.compGroups = [];
+                        }
+                        computersHandler.vm.savingPlan.compGroups.push({ groupName: newComputerGroupName, groupGUID: newComputerGroupId });
+                    }
+                });
 
-            // tmp model for filling Add Permissions dialog
-            $scope.users = [{
-                name: 'User Name',
-                logonName: 'Logon Name',
-                description: 'Description',
-                isInFolder: true
-            }, {
-                name: 'User Name',
-                logonName: 'Logon Name',
-                description: 'Description',
-                isInFolder: true
-            }, {
-                name: 'User Name',
-                logonName: 'Logon Name',
-                description: 'Description',
-                isInFolder: true
-            }, {
-                name: 'User Name',
-                logonName: 'Logon Name',
-                description: 'Description',
-                isInFolder: true
-            }, {
-                name: 'User Name',
-                logonName: 'Logon Name',
-                description: 'Description',
-                isInFolder: true
-            }, {
-                name: 'User Name',
-                logonName: 'Logon Name',
-                description: 'Description',
-                isInFolder: true
-            }, {
-                name: 'User Name',
-                logonName: 'Logon Name',
-                description: 'Description',
-                isInFolder: true
-            }, {
-                name: 'User Name',
-                logonName: 'Logon Name',
-                description: 'Description',
-                isInFolder: true
-            }, {
-                name: 'User Name',
-                logonName: 'Logon Name',
-                description: 'Description',
-                isInFolder: true
-            }, {
-                name: 'User Name',
-                logonName: 'Logon Name',
-                description: 'Description',
-                isInFolder: true
-            }, {
-                name: 'User Name',
-                logonName: 'Logon Name',
-                description: 'Description',
-                isInFolder: true
-            }]
+                $mdDialog.hide();
+            };
 
-            // end tmp model for filling Add Permissions dialog
-
+            $scope.closeComputerGroupsDialog = function () {
+                $mdDialog.cancel();
+            };
         }
 
+    },
+    removeComputerGroups: function () {
+        angular.forEach(angular.element('.computer-group-selection:checked'), function (value, key) {
+            var computerGroupId = value.getAttribute('data-id');
+            angular.forEach(computersHandler.vm.savingPlan.compGroups, function (valueCompGroup, keyCompGroup) {
+                if (computerGroupId === valueCompGroup.groupGUID) {
+                    computersHandler.vm.savingPlan.compGroups.splice(keyCompGroup, 1);
+                }
+            });
+        });
+    },
+    removeComputers: function () {
+        angular.forEach(angular.element('.computer-selection:checked'), function (value, key) {
+            var computerName = value.getAttribute('data-name');
+            angular.forEach(computersHandler.vm.savingPlan.computers, function (valueComputer, keyComputer) {
+                if (computerName === valueComputer.name) {
+                    computersHandler.vm.savingPlan.computers.splice(keyComputer, 1);
+                }
+            });
+        });
+    },
+    prepareComputersDelta: function () {
+        addedComputers = [];
+        removedComputers = [];
+
+        angular.forEach(computersHandler.vm.computersFromDB, function (valueDB, keyDB) {
+            var isItemExist = false;
+            angular.forEach(computersHandler.vm.savingPlan.computers, function (valueComputer, keyComputer) {
+                if (valueComputer.name === valueDB.name) {
+                    isItemExist = true;
+                }
+            });
+            if (!isItemExist) {
+                removedComputers.push(valueDB);
+            }
+        });
+
+        angular.forEach(computersHandler.vm.savingPlan.computers, function (valueComputer, keyComputer) {
+            var isItemExist = false;
+            angular.forEach(computersHandler.vm.computersFromDB, function (valueDB, keyDB) {
+                if (valueComputer.name === valueDB.name) {
+                    isItemExist = true;
+                }
+            });
+            if (!isItemExist) {
+                addedComputers.push(valueComputer);
+            }
+        });
+
+        computersHandler.vm.savingPlan.addComputers = addedComputers;
+        computersHandler.vm.savingPlan.removeComputers = removedComputers;
+    },
+    prepareComputerGroupsDelta: function () {
+        addedComputerGroups = [];
+        removedComputerGroups = [];
+
+        angular.forEach(computersHandler.vm.computerGroupsFromDB, function (valueDB, keyDB) {
+            var isItemExist = false;
+            angular.forEach(computersHandler.vm.savingPlan.compGroups, function (valueComputerGroup, keyComputerGroup) {
+                if (valueComputerGroup.groupGUID === valueDB.groupGUID) {
+                    isItemExist = true;
+                }
+            });
+            if (!isItemExist) {
+                removedComputerGroups.push(valueDB);
+            }
+        });
+
+        angular.forEach(computersHandler.vm.savingPlan.compGroups, function (valueComputerGroup, keyComputerGroup) {
+            var isItemExist = false;
+            angular.forEach(computersHandler.vm.computerGroupsFromDB, function (valueDB, keyDB) {
+                if (valueComputerGroup.groupGUID === valueDB.groupGUID) {
+                    isItemExist = true;
+                }
+            });
+            if (!isItemExist) {
+                addedComputerGroups.push(valueComputerGroup);
+            }
+        });
+
+        computersHandler.vm.savingPlan.addCompGroups = addedComputerGroups;
+        computersHandler.vm.savingPlan.removeCompGroups = removedComputerGroups;
     }
 };

@@ -2002,6 +2002,29 @@ div.computersWrapper {
                       margin-right: 5px;
                       content: '\f1f8'; }
 
+nav > div > .logo {
+  background: url("/content/images/leftMenu/PowerPlug.png") no-repeat center; }
+
+nav > div > ul > li[aria-expanded=true] {
+  border-top: 1px solid #494646; }
+
+nav > div > ul > li > ul {
+  height: 48px;
+  width: 246px;
+  margin-left: -47px;
+  padding-left: 47px;
+  line-height: 48px; }
+  nav > div > ul > li > ul > li {
+    list-style: none;
+    background-color: #3d3a3a;
+    height: 48px;
+    border-bottom: 1px solid #666666;
+    height: 48px;
+    width: 246px;
+    margin-left: -47px;
+    padding-left: 47px;
+    line-height: 48px; }
+
 .overview {
   margin: -15px -50px 0px -50px;
   padding-top: 15px;

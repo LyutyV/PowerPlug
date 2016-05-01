@@ -1,0 +1,32 @@
+nav {
+  > div {
+    > .logo {
+      // background: url('/content/images/leftMenu/PowerPlug.png') no-repeat center;
+    }
+    > ul {
+      > li {
+        &[aria-expanded=true] {
+          border-top: 1px solid #494646;
+        }
+        > ul {
+          height: 48px;
+          width: 246px;
+          margin-left: -47px;
+          padding-left: 47px;
+          line-height: 48px;
+          > li {
+            list-style: none;
+            background-color: #3d3a3a;
+            height: 48px;
+            border-bottom: 1px solid #666666;
+            height: 48px;
+            width: 246px;
+            margin-left: -47px;
+            padding-left: 47px;
+            line-height: 48px;
+          }
+        }
+      }
+    }
+  }
+}
