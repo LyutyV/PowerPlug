@@ -9,9 +9,27 @@
   color: #8ecc38;
   margin-right: 1px; }
 
-.savingPlans > .searchBlock {
-  text-align: right; }
-  .savingPlans > .searchBlock > input {
+.savingPlans .manageBlock {
+  float: left;
+  padding-top: 30px; }
+  .savingPlans .manageBlock > .planTitle {
+    font-family: Calibri;
+    color: #333333;
+    font-size: 20px;
+    letter-spacing: -0.26px;
+    font-weight: 700; }
+  .savingPlans .manageBlock > .manageButton {
+    color: #8CC63F;
+    font-size: 20px;
+    font-family: Calibri;
+    font-weight: 700;
+    display: inline-block;
+    padding-left: 10px; }
+
+.savingPlans .searchBlock {
+  text-align: right;
+  float: right; }
+  .savingPlans .searchBlock > input {
     height: 37px;
     width: 300px;
     border: 1px solid #f5f5f5;
@@ -20,28 +38,28 @@
     margin-bottom: 58px;
     /* Firefox 19+ */
     /* Firefox 18- */ }
-    .savingPlans > .searchBlock > input::-webkit-input-placeholder {
+    .savingPlans .searchBlock > input::-webkit-input-placeholder {
       font-family: Calibri;
       color: rgba(102, 102, 102, 0.7);
       font-size: 15px;
       font-weight: 300;
       letter-spacing: -0.203px;
       padding-left: 5px; }
-    .savingPlans > .searchBlock > input::-moz-placeholder {
+    .savingPlans .searchBlock > input::-moz-placeholder {
       font-family: Calibri;
       color: rgba(102, 102, 102, 0.7);
       font-size: 15px;
       font-weight: 300;
       letter-spacing: -0.203px;
       padding-left: 5px; }
-    .savingPlans > .searchBlock > input:-moz-placeholder {
+    .savingPlans .searchBlock > input:-moz-placeholder {
       font-family: Calibri;
       color: rgba(102, 102, 102, 0.7);
       font-size: 15px;
       font-weight: 300;
       letter-spacing: -0.203px;
       padding-left: 5px; }
-    .savingPlans > .searchBlock > input:-ms-input-placeholder {
+    .savingPlans .searchBlock > input:-ms-input-placeholder {
       font-family: Calibri;
       color: rgba(102, 102, 102, 0.7);
       font-size: 15px;
@@ -57,7 +75,7 @@
   .savingPlans > span:nth-child(2) > span {
     font-family: Calibri;
     color: #333333;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: -0.26px; }
     .savingPlans > span:nth-child(2) > span:first-child {
       font-weight: 700; }
@@ -225,6 +243,26 @@ nav {
 
 .settings {
   padding-top: 20px; }
+  .settings > .list-row-container {
+    width: 1010px;
+    margin: auto;
+    text-align: center; }
+    .settings > .list-row-container > .list-column-container {
+      display: inline-block;
+      width: 170px;
+      margin: 40px;
+      text-align: center;
+      cursor: pointer; }
+      .settings > .list-row-container > .list-column-container > .list-column-title {
+        font-family: Calibri;
+        font-weight: bold;
+        font-size: 15px;
+        padding-top: 12px;
+        padding-bottom: 12px; }
+        .settings > .list-row-container > .list-column-container > .list-column-title > .list-column-desc {
+          font-family: Calibri;
+          font-weight: normal;
+          font-size: 13px; }
   .settings .nav-tabs > li {
     margin-bottom: 5px; }
     .settings .nav-tabs > li > a, .settings .nav-tabs > li > a:focus, .settings .nav-tabs > li > a:hover {
@@ -344,6 +382,117 @@ nav {
       color: rgba(26, 26, 26, 0.7);
       font-size: 14px;
       padding-top: 10px; }
+  .settings .settings-content .locations-container {
+    width: 250px;
+    float: left; }
+    .settings .settings-content .locations-container > .locations-title {
+      padding-bottom: 10px; }
+      .settings .settings-content .locations-container > .locations-title > span {
+        color: #4d4d4d;
+        font-weight: 700;
+        font-size: 14px; }
+    .settings .settings-content .locations-container > .locations-list {
+      border: solid 1px #4d4d4d;
+      height: 400px;
+      padding: 12px; }
+      .settings .settings-content .locations-container > .locations-list > ul > li {
+        list-style: none; }
+        .settings .settings-content .locations-container > .locations-list > ul > li > span {
+          border-radius: 50%;
+          background-color: #8fc73e;
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          margin: -2px 4px 0 0;
+          vertical-align: middle; }
+  .settings .settings-content .locations-details-container {
+    padding-left: 20px;
+    overflow: hidden; }
+    .settings .settings-content .locations-details-container > .location-input-container > .input-label {
+      color: #4d4d4d;
+      font-weight: 700;
+      font-size: 14px;
+      padding-bottom: 10px; }
+    .settings .settings-content .locations-details-container > .location-input-container > .input-text {
+      padding-bottom: 25px; }
+      .settings .settings-content .locations-details-container > .location-input-container > .input-text > input[type=text] {
+        width: 100%;
+        border: solid 1px #4d4d4d;
+        height: 44px;
+        padding: 10px; }
+      .settings .settings-content .locations-details-container > .location-input-container > .input-text > textarea {
+        width: 100%;
+        border: solid 1px #4d4d4d;
+        height: 65px;
+        padding: 10px; }
+    .settings .settings-content .locations-details-container > .location-input-container > .input-text-short input[type=text] {
+      width: 80%;
+      border: solid 1px #4d4d4d;
+      height: 44px;
+      padding: 10px;
+      vertical-align: middle; }
+    .settings .settings-content .locations-details-container > .location-input-container > .input-text-short input[type=button].btn-save-green {
+      width: 19%;
+      height: 44px;
+      background-color: #8cc63f;
+      border: none;
+      text-align: center;
+      color: #fff;
+      font-size: 19px;
+      font-weight: bold;
+      font-family: Calibri;
+      margin-left: 1%;
+      outline: none;
+      vertical-align: middle;
+      display: inline-block; }
+  .settings .settings-content .users-container {
+    float: left;
+    width: 500px; }
+    .settings .settings-content .users-container > .users-buttons-container {
+      border-right: solid 1px #dedede;
+      margin-right: 3px; }
+      .settings .settings-content .users-container > .users-buttons-container > .users-title {
+        color: #4d4d4d;
+        font-weight: 700;
+        font-size: 16px; }
+      .settings .settings-content .users-container > .users-buttons-container > .users-add-button {
+        padding-left: 185px;
+        display: inline-block; }
+      .settings .settings-content .users-container > .users-buttons-container > .users-remove-button {
+        display: inline-block; }
+    .settings .settings-content .users-container > .users-table-container {
+      width: 500px;
+      position: fixed;
+      bottom: 120px;
+      top: 144px; }
+      .settings .settings-content .users-container > .users-table-container > .users-table-positioning {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        overflow-y: auto;
+        right: 3px;
+        left: 0px;
+        border-right: solid 1px #dedede;
+        padding-right: 20px; }
+  .settings .settings-content .roles-container {
+    padding-left: 20px;
+    overflow: hidden; }
+    .settings .settings-content .roles-container .role-padding {
+      padding-top: 10px; }
+      .settings .settings-content .roles-container .role-padding > .role-desc-container {
+        width: 300px;
+        float: right; }
+        .settings .settings-content .roles-container .role-padding > .role-desc-container > .role-desc-title {
+          color: #4d4d4d;
+          font-weight: 700;
+          font-size: 16px;
+          padding-bottom: 10px; }
+      .settings .settings-content .roles-container .role-padding > .role-table-container {
+        overflow: hidden; }
+        .settings .settings-content .roles-container .role-padding > .role-table-container > ul > li {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          list-style: none; }
   .settings .settings-content .action-settings {
     font-family: Calibri;
     color: rgba(26, 26, 26, 0.7);
@@ -658,7 +807,8 @@ md-dialog.settings-prop > md-content {
 * {
   margin: 0px;
   padding: 0px;
-  line-height: normal; }
+  line-height: normal;
+  outline: none; }
 
 html {
   height: 100%;

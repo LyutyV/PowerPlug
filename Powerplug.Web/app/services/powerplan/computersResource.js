@@ -5,6 +5,6 @@
         .factory('ComputersResource', ['$resource', 'appSettings', ComputersResource]);
 
     function ComputersResource($resource, appSettings) {
-        return $resource(appSettings.serverPath + 'api/pc/computers');
+        return $resource(appSettings.serverPath + 'api/pc/computers', { status : 'all' });
     }
 }());

@@ -62,7 +62,6 @@
     //=================================public================================
     var api = {};
     api.init = function (viewModal, $uibModal, SavingPlansResource) {
-        console.log(viewModal);
         _vm = viewModal;
         _uibModal = $uibModal;
         _savingPlansResource = SavingPlansResource;

@@ -1,6 +1,29 @@
 .settings {
     padding-top: 20px;
-
+    > .list-row-container{
+        width:1010px;
+        margin:auto;
+        text-align: center;
+        > .list-column-container{
+            display:inline-block;
+            width:170px;
+            margin:40px;
+            text-align:center;
+            cursor:pointer;
+            > .list-column-title{
+                font-family:Calibri;
+                font-weight:bold;
+                font-size:15px;
+                padding-top:12px;
+                padding-bottom:12px;
+                > .list-column-desc{
+                    font-family:Calibri;
+                    font-weight:normal;
+                    font-size:13px;
+                }
+            }
+        }
+    }
     .nav-tabs > li {
         margin-bottom: 5px;
 
@@ -166,6 +189,149 @@
                 color: rgba(26, 26, 26, 0.7);
                 font-size: 14px;
                 padding-top: 10px;
+            }
+        }
+
+        .locations-container{
+            width:250px;
+            float:left;
+            > .locations-title{
+                padding-bottom:10px;
+                > span{
+                    color: #4d4d4d;
+                    font-weight: 700;
+                    font-size: 14px;
+                }
+            }
+            > .locations-list{
+                border:solid 1px #4d4d4d;
+                height:400px;
+                padding:12px;
+                > ul > li{
+                    list-style:none;
+                    > span{
+                        border-radius:50%;
+                        background-color: #8fc73e;    
+                        display: inline-block;    
+                        width: 16px;    
+                        height: 16px;    
+                        margin: -2px 4px 0 0;    
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        .locations-details-container{
+            padding-left:20px;
+            overflow:hidden;
+            > .location-input-container{
+                > .input-label{
+                    color: #4d4d4d;
+                    font-weight: 700;
+                    font-size: 14px;
+                    padding-bottom:10px;
+                }
+                > .input-text{
+                    padding-bottom:25px;
+                    > input[type=text]{
+                        width:100%;
+                        border:solid 1px #4d4d4d ;
+                        height:44px;
+                        padding:10px;
+                    }
+                    > textarea{
+                        width:100%;
+                        border:solid 1px #4d4d4d ;
+                        height:65px;
+                        padding:10px;
+                    }
+                }
+                > .input-text-short{
+                    input[type=text]{
+                        width:80%;
+                        border:solid 1px #4d4d4d;
+                        height:44px;
+                        padding:10px;
+                        vertical-align:middle;
+                    }
+                    input[type=button].btn-save-green{
+                        width: 19%;    
+                        height: 44px;    
+                        background-color: #8cc63f;    
+                        border: none;    
+                        text-align: center;    
+                        color: #fff;    
+                        font-size: 19px;    
+                        font-weight: bold;    
+                        font-family: Calibri;   
+                        margin-left: 1%;    
+                        outline: none;
+                        vertical-align:middle;
+                        display:inline-block;
+                    }
+                }
+            }
+        }
+
+        .users-container{
+            float:left;
+            width:500px;
+            > .users-buttons-container{
+                border-right: solid 1px #dedede;
+                margin-right:3px;
+                > .users-title{
+                    color: #4d4d4d;
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+                > .users-add-button{
+                    padding-left: 185px;
+                    display:inline-block;
+                }
+                > .users-remove-button{
+                    display:inline-block;
+                }
+            }
+            > .users-table-container{
+                width:500px;
+                position:fixed;
+                bottom: 120px;
+                top: 144px;
+                > .users-table-positioning{
+                    position:absolute;
+                    top: 0px;
+                    bottom: 0px;
+                    overflow-y:auto;
+                    right: 3px;
+                    left: 0px;
+                    border-right: solid 1px #dedede;
+                    padding-right: 20px;
+                }
+            }
+        }
+        .roles-container{
+            padding-left:20px;
+            overflow:hidden;
+            .role-padding{
+                padding-top:10px;
+                > .role-desc-container{
+                    width:300px;
+                    float:right;
+                    > .role-desc-title{
+                        color: #4d4d4d;
+                        font-weight: 700;
+                        font-size: 16px;
+                        padding-bottom:10px;
+                    }
+                }
+                > .role-table-container{
+                    overflow:hidden;
+                    > ul > li{
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        list-style: none;
+                    }
+                }
             }
         }
 

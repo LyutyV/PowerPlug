@@ -1,14 +1,14 @@
 ﻿<div class="settings">
     <div class="settings-content">
         <div class="clearfix">
-            <div class="pull-left" style="width:500px;">
-                <div style="border-right: solid 1px #dedede;margin-right:3px;">
-                    <span style="color: #4d4d4d;font-weight: 700;font-size: 16px;">Group and Users</span>
-                    <span class="buttonTypeOneAdd action-settings" ng-click="vm.openAddUserDialog()" style="padding-left: 185px;display:inline-block;">Add</span>
-                    <span class="buttonTypeOneRemove action-settings" ng-click="vm.showScriptDialog(0)" style="display:inline-block;">Remove</span>
+            <div class="users-container">
+                <div class="users-buttons-container">
+                    <span class="users-title">Group and Users</span>
+                    <span class="buttonTypeOneAdd action-settings users-add-button" ng-click="vm.openAddUserDialog()">Add</span>
+                    <span class="buttonTypeOneRemove action-settings users-remove-button" ng-click="vm.showScriptDialog(0)">Remove</span>
                 </div>
-                <div style="width:500px;position:fixed;bottom: 120px;top: 144px;">
-                    <div style="position:absolute;top: 0px;bottom: 0px;overflow-y:auto;right: 3px;left: 0px;border-right: solid 1px #dedede;padding-right: 20px;">
+                <div class="users-table-container">
+                    <div class="users-table-positioning">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -34,21 +34,21 @@
                     </div>
                 </div>
             </div>
-            <div style="padding-left:20px;overflow:hidden;">
+            <div class="roles-container">
                 <uib-tabset active="active">
                     <uib-tab index="0" heading="Roles">
                         <div class="green-line"></div>
-                        <div class="clearfix" style="padding-top:10px;">
-                            <div class="pull-right" style="width:300px;">
-                                <div style="color: #4d4d4d;font-weight: 700;font-size: 16px;padding-bottom:10px;">Permission Description</div>
+                        <div class="clearfix role-padding">
+                            <div class="role-desc-container">
+                                <div class="role-desc-title">Permission Description</div>
                                 <div>
                                     dsfdsfdsf dsf sedf dsfdsfdsfds fsdfdsdsfsdfdsf
                                     sd f ds fds fds fdsfdsfdsfd dsfdsfd sdfsdfsdfsdf sdf sdfdsfdsfdsfdsds
                                 </div>
                             </div>
-                            <div style="overflow:hidden;">
+                            <div class="role-table-container">
                                 <ul>
-                                    <li ng-repeat="permission in vm.permissions" class="script-row" style="padding-top: 5px;padding-bottom: 5px;list-style: none;">
+                                    <li ng-repeat="permission in vm.permissions" class="script-row">
                                         <input id="li-{{permission.scriptId}}" type="checkbox" class="custom-checkbox-green-type00" />
                                         <label for="li-{{permission.scriptId}}"></label>
                                         {{ permission.scriptName}}
@@ -73,4 +73,4 @@
     div.content-wrapper {
         background-color: #fff;
     }    
-</divstyle>
+</style>
