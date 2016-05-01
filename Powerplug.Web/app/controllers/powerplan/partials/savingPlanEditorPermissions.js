@@ -8,7 +8,7 @@
         computersHandler.$mdMedia = $mdMedia;
         computersHandler.ComputersResource = ComputersResource;
         computersHandler.ComputerGroupsResource = ComputerGroupsResource;
-        computersNameDialodHandler.init($mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource);
+        computersNameDialodHandler.init($mdDialog, ComputersResource, ComputerGroupsResource);
 
     },
     setComputerItems: function () {
