@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('ScriptsCtrl',
-                     ['$state', '$document', '$mdDialog', '$mdMedia', '$scope', 'ScriptsResource', ScriptsCtrl]);
+                     ['$state', '$document', '$mdDialog', '$scope', 'ScriptsResource', ScriptsCtrl]);
 
 
-    function ScriptsCtrl($state, $document, $mdDialog, $mdMedia, $scope, ScriptsResource) {
+    function ScriptsCtrl($state, $document, $mdDialog, $scope, ScriptsResource) {
         var vm = this;
 
         ScriptsResource.detailed.query(function (data) {
@@ -116,23 +116,16 @@
         }
 
         vm.showScriptDialog = function (scriptId, ev) {
-            var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
             $mdDialog.show({
                 templateUrl: 'views/settings/dialogs/addScript.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: false,
                 bindToController: true,
-                fullscreen: useFullScreen,
                 locals: { scriptId: scriptId },
                 controller: DialogController,
             });
-            $scope.$watch(function () {
-                return $mdMedia('xs') || $mdMedia('sm');
-            }, function (wantsFullScreen) {
-                $scope.customFullscreen = (wantsFullScreen === true);
-            });
-
+        
             function DialogController($scope, $mdDialog, scriptId) {
                 var script = {};
                 var maxScriptId = 0;

@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('ElectricityPriceCtrl',
-                     ['$state', '$document', '$mdDialog', '$mdMedia', '$scope', '$uibModal', 'ElectricityPriceResource', ElectricityPriceCtrl]);
+                     ['$state', '$document', '$mdDialog', '$scope', '$uibModal', 'ElectricityPriceResource', ElectricityPriceCtrl]);
 
 
-    function ElectricityPriceCtrl($state, $document, $mdDialog, $mdMedia, $scope, $uibModal, ElectricityPriceResource) {
+    function ElectricityPriceCtrl($state, $document, $mdDialog, $scope, $uibModal, ElectricityPriceResource) {
         var vm = this;
 
         ElectricityPriceResource.query(function (data) {

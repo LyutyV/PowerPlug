@@ -1,9 +1,8 @@
 ﻿var addUserPopupHandler = (function () {
     var api = {};
-    var _mdDialog, _mdMedia;
-    api.init = function ($mdDialog, $mdMedia) {
+    var _mdDialog;
+    api.init = function ($mdDialog) {
         _mdDialog = $mdDialog;
-        _mdMedia = $mdMedia;
     },
 
     api.openDialog = function () {

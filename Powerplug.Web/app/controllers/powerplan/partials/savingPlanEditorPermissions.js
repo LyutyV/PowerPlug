@@ -13,14 +13,8 @@
             targetEvent: ev,
             clickOutsideToClose: false,
             bindToController: true,
-            fullscreen: permissionHandler.$mdMedia('xs') || permissionHandler.$mdMedia('sm'), /* TODO: useFullScreen,*/
             locals: {},
             controller: DialogController,
-        });
-        permissionHandler.$scope.$watch(function () {
-            return permissionHandler.$mdMedia('xs') || permissionHandler.$mdMedia('sm');
-        }, function (wantsFullScreen) {
-            permissionHandler.$scope.customFullscreen = (wantsFullScreen === true);
         });
 
         function DialogController($scope, $mdDialog, $document) {

@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('WakeupPortalPermissionCtrl',
-                     ['$state', '$document', '$mdDialog', '$mdMedia', '$scope', '$uibModal', 'WakeupPortalPermissionResource', WakeupPortalPermissionCtrl]);
+                     ['$state', '$document', '$mdDialog', '$scope', '$uibModal', 'WakeupPortalPermissionResource', WakeupPortalPermissionCtrl]);
 
 
-    function WakeupPortalPermissionCtrl($state, $document, $mdDialog, $mdMedia, $scope, $uibModal, WakeupPortalPermissionResource) {
+    function WakeupPortalPermissionCtrl($state, $document, $mdDialog, $scope, $uibModal, WakeupPortalPermissionResource) {
         var vm = this;
 
         WakeupPortalPermissionResource.query(function (data) {
