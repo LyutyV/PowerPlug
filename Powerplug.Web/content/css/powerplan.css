@@ -382,6 +382,69 @@ nav {
       color: rgba(26, 26, 26, 0.7);
       font-size: 14px;
       padding-top: 10px; }
+  .settings .settings-content .locations-container {
+    width: 250px;
+    float: left; }
+    .settings .settings-content .locations-container > .locations-title {
+      padding-bottom: 10px; }
+      .settings .settings-content .locations-container > .locations-title > span {
+        color: #4d4d4d;
+        font-weight: 700;
+        font-size: 14px; }
+    .settings .settings-content .locations-container > .locations-list {
+      border: solid 1px #4d4d4d;
+      height: 400px;
+      padding: 12px; }
+      .settings .settings-content .locations-container > .locations-list > ul > li {
+        list-style: none; }
+        .settings .settings-content .locations-container > .locations-list > ul > li > span {
+          border-radius: 50%;
+          background-color: #8fc73e;
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          margin: -2px 4px 0 0;
+          vertical-align: middle; }
+  .settings .settings-content .locations-details-container {
+    padding-left: 20px;
+    overflow: hidden; }
+    .settings .settings-content .locations-details-container > .location-input-container > .input-label {
+      color: #4d4d4d;
+      font-weight: 700;
+      font-size: 14px;
+      padding-bottom: 10px; }
+    .settings .settings-content .locations-details-container > .location-input-container > .input-text {
+      padding-bottom: 25px; }
+      .settings .settings-content .locations-details-container > .location-input-container > .input-text > input[type=text] {
+        width: 100%;
+        border: solid 1px #4d4d4d;
+        height: 44px;
+        padding: 10px; }
+      .settings .settings-content .locations-details-container > .location-input-container > .input-text > textarea {
+        width: 100%;
+        border: solid 1px #4d4d4d;
+        height: 65px;
+        padding: 10px; }
+    .settings .settings-content .locations-details-container > .location-input-container > .input-text-short input[type=text] {
+      width: 80%;
+      border: solid 1px #4d4d4d;
+      height: 44px;
+      padding: 10px;
+      vertical-align: middle; }
+    .settings .settings-content .locations-details-container > .location-input-container > .input-text-short input[type=button].btn-save-green {
+      width: 19%;
+      height: 44px;
+      background-color: #8cc63f;
+      border: none;
+      text-align: center;
+      color: #fff;
+      font-size: 19px;
+      font-weight: bold;
+      font-family: Calibri;
+      margin-left: 1%;
+      outline: none;
+      vertical-align: middle;
+      display: inline-block; }
   .settings .settings-content .users-container {
     float: left;
     width: 500px; }
