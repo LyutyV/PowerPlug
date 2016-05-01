@@ -26,8 +26,13 @@
 
         function onSuccess(data) {
             vm.permissions = data;
+            console.log(data);
         }
 
+        function initPopups() {
+            editWakeupPermissionHandler.init($mdDialog);
+            vm.showEditWakeupPermission = editWakeupPermissionHandler.openDialog;
+        }
         vm.saveChanges = function () {
             ///dooo
             WakeupPortalPermissionResource.saveAll(returnObj, function (data) {
@@ -44,6 +49,8 @@
             }, function (error) {
                 onError(error);
             });
-        }        
+        }
+        //===================init============================
+        initPopups();
     }
 }());
