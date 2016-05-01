@@ -1,11 +1,11 @@
 ﻿var computersNameDialodHandler = {
     init: function ($mdDialog, ComputersResource, ComputerGroupsResource) {
-        computersHandler.$mdDialog = $mdDialog;
-        computersHandler.ComputersResource = ComputersResource;
-        computersHandler.ComputerGroupsResource = ComputerGroupsResource;
+        computersNameDialodHandler.$mdDialog = $mdDialog;
+        computersNameDialodHandler.ComputersResource = ComputersResource;
+        computersNameDialodHandler.ComputerGroupsResource = ComputerGroupsResource;
     },
     addComputerDialog: function (computersArr, isPromise) {
-        return computersHandler.$mdDialog.show({
+        return computersNameDialodHandler.$mdDialog.show({
             templateUrl: 'views/common/dialogs/computerCondition.html',
             parent: angular.element(document.body),
             clickOutsideToClose: false,
@@ -15,7 +15,7 @@
         });
       
         function DialogController($scope, $mdDialog, $document, computersArr) {
-            computersHandler.ComputersResource.query(function (data) {
+            computersNameDialodHandler.ComputersResource.query(function (data) {
                 $scope.savingComputerList = data;
             }, function (err) {
                 onError(err);
