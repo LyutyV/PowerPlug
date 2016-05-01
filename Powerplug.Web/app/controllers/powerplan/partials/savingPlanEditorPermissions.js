@@ -1,11 +1,10 @@
 ﻿var permissionHandler = {
     vm: {},
-    init: function (vm, $scope, $document, $mdDialog, $mdMedia) {
+    init: function (vm, $scope, $document, $mdDialog) {
         permissionHandler.vm = vm;
         permissionHandler.$scope = $scope;
         permissionHandler.$document = $document;
         permissionHandler.$mdDialog = $mdDialog;
-        permissionHandler.$mdMedia = $mdMedia;
     },
     addPermissionsDialog: function (ev) {
         permissionHandler.$mdDialog.show({
