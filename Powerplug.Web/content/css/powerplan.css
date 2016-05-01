@@ -382,6 +382,54 @@ nav {
       color: rgba(26, 26, 26, 0.7);
       font-size: 14px;
       padding-top: 10px; }
+  .settings .settings-content .users-container {
+    float: left;
+    width: 500px; }
+    .settings .settings-content .users-container > .users-buttons-container {
+      border-right: solid 1px #dedede;
+      margin-right: 3px; }
+      .settings .settings-content .users-container > .users-buttons-container > .users-title {
+        color: #4d4d4d;
+        font-weight: 700;
+        font-size: 16px; }
+      .settings .settings-content .users-container > .users-buttons-container > .users-add-button {
+        padding-left: 185px;
+        display: inline-block; }
+      .settings .settings-content .users-container > .users-buttons-container > .users-remove-button {
+        display: inline-block; }
+    .settings .settings-content .users-container > .users-table-container {
+      width: 500px;
+      position: fixed;
+      bottom: 120px;
+      top: 144px; }
+      .settings .settings-content .users-container > .users-table-container > .users-table-positioning {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        overflow-y: auto;
+        right: 3px;
+        left: 0px;
+        border-right: solid 1px #dedede;
+        padding-right: 20px; }
+  .settings .settings-content .roles-container {
+    padding-left: 20px;
+    overflow: hidden; }
+    .settings .settings-content .roles-container .role-padding {
+      padding-top: 10px; }
+      .settings .settings-content .roles-container .role-padding > .role-desc-container {
+        width: 300px;
+        float: right; }
+        .settings .settings-content .roles-container .role-padding > .role-desc-container > .role-desc-title {
+          color: #4d4d4d;
+          font-weight: 700;
+          font-size: 16px;
+          padding-bottom: 10px; }
+      .settings .settings-content .roles-container .role-padding > .role-table-container {
+        overflow: hidden; }
+        .settings .settings-content .roles-container .role-padding > .role-table-container > ul > li {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          list-style: none; }
   .settings .settings-content .action-settings {
     font-family: Calibri;
     color: rgba(26, 26, 26, 0.7);

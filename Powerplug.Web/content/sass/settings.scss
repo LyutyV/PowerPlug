@@ -192,6 +192,68 @@
             }
         }
 
+        .users-container{
+            float:left;
+            width:500px;
+            > .users-buttons-container{
+                border-right: solid 1px #dedede;
+                margin-right:3px;
+                > .users-title{
+                    color: #4d4d4d;
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+                > .users-add-button{
+                    padding-left: 185px;
+                    display:inline-block;
+                }
+                > .users-remove-button{
+                    display:inline-block;
+                }
+            }
+            > .users-table-container{
+                width:500px;
+                position:fixed;
+                bottom: 120px;
+                top: 144px;
+                > .users-table-positioning{
+                    position:absolute;
+                    top: 0px;
+                    bottom: 0px;
+                    overflow-y:auto;
+                    right: 3px;
+                    left: 0px;
+                    border-right: solid 1px #dedede;
+                    padding-right: 20px;
+                }
+            }
+        }
+        .roles-container{
+            padding-left:20px;
+            overflow:hidden;
+            .role-padding{
+                padding-top:10px;
+                > .role-desc-container{
+                    width:300px;
+                    float:right;
+                    > .role-desc-title{
+                        color: #4d4d4d;
+                        font-weight: 700;
+                        font-size: 16px;
+                        padding-bottom:10px;
+                    }
+                }
+                > .role-table-container{
+                    overflow:hidden;
+                    > ul > li{
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        list-style: none;
+                    }
+                }
+            }
+        }
+
         .action-settings {
             font-family: Calibri;
             color: rgba(26, 26, 26, 0.7);
