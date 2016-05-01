@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     angular
-        .module('powerPlug').directive('computersTab', ['$mdDialog', '$mdMedia', 'ComputersResource', function ($mdDialog, $mdMedia, ComputersResource) {
+        .module('powerPlug').directive('computersTab', ['$mdDialog', 'ComputersResource', function ($mdDialog, ComputersResource) {
             return {
                 templateUrl: '../../../views/powerplan/settingsTabs/computers.html',     
                 scope: {
@@ -32,16 +32,10 @@
                             targetEvent: ev,
                             clickOutsideToClose: false,
                             bindToController: true,
-                            fullscreen: $mdMedia('xs') || $mdMedia('sm'), /* TODO: useFullScreen,*/
                             locals: {},
                             controller: DialogController,
                         });
-                        scope.$watch(function () {
-                            return $mdMedia('xs') || $mdMedia('sm');
-                        }, function (wantsFullScreen) {
-                            scope.customFullscreen = (wantsFullScreen === true);
-                        });
-
+                       
                         function DialogController($scope, $mdDialog, $document) {
                             ComputersResource.query(function (data) {
                                 $scope.savingComputerList = data;

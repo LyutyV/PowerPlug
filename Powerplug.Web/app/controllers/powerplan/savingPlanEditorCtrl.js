@@ -1,12 +1,11 @@
-﻿//TODO remove mdMedia
-(function () {
+﻿(function () {
     'use strict';
     angular
 
         .module('powerPlug')
-        .controller('SavingPlanEditorCtrl', ['$state', '$stateParams', '$scope', '$animate', '$document', '$uibModal', '$mdDialog', '$mdMedia', 'SavingPlansResource', 'ComputersResource', 'ComputerGroupsResource', 'ScriptsResource', SavingPlanEditorCtrl]);
+        .controller('SavingPlanEditorCtrl', ['$state', '$stateParams', '$scope', '$animate', '$document', '$uibModal', '$mdDialog', 'SavingPlansResource', 'ComputersResource', 'ComputerGroupsResource', 'ScriptsResource', SavingPlanEditorCtrl]);
 
-    function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $uibModal, $mdDialog, $mdMedia, SavingPlansResource, ComputersResource, ComputerGroupsResource, ScriptsResource) {
+    function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $uibModal, $mdDialog, SavingPlansResource, ComputersResource, ComputerGroupsResource, ScriptsResource) {
         var vm = this;
         vm.policyId = $stateParams.policyId;
 
@@ -62,12 +61,12 @@
         //Init
         overviewHandler.init(vm);
         actionDialogHandler.init(vm, $scope, $uibModal);
-        eventHandler.init(vm, $scope, $document, $mdDialog, $mdMedia, ScriptsResource);
+        eventHandler.init(vm, $scope, $document, $mdDialog, ScriptsResource);
         actionHandler.init(vm);
         workHoursHandler.init(vm);
         savingHandler.init(vm, $document);
-        computersHandler.init(vm, $scope, $document, $mdDialog, $mdMedia, ComputersResource, ComputerGroupsResource);
-        permissionHandler.init(vm, $scope, $document, $mdDialog, $mdMedia);
+        computersHandler.init(vm, $scope, $document, $mdDialog, ComputersResource, ComputerGroupsResource);
+        permissionHandler.init(vm, $scope, $document, $mdDialog);
 
         SavingPlansResource.basic.get({
             policyId: vm.policyId

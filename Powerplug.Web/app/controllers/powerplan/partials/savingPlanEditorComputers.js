@@ -35,16 +35,10 @@
             targetEvent: ev,
             clickOutsideToClose: false,
             bindToController: true,
-            fullscreen: computersHandler.$mdMedia('xs') || computersHandler.$mdMedia('sm'), /* TODO: useFullScreen,*/
             locals: {},
             controller: DialogController,
         });
-        computersHandler.$scope.$watch(function () {
-            return computersHandler.$mdMedia('xs') || computersHandler.$mdMedia('sm');
-        }, function (wantsFullScreen) {
-            computersHandler.$scope.customFullscreen = (wantsFullScreen === true);
-        });
-
+  
         function DialogController($scope, $mdDialog, $document) {
             computersHandler.ComputerGroupsResource.groups.query(function (data) {
                 $scope.computerGroupsList = data;

@@ -646,8 +646,11 @@ md-dialog.settings-prop > md-content {
   background-color: #ffffff;
   padding-left: 32px;
   padding-right: 34px; }
+  .modal-dialog .settings-prop .modal-body .middle {
+    vertical-align: middle; }
   .modal-dialog .settings-prop .modal-body .date-picker {
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: middle; }
     .modal-dialog .settings-prop .modal-body .date-picker .power-plug-date-picker {
       width: 300px; }
       .modal-dialog .settings-prop .modal-body .date-picker .power-plug-date-picker input.form-control {

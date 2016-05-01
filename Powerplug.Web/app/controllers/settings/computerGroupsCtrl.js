@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('ComputerGroupsCtrl',
-                     ['$scope', '$mdDialog', '$mdMedia','$state', 'ComputersResource', 'ComputerGroupsResource', ComputerGroupsCtrl]);
+                     ['$scope', '$mdDialog', '$state', 'ComputersResource', 'ComputerGroupsResource', ComputerGroupsCtrl]);
 
 
-    function ComputerGroupsCtrl($scope, $mdDialog, $mdMedia, $state, ComputersResource, ComputerGroupsResource) {
+    function ComputerGroupsCtrl($scope, $mdDialog, $state, ComputersResource, ComputerGroupsResource) {
         //============Private===========================================
         var vm = this;
         var _maxGroupId = 0;
