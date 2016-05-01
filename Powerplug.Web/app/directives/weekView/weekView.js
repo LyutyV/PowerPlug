@@ -384,20 +384,12 @@ angular
 
           scope.timeIntervalList = [
             {
-              label: '15 min',
-              value: 0.25
-            },
-            {
               label: '30 min',
               value: 0.5
             },
             {
               label: '1 hour',
               value: 1
-            },
-            {
-              label: '2 hours',
-              value: 2
             }
           ];
 
