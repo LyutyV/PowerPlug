@@ -50,13 +50,11 @@
                 }
             }
         function onSuccessGetGroup(data) {
-            console.log(data);
             vm.groupMembersHash[data.compGroupId] = data;
         }
         function onSuccessAllGroups(data) {
             vm.computerGroups = data;
             initGroupMembersHash();
-            console.log(data);
         }
         function updateComputersNameMembers(groupIndex, isInclude) {
             vm.groupMembersHash[groupIndex].members.forEach(function (computerItem, index, array) {

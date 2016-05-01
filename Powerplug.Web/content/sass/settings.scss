@@ -1,6 +1,29 @@
 .settings {
     padding-top: 20px;
-
+    > .list-row-container{
+        width:1010px;
+        margin:auto;
+        text-align: center;
+        > .list-column-container{
+            display:inline-block;
+            width:170px;
+            margin:40px;
+            text-align:center;
+            cursor:pointer;
+            > .list-column-title{
+                font-family:Calibri;
+                font-weight:bold;
+                font-size:15px;
+                padding-top:12px;
+                padding-bottom:12px;
+                > .list-column-desc{
+                    font-family:Calibri;
+                    font-weight:normal;
+                    font-size:13px;
+                }
+            }
+        }
+    }
     .nav-tabs > li {
         margin-bottom: 5px;
 

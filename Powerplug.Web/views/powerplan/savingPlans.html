@@ -1,7 +1,12 @@
-﻿<div class="savingPlans">
-    <button ng-click="vm.openManageDialog()">Manage</button>
-    <div class="searchBlock">
-        <input type="text" name="search" placeholder="Search a Plan" ng-model="search.policyName">
+﻿<div class="savingPlans">    
+    <div class="clearfix">        
+        <div class="searchBlock">
+            <input type="text" name="search" placeholder="Search a Plan" ng-model="search.policyName">
+        </div>
+        <div class="manageBlock">
+            <span class="planTitle">{{vm.savingPlans.length}} Plans</span>
+            <div class="manageButton" ng-click="vm.openManageDialog()">Manage</div>
+        </div>
     </div>
     <span><span>Organization Name&nbsp;</span><span>({{vm.savingPlans.length}} Plans)</span></span>
     <span class="buttonTypeOne" ui-sref="savingPlanEditor({ policyId : 0})">Add Plan</span>
