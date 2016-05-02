@@ -14,6 +14,7 @@ var eventHandler = {
     },
     setEventItems: function () {
         eventHandler.vm.currentEventScripts = [];
+        eventHandler.vm.showEventScripts(1);
     },
     eventScriptDialog: function (ev) {
         eventHandler.$mdDialog.show({

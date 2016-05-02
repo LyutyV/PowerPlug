@@ -241,6 +241,42 @@ nav {
           width: 20px;
           color: #90c63d; }
 
+.buttons-container {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  left: 246px;
+  background-color: #f2f2f2;
+  height: 100px;
+  z-index: 10; }
+  .buttons-container div {
+    padding-top: 30px;
+    padding-right: 30px;
+    text-align: center; }
+    .buttons-container div .btn-save-green {
+      width: 160px;
+      height: 44px;
+      background-color: #8cc63f;
+      border: none;
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: Calibri;
+      margin-right: 2px;
+      outline: none; }
+    .buttons-container div .btn-discard-gray {
+      width: 160px;
+      height: 44px;
+      background-color: #808080;
+      border: none;
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: Calibri;
+      outline: none; }
+
 .settings {
   padding-top: 20px; }
   .settings > .list-row-container {
@@ -302,41 +338,6 @@ nav {
       left: 10px;
       top: 3px;
       background-color: #ffffff; }
-  .settings .buttons-container {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    left: 246px;
-    background-color: #f2f2f2;
-    height: 100px;
-    z-index: 10; }
-    .settings .buttons-container div {
-      padding-top: 30px;
-      padding-right: 30px;
-      text-align: center; }
-      .settings .buttons-container div .btn-save-green {
-        width: 160px;
-        height: 44px;
-        background-color: #8cc63f;
-        border: none;
-        text-align: center;
-        color: #fff;
-        font-size: 20px;
-        font-weight: bold;
-        font-family: Calibri;
-        margin-right: 2px;
-        outline: none; }
-      .settings .buttons-container div .btn-discard-gray {
-        width: 160px;
-        height: 44px;
-        background-color: #808080;
-        border: none;
-        text-align: center;
-        color: #fff;
-        font-size: 20px;
-        font-weight: bold;
-        font-family: Calibri;
-        outline: none; }
   .settings > .bg-separator {
     height: 74px;
     background-color: rgba(242, 242, 242, 0.6);

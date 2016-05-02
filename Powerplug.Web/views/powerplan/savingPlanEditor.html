@@ -13,8 +13,16 @@
         <div id="description" ui-view="description"></div>
     </div>
 </div>
-<!-- <div style="position:fixed;bottom:0px;right:0px;left:246px;border-top:solid 3px gray;background-color:#f3f3f3;height:100px; z-index: 10;" class="clearfix">
+ <!--<div style="position:fixed;bottom:0px;right:0px;left:246px;border-top:solid 3px gray;background-color:#f3f3f3;height:100px; z-index: 10;" class="clearfix">
     <div class="pull-right" style="padding-top:30px;padding-right:30px;">
         <input type="button" value="Save Changes" class="btn btn-primary" ng-click="vm.saveChanges()"/>
     </div>
-</div> -->
+</div>--> 
+
+
+<div class="buttons-container">
+    <div>
+        <input type="button" value="Save Changes" class="btn-save-green" ng-click="vm.saveChanges()" />
+        <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
+    </div>
+</div>

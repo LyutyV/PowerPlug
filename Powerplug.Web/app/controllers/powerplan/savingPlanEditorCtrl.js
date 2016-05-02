@@ -75,9 +75,7 @@
         }, function (err) {
             onError(err);
         });
-
-
-
+        
         function onError(err) {
             console.log(err)
             if (err.status === 401 || err.status === -1) {
@@ -103,15 +101,23 @@
             savingHandler.setSavingItems();
             workHoursHandler.setWorkHoursItems();
             eventHandler.setEventItems();
-            computersHandler.setComputerItems();
-            //
-            vm.showEventScripts(1);   //this show's right part of the Events section on page load.
+            computersHandler.setComputerItems();            
             overviewHandler.setOverviewGraphs();
             //
             console.log(vm.savingPlan);
             for (var i in vm.savingPlan.actions) {
                 vm.getActionText(vm.savingPlan.actions[i]);
             }
+        }
+
+        vm.discardChanges = function () {
+            SavingPlansResource.basic.get({
+                policyId: vm.policyId
+            }, function (data) {
+                onSuccess(data);
+            }, function (err) {
+                onError(err);
+            });
         }
 
         //Html Elements Events
