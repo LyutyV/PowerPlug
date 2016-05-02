@@ -1,10 +1,10 @@
-﻿<md-dialog class="settings-prop powerRate-prop">
-    <md-toolbar>
+﻿<div class="settings-prop powerRate-prop power-plug-dialog">
+    <div class="modal-header">
         <div>Power Rate</div>
         <!-- <i class="fa fa-times" ></i> -->
         <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeScriptDialog()">
-    </md-toolbar>
-    <md-content>        
+    </div>
+    <div class="modal-body">        
         <div>
             <div class="settings-data-row power-rate-data">
                 <span>Power Rate Name</span> <input type="text" ng-model="script.scriptName" />
@@ -35,10 +35,10 @@
                     </tbody>
                 </table>
             </div>    
-            <div class="buttonsBlock">
-                <button ng-click="addUpdateScript()">OK</button>
-                <button ng-click="closeScriptDialog()">Cancel</button>
-            </div>
         </div>
-    </md-content>
-</md-dialog>
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="addUpdateScript()">OK</button>
+        <button ng-click="closeScriptDialog()">Cancel</button>
+    </div>
+</div>

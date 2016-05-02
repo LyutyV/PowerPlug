@@ -1,28 +1,6 @@
-md-dialog.addPermissionsWrapper {
+.power-plug-dialog.addPermissionsWrapper {
     overflow: inherit;
-    min-width: 900px;
-    > md-toolbar {
-        background-color: #ffffff;
-        padding-left: 32px;
-        padding-right: 34px;
-        min-height: 110px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        > div {
-            font-family: Calibri;
-            color: rgba(26, 26, 26, 0.7);
-            font-size: 24px;
-            font-weight: 300;
-            text-align: left;
-        }
-        > img {
-            cursor: pointer;
-        }
-    }
-    > md-content {
-        padding: 0 32px;
+    > .modal-body {
         > div.container-fluid {
             > div.row {
                 &:first-child {

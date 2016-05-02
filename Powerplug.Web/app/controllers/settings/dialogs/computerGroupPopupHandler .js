@@ -1,21 +1,19 @@
 ﻿var computerGroupPopupHandler = {
     vm: {},
-    init: function (vm, $mdDialog) {
+    init: function (vm, $uibModal) {
         computerGroupPopupHandler.vm = vm;
-        computerGroupPopupHandler.$mdDialog = $mdDialog;
+        computerGroupPopupHandler.$uibModal = $uibModal;
     },
  
     openComputerGroupDialog: function (groupIndex) {
-        return computerGroupPopupHandler.$mdDialog.show({
+        return computerGroupPopupHandler.$uibModal.open({
             templateUrl: 'views/settings/dialogs/computerGroup.html',
-            parent: angular.element(document.body),
-            clickOutsideToClose: false,
-            locals: {groupIndex: groupIndex},
-            bindToController: true,
-            controller: DialogController,
+            resolve: { groupIndex: function () { return groupIndex } },
+            backdrop: 'static',
+            controller: DialogController
         });
 
-        function DialogController($scope, $mdDialog, groupIndex) {
+        function DialogController($scope, $uibModalInstance, groupIndex) {
             //================Private============================
             var _editGroup;
             var _returnObjByPromise = { groupFields: {}}
@@ -30,7 +28,7 @@
            //=================scope binding========================
             $scope.isChange = false;
             $scope.closeDialog = function () {
-                $mdDialog.cancel();
+                $uibModalInstance.dismiss();
             };
 
             $scope.addUpdateGroup = function () {
@@ -39,7 +37,7 @@
                     groupDesc: $scope.group.groupDesc
                 }
                 _returnObjByPromise.isChange = $scope.isChange;
-                $mdDialog.hide({ groupObject: _returnObjByPromise });
+                $uibModalInstance.close({ groupObject: _returnObjByPromise });
             }
             //=======================init=========================
             init();

@@ -49,7 +49,7 @@
                 }
             }      
         }
-        $scope.cancel = function () { $uibModalInstance.dismiss('cancel'); };
+        $scope.cancel = function () { $uibModalInstance.dismiss(); };
         $scope.Add = function () {
             sortListOrder();
             $uibModalInstance.close('applay');
@@ -72,6 +72,7 @@
         return _uibModal.open({
             templateUrl: 'views/powerplan/dialogs/managePPList.html',
             resolve: { param: function () { return { 'PParray': _sortableArr } } },
+            backdrop: 'static',
             controller: DialogController
         });
     };

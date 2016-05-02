@@ -1,21 +1,19 @@
 ﻿var IPRangePopupHandler = {
     vm: {},
-    init: function (vm, $mdDialog) {
+    init: function (vm, $uibModal) {
         IPRangePopupHandler.vm = vm;
-        IPRangePopupHandler.$mdDialog = $mdDialog;
+        IPRangePopupHandler.$uibModal = $uibModal;
     },
  
     openIPRangeDialog: function (computerIndex) {
-      return IPRangePopupHandler.$mdDialog.show({
+        return IPRangePopupHandler.$uibModal.open({
             templateUrl: 'views/settings/dialogs/IPRange.html',
-            parent: angular.element(document.body),
-            clickOutsideToClose: false,
-            bindToController: true,
-            locals: { computerIndex: computerIndex },
+            resolve: { computerIndex: function () { return computerIndex } },
             controller: DialogController,
+            backdrop: 'static'
         });
 
-        function DialogController($scope, $mdDialog, computerIndex) {
+        function DialogController($scope, $uibModalInstance, computerIndex) {
           //===============private===============/
           var _selectedGroup;
           var _returnObjByPromise = { computerFields: {} };
@@ -49,10 +47,10 @@
                 "memberDef": memeberDef,
             }
             _returnObjByPromise.isChange = $scope.isChange;
-            $mdDialog.hide({ computerObject: _returnObjByPromise });
+            $uibModalInstance.close({ computerObject: _returnObjByPromise });
         }
         $scope.cancel = function () {
-            $mdDialog.cancel();
+            $uibModalInstance.dismiss();
         }
         //========================init========================
         init();

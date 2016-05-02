@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('ElectricityPriceCtrl',
-                     ['$state', '$document', '$mdDialog', '$scope', '$uibModal', 'ElectricityPriceResource', ElectricityPriceCtrl]);
+                     ['$state', '$document', '$scope', '$uibModal', 'ElectricityPriceResource', ElectricityPriceCtrl]);
 
 
-    function ElectricityPriceCtrl($state, $document, $mdDialog, $scope, $uibModal, ElectricityPriceResource) {
+    function ElectricityPriceCtrl($state, $document, $scope, $uibModal, ElectricityPriceResource) {
         var vm = this;
 
         ElectricityPriceResource.query(function (data) {
@@ -46,18 +46,16 @@
         }
 
         vm.showPowerRateDialog = function (powerRateId, ev) {
-            $mdDialog.show({
+            $uibModal.open({
                 templateUrl: 'views/settings/dialogs/powerRate.html',
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                clickOutsideToClose: false,
-                bindToController: true,
-                locals: { powerRateId: powerRateId, prices: vm.prices },
+                resolve: { params: function () { return { powerRateId: powerRateId, prices: vm.prices}} },
                 controller: DialogController,
+                backdrop: 'static',
+                size: 'large'
             });
 
-            function DialogController($scope, $mdDialog, powerRateId, prices) {
-                $scope.prices = prices;
+            function DialogController($scope, $uibModalInstance, params) {
+                $scope.prices = params.prices;
                 $scope.addPowerCostDialog = function () {
                     var modal = $uibModal.open({
                         templateUrl: 'views/settings/dialogs/addPowerCost.html',
@@ -82,17 +80,17 @@
 
                     function DialogController($scope, $uibModalInstance, $document) {
                         $scope.insertPowerCost = function () {                            
-                            $uibModalInstance.dismiss('OK');
+                            $uibModalInstance.close();
                         };
 
                         $scope.closeSavingApplication = function () {
-                            $uibModalInstance.dismiss('cancel');
+                            $uibModalInstance.dismiss();
                         };
                     }
                 }
 
                 $scope.closeScriptDialog = function () {                    
-                    $mdDialog.cancel();
+                    $uibModalInstance.dismiss();
                 };
             }
 

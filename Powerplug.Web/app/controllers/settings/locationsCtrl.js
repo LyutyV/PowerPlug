@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('LocationsCtrl',
-                     ['$state', '$document', '$mdDialog', '$scope', 'LocationsResource', LocationsCtrl]);
+                     ['$state', '$document', '$scope', 'LocationsResource', LocationsCtrl]);
 
 
-    function LocationsCtrl($state, $document, $mdDialog, $scope, LocationsResource) {
+    function LocationsCtrl($state, $document, $scope, LocationsResource) {
         var vm = this;
 
         LocationsResource.query(function (data) {

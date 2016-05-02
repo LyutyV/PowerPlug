@@ -1,19 +1,17 @@
 ﻿var addUserPopupHandler = (function () {
     var api = {};
-    var _mdDialog;
-    api.init = function ($mdDialog) {
-        _mdDialog = $mdDialog;
+    var _uibModal;
+    api.init = function ($uibModal) {
+        _uibModal = $uibModal;
     },
 
     api.openDialog = function () {
-        return _mdDialog.show({
+        return _uibModal.open({
             templateUrl: 'views/settings/dialogs/addUser.html',
-            parent: angular.element(document.body),
-            clickOutsideToClose: false,
-            bindToController: true,
             controller: DialogController,
+            backdrop: 'static',
         });
-        function DialogController($scope, $mdDialog) {
+        function DialogController($scope, $uibModalInstance) {
             //================Private============================
             $scope.toValidate = false
             $scope.validateFields = function () {
@@ -43,14 +41,14 @@
             $scope.isValide = { error: false, message: "" };
             $scope.user = { username: "", password: "", confirmPassword: "" };
             $scope.cancel = function () {
-                $mdDialog.cancel();
+                $uibModalInstance.dismiss();
             };
 
             $scope.add = function () {
                 $scope.toValidate = true;
                 $scope.validateFields();
                 if ($scope.isValide.error === false) {
-                    $mdDialog.hide();
+                    $uibModalInstance.close();
                 }
             }
             //=======================init=========================

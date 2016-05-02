@@ -3,30 +3,27 @@ var eventHandler = {
     vm: {},
     $scope: {},
     $document: [],
-    $mdDialog: {},
+    $uibModal: {},
     ScriptsResource: {},
-    init: function (vm, $scope, $document, $mdDialog, ScriptsResource) {
+    init: function (vm, $scope, $document, $uibModal, ScriptsResource) {
         eventHandler.vm = vm;
         eventHandler.$scope = $scope;
         eventHandler.$document = $document;
-        eventHandler.$mdDialog = $mdDialog;
+        eventHandler.$uibModal = $uibModal;
         eventHandler.ScriptsResource = ScriptsResource;
     },
     setEventItems: function () {
         eventHandler.vm.currentEventScripts = [];
     },
     eventScriptDialog: function (ev) {
-        eventHandler.$mdDialog.show({
-            templateUrl: 'views/powerplan/dialogs/addScipt.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose: false,
-            bindToController: true,
-            locals: {},
+        eventHandler.$uibModal.open({
+            templateUrl: 'views/powerplan/dialogs/addScript.html',
             controller: DialogController,
+            backdrop: 'static',
+            size:'large'
         });
        
-        function DialogController($scope, $mdDialog) {
+        function DialogController($scope, $uibModalInstance) {
             eventHandler.ScriptsResource.basic.query(function (data) {
                 $scope.eventScripts = data;
             }, function (err) {
@@ -78,11 +75,11 @@ var eventHandler = {
                     eventHandler.vm.currentEventScripts = eventHandler.vm.savingPlan.events[keyEvent].scripts;
                 }
 
-                $mdDialog.hide();
+                $uibModalInstance.close();
             };
 
             $scope.closeEventScripts = function () {
-                $mdDialog.cancel();
+                $uibModalInstance.dismiss();
             };
 
             // Select all checkboxes function in add script dialog

@@ -1,20 +1,19 @@
 ﻿var computersNameDialodHandler = {
-    init: function ($mdDialog, ComputersResource, ComputerGroupsResource) {
-        computersNameDialodHandler.$mdDialog = $mdDialog;
+    init: function ($uibModal, ComputersResource, ComputerGroupsResource) {
+        computersNameDialodHandler.$uibModal = $uibModal;
         computersNameDialodHandler.ComputersResource = ComputersResource;
         computersNameDialodHandler.ComputerGroupsResource = ComputerGroupsResource;
     },
     addComputerDialog: function (computersArr, isPromise) {
-        return computersNameDialodHandler.$mdDialog.show({
+        return computersNameDialodHandler.$uibModal.open({
             templateUrl: 'views/common/dialogs/computerCondition.html',
-            parent: angular.element(document.body),
-            clickOutsideToClose: false,
-            bindToController: true,
-            locals: { computersArr: computersArr },
+            resolve: { computersArr: function () { return  computersArr } },
             controller: DialogController,
+            size: 'large',
+            backdrop: 'static'
         });
       
-        function DialogController($scope, $mdDialog, $document, computersArr) {
+        function DialogController($scope, $uibModalInstance, $document, computersArr) {
             computersNameDialodHandler.ComputersResource.query(function (data) {
                 $scope.savingComputerList = data;
             }, function (err) {
@@ -39,10 +38,10 @@
                         computersArr.push({ name: newComputerName });
                     }
                 });
-                $mdDialog.hide();
+                $uibModalInstance.close('Add');
             };
             $scope.closeSavingComputers = function () {
-                $mdDialog.cancel();
+                $uibModalInstance.dismiss();
             };
         }
 

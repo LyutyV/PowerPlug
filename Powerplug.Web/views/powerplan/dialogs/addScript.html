@@ -1,9 +1,9 @@
-<md-dialog class="addScript" style="width:900px">
-    <md-toolbar>
+<div class="power-plug-dialog addScript">
+    <div class="modal-header">
         <div>Add a Script</div>
         <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeEventScripts()">
-    </md-toolbar>
-    <md-content>
+    </div>
+    <div class="modal-body">
         <span>{{eventScripts.length}} Scripts</span>
         <div class="well">
             <table class="table">
@@ -55,10 +55,10 @@
                     </div>
                 </div>
             </div>
-            <div class="buttonsBlock">
-                <button ng-click="addEventScripts()">OK</button>
-                <button ng-click="closeEventScripts()">Cancel</button>
-            </div>
         </div>
-    </md-content>
-</md-dialog>
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="addEventScripts()">OK</button>
+        <button ng-click="closeEventScripts()">Cancel</button>
+    </div>
+</div>

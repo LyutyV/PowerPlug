@@ -1,21 +1,19 @@
 ﻿var IPMaksPopupHandler = {
     vm: {},
-    init: function (vm, $mdDialog) {
+    init: function (vm, $uibModal) {
         IPMaksPopupHandler.vm = vm;
-        IPMaksPopupHandler.$mdDialog = $mdDialog;
+        IPMaksPopupHandler.$uibModal = $uibModal;
     },
  
     openIPMaskDialog: function (computerIndex) {
-        return IPMaksPopupHandler.$mdDialog.show({
+        return IPMaksPopupHandler.$uibModal.open({
             templateUrl: 'views/settings/dialogs/IPMask.html',
-            parent: angular.element(document.body),
-            clickOutsideToClose: false,
-            bindToController: true,
-            locals: { computerIndex: computerIndex },
+            resolve: { computerIndex: function () { return computerIndex } },
             controller: DialogController,
+            backdrop: 'static'
         });
 
-        function DialogController($scope, $mdDialog, computerIndex) {
+        function DialogController($scope, $uibModalInstance, computerIndex) {
             //===============private===============/
             var _selectedGroup;
             var _returnObjByPromise = { computerFields: {} };
@@ -44,10 +42,10 @@
                     "memberDef": memberDef,
                 }
                 _returnObjByPromise.isChange = $scope.isChange;
-                $mdDialog.hide({ computerObject: _returnObjByPromise });
+                $uibModalInstance.close({ computerObject: _returnObjByPromise });
             }
             $scope.cancel = function () {
-                $mdDialog.cancel()
+                $uibModalInstance.dismiss()
             }
             //===================Init=====================/
             init();

@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('ScriptsCtrl',
-                     ['$state', '$document', '$mdDialog', '$scope', 'ScriptsResource', ScriptsCtrl]);
+                     ['$state', '$document', '$uibModal', '$scope', 'ScriptsResource', ScriptsCtrl]);
 
 
-    function ScriptsCtrl($state, $document, $mdDialog, $scope, ScriptsResource) {
+    function ScriptsCtrl($state, $document, $uibModal, $scope, ScriptsResource) {
         var vm = this;
 
         ScriptsResource.detailed.query(function (data) {
@@ -116,17 +116,14 @@
         }
 
         vm.showScriptDialog = function (scriptId, ev) {
-            $mdDialog.show({
+            $uibModal.open({
                 templateUrl: 'views/settings/dialogs/addScript.html',
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                clickOutsideToClose: false,
-                bindToController: true,
-                locals: { scriptId: scriptId },
-                controller: DialogController,
+                resolve: { scriptId: function () { return scriptId } },
+                backdrop: 'static',
+                controller: DialogController
             });
         
-            function DialogController($scope, $mdDialog, scriptId) {
+            function DialogController($scope, $uibModalInstance, scriptId) {
                 var script = {};
                 var maxScriptId = 0;
                 angular.forEach(vm.scripts, function (value, key) {
@@ -158,11 +155,11 @@
                         vm.scripts.push(newScript);
                     }
 
-                    $mdDialog.hide();
+                    $uibModalInstance.close();
                 };
 
                 $scope.closeScriptDialog = function () {
-                    $mdDialog.cancel();
+                    $uibModalInstance.dismiss();
                 };
             }
 

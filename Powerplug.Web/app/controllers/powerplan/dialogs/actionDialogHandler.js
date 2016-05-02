@@ -142,7 +142,7 @@
         $scope.Thursday  = { dayInBit: 16, Value: GetSetDays }
         $scope.Friday    = { dayInBit: 32, Value: GetSetDays }
         $scope.Saturday  = { dayInBit: 64, Value: GetSetDays }
-        $scope.cancel = function () { $uibModalInstance.dismiss('cancel'); };
+        $scope.cancel = function () { $uibModalInstance.dismiss(); };
         $scope.Add = function () {
             $scope.timeChosen = moment($('#atDate').val(),'hh:mm A')._d;
             if ($('#toTime').val()){

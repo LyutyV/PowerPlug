@@ -5,10 +5,10 @@
     angular
         .module('powerPlug')
         .controller('ConsolePermissionCtrl',
-                     ['$state', '$document', '$mdDialog', '$scope', 'ConsolePermissionResource', ConsolePermissionCtrl]);
+                     ['$state', '$document', '$uibModal', '$scope', 'ConsolePermissionResource', ConsolePermissionCtrl]);
 
 
-    function ConsolePermissionCtrl($state, $document, $mdDialog, $scope, ConsolePermissionResource) {
+    function ConsolePermissionCtrl($state, $document, $uibModal, $scope, ConsolePermissionResource) {
         var vm = this;        
         ConsolePermissionResource.query(function (data) {
             onSuccess(data);
@@ -16,7 +16,7 @@
             onError(error);
         });
         function init() {
-            addUserPopupHandler.init($mdDialog);
+            addUserPopupHandler.init($uibModal);
         }
         function onError(err) {
             console.log(err);

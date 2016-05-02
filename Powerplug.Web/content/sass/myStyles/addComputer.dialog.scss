@@ -1,9 +1,9 @@
-md-dialog.addComputerWrapper {
+.addComputerWrapper {
     min-height: 80%;
-    > md-toolbar {
+    /*width:900px;*/
+    > .modal-header{
         background-color: #ffffff;
-        padding-left: 32px;
-        padding-right: 34px;
+        padding:0px;
         min-height: 110px;
         display: flex;
         flex-direction: row;
@@ -20,11 +20,8 @@ md-dialog.addComputerWrapper {
             cursor: pointer;
         }
     }
-    > md-content {
-        > div {
-            &:first-child {
-                padding-left: 33px;
-                padding-right: 22px;
+    > .modal-body {
+            >div:first-child {
                 > ul {
                     border-bottom: 5px solid #8cc63f;
                     margin-bottom: 18px;
@@ -166,26 +163,7 @@ md-dialog.addComputerWrapper {
                     }
                 }
             }
-            &:last-child {
-                background-color: #f2f2f2;
-                text-align: center;
-                padding: 15px 0;
-                > button {
-                    height: 40px;
-                    width: 120px;
-                    border: none;
-                    font-family: Calibri;
-                    color: #ffffff;
-                    font-size: 20.3px;
-                    font-weight: 700;
-                    &:first-child {
-                        background-color: #8cc63f;
-                    }
-                    &:last-child {
-                        background-color: #808080;
-                    }
-                }
-            }
         }
-    }
+    
 }
+

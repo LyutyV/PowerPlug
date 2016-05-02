@@ -1,13 +1,13 @@
 ﻿var computersHandler = {
     vm: {},
-    init: function (vm, $scope, $document, $mdDialog, ComputersResource, ComputerGroupsResource) {
+    init: function (vm, $scope, $document, $uibModal, ComputersResource, ComputerGroupsResource) {
         computersHandler.vm = vm;
         computersHandler.$scope = $scope;
         computersHandler.$document = $document;
-        computersHandler.$mdDialog = $mdDialog;
+        computersHandler.$uibModal = $uibModal;
         computersHandler.ComputersResource = ComputersResource;
         computersHandler.ComputerGroupsResource = ComputerGroupsResource;
-        computersNameDialodHandler.init($mdDialog, ComputersResource, ComputerGroupsResource);
+        computersNameDialodHandler.init($uibModal, ComputersResource, ComputerGroupsResource);
 
     },
     setComputerItems: function () {
@@ -28,17 +28,14 @@
         computersNameDialodHandler.addComputerDialog(computersArr);
     },
     addComputerGroupsDialog: function (ev) {
-        computersHandler.$mdDialog.show({
+        computersHandler.$uibModal.open({
             templateUrl: 'views/powerplan/dialogs/computerGroups.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose: false,
-            bindToController: true,
-            locals: {},
             controller: DialogController,
+            backdrop: 'static',
+            size:'large'
         });
   
-        function DialogController($scope, $mdDialog, $document) {
+        function DialogController($scope, $uibModalInstance, $document) {
             computersHandler.ComputerGroupsResource.groups.query(function (data) {
                 $scope.computerGroupsList = data;
             }, function (err) {
@@ -66,11 +63,11 @@
                     }
                 });
 
-                $mdDialog.hide();
+                $uibModalInstance.close();
             };
 
             $scope.closeComputerGroupsDialog = function () {
-                $mdDialog.cancel();
+                $uibModalInstance.dismiss();
             };
         }
 

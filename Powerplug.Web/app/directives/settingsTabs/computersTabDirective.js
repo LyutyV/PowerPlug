@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     angular
-        .module('powerPlug').directive('computersTab', ['$mdDialog', 'ComputersResource', function ($mdDialog, ComputersResource) {
+        .module('powerPlug').directive('computersTab', ['$uibModal', 'ComputersResource', function ($uibModal, ComputersResource) {
             return {
                 templateUrl: '../../../views/powerplan/settingsTabs/computers.html',     
                 scope: {
@@ -26,17 +26,13 @@
                     };
 
                     scope.addSavingComputer = function (ev, computerId, type) {
-                        $mdDialog.show({
-                            templateUrl: 'views/powerplan/dialogs/computerCondition.html',
-                            parent: angular.element(document.body),
-                            targetEvent: ev,
-                            clickOutsideToClose: false,
-                            bindToController: true,
-                            locals: {},
+                        $uibModal.open({
+                            templateUrl: 'views/common/dialogs/computerCondition.html',
                             controller: DialogController,
+                            backdrop: 'static',
+                            size: 'large'
                         });
-                       
-                        function DialogController($scope, $mdDialog, $document) {
+                        function DialogController($scope, $uibModalInstance, $document) {
                             ComputersResource.query(function (data) {
                                 $scope.savingComputerList = data;
                             }, function (err) {
@@ -67,11 +63,11 @@
                                     }
                                 });
 
-                                $mdDialog.hide();
+                                $uibModalInstance.close();
                             };
 
                             $scope.closeSavingComputers = function () {
-                                $mdDialog.cancel();
+                                $uibModalInstance.dismiss();
                             };
                         }
                     };

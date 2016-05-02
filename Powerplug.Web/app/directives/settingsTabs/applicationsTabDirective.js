@@ -77,11 +77,11 @@
                                 else {
                                     scope.appMetrics.push({ appKey: appId, appName: exeName, counter: counter, threshold: threshold });
                                 }
-                                $uibModalInstance.dismiss('OK');
+                                $uibModalInstance.close();
                             };
 
                             $scope.closeSavingApplication = function () {
-                                $uibModalInstance.dismiss('cancel');
+                                $uibModalInstance.dismiss();
                             };
                         }
                     };

@@ -5,10 +5,9 @@
     angular
         .module('powerPlug')
         .controller('ComputerGroupsCtrl',
-                     ['$scope', '$mdDialog', '$state', 'ComputersResource', 'ComputerGroupsResource', ComputerGroupsCtrl]);
+                     ['$scope', '$uibModal', '$state', 'ComputersResource', 'ComputerGroupsResource', ComputerGroupsCtrl]);
 
-
-    function ComputerGroupsCtrl($scope, $mdDialog, $state, ComputersResource, ComputerGroupsResource) {
+    function ComputerGroupsCtrl($scope, $uibModal, $state, ComputersResource, ComputerGroupsResource) {
         //============Private===========================================
         var vm = this;
         var _maxGroupId = 0;
@@ -25,14 +24,14 @@
             });
         }
         function initPopups() {
-            IPMaksPopupHandler.init(vm, $mdDialog);
-            computerMaksPopupHandler.init(vm, $mdDialog);
-            IPRangePopupHandler.init(vm, $mdDialog);
-            computerGroupPopupHandler.init(vm, $mdDialog);
-            computersNameDialodHandler.init($mdDialog, ComputersResource, ComputerGroupsResource);
+            IPMaksPopupHandler.init(vm, $uibModal);
+            computerMaksPopupHandler.init(vm, $uibModal);
+            IPRangePopupHandler.init(vm, $uibModal);
+            computerGroupPopupHandler.init(vm, $uibModal);
+            computersNameDialodHandler.init($uibModal, ComputersResource, ComputerGroupsResource);
             vm.openComputerGroupDialog = function (groupIndex) {
-                computerGroupPopupHandler.openComputerGroupDialog(groupIndex).then(
-                    function (promiseObj) { addUpdateGroup(promiseObj, groupIndex); });
+                var modal = computerGroupPopupHandler.openComputerGroupDialog(groupIndex);
+                modal.result.then(function (promiseObj) { addUpdateGroup(promiseObj, groupIndex); });
             }
         }
         function isEmpty(object) {
@@ -180,28 +179,32 @@
         }
         vm.openAddDialog = function (index) {
             var editPopupType = 0;
-            var isInclude;
+            var isInclude, modal;
             isInclude = vm.incExc === "Include" ? 1 : 0;
             if (index >= 0) {
                 editPopupType = vm.groupMembersHash[vm.selectedGroupId].members[index].memberTypeId;
             }
             if ('computerName' == vm.popupType && (index < 0)) {
-                computersNameDialodHandler.addComputerDialog(vm.groupMembersHash[vm.selectedGroupId].members, true).then(function (computerObj) {
-                    updateComputersNameMembers(vm.selectedGroupId, isInclude);
-                });
+                modal = computersNameDialodHandler.addComputerDialog(vm.groupMembersHash[vm.selectedGroupId].members, true);
+                modal.result.then(function () {
+                        updateComputersNameMembers(vm.selectedGroupId, isInclude);
+                    });
             }
             else if (('computerMask' == vm.popupType) || (editPopupType == 2) || (editPopupType == 5)){
-                computerMaksPopupHandler.openComputerMaskDialog(index).then(function (computerObj) {
+                modal = computerMaksPopupHandler.openComputerMaskDialog(index);
+                modal.result.then(function (computerObj) {
                     updateGroupMembers(vm.selectedGroupId, computerObj, index, isInclude);
                 });
             }
             else if (('IPMask' == vm.popupType) ||  (editPopupType == 4) || (editPopupType == 6)){
-                IPMaksPopupHandler.openIPMaskDialog(index).then(function (computerObj) {
+                modal = IPMaksPopupHandler.openIPMaskDialog(index);
+                modal.result.then(function (computerObj) {
                     updateGroupMembers(vm.selectedGroupId, computerObj, index, isInclude);
                 });
             }
             else if (('IPRange' == vm.popupType) || (editPopupType == 3)) {
-                IPRangePopupHandler.openIPRangeDialog(index).then(function (computerObj) {
+                modal = IPRangePopupHandler.openIPRangeDialog(index);
+                modal.result.then(function (computerObj) {
                     updateGroupMembers(vm.selectedGroupId, computerObj, index, isInclude);
                 });
                 }

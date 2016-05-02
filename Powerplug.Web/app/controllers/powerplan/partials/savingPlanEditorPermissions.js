@@ -1,29 +1,26 @@
 ﻿var permissionHandler = {
     vm: {},
-    init: function (vm, $scope, $document, $mdDialog) {
+    init: function (vm, $scope, $document, $uibModal) {
         permissionHandler.vm = vm;
         permissionHandler.$scope = $scope;
         permissionHandler.$document = $document;
-        permissionHandler.$mdDialog = $mdDialog;
+        permissionHandler.$uibModal = $uibModal;
     },
     addPermissionsDialog: function (ev) {
-        permissionHandler.$mdDialog.show({
+        permissionHandler.$uibModal.open({
             templateUrl: 'views/powerplan/dialogs/addPermission.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose: false,
-            bindToController: true,
-            locals: {},
             controller: DialogController,
+            backdrop: 'static',
+            size: 'large'
         });
 
-        function DialogController($scope, $mdDialog, $document) {
+        function DialogController($scope, $uibModalInstance, $document) {
             $scope.addPermission = function () {
-                $mdDialog.hide();
+                $uibModalInstance.close();
             }
 
             $scope.closePermissionDialog = function () {
-                $mdDialog.cancel();
+                $uibModalInstance.dismiss();
             }
             // Select all checkboxes function in add script dialog
             $scope.checkAll = function (seed) {

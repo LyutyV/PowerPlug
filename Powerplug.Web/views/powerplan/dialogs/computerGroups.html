@@ -1,8 +1,9 @@
-﻿<md-dialog style="width:900px">
-    <md-toolbar>
+﻿<div class="settings-prop power-plug-dialog">
+    <div class="modal-header">
         <div style="padding-left: 20px;padding-top: 17px;">Select Computer Group</div>
-    </md-toolbar>
-    <md-content>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeComputerGroupsDialog()">
+    </div>
+    <div class="modal-body">
         <div class="well">
             <table class="table table-striped">
                 <thead>
@@ -25,10 +26,10 @@
                 </tbody>
             </table>
             <hr />
-            <div style="text-align:center">
-                <button class="btn btn-success" ng-click="addComputerGroups()">OK</button>
-                <button class="btn btn-danger" ng-click="closeComputerGroupsDialog()">Cancel</button>
-            </div>
         </div>
-    </md-content>
-</md-dialog>
+    </div>
+    <div style="text-align:center" class="buttonsBlock">
+        <button class="btn btn-success" ng-click="addComputerGroups()">OK</button>
+        <button class="btn btn-danger" ng-click="closeComputerGroupsDialog()">Cancel</button>
+    </div>
+</div>

@@ -558,12 +558,10 @@ nav {
             width: 100px;
             text-align: right; }
 
-md-dialog.settings-prop.powerRate-prop {
-  width: 60%; }
-  md-dialog.settings-prop.powerRate-prop > md-content {
-    padding-top: 50px; }
+.power-plug-dialog.settings-prop.powerRate-prop > .modal-body {
+  padding-top: 50px; }
 
-md-dialog.settings-prop > md-toolbar {
+.power-plug-dialog.settings-prop > .modal-header {
   background-color: #ffffff;
   padding-left: 32px;
   padding-right: 34px;
@@ -571,21 +569,21 @@ md-dialog.settings-prop > md-toolbar {
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
-  md-dialog.settings-prop > md-toolbar > div {
+  .power-plug-dialog.settings-prop > .modal-header > div {
     font-family: Calibri;
     color: rgba(26, 26, 26, 0.7);
     font-size: 24px;
     font-weight: 300;
     text-align: left; }
 
-md-dialog.settings-prop .buttonsBlock {
+.power-plug-dialog.settings-prop .buttonsBlock {
   text-align: center;
   padding: 15px 0;
   width: 100%;
   background-color: #f8f8f8; }
-  md-dialog.settings-prop .buttonsBlock > div {
+  .power-plug-dialog.settings-prop .buttonsBlock > div {
     margin: 0 auto; }
-  md-dialog.settings-prop .buttonsBlock button {
+  .power-plug-dialog.settings-prop .buttonsBlock button {
     height: 40px;
     width: 120px;
     border: none;
@@ -593,111 +591,111 @@ md-dialog.settings-prop .buttonsBlock {
     color: #ffffff;
     font-size: 20.3px;
     font-weight: 700; }
-    md-dialog.settings-prop .buttonsBlock button:first-child {
+    .power-plug-dialog.settings-prop .buttonsBlock button:first-child {
       background-color: #8cc63f; }
-    md-dialog.settings-prop .buttonsBlock button:last-child {
+    .power-plug-dialog.settings-prop .buttonsBlock button:last-child {
       background-color: #808080; }
 
-md-dialog.settings-prop > md-content {
+.power-plug-dialog.settings-prop > .modal-body {
   background-color: #ffffff;
   padding-left: 32px;
   padding-right: 34px; }
-  md-dialog.settings-prop > md-content .help-block.error {
+  .power-plug-dialog.settings-prop > .modal-body .help-block.error {
     color: #a94442; }
-  md-dialog.settings-prop > md-content .settings-table-container {
+  .power-plug-dialog.settings-prop > .modal-body .settings-table-container {
     padding-top: 25px; }
-    md-dialog.settings-prop > md-content .settings-table-container .action-settings {
+    .power-plug-dialog.settings-prop > .modal-body .settings-table-container .action-settings {
       font-family: Calibri;
       color: rgba(26, 26, 26, 0.7);
       font-size: 14.83px;
       font-weight: 700;
       text-align: left;
       margin-left: 30px; }
-      md-dialog.settings-prop > md-content .settings-table-container .action-settings:before {
+      .power-plug-dialog.settings-prop > .modal-body .settings-table-container .action-settings:before {
         margin-right: 5px; }
-    md-dialog.settings-prop > md-content .settings-table-container > span {
+    .power-plug-dialog.settings-prop > .modal-body .settings-table-container > span {
       font-family: Calibri;
       color: rgba(26, 26, 26, 0.7);
       font-size: 14px;
       font-weight: 700; }
-    md-dialog.settings-prop > md-content .settings-table-container table {
+    .power-plug-dialog.settings-prop > .modal-body .settings-table-container table {
       margin-top: 20px; }
-      md-dialog.settings-prop > md-content .settings-table-container table tr > td > .action-settings {
+      .power-plug-dialog.settings-prop > .modal-body .settings-table-container table tr > td > .action-settings {
         float: right;
         display: block; }
-        md-dialog.settings-prop > md-content .settings-table-container table tr > td > .action-settings:last-child {
+        .power-plug-dialog.settings-prop > .modal-body .settings-table-container table tr > td > .action-settings:last-child {
           margin-left: 0px; }
-      md-dialog.settings-prop > md-content .settings-table-container table > thead {
+      .power-plug-dialog.settings-prop > .modal-body .settings-table-container table > thead {
         font-family: Calibri;
         color: rgba(26, 26, 26, 0.7);
         font-size: 14px;
         font-weight: 700;
         letter-spacing: -0.182px; }
-      md-dialog.settings-prop > md-content .settings-table-container table > tbody {
+      .power-plug-dialog.settings-prop > .modal-body .settings-table-container table > tbody {
         font-family: Calibri;
         color: #333333;
         font-size: 14px;
         font-weight: 300;
         letter-spacing: -0.182px; }
-        md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr {
+        .power-plug-dialog.settings-prop > .modal-body .settings-table-container table > tbody > tr {
           border: none;
           outline: none; }
-          md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr.bg-row-selected {
+          .power-plug-dialog.settings-prop > .modal-body .settings-table-container table > tbody > tr.bg-row-selected {
             background-color: rgba(242, 242, 242, 0.6); }
-          md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td {
+          .power-plug-dialog.settings-prop > .modal-body .settings-table-container table > tbody > tr > td {
             height: 46px;
             vertical-align: middle;
             font-family: Calibri; }
-            md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td.bolder {
+            .power-plug-dialog.settings-prop > .modal-body .settings-table-container table > tbody > tr > td.bolder {
               font-weight: bold; }
-            md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td.grid-cell input[type="text"] {
+            .power-plug-dialog.settings-prop > .modal-body .settings-table-container table > tbody > tr > td.grid-cell input[type="text"] {
               font-family: Calibri;
               width: 50px;
               border: none;
               outline: none;
               height: 28px;
               padding: 5px; }
-            md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td.grid-cell select {
+            .power-plug-dialog.settings-prop > .modal-body .settings-table-container table > tbody > tr > td.grid-cell select {
               font-family: Calibri;
               border: none;
               outline: none; }
-            md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td.button-padding {
+            .power-plug-dialog.settings-prop > .modal-body .settings-table-container table > tbody > tr > td.button-padding {
               padding-right: 48px; }
-            md-dialog.settings-prop > md-content .settings-table-container table > tbody > tr > td.button-container {
+            .power-plug-dialog.settings-prop > .modal-body .settings-table-container table > tbody > tr > td.button-container {
               width: 100px;
               text-align: right; }
-  md-dialog.settings-prop > md-content .settings-side-note {
+  .power-plug-dialog.settings-prop > .modal-body .settings-side-note {
     display: inline-block;
     font-family: Calibri;
     font-size: 14px;
     color: rgba(26, 26, 26, 0.7);
     padding-bottom: 16px; }
-  md-dialog.settings-prop > md-content .settings-data-row {
+  .power-plug-dialog.settings-prop > .modal-body .settings-data-row {
     padding-bottom: 20px; }
-    md-dialog.settings-prop > md-content .settings-data-row.power-rate-data span {
+    .power-plug-dialog.settings-prop > .modal-body .settings-data-row.power-rate-data span {
       font-size: 14px;
       font-weight: bold;
       width: 130px; }
-    md-dialog.settings-prop > md-content .settings-data-row span {
+    .power-plug-dialog.settings-prop > .modal-body .settings-data-row span {
       width: 100px;
       display: inline-block;
       font-family: Calibri;
       font-size: 16px;
       color: rgba(26, 26, 26, 0.7); }
-    md-dialog.settings-prop > md-content .settings-data-row .form-control {
+    .power-plug-dialog.settings-prop > .modal-body .settings-data-row .form-control {
       display: inline; }
-    md-dialog.settings-prop > md-content .settings-data-row input[type=text], md-dialog.settings-prop > md-content .settings-data-row input[type="password"] {
+    .power-plug-dialog.settings-prop > .modal-body .settings-data-row input[type=text], .power-plug-dialog.settings-prop > .modal-body .settings-data-row input[type="password"] {
       width: 300px;
       height: 40px;
       color: #1a1a1a;
       font-size: 14px;
       padding: 5px; }
-    md-dialog.settings-prop > md-content .settings-data-row input[type=text].small-input {
+    .power-plug-dialog.settings-prop > .modal-body .settings-data-row input[type=text].small-input {
       width: 53px;
       margin-right: 5px; }
-    md-dialog.settings-prop > md-content .settings-data-row input[type=text].med-input {
+    .power-plug-dialog.settings-prop > .modal-body .settings-data-row input[type=text].med-input {
       width: 210px; }
-    md-dialog.settings-prop > md-content .settings-data-row select {
+    .power-plug-dialog.settings-prop > .modal-body .settings-data-row select {
       font-weight: normal;
       width: 105px;
       height: 40px;
@@ -705,18 +703,19 @@ md-dialog.settings-prop > md-content {
       margin-right: 10px;
       color: #1a1a1a;
       font-size: 14px; }
-    md-dialog.settings-prop > md-content .settings-data-row textarea {
+    .power-plug-dialog.settings-prop > .modal-body .settings-data-row textarea {
       width: 300px;
       height: 150px;
       color: #1a1a1a;
       font-size: 14px;
       padding: 5px; }
-    md-dialog.settings-prop > md-content .settings-data-row label {
+    .power-plug-dialog.settings-prop > .modal-body .settings-data-row label {
       display: inline-block;
       font-family: Calibri;
       font-size: 16px;
       color: #5d5d5d; }
 
+/********************REMOVE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**********************/
 .modal-dialog .settings-prop .powerplug-modal-header {
   background-color: #ffffff;
   padding-left: 32px;

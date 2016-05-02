@@ -1,21 +1,19 @@
 ﻿var computerMaksPopupHandler = {
     vm: {},
-    init: function (vm, $mdDialog) {
+    init: function (vm, $uibModal) {
         computerMaksPopupHandler.vm = vm;
-        computerMaksPopupHandler.$mdDialog = $mdDialog;
+        computerMaksPopupHandler.$uibModal = $uibModal;
     },
  
     openComputerMaskDialog: function (computerIndex) {
-        return computerMaksPopupHandler.$mdDialog.show({
+        return computerMaksPopupHandler.$uibModal.open({
             templateUrl: 'views/settings/dialogs/computerMask.html',
-            parent: angular.element(document.body),
-            clickOutsideToClose: false,
-            bindToController: true,
-            locals: { computerIndex: computerIndex }, 
-            controller: DialogController,
+            resolve: { computerIndex: function () { return computerIndex } },
+            backdrop: 'static',
+            controller: DialogController
         });
 
-        function DialogController($scope, $mdDialog, computerIndex) {
+        function DialogController($scope, $uibModalInstance, computerIndex) {
             //===============private===============/
             var _selectedGroup;
             var _returnObjByPromise = { computerFields: {} };
@@ -46,10 +44,10 @@
             $scope.add = function () {
                 addComputerObjectToJson();
                 _returnObjByPromise.isChange = $scope.isChange;
-                $mdDialog.hide({ computerObject: _returnObjByPromise });
+                $uibModalInstance.close({ computerObject: _returnObjByPromise });
             }
             $scope.cancel = function () {
-                $mdDialog.cancel();
+                $uibModalInstance.dismiss();
             }
             //===============init================/
             init();

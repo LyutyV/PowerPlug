@@ -1,9 +1,9 @@
-﻿<md-dialog class="settings-prop">
-    <md-toolbar>
+﻿<div class="settings-prop power-plug-dialog">
+    <div class="modal-header">
         <div>Define Computer Group Members</div>
         <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
-    </md-toolbar>
-    <md-content>
+    </div>
+    <div class="modal-body">
         <div>
             <div class="settings-data-row">
                 <label style="width:100px">IP Adress from</label>
@@ -20,11 +20,11 @@
                 <input type="text" ng-change="isChange = true" ng-model="IPTo.part4" class="small-input"/>
             </div>
         </div>
-    </md-content>
+    </div>
     <div class="buttonsBlock">
         <div>
             <button ng-click="add()">OK</button>
             <button ng-click="cancel()">Cancel</button>
         </div>
     </div>
-</md-dialog>
+</div>
