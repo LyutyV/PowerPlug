@@ -1,3 +1,46 @@
+ .buttons-container {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 246px;
+    background-color: #f2f2f2;
+    height: 100px;
+    z-index: 10;
+
+    div {
+        padding-top: 30px;
+        padding-right: 30px;
+        text-align: center;
+
+        .btn-save-green {
+            width: 160px;
+            height: 44px;
+            background-color: #8cc63f;
+            border: none;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Calibri;
+            margin-right: 2px;
+            outline: none;
+        }
+
+        .btn-discard-gray {
+            width: 160px;
+            height: 44px;
+            background-color: #808080;
+            border: none;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Calibri;
+            outline: none;
+        }
+    }
+}
+
 .settings {
     padding-top: 20px;
     > .list-row-container{
@@ -79,50 +122,7 @@
                 }
             }
         }
-    }
-
-    .buttons-container {
-        position: fixed;
-        bottom: 0px;
-        right: 0px;
-        left: 246px;
-        background-color: #f2f2f2;
-        height: 100px;
-        z-index: 10;
-
-        div {
-            padding-top: 30px;
-            padding-right: 30px;
-            text-align: center;
-
-            .btn-save-green {
-                width: 160px;
-                height: 44px;
-                background-color: #8cc63f;
-                border: none;
-                text-align: center;
-                color: #fff;
-                font-size: 20px;
-                font-weight: bold;
-                font-family: Calibri;
-                margin-right: 2px;
-                outline: none;
-            }
-
-            .btn-discard-gray {
-                width: 160px;
-                height: 44px;
-                background-color: #808080;
-                border: none;
-                text-align: center;
-                color: #fff;
-                font-size: 20px;
-                font-weight: bold;
-                font-family: Calibri;
-                outline: none;
-            }
-        }
-    }
+    }  
 
     > .bg-separator {
         height: 74px;
