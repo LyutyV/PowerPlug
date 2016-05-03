@@ -1,0 +1,37 @@
+﻿<div class="settings-prop locationPowerRate-prop power-plug-dialog">
+    <div class="modal-header">
+        <div>Location's Power Rate</div>
+        <!-- <i class="fa fa-times" ></i> -->
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeScriptDialog()">
+    </div>
+    <div class="modal-body">        
+        <div>
+            <div class="settings-table-container">                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>From Date</td>
+                            <td>To Date</td>
+                            <td>Power Rate</td>
+                            <td colspan="2">
+                                <span class="buttonTypeOneAdd action-settings" ng-click="addLocationPowerRateDialog()">Add</span>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="price in prices" class="script-row" data-id="{{price.scriptId}}" ng-click="vm.selectScript($event)">
+                            <td>{{ price.scriptName}}</td>
+                            <td>{{ price.owner}}</td>
+                            <td>{{ price.scriptDesc}}</td>                            
+                            <td class="button-container"><span class="buttonTypeOneRemove action-settings" ng-click="vm.removeScript(price.scriptId)">Remove</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>    
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="addUpdateScript()">OK</button>
+        <button ng-click="closeScriptDialog()">Cancel</button>
+    </div>
+</div>

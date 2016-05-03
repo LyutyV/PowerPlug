@@ -448,6 +448,11 @@
                 padding-top: 50px;
             }
         }
+        &.locationPowerRate-prop {
+            > .modal-body {
+                padding-top: 0px;
+            }
+        }
 
          >.modal-header {
             background-color: #ffffff;
@@ -496,7 +501,7 @@
             }
         }
 
-        >.modal-body{
+        > .modal-body{
             background-color: #ffffff;
             padding-left: 32px;
             padding-right: 34px;
@@ -681,7 +686,7 @@
         }
     }
 }
-/********************REMOVE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**********************/
+
 .modal-dialog {
     .settings-prop {
         .powerplug-modal-header {
@@ -743,9 +748,9 @@
                 display: inline-block;
                  vertical-align:middle;
                 .power-plug-date-picker {
-                    width:300px;
+                    width:150px;
                     input.form-control {
-                        padding: 24px 0px 24px 5px;
+                        padding: 19px 0px 19px 5px;
                         border-color:#A9A9A9;
                         color:black;
                     }
@@ -764,6 +769,7 @@
                     font-family: Calibri;
                     font-size: 16px;
                     color: rgba(26,26,26,.7);
+                    vertical-align:middle;
                 }
 
                 input[type=text], input[type="password"] {
@@ -772,13 +778,14 @@
                     color: #1a1a1a;
                     font-size: 14px;
                     padding: 5px;
+                    vertical-align:middle;
                 }
 
                 select {
                     font-weight: normal;
-                    width: 105px;
+                    width: 300px;
                     height: 40px;
-                    margin-left: 20px;
+                    margin-left: 2px;
                     margin-right: 10px;
                     color: #1a1a1a;
                     font-size: 14px;
