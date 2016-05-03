@@ -176,7 +176,7 @@
             var restrictedPage = $.inArray($location.path(), ['/login']) === -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
-                $state.go('login?redirectUrl=' + next);
+                $state.go('login');
             }
         });
 

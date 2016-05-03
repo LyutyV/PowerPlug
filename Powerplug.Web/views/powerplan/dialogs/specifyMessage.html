@@ -1,0 +1,42 @@
+<div class="power-plug-dialog">
+    <div class="modal-header">
+        <div>Manage Plans</div>
+        <!-- <i class="fa fa-times" ></i> -->
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeSavingApplication()">
+    </div>
+    <div class="modal-body">
+        <div>
+            <div>
+                <descripotion done="vm.done(data)" preview="vm.preview(data)" data-default-text="vm.text"> </descripotion>
+            </div>
+            <div class="mesaage-options">
+                <div class="message-title">
+                    Message Options
+                </div>
+                <div>
+                    Every day <input type="text" />
+                </div>
+                <div class="checkbox-container">
+                    <input id="li-snooze" type="checkbox" class="custom-checkbox-green-type00" />
+                    <label for="li-snooze"></label>
+                    Allow Users to Postpone (Snooze) the message
+                </div>
+                <div class="snooze-child">
+                    <span>Default snooze time</span><select></select> <span>Maximum</span><select></select>
+                </div>
+                <div class="checkbox-container">
+                    <input id="li-abort" type="checkbox" class="custom-checkbox-green-type00" />
+                    <label for="li-abort"></label>
+                    Allow Users to Abort the Power Saving operation
+                </div>
+                <div>
+                    <span>Display timeout</span><input type="number" /> (seconds)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="upsertSavingApplication(appMetric.appKey)">OK</button>
+        <button ng-click="closeSavingApplication()">Cancel</button>
+    </div>
+</div>

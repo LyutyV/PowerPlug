@@ -165,6 +165,70 @@
         font-size: 28px;
         font-weight: 700; }
 
+.power-plug-dialog .buttonsBlock {
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  background-color: #f8f8f8; }
+  .power-plug-dialog .buttonsBlock > div {
+    margin: 0 auto; }
+  .power-plug-dialog .buttonsBlock button {
+    height: 40px;
+    width: 120px;
+    border: none;
+    font-family: Calibri;
+    color: #ffffff;
+    font-size: 20.3px;
+    font-weight: 700; }
+    .power-plug-dialog .buttonsBlock button:first-child {
+      background-color: #8cc63f; }
+    .power-plug-dialog .buttonsBlock button:last-child {
+      background-color: #808080; }
+
+.power-plug-dialog .mce-tinymce,
+.power-plug-dialog .mce-toolbar-grp,
+.power-plug-dialog .wraper-tinymce .mce-panel {
+  float: none !important;
+  margin-left: 0px !important;
+  padding-bottom: 0px; }
+
+.power-plug-dialog .mce-edit-area iframe {
+  width: 483px !important;
+  margin-left: 20px; }
+
+.power-plug-dialog .btn-block-tinymce {
+  display: none; }
+
+.power-plug-dialog .modal-header > div {
+  font-family: Calibri;
+  color: rgba(26, 26, 26, 0.7);
+  font-size: 24px;
+  font-weight: 300;
+  text-align: left; }
+
+.power-plug-dialog.manage-plans .modal-body .plans-container {
+  padding-top: 10px; }
+  .power-plug-dialog.manage-plans .modal-body .plans-container .action-settings {
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 14.83px;
+    font-weight: 700;
+    text-align: left;
+    margin-left: 30px; }
+    .power-plug-dialog.manage-plans .modal-body .plans-container .action-settings:before {
+      margin-right: 5px; }
+  .power-plug-dialog.manage-plans .modal-body .plans-container .plans-title {
+    font-weight: bold;
+    font-size: 16px; }
+  .power-plug-dialog.manage-plans .modal-body .plans-container .plan-list-container {
+    padding-top: 10px; }
+    .power-plug-dialog.manage-plans .modal-body .plans-container .plan-list-container ul li {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      list-style: none;
+      cursor: pointer;
+      border-top: solid 1px #dedede; }
+
 header {
   height: 100px;
   background: #ffffff;
@@ -241,6 +305,36 @@ nav {
           width: 20px;
           color: #90c63d; }
 
+input.custom-checkbox-green-type00 {
+  display: none; }
+  input.custom-checkbox-green-type00 + label {
+    position: relative;
+    margin: 0;
+    height: 15px;
+    width: 35px; }
+    input.custom-checkbox-green-type00 + label:before {
+      position: absolute;
+      content: '';
+      height: 15px;
+      width: 15px;
+      border: 1px solid #d9d9d9;
+      left: 10px;
+      top: 3px;
+      background-color: #ffffff; }
+  input.custom-checkbox-green-type00:checked + label:before {
+    position: absolute;
+    content: '\f00c';
+    font-family: 'FontAwesome';
+    color: #a3d165;
+    height: 15px;
+    width: 15px;
+    border: 1px solid #d9d9d9;
+    text-align: center;
+    line-height: 15px;
+    left: 10px;
+    top: 3px;
+    background-color: #ffffff; }
+
 .buttons-container {
   position: fixed;
   bottom: 0px;
@@ -309,35 +403,6 @@ nav {
   .settings .save-button-margin {
     height: 100px;
     width: 100%; }
-  .settings input.custom-checkbox-green-type00 {
-    display: none; }
-    .settings input.custom-checkbox-green-type00 + label {
-      position: relative;
-      margin: 0;
-      height: 15px;
-      width: 35px; }
-      .settings input.custom-checkbox-green-type00 + label:before {
-        position: absolute;
-        content: '';
-        height: 15px;
-        width: 15px;
-        border: 1px solid #d9d9d9;
-        left: 10px;
-        top: 3px;
-        background-color: #ffffff; }
-    .settings input.custom-checkbox-green-type00:checked + label:before {
-      position: absolute;
-      content: '\f00c';
-      font-family: 'FontAwesome';
-      color: #a3d165;
-      height: 15px;
-      width: 15px;
-      border: 1px solid #d9d9d9;
-      text-align: center;
-      line-height: 15px;
-      left: 10px;
-      top: 3px;
-      background-color: #ffffff; }
   .settings > .bg-separator {
     height: 74px;
     background-color: rgba(242, 242, 242, 0.6);
@@ -590,6 +655,9 @@ nav {
 .power-plug-dialog.settings-prop.powerRate-prop > .modal-body {
   padding-top: 50px; }
 
+.power-plug-dialog.settings-prop.locationPowerRate-prop > .modal-body {
+  padding-top: 0px; }
+
 .power-plug-dialog.settings-prop > .modal-header {
   background-color: #ffffff;
   padding-left: 32px;
@@ -749,7 +817,6 @@ nav {
       font-size: 16px;
       color: #5d5d5d; }
 
-/********************REMOVE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**********************/
 .modal-dialog .settings-prop .powerplug-modal-header {
   background-color: #ffffff;
   padding-left: 32px;
@@ -796,9 +863,9 @@ nav {
     display: inline-block;
     vertical-align: middle; }
     .modal-dialog .settings-prop .modal-body .date-picker .power-plug-date-picker {
-      width: 300px; }
+      width: 150px; }
       .modal-dialog .settings-prop .modal-body .date-picker .power-plug-date-picker input.form-control {
-        padding: 24px 0px 24px 5px;
+        padding: 19px 0px 19px 5px;
         border-color: #A9A9A9;
         color: black; }
       .modal-dialog .settings-prop .modal-body .date-picker .power-plug-date-picker .input-group-addon {
@@ -810,18 +877,20 @@ nav {
       display: inline-block;
       font-family: Calibri;
       font-size: 16px;
-      color: rgba(26, 26, 26, 0.7); }
+      color: rgba(26, 26, 26, 0.7);
+      vertical-align: middle; }
     .modal-dialog .settings-prop .modal-body .settings-data-row input[type=text], .modal-dialog .settings-prop .modal-body .settings-data-row input[type="password"] {
       width: 300px;
       height: 40px;
       color: #1a1a1a;
       font-size: 14px;
-      padding: 5px; }
+      padding: 5px;
+      vertical-align: middle; }
     .modal-dialog .settings-prop .modal-body .settings-data-row select {
       font-weight: normal;
-      width: 105px;
+      width: 300px;
       height: 40px;
-      margin-left: 20px;
+      margin-left: 2px;
       margin-right: 10px;
       color: #1a1a1a;
       font-size: 14px; }

@@ -1,4 +1,46 @@
- .buttons-container {
+input.custom-checkbox-green-type00 {
+    display: none;
+
+    + label {
+        position: relative;
+        margin: 0;
+        height: 15px;
+        width: 35px;
+
+        &:before {
+            position: absolute;
+            content: '';
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            left: 10px;
+            top: 3px;
+            background-color: #ffffff;
+        }
+    }
+
+    &:checked {
+        + label {
+            &:before {
+                position: absolute;
+                content: '\f00c';
+                font-family: 'FontAwesome';
+                color: #a3d165;
+                height: 15px;
+                width: 15px;
+                border: 1px solid #d9d9d9;
+                text-align: center;
+                line-height: 15px;
+                left: 10px;
+                top: 3px;
+                background-color: #ffffff;
+            }
+        }
+    }
+} 
+
+
+.buttons-container {
     position: fixed;
     bottom: 0px;
     right: 0px;
@@ -81,48 +123,7 @@
     .save-button-margin {
         height: 100px;
         width: 100%;
-    }
-
-    input.custom-checkbox-green-type00 {
-        display: none;
-
-        + label {
-            position: relative;
-            margin: 0;
-            height: 15px;
-            width: 35px;
-
-            &:before {
-                position: absolute;
-                content: '';
-                height: 15px;
-                width: 15px;
-                border: 1px solid #d9d9d9;
-                left: 10px;
-                top: 3px;
-                background-color: #ffffff;
-            }
-        }
-
-        &:checked {
-            + label {
-                &:before {
-                    position: absolute;
-                    content: '\f00c';
-                    font-family: 'FontAwesome';
-                    color: #a3d165;
-                    height: 15px;
-                    width: 15px;
-                    border: 1px solid #d9d9d9;
-                    text-align: center;
-                    line-height: 15px;
-                    left: 10px;
-                    top: 3px;
-                    background-color: #ffffff;
-                }
-            }
-        }
-    }  
+    }      
 
     > .bg-separator {
         height: 74px;
@@ -481,6 +482,11 @@
                 padding-top: 50px;
             }
         }
+        &.locationPowerRate-prop {
+            > .modal-body {
+                padding-top: 0px;
+            }
+        }
 
          >.modal-header {
             background-color: #ffffff;
@@ -529,7 +535,7 @@
             }
         }
 
-        >.modal-body{
+        > .modal-body{
             background-color: #ffffff;
             padding-left: 32px;
             padding-right: 34px;
@@ -720,7 +726,7 @@
         }
     }
 }
-/********************REMOVE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**********************/
+
 .modal-dialog {
     .settings-prop {
         .powerplug-modal-header {
@@ -782,9 +788,9 @@
                 display: inline-block;
                  vertical-align:middle;
                 .power-plug-date-picker {
-                    width:300px;
+                    width:150px;
                     input.form-control {
-                        padding: 24px 0px 24px 5px;
+                        padding: 19px 0px 19px 5px;
                         border-color:#A9A9A9;
                         color:black;
                     }
@@ -803,6 +809,7 @@
                     font-family: Calibri;
                     font-size: 16px;
                     color: rgba(26,26,26,.7);
+                    vertical-align:middle;
                 }
 
                 input[type=text], input[type="password"] {
@@ -811,13 +818,14 @@
                     color: #1a1a1a;
                     font-size: 14px;
                     padding: 5px;
+                    vertical-align:middle;
                 }
 
                 select {
                     font-weight: normal;
-                    width: 105px;
+                    width: 300px;
                     height: 40px;
-                    margin-left: 20px;
+                    margin-left: 2px;
                     margin-right: 10px;
                     color: #1a1a1a;
                     font-size: 14px;

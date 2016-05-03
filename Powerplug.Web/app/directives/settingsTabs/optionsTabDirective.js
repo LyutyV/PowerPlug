@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     angular
-        .module('powerPlug').directive('optionsTab', function () {
+        .module('powerPlug').directive('optionsTab', ['$uibModal', function ($uibModal) {
             return {
                 templateUrl: '../../../views/powerplan/settingsTabs/options.html',
                 scope: {
@@ -24,6 +24,25 @@
                   setId();
                   // End this code set's different id for checkboxes
 
+                  scope.specifyMessageDialog = function () {
+                      console.log('aaa');
+                      $uibModal.open({
+                          templateUrl: 'views/powerplan/dialogs/specifyMessage.html',
+                          resolve: { },
+                          controller: DialogController,
+                          backdrop: 'static'
+                      })
+
+                      function DialogController($scope, $uibModalInstance, $document) {
+                          $scope.upsertSavingApplication = function () {                              
+                              $uibModalInstance.close();
+                          };
+
+                          $scope.closeSavingApplication = function () {
+                              $uibModalInstance.dismiss();
+                          };
+                      }
+                  };
 
                     //copy array appMetrics - init
                     if (!scope.saveEvent) {
@@ -74,5 +93,5 @@
                     });
                 }
             }
-        })
+        }])
 }());

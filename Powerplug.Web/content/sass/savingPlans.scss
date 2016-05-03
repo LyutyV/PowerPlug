@@ -195,3 +195,92 @@
     }
   }
 }
+.power-plug-dialog
+{
+    .buttonsBlock {
+        text-align: center;
+        padding: 15px 0;
+        width: 100%;
+        background-color: rgb(248,248,248);
+
+        > div {
+            margin: 0 auto;
+        }
+
+        button {
+            height: 40px;
+            width: 120px;
+            border: none;
+            font-family: Calibri;
+            color: #ffffff;
+            font-size: 20.3px;
+            font-weight: 700;
+
+            &:first-child {
+                background-color: #8cc63f;
+            }
+
+            &:last-child {
+                background-color: #808080;
+            }
+        }
+    }
+    .mce-tinymce,
+    .mce-toolbar-grp,
+    .wraper-tinymce .mce-panel {
+        float: none !important;
+        margin-left: 0px !important;
+        padding-bottom:0px;
+    }
+    .mce-edit-area iframe{
+        width:483px !important;
+        margin-left: 20px;
+    }
+    .btn-block-tinymce{
+        display:none;
+    }
+    .modal-header {
+        > div{
+            font-family: Calibri;
+            color: rgba(26,26,26,.7);
+            font-size: 24px;
+            font-weight: 300;
+            text-align: left;
+        }
+    }
+    &.manage-plans {       
+        .modal-body{
+            .plans-container{
+                padding-top: 10px;
+                .action-settings{
+                    font-family: Calibri;
+                    color: rgba(26,26,26,.7);
+                    font-size: 14.83px;
+                    font-weight: 700;
+                    text-align: left;
+                    margin-left: 30px;
+                    &:before{
+                        margin-right: 5px;
+                    }
+                }
+                .plans-title{
+                    font-weight:bold;
+                    font-size:16px;
+                }
+                .plan-list-container{
+                    padding-top:10px;
+                    ul{
+                        li{
+                            padding-top: 8px;
+                            padding-bottom: 8px;
+                            list-style: none;
+                            cursor:pointer;
+                            border-top: solid 1px #dedede;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
