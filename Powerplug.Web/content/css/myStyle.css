@@ -1949,7 +1949,7 @@ div.computersWrapper {
     height: 112px;
     display: flex;
     justify-content: flex-end;
-    padding-left: 33px; }
+    padding-left: 22px; }
     .overview > div:first-child > div:first-child {
       flex-grow: 1; }
     .overview > div:first-child > div:last-child {
@@ -2138,7 +2138,7 @@ div.permissionsWrapper {
     .power-plug-dialog > .modal-header > img {
       cursor: pointer; }
   .power-plug-dialog > .modal-body > div:first-child {
-    padding-left: 33px;
+    padding-left: 22px;
     padding-right: 22px; }
   .power-plug-dialog .buttonsBlock {
     background-color: #f2f2f2;

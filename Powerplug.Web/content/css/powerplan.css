@@ -165,7 +165,41 @@
         font-size: 28px;
         font-weight: 700; }
 
-.power-plug-dialog.manage-plans > .modal-header > div {
+.power-plug-dialog .buttonsBlock {
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  background-color: #f8f8f8; }
+  .power-plug-dialog .buttonsBlock > div {
+    margin: 0 auto; }
+  .power-plug-dialog .buttonsBlock button {
+    height: 40px;
+    width: 120px;
+    border: none;
+    font-family: Calibri;
+    color: #ffffff;
+    font-size: 20.3px;
+    font-weight: 700; }
+    .power-plug-dialog .buttonsBlock button:first-child {
+      background-color: #8cc63f; }
+    .power-plug-dialog .buttonsBlock button:last-child {
+      background-color: #808080; }
+
+.power-plug-dialog .mce-tinymce,
+.power-plug-dialog .mce-toolbar-grp,
+.power-plug-dialog .wraper-tinymce .mce-panel {
+  float: none !important;
+  margin-left: 0px !important;
+  padding-bottom: 0px; }
+
+.power-plug-dialog .mce-edit-area iframe {
+  width: 483px !important;
+  margin-left: 20px; }
+
+.power-plug-dialog .btn-block-tinymce {
+  display: none; }
+
+.power-plug-dialog .modal-header > div {
   font-family: Calibri;
   color: rgba(26, 26, 26, 0.7);
   font-size: 24px;
