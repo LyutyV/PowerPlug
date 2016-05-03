@@ -443,6 +443,39 @@
 
 .power-plug-dialog {
     &.settings-prop {
+        &.permission-dialog{
+            h4{
+                font-family: Calibri;
+                color: #4d4d4d;
+                font-size: 18px;
+                font-weight: 700;
+            }
+            .radio-btns{
+                  float: left;
+                  margin-right: 23px;
+            }
+            .open-dialog{  
+                   vertical-align: middle;
+                    display: inline-block;
+                   btn{
+                        width: 40px;
+                        height: 40px;
+                        background-color: #333;
+                        color: #fff;
+                        position: relative;
+                        border: 1px solid #ccc;
+                        display: inline-block;
+                        border-left: none;
+                        text-align: center;
+                        line-height: 44px;
+                        float: left;
+                }
+                   input{    
+                       float: left;
+                   }
+            }
+          
+        }
         &.powerRate-prop {
             > .modal-body {
                 padding-top: 50px;
@@ -500,7 +533,13 @@
             background-color: #ffffff;
             padding-left: 32px;
             padding-right: 34px;
-
+            .form-control{
+                &:focus{
+                    box-shadow:none;
+                    border-color: #cccccc;
+                }
+                border-radius:0px;
+            }
             .help-block.error {
                 color: #a94442;
             }

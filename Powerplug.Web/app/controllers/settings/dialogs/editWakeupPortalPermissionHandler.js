@@ -1,8 +1,10 @@
 ﻿var editWakeupPermissionHandler = (function () {
     var api = {};
     var _uibModal;
-    api.init = function ($uibModal) {
+    api.init = function ($uibModal, ComputersResource, ComputerGroupsResource) {
         _uibModal = $uibModal;
+        computersNameDialodHandler.init($uibModal, ComputersResource, ComputerGroupsResource);
+
     },
 
     api.openDialog = function (appMetric) {
@@ -28,41 +30,23 @@
                 }
             }
             $scope.openDialog = function () {
-                _uibModal.open({
-                    templateUrl: 'views/settings/dialogs/tempDialog1.html',
-                    controller: DialogController1,
-                    backdrop: 'static'
-                });
-                function DialogController1($scope, $uibModalInstance) {
-                    $scope.cancel = function () {
-                        $uibModalInstance.dismiss();
-                    };
-
-                    $scope.add = function () {
-                        $uibModalInstance.dismiss();
+                var computersArr = [];
+                var model =computersNameDialodHandler.addComputerDialog(computersArr, true);
+                model.result.then(function () {
+                    if (computersArr.length > 0) {
+                        debugger;
+                        $scope.permission.computerName = computersArr[0].name;
                     }
-                    $scope.openDialog = function () {
-                        _uibModal.open({
-                            templateUrl: 'views/settings/dialogs/tempDialog2.html',
-                            controller: DialogController2,
-                            backdrop: 'static'
-                        });
-                        function DialogController2($scope, $uibModalInstance) {
-                            $scope.cancel = function () {
-                                $uibModalInstance.dismiss();
-                            };
-
-                            $scope.add = function () {
-                                $uibModalInstance.dismiss();
-                            }
-                        }
-
-                    }
-
-                }
+                })
             }
             $scope.isValide = { error: false, message: "" };
-            $scope.permission = { allow: 'allow' ,username: "", userDomain: "", compName: "", compDomain: "" };
+            $scope.permission = {
+                allow: 'allow',
+                username: "",
+                userDomain: "",
+                computerName: "",
+                computerDomain: ""
+            };
             $scope.cancel = function () {
                 $uibModalInstance.dismiss();
             };
@@ -75,7 +59,6 @@
                 }
             }
             //=======================init=========================
-
         }
     }
     return api;
