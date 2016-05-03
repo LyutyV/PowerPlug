@@ -1,31 +1,38 @@
-﻿<div ng-cloak>
+﻿<div ng-cloak class="manage-plans power-plug-dialog">
     <div class="modal-header">
-        <div ng-click="cancel()"> X </div>
+        <div>Manage Plans</div>
+        <!-- <i class="fa fa-times" ></i> -->
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
     </div>
     <div class="modal-body">
-        <h2>ui.sortable event order</h2>
-        <div class="clearfix">
-            <button style="float:right" ng-click="deletePolicies()">Delete</button>
-            <div style="float:left">
-                <ul ui-sortable="sortableOptions" ng-model="PParray" class="list sortable-policies">
-                    <li ng-repeat="PPItem in PParray" class="item">
-                        <input type="checkbox" ng-model="PPItem.checked"/> {{PPItem.policyName}}
-                    </li>
-                </ul>
+        <div>
+            <div class="plans-container">
+                <div class="clearfix">
+                    <span class="pull-right buttonTypeOneRemove action-settings" ng-click="deletePolicies()">Delete</span>                    
+                    <span class="pull-left">
+                        <input id="spc01" type="checkbox" class="custom-checkbox-green-type00" ng-model="selectedAll" ng-click="checkAll()" />
+                        <label for="spc01"></label><span class="plans-title">{{PParray.length}} Plans</span>
+                    </span>
+                </div>
+                <div class="plan-list-container">
+                    <ul ui-sortable="sortableOptions" ng-model="PParray" class="list sortable-policies">
+                        <li ng-repeat="PPItem in PParray" class="item">
+                            <input id="li-{{PPItem.policyId}}" type="checkbox" ng-model="PPItem.checked" class="custom-checkbox-green-type00" />
+                            <label for="li-{{PPItem.policyId}}"></label>
+                            {{PPItem.policyName}}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-
-        <div class="floatleft" style="margin-left: 20px;">
-            <ul class="list logList">
-                <li ng-repeat="entry in sortingLog track by $index" class="logItem">
-                    {{entry}}
-                </li>
-            </ul>
-        </div>
-        <div class="clear"></div>
     </div>
-    <div class="modal-footer">
-        <button ng-click="Add('Add')">  Add </button>
-        <button ng-click="cancel()" style="margin-right:20px;"> Cancel </button>
+    <div class="buttonsBlock">
+        <button ng-click="Add('Add')">OK</button>
+        <button ng-click="cancel()">Cancel</button>
     </div>
 </div>
+
+
+
+
+

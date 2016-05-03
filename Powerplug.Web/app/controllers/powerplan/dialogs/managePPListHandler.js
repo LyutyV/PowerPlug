@@ -35,6 +35,18 @@
                 }
             }
         }
+
+        $scope.checkAll = function () {
+            if ($scope.selectedAll) {
+                $scope.selectedAll = true;
+            } else {
+                $scope.selectedAll = false;
+            }
+            angular.forEach($scope.PParray, function (PParrayItem) {
+                PParrayItem.checked = $scope.selectedAll;
+            });
+        }
+
         $scope.sortableOptions = {}
         $scope.PParray = param.PParray;
         $scope.sortingLog = [];
