@@ -1,14 +1,36 @@
-﻿<div class="settings-prop power-plug-dialog">
+﻿<div class="settings-prop power-plug-dialog addComputerGroupWrapper">
     <div class="modal-header">
-        <div style="padding-left: 20px;padding-top: 17px;">Select Computer Group</div>
+        <div>Add a Group</div>
         <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeComputerGroupsDialog()">
     </div>
     <div class="modal-body">
-        <div class="well">
-            <table class="table table-striped">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="button">PowerPlug Pro Groups</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <span>PowerPlug Computer Groups</span>
+            <input id="AG01" type="checkbox" class="custom-checkbox-green-type00"/>
+            <label for='AG01'>Show all groups</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <span>{{computerGroupsList.length}} Groups</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <table>
                 <thead>
                     <tr>
-                        <td></td>                        
+                        <td>
+                          <input type="checkbox" id="AG02" class="custom-checkbox-green-type00" ng-model="selectedAllGroups" ng-click="checkAll('groups')"/>
+                          <label for='AG02'></label>
+                        </td>
                         <td>GUID</td>
                         <td>Name</td>
                         <td>Owner</td>
@@ -17,18 +39,22 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="computerGroup in computerGroupsList">
-                        <td><input type="checkbox" data-id="{{computerGroup.groupGUID}}" data-name="{{ computerGroup.groupName}}" class="computer-group-selection" /></td>                        
-                        <td>{{ computerGroup.groupGUID}}</td>
-                        <td>{{ computerGroup.groupName}}</td>
-                        <td>{{ computerGroup.owner}}</td>
-                        <td>{{ computerGroup.groupDesc}}</td>
+                        <td>
+                          <input type="checkbox" id="{{computerGroup.groupGUID}}" data-name="{{computerGroup.groupName}}" ng-model="computerGroup.selected" class="custom-checkbox-green-type00"/>
+                          <label for='{{computerGroup.groupGUID}}'></label>
+                        </td>
+                        <td>{{computerGroup.groupGUID}}</td>
+                        <td>{{computerGroup.groupName}}</td>
+                        <td>{{computerGroup.owner}}</td>
+                        <td>{{computerGroup.groupDesc}}</td>
                     </tr>
                 </tbody>
             </table>
-            <hr />
+          </div>
         </div>
+      </div>
     </div>
-    <div style="text-align:center" class="buttonsBlock">
+    <div class="buttonsBlock">
         <button class="btn btn-success" ng-click="addComputerGroups()">OK</button>
         <button class="btn btn-danger" ng-click="closeComputerGroupsDialog()">Cancel</button>
     </div>

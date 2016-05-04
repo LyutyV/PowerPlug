@@ -32,15 +32,54 @@ var computersHandler = {
             templateUrl: 'views/powerplan/dialogs/computerGroups.html',
             controller: DialogController,
             backdrop: 'static',
-            size:'large'
+            size: 'large'
         });
 
         function DialogController($scope, $uibModalInstance, $document) {
             computersHandler.ComputerGroupsResource.groups.query(function (data) {
                 $scope.computerGroupsList = data;
             }, function (err) {
-                onError(err);
+                $scope.onError(err);
             });
+
+            // tmp data to load
+            $scope.computerGroupsList = [{
+                computerGroup: 01,
+                groupName: 'name01',
+                groupGUID: 01,
+                owner: 'owner01',
+                groupDesc: 'desk01'
+            }, {
+                computerGroup: 02,
+                groupName: 'name02',
+                groupGUID: 02,
+                owner: 'owner02',
+                groupDesc: 'desk02'
+            }];
+            // end tmp data to load
+
+            $scope.checkAll = function (seed) {
+                switch (seed) {
+                case 'groups':
+                    {
+                        if ($scope.selectedAllGroups) {
+                            $scope.selectedAllGroups = true;
+                        } else {
+                            $scope.selectedAllGroups = false;
+                        }
+                        angular.forEach($scope.computerGroupsList, function (group) {
+                            group.selected = $scope.selectedAllGroups;
+                        });
+                        break;
+                    }
+                default:
+                    console.log('Error. Default value of select all group agr');
+                }
+            }
+
+            $scope.onError = function (err) {
+                console.log('Please, give me some data to addComputerGroups dialog. ' + err.statusText);
+            }
 
             $scope.addComputerGroups = function () {
                 angular.forEach(angular.element('.computer-group-selection:checked'), function (value, key) {
@@ -59,7 +98,10 @@ var computersHandler = {
                         if (!computersHandler.vm.savingPlan.compGroups) {
                             computersHandler.vm.savingPlan.compGroups = [];
                         }
-                        computersHandler.vm.savingPlan.compGroups.push({ groupName: newComputerGroupName, groupGUID: newComputerGroupId });
+                        computersHandler.vm.savingPlan.compGroups.push({
+                            groupName: newComputerGroupName,
+                            groupGUID: newComputerGroupId
+                        });
                     }
                 });
 

@@ -189,24 +189,34 @@ div.computersWrapper {
                                                 }
                                             }
                                         }
-                                        // &:last-child {
-                                        //     display: none;
-                                        // }
+                                        &:last-child {
+                                            display: none;
+                                        }
                                     }
                                     &:hover {
-                                        font-family: Calibri;
-                                        color: #ffffff;
-                                        font-size: 14px;
-                                        font-weight: 700;
-                                        letter-spacing: -0.182px;
-                                        background-color: #333333;
+                                      background-color: #333333;
+                                      font-family: Calibri;
+                                      color: #ffffff;
+                                      font-size: 14px;
+                                      font-weight: 700;
+                                      letter-spacing: -0.182px;
                                         > div {
-                                            // &:last-child {
-                                            //     display: block;
-                                            //     > i {
-                                            //         color: #86bd3e;
-                                            //     }
-                                            // }
+                                            &:last-child {
+                                                display: block;
+                                                text-align: right;
+                                                > i {
+                                                  cursor: pointer;
+                                                  font-family: Calibri;
+                                                  color: #ffffff;
+                                                  font-size: 14px;
+                                                  font-weight: 700;
+                                                  letter-spacing: -0.182px;
+                                                  &::before {
+                                                    color: #86bd3e;
+                                                    font-family: 'FontAwesome';
+                                                  }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -335,18 +345,27 @@ div.computersWrapper {
                                         }
                                     }
                                     &:hover {
+                                        background-color: #333333;
                                         font-family: Calibri;
                                         color: #ffffff;
                                         font-size: 14px;
                                         font-weight: 700;
                                         letter-spacing: -0.182px;
-                                        background-color: #333333;
                                         > div {
                                             &:last-child {
                                                 display: block;
                                                 text-align: right;
                                                 > i {
+                                                  cursor: pointer;
+                                                  font-family: Calibri;
+                                                  color: #ffffff;
+                                                  font-size: 14px;
+                                                  font-weight: 700;
+                                                  letter-spacing: -0.182px;
+                                                  &::before {
                                                     color: #86bd3e;
+                                                    font-family: 'FontAwesome';
+                                                  }
                                                 }
                                             }
                                         }
