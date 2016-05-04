@@ -1,4 +1,4 @@
-﻿var computersHandler = {
+var computersHandler = {
     vm: {},
     init: function (vm, $scope, $document, $uibModal, ComputersResource, ComputerGroupsResource) {
         computersHandler.vm = vm;
@@ -34,7 +34,7 @@
             backdrop: 'static',
             size:'large'
         });
-  
+
         function DialogController($scope, $uibModalInstance, $document) {
             computersHandler.ComputerGroupsResource.groups.query(function (data) {
                 $scope.computerGroupsList = data;
