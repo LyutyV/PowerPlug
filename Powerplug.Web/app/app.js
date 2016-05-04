@@ -159,6 +159,20 @@
                 templateUrl: 'views/settings/locations.html',
                 controllerAs: 'vm',
                 title: 'Settings > Locations & Power Rates'
+            })
+            .state('reports', {
+                url: "/reports",
+                controller: 'ReportListCtrl',
+                templateUrl: 'views/reports/reportList.html',
+                controllerAs: 'vm',
+                title: 'Reports'
+            })
+            .state('reportGenerate', {
+                url: "/reports/generate/:reportId/:templateId",
+                controller: 'ReportGenerateCtrl',
+                templateUrl: 'views/reports/reportGenerate.html',
+                controllerAs: 'vm',
+                title: 'Create a report'
             });
 
     }

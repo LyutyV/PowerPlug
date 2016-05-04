@@ -283,4 +283,76 @@
             }
         }
     }
+    &.message-editor{
+        .mesaage-options{
+            padding: 20px;
+            .message-title{
+                font-size:16px;
+                font-weight:bold;
+            }
+            .message-caption{
+                padding-top:15px;
+                padding-bottom:15px;
+                input[type=text]{
+                    height: 40px;
+                    width: 372px;
+                    display: inline-block;
+                    margin-left: 15px;
+                    padding: 5px;
+                }
+            }
+            .snooze-child{
+                padding-top:10px;
+                padding-bottom:10px;
+                span{
+                    padding-left: 27px;
+                    &:first-child{
+                        width: 141px;
+                        display: inline-block;                        
+                    }
+                }
+                select{
+                    height: 40px;
+                    width:109px;
+                    display:inline-block;
+                    margin-left: 15px;
+                }
+            }
+            .checkbox-container{
+                input.custom-checkbox-green-type00+label{
+                    width: 25px;
+                    &:before{
+                        height: 20px;
+                        width: 20px;
+                        left:0px;
+                        top:0px;
+                    }
+                }
+                input.custom-checkbox-green-type00:checked+label{
+                    &:before{
+                        height: 20px;
+                        width: 20px;
+                        left:0px;
+                        top:0px;
+                        line-height: 19px;
+                    }
+                }
+            }
+            .message-display{
+                padding-top:10px;
+                span{
+                    padding-left: 27px;
+                    width: 141px;
+                    display: inline-block; 
+                }
+                input[type=number]{
+                    height: 40px;
+                    width: 109px;
+                    display: inline-block;
+                    margin-left: 18px;
+                    padding: 5px;
+                }
+            }
+        }
+    }
 }
