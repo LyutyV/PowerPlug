@@ -28,7 +28,7 @@
           },
           {
               "text": "Reports",
-              "sref": "#",
+              "sref": "reports",
               "icon": "fa fa-line-chart",
               "submenu": []
           },

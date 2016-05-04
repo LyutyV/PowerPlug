@@ -1,0 +1,39 @@
+﻿<div class="reports">   
+    <div class="report-name">
+        <span><img src="content/images/savingPlans/_Group_.png" /></span>
+        <span>{{vm.reportData.title}}</span>
+    </div>
+    <div class="report-details">
+        <div class="report-title">
+            <span>Report Title</span><input type="text" value="{{vm.reportData.title}}" />
+        </div>
+        <div class="report-title">
+            <span>Report Subtitle</span><textarea>{{vm.reportData.subtitle}}</textarea>
+        </div>
+    </div>
+    <div class="reportDate" ng-if="vm.reportData.fromDate !== undefined">
+        <span>From Date</span><input type="text" value="{{vm.reportData.fromDate}}" />
+        <span>To Date</span><input type="text" value="{{vm.reportData.toDate}}" />
+    </div>
+    <div class="reportMonth" ng-if="vm.reportData.fromMonth !== undefined">
+        <span>From Month</span><input type="text" value="{{vm.reportData.fromMonth}}" />
+        <span>To Month</span><input type="text" value="{{vm.reportData.toMonth}}" />
+    </div>
+    <div class="reportOptions" ng-if="vm.reportData.showDetails !== undefined">
+        <span>
+            <input id="chkDetails" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.reportData.showDetails"/>
+            <label for="chkDetails"></label>
+            Show Details
+        </span>
+        <span>
+            <input id="chkSummary" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.reportData.showSummary" />
+            <label for="chkSummary"></label>
+            Show Summary
+        </span>
+    </div>
+</div>
+<style>    
+    div.content-wrapper {
+        background-color: #fff;
+    }    
+</style>
