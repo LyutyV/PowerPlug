@@ -63,7 +63,7 @@
                 title : 'Dashboard'
             })
             .state('savingPlans', {
-                url: "/savingPlans",                
+                url: "/savingPlans",
                 controller: 'SavingPlansCtrl',
                 templateUrl: 'views/powerplan/savingPlans.html',
                 controllerAs: 'vm',
@@ -102,7 +102,7 @@
                         templateUrl: 'views/powerplan/savingPlanDescription.html'
                     }
                 },
-                title: 'Saving Plans > '
+                title: 'Saving Plans > PowerPlug Saving plan 1/2016'
             })
             .state('settings', {
                 url: "/settings",

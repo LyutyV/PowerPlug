@@ -1,4 +1,4 @@
-﻿div.addAppWrapper > div.modal-header {
+div.addAppWrapper > div.modal-header {
   padding: 0;
   border: none; }
   div.addAppWrapper > div.modal-header > span {
@@ -89,11 +89,23 @@ div.addAppWrapper > div.modal-body {
       font-size: 18px;
       font-weight: 700; }
     .addComputerWrapper > .modal-body > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:first-child > div.container-fluid > div.row:nth-child(2) {
+      border-bottom: 1px solid #cccccc;
+      padding-bottom: 9px;
+      padding-top: 7px;
       font-family: Calibri;
       color: #4d4d4d;
       font-size: 12px;
       font-weight: 300;
       letter-spacing: -0.156px; }
+      .addComputerWrapper > .modal-body > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:first-child > div.container-fluid > div.row:nth-child(2) > input.custom-checkbox-green-type00 + label,
+      .addComputerWrapper > .modal-body > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:first-child > div.container-fluid > div.row:nth-child(2) > input.custom-checkbox-green-type00:checked + label {
+        width: inherit;
+        margin-left: 30px;
+        margin-top: 4px; }
+        .addComputerWrapper > .modal-body > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:first-child > div.container-fluid > div.row:nth-child(2) > input.custom-checkbox-green-type00 + label::before,
+        .addComputerWrapper > .modal-body > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:first-child > div.container-fluid > div.row:nth-child(2) > input.custom-checkbox-green-type00:checked + label::before {
+          left: -25px;
+          top: -2px; }
       .addComputerWrapper > .modal-body > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:first-child > div.container-fluid > div.row:nth-child(2) > span {
         float: right; }
         .addComputerWrapper > .modal-body > div:first-child > div.tab-content > div.tab-pane:first-child > div.savingsWrapper > div.container-fluid > div.row > div:first-child > div.container-fluid > div.row:nth-child(2) > span::before {
@@ -1556,13 +1568,28 @@ div.computersWrapper {
             left: 10px;
             top: 3px;
             background-color: #ffffff; }
+        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row > div:last-child {
+          display: none; }
       div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row:hover {
+        background-color: #333333;
         font-family: Calibri;
         color: #ffffff;
         font-size: 14px;
         font-weight: 700;
-        letter-spacing: -0.182px;
-        background-color: #333333; }
+        letter-spacing: -0.182px; }
+        div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child {
+          display: block;
+          text-align: right; }
+          div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child > i {
+            cursor: pointer;
+            font-family: Calibri;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.182px; }
+            div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child > i::before {
+              color: #86bd3e;
+              font-family: 'FontAwesome'; }
   div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child {
     position: relative; }
     div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span {
@@ -1662,17 +1689,25 @@ div.computersWrapper {
         div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row > div:last-child {
           display: none; }
       div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover {
+        background-color: #333333;
         font-family: Calibri;
         color: #ffffff;
         font-size: 14px;
         font-weight: 700;
-        letter-spacing: -0.182px;
-        background-color: #333333; }
+        letter-spacing: -0.182px; }
         div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child {
           display: block;
           text-align: right; }
           div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child > i {
-            color: #86bd3e; }
+            cursor: pointer;
+            font-family: Calibri;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.182px; }
+            div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:nth-child(3) div.container-fluid > div.row:hover > div:last-child > i::before {
+              color: #86bd3e;
+              font-family: 'FontAwesome'; }
 
 @media screen and (max-width: 1160px) {
   div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:first-child > div:first-child > span:first-child, div.computersWrapper > div[active="active"] > div.tab-content > div.tab-pane:nth-child(2) > div:first-child > span:first-child {
@@ -2137,9 +2172,12 @@ div.permissionsWrapper {
       text-align: left; }
     .power-plug-dialog > .modal-header > img {
       cursor: pointer; }
-  .power-plug-dialog > .modal-body > div:first-child {
-    padding-left: 22px;
-    padding-right: 22px; }
+  .power-plug-dialog > .modal-body {
+    max-height: 460px;
+    overflow-y: scroll; }
+    .power-plug-dialog > .modal-body > div:first-child {
+      padding-left: 22px;
+      padding-right: 22px; }
   .power-plug-dialog .buttonsBlock {
     background-color: #f2f2f2;
     text-align: center;
@@ -2528,4 +2566,3 @@ div.settingsWrapper {
                   border: 1px solid #d9d9d9;
                   text-align: center;
                   line-height: 24px; }
-

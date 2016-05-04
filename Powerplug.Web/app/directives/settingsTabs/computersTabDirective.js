@@ -3,7 +3,7 @@
     angular
         .module('powerPlug').directive('computersTab', ['$uibModal', 'ComputersResource', function ($uibModal, ComputersResource) {
             return {
-                templateUrl: '../../../views/powerplan/settingsTabs/computers.html',     
+                templateUrl: '../../../views/powerplan/settingsTabs/computers.html',
                 scope: {
                     jsonobject: '='
                 },
