@@ -25,7 +25,7 @@
         }
     },
     addComputerDialog: function (computersArr) {
-        computersNameDialodHandler.addComputerDialog(computersArr);
+        computersNameDialodHandler.addComputerDialog(computersArr, false);
     },
     addComputerGroupsDialog: function (ev) {
         computersHandler.$uibModal.open({

@@ -677,6 +677,34 @@ input.custom-checkbox-green-type00 {
             width: 100px;
             text-align: right; }
 
+.power-plug-dialog.settings-prop.permission-dialog h4 {
+  font-family: Calibri;
+  color: #4d4d4d;
+  font-size: 18px;
+  font-weight: 700; }
+
+.power-plug-dialog.settings-prop.permission-dialog .radio-btns {
+  float: left;
+  margin-right: 23px; }
+
+.power-plug-dialog.settings-prop.permission-dialog .open-dialog {
+  vertical-align: middle;
+  display: inline-block; }
+  .power-plug-dialog.settings-prop.permission-dialog .open-dialog btn {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    border: 1px solid #ccc;
+    display: inline-block;
+    border-left: none;
+    text-align: center;
+    line-height: 44px;
+    float: left; }
+  .power-plug-dialog.settings-prop.permission-dialog .open-dialog input {
+    float: left; }
+
 .power-plug-dialog.settings-prop.powerRate-prop > .modal-body {
   padding-top: 50px; }
 
@@ -722,6 +750,11 @@ input.custom-checkbox-green-type00 {
   background-color: #ffffff;
   padding-left: 32px;
   padding-right: 34px; }
+  .power-plug-dialog.settings-prop > .modal-body .form-control {
+    border-radius: 0px; }
+    .power-plug-dialog.settings-prop > .modal-body .form-control:focus {
+      box-shadow: none;
+      border-color: #cccccc; }
   .power-plug-dialog.settings-prop > .modal-body .help-block.error {
     color: #a94442; }
   .power-plug-dialog.settings-prop > .modal-body .settings-table-container {

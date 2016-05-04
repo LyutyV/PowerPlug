@@ -185,7 +185,7 @@
                 editPopupType = vm.groupMembersHash[vm.selectedGroupId].members[index].memberTypeId;
             }
             if ('computerName' == vm.popupType && (index < 0)) {
-                modal = computersNameDialodHandler.addComputerDialog(vm.groupMembersHash[vm.selectedGroupId].members, true);
+                modal = computersNameDialodHandler.addComputerDialog(vm.groupMembersHash[vm.selectedGroupId].members, false);
                 modal.result.then(function () {
                         updateComputersNameMembers(vm.selectedGroupId, isInclude);
                     });

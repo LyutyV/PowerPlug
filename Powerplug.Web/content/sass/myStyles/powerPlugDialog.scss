@@ -27,7 +27,8 @@
         }
     }
     > .modal-body {
-
+        max-height: 460px;
+        overflow-y: scroll;
             >div:first-child {
                 padding-left: 22px;
                 padding-right: 22px;

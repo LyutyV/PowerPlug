@@ -5,10 +5,11 @@
     angular
         .module('powerPlug')
         .controller('WakeupPortalPermissionCtrl',
-                     ['$state', '$document', '$scope', '$uibModal', 'WakeupPortalPermissionResource', WakeupPortalPermissionCtrl]);
+                     ['$state', '$document', '$scope', '$uibModal', 'WakeupPortalPermissionResource',
+                         'ComputersResource', 'ComputerGroupsResource', WakeupPortalPermissionCtrl]);
 
 
-    function WakeupPortalPermissionCtrl($state, $document, $scope, $uibModal, WakeupPortalPermissionResource) {
+    function WakeupPortalPermissionCtrl($state, $document, $scope, $uibModal, WakeupPortalPermissionResource, ComputersResource, ComputerGroupsResource) {
         var vm = this;
 
         WakeupPortalPermissionResource.query(function (data) {
@@ -30,7 +31,7 @@
         }
 
         function initPopups() {
-            editWakeupPermissionHandler.init($uibModal);
+            editWakeupPermissionHandler.init($uibModal, ComputersResource, ComputerGroupsResource);
             vm.showEditWakeupPermission = editWakeupPermissionHandler.openDialog;
         }
         vm.saveChanges = function () {
