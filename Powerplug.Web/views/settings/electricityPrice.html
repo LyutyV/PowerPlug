@@ -14,11 +14,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="price in vm.prices" class="script-row" data-id="{{price.scriptId}}" ng-click="vm.selectScript($event)">
-                    <td>{{ price.scriptName}}</td>
-                    <td>{{ price.owner}}</td>
-                    <td>{{ price.scriptDesc}}</td>
-                    <td>{{ price.owner}}</td>
+                <tr ng-repeat="rate in vm.powerRates" class="script-row" data-id="{{price.scriptId}}" ng-click="vm.selectScript($event)">
+                    <td>{{ rate.rateName}}</td>
+                    <td>{{ rate.rateTypeId == 1 ? 'Fixed': 'Variable'}}</td>
+                    <td>{{ rate.rateTypeId == 1 ? vm.getPrice(rate): ''}}</td>
+                    <td>{{ rate.powerCompany}}</td>
                     <td class="button-container"><span class="buttonTypeOneEdit action-settings" ng-click="vm.showPowerRateDialog(price.scriptId)">Edit</span></td>
                     <td class="button-container"><span class="buttonTypeOneRemove action-settings" ng-click="vm.removeScript(price.scriptId)">Remove</span></td>                    
                 </tr>
