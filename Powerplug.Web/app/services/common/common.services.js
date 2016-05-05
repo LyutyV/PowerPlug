@@ -4,3 +4,6 @@
         .module('common.services', ['ngResource'])
         .constant('appSettings', { serverPath: 'http://localhost:61661/' });
 }());
+
+
+// http://powerplugapi.azurewebsites.net/

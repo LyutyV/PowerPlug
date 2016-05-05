@@ -63,7 +63,7 @@
                 title : 'Dashboard'
             })
             .state('savingPlans', {
-                url: "/savingPlans",                
+                url: "/savingPlans",
                 controller: 'SavingPlansCtrl',
                 templateUrl: 'views/powerplan/savingPlans.html',
                 controllerAs: 'vm',
@@ -102,7 +102,7 @@
                         templateUrl: 'views/powerplan/savingPlanDescription.html'
                     }
                 },
-                title: 'Saving Plans > '
+                title: 'Saving Plans > PowerPlug Saving plan 1/2016'
             })
             .state('settings', {
                 url: "/settings",
@@ -159,6 +159,20 @@
                 templateUrl: 'views/settings/locations.html',
                 controllerAs: 'vm',
                 title: 'Settings > Locations & Power Rates'
+            })
+            .state('reports', {
+                url: "/reports",
+                controller: 'ReportListCtrl',
+                templateUrl: 'views/reports/reportList.html',
+                controllerAs: 'vm',
+                title: 'Reports'
+            })
+            .state('reportGenerate', {
+                url: "/reports/generate/:reportId/:templateId",
+                controller: 'ReportGenerateCtrl',
+                templateUrl: 'views/reports/reportGenerate.html',
+                controllerAs: 'vm',
+                title: 'Create a report'
             });
 
     }

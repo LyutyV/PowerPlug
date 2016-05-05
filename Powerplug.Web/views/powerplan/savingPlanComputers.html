@@ -25,32 +25,15 @@
             <div class="container-fluid">
               <div class="row" ng-repeat="computerGroup in vm.savingPlan.compGroups">
                 <div class="col-xs-1">
-                  <!-- <input type="checkbox" data-name="{{computer.name}}" class="computer-selection" /> -->
                   <input id="{{computerGroup.groupGUID}}" type="checkbox" class="custom-checkbox-green-type00" data-name="{{computerGroup.groupName}}" ng-model="computerGroup.selected" />
                   <label for="{{computerGroup.groupGUID}}"></label>
                 </div>
                 <div class="col-xs-5">{{ computerGroup.groupName}}</div>
-                <!-- <div class="col-xs-5">Some type</div> -->
-                <!-- <div class="col-xs-1"><i class="fa fa-trash"></i> Remove</div> -->
+                <div class="col-xs-5"></div>
+                <div class="col-xs-1"><i class="fa fa-trash"> Remove</i></div>
               </div>
             </div>
           </div>
-          <!-- <div class="panel-body">
-              <table class="table">
-                  <thead>
-                      <tr>
-                          <td></td>
-                          <td>Computer Group Name</td>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr ng-repeat="computerGroup in vm.savingPlan.compGroups">
-                          <td><input type="checkbox" data-id="{{computerGroup.groupGUID}}" class="computer-group-selection" /></td>
-                          <td>{{ computerGroup.groupName}}</td>
-                      </tr>
-                  </tbody>
-              </table>
-          </div> -->
       </uib-tab>
       <uib-tab index="1">
         <uib-tab-heading>
@@ -77,13 +60,12 @@
             <div class="container-fluid">
               <div class="row" ng-repeat="computer in vm.savingPlan.computers">
                 <div class="col-xs-1">
-                  <!-- <input type="checkbox" data-name="{{computer.name}}" class="computer-selection" /> -->
                   <input id="{{$index + 'spc'}}" type="checkbox" class="custom-checkbox-green-type00" data-name="{{computer.name}}" ng-model="computer.selected" />
                   <label for="{{$index + 'spc'}}"></label>
                 </div>
                 <div class="col-xs-5">{{ computer.name}}</div>
                 <div class="col-xs-4">Some type</div>
-                <div class="col-xs-2"><i class="fa fa-trash"></i> Remove</div>
+                <div class="col-xs-2"><i class="fa fa-trash"> Remove</i></div>
               </div>
             </div>
           </div>

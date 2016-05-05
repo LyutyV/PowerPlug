@@ -3,7 +3,7 @@
 
     angular
       .module('powerPlug')
-      .controller('LeftMenuController', ['$state', function ($state) {          
+      .controller('LeftMenuController', ['$state', function ($state) {
           var vm = this;
           vm.state = $state;
           //tmp
@@ -18,6 +18,7 @@
               "text": "Saving Plans",
               "sref": "savingPlans",
               "icon": "fa fa-list-alt",
+              "stateName": "Saving Plans > PowerPlug Saving plan 1/2016",
               "submenu": [
                 {
                     "text": "PowerPlug Saving plan 1/2016",
@@ -27,7 +28,7 @@
           },
           {
               "text": "Reports",
-              "sref": "#",
+              "sref": "reports",
               "icon": "fa fa-line-chart",
               "submenu": []
           },

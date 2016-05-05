@@ -229,6 +229,59 @@
       cursor: pointer;
       border-top: solid 1px #dedede; }
 
+.power-plug-dialog.message-editor .mesaage-options {
+  padding: 20px; }
+  .power-plug-dialog.message-editor .mesaage-options .message-title {
+    font-size: 16px;
+    font-weight: bold; }
+  .power-plug-dialog.message-editor .mesaage-options .message-caption {
+    padding-top: 15px;
+    padding-bottom: 15px; }
+    .power-plug-dialog.message-editor .mesaage-options .message-caption input[type=text] {
+      height: 40px;
+      width: 372px;
+      display: inline-block;
+      margin-left: 15px;
+      padding: 5px; }
+  .power-plug-dialog.message-editor .mesaage-options .snooze-child {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .power-plug-dialog.message-editor .mesaage-options .snooze-child span {
+      padding-left: 27px; }
+      .power-plug-dialog.message-editor .mesaage-options .snooze-child span:first-child {
+        width: 141px;
+        display: inline-block; }
+    .power-plug-dialog.message-editor .mesaage-options .snooze-child select {
+      height: 40px;
+      width: 109px;
+      display: inline-block;
+      margin-left: 15px; }
+  .power-plug-dialog.message-editor .mesaage-options .checkbox-container input.custom-checkbox-green-type00 + label {
+    width: 25px; }
+    .power-plug-dialog.message-editor .mesaage-options .checkbox-container input.custom-checkbox-green-type00 + label:before {
+      height: 20px;
+      width: 20px;
+      left: 0px;
+      top: 0px; }
+  .power-plug-dialog.message-editor .mesaage-options .checkbox-container input.custom-checkbox-green-type00:checked + label:before {
+    height: 20px;
+    width: 20px;
+    left: 0px;
+    top: 0px;
+    line-height: 19px; }
+  .power-plug-dialog.message-editor .mesaage-options .message-display {
+    padding-top: 10px; }
+    .power-plug-dialog.message-editor .mesaage-options .message-display span {
+      padding-left: 27px;
+      width: 141px;
+      display: inline-block; }
+    .power-plug-dialog.message-editor .mesaage-options .message-display input[type=number] {
+      height: 40px;
+      width: 109px;
+      display: inline-block;
+      margin-left: 18px;
+      padding: 5px; }
+
 header {
   height: 100px;
   background: #ffffff;
@@ -916,6 +969,60 @@ input.custom-checkbox-green-type00 {
       font-family: Calibri;
       font-size: 16px;
       color: #5d5d5d; }
+
+.reports .report-selection {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: solid 1px #e6e6e6; }
+  .reports .report-selection span:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    float: left;
+    width: 180px;
+    display: block;
+    padding-top: 8px; }
+  .reports .report-selection span:last-child {
+    overflow: hidden;
+    display: block; }
+    .reports .report-selection span:last-child select {
+      width: 100%;
+      border-color: #cdcdcd;
+      height: 40px; }
+      .reports .report-selection span:last-child select option[default] {
+        display: none; }
+
+.reports .template-list {
+  padding-top: 30px; }
+  .reports .template-list .template-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 6px;
+    border-bottom: solid 2px #8cc63f; }
+  .reports .template-list ul.templates-container li {
+    list-style: none;
+    background-color: rgba(242, 242, 242, 0.6);
+    border-bottom: outset 1px #f6f6f6;
+    width: 100%;
+    height: 65px;
+    margin-top: 5px;
+    padding: 10px;
+    cursor: pointer; }
+    .reports .template-list ul.templates-container li .imgContainer {
+      width: 70px;
+      height: 65px;
+      float: left;
+      padding-left: 10px;
+      padding-top: 2px; }
+    .reports .template-list ul.templates-container li .dataContainer {
+      overflow: hidden;
+      font-size: 16px; }
+      .reports .template-list ul.templates-container li .dataContainer .template-name {
+        font-weight: bold; }
+      .reports .template-list ul.templates-container li .dataContainer .template-date {
+        font-size: 14px;
+        padding-top: 4px; }
+        .reports .template-list ul.templates-container li .dataContainer .template-date .template-date-green {
+          color: #8cc63f; }
 
 * {
   margin: 0px;

@@ -1,0 +1,60 @@
+﻿<div class="reports">   
+    <div class="report-name">
+        <span><img src="content/images/savingPlans/_Group_.png" /></span>
+        <span>{{vm.reportData.title}}</span>
+    </div>
+    <div class="report-details">
+        <div class="report-title">
+            <span>Report Title</span><input type="text" value="{{vm.reportData.title}}" />
+        </div>
+        <div class="report-title">
+            <span>Report Subtitle</span><textarea>{{vm.reportData.subtitle}}</textarea>
+        </div>
+    </div>
+    <div class="report-date" ng-if="vm.reportData.fromDate !== undefined">
+        <span>From Date</span><input type="text" value="{{vm.reportData.fromDate}}" />
+        <span>To Date</span><input type="text" value="{{vm.reportData.toDate}}" />
+    </div>
+    <div class="report-month" ng-if="vm.reportData.fromMonth !== undefined">
+        <span>From Month</span><input type="text" value="{{vm.reportData.fromMonth}}" />
+        <span>To Month</span><input type="text" value="{{vm.reportData.toMonth}}" />
+    </div>
+    <div class="report-computers" ng-if="vm.reportData.computerFilter === true">
+        <div>Computers to include in the report</div>
+        <div class="report-computer-list-container" style="border:solid 1px #dedede;width:500px;height:150px;"></div>
+    </div>
+    <div class="report-sort" ng-if="vm.reportData.sortOrder !== undefined && vm.reportData.sortOrder.length > 0">
+        <div>Field Sort Order</div>
+        <div class="report-sort-container" style="border:solid 1px #dedede;width:500px;height:100px;"></div>
+    </div>
+    <div class="report-usage" ng-if="vm.reportData.usageDays !== undefined && vm.reportData.usageDays.length > 0">
+        <div>Days of Week Ranges</div>
+        <div class="report-usage-container" style="border:solid 1px #dedede;width:500px;height:100px;"></div>
+    </div>
+    <div class="report-options" ng-if="vm.reportData.showDetails !== undefined">
+        <div>Options</div>
+        <div>
+            <input id="chkDetails" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.reportData.showDetails"/>
+            <label for="chkDetails"></label>
+            Show Details
+        </div>
+        <div>
+            <input id="chkSummary" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.reportData.showSummary" />
+            <label for="chkSummary"></label>
+            Show Summary
+        </div>
+    </div>
+    <div class="report-inactive" ng-if="vm.reportData.showInactive !== undefined">
+        <div>Deleted Computers</div>
+        <div>
+            <input id="chkDeleted" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.reportData.showInactive" />
+            <label for="chkDeleted"></label>
+            Display Deleted Computers
+        </div>
+    </div>
+</div>
+<style>    
+    div.content-wrapper {
+        background-color: #fff;
+    }    
+</style>
