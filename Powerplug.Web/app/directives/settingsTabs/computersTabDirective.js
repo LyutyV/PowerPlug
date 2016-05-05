@@ -45,7 +45,7 @@
                             }, {
                               name: 'PowerPlug Database',
                               children: [{
-                                name: 'subItem01',
+                                name: '1subItem01',
                                 children: [{
                                   name: 'subItem101'
                                 }, {

@@ -12,16 +12,52 @@
             size: 'large',
             backdrop: 'static'
         });
-      
+
         function DialogController($scope, $uibModalInstance, $document, computersArr, isSingleSelection) {
             computersNameDialodHandler.ComputersResource.query(function (data) {
                 data.forEach(function (item) {
-                    item.checked = false; 
+                    item.checked = false;
                 });
                 $scope.savingComputerList = data;
             }, function (err) {
                 onError(err);
             });
+
+            // tmp data for treeview
+            $scope.myData = [{
+              name: 'PowerPlug - QA'
+            }, {
+              name: 'PowerPlug Database',
+              children: [{
+                name: '2subItem01',
+                children: [{
+                  name: 'subItem101'
+                }, {
+                  name: 'subItem102'
+                }]
+              }, {
+                name: 'subItem02'
+              }, {
+                name: 'subItem03',
+                children: [{
+                  name: 'subItem301'
+                }, {
+                  name: 'subItem302'
+                }]
+              }, {
+                name: 'subItem04'
+              }, {
+                name: 'subItem05'
+              }, {
+                name: 'subItem06',
+                children: [{
+                  name: 'subItem601'
+                }, {
+                  name: 'subItem602'
+                }]
+              }]
+            }];
+            // end tmp data for treeview
 
             $scope.updateSelection = function (position) {
                 if (isSingleSelection) {
@@ -38,7 +74,7 @@
                         var isExist = false;
                         if (computersArr) {
                             computersArr.forEach(function (valueContainer, keyContainer) {
-                                if ((valueContainer.memberTypeId  === 1 && valueContainer.memberDef === newComputerName) 
+                                if ((valueContainer.memberTypeId  === 1 && valueContainer.memberDef === newComputerName)
                                     || (valueContainer.name === newComputerName)) {
                                     isExist = true;
                                 }

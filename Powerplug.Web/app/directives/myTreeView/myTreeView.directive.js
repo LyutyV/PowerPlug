@@ -39,13 +39,6 @@
 
                 $(li.children()[1]).click($scope.actionOnClick);
 
-
-
-                //var span = li.children()[1];
-                //span.click($scope.actionOnClick);
-
-                //li.children()[1].click($scope.actionOnClick);
-
                 if (item.hasOwnProperty('children')) {
                   create(li, item.children);
                 }
