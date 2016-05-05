@@ -39,6 +39,42 @@
                                 onError(err);
                             });
 
+                            // tmp data for treeview
+                            $scope.myData = [{
+                              name: 'PowerPlug - QA'
+                            }, {
+                              name: 'PowerPlug Database',
+                              children: [{
+                                name: '1subItem01',
+                                children: [{
+                                  name: 'subItem101'
+                                }, {
+                                  name: 'subItem102'
+                                }]
+                              }, {
+                                name: 'subItem02'
+                              }, {
+                                name: 'subItem03',
+                                children: [{
+                                  name: 'subItem301'
+                                }, {
+                                  name: 'subItem302'
+                                }]
+                              }, {
+                                name: 'subItem04'
+                              }, {
+                                name: 'subItem05'
+                              }, {
+                                name: 'subItem06',
+                                children: [{
+                                  name: 'subItem601'
+                                }, {
+                                  name: 'subItem602'
+                                }]
+                              }]
+                            }];
+                            // end tmp data for treeview
+
                             $scope.addSavingComputers = function () {
                                 angular.forEach(angular.element('.computer-selection:checked'), function (value, key) {
                                     var newComputerName = value.getAttribute('data-name');

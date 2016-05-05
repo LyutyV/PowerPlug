@@ -25,7 +25,7 @@
         }
 
         function onSuccess(data) {
-            vm.prices = data;
+            vm.powerRates = data;
         }
 
         vm.saveChanges = function () {
@@ -45,17 +45,21 @@
             });
         }
 
+        vm.getPrice = function (rate) {
+            return rate.powerCost[rate.powerCost.length - 1].costPerKWH + 
+                        rate.powerCost[rate.powerCost.length - 1].currency
+        }
         vm.showPowerRateDialog = function (powerRateId, ev) {
             $uibModal.open({
                 templateUrl: 'views/settings/dialogs/powerRate.html',
-                resolve: { params: function () { return { powerRateId: powerRateId, prices: vm.prices}} },
+                resolve: { params: function () { return { powerRateId: powerRateId, powerRates: vm.powerRates } } },
                 controller: DialogController,
                 backdrop: 'static',
                 size: 'large'
             });
 
             function DialogController($scope, $uibModalInstance, params) {
-                $scope.prices = params.prices;
+                $scope.powerRates = params.powerRates;
                 $scope.addPowerCostDialog = function () {
                     var modal = $uibModal.open({
                         templateUrl: 'views/settings/dialogs/addPowerCost.html',
