@@ -1,4 +1,4 @@
-div.addAppWrapper > div.modal-header {
+﻿div.addAppWrapper > div.modal-header {
   padding: 0;
   border: none; }
   div.addAppWrapper > div.modal-header > span {
@@ -719,7 +719,7 @@ div.addAppWrapper > div.modal-body {
   display: none; }
 
 .time-picker, .date-picker {
-  width: 120px; }
+  width: 125px; }
   .time-picker input, .date-picker input {
     border-radius: 0;
     border-right: 0;
@@ -2566,3 +2566,4 @@ div.settingsWrapper {
                   border: 1px solid #d9d9d9;
                   text-align: center;
                   line-height: 24px; }
+

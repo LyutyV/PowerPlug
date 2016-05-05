@@ -1,4 +1,173 @@
+#ui-datepicker-div.report-monthly{
+    z-index:2 !important;
+    .ui-datepicker-calendar {
+        display: none;
+    }
+}
+
 .reports{
+    .report-img{
+        float: right;
+        width: 400px;
+        height:600px;
+        background-color: mediumpurple;
+        border: solid 5px #cdcdcd;
+        margin-top: 109px;
+        margin-left: 20px;
+    }
+    .report-generation{               
+        overflow: hidden;
+        > div{
+            padding-top:25px;
+            padding-bottom: 25px;
+        }
+        .report-name{    
+            font-weight: bold;
+            font-size: 20px;            
+            span:first-child{
+                padding-right: 15px;                
+            }
+        }
+        .report-details{
+            .report-title{
+                &:first-child{
+                    padding-bottom:10px;                    
+                }
+                span{
+                    display: block;
+                    &:first-child{
+                        float:left;
+                        width:130px;
+                        font-weight:bold;
+                        padding-top: 6px;  
+                        font-size:15px;                      
+                    }
+                    &:last-child{
+                        overflow: hidden;
+                        input{
+                            width: 100%;
+                            border:solid 1px #cdcdcd;
+                            height:30px;
+                            padding: 5px;
+                        }
+                        textarea{
+                            width: 100%;
+                            border-color: #cdcdcd;
+                            height: 70px;
+                            padding: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        .report-date{
+            > span{
+                vertical-align:middle;
+                padding-right: 15px;
+                font-weight:bold; 
+                font-size:15px;  
+            }
+            > div{
+                display: inline-block;
+                vertical-align: middle;
+                margin-right:40px;
+                &.form-group{
+                    margin-bottom:0px;
+                }
+                select{
+                    border-color: #cdcdcd;
+                    height:30px;
+                }
+            }
+        }
+        .report-computers{
+            div{
+                &:first-child{
+                    font-weight:bold;                        
+                    font-size:15px;
+                    padding-bottom:10px;
+                }
+                &.report-computer-list-container{
+                    border:solid 1px #cdcdcd;
+                    width:100%;
+                    height:150px;
+                }
+            }
+        }
+        .report-sort{
+            div{
+                &:first-child{
+                    font-weight:bold;                        
+                    font-size:15px;
+                    padding-bottom:10px;
+                }
+                &.report-sort-container{
+                    border:solid 1px #cdcdcd;
+                    width:100%;
+                    height:100px;
+                }
+            }
+        }
+        .report-usage{
+            div{
+                &:first-child{
+                    font-weight:bold;                        
+                    font-size:15px;
+                    padding-bottom:10px;
+                }
+                &.report-usage-container{
+                    border:solid 1px #cdcdcd;
+                    width:100%;
+                    height:100px;
+                }
+            }
+        }
+        .report-options{
+            div{
+                &:first-child{
+                    font-weight:bold;                        
+                    font-size:15px;
+                    padding-bottom:10px;
+                }
+                input.custom-checkbox-green-type00+label{
+                    width: 25px;
+                    &:before{
+                        left:0px;
+                    }
+                }
+                input.custom-checkbox-green-type00:checked+label{
+                    &:before{
+                        left:0px;
+                    }
+                }
+                &:last-child{
+                    padding-top:10px;
+                }
+            }
+        }
+        .report-inactive{
+            div{
+                &:first-child{
+                    font-weight:bold;                        
+                    font-size:15px;
+                    padding-bottom:10px;
+                }
+                input.custom-checkbox-green-type00+label{
+                    width: 25px;
+                    &:before{
+                        left:0px;
+                    }
+                }
+                input.custom-checkbox-green-type00:checked+label{
+                    &:before{
+                        left:0px;
+                    }
+                }
+            }
+        }
+    }
+
+
     .report-selection{
         padding-top:30px;
         padding-bottom:30px;
