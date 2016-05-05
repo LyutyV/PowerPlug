@@ -10,11 +10,29 @@
         vm.reportId = $stateParams.reportId;
         vm.templateId = $stateParams.templateId;
 
-        ReportsResource.basic.get({ reportId: vm.reportId }, function (data) {
-            onReportsSuccess(data);
-        }, function (err) {
-            onError(err);
-        });        
+        if (vm.templateId) {
+            ReportTemplateService.getReportTemplate(vm.templateId, function (templateData) {
+                vm.reportData = templateData;                
+                if (!vm.reportData) {
+                    loadDefaultReportData(onReportsSuccess);
+                }
+                else {
+                    onReportsSuccess();
+                }
+            });
+        }
+        else {
+            loadDefaultReportData(onReportsSuccess);
+        }
+        
+        function loadDefaultReportData(cb) {
+            ReportsResource.basic.get({ reportId: vm.reportId }, function (data) {
+                vm.reportData = data;
+                cb();
+            }, function (err) {
+                onError(err);
+            });
+        }
                 
         function onError(err) {
             console.log(err)
@@ -23,13 +41,8 @@
             }
         }
         
-        function onReportsSuccess(data) {
-            vm.reportData = data;            
+        function onReportsSuccess() {
             console.log(vm.reportData);
-
-            if (vm.templateId !== undefined) {
-                vm.reportTemplateData = ReportTemplateService.getReportTemplate(vm.templateId);
-            }
         }
     }
 }());

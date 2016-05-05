@@ -3,9 +3,9 @@
         <div class="clearfix">
             <div class="users-container">
                 <div class="users-buttons-container">
-                    <span class="users-title">Group and Users</span>
+                    <span class="users-title">Users</span>
                     <span class="buttonTypeOneAdd action-settings users-add-button" ng-click="vm.openAddUserDialog()">Add</span>
-                    <span class="buttonTypeOneRemove action-settings users-remove-button" ng-click="vm.showScriptDialog(0)">Remove</span>
+                    <span class="buttonTypeOneRemove action-settings users-remove-button" ng-click="vm.deleteChosenUsers()">Remove</span>
                 </div>
                 <div class="users-table-container">
                     <div class="users-table-positioning">
@@ -17,17 +17,15 @@
                                         <label for="spc01"></label>
                                     </td>
                                     <td>Object</td>
-                                    <td>Type</td>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="permission in vm.permissions" class="script-row" data-id="{{permission.scriptId}}" ng-click="vm.selectPermission($event)">
+                                <tr ng-repeat="permObj in vm.users" class="script-row" ng-class="vm.selectedIndex === $index?'bg-row-selected':''">
                                     <td>
-                                        <input id="{{permission.scriptId}}" type="checkbox" class="custom-checkbox-green-type00" data-name="{{permission.scriptName}}" ng-model="permission.selected" />
-                                        <label for="{{permission.scriptId}}"></label>
+                                        <input id="permObj-{{$index}}" type="checkbox" class="custom-checkbox-green-type00" ng-model="permObj.selected" />
+                                        <label for="permObj-{{$index}}"></label>
                                     </td>
-                                    <td>{{ permission.scriptName}}</td>
-                                    <td>{{ permission.owner}}</td>
+                                    <td  ng-click="vm.selectPermObj(permObj, $index)">{{ permObj.permObjDesc}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -42,16 +40,16 @@
                             <div class="role-desc-container">
                                 <div class="role-desc-title">Permission Description</div>
                                 <div>
-                                    dsfdsfdsf dsf sedf dsfdsfdsfds fsdfdsdsfsdfdsf
-                                    sd f ds fds fds fdsfdsfdsfd dsfdsfd sdfsdfsdfsdf sdf sdfdsfdsfdsfdsds
-                                </div>
+                                 {{ vm.selectedRole.description}}
+                               </div>
                             </div>
                             <div class="role-table-container">
                                 <ul>
-                                    <li ng-repeat="permission in vm.permissions" class="script-row">
-                                        <input id="li-{{permission.scriptId}}" type="checkbox" class="custom-checkbox-green-type00" />
-                                        <label for="li-{{permission.scriptId}}"></label>
-                                        {{ permission.scriptName}}
+                                    <li ng-repeat="role in vm.roles" class="role-row" ng-class="vm.selectedRole.index == $index? 'selected-li': ''">
+                                        <input id="li-role{{$index}}" type="checkbox" class="custom-checkbox-green-type00" ng-model="role.selected" 
+                                               ng-change="vm.updatePermObj(role)" />
+                                        <label for="li-role{{$index}}" ng-class="vm.selectedIndex < 0? 'custom-disabled': '' "></label>
+                                        <span ng-click="vm.showRoleDescription(role.description, $index)"> {{ role.permGroup}} </span>
                                     </li>
                                 </ul>
                             </div>

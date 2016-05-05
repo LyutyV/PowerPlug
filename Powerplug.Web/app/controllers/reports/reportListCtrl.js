@@ -32,14 +32,12 @@
         }
         
         function onReportsSuccess(data) {
-            vm.reports = data;            
-            console.log(vm.reports);
+            vm.reports = data;        
         }
 
         function onReportTemplatesSuccess(data) {
             vm.reportTemplates = data;
             ReportTemplateService.setReportTemplate(vm.reportTemplates);
-            console.log(vm.reportTemplates);
         }
     }
 }());

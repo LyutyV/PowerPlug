@@ -39,7 +39,7 @@
             }
             //=================scope binding========================
             $scope.isValide = { error: false, message: "" };
-            $scope.user = { username: "", password: "", confirmPassword: "" };
+            $scope.user = { userName: "", password: "", confirmPassword: "" };
             $scope.cancel = function () {
                 $uibModalInstance.dismiss();
             };
@@ -48,7 +48,7 @@
                 $scope.toValidate = true;
                 $scope.validateFields();
                 if ($scope.isValide.error === false) {
-                    $uibModalInstance.close();
+                    $uibModalInstance.close($scope.user);
                 }
             }
             //=======================init=========================
