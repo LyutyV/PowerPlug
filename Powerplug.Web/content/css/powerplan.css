@@ -497,7 +497,8 @@ input.custom-checkbox-green-type00 {
   .settings .text-container textarea {
     width: 100%;
     height: 300px;
-    padding: 5px; }
+    padding: 5px;
+    resize: none; }
   .settings .green-line {
     width: 100%;
     height: 5px;
@@ -555,7 +556,8 @@ input.custom-checkbox-green-type00 {
         width: 100%;
         border: solid 1px #4d4d4d;
         height: 65px;
-        padding: 10px; }
+        padding: 10px;
+        resize: none; }
     .settings .settings-content .locations-details-container > .location-input-container > .input-text-short input[type=text] {
       width: 80%;
       border: solid 1px #4d4d4d;
@@ -875,7 +877,8 @@ input.custom-checkbox-green-type00 {
       height: 150px;
       color: #1a1a1a;
       font-size: 14px;
-      padding: 5px; }
+      padding: 5px;
+      resize: none; }
     .power-plug-dialog.settings-prop > .modal-body .settings-data-row label {
       display: inline-block;
       font-family: Calibri;
@@ -964,7 +967,8 @@ input.custom-checkbox-green-type00 {
       height: 150px;
       color: #1a1a1a;
       font-size: 14px;
-      padding: 5px; }
+      padding: 5px;
+      resize: none; }
     .modal-dialog .settings-prop .modal-body .settings-data-row label {
       display: inline-block;
       font-family: Calibri;
@@ -1016,7 +1020,8 @@ input.custom-checkbox-green-type00 {
         width: 100%;
         border-color: #cdcdcd;
         height: 70px;
-        padding: 5px; }
+        padding: 5px;
+        resize: none; }
   .reports .report-generation .report-date > span {
     vertical-align: middle;
     padding-right: 15px;
