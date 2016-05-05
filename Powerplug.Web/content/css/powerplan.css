@@ -321,6 +321,8 @@ input.custom-checkbox-green-type00 {
       left: 10px;
       top: 3px;
       background-color: #ffffff; }
+    input.custom-checkbox-green-type00 + label.custom-disabled:before {
+      background-color: #f6f6f6; }
   input.custom-checkbox-green-type00:checked + label:before {
     position: absolute;
     content: '\f00c';
@@ -400,6 +402,15 @@ input.custom-checkbox-green-type00 {
       padding-right: 20px;
       min-width: 150px;
       text-align: center; }
+  .settings li.role-row.selected-li {
+    background: #f2f2f2;
+    background: -moz-linear-gradient(left, #f2f2f2 0%, white 98%, white 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #f2f2f2), color-stop(98%, white), color-stop(100%, white));
+    background: -webkit-linear-gradient(left, #f2f2f2 0%, white 98%, white 100%);
+    background: -o-linear-gradient(left, #f2f2f2 0%, white 98%, white 100%);
+    background: -ms-linear-gradient(left, #f2f2f2 0%, white 98%, white 100%);
+    background: linear-gradient(to right, #f2f2f2 0%, white 98%, white 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#ffffff', GradientType=1 ); }
   .settings .save-button-margin {
     height: 100px;
     width: 100%; }

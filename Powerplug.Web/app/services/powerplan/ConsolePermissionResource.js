@@ -5,6 +5,12 @@
         .factory('ConsolePermissionResource', ['$resource', 'appSettings', ConsolePermissionResource]);
 
     function ConsolePermissionResource($resource, appSettings) {
-        return $resource(appSettings.serverPath + 'api/pc/scripts');
+        return {
+            roles: $resource(appSettings.serverPath + 'api/pc/permissions/roles'),
+            usersAndGrops: $resource(appSettings.serverPath + 'api/pc/permissions', null,
+                {
+                    'saveAll': { method: 'POST', isArray: true }
+                })
+        }
     }
 }());
