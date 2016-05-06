@@ -1,8 +1,4 @@
-/**
- *  Do not remove the comments below. It's the markers used by gulp-inject to inject
- *  all your sass files automatically
- */
-div.addAppWrapper > div.modal-header {
+﻿div.addAppWrapper > div.modal-header {
   padding: 0;
   border: none; }
   div.addAppWrapper > div.modal-header > span {
@@ -175,76 +171,6 @@ div.addAppWrapper > div.modal-body {
                 line-height: 15px;
                 left: 10px;
                 top: 3px; }
-
-.addComputerGroupWrapper > div.modal-header {
-  padding-bottom: 24px;
-  padding-top: 0px;
-  align-items: flex-end !important;
-  min-height: 87px;
-  border-bottom: none; }
-
-.addComputerGroupWrapper > div.modal-body {
-  overflow-y: auto; }
-  .addComputerGroupWrapper > div.modal-body > div.container-fluid {
-    padding: 0px; }
-    .addComputerGroupWrapper > div.modal-body > div.container-fluid > div.row:first-child button {
-      width: 218px;
-      height: 43px;
-      background-color: #8cc63f;
-      border: none;
-      outline: none;
-      font-family: Calibri;
-      color: #ffffff;
-      font-size: 20.3px;
-      font-weight: 700; }
-    .addComputerGroupWrapper > div.modal-body > div.container-fluid > div.row:nth-child(2) {
-      margin-top: 13px;
-      margin-left: 0px;
-      margin-right: 0px; }
-      .addComputerGroupWrapper > div.modal-body > div.container-fluid > div.row:nth-child(2) > div.col-xs-12 {
-        background-color: #f8f8f8;
-        padding-left: 0px;
-        padding-bottom: 17px;
-        border-bottom: 1px solid #b3b3b3; }
-        .addComputerGroupWrapper > div.modal-body > div.container-fluid > div.row:nth-child(2) > div.col-xs-12 > span {
-          display: block;
-          font-family: Calibri;
-          color: #4d4d4d;
-          font-size: 18px;
-          font-weight: 700;
-          margin-left: 24px;
-          margin-top: 21px;
-          margin-bottom: 15px; }
-        .addComputerGroupWrapper > div.modal-body > div.container-fluid > div.row:nth-child(2) > div.col-xs-12 > input.custom-checkbox-green-type00 + label {
-          display: inline;
-          width: inherit;
-          margin-left: 92px;
-          font-family: Calibri;
-          color: #333333;
-          font-size: 14px;
-          font-weight: 300;
-          letter-spacing: -0.182px; }
-          .addComputerGroupWrapper > div.modal-body > div.container-fluid > div.row:nth-child(2) > div.col-xs-12 > input.custom-checkbox-green-type00 + label::before {
-            left: -34px;
-            top: 0px; }
-          .addComputerGroupWrapper > div.modal-body > div.container-fluid > div.row:nth-child(2) > div.col-xs-12 > input.custom-checkbox-green-type00 + label:checked + label::before {
-            left: -34px;
-            top: 0px; }
-    .addComputerGroupWrapper > div.modal-body > div.container-fluid > div.row:nth-child(3) {
-      margin: 25px 0px;
-      font-family: Calibri;
-      color: #4d4d4d;
-      font-size: 18px;
-      font-weight: 700; }
-    .addComputerGroupWrapper > div.modal-body > div.container-fluid > div.row:last-child > div.col-xs-12 > table {
-      width: 100%;
-      font-family: Calibri;
-      color: rgba(26, 26, 26, 0.7);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: -0.182px; }
-      .addComputerGroupWrapper > div.modal-body > div.container-fluid > div.row:last-child > div.col-xs-12 > table > thead {
-        border-bottom: 1px solid #b3b3b3; }
 
 .power-plug-dialog.addPermissionsWrapper {
   overflow: inherit; }
@@ -793,7 +719,7 @@ div.addAppWrapper > div.modal-body {
   display: none; }
 
 .time-picker, .date-picker {
-  width: 120px; }
+  width: 125px; }
   .time-picker input, .date-picker input {
     border-radius: 0;
     border-right: 0;
@@ -811,6 +737,28 @@ div.addAppWrapper > div.modal-body {
     .time-picker .input-group-addon .glyphicon, .date-picker .input-group-addon .glyphicon {
       display: block;
       font-size: 12px; }
+
+.chart-wraper {
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 5px; }
+  .chart-wraper .chart-title {
+    font-size: 20px;
+    padding: 10px 0;
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 17px;
+    font-weight: 400;
+    text-align: left; }
+  .chart-wraper .chart-work {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #fff; }
+  .chart-wraper .chart-non-work {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #e6e6e6; }
 
 div[ui-view="workhoursaction"] > div:first-child {
   height: 40px;
@@ -1215,28 +1163,6 @@ div[ui-view="workhoursaction"] > div:first-child {
 
 .main-wrapper .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden {
   margin-right: 7px !important; }
-
-.chart-wraper {
-  width: 100%;
-  box-sizing: border-box;
-  display: inline-block;
-  padding: 0 5px; }
-  .chart-wraper .chart-title {
-    font-size: 20px;
-    padding: 10px 0;
-    font-family: Calibri;
-    color: rgba(26, 26, 26, 0.7);
-    font-size: 17px;
-    font-weight: 400;
-    text-align: left; }
-  .chart-wraper .chart-work {
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: #fff; }
-  .chart-wraper .chart-non-work {
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: #e6e6e6; }
 
 custom-radio-button-type-one {
   display: block; }
@@ -2050,78 +1976,6 @@ div.computersWrapper {
                       margin-right: 5px;
                       content: '\f1f8'; }
 
-nav > div > ul > li[aria-expanded=true] {
-  border-top: 1px solid #494646; }
-
-nav > div > ul > li > ul {
-  height: 48px;
-  width: 246px;
-  margin-left: -47px;
-  padding-left: 47px;
-  line-height: 48px; }
-  nav > div > ul > li > ul > li {
-    list-style: none;
-    background-color: #3d3a3a;
-    height: 48px;
-    border-bottom: 1px solid #666666;
-    height: 48px;
-    width: 246px;
-    margin-left: -47px;
-    padding-left: 47px;
-    line-height: 48px; }
-
-my-tree-view {
-  display: block; }
-  my-tree-view > ul:first-child > li:first-child > span:last-child::before {
-    content: '\f111';
-    font-family: 'FontAwesome';
-    color: #8cc63f;
-    margin-right: 10px; }
-  my-tree-view > ul:first-child > li:last-child > span::before {
-    position: absolute;
-    left: 15px;
-    top: 2px;
-    content: '\f196';
-    font-family: 'FontAwesome';
-    color: black;
-    margin-right: 10px; }
-  my-tree-view > ul:first-child > li:last-child > span:nth-child(2)::before {
-    position: inherit;
-    content: '\f0c2';
-    font-family: 'FontAwesome';
-    color: black;
-    margin-right: 10px; }
-  my-tree-view ul {
-    list-style-position: outside;
-    display: block;
-    position: relative; }
-    my-tree-view ul:first-child > li:first-child > span:first-child > span:first-child {
-      border-left: none; }
-    my-tree-view ul > li {
-      font-family: Calibri;
-      color: #333333;
-      font-size: 14px;
-      font-weight: 300;
-      letter-spacing: -0.182px;
-      padding-left: 20px;
-      list-style: none;
-      position: relative; }
-      my-tree-view ul > li:last-child > span:first-child > span:last-child {
-        border-left: none; }
-      my-tree-view ul > li > span:first-child {
-        height: 15px;
-        width: 15px;
-        display: block;
-        float: left; }
-        my-tree-view ul > li > span:first-child > span {
-          display: block;
-          height: 50%; }
-          my-tree-view ul > li > span:first-child > span:first-child {
-            border-left: 1px dotted black;
-            border-bottom: 1px dotted black; }
-          my-tree-view ul > li > span:first-child > span:last-child {
-            border-left: 1px dotted black; }
-
 .overview {
   margin: -15px -50px 0px -50px;
   padding-top: 15px;
@@ -2712,3 +2566,4 @@ div.settingsWrapper {
                   border: 1px solid #d9d9d9;
                   text-align: center;
                   line-height: 24px; }
+

@@ -230,7 +230,8 @@
       border-top: solid 1px #dedede; }
 
 .power-plug-dialog.message-editor .mesaage-options {
-  padding: 20px; }
+  padding: 20px;
+  padding-right: 0px; }
   .power-plug-dialog.message-editor .mesaage-options .message-title {
     font-size: 16px;
     font-weight: bold; }
@@ -496,7 +497,8 @@ input.custom-checkbox-green-type00 {
   .settings .text-container textarea {
     width: 100%;
     height: 300px;
-    padding: 5px; }
+    padding: 5px;
+    resize: none; }
   .settings .green-line {
     width: 100%;
     height: 5px;
@@ -554,7 +556,8 @@ input.custom-checkbox-green-type00 {
         width: 100%;
         border: solid 1px #4d4d4d;
         height: 65px;
-        padding: 10px; }
+        padding: 10px;
+        resize: none; }
     .settings .settings-content .locations-details-container > .location-input-container > .input-text-short input[type=text] {
       width: 80%;
       border: solid 1px #4d4d4d;
@@ -874,7 +877,8 @@ input.custom-checkbox-green-type00 {
       height: 150px;
       color: #1a1a1a;
       font-size: 14px;
-      padding: 5px; }
+      padding: 5px;
+      resize: none; }
     .power-plug-dialog.settings-prop > .modal-body .settings-data-row label {
       display: inline-block;
       font-family: Calibri;
@@ -963,12 +967,121 @@ input.custom-checkbox-green-type00 {
       height: 150px;
       color: #1a1a1a;
       font-size: 14px;
-      padding: 5px; }
+      padding: 5px;
+      resize: none; }
     .modal-dialog .settings-prop .modal-body .settings-data-row label {
       display: inline-block;
       font-family: Calibri;
       font-size: 16px;
       color: #5d5d5d; }
+
+#ui-datepicker-div.report-monthly {
+  z-index: 2 !important; }
+  #ui-datepicker-div.report-monthly .ui-datepicker-calendar {
+    display: none; }
+
+.reports .report-img {
+  float: right;
+  width: 400px;
+  height: 600px;
+  background-color: mediumpurple;
+  border: solid 5px #cdcdcd;
+  margin-top: 109px;
+  margin-left: 20px; }
+
+.reports .report-generation {
+  overflow: hidden; }
+  .reports .report-generation > div {
+    padding-top: 25px;
+    padding-bottom: 25px; }
+  .reports .report-generation .report-name {
+    font-weight: bold;
+    font-size: 20px; }
+    .reports .report-generation .report-name span:first-child {
+      padding-right: 15px; }
+  .reports .report-generation .report-details .report-title:first-child {
+    padding-bottom: 10px; }
+  .reports .report-generation .report-details .report-title span {
+    display: block; }
+    .reports .report-generation .report-details .report-title span:first-child {
+      float: left;
+      width: 130px;
+      font-weight: bold;
+      padding-top: 6px;
+      font-size: 15px; }
+    .reports .report-generation .report-details .report-title span:last-child {
+      overflow: hidden; }
+      .reports .report-generation .report-details .report-title span:last-child input {
+        width: 100%;
+        border: solid 1px #cdcdcd;
+        height: 30px;
+        padding: 5px; }
+      .reports .report-generation .report-details .report-title span:last-child textarea {
+        width: 100%;
+        border-color: #cdcdcd;
+        height: 70px;
+        padding: 5px;
+        resize: none; }
+  .reports .report-generation .report-date > span {
+    vertical-align: middle;
+    padding-right: 15px;
+    font-weight: bold;
+    font-size: 15px; }
+  .reports .report-generation .report-date > div {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 40px; }
+    .reports .report-generation .report-date > div.form-group {
+      margin-bottom: 0px; }
+    .reports .report-generation .report-date > div select {
+      border-color: #cdcdcd;
+      height: 30px; }
+  .reports .report-generation .report-computers div:first-child {
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom: 10px; }
+  .reports .report-generation .report-computers div.report-computer-list-container {
+    border: solid 1px #cdcdcd;
+    width: 100%;
+    height: 150px; }
+  .reports .report-generation .report-sort div:first-child {
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom: 10px; }
+  .reports .report-generation .report-sort div.report-sort-container {
+    border: solid 1px #cdcdcd;
+    width: 100%;
+    height: 100px; }
+  .reports .report-generation .report-usage div:first-child {
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom: 10px; }
+  .reports .report-generation .report-usage div.report-usage-container {
+    border: solid 1px #cdcdcd;
+    width: 100%;
+    height: 100px; }
+  .reports .report-generation .report-options div:first-child {
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom: 10px; }
+  .reports .report-generation .report-options div input.custom-checkbox-green-type00 + label {
+    width: 25px; }
+    .reports .report-generation .report-options div input.custom-checkbox-green-type00 + label:before {
+      left: 0px; }
+  .reports .report-generation .report-options div input.custom-checkbox-green-type00:checked + label:before {
+    left: 0px; }
+  .reports .report-generation .report-options div:last-child {
+    padding-top: 10px; }
+  .reports .report-generation .report-inactive div:first-child {
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom: 10px; }
+  .reports .report-generation .report-inactive div input.custom-checkbox-green-type00 + label {
+    width: 25px; }
+    .reports .report-generation .report-inactive div input.custom-checkbox-green-type00 + label:before {
+      left: 0px; }
+  .reports .report-generation .report-inactive div input.custom-checkbox-green-type00:checked + label:before {
+    left: 0px; }
 
 .reports .report-selection {
   padding-top: 30px;
