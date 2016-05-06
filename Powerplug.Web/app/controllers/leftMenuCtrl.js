@@ -6,12 +6,16 @@
       .controller('LeftMenuController', ['$state', function ($state) {
           var vm = this;
           vm.state = $state;
-          //tmp
 
+          vm.keepOpened = function (e) {
+            e.stopPropagation();
+          }
+
+
+          //tmp
           function getTitle() {
             return (vm.state.current.policyName || "") + " Savings";
           }
-
           vm.menuItems = [
           {
               "text": "Dashboard",
