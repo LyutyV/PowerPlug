@@ -1,5 +1,3 @@
-//2053.nav 1219.chart-wrapper 179.addComputerGroupWrapper
-
 (function () {
   'use strict';
 
@@ -29,7 +27,7 @@
             }
           }
 
-          var create = function (elem, data) {
+          function create(elem, data) {
             if (data.length > 0) {
 
               var ul = angular.element('<ul/>');
@@ -51,7 +49,18 @@
 
           }
 
+          function addStyles(){
+            var t = $('my-tree-view li');
+            angular.forEach(t, function(li) {
+              if( $(li).next().is('li') && $(li).children().is('ul') ) {
+                var element = $(li).children()[2];
+                $(element).css('border-left', '1px dotted black');
+              }
+            })
+          }
+
           create(iElm, $scope.data);
+          addStyles();
         }
       }
     })
