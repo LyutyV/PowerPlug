@@ -4,14 +4,11 @@
   <ul class="left-menu">
     <li ng-repeat="item in vm.menuItems" ng-init="pIndex = $index" ui-sref="{{item.sref}}" data-toggle="collapse" data-target="{{'#submenu' + $index}}" aria-expanded="{{vm.state.current.title === item.stateName}}" ng-class="{ current: vm.state.current.url.indexOf(item.sref) >= 0, collapsed : vm.state.current.title !== item.stateName }">
       <i class="{{item.icon}}"></i> {{item.text}}
-      <ul id="{{'submenu' + $index}}" class="collapse" aria-expanded="{{vm.state.current.title === item.stateName}}" ng-class="{'in' : vm.state.current.title === item.stateName}">
+      <ul id="{{'submenu' + $index}}" class="collapse" aria-expanded="{{vm.state.current.title.substr(vm.state.current.title.length-7, vm.state.current.title.length) === item.stateName}}" ng-class="{'in' : vm.state.current.title.substr(vm.state.current.title.length-7, vm.state.current.title.length) === item.stateName}">
         <li ng-repeat="subitem in item.submenu" ng-init="pIndex = $index" ng-href="{{subitem.sref}}">
-          {{subitem.text}}
+          {{subitem.text()}}
         </li>
       </ul>
     </li>
   </ul>
 </div>
-
-
-<!-- {'in' : vm.state.current.title === item.stateName} -->

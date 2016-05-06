@@ -7,6 +7,11 @@
           var vm = this;
           vm.state = $state;
           //tmp
+
+          function getTitle() {
+            return (vm.state.current.policyName || "") + " Savings";
+          }
+
           vm.menuItems = [
           {
               "text": "Dashboard",
@@ -18,10 +23,10 @@
               "text": "Saving Plans",
               "sref": "savingPlans",
               "icon": "fa fa-list-alt",
-              "stateName": "Saving Plans > PowerPlug Saving plan 1/2016",
+              "stateName": "Savings",
               "submenu": [
                 {
-                    "text": "PowerPlug Saving plan 1/2016",
+                    "text": getTitle,
                     "sref": ""
                 }
               ]

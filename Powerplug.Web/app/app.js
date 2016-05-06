@@ -102,7 +102,7 @@
                         templateUrl: 'views/powerplan/savingPlanDescription.html'
                     }
                 },
-                title: 'Saving Plans > PowerPlug Saving plan 1/2016'
+                title: 'Savings'
             })
             .state('settings', {
                 url: "/settings",

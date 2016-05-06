@@ -7,6 +7,7 @@
 
     function SavingPlanEditorCtrl($state, $stateParams, $scope, $animate, $document, $uibModal, SavingPlansResource, ComputersResource, ComputerGroupsResource, ScriptsResource) {
         var vm = this;
+        vm.state = $state;
         vm.policyId = $stateParams.policyId;
 
         // Check all checkbox in Computers section
@@ -75,7 +76,7 @@
         }, function (err) {
             onError(err);
         });
-        
+
         function onError(err) {
             console.log(err)
             if (err.status === 401 || err.status === -1) {
@@ -93,6 +94,12 @@
         }
 
         function onSuccess(data) {
+            //title
+            vm.state.current.policyName = data.policyName;
+            vm.state.current.title = "Saving Plans > " + data.policyName + " Savings";
+            console.log(data);
+            //title
+
             jsonValidation(data);
             vm.savingPlan = data;
             overviewHandler.setOverviewItems();
@@ -101,7 +108,7 @@
             savingHandler.setSavingItems();
             workHoursHandler.setWorkHoursItems();
             eventHandler.setEventItems();
-            computersHandler.setComputerItems();            
+            computersHandler.setComputerItems();
             overviewHandler.setOverviewGraphs();
             //
             console.log(vm.savingPlan);
