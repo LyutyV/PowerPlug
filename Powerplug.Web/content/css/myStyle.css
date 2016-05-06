@@ -2109,7 +2109,7 @@ my-tree-view {
       my-tree-view ul > li:last-child > span:first-child > span:last-child {
         border-left: none; }
       my-tree-view ul > li > span:first-child {
-        height: 15px;
+        height: 16px;
         width: 15px;
         display: block;
         float: left; }
